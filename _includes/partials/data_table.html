@@ -1,0 +1,45 @@
+{% assign entries = site.data.entries %}
+
+{% if include.place %}
+{% assign entries = (entries | where: "place", include.place) %}
+{% endif %}
+
+{% if include.year %}
+{% assign entries = (entries | where: "year", include.year) %}
+{% endif %}
+
+{% if include.dataset %}
+{% assign entries = (entries | where: "dataset", include.dataset) %}
+{% endif %}
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Place</th>
+            <th>Dataset</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in entries %}
+        <tr>
+            <td>
+                {{ entry.year }}
+            </td>
+            <td>
+                <a href="/places/{{ entry.place }}/overview/" title="{{ entry.place }}">
+                    {{ entry.place }}
+                </a>
+            </td>
+            <td>
+                <a href="/places/{{ entry.place }}/datasets/{{ entry.dataset }}/" title="{{ entry.place }} {{ entry.dataset }}">
+                    {{ entry.dataset }}
+                </a>
+                <a href="/datasets/{{ entry.dataset }}/overview/" title="{{ entry.dataset }}" style="float: right;">
+                    Compare places for this dataset
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

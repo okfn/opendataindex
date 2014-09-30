@@ -1,0 +1,48 @@
+## META ##
+title: Open Data Index
+email: index@okfn.org
+description: >
+  The Open Data Index assesses the state of open government data around the world.
+baseurl: ""
+url: "http://index.okfn.org"
+twitter_username: okfn
+github_username:  okfn
+github: https://github.com/okfn/opendataindex
+author:
+ name: Open Knowledge
+ url: https://okfn.org/
+googleanalytics:
+mailinglist:
+
+## OPEN KNOWLEDGE ##
+openknowledgeribbon: false
+
+## OPEN DATA INDEX ##
+odi:
+  current_year: 2014
+
+## BUILD ##
+markdown: kramdown
+
+## PLUGINS ##
+gems:
+  - jekyll-redirect-from
+
+## INFORMATION ARCHITECTURE ##
+# blog
+permalink: /blog/:title/
+
+# data and pages
+collections:
+  places:
+    output: true
+    permalink: /:collection/:path/
+  datasets:
+    output: true
+    permalink: /:collection/:path/
+  historical:
+    output: true
+    permalink: /:collection/:path/
+  pages:
+    output: true
+    permalink: /:path/
