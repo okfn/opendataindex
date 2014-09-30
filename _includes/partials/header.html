@@ -10,7 +10,7 @@
                 {% for p in site.collections.pages.docs %}
                 {% if p.nav_show %}
                 <li>
-                    <a href="{{ site.baseurl }}/{{ p.url }}" title="{{ p.title }}">{{ p.title }}</a>
+                    <a href="{{ site.baseurl }}{{ p.url }}" title="{{ p.title }}">{{ p.title }}</a>
                 </li>
                 {% endif %}
                 {% endfor %}
