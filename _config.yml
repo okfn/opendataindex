@@ -3,7 +3,7 @@ title: Open Data Index
 email: index@okfn.org
 description: >
   The Open Data Index assesses the state of open government data around the world.
-baseurl: ""
+baseurl: "/opendataindex"
 url: "http://index.okfn.org"
 twitter_username: okfn
 github_username:  okfn
