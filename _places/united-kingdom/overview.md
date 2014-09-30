@@ -14,4 +14,4 @@ What's up in {{ page.title }}?
 
 {% include partials/data_table.html place="united-kingdom" year="2014" %}
 
-United Kingdom in previous years: <a href="/places/united-kingdom/2013/" title="">2013</a>
+United Kingdom in previous years: <a href="{{ site.baseurl }}/places/united-kingdom/2013/" title="">2013</a>

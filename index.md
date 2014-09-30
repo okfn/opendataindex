@@ -14,5 +14,5 @@ title:  Open Data Index
 
 {% include partials/data_table.html year="2014" %}
 
-Previous Years: <a href="/historical/2013/" title="">2013</a>
+Previous Years: <a href="{{ site.baseurl }}/historical/2013/" title="">2013</a>
 

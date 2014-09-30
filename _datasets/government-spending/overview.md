@@ -14,4 +14,4 @@ This is the page for the government spending datasets.
 
 {% include partials/data_table.html dataset="government-spending" year="2014" %}
 
-Government spending in previous years: <a href="/datasets/government-spending/2013/" title="">2013</a>
+Government spending in previous years: <a href="{{ site.baseurl }}/datasets/government-spending/2013/" title="">2013</a>

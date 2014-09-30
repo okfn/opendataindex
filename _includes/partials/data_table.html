@@ -27,15 +27,15 @@
                 {{ entry.year }}
             </td>
             <td>
-                <a href="/places/{{ entry.place }}/overview/" title="{{ entry.place }}">
+                <a href="{{ site.baseurl }}/places/{{ entry.place }}/overview/" title="{{ entry.place }}">
                     {{ entry.place }}
                 </a>
             </td>
             <td>
-                <a href="/places/{{ entry.place }}/datasets/{{ entry.dataset }}/" title="{{ entry.place }} {{ entry.dataset }}">
+                <a href="{{ site.baseurl }}/places/{{ entry.place }}/datasets/{{ entry.dataset }}/" title="{{ entry.place }} {{ entry.dataset }}">
                     {{ entry.dataset }}
                 </a>
-                <a href="/datasets/{{ entry.dataset }}/overview/" title="{{ entry.dataset }}" style="float: right;">
+                <a href="{{ site.baseurl }}/datasets/{{ entry.dataset }}/overview/" title="{{ entry.dataset }}" style="float: right;">
                     Compare places for this dataset
                 </a>
             </td>
