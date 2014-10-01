@@ -19,7 +19,7 @@ openknowledgeribbon: false
 
 ## OPEN DATA INDEX ##
 odi:
-  current_year: 2014
+  current_year: "2014"
 
 ## BUILD ##
 markdown: kramdown
@@ -36,13 +36,10 @@ permalink: /blog/:title/
 collections:
   places:
     output: true
-    permalink: /:collection/:path/
   datasets:
     output: true
-    permalink: /:collection/:path/
   historical:
     output: true
-    permalink: /:collection/:path/
   pages:
     output: true
     permalink: /:path/

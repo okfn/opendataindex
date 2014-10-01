@@ -1,0 +1,29 @@
+---
+
+layout: default
+key: place
+summary: The Open Data Index ranks governments in terms of the openness of their data. An initiative of Open Knowledge, the leaders in open data.
+
+---
+
+<p>
+    What's up in {{ page.title }}?
+</p>
+
+{% if content %}
+{{ content }}
+{% endif %}
+
+{% include partials/data_glance.html place=page.place year=page.year data_glance_class="row" data_point_class="col-md-3" %}
+
+{% include partials/data_table.html place=page.place year=page.year %}
+
+{% if page.year == "2014" %}
+<p>
+    {{ page.title }} in previous years: <a href="{{ site.baseurl }}/places/{{ page.place }}/2013/" title="{{ page.title }} 2013">2013</a>
+</p>
+{% else %}
+<p>
+    {{ page.title }} in the current Index: <a href="{{ site.baseurl }}/places/{{ page.place }}/" title="{{ page.title }} Now">Now</a>
+</p>
+{% endif %}
