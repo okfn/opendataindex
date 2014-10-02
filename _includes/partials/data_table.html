@@ -1,45 +1,149 @@
 {% assign entries = site.data.entries %}
+{% assign datasets = site.data.datasets %}
+{% assign places = site.data.places | sort: "2014_rank" %}
+{% assign questions = site.data.questions %}
+{% assign scope_dataset = include.dataset %}
+{% assign scope_place = include.place %}
+{% assign scope_year = include.year %}
 
-{% if include.place %}
-{% assign entries = (entries | where: "place", include.place) %}
-{% endif %}
 
-{% if include.year %}
-{% assign entries = (entries | where: "year", include.year) %}
-{% endif %}
+<div class="row">
+    <div class="col-md-8">
+        {% include partials/data_table_tools.html %}
+    </div>
+    <div class="col-md-4">
+        {% include partials/data_table_key.html %}
+    </div>
+</div>
 
-{% if include.dataset %}
-{% assign entries = (entries | where: "dataset", include.dataset) %}
-{% endif %}
+<section class="data-display">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="index-table" class="table">
+            <thead>
+            {% include partials/data_table_header.html %}
+            </thead>
+            <tbody>
+            {% for place in places %}
+            <tr data-rank="{{ place.2014_rank }}" data-score="{{ place.2014_score }}" data-place="{{ place.slug }}">
+                <td class="rank" data-rank="{{ place.2014_rank }}">
+                    {{ place.2014_rank }}
+                </td>
+                <td>
+                    <a href="{{ site.baseurl }}/places/{{ place.slug }}/" title="{{ place.name }}">
+                        {{ place.name }}
+                    </a>
+                </td>
+                {% for dataset in datasets %}
+                <td>
+                    {% assign entry = entries | where: "place", place.slug | where: "dataset", dataset.id | where: "year", scope_year | first %}
+                    {% if entry %}
 
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Year</th>
-            <th>Place</th>
-            <th>Dataset</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for entry in entries %}
-        <tr>
-            <td>
-                {{ entry.year }}
-            </td>
-            <td>
-                <a href="{{ site.baseurl }}/places/{{ entry.place }}/" title="{{ entry.place }}">
-                    {{ entry.place }}
-                </a>
-            </td>
-            <td>
-                <a href="{{ site.baseurl }}/places/{{ entry.place }}/datasets/{{ entry.dataset }}/" title="{{ entry.place }} {{ entry.dataset }}">
-                    {{ entry.dataset }}
-                </a>
-                <a href="{{ site.baseurl }}/datasets/{{ entry.dataset }}/" title="{{ entry.dataset }}" style="float: right;">
-                    Compare places for this dataset
-                </a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+                    {% capture popover_title %}
+                    <strong>{{ dataset.title }}</strong> in <strong>{{ place.name }}</strong>
+                    {% endcapture %}
+
+                    {% capture popover_content %}
+                    <ul>
+                        {% for question in questions %}
+                        {% unless question.has_score != 'TRUE' %}
+                        {% assign state = entry[question.id] %}
+                        {% if state == 'Yes'%}
+                        {% assign not == '' %}
+                        {% elsif state == 'No' %}
+                        {% assign not == 'not' %}
+                        {% else %}
+                        {% assign not == 'unclear if it\'s ' %}
+                        {% endif %}
+                        <li>
+                            {% if question.id == 'exists' %}
+                            {% if state == 'Yes' %}
+                            Data Exists
+                            {% else %}
+                            Data does not exist
+                            {% endif %}
+                            {% elsif question.id == 'digital' %}
+                            It's {{ not }} digital
+                            {% elsif question.id == 'public' %}
+                            It's {{ not }} public
+                            {% elsif question.id == 'free' %}
+                            It's {{ not }} free
+                            {% elsif question.id == 'online' %}
+                            It's {{ not }} online
+                            {% if not == '' %}
+                            <a href="{{ questions['url'] }}" title="{{ dataset.id }} for {{ place.name }} on the web">
+                                here
+                            </a>
+                            {% endif %}
+                            {% elsif question.id == 'machinereadable' %}
+                            It's {{ not }} machine readable
+                            {% elsif question.id == 'bulk' %}
+                            It's {{ not }} available in bulk
+                            {% elsif question.id == 'openlicense' %}
+                            It's {{ not }} only licensed
+                            {% elsif question.id == 'uptodate' %}
+                            It's {{ not }} up to date
+                            {% endif %}
+                        </li>
+                        {% endunless %}
+                        {% endfor %}
+                    </ul>
+                    <p>
+                        {{ entry.details | markdownify }}
+                    </p>
+                    <a href="{{ site.baseurl }}/places/{{ place.slug }}/datasets/{{ dataset.id }}/">
+                        Read more &raquo;
+                    </a>
+                    {% endcapture %}
+
+                    <ul class="availability availability-mini" data-toggle="popover" title="{{ popover_title | escape }}" data-content="{{ popover_content | escape }}">
+                        {% for question in questions %}
+                        {% unless question.has_score != 'TRUE' %}
+                        {% assign state = entry[question.id] %}
+                        <li class="{% if state == 'Yes' %}yes{% elsif state == 'No' %}no{% elsif state == '?' %}maybe{% endif %}" data-content="{{ state }}">&nbsp;</li>
+                        {% endunless %}
+                        {% endfor %}
+                    </ul>
+
+                    {% else %}
+
+                    {% capture popover_title %}
+                    <strong>{{ dataset.title }}</strong> in <strong>{{ place.name }}</strong>
+                    {% endcapture %}
+
+                    {% capture popover_content %}
+                    There is no data available.
+                    {% endcapture %}
+
+                    <ul class="availability availability-mini" data-toggle="popover" title="{{ popover_title | escape }}" data-content="{{ popover_content | escape }}">
+                        {% for question in questions %}
+                        {% unless question.has_score != 'TRUE' %}
+                        <li class="" data-content="no data">&nbsp;</li>
+                        {% endunless %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </td>
+                {% endfor %}
+                <td class="score" data-score="{{ place.2014_score }}">
+                    {{ place.2014_score }}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            {% include partials/data_table_header.html %}
+            </tfoot>
+        </table>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-md-8">
+        &nbsp;
+    </div>
+    <div class="col-md-4">
+        {% include partials/data_table_key.html %}
+    </div>
+</div>
