@@ -6,6 +6,9 @@
 {% assign scope_place = include.place %}
 {% assign scope_year = include.year %}
 
+{% if page.place %}
+{% assign places = places | where: "slug", page.place %}
+{% endif %}
 
 <div class="row">
     <div class="col-md-8">
@@ -25,9 +28,18 @@
             </thead>
             <tbody>
             {% for place in places %}
-            <tr data-rank="{{ place.2014_rank }}" data-score="{{ place.2014_score }}" data-place="{{ place.slug }}">
-                <td class="rank" data-rank="{{ place.2014_rank }}">
-                    {{ place.2014_rank }}
+
+            {% if scope_year %}
+            {% assign score_lookup = scope_year | append:"_score" %}
+            {% assign rank_lookup = scope_year | append:"_rank" %}
+            {% else %}
+            {% assign score_lookup = site.odi.current_year | append:"_score" %}
+            {% assign rank_lookup = scope_year | append:"_rank" %}
+            {% endif %}
+
+            <tr data-rank="{{ place[rank_lookup] }}" data-score="{{ place[score_lookup] }}" data-place="{{ place.slug }}">
+                <td class="rank" data-rank="{{ place[rank_lookup] }}">
+                    {{ place[rank_lookup] }}
                 </td>
                 <td>
                     <a href="{{ site.baseurl }}/places/{{ place.slug }}/" title="{{ place.name }}">
@@ -125,8 +137,8 @@
                     {% endif %}
                 </td>
                 {% endfor %}
-                <td class="score" data-score="{{ place.2014_score }}">
-                    {{ place.2014_score }}
+                <td class="score" data-score="{{ place[score_lookup] }}">
+                    {{ place[score_lookup] }}
                 </td>
             </tr>
             {% endfor %}
