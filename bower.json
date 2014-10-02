@@ -1,0 +1,20 @@
+{
+  "name": "Open Data Index",
+  "version": "0.1.0-alpha",
+  "authors": [
+    "Open Knowledge"
+  ],
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chroma-js": "~0.5.8"
+  }
+}
