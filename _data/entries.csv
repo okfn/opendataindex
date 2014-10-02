@@ -1,9 +1,9 @@
-censusid,timestamp,year,place,dataset,exists,digital,public,online,free,machinereadable,bulk,openlicense,uptodate,url,format,licenseurl,dateavailable,title,publisher,qualityinfo,qualitystructure,details
-opendataindex,2014-01-01T09:00:00.000Z,2014,australia,transport-timetables,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
-opendataindex,2014-01-01T09:00:00.000Z,2014,australia,government-spending,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
-opendataindex,2013-01-01T09:00:00.000Z,2013,australia,transport-timetables,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
-opendataindex,2013-01-01T09:00:00.000Z,2013,australia,government-spending,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
-opendataindex,2014-01-01T09:00:00.000Z,2014,united-kingdom,transport-timetables,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
-opendataindex,2014-01-01T09:00:00.000Z,2014,united-kingdom,government-spending,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
-opendataindex,2013-01-01T09:00:00.000Z,2013,united-kingdom,transport-timetables,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
-opendataindex,2013-01-01T09:00:00.000Z,2013,united-kingdom,government-spending,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,,,An example comment.
+censusid,year,place,dataset,rank,score,exists,digital,public,online,free,machinereadable,bulk,openlicense,uptodate,url,format,licenseurl,dateavailable,title,publisher,details
+opendataindex,2014,australia,transport-timetables,1,90,Yes,No,Yes,No,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
+opendataindex,2014,australia,government-spending,2,85,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
+opendataindex,2013,australia,transport-timetables,1,83,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
+opendataindex,2013,australia,government-spending,2,77,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
+opendataindex,2014,united-kingdom,transport-timetables,2,81,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
+opendataindex,2014,united-kingdom,government-spending,1,96,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
+opendataindex,2013,united-kingdom,transport-timetables,2,66,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
+opendataindex,2013,united-kingdom,government-spending,1,84,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,,,,,,Government,An example comment.
