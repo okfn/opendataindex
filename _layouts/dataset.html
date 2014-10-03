@@ -24,7 +24,7 @@ summary: The Open Data Index ranks governments in terms of the openness of their
     {% assign route = site.baseurl | append: page.url %}
     {% assign anchor = "Current" %}
     {% else %}
-    {% assign route = site.baseurl | append: page.dataset | append: "/" | append: year | append: "/" %}
+    {% assign route = site.baseurl | append: "/" | append: page.dataset | append: "/" | append: year | append: "/" %}
     {% assign anchor = year %}
     {% endif %}
 
