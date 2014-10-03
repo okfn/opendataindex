@@ -19,7 +19,11 @@ openknowledgeribbon: false
 
 ## OPEN DATA INDEX ##
 odi:
+  na: "n/a"
   current_year: "2014"
+  years:
+    - "2014"
+    - "2013"
 
 ## BUILD ##
 markdown: kramdown

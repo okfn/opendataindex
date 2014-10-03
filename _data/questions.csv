@@ -3,7 +3,7 @@ exists,Does the data exist,"We are looking for government data from an official 
 
 Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.
 
-This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).",,TRUE,5,file-alt,
+This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).",,TRUE,5,file-text-o,
 digital,Is data in digital form,"Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. 
 
@@ -19,7 +19,7 @@ The data can be considered public when:
  
 Data is **NOT** publicly available in the following cases:
 1. It can be made available only after a freedom of information request (FOIA) is sent.
-2. It can be accessed only by government officials.",,TRUE,5,eye-open,"publisher,title"
+2. It can be accessed only by government officials.",,TRUE,5,eye,"publisher,title"
 free,Is the data available for free,If you have to pay for it – it is not free.,,TRUE,15,dollar,
 online,Is the data available online,"if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.",,TRUE,5,download,url
 machinereadable,Is the data machine readable,"Files are digital, yes, but not all can be processed or parsed easily by a computer. In order to answer this question, you would need to look at the datasets file type. 
@@ -40,7 +40,7 @@ If the files are in the following formats, the are NOT machine readable:
 - JPEG
 - PPT
 
-If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.",,TRUE,15,keyboard,format
+If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.",,TRUE,15,keyboard-o,format
 bulk,Available in bulk,"Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.
 
 For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.",,TRUE,10,copy,
@@ -63,7 +63,7 @@ For instance, if the latest national budget made available is from 2010, then it
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
-- Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date",,TRUE,10,time,
+- Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date",,TRUE,10,clock-o,
 url,URL of data online,"The link to the specific dataset if that is possible. Otherwise to the home page for the data. If that is not impossible, then the link to main page of site on which the data is located. Only links to **official** sites are eligeble, not third party sites. When it is necessary for submitters to provide third party links, then they are put in the comments section.",url,,,,
 format,Format of data,"This question describes the form that the data is available in. For example, for tabular data it might be: Excel, CSV, HTML or even PDF. For geodata it might be shapefiles, geojson or something else. If available in multiple formats, the format descriptors are listed separated with commas. Any further information is put in the comments section.",text,,,,
 licenseurl,URL to license or terms of use,"Please provide the url to the license or terms of use governing access and use of this data (if known). If there is more than one URL you would like to list, please just list the primary one in this field and add further information in the comments box below.",url,,,,

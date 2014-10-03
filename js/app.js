@@ -4,7 +4,7 @@ $(document).ready(function() {
         placeCount = placeCount || 260,// approx. no. of countries in world
         colorScaleLow = '#dd3d3a',
         colorScaleHigh = '#8bdd3a',
-        $indexTable = $('#index-table'),
+        $dataTable = $('.data-table'),
         $visiblePopover,
         popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
 
@@ -54,12 +54,12 @@ $(document).ready(function() {
     OpenDataIndex.init = {
         table: function initTable() {
 
-//            $indexTable.find('.score').each(function(index, value) {
+//            $dataTable.find('.score').each(function(index, value) {
 //                var score = parseInt($(this).data('score'), 10);
 //                $(this).css('background-color', OpenDataIndex.colorScale.score.getColor(score).hex());
 //            });
 //
-//            $indexTable.find('.rank').each(function(index, value) {
+//            $dataTable.find('.rank').each(function(index, value) {
 //                var score = parseInt($(this).data('score'), 10);
 //                $(this).css('background-color', OpenDataIndex.colorScale.rank.getColor(score).hex());
 //            });
@@ -119,7 +119,7 @@ $(document).ready(function() {
         var $this = $(this),
             value = $this.val();
         if ($this.is(':checked')) {
-            sortTable($indexTable, value, $this);
+            sortTable($dataTable, value, $this);
         }
     });
 
@@ -127,7 +127,7 @@ $(document).ready(function() {
         var $this = $(this),
             query = $this.val().toLowerCase().replace(' ', '-').replace(',', '');
 
-        filterTable($indexTable, query, $this);
+        filterTable($dataTable, query, $this);
 
     });
 

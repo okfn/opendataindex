@@ -51,7 +51,7 @@ body {
   background-color: #f5f5f5;
 }
 .data-tools,
-.data-key {
+.data-legend {
   min-height: 160px;
   margin: 20px 0;
   padding: 15px 30px 15px 15px;
@@ -90,33 +90,59 @@ body {
   background-color: #eee;
   border-color: #777;
 }
-ul.availability {
+ul.availability,
+ul.table-key {
   padding-left: 0;
   cursor: pointer;
 }
 .availability li {
   display: inline-block;
-  border-left: solid 16px #CCC;
+  width: 16px;
+  background-color: #CCC;
+  color: white;
+  line-height: 16px;
+  padding-left: 5px;
+  padding-right: 10px;
+  text-align: center;
+}
+.table-key li {
+  display: inline-block;
+  border-left: 16px solid #CCC;
   line-height: 16px;
   padding-left: 5px;
   padding-right: 10px;
 }
-.availability-mini li {
+.table-key li.maybe {
+  border-color: #39bef9;
+}
+.table-key li.yes {
+  border-color: #8bdd3a;
+}
+.table-key li.no {
+  border-color: #dd3d3a;
+}
+.availability-comparative li {
   display: inline-block;
-  border-left: solid 5px #CCC;
   line-height: 24px;
-  width: 1px;
+  width: 5px;
   padding-left: 0;
   padding-right: 0;
 }
+.availability-slice li {
+  display: inline-block;
+  line-height: 24px;
+  width: 24px;
+  padding-left: 3px;
+  padding-right: 0;
+}
 .availability li.maybe {
-  border-left-color: #39bef9;
+  background-color: #39bef9;
 }
 .availability li.yes {
-  border-left-color: #8bdd3a;
+  background-color: #8bdd3a;
 }
 .availability li.no {
-  border-left-color: #dd3d3a;
+  background-color: #dd3d3a;
 }
 table {
   table-layout: fixed;
@@ -128,10 +154,10 @@ table tr th,
 table tr td {
   width: 4%;
 }
-table tr th:first-child,
-table tr td:first-child,
-table tr th:last-child,
-table tr td:last-child {
+table#comparative-table tr th:first-child,
+table#comparative-table tr td:first-child,
+table#comparative-table tr th:last-child,
+table#comparative-table tr td:last-child {
   width: 2% !important;
 }
 table tr td:first-child {
@@ -140,9 +166,19 @@ table tr td:first-child {
 table tr td:last-child {
   text-align: left;
 }
-table tr th:nth-child(2),
-table tr td:nth-child(2) {
+table#comparative-table tr th:nth-child(2),
+table#comparative-table tr td:nth-child(2) {
   width: 6% !important;
+}
+table#slice-table tr th:first-child,
+table#slice-table tr td:first-child {
+  width: 2% !important;
+}
+table#slice-table tr th:nth-child(3) {
+  width: 6% !important;
+}
+table#slice-table tr th:nth-child(2) {
+  width: 1% !important;
 }
 .thing {
   display: none;

@@ -14,16 +14,20 @@ summary: The Open Data Index ranks governments in terms of the openness of their
 {{ content }}
 {% endif %}
 
-{% include partials/data_glance.html place=page.place year=page.year data_glance_class="row" data_point_class="col-md-3" %}
+{% include partials/dataviews/slice_table_place.html place=page.place year=page.year %}
 
-{% include partials/data_table.html place=page.place year=page.year %}
+<h4>See this data over time</h4>
+<ul>
+    {% for year in site.odi.years %}
 
-{% if page.year == "2014" %}
-<p>
-    {{ page.title }} in previous years: <a href="{{ site.baseurl }}/places/{{ page.place }}/2013/" title="{{ page.title }} 2013">2013</a>
-</p>
-{% else %}
-<p>
-    {{ page.title }} in the current Index: <a href="{{ site.baseurl }}/places/{{ page.place }}/" title="{{ page.title }} Now">Now</a>
-</p>
-{% endif %}
+    {% if year == site.odi.current_year %}
+    {% assign route = site.baseurl | append: page.url %}
+    {% assign anchor = "Current" %}
+    {% else %}
+    {% assign route = site.baseurl | append: page.place | append: "/" | append: year | append: "/" %}
+    {% assign anchor = year %}
+    {% endif %}
+
+    <li>{% include partials/historical_link.html route=route anchor=anchor %}</li>
+    {% endfor %}
+</ul>
