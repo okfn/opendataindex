@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'content/historical_intro.md' %}
+
+{% include 'partials/dataviews/glance.html' %}
+
+{% include partials/dataviews/comparative_table.html %}
+
+Current: <a href="{{ SITEURL }}/" title="">Open Data Index</a>
+
+{% endblock %}

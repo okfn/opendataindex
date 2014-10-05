@@ -1,0 +1,99 @@
+{% macro popover_comparison_title(dataset, place) -%}
+<strong>{{ dataset.title }}</strong> in <strong>{{ place.name }}</strong>
+{%- endmacro %}
+
+
+{% macro popover_comparison_content(entry, place, dataset, questions) -%}
+
+{% if not entry %}
+There is no data available.
+{% else %}
+<ul>
+    {% for question in questions %}
+    {% if question.has_score %}
+    {% set state = entry[question.id] %}
+    {% if state == 'Yes'%}
+    {% set no = '' %}
+    {% elif state == 'No' %}
+    {% set no = 'not' %}
+    {% else %}
+    {% set no = 'unclear if it\'s ' %}
+    {% endif %}
+    <li>
+        {% if question.id == 'exists' %}
+        {% if state == 'Yes' %}
+        Data Exists
+        {% else %}
+        Data does not exist
+        {% endif %}
+        {% elif question.id == 'digital' %}
+        It's {{ no }} digital
+        {% elif question.id == 'public' %}
+        It's {{ no }} public
+        {% elif question.id == 'free' %}
+        It's {{ no }} free
+        {% elif question.id == 'online' %}
+        It's {{ no }} online
+        {% if no == '' %}
+        <a href="{{ questions['url'] }}" title="{{ dataset.id }} for {{ place.name }} on the web">
+            here
+        </a>
+        {% endif %}
+        {% elif question.id == 'machinereadable' %}
+        It's {{ no }} machine readable
+        {% elif question.id == 'bulk' %}
+        It's {{ no }} available in bulk
+        {% elif question.id == 'openlicense' %}
+        It's {{ no }} only licensed
+        {% elif question.id == 'uptodate' %}
+        It's {{ no }} up to date
+        {% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+<p>
+    {{ entry.details }}
+</p>
+<a href="{{ SITEURL }}/places/{{ place.slug }}/datasets/{{ dataset.id }}/">
+    Read more &raquo;
+</a>
+{% endif %}
+{%- endmacro %}
+
+
+{% macro historical_navigation(page, odi, namespace) -%}
+
+{# namespace = 'historical' or 'datasets' #}
+
+<h4>See this data over time</h4>
+<ul>
+    {% for year in odi.years %}
+
+    {% if year == odi.current_year %}
+    {% set route = page.url %}
+    {% set anchor = "Current" %}
+    {% else %}
+    {% set route = '{0}/{1}/{2}/'.format(SITEURL, namespace, year) %}
+    {% set anchor = year %}
+    {% endif %}
+
+    <li>
+        <a href="{{ route }}" title="{{ anchor }}">
+            {{ anchor }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{%- endmacro %}
+
+
+{% macro popover_slice_title(question) -%}
+{{ question|markdown }}
+{%- endmacro %}
+
+
+{% macro popover_slice_content(description) -%}
+{{ description|markdown }}
+{%- endmacro %}
+

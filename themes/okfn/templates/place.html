@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import historical_navigation %}
+
+
+{% block page_title %}
+{{ page.title }}
+{% endblock page_title %}
+
+
+{% block content %}
+
+{{ page.content }}
+
+{% include 'dataviews/slice_table_place.html' %}
+
+{% set fragment = '{0}{1}'.format('places/', page.place) %}
+{{ historical_navigation(page, ODI, fragment) }}
+
+{% endblock content %}

@@ -1,7 +1,8 @@
 .DS_Store
+*.pyc
 *.sublime-project
 *.sublime-workspace
 *.iml
 .idea
-_site
-.sass-cache
+cache
+*.pid

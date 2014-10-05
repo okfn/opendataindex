@@ -1,0 +1,14 @@
+{% extends 'dataset.html' %}
+
+
+{% block content %}
+
+{{ page.content }}
+
+{% include 'dataviews/slice_table_dataset.html' %}
+
+{% set fragment = '{0}{1}{2}'.format(page.place, '/datasets/', page.dataset) %}
+{{ historical_navigation(page, ODI, fragment) }}
+
+{% endblock content %}
+

@@ -1,0 +1,22 @@
+{% set place_count = page.data.places|length %}
+{% set dataset_count_total = page.data.entries|length %}
+{% set dataset_count_open = page.data.entries.dict|where("openlicense", "Yes")|length %}
+{% set percentage_open = (dataset_count_open / dataset_count_total * 100)|round %}
+{% set data_glance_class = "row" %}
+{% set data_point_class = "col-md-3" %}
+
+
+<div class="data-glance {{ data_glance_class }}">
+    <div class="data-point {{ data_point_class }}">
+        <span class="data-point-key">Number of Countries</span> <span class="data-point-value">{{ place_count }}</span>
+    </div>
+    <div class="data-point {{ data_point_class }}">
+        <span class="data-point-key">Number of Datasets</span> <span class="data-point-value">{{ dataset_count_total }}</span>
+    </div>
+    <div class="data-point {{ data_point_class }}">
+        <span class="data-point-key">Number of Open Datasets</span> <span class="data-point-value">{{ dataset_count_open }}</span>
+    </div>
+    <div class="data-point {{ data_point_class }}">
+        <span class="data-point-key">Percentage Open</span> <span class="data-point-value">{{ percentage_open }}%</span>
+    </div>
+</div>

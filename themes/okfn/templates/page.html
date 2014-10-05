@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% if page.type %}
+
+{% set type_tmpl = '{0}{1}'.format(page.type, '.html') %}
+{% include type_tmpl %}
+
+{% else %}
+
+{% block page_title -%}
+{{ page.title }}
+{%- endblock page_title %}
+
+
+{% block content %}
+
+{{ page.content }}
+
+{% endblock content %}
+
+{% endif %}
+
+
+
+
+
+
+
