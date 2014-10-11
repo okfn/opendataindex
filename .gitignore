@@ -4,5 +4,6 @@
 *.sublime-workspace
 *.iml
 .idea
-cache
 *.pid
+cache/
+output/
