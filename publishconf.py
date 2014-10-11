@@ -13,7 +13,7 @@ from pelicanconf import *
 RELATIVE_URLS = False
 # set to 'opendataindex' while we are serving from a subdirectory on gh-pages
 # SITEURL = 'http://index.okfn.org'
-SITEURL = 'opendataindex'
+SITEURL = '/opendataindex'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = None
