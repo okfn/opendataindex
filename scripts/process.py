@@ -88,6 +88,7 @@ class Extractor(object):
         self.run_datasets()
         self.run_questions()
         self.run_places()
+        self.run_summary()
 
     def run_entries(self):
         keyed_entries = self.keyed_entries
@@ -114,6 +115,7 @@ class Extractor(object):
         fieldnames[0:3] = ['place', 'dataset', 'year']
         fieldnames.insert(3, 'score')
         fieldnames.insert(4, 'rank')
+        fieldnames.insert(5, 'isopen')
         # move timestamp to the end
         fieldnames.insert(-1, 'timestamp')
 
@@ -161,6 +163,19 @@ class Extractor(object):
 
         self._write_csv(self.places.dicts, 'data/places.csv', fieldnames)
 
+    def run_summary(self):
+        fieldnames = [ 'id', 'title', 'value']
+        numentries = len(self.entries.dicts)
+        numopen = len([ x for x in self.entries.dicts if x.isopen ])
+        percentopen = int(round((100.0 * numopen) / numentries, 0))
+        rows = [
+            ['places_count', 'Number of Places', len(self.places.dicts)],
+            ['entries_count', 'Number of Entries', numentries],
+            ['open_count', 'Number of Open Datasets', numopen ],
+            ['open_percent', 'Percent Open', percentopen]
+            ]
+        self._write_csv([fieldnames] + rows, 'data/summary.csv')
+
     def _tidy_entry(self, entry_dict):
         # TODO: tidy up timestamp
         del entry_dict['censusid']
@@ -180,6 +195,14 @@ class Extractor(object):
 
         entry_dict['rank'] = ''
         entry_dict['score'] = self._score(entry_dict)
+        # Data is exists, is open, and publicly available, machine readable etc
+        entry_dict['isopen'] = bool(
+            entry_dict.exists == 'Y' and
+            entry_dict.openlicense == 'Y' and
+            entry_dict.public == 'Y' and
+            entry_dict.bulk == 'Y' and
+            entry_dict.machinereadable == 'Y'
+          )
 
     def _score(self, entry):
         def summer(memo, qu):
@@ -253,6 +276,10 @@ class TestIndexData(unittest.TestCase):
         out = self.keyed[('ca', 'budget')]
         self.assertEqual(out.rank, '1')
 
+    def test_entries_isopen(self):
+        out = self.keyed[('gb', 'spending')]
+        self.assertEqual(out.isopen, 'True')
+
     def test_place_scores(self):
         out = dict([[x.id, x] for x in self.places.dicts])
         self.assertEqual(out['gb'].score, '94')
@@ -262,6 +289,14 @@ class TestIndexData(unittest.TestCase):
         out = dict([[x.id, x] for x in self.places.dicts])
         self.assertEqual(out['gb'].rank, '1')
         self.assertEqual(out['au'].rank, '10')
+
+    def test_summary(self):
+        summary_all = Extractor._load_csv('data/summary.csv')
+        summary = AttrDict([[x.id, x] for x in summary_all.dicts])
+
+        self.assertEqual(summary.places_count.value, '249')
+        self.assertEqual(summary.open_count.value, '86')
+        self.assertEqual(summary.open_percent.value, '11')
 
 import sys
 import optparse
