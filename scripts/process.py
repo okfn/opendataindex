@@ -3,6 +3,7 @@ import logging
 import urllib
 import shutil
 import csv
+from collections import OrderedDict
 
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdGNBWWJDaTlnMU1wN1BQZlgxNHBxd0E&usp=drive_web#gid=0
 survey_submissions = 'https://docs.google.com/spreadsheet/pub?key=0AqR8dXc6Ji4JdGNBWWJDaTlnMU1wN1BQZlgxNHBxd0E&single=true&gid=0&output=csv'
@@ -33,32 +34,91 @@ def _load_csv(path):
     # lowercase the columnss
     columns = [ x.lower() for x in columns ]
     rows = [ row for row in reader ]
-    dictized = [ dict(zip(columns, row)) for row in rows ]
-    return {
+    dictized = [ AttrDict(dict(zip(columns, row))) for row in rows ]
+    return AttrDict({
         'columns': columns,
         'rows': [columns] + rows,
         'dicts': dictized
-        }
+        })
 
 def _write_csv(rows, path):
     writer = csv.writer(open(path, 'w'), lineterminator='\n')
     writer.writerows(rows)
 
+class AttrDict(dict): 
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+
 def extract():
+    # At the moment we will only have an entry for current year and will not
+    # record earlier years. Sometimes we may not have new data for current year
+    # (previous year is still good) and we will then use that previous year
+    # entry as this year's entry
+    # TODO: support multiple years
+
+    places = _load_csv('tmp/places.csv')
+    entries = _load_csv('tmp/entries.csv')
+    datasets = _load_csv('tmp/datasets.csv')
+    questions = _load_csv('tmp/questions.csv')
+
+    current_year = '2014'
+    # this will be entry dicts keyed by a tuple of (place_id, dataset_id)
+    keyed_entries = OrderedDict()
+
+    ## entries
+
+    # algorithm
+    # 1. create dict keyed by place, dataset (year?)
+    # 2. Walk through current rows and add in
+
+    for p in places['dicts']:
+        for d in datasets['dicts']:
+            keyed_entries[(p['id'], d['id'])] = AttrDict({
+                    'place': p['id'],
+                    'dataset': d['id'],
+                    'year': current_year,
+                    'timestamp': ''
+                    })
+            
+    # walk through existing entries and use the latest year entry we have for a
+    # given place + dataset
+    for ent in entries['dicts']:
+        # delete censusid column
+        del ent['censusid']
+        key = (ent['place'], ent['dataset'])
+        if (keyed_entries[key].timestamp == '' # no existing entry (just stubbed one)
+            or ent['year'] > keyed_entries[key].year # existing entry is newer
+            ):
+            keyed_entries[key] = ent
+
+    ## write the entries.csv
+
+    # play around with column ordering in entries.csv
+    # drop off censusid (first col) and timestamp
+    fieldnames = entries.columns[2:]
+    # move year around
+    fieldnames[0:3] = ['place', 'dataset', 'year']
+    # move timestamp to the end
+    fieldnames.insert(-1, 'timestamp')
+
+    writer = csv.DictWriter(open('data/entries.csv', 'w'),
+            fieldnames=fieldnames,
+            lineterminator='\n'
+            )
+    writer.writeheader()
+    writer.writerows(keyed_entries.values())
+
     ## datasets
-    out = _load_csv('tmp/datasets.csv')
-    _write_csv(out['rows'], 'data/datasets.csv')
+    _write_csv(datasets['rows'], 'data/datasets.csv')
 
     ## questions
-    out = _load_csv('tmp/questions.csv')
     # get rid of translations (column 8 onwards) for the time being as not
     # checked and not being used
-    transposed = list(zip(*list(out['rows'])))
+    transposed = list(zip(*list(questions['rows'])))
     newrows = list(zip(*(transposed[:8])))
     _write_csv(newrows, 'data/questions.csv')
 
     ## places
-    places = _load_csv('tmp/places.csv')
     _write_csv(places['rows'], 'data/places.csv')
 
 
@@ -67,7 +127,7 @@ def cleanup():
         shutil.rmtree('tmp')
 
 def process():
-    # download()
+    download()
     extract()
     # cleanup()
 
