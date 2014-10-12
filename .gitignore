@@ -4,8 +4,9 @@
 *.sublime-workspace
 *.iml
 .idea
-cache
 *.pid
+cache/
+output/
 sandbox/*
 # data processing stuff
 tmp/*
