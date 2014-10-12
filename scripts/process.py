@@ -84,6 +84,12 @@ class Extractor(object):
                         })
 
     def run(self):
+        self.run_entries()
+        self.run_datasets()
+        self.run_questions()
+        self.run_places()
+
+    def run_entries(self):
         keyed_entries = self.keyed_entries
         ## entries
 
@@ -118,17 +124,17 @@ class Extractor(object):
         writer.writeheader()
         writer.writerows(keyed_entries.values())
 
-        ## datasets
+    def run_datasets(self):
         self._write_csv(self.datasets['rows'], 'data/datasets.csv')
 
-        ## questions
+    def run_questions(self):
         # get rid of translations (column 8 onwards) for the time being as not
         # checked and not being used
         transposed = list(zip(*list(self.questions.rows)))
         newrows = list(zip(*(transposed[:8])))
         self._write_csv(newrows, 'data/questions.csv')
 
-        ## places
+    def run_places(self):
         fieldnames = self.places.columns
         fieldnames += ['score', 'rank']
 
@@ -147,7 +153,6 @@ class Extractor(object):
                 reverse=True)
         rank = 1
         last_score = 10000 # a large number bigger than max score
-        print [(x.id, x.score) for x in byscore[:20]]
         for count, place in enumerate(byscore):
             if place.score < last_score:
                 rank = count + 1
