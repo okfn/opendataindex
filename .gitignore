@@ -6,3 +6,6 @@
 .idea
 cache
 *.pid
+sandbox/*
+# data processing stuff
+tmp/*
