@@ -53,7 +53,7 @@ TAGS_SAVE_AS = False
 ARCHIVES_SAVE_AS = False
 
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
-PLUGINS = ['datastore',]
+PLUGINS = ['datastore', 'datastore_api']
 
 THEME = os.path.join(PROJECT_ROOT, 'themes', 'okfn')
 THEME_STATIC_DIR = 'static'
@@ -62,10 +62,24 @@ THEME_STATIC_DIR = 'static'
 DATASTORE = {
     'location': os.path.join(PROJECT_ROOT, 'data'),
     'formats': ['.csv'],
+    'datetime_format': '',
+    'dateformat': '',
     'true_strings': ['TRUE', 'True', 'true'],  # 'YES', 'Yes', 'yes'
     'false_strings': ['FALSE', 'False', 'false'],  # 'NO', 'No', 'no'
     'none_strings': ['NULL', 'Null', 'null', 'NONE', 'None', 'none',
-                     'NIL', 'Nil', 'nil', '-', 'NaN', 'N/A', 'n/a', '']
+                     'NIL', 'Nil', 'nil', '-', 'NaN', 'N/A', 'n/a', ''],
+    'api': { # settings for the datastore_api plugin
+        'base': 'api', # directory relative to `output`
+        'filters': {
+            # Key must match a datastore file name.
+            # Values must match headers in that file.
+            # No check for that at present.
+            'entries': ['year'],
+            'datasets': ['category']
+            #'places': ['region']
+        },
+        'exclude': [] # a list of datastore file names to exclude from API
+    }
 }
 
 # OPEN KNOWLEDGE SETTINGS
