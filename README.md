@@ -2,15 +2,13 @@
 
 This is the code that powers the [Open Data Index](http://index.okfn.org/).
 
-Just ported from Jekyll to Pelican. No docs yet.
-
 
 ## Setup
 
 Some brief instructions, proper docs to come.
 
-* setup a virtual env
-* `pip install -r requirements.txt`
+* Setup a virtual env
+* Install dependencies: `pip install -r requirements.txt`
 * `pelican content -o output -s pelicanconf.py`
 * `./develop-server` to run a server that watches and builds
 
@@ -41,3 +39,53 @@ To run the script do:
 
     python scripts/process.py
 
+
+## API
+
+Open Data Index exposes a (simple) API for programmatic access to data. Currently, the API is available in both JSON and CSV formats.
+
+### API endpoints
+
+* {format} refers to either `json` or `csv`
+
+#### /api/entries.{format}
+
+Returns all entries in the database.
+
+
+#### /api/entires/{year}.{format}
+
+Returns entries sliced by year.
+
+Available years:
+
+* 2014
+* 2013
+
+
+#### /api/datasets.{format}
+
+Returns all datasets in the database.
+
+
+#### /api/datasets/{category}.{format}
+
+Returns all datasets sliced by category, where `category` is a slugified string of the dataset category.
+
+Available categories:
+
+* civic-information
+* environment
+* finance
+* geodata
+* transport
+
+
+#### /api/places.{format}
+
+Returns all places in the database.
+
+
+#### /api/questions.{format}
+
+Returns all questions in the database.
