@@ -1,5 +1,6 @@
 import os
 import json
+import tablib
 from pelican import generators
 from pelican import signals
 import datastore
@@ -15,50 +16,69 @@ class APIGenerator(generators.Generator):
 
     def __init__(self, *args, **kwargs):
         super(APIGenerator, self).__init__(*args, **kwargs)
-
         self.backend = datastore.DataStore(self.settings)
         self.datasets = self.backend.build()
         self.api_base = self.settings['DATASTORE']['api']['base']
         self.api_path = os.path.join(self.output_path, self.api_base)
         self.api_filters = self.settings['DATASTORE']['api']['filters']
         self.api_exclude = self.settings['DATASTORE']['api']['exclude']
-        self.api_extension = '.json'
+        self.api_formats = self.settings['DATASTORE']['api']['formats']
 
         if not os.path.exists(self.api_path):
             os.makedirs(self.api_path)
 
     def generate_output(self, writer):
-        """Write the API files based on configuration."""
+        """Write the API files based on the current configuration."""
 
         for k, v in self.datasets.items():
-            if not k in self.api_exclude:
-                dest_name = '{0}{1}'.format(k, self.api_extension)
+            # write the full dataset endpoints
+            self.write_set(k, v)
+
+            # write the slice endpoints, if any are defined
+            if self.api_filters.get(k):
+                for y in self.api_filters.get(k):
+                    self.write_slice(k, v, y)
+
+    def write_set(self, name, dataset):
+        """Write an API endpoint for each complete dataset."""
+
+        if not name in self.api_exclude:
+            for api_format in self.api_formats:
+                dest_name = '{0}{1}{2}'.format(name, '.', api_format)
                 dest_path = os.path.join(self.api_path, dest_name)
-
                 with open(dest_path, 'w') as f:
-                    f.write(v.json)
+                    f.write(getattr(dataset, api_format))
 
-                # Now check if we need to generate filter endpoints
-                if self.api_filters.get(k):
-                    for filter_arg in self.api_filters[k]:
-                        filters = frozenset(v[filter_arg])
-                        # Generate an endpoint for each valid filter
-                        for arg in filters:
-                            arg_slug = arg.lower().replace(' ', '-')
-                            fdest_dir = os.path.join(self.api_path, k)
-                            if not os.path.exists(fdest_dir):
-                                os.makedirs(fdest_dir)
+    def get_sliced_dataset(self, dataset, slice_attr, slice_value):
+        """Return a new tablib.Dataset based on passed data."""
 
-                            fdest_name = '{0}{1}'.format(arg_slug,
-                                                         self.api_extension)
-                            fdest_path = os.path.join(fdest_dir, fdest_name)
+        sliced_dataset = tablib.Dataset()
+        sliced_dataset.dict = [obj for obj in dataset.dict if
+                               obj[slice_attr] == slice_value]
+        return sliced_dataset
 
-                            # get the data that matches the filter
-                            matches = [x for x in v.dict if x[filter_arg] == arg]
+    def write_slice(self, name, dataset, slice_attr):
+        """Write an API endpoint for this dataset slice."""
 
-                            # write the filtered endpoint
-                            with open(fdest_path, 'w') as f:
-                                f.write(json.dumps(matches))
+        if not name in self.api_exclude:
+            # Get the unique values in the dataset for `slice_attr`
+            slice_values = frozenset(dataset[slice_attr])
+
+            # Write a slice for each unique value
+            for _slice in slice_values:
+                sliced_dataset = self.get_sliced_dataset(dataset, slice_attr,
+                                                          _slice)
+                slice_slug = _slice.lower().replace(' ', '-').replace(',', '-')
+                slice_dir = os.path.join(self.api_path, name)
+
+                if not os.path.exists(slice_dir):
+                    os.makedirs(slice_dir)
+
+                for api_format in self.api_formats:
+                    dest_name = '{0}{1}{2}'.format(slice_slug, '.', api_format)
+                    dest_path = os.path.join(slice_dir, dest_name)
+                    with open(dest_path, 'w') as f:
+                        f.write(getattr(sliced_dataset, api_format))
 
 
 def get_generators(pelican_object):
