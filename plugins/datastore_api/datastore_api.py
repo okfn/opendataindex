@@ -47,16 +47,12 @@ class APIGenerator(generators.Generator):
             for api_format in self.api_formats:
                 dest_name = '{0}{1}{2}'.format(name, '.', api_format)
                 dest_path = os.path.join(self.api_path, dest_name)
+
+                if not os.path.exists(self.api_path):
+                    os.makedirs(self.api_path)
+
                 with open(dest_path, 'w+') as f:
                     f.write(getattr(dataset, api_format))
-
-    def get_sliced_dataset(self, dataset, slice_attr, slice_value):
-        """Return a new tablib.Dataset based on passed data."""
-
-        sliced_dataset = tablib.Dataset()
-        sliced_dataset.dict = [obj for obj in dataset.dict if
-                               obj[slice_attr] == slice_value]
-        return sliced_dataset
 
     def write_slice(self, name, dataset, slice_attr):
         """Write an API endpoint for this dataset slice."""
@@ -80,6 +76,14 @@ class APIGenerator(generators.Generator):
                     dest_path = os.path.join(slice_dir, dest_name)
                     with open(dest_path, 'w+') as f:
                         f.write(getattr(sliced_dataset, api_format))
+
+    def get_sliced_dataset(self, dataset, slice_attr, slice_value):
+        """Return a new tablib.Dataset based on passed data."""
+
+        sliced_dataset = tablib.Dataset()
+        sliced_dataset.dict = [obj for obj in dataset.dict if
+                               obj[slice_attr] == slice_value]
+        return sliced_dataset
 
 
 def get_generators(pelican_object):
