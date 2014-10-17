@@ -2,3 +2,5 @@ pelican
 markdown
 tablib
 ghp-import
+click
+coverage
