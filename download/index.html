@@ -81,28 +81,80 @@
                 <div class="row">
                     <div class="col-md-12">
                         <header class="page-header">
-                            <h1>Open Data Index</h1>
+                            <h1>Download</h1>
                         </header>
 
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="/opendataindex/welcome-to-the-open-data-index.html" rel="bookmark"
-         title="Permalink to Welcome to the Open Data Index">Welcome to the Open Data Index</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="2014-11-01T00:00:00">
-      Sat 01 November 2014
-    </abbr>
-    <address class="vcard author">
-      By           <a class="url fn" href="/opendataindex/author/open-knowledge.html">Open Knowledge</a>
-    </address>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <p>If the site has a blog or some other type of news/announcements, it will be implemented as a series of articles here. In Pelican, articles require a date as well as a title.</p>
-  </div><!-- /.entry-content -->
+
+
+<p>This is the download page. Get the raw data in various ways here.</p>
+
+<section class="row">
+    <div class="col-md-6">
+        <h3>CSV</h3>
+        <ul>
+            <li>
+                <a href="/static/downloads/opendataindex_data_2014-10-18.tar.gz" title="">
+                    Full dataset (compressed Data Package)
+                </a>
+            </li>
+            <li>
+                <a href="/api/entries.csv" title="">
+                    Entries
+                </a>
+            </li>
+            <li>
+                <a href="/api/datasets.csv" title="">
+                    Datasets
+                </a>
+            </li>
+            <li>
+                <a href="/api/places.csv" title="">
+                    Places
+                </a>
+            </li>
+            <li>
+                <a href="/api/questions.csv" title="">
+                    Questions
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h3>JSON</h3>
+        <ul>
+            <li>
+                <a href="/api/entries.json" title="">
+                    Entries
+                </a>
+            </li>
+            <li>
+                <a href="/api/datasets.json" title="">
+                    Datasets
+                </a>
+            </li>
+            <li>
+                <a href="/api/places.json" title="">
+                    Places
+                </a>
+            </li>
+            <li>
+                <a href="/api/questions.json" title="">
+                    Questions
+                </a>
+            </li>
+        </ul>
+    </div>
 </section>
+
+<section class="row">
+    <div class="col-md-12">
+        <h3>API</h3>
+        <p>
+            The Open Data Index also offers an API in JSON and CSV formats. The API features full datasets as well as sliced (filtered) endpoints. See the <a href="https://github.com/okfn/opendataindex#api" title="README">project README on GitHub</a> for more information.
+        </p>
+    </div>
+</section>
+
                     </div>
                 </div>
             </div>
