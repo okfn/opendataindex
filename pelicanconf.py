@@ -3,6 +3,8 @@
 from __future__ import unicode_literals
 import os
 import sys
+import datetime
+
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -17,6 +19,7 @@ SITENAME = u'Open Data Index'
 SITEURL = ''
 
 PATH = 'content'
+OUTPUT_PATH = 'output'
 
 TIMEZONE = 'Europe/Paris'
 
@@ -53,17 +56,23 @@ TAGS_SAVE_AS = False
 ARCHIVES_SAVE_AS = False
 
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
-PLUGINS = ['datastore', 'datastore_api']
+PLUGINS = ['datastore', 'datastore_api', 'datastore_assets']
 
 THEME = os.path.join(PROJECT_ROOT, 'themes', 'okfn')
 THEME_STATIC_DIR = 'static'
+THEME_STATIC_PATH = os.path.join(THEME, THEME_STATIC_DIR)
+
+DISPLAY_DATE_FORMAT = '%Y-%m-%d'
+DISPLAY_TIME_FORMAT = '%H:%M:%S'
+DISPLAY_DATETIME_FORMAT = '{0}T{1}'.format(DISPLAY_DATE_FORMAT,
+                                           DISPLAY_TIME_FORMAT)
+
+TIMESTAMP = datetime.datetime.now().strftime(DISPLAY_DATE_FORMAT)
 
 # Our DATASTORE PLUGIN settings
 DATASTORE = {
     'location': os.path.join(PROJECT_ROOT, 'data'),
     'formats': ['.csv'],
-    'datetime_format': '',
-    'dateformat': '',
     'true_strings': ['TRUE', 'True', 'true'],
     'false_strings': ['FALSE', 'False', 'false'],
     'none_strings': ['NULL', 'Null', 'null', 'NONE', 'None', 'none',
@@ -79,6 +88,9 @@ DATASTORE = {
             #'places': ['region']
         },
         'exclude': [] # datastore files to exclude from API (by name of type)
+    },
+    'assets': {
+        'location': 'downloads'
     }
 }
 
@@ -103,8 +115,6 @@ ODI = {
     'googleanalytics': '',
     'mailinglist': ''
 }
-
-
 
 JINJA_EXTENSIONS = [
   'jinja2.ext.i18n',

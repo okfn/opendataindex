@@ -18,6 +18,7 @@ class APIGenerator(generators.Generator):
         super(APIGenerator, self).__init__(*args, **kwargs)
         self.backend = datastore.DataStore(self.settings)
         self.datasets = self.backend.build()
+        self.output_path = self.settings['OUTPUT_PATH']
         self.api_base = self.settings['DATASTORE']['api']['base']
         self.api_path = os.path.join(self.output_path, self.api_base)
         self.api_filters = self.settings['DATASTORE']['api']['filters']
@@ -46,7 +47,7 @@ class APIGenerator(generators.Generator):
             for api_format in self.api_formats:
                 dest_name = '{0}{1}{2}'.format(name, '.', api_format)
                 dest_path = os.path.join(self.api_path, dest_name)
-                with open(dest_path, 'w') as f:
+                with open(dest_path, 'w+') as f:
                     f.write(getattr(dataset, api_format))
 
     def get_sliced_dataset(self, dataset, slice_attr, slice_value):
@@ -77,7 +78,7 @@ class APIGenerator(generators.Generator):
                 for api_format in self.api_formats:
                     dest_name = '{0}{1}{2}'.format(slice_slug, '.', api_format)
                     dest_path = os.path.join(slice_dir, dest_name)
-                    with open(dest_path, 'w') as f:
+                    with open(dest_path, 'w+') as f:
                         f.write(getattr(sliced_dataset, api_format))
 
 

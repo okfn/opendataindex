@@ -4,13 +4,65 @@
     <div class="col-md-6">
         <h3>CSV</h3>
         <ul>
-            <li>Full set</li>
+            <li>
+                <a href="{{ SITE_URL }}/static/downloads/opendataindex_data_{{ TIMESTAMP }}.tar.gz" title="">
+                    Full dataset (compressed Data Package)
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITE_URL }}/api/entries.csv" title="">
+                    Entries
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITE_URL }}/api/datasets.csv" title="">
+                    Datasets
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITE_URL }}/api/places.csv" title="">
+                    Places
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITE_URL }}/api/questions.csv" title="">
+                    Questions
+                </a>
+            </li>
         </ul>
     </div>
     <div class="col-md-6">
         <h3>JSON</h3>
         <ul>
-            <li>Full set</li>
+            <li>
+                <a href="{{ SITE_URL }}/api/entries.json" title="">
+                    Entries
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITE_URL }}/api/datasets.json" title="">
+                    Datasets
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITE_URL }}/api/places.json" title="">
+                    Places
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITE_URL }}/api/questions.json" title="">
+                    Questions
+                </a>
+            </li>
         </ul>
+    </div>
+</section>
+
+<section class="row">
+    <div class="col-md-12">
+        <h3>API</h3>
+        <p>
+            The Open Data Index also offers an API in JSON and CSV formats. The API features full datasets as well as sliced (filtered) endpoints. See the <a href="https://github.com/okfn/opendataindex#api" title="README">project README on GitHub</a> for more information.
+        </p>
     </div>
 </section>
