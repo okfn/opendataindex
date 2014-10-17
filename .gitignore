@@ -7,3 +7,6 @@
 *.pid
 cache/
 output/
+/cli/build
+/cli/dist
+/cli/*.egg-info
