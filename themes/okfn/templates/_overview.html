@@ -1,13 +1,5 @@
-{% extends 'base.html' %}
 {% from 'macros.html' import historical_navigation %}
 
-
-{% block page_title %}
-{{ page.title }}
-{% endblock page_title %}
-
-
-{% block content %}
 
 {{ page.content }}
 
@@ -16,5 +8,3 @@
 {% include 'dataviews/comparative_table.html' %}
 
 {{ historical_navigation(page, ODI, 'historical') }}
-
-{% endblock content %}

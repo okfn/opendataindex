@@ -1,13 +1,5 @@
-{% extends 'base.html' %}
 {% from 'macros.html' import historical_navigation %}
 
-
-{% block page_title %}
-{{ page.title }}
-{% endblock page_title %}
-
-
-{% block content %}
 
 {{ page.content }}
 
@@ -15,5 +7,3 @@
 
 {% set fragment = '{0}{1}'.format('datasets/', page.dataset) %}
 {{ historical_navigation(page, ODI, fragment) }}
-
-{% endblock content %}
