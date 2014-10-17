@@ -7,6 +7,9 @@
 *.pid
 cache/
 output/
+sandbox/*
+# data processing stuff
+tmp/*
 /cli/build
 /cli/dist
 /cli/*.egg-info
