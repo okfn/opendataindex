@@ -53,7 +53,7 @@ Open Data Index exposes a (simple) API for programmatic access to data. Currentl
 Returns all entries in the database.
 
 
-#### /api/entires/{year}.{format}
+#### /api/entries/{year}.{format}
 
 Returns entries sliced by year.
 
