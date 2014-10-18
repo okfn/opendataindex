@@ -1,7 +1,6 @@
 import os
 import tablib
 from pelican import signals
-from pelican import settings
 
 
 class DataStore(object):
