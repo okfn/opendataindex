@@ -16,7 +16,7 @@ import filters
 
 AUTHOR = u'Open Knowledge'
 SITENAME = u'Open Data Index'
-SITEURL = ''
+SITEURL = u''
 
 PATH = 'content'
 OUTPUT_PATH = 'output'
@@ -101,19 +101,23 @@ OK = {
 
 # OPEN DATA INDEX SETTINGS
 ODI = {
-    'years': ['2014', '2013'],
-    'current_year': '2014',
-    'na': 'n/a',
-    'email': 'index@okfn.org',
-    'description': 'The Open Data Index assesses the state of open government data around the world.',
+    'survey': {
+      'domain': u'http://global.census.okfn.org/',
+      'submit_route': u'submit/'
+    },
+    'years': [u'2014', u'2013'],
+    'current_year': u'2014',
+    'na': u'n/a',
+    'email': u'index@okfn.org',
+    'description': u'The Open Data Index assesses the state of open government data around the world.',
     'twitter': '',
-    'repo': 'https://github.com/okfn/opendataindex',
+    'repo': u'https://github.com/okfn/opendataindex',
     'author': {
         'name': AUTHOR,
-        'url': 'https://okfn.org/'
+        'url': u'https://okfn.org/'
     },
-    'googleanalytics': '',
-    'mailinglist': ''
+    'googleanalytics': u'',
+    'mailinglist': u''
 }
 
 JINJA_EXTENSIONS = [
