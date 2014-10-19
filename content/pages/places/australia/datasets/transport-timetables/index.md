@@ -1,6 +1,6 @@
-title:  Australia / transport timetables
+type: empty
+title: Australia / Transport Timetables
 slug: places/australia/datasets/transport-timetables
-type: place_dataset
 place: australia
 dataset: transport-timetables
 year: 2014

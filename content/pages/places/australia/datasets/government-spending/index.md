@@ -1,6 +1,6 @@
-title:  Australia / goverment spending
-slug: places/australia/datasets/goverment-spending
-type: place_dataset
+type: empty
+title: Australia / Government Spending
+slug: places/australia/datasets/government-spending
 place: australia
-dataset: goverment-spending
+dataset: government-spending
 year: 2014

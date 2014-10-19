@@ -1,6 +1,6 @@
-title:  United Kingdom / transport timetables
+type: empty
+title: United Kingdom / Transport Timetables
 slug: places/united-kingdom/datasets/transport-timetables
-type: place_dataset
 place: united-kingdom
 dataset: transport-timetables
 year: 2014

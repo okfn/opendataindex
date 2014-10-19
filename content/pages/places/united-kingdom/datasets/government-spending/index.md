@@ -1,6 +1,6 @@
-title:  United Kingdom / goverment spending
-slug: places/united-kingdom/datasets/goverment-spending
-type: place_dataset
+type: empty
+title: United Kingdom / Government Spending
+slug: places/united-kingdom/datasets/government-spending
 place: united-kingdom
-dataset: goverment-spending
+dataset: government-spending
 year: 2014
