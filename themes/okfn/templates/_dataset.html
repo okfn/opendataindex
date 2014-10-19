@@ -5,5 +5,5 @@
 
 {% include 'dataviews/slice_table_dataset.html' %}
 
-{% set fragment = '{0}{1}'.format('datasets/', page.dataset) %}
+{% set fragment = '%s%s'|format('datasets/', page.dataset) %}
 {{ historical_navigation(page, ODI, fragment) }}

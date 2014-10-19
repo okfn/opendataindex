@@ -10,7 +10,7 @@
 
 {% if page.type %}
 
-{% set type_tmpl = '{0}{1}{2}'.format('_', page.type, '.html') %}
+{% set type_tmpl = '%s%s%s'|format('_', page.type, '.html') %}
 {% include type_tmpl %}
 
 {% else %}

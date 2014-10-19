@@ -72,9 +72,9 @@ There is no data available.
 
     {% if year == odi.current_year %}
     {% set route = page.url %}
-    {% set anchor = "Current" %}
+    {% set anchor = 'Current' %}
     {% else %}
-    {% set route = '{0}/{1}/{2}/'.format(SITEURL, namespace, year) %}
+    {% set route = '%s/%s/%s/'|format(SITEURL, namespace, year) %}
     {% set anchor = year %}
     {% endif %}
 

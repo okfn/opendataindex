@@ -5,5 +5,5 @@
 
 {% include 'dataviews/slice_table_place.html' %}
 
-{% set fragment = '{0}{1}'.format('places/', page.place) %}
+{% set fragment = '%s%s'|format('places/', page.place) %}
 {{ historical_navigation(page, ODI, fragment) }}

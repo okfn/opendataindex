@@ -34,11 +34,11 @@
                     {% for place in places %}
 
                     {% if scope_year %}
-                    {% set score_lookup = '{0}{1}'.format(scope_year, '_score') %}
-                    {% set rank_lookup = '{0}{1}'.format(scope_year, '_rank') %}
+                    {% set score_lookup = '%s%s'|format(scope_year, '_score') %}
+                    {% set rank_lookup = '%s%s'|format(scope_year, '_rank') %}
                     {% else %}
-                    {% set score_lookup = '{0}{1}'.format(ODI.current_year, '_score') %}
-                    {% set rank_lookup = '{0}{1}'.format(scope_year, '_rank') %}
+                    {% set score_lookup = '%s%s'|format(ODI.current_year, '_score') %}
+                    {% set rank_lookup = '%s%s'|format(scope_year, '_rank') %}
                     {% endif %}
 
                     <tr data-rank="{{ place[rank_lookup] }}" data-score="{{ place[score_lookup] }}" data-place="{{ place.slug }}">
