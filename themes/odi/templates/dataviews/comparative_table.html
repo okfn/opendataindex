@@ -1,0 +1,103 @@
+{% from 'macros.html' import popover_comparison_title, popover_comparison_content %}
+
+{% if scope_year %}
+    {% if scope_year == ODI.current_year %}
+    {% set rank_lookup = 'rank' %}
+    {% set score_lookup = 'score' %}
+    {% else %}
+    {% set rank_lookup = '%s%s'|format('rank_', scope_year) %}
+    {% set score_lookup = '%s%s'|format('score_', scope_year) %}
+    {% endif %}
+{% else %}
+    {% set rank_lookup = 'rank' %}
+    {% set score_lookup = 'score' %}
+{% endif %}
+
+{% set entries = page.data.entries.dict %}
+{% set datasets = page.data.datasets.dict %}
+{% set places = page.data.places.dict|sort(attribute=rank_lookup) %}
+{% set questions = page.data.questions.dict %}
+{% set scope_dataset = page.dataset %}
+{% set scope_place = page.place %}
+{% set scope_year = page.year %}
+
+{% if page.place %}
+{% set places = places|where("slug", page.place) %}
+{% endif %}
+
+
+<div class="row">
+    <div class="col-md-8">
+        {% include 'dataviews/table_tools.html' %}
+    </div>
+    <div class="col-md-4">
+        {% include 'dataviews/table_key.html' %}
+    </div>
+</div>
+
+<section class="data-display">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="comparative-table" class="table table-striped data-table">
+                <thead>
+                    {% include 'dataviews/comparative_table_header.html' %}
+                </thead>
+                <tbody>
+                    {% for place in places %}
+
+                    <tr data-rank="{{ place[rank_lookup] }}" data-score="{{ place[score_lookup] }}" data-place="{{ place.slug }}">
+                        <td class="rank" data-rank="{{ place[rank_lookup] }}">
+                            {{ place[rank_lookup] }}
+                        </td>
+                        <td>
+                            <a href="{{ SITEURL }}/places/{{ place.slug }}/" title="{{ place.name }}">
+                                {{ place.name }}
+                            </a>
+                        </td>
+                        {% for dataset in datasets %}
+                        <td>
+                            {% set entry = entries|where("place", place.slug)|where("dataset", dataset.id)|where("year", scope_year)|first %}
+                            {% if entry %}
+                            <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(entry, place, dataset, questions)|e|safe }}">
+                                {% for question in questions %}
+                                {% if question.has_score %}
+                                {% set state = entry[question.id] %}
+                                <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == '?' %}maybe{% endif %}" data-content="{{ state }}">&nbsp;</li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+
+                            {% else %}
+
+                            <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(entry, place, dataset, questions)|e|safe }}">
+                                {% for question in questions %}
+                                {% if question.has_score %}
+                                <li class="" data-content="no data">&nbsp;</li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                        <td class="score" data-score="{{ place[score_lookup] }}">
+                            {{ place[score_lookup] }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+                <tfoot>
+                    {% include 'dataviews/comparative_table_header.html' %}
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-md-8">
+        &nbsp;
+    </div>
+    <div class="col-md-4">
+        {% include 'dataviews/table_key.html' %}
+    </div>
+</div>

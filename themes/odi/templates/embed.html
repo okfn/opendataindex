@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head_css %}{% endblock head_css %}
+        <script>
+            var siteUrl = '{{ SITEURL }}';
+        </script>
+        {% block head_scripts %}{% endblock head_scripts %}
+    </head>
+    <body>
+        {% block content %}{% endblock content %}
+        {% block body_scripts %}{% endblock body_scripts %}
+    </body>
+</html>

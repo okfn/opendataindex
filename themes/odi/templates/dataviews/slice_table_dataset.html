@@ -1,0 +1,105 @@
+{% from 'macros.html' import popover_slice_title, popover_slice_content %}
+
+{% if scope_year %}
+    {% if scope_year == ODI.current_year %}
+    {% set rank_lookup = 'rank' %}
+    {% set score_lookup = 'score' %}
+    {% else %}
+    {% set rank_lookup = '%s%s'|format('rank_', scope_year) %}
+    {% set score_lookup = '%s%s'|format('score_', scope_year) %}
+    {% endif %}
+{% else %}
+    {% set rank_lookup = 'rank' %}
+    {% set score_lookup = 'score' %}
+{% endif %}
+
+{% set entries = page.data.entries.dict %}
+{% set datasets = page.data.datasets.dict %}
+{% set places = page.data.places.dict|sort(attribute=rank_lookup) %}
+{% set questions = page.data.questions.dict %}
+{% set scope_dataset = page.dataset %}
+{% set scope_place = page.place %}
+{% set scope_year = page.year %}
+
+{% if page.place %}
+{% set places = places|where("slug", scope_place) %}
+{% endif %}
+
+<div class="row">
+    <div class="col-md-8">
+        {% include 'dataviews/table_tools.html' %}
+    </div>
+    <div class="col-md-4">
+        {% include 'dataviews/table_key.html' %}
+    </div>
+</div>
+
+<section class="data-display">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="slice-table" class="table table-striped data-table">
+                <thead>
+                    {% include 'dataviews/slice_table_header.html' %}
+                </thead>
+                <tbody>
+                    {% for place in places %}
+
+                    {% set entry = entries|where("place", place.slug)|where("dataset", scope_dataset)|where("year", scope_year)|first %}
+                    {% set earliest_in_series = entries|where("place", place.slug)|where("dataset", scope_dataset)|last %}
+                    <tr data-rank="{% if entry %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}" data-score="{% if entry %}{{ entry.score }}{% else %}{{ ODI.na }}{% endif %}" data-place="{{ place.slug }}">
+                        <td>
+                            <a href="{{ SITEURL }}/places/{{ place.slug }}/datasets/{{ scope_dataset }}/" title="{{ scope_dataset }} in {{ place.name }}">{{ place.name }}</a>
+                        </td>
+                        <td>
+                            {% if entry %}
+                            {{ entry.score }}%
+                            {% else %}
+                            {{ ODI.na }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            <ul class="availability availability-slice">
+                                {% for question in questions %}
+                                {% if question.has_score %}
+
+                                {% if entry %}
+                                {% set state = entry[question.id] %}
+                                {% else %}
+                                {% set state = '' %}
+                                {% endif %}
+                                <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            {% if entry and entry.url %}
+                            <a href="{{ entry.url }}" title="">{{ entry.url }}</a>
+                            {% else %}
+                            No URL for this dataset.
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if earliest_in_series %}
+                            Since {{ earliest_in_series.year }}
+                            {% endif %}
+                            {% if entry and entry.format %}
+                             in {{ entry.format }} format.
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-md-8">
+        &nbsp;
+    </div>
+    <div class="col-md-4">
+        {% include 'dataviews/table_key.html' %}
+    </div>
+</div>

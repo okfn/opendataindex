@@ -1,0 +1,28 @@
+{% if 'vis_embed' in page.type %}
+{% extends "embed.html" %}
+{% else %}
+{% extends "base.html" %}
+{% endif %}
+
+
+{% block body_classes %}{{ page.type }}{% endblock body_classes %}
+
+{% block page_title -%}
+{{ page.title }}
+{%- endblock page_title %}
+
+
+{% block content %}
+
+{% if page.type %}
+
+{% set type_tmpl = '%s%s%s'|format('_', page.type, '.html') %}
+{% include type_tmpl %}
+
+{% else %}
+
+{{ page.content }}
+
+{% endif %}
+
+{% endblock content %}

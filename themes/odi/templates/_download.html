@@ -1,0 +1,65 @@
+{{ page.content }}
+
+<section class="row">
+    <div class="col-md-4">
+        <div class="attention">
+            <h3>Archive</h3>
+            <div>
+                <i class="fa fa-archive"></i>
+            </div>
+            <p>
+                All data as an archive file.
+            </p>
+            <a class="btn btn-info" href="{{ SITEURL }}/places/" title="The whole Index displayed in an easy-to-read table.">Download</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="attention">
+            <h3>CSV</h3>
+            <div>
+                <i class="fa fa-table"></i>
+            </div>
+            <p>
+                Data in CSV format.
+                <br />
+                <a class="label label-info" href="{{ SITEURL }}/api/entries.csv" title="">Entries</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.csv" title="">Datasets</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.csv" title="">Places</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.csv" title="">Questions</a>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="attention">
+            <h3>JSON</h3>
+            <div>
+                <i class="fa fa-cogs"></i>
+            </div>
+            <p>
+                Data in JSON format.
+                <br />
+                <a class="label label-info" href="{{ SITEURL }}/api/entries.json" title="">Entries</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.json" title="">Datasets</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.json" title="">Places</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.json" title="">Questions</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="row">
+    <div class="col-md-12">
+        <h3>Additional downloads</h3>
+        <p>
+        We also have a range of data slices available in both CSV and JSON formats.
+        </p>
+        <ul>
+            <li><strong>Entries 2014</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.csv" title="2014 entries in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.json" title="2014 entries in JSON format">JSON</a></li>
+            <li><strong>Entries 2013</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.csv" title="2013 entries in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.json" title="2013 entries in JSON format">JSON</a></li>
+            <li>
+                <strong>Datasets by category:</strong><br />
+                <ul>
+                    <li><strong>Civic Information</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.csv" title="Civic Information datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.json" title="Civic Information datasets in JSON format">JSON</a></li>
+                    <li><strong>Environment</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.csv" title="Environment datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.json" title="Environment datasets in JSON format">JSON</a></li>
+                    <li><strong>Finance</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.csv" title="Finance datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.json" title="Finance datasets in JSON format">JSON</a></li>
+                    <li><strong>Geodata</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.csv" title="Geodata datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.json" title="Geodata datasets in JSON format">JSON</a></li>
+                    <li><strong>Transport</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.csv" title="Transport datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.json" title="Transport datasets in JSON format">JSON</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
