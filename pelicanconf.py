@@ -13,6 +13,8 @@ sys.path.insert(1, UTILITIES)
 
 import filters
 
+LOAD_CONTENT_CACHE = False
+AUTORELOAD_IGNORE_CACHE = True
 
 AUTHOR = u'Open Knowledge'
 SITENAME = u'Open Data Index'
@@ -58,7 +60,7 @@ ARCHIVES_SAVE_AS = False
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
 PLUGINS = ['datastore', 'datastore_api', 'datastore_assets']
 
-THEME = os.path.join(PROJECT_ROOT, 'themes', 'okfn')
+THEME = os.path.join(PROJECT_ROOT, 'themes', 'odi')
 THEME_STATIC_DIR = 'static'
 THEME_STATIC_PATH = os.path.join(THEME, THEME_STATIC_DIR)
 
@@ -102,8 +104,13 @@ OK = {
 # OPEN DATA INDEX SETTINGS
 ODI = {
     'survey': {
+      'name': u'Open Data Index Survey',
       'domain': u'http://global.census.okfn.org/',
       'submit_route': u'submit/'
+    },
+    'sponsor': {
+      'name': u'Open Knowledge',
+      'domain': u'https://okfn.org/',
     },
     'years': [u'2014', u'2013'],
     'current_year': u'2014',

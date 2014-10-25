@@ -8,8 +8,9 @@
 cache/
 output/
 sandbox/*
-# data processing stuff
-tmp/*
+bower_components/*
 /cli/build
 /cli/dist
 /cli/*.egg-info
+# data processing stuff
+tmp/*

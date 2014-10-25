@@ -15,6 +15,10 @@
     "tests"
   ],
   "dependencies": {
-    "chroma-js": "~0.5.8"
+    "jquery": "1.11.1",
+    "leaflet": "0.7.3",
+    "chroma-js": "0.6.1",
+    "pubsub-js": "1.5.0",
+    "lodash": "2.4.1"
   }
 }
