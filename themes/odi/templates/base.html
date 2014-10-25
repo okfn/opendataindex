@@ -23,7 +23,9 @@
         <link rel="stylesheet" href="http://okfnlabs.org/jekyll-template/css/v2/style.css" />
         <link rel="stylesheet" href="{{ SITEURL }}/static/css/app.css" />
         {% endblock head_css %}
-
+        <script>
+            var siteUrl = '{{ SITEURL }}';
+        </script>
         {% block head_scripts %}
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

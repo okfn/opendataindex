@@ -8,11 +8,11 @@ define(['jquery', 'pubsub'], function($, pubsub) {
             geo: 'data.geo'
         },
         api = {
-            meta: '/api/meta.json',
-            places: '/api/places.json',
-            datasets: '/api/datasets.json',
-            entries: '/api/entries.json',
-            geo: '/static/data/world.geo.json'
+            meta: 'SITEURL/api/meta.json'.replace('SITEURL', siteUrl),
+            places: 'SITEURL/api/places.json'.replace('SITEURL', siteUrl),
+            datasets: 'SITEURL/api/datasets.json'.replace('SITEURL', siteUrl),
+            entries: 'SITEURL/api/entries.json'.replace('SITEURL', siteUrl),
+            geo: 'SITEURL/static/data/world.geo.json'.replace('SITEURL', siteUrl)
         };
 
     function getMetaData() {

@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: '/static/scripts',
+    baseUrl: 'SITEURL/static/scripts'.replace('SITEURL', siteUrl),
     paths: {
         app: 'map/main',
         leaflet: 'vendor/leaflet',
