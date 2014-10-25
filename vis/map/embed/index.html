@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            var siteUrl = '/opendataindex';
+        </script>
+    </head>
+    <body>
+
+
+
+<link rel="stylesheet" type="text/css" href="/static/css/map.css" />
+
+
+
+<script data-main="/static/scripts/map" src="/static/scripts/require.js"></script>
+
+
+
+
+
+<div class="odi-visualisation">
+    <div class="odi-visualisation-header">
+        <div class="odi-visualisation-tools">
+            <i class="icon icon-filter" title="Filter the visualisation data"></i>
+            <select class="odi-filter-year">
+
+            </select>
+            <select class="odi-filter-dataset">
+                <option value="all">All Datasets</option>
+            </select>
+        </div>
+        <div class="odi-visualisation-share">
+            <span class="odi-visualisation-embed-toggle" title="Get the embed code for this visualisation"><i class="icon icon-code"></i></span>&nbsp;<a target="_blank" href="http://twitter.com/share?url=/opendataindex/vis/map/embed&text=" title="Share this visualisation on Twitter"><i class="icon icon-twitter-squared"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=/opendataindex/vis/map/embed" title="Share this visualisation on Facebook"><i class="icon icon-facebook-squared"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url=/opendataindex/vis/map/embed" title="Share this visualisation on Google+"><i class="icon icon-gplus-squared"></i></a>&nbsp;
+        </div>
+    </div>
+    <div class="odi-visualisation-view">
+        <div class="odi-visualisation-display">
+
+            <div id="map"></div>
+
+        </div>
+        <div class="odi-visualisation-legend odi-visualisation-legend-explanation-toggle">
+            <div class="odi-visualisation-legend-key">
+                <ul>
+                    <li data-score="100">100</li>
+                    <li data-score="90">90</li>
+                    <li data-score="80">80</li>
+                    <li data-score="70">70</li>
+                    <li data-score="60">60</li>
+                    <li data-score="50">50</li>
+                    <li data-score="40">40</li>
+                    <li data-score="30">30</li>
+                    <li data-score="20">20</li>
+                    <li data-score="10">10</li>
+                    <li data-score="0">0</li>
+                </ul>
+                <div class="odi-visualisation-legend-explanation">
+                    <div class="odi-visualisation-legend-explanation-title">
+                        How does this work?
+                        <span class="odi-visualisation-legend-explanation-toggle">x</span>
+                    </div>
+                    <div class="odi-visualisation-legend-explanation-text">
+                        By default, places on the map are color coded by their "Openness", as determined by the results of the Open Data Index. Scaled from green to red, where green is "open" and red is "closed".
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="odi-visualisation-footer">
+        <div class="odi-visualisation-links">
+            <a class="odi-visualisation-permalink" target="_blank" href="/opendataindex/vis/map" title="Go to the permalink for this visualisation">Permalink</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="/opendataindex/" title="Go to the Open Data Index website">Open Data Index</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://global.census.okfn.org/" title="Go to the Open Data Index Survey website">Open Data Index Survey</a>
+        </div>
+        <div class="odi-visualisation-credits">
+            An <a target="_blank" href="https://okfn.org/" title="Go to the Open Knowledge website">Open Knowledge</a> project. [Licensing and usage terms]
+        </div>
+    </div>
+
+    <div class="odi-visualisation-embed-iframe">
+        <div class="odi-visualisation-embed-iframe-title">
+            Embed this visualisation
+            <span class="odi-visualisation-embed-toggle" title="Close this modal">x</span>
+        </div>
+        <div class="odi-visualisation-embed-iframe-text">
+            Use the following code to embed this visualisation in your own website.
+        </div>
+        <xmp contenteditable="true"><iframe width="100%" height="100%"src="/opendataindex/vis/map/embed" frameBorder="0"></iframe></xmp>
+    </div>
+
+</div>
+
+
+
+    </body>
+</html>

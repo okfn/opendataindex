@@ -15,7 +15,7 @@
 
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="http://okfnlabs.org/jekyll-template/css/style-v2.css" />
+        <link rel="stylesheet" href="http://okfnlabs.org/jekyll-template/css/v2/style.css" />
         <link rel="stylesheet" href="/opendataindex/static/css/app.css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,14 +25,14 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="/opendataindex/static/js/vendor/chroma-js/chroma.min.js"></script>
+        <script src="/opendataindex/static/scripts/vendor/chroma.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="/opendataindex/static/js/app.js"></script>
+        <script src="/opendataindex/static/scripts/app.js"></script>
 
     </head>
 
-    <body class="">
+    <body class="download">
 
 
         <nav class="navbar navbar-default" role="navigation">
@@ -64,6 +64,11 @@
                                 Download
                             </a>
                         </li>
+                        <li>
+                            <a href="/opendataindex/vis/" title="Visualisations">
+                                Visualisations
+                            </a>
+                        </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right ">
                         <li class="divider-vertical"></li>
@@ -89,69 +94,66 @@
 <p>This is the download page. Get the raw data in various ways here.</p>
 
 <section class="row">
-    <div class="col-md-6">
-        <h3>CSV</h3>
-        <ul>
-            <li>
-                <a href="/opendataindex/static/downloads/opendataindex_data_2014-10-19.tar.gz" title="">
-                    Full dataset (compressed Data Package)
-                </a>
-            </li>
-            <li>
-                <a href="/opendataindex/api/entries.csv" title="">
-                    Entries
-                </a>
-            </li>
-            <li>
-                <a href="/opendataindex/api/datasets.csv" title="">
-                    Datasets
-                </a>
-            </li>
-            <li>
-                <a href="/opendataindex/api/places.csv" title="">
-                    Places
-                </a>
-            </li>
-            <li>
-                <a href="/opendataindex/api/questions.csv" title="">
-                    Questions
-                </a>
-            </li>
-        </ul>
+    <div class="col-md-4">
+        <div class="attention">
+            <h3>Archive</h3>
+            <div>
+                <i class="fa fa-archive"></i>
+            </div>
+            <p>
+                All data as an archive file.
+            </p>
+            <a class="btn btn-info" href="/opendataindex/places/" title="The whole Index displayed in an easy-to-read table.">Download</a>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h3>JSON</h3>
-        <ul>
-            <li>
-                <a href="/opendataindex/api/entries.json" title="">
-                    Entries
-                </a>
-            </li>
-            <li>
-                <a href="/opendataindex/api/datasets.json" title="">
-                    Datasets
-                </a>
-            </li>
-            <li>
-                <a href="/opendataindex/api/places.json" title="">
-                    Places
-                </a>
-            </li>
-            <li>
-                <a href="/opendataindex/api/questions.json" title="">
-                    Questions
-                </a>
-            </li>
-        </ul>
+    <div class="col-md-4">
+        <div class="attention">
+            <h3>CSV</h3>
+            <div>
+                <i class="fa fa-table"></i>
+            </div>
+            <p>
+                Data in CSV format.
+                <br />
+                <a class="label label-info" href="/opendataindex/api/entries.csv" title="">Entries</a>&nbsp;<a class="label label-info" href="/opendataindex/api/datasets.csv" title="">Datasets</a>&nbsp;<a class="label label-info" href="/opendataindex/api/places.csv" title="">Places</a>&nbsp;<a class="label label-info" href="/opendataindex/api/questions.csv" title="">Questions</a>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="attention">
+            <h3>JSON</h3>
+            <div>
+                <i class="fa fa-cogs"></i>
+            </div>
+            <p>
+                Data in JSON format.
+                <br />
+                <a class="label label-info" href="/opendataindex/api/entries.json" title="">Entries</a>&nbsp;<a class="label label-info" href="/opendataindex/api/datasets.json" title="">Datasets</a>&nbsp;<a class="label label-info" href="/opendataindex/api/places.json" title="">Places</a>&nbsp;<a class="label label-info" href="/opendataindex/api/questions.json" title="">Questions</a>
+            </p>
+        </div>
     </div>
 </section>
 
 <section class="row">
     <div class="col-md-12">
-        <h3>API</h3>
+        <h3>Additional downloads</h3>
         <p>
-            The Open Data Index also offers an API in JSON and CSV formats. The API features full datasets as well as sliced (filtered) endpoints. See the <a href="https://github.com/okfn/opendataindex#api" title="README">project README on GitHub</a> for more information.
+        We also have a range of data slices available in both CSV and JSON formats.
         </p>
+        <ul>
+            <li><strong>Entries 2014</strong>&nbsp;<a href="/opendataindex/api/entries/2014.csv" title="2014 entries in CSV format">CSV</a>&nbsp;<a href="/opendataindex/api/entries/2014.json" title="2014 entries in JSON format">JSON</a></li>
+            <li><strong>Entries 2013</strong>&nbsp;<a href="/opendataindex/api/entries/2013.csv" title="2013 entries in CSV format">CSV</a>&nbsp;<a href="/opendataindex/api/entries/2013.json" title="2013 entries in JSON format">JSON</a></li>
+            <li>
+                <strong>Datasets by category:</strong><br />
+                <ul>
+                    <li><strong>Civic Information</strong>&nbsp;<a href="/opendataindex/api/datasets/civic-information.csv" title="Civic Information datasets in CSV format">CSV</a>&nbsp;<a href="/opendataindex/api/datasets/civic-information.json" title="Civic Information datasets in JSON format">JSON</a></li>
+                    <li><strong>Environment</strong>&nbsp;<a href="/opendataindex/api/datasets/environment.csv" title="Environment datasets in CSV format">CSV</a>&nbsp;<a href="/opendataindex/api/datasets/environment.json" title="Environment datasets in JSON format">JSON</a></li>
+                    <li><strong>Finance</strong>&nbsp;<a href="/opendataindex/api/datasets/finance.csv" title="Finance datasets in CSV format">CSV</a>&nbsp;<a href="/opendataindex/api/datasets/finance.json" title="Finance datasets in JSON format">JSON</a></li>
+                    <li><strong>Geodata</strong>&nbsp;<a href="/opendataindex/api/datasets/geodata.csv" title="Geodata datasets in CSV format">CSV</a>&nbsp;<a href="/opendataindex/api/datasets/geodata.json" title="Geodata datasets in JSON format">JSON</a></li>
+                    <li><strong>Transport</strong>&nbsp;<a href="/opendataindex/api/datasets/transport.csv" title="Transport datasets in CSV format">CSV</a>&nbsp;<a href="/opendataindex/api/datasets/transport.json" title="Transport datasets in JSON format">JSON</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </section>
 
@@ -186,10 +188,11 @@
 </p>                        </div>
                     </div>
                     <div class="footer-links col-md-3">
-* [Link](http://www.example.com/)
-* [Link](http://www.example.com/)
-* [Link](http://www.example.com/)
-* [Link](http://www.example.com/)                    </div>
+<ul>
+<li><a href="http://okfn.org/">Open Knowledge</a></li>
+<li><a href="http://okfn.org/opendata/">What is Open Data?</a></li>
+<li><a href="http://index.okfn.org/">Run your own Index</a></li>
+</ul>                    </div>
                 </div>
             </div>
         </footer>
