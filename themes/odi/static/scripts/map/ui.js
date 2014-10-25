@@ -102,15 +102,11 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
             });
 
             if (match) {
-                console.log('MATCH');
-                console.log(match);
                 score = parseInt(match.score, 10);
                 fillColor = colorScale(score).hex();
             }
 
         }
-
-        console.log(fillColor);
 
         return {
                 fillColor: fillColor,
