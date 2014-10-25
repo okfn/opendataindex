@@ -45,6 +45,30 @@ Once the data has been prepared via the `process.py` script, there is an additio
 
     python scripts/populate.py
 
+## Visualisations
+
+The Open Data Index has a small set of tools and patterns for implementing visualisations. The first visualisation is the **Chloropeth map** (described below), and this is the reference implementation for other visualisations to follow.
+
+Visualisations have the following features:
+
+* A permalink for the visualisation (e.g.: /vis/map/)
+* An embeddable version of the visualisation (e.g.: /vis/map/embed/)
+* Tools for sharing the visualisation to social networks
+* Tools to filter data in the visualisation
+* An interface to pass state to a visualisation via URL params
+
+### Chloropeth map
+
+Displays Open Data Index data via a map interface.
+
+This visualisation is embedded in the project home page, and also available via its permalink:
+
+* /vis/map/
+
+Or its embeddable version:
+
+* /vis/map/embed/
+
 
 ## API
 
