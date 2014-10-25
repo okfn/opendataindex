@@ -1,5 +1,5 @@
-title: The Open Data Index assesses the state of open government data around the world.
 type: home
+title: Open government data around the world, right now.
 save_as: index.html
 year: 2014
 
