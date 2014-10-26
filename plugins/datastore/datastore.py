@@ -63,7 +63,7 @@ class DataStore(object):
         # TODO: have a configurable list of file types or names
         # to add to sources
         # TODO: support namespacing based on folder nesting: eg:
-        # page.data.govt.spending
+        # datastore.govt.spending
         # if source was: data/govt/spending.csv
 
         sources = []
@@ -134,10 +134,10 @@ class DataStore(object):
         return dataset
 
 
-def data(page_generator, metadata):
-    datastore = DataStore(page_generator.settings)
-    metadata['data'] = datastore.build()
+def data(page_generator_init):
+    datastore = DataStore(page_generator_init.settings)
+    page_generator_init.context['datastore'] = datastore.build()
 
 
 def register():
-    signals.page_generator_context.connect(data)
+    signals.page_generator_init.connect(data)

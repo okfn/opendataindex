@@ -13,10 +13,10 @@
     {% set score_lookup = 'score' %}
 {% endif %}
 
-{% set entries = page.data.entries.dict %}
-{% set datasets = page.data.datasets.dict %}
-{% set places = page.data.places.dict|sort(attribute=rank_lookup) %}
-{% set questions = page.data.questions.dict %}
+{% set entries = datastore.entries.dict %}
+{% set datasets = datastore.datasets.dict %}
+{% set places = datastore.places.dict|sort(attribute=rank_lookup) %}
+{% set questions = datastore.questions.dict %}
 {% set scope_dataset = page.dataset %}
 {% set scope_place = page.place %}
 {% set scope_year = page.year %}

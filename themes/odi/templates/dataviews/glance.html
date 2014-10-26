@@ -1,6 +1,6 @@
-{% set place_count = page.data.places|length %}
-{% set dataset_count_total = page.data.entries|length %}
-{% set dataset_count_open = page.data.entries.dict|where("openlicense", "Yes")|length %}
+{% set place_count = datastore.places|length %}
+{% set dataset_count_total = datastore.entries|length %}
+{% set dataset_count_open = datastore.entries.dict|where("openlicense", "Yes")|length %}
 {% set percentage_open = (dataset_count_open / dataset_count_total * 100)|round %}
 {% set data_glance_class = "row" %}
 {% set data_point_class = "col-md-3" %}
