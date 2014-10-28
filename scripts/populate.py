@@ -184,14 +184,14 @@ class Populate(object):
             display_type = u'place'
 
             # ensure this place's directory exists
-            dirpath = os.path.join(places_dir, place['slug'])
+            dirpath = os.path.join(places_dir, place['id'])
             self.ensure_dir(dirpath)
 
             # write the place index file for the current year
             filepath = os.path.join(dirpath, self.file)
             filecontext = {
                 'place_name': place['name'],
-                'place_slug': place['slug'],
+                'place_slug': place['id'],
                 'year': self.current_year,
                 'display_type': display_type
             }
@@ -203,21 +203,21 @@ class Populate(object):
 
                     # the display type depends on the presence of entries
                     entries = [e for e in self.entries if
-                               e['place'] == place['slug'] and
+                               e['place'] == place['id'] and
                                e['year'] == year]
 
                     if not entries:
                         display_type = self.na_display_type
 
                     # ensure this place/year directory exists
-                    dirpath = os.path.join(places_dir, place['slug'], year)
+                    dirpath = os.path.join(places_dir, place['id'], year)
                     self.ensure_dir(dirpath)
 
                     # write this place/year index file
                     filepath = os.path.join(dirpath, self.file)
                     filecontext = {
                         'place_name': place['name'],
-                        'place_slug': place['slug'],
+                        'place_slug': place['id'],
                         'year': year,
                         'display_type': display_type
                     }
@@ -232,15 +232,15 @@ class Populate(object):
 
                 # the display type depends on the presence of entries
                 entries = [e for e in self.entries if
-                           e['place'] == place['slug'] and
-                           e['dataset'] == dataset and
+                           e['place'] == place['id'] and
+                           e['dataset'] == dataset['id'] and
                            e['year'] == self.current_year]
 
                 if not entries:
                     display_type = self.empty_display_type
 
                 # ensure this place/dataset directory exists
-                dirpath = os.path.join(places_dir, place['slug'], 'datasets',
+                dirpath = os.path.join(places_dir, place['id'], 'datasets',
                                        dataset['id'])
                 self.ensure_dir(dirpath)
 
@@ -248,7 +248,7 @@ class Populate(object):
                 filepath = os.path.join(dirpath, self.file)
                 filecontext = {
                     'place_name': place['name'],
-                    'place_slug': place['slug'],
+                    'place_slug': place['id'],
                     'dataset_name': dataset['title'],
                     'dataset_id': dataset['id'],
                     'year': self.current_year,
@@ -262,8 +262,8 @@ class Populate(object):
 
                         # the display type depends on the presence of entries
                         entries = [e for e in self.entries if
-                                   e['place'] == place['slug'] and
-                                   e['dataset'] == dataset and
+                                   e['place'] == place['id'] and
+                                   e['dataset'] == dataset['id'] and
                                    e['year'] == year]
 
                         if not entries:
@@ -277,7 +277,7 @@ class Populate(object):
                         filepath = os.path.join(dirpath, self.file)
                         filecontext = {
                             'place_name': place['name'],
-                            'place_slug': place['slug'],
+                            'place_slug': place['id'],
                             'dataset_name': dataset['title'],
                             'dataset_id': dataset['id'],
                             'year': year,
