@@ -1,250 +1,251 @@
-id,name,slug,score,rank
-af,Afghanistan,afghanistan,0,80
-ax,Åland Islands,aland-islands,0,80
-al,Albania,albania,0,80
-dz,Algeria,algeria,0,80
-as,American Samoa,american-samoa,0,80
-ad,Andorra,andorra,0,80
-ao,Angola,angola,0,80
-ai,Anguilla,anguilla,0,80
-aq,Antarctica,antarctica,0,80
-ag,Antigua and Barbuda,antigua-and-barbuda,0,80
-ar,Argentina,argentina,0,80
-am,Armenia,armenia,0,80
-aw,Aruba,aruba,0,80
-au,Australia,australia,66,10
-at,Austria,austria,51,21
-az,Azerbaijan,azerbaijan,0,80
-bs,Bahamas,bahamas,24,66
-bh,Bahrain,bahrain,16,70
-bd,Bangladesh,bangladesh,34,52
-bb,Barbados,barbados,24,66
-by,Belarus,belarus,0,80
-be,Belgium,belgium,27,63
-bz,Belize,belize,0,80
-bj,Benin,benin,0,80
-bm,Bermuda,bermuda,36,50
-bt,Bhutan,bhutan,1,79
-bo,"Bolivia, Plurinational State of",bolivia-plurinational-state-of,0,80
-bq,"Bonaire, Sint Eustatius and Saba",bonaire-sint-eustatius-and-saba,0,80
-ba,Bosnia and Herzegovina,bosnia-and-herzegovina,0,80
-bw,Botswana,botswana,0,80
-bv,Bouvet Island,bouvet-island,0,80
-br,Brazil,brazil,48,24
-io,British Indian Ocean Territory,british-indian-ocean-territory,0,80
-bn,Brunei Darussalam,brunei-darussalam,0,80
-bg,Bulgaria,bulgaria,52,18
-bf,Burkina Faso,burkina-faso,37,49
-bi,Burundi,burundi,0,80
-kh,Cambodia,cambodia,0,80
-cm,Cameroon,cameroon,0,80
-ca,Canada,canada,59,13
-cv,Cape Verde,cape-verde,0,80
-ky,Cayman Islands,cayman-islands,31,58
-cf,Central African Republic,central-african-republic,0,80
-td,Chad,chad,0,80
-cl,Chile,chile,0,80
-cn,China,china,42,39
-cx,Christmas Island,christmas-island,0,80
-cc,Cocos (Keeling) Islands,cocos-islands,0,80
-co,Colombia,colombia,0,80
-km,Comoros,comoros,0,80
-cg,Congo,congo,0,80
-cd,"Congo, the Democratic Republic of the",congo-the-democratic-republic-of-the,0,80
-ck,Cook Islands,cook-islands,0,80
-cr,Costa Rica,costa-rica,35,51
-ci,Côte d'Ivoire,côte-d'ivoire,0,80
-hr,Croatia,croatia,45,31
-cu,Cuba,cuba,0,80
-cw,Curaçao,curacao,0,80
-cy,Cyprus,cyprus,3,77
-cz,Czech Republic,czech-republic,45,31
-dk,Denmark,denmark,87,2
-dj,Djibouti,djibouti,0,80
-dm,Dominica,dominica,0,80
-do,Dominican Republic,dominican-republic,0,80
-ec,Ecuador,ecuador,43,36
-eg,Egypt,egypt,31,58
-sv,El Salvador,el-salvador,0,80
-gq,Equatorial Guinea,equatorial-guinea,0,80
-er,Eritrea,eritrea,0,80
-ee,Estonia,estonia,0,80
-et,Ethiopia,ethiopia,0,80
-fk,Falkland Islands (Malvinas),falkland-islands-(malvinas),0,80
-fo,Faroe Islands,faroe-islands,0,80
-fj,Fiji,fiji,0,80
-fi,Finland,finland,72,7
-fr,France,france,51,21
-gf,French Guiana,french-guiana,0,80
-pf,French Polynesia,french-polynesia,0,80
-tf,French Southern Territories,french-southern-territories,0,80
-ga,Gabon,gabon,0,80
-gm,Gambia,gambia,0,80
-ge,Georgia,georgia,0,80
-de,Germany,germany,61,12
-gh,Ghana,ghana,0,80
-gi,Gibraltar,gibraltar,27,63
-gr,Greece,greece,40,44
-gl,Greenland,greenland,0,80
-gd,Grenada,grenada,0,80
-gp,Guadeloupe,guadeloupe,0,80
-gu,Guam,guam,0,80
-gt,Guatemala,guatemala,0,80
-gg,Guernsey,guernsey,39,46
-gn,Guinea,guinea,0,80
-gw,Guinea-Bissau,guinea-bissau,0,80
-gy,Guyana,guyana,0,80
-ht,Haiti,haiti,0,80
-hm,Heard Island and McDonald Mcdonald Islands,heard-island-and-mcdonald-mcdonald-islands,0,80
-va,Holy See (Vatican City State),holy-see-(vatican-city-state),0,80
-hn,Honduras,honduras,0,80
-hk,Hong Kong,hong-kong,27,63
-hu,Hungary,hungary,42,39
-is,Iceland,iceland,55,16
-in,India,india,46,28
-id,Indonesia,indonesia,42,39
-ir,"Iran, Islamic Republic of",iran-islamic-republic-of,0,80
-iq,Iraq,iraq,0,80
-ie,Ireland,ireland,40,44
-im,Isle of Man,isle-of-man,45,31
-il,Israel,israel,48,24
-it,Italy,italy,52,18
-jm,Jamaica,jamaica,0,80
-jp,Japan,japan,46,28
-je,Jersey,jersey,39,46
-jo,Jordan,jordan,0,80
-kz,Kazakhstan,kazakhstan,0,80
-ke,Kenya,kenya,20,69
-ki,Kiribati,kiribati,0,80
-kp,"Korea, Democratic People's Republic of",korea-democratic-people's-republic-of,0,80
-kr,"Korea, Republic of",korea-republic-of,43,36
-kw,Kuwait,kuwait,0,80
-kg,Kyrgyzstan,kyrgyzstan,0,80
-la,Lao People's Democratic Republic,lao-people's-democratic-republic,0,80
-lv,Latvia,latvia,0,80
-lb,Lebanon,lebanon,0,80
-ls,Lesotho,lesotho,0,80
-lr,Liberia,liberia,0,80
-ly,Libya,libya,0,80
-li,Liechtenstein,liechtenstein,0,80
-lt,Lithuania,lithuania,32,56
-lu,Luxembourg,luxembourg,0,80
-mo,Macao,macao,0,80
-mk,"Macedonia, the Former Yugoslav Republic of",macedonia-the-former-yugoslav-republic-of,0,80
-mg,Madagascar,madagascar,0,80
-mw,Malawi,malawi,0,80
-my,Malaysia,malaysia,0,80
-mv,Maldives,maldives,0,80
-ml,Mali,mali,0,80
-mt,Malta,malta,52,18
-mh,Marshall Islands,marshall-islands,0,80
-mq,Martinique,martinique,0,80
-mr,Mauritania,mauritania,0,80
-mu,Mauritius,mauritius,0,80
-yt,Mayotte,mayotte,0,80
-mx,Mexico,mexico,47,27
-fm,"Micronesia, Federated States of",micronesia-federated-states-of,0,80
-md,"Moldova, Republic of",moldova-republic-of,53,17
-mc,Monaco,monaco,0,80
-mn,Mongolia,mongolia,0,80
-me,Montenegro,montenegro,0,80
-ms,Montserrat,montserrat,0,80
-ma,Morocco,morocco,5,75
-mz,Mozambique,mozambique,0,80
-mm,Myanmar,myanmar,0,80
-na,Namibia,namibia,0,80
-nr,Nauru,nauru,0,80
-np,Nepal,nepal,30,60
-nl,Netherlands,netherlands,74,5
-nc,New Caledonia,new-caledonia,0,80
-nz,New Zealand,new-zealand,66,10
-ni,Nicaragua,nicaragua,0,80
-ne,Niger,niger,0,80
-ng,Nigeria,nigeria,28,61
-nu,Niue,niue,0,80
-nf,Norfolk Island,norfolk-island,0,80
-mp,Northern Mariana Islands,northern-mariana-islands,0,80
-no,Norway,norway,76,4
-om,Oman,oman,7,74
-pk,Pakistan,pakistan,48,24
-pw,Palau,palau,0,80
-ps,"Palestine, State of",palestine-state-of,0,80
-pa,Panama,panama,0,80
-pg,Papua New Guinea,papua-new-guinea,0,80
-py,Paraguay,paraguay,45,31
-pe,Peru,peru,0,80
-ph,Philippines,philippines,0,80
-pn,Pitcairn,pitcairn,0,80
-pl,Poland,poland,42,39
-pt,Portugal,portugal,50,23
-pr,Puerto Rico,puerto-rico,0,80
-qa,Qatar,qatar,0,80
-re,Réunion,réunion,0,80
-ro,Romania,romania,58,15
-ru,Russian Federation,russian-federation,43,36
-rw,Rwanda,rwanda,0,80
-bl,Saint Barthélemy,saint-barthélemy,0,80
-sh,"Saint Helena, Ascension and Tristan da Cunha",saint-helena-ascension-and-tristan-da-cunha,0,80
-kn,Saint Kitts and Nevis,saint-kitts-and-nevis,9,73
-lc,Saint Lucia,saint-lucia,5,75
-mf,Saint Martin (French part),saint-martin-(french-part),0,80
-pm,Saint Pierre and Miquelon,saint-pierre-and-miquelon,0,80
-vc,Saint Vincent and the Grenadines,saint-vincent-and-the-grenadines,0,80
-ws,Samoa,samoa,0,80
-sm,San Marino,san-marino,0,80
-st,Sao Tome and Principe,sao-tome-and-principe,0,80
-sa,Saudi Arabia,saudi-arabia,28,61
-sn,Senegal,senegal,22,68
-rs,Serbia,serbia,44,35
-sc,Seychelles,seychelles,0,80
-sl,Sierra Leone,sierra-leone,0,80
-sg,Singapore,singapore,34,52
-sx,Sint Maarten (Dutch part),sint-maarten-(dutch-part),0,80
-sk,Slovakia,slovakia,39,46
-si,Slovenia,slovenia,73,6
-sb,Solomon Islands,solomon-islands,0,80
-so,Somalia,somalia,0,80
-za,South Africa,south-africa,32,56
-gs,South Georgia and the South Sandwich Islands,south-georgia-and-the-south-sandwich-islands,0,80
-ss,South Sudan,south-sudan,0,80
-es,Spain,spain,46,28
-lk,Sri Lanka,sri-lanka,0,80
-sd,Sudan,sudan,0,80
-sr,Suriname,suriname,0,80
-sj,Svalbard and Jan Mayen,svalbard-and-jan-mayen,0,80
-sz,Swaziland,swaziland,0,80
-se,Sweden,sweden,67,9
-ch,Switzerland,switzerland,59,13
-sy,Syrian Arab Republic,syrian-arab-republic,0,80
-tw,Taiwan,taiwan,42,39
-tj,Tajikistan,tajikistan,0,80
-tz,"Tanzania, United Republic of",tanzania-united-republic-of,0,80
-th,Thailand,thailand,0,80
-tl,Timor-Leste,timor-leste,0,80
-tg,Togo,togo,0,80
-tk,Tokelau,tokelau,0,80
-to,Tonga,tonga,0,80
-tt,Trinidad and Tobago,trinidad-and-tobago,0,80
-tn,Tunisia,tunisia,34,52
-tr,Turkey,turkey,0,80
-tm,Turkmenistan,turkmenistan,0,80
-tc,Turks and Caicos Islands,turks-and-caicos-islands,3,77
-tv,Tuvalu,tuvalu,0,80
-ug,Uganda,uganda,0,80
-ua,Ukraine,ukraine,33,55
-ae,United Arab Emirates,united-arab-emirates,0,80
-gb,United Kingdom,united-kingdom,94,1
-us,United States,united-states,87,2
-um,United States Minor Outlying Islands,united-states-minor-outlying-islands,0,80
-uy,Uruguay,uruguay,68,8
-uz,Uzbekistan,uzbekistan,0,80
-vu,Vanuatu,vanuatu,0,80
-ve,"Venezuela, Bolivarian Republic of",venezuela-bolivarian-republic-of,0,80
-vn,Viet Nam,viet-nam,0,80
-vg,"Virgin Islands, British",virgin-islands-british,13,72
-vi,"Virgin Islands, U.S.",virgin-islands-u.s.,0,80
-wf,Wallis and Futuna,wallis-and-futuna,0,80
-eh,Western Sahara,western-sahara,0,80
-ye,Yemen,yemen,14,71
-zm,Zambia,zambia,0,80
-zw,Zimbabwe,zimbabwe,0,80
+id,name,slug,score,rank,score_2013,rank_2013
+af,Afghanistan,afghanistan,,80,,76
+ax,Åland Islands,aland-islands,,80,,76
+al,Albania,albania,,80,,76
+dz,Algeria,algeria,,80,,76
+as,American Samoa,american-samoa,,80,,76
+ad,Andorra,andorra,,80,,76
+ao,Angola,angola,,80,,76
+ai,Anguilla,anguilla,,80,,76
+aq,Antarctica,antarctica,,80,,76
+ag,Antigua and Barbuda,antigua-and-barbuda,,80,,76
+ar,Argentina,argentina,,80,,76
+am,Armenia,armenia,,80,,76
+aw,Aruba,aruba,,80,,76
+au,Australia,australia,66,80,66,76
+at,Austria,austria,51,80,51,76
+az,Azerbaijan,azerbaijan,,80,,76
+bs,Bahamas,bahamas,24,80,24,76
+bh,Bahrain,bahrain,16,80,16,76
+bd,Bangladesh,bangladesh,34,80,34,76
+bb,Barbados,barbados,24,80,24,76
+by,Belarus,belarus,,80,,76
+be,Belgium,belgium,27,80,27,76
+bz,Belize,belize,,80,,76
+bj,Benin,benin,,80,,76
+bm,Bermuda,bermuda,36,80,36,76
+bt,Bhutan,bhutan,1,80,,76
+bo,"Bolivia, Plurinational State of",bolivia-plurinational-state-of,,80,,76
+bq,"Bonaire, Sint Eustatius and Saba",bonaire-sint-eustatius-and-saba,,80,,76
+ba,Bosnia and Herzegovina,bosnia-and-herzegovina,,80,,76
+bw,Botswana,botswana,,80,,76
+bv,Bouvet Island,bouvet-island,,80,,76
+br,Brazil,brazil,48,80,48,76
+io,British Indian Ocean Territory,british-indian-ocean-territory,,80,,76
+bn,Brunei Darussalam,brunei-darussalam,,80,,76
+bg,Bulgaria,bulgaria,52,80,52,76
+bf,Burkina Faso,burkina-faso,37,80,37,76
+bi,Burundi,burundi,,80,,76
+kh,Cambodia,cambodia,,80,,76
+cm,Cameroon,cameroon,,80,,76
+ca,Canada,canada,59,80,59,76
+cv,Cape Verde,cape-verde,,80,,76
+ky,Cayman Islands,cayman-islands,31,80,31,76
+cf,Central African Republic,central-african-republic,,80,,76
+td,Chad,chad,,80,,76
+cl,Chile,chile,,80,,76
+cn,China,china,42,80,42,76
+cx,Christmas Island,christmas-island,,80,,76
+cc,Cocos (Keeling) Islands,cocos-islands,,80,,76
+co,Colombia,colombia,,80,,76
+km,Comoros,comoros,,80,,76
+cg,Congo,congo,,80,,76
+cd,"Congo, the Democratic Republic of the",congo-the-democratic-republic-of-the,,80,,76
+ck,Cook Islands,cook-islands,,80,,76
+cr,Costa Rica,costa-rica,35,80,35,76
+ci,Côte d'Ivoire,côte-d'ivoire,,80,,76
+hr,Croatia,croatia,45,80,45,76
+cu,Cuba,cuba,,80,,76
+cw,Curaçao,curacao,,80,,76
+cy,Cyprus,cyprus,3,80,3,76
+cz,Czech Republic,czech-republic,45,80,45,76
+dk,Denmark,denmark,87,80,87,76
+dj,Djibouti,djibouti,,80,,76
+dm,Dominica,dominica,,80,,76
+do,Dominican Republic,dominican-republic,,80,,76
+ec,Ecuador,ecuador,43,80,43,76
+eg,Egypt,egypt,31,80,31,76
+sv,El Salvador,el-salvador,,80,,76
+gq,Equatorial Guinea,equatorial-guinea,,80,,76
+er,Eritrea,eritrea,,80,,76
+ee,Estonia,estonia,,80,,76
+et,Ethiopia,ethiopia,,80,,76
+fk,Falkland Islands (Malvinas),falkland-islands-(malvinas),,80,,76
+fo,Faroe Islands,faroe-islands,,80,,76
+fj,Fiji,fiji,,80,,76
+fi,Finland,finland,72,80,72,76
+fr,France,france,69,80,69,76
+gf,French Guiana,french-guiana,,80,,76
+pf,French Polynesia,french-polynesia,,80,,76
+tf,French Southern Territories,french-southern-territories,,80,,76
+ga,Gabon,gabon,,80,,76
+gm,Gambia,gambia,,80,,76
+ge,Georgia,georgia,,80,,76
+de,Germany,germany,61,80,61,76
+gh,Ghana,ghana,,80,,76
+gi,Gibraltar,gibraltar,27,80,27,76
+gr,Greece,greece,40,80,40,76
+gl,Greenland,greenland,,80,,76
+gd,Grenada,grenada,,80,,76
+gp,Guadeloupe,guadeloupe,,80,,76
+gu,Guam,guam,,80,,76
+gt,Guatemala,guatemala,,80,,76
+gg,Guernsey,guernsey,39,80,39,76
+gn,Guinea,guinea,,80,,76
+gw,Guinea-Bissau,guinea-bissau,,80,,76
+gy,Guyana,guyana,,80,,76
+ht,Haiti,haiti,,80,,76
+hm,Heard Island and McDonald Mcdonald Islands,heard-island-and-mcdonald-mcdonald-islands,,80,,76
+va,Holy See (Vatican City State),holy-see-(vatican-city-state),,80,,76
+hn,Honduras,honduras,,80,,76
+hk,Hong Kong,hong-kong,27,80,27,76
+hu,Hungary,hungary,42,80,42,76
+is,Iceland,iceland,55,80,55,76
+in,India,india,46,80,46,76
+id,Indonesia,indonesia,42,80,42,76
+ir,"Iran, Islamic Republic of",iran-islamic-republic-of,,80,,76
+iq,Iraq,iraq,,80,,76
+ie,Ireland,ireland,40,80,40,76
+im,Isle of Man,isle-of-man,52,80,52,76
+il,Israel,israel,48,80,48,76
+it,Italy,italy,52,80,52,76
+jm,Jamaica,jamaica,,80,,76
+jp,Japan,japan,46,80,46,76
+je,Jersey,jersey,39,80,39,76
+jo,Jordan,jordan,,80,,76
+kz,Kazakhstan,kazakhstan,,80,,76
+ke,Kenya,kenya,20,80,20,76
+ki,Kiribati,kiribati,,80,,76
+kp,"Korea, Democratic People's Republic of",korea-democratic-people's-republic-of,,80,,76
+kr,"Korea, Republic of",korea-republic-of,43,80,43,76
+kw,Kuwait,kuwait,,80,,76
+ko,Kosovo,kosovo,,80,,76
+kg,Kyrgyzstan,kyrgyzstan,,80,,76
+la,Lao People's Democratic Republic,lao-people's-democratic-republic,,80,,76
+lv,Latvia,latvia,,80,,76
+lb,Lebanon,lebanon,,80,,76
+ls,Lesotho,lesotho,,80,,76
+lr,Liberia,liberia,,80,,76
+ly,Libya,libya,0,80,0,76
+li,Liechtenstein,liechtenstein,,80,,76
+lt,Lithuania,lithuania,32,80,32,76
+lu,Luxembourg,luxembourg,,80,,76
+mo,Macao,macao,,80,,76
+mk,"Macedonia, the Former Yugoslav Republic of",macedonia-the-former-yugoslav-republic-of,,80,,76
+mg,Madagascar,madagascar,,80,,76
+mw,Malawi,malawi,,80,,76
+my,Malaysia,malaysia,,80,,76
+mv,Maldives,maldives,,80,,76
+ml,Mali,mali,,80,,76
+mt,Malta,malta,52,80,52,76
+mh,Marshall Islands,marshall-islands,,80,,76
+mq,Martinique,martinique,,80,,76
+mr,Mauritania,mauritania,,80,,76
+mu,Mauritius,mauritius,,80,,76
+yt,Mayotte,mayotte,,80,,76
+mx,Mexico,mexico,47,80,47,76
+fm,"Micronesia, Federated States of",micronesia-federated-states-of,,80,,76
+md,"Moldova, Republic of",moldova-republic-of,53,80,53,76
+mc,Monaco,monaco,,80,,76
+mn,Mongolia,mongolia,,80,,76
+me,Montenegro,montenegro,,80,,76
+ms,Montserrat,montserrat,,80,,76
+ma,Morocco,morocco,29,80,9,76
+mz,Mozambique,mozambique,,80,,76
+mm,Myanmar,myanmar,,80,,76
+na,Namibia,namibia,,80,,76
+nr,Nauru,nauru,,80,,76
+np,Nepal,nepal,30,80,30,76
+nl,Netherlands,netherlands,74,80,74,76
+nc,New Caledonia,new-caledonia,,80,,76
+nz,New Zealand,new-zealand,66,80,66,76
+ni,Nicaragua,nicaragua,,80,,76
+ne,Niger,niger,,80,,76
+ng,Nigeria,nigeria,28,80,28,76
+nu,Niue,niue,,80,,76
+nf,Norfolk Island,norfolk-island,,80,,76
+mp,Northern Mariana Islands,northern-mariana-islands,,80,,76
+no,Norway,norway,76,80,76,76
+om,Oman,oman,7,80,7,76
+pk,Pakistan,pakistan,48,80,15,76
+pw,Palau,palau,,80,,76
+ps,"Palestine, State of",palestine-state-of,,80,,76
+pa,Panama,panama,,80,,76
+pg,Papua New Guinea,papua-new-guinea,,80,,76
+py,Paraguay,paraguay,45,80,,76
+pe,Peru,peru,,80,,76
+ph,Philippines,philippines,,80,,76
+pn,Pitcairn,pitcairn,,80,,76
+pl,Poland,poland,42,80,42,76
+pt,Portugal,portugal,50,80,50,76
+pr,Puerto Rico,puerto-rico,,80,,76
+qa,Qatar,qatar,,80,,76
+re,Réunion,réunion,,80,,76
+ro,Romania,romania,58,80,58,76
+ru,Russian Federation,russian-federation,43,80,43,76
+rw,Rwanda,rwanda,,80,,76
+bl,Saint Barthélemy,saint-barthélemy,,80,,76
+sh,"Saint Helena, Ascension and Tristan da Cunha",saint-helena-ascension-and-tristan-da-cunha,,80,,76
+kn,Saint Kitts and Nevis,saint-kitts-and-nevis,9,80,9,76
+lc,Saint Lucia,saint-lucia,5,80,5,76
+mf,Saint Martin (French part),saint-martin-(french-part),,80,,76
+pm,Saint Pierre and Miquelon,saint-pierre-and-miquelon,,80,,76
+vc,Saint Vincent and the Grenadines,saint-vincent-and-the-grenadines,,80,,76
+ws,Samoa,samoa,,80,,76
+sm,San Marino,san-marino,,80,,76
+st,Sao Tome and Principe,sao-tome-and-principe,,80,,76
+sa,Saudi Arabia,saudi-arabia,28,80,28,76
+sn,Senegal,senegal,22,80,22,76
+rs,Serbia,serbia,44,80,44,76
+sc,Seychelles,seychelles,,80,,76
+sl,Sierra Leone,sierra-leone,,80,,76
+sg,Singapore,singapore,34,80,34,76
+sx,Sint Maarten (Dutch part),sint-maarten-(dutch-part),,80,,76
+sk,Slovakia,slovakia,39,80,39,76
+si,Slovenia,slovenia,73,80,73,76
+sb,Solomon Islands,solomon-islands,,80,,76
+so,Somalia,somalia,,80,,76
+za,South Africa,south-africa,32,80,32,76
+gs,South Georgia and the South Sandwich Islands,south-georgia-and-the-south-sandwich-islands,,80,,76
+ss,South Sudan,south-sudan,,80,,76
+es,Spain,spain,46,80,46,76
+lk,Sri Lanka,sri-lanka,,80,,76
+sd,Sudan,sudan,,80,,76
+sr,Suriname,suriname,,80,,76
+sj,Svalbard and Jan Mayen,svalbard-and-jan-mayen,,80,,76
+sz,Swaziland,swaziland,,80,,76
+se,Sweden,sweden,67,80,67,76
+ch,Switzerland,switzerland,59,80,59,76
+sy,Syrian Arab Republic,syrian-arab-republic,,80,,76
+tw,Taiwan,taiwan,42,80,42,76
+tj,Tajikistan,tajikistan,,80,,76
+tz,"Tanzania, United Republic of",tanzania-united-republic-of,,80,,76
+th,Thailand,thailand,,80,,76
+tl,Timor-Leste,timor-leste,,80,,76
+tg,Togo,togo,,80,,76
+tk,Tokelau,tokelau,,80,,76
+to,Tonga,tonga,,80,,76
+tt,Trinidad and Tobago,trinidad-and-tobago,,80,,76
+tn,Tunisia,tunisia,34,80,34,76
+tr,Turkey,turkey,,80,,76
+tm,Turkmenistan,turkmenistan,,80,,76
+tc,Turks and Caicos Islands,turks-and-caicos-islands,3,80,3,76
+tv,Tuvalu,tuvalu,,80,,76
+ug,Uganda,uganda,,80,,76
+ua,Ukraine,ukraine,33,80,,76
+ae,United Arab Emirates,united-arab-emirates,,80,,76
+gb,United Kingdom,united-kingdom,94,80,94,76
+us,United States,united-states,87,80,87,76
+um,United States Minor Outlying Islands,united-states-minor-outlying-islands,,80,,76
+uy,Uruguay,uruguay,77,80,,76
+uz,Uzbekistan,uzbekistan,,80,,76
+vu,Vanuatu,vanuatu,,80,,76
+ve,"Venezuela, Bolivarian Republic of",venezuela-bolivarian-republic-of,,80,,76
+vn,Viet Nam,viet-nam,,80,,76
+vg,"Virgin Islands, British",virgin-islands-british,13,80,13,76
+vi,"Virgin Islands, U.S.",virgin-islands-u.s.,,80,,76
+wf,Wallis and Futuna,wallis-and-futuna,,80,,76
+eh,Western Sahara,western-sahara,,80,,76
+ye,Yemen,yemen,14,80,14,76
+zm,Zambia,zambia,,80,,76
+zw,Zimbabwe,zimbabwe,,80,,76
