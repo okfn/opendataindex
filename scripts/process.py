@@ -21,7 +21,7 @@ survey_datasets = 'https://docs.google.com/spreadsheet/pub?key=0Aon3JiuouxLUdEVH
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdE1QUS1qNjhvRDJaQy1TbTdJZDMtNFE&usp=drive_web#gid=1
 survey_places = 'https://docs.google.com/spreadsheet/pub?key=0AqR8dXc6Ji4JdE1QUS1qNjhvRDJaQy1TbTdJZDMtNFE&single=true&gid=1&output=csv'
 
-class AttrDict(dict): 
+class AttrDict(dict):
     __getattr__ = dict.__getitem__
     __setattr__ = dict.__setitem__
 
@@ -70,20 +70,29 @@ class Extractor(object):
         self.questions = self._load_csv('tmp/questions.csv')
 
         self.current_year = '2014'
+        self.years = ['2014', '2013']
+
         # this will be entry dicts keyed by a tuple of (place_id, dataset_id)
         self.keyed_entries = OrderedDict()
+
+        # after the processing and copying, this has every entry to be written
+        self.writable_entries = OrderedDict()
 
         # stub out the keyed entries
         for p in self.places['dicts']:
             for d in self.datasets['dicts']:
-                self.keyed_entries[(p['id'], d['id'])] = AttrDict({
-                        'place': p['id'],
-                        'dataset': d['id'],
-                        'year': self.current_year,
-                        'timestamp': ''
-                        })
+                for year in self.years:
+                    self.keyed_entries[(p['id'], d['id'], year)] = AttrDict({
+                            'place': p['id'],
+                            'dataset': d['id'],
+                            'year': year,
+                            'timestamp': '',
+                            'score': None,
+                            'rank': None
+                    })
 
     def run(self):
+        # `self.run_entries()` must *always* run first!
         self.run_entries()
         self.run_datasets()
         self.run_questions()
@@ -91,26 +100,58 @@ class Extractor(object):
         self.run_summary()
 
     def run_entries(self):
-        keyed_entries = self.keyed_entries
-        ## entries
 
-        # walk through existing entries and use the latest year entry we have for a
-        # given place + dataset
+        # walk through the existing entries;
+        # copy *forward* any missing place,dataset,year entries
+        # eg:
+        #   gb,timetables,2013 (have entry)
+        #   gb,timetables,2014 (no entry: so copy the 2013 entry forward to 2014)
         for ent in self.entries.dicts:
             self._tidy_entry(ent)
-            key = (ent['place'], ent['dataset'])
-            if (keyed_entries[key].timestamp == '' # no existing entry (just stubbed one)
-                or ent['year'] > keyed_entries[key].year # existing entry is newer
-                ):
-                keyed_entries[key] = ent
+            key = (ent['place'], ent['dataset'], ent['year'])
+            self.keyed_entries[key] = ent
 
-        self._rank_entries()
+        entries_to_write = {}
+        populated_entries = {k: v for k, v in self.keyed_entries.items() if
+                             v['timestamp'] != ''}
+        entries_to_write.update(populated_entries)
+        empty_entries = {k: v for k, v in self.keyed_entries.items() if
+                         v['timestamp'] == ''}
+
+        # if we have empty entries (should do),
+        # then we need to do the copy forward
+        if empty_entries:
+            for k, v in empty_entries.items():
+                related_entries = {x: y for x, y in
+                                   populated_entries.iteritems() if
+                                   v['place'] == y.place and
+                                   v['dataset'] == y.dataset}
+
+                if not related_entries:
+                    pass
+                else:
+
+                    candidates = [int(key[2]) for key in
+                                  related_entries.keys() if
+                                  int(key[2]) < int(k[2])]
+                    if candidates:
+                        # if candidates is empty, then it means we only
+                        # had related entries forward in time, so we *don't*
+                        # have any copy forward to do
+                        year_to_copy = max(candidates)
+                        entry_to_copy = AttrDict(related_entries[(k[0], k[1], str(year_to_copy))].copy())
+                        entry_to_copy['year'] = k[2]
+                        entries_to_write.update({
+                            k: entry_to_copy
+                        })
+
+        self.writable_entries = AttrDict(self._rank_entries(OrderedDict(entries_to_write)))
 
         ## write the entries.csv
 
         # play around with column ordering in entries.csv
         # drop off censusid (first col) and timestamp
-        fieldnames = self.entries.columns[2:]
+        fieldnames = self.entries.columns[1:]
         # move year around
         fieldnames[0:3] = ['place', 'dataset', 'year']
         fieldnames.insert(3, 'score')
@@ -124,7 +165,7 @@ class Extractor(object):
                 lineterminator='\n'
                 )
         writer.writeheader()
-        writer.writerows(keyed_entries.values())
+        writer.writerows([x[1] for x in self.writable_entries.iteritems()])
 
     def run_datasets(self):
         self._write_csv(self.datasets['rows'], 'data/datasets.csv')
@@ -139,41 +180,95 @@ class Extractor(object):
     def run_places(self):
         fieldnames = self.places.columns
         fieldnames += ['score', 'rank']
+        extra_years = [y for y in self.years if y != self.current_year]
+        for year in extra_years:
+            fieldnames += ['score_{0}'.format(year), 'rank_{0}'.format(year)]
 
         ## score then rank
-        # 10 datasets * 100 score per dataset
-        total_possible_score = 10 * 100.0
         for place in self.places.dicts:
-            score = sum([x.score for x in self.entries.dicts if x.place == place.id])
-            # score is a percentage (runs from 0 to 100)
-            # TODO: should we round like this as we lose distinction b/w 68 an
-            # 68.5
-            score = int(round(100 * score / total_possible_score, 0))
-            place['score'] = score
+            # write score and rank for each year we have
+            for year in self.years:
+                total_places = len(set([x[1].place for x in self.writable_entries.iteritems() if x[1].year == year]))
+                score_lookup = 'score'
+                rank_lookup = 'rank'
+                if not year == self.current_year:
+                    score_lookup = 'score_{0}'.format(year)
+                    rank_lookup = 'rank_{0}'.format(year)
 
-        byscore = sorted(self.places.dicts, key=operator.itemgetter('score'),
-                reverse=True)
-        rank = 1
-        last_score = 10000 # a large number bigger than max score
-        for count, place in enumerate(byscore):
-            if place.score < last_score:
-                rank = count + 1
-            last_score = place.score
-            place['rank'] = rank
+                to_score = [x[1].score for x in
+                            self.writable_entries.iteritems() if
+                            x[1].place == place.id and x[1].year == year and
+                            x[1].score is not None]
+
+                if not to_score:
+                    score = None
+                    rank = total_places
+                else:
+                    score = sum(to_score)
+                    # TODO: rank
+                    rank = total_places
+
+                # 10 datasets * 100 score per dataset
+                total_possible_score = 10 * 100.0
+
+                # score is a percentage (runs from 0 to 100)
+                # TODO: should we round like this as we lose distinction b/w 68 an
+                # 68.5
+
+                # if place.id == 'au':
+                #     import ipdb;ipdb.set_trace()
+
+                if not score is None:
+                    score = int(round(100 * score / total_possible_score, 0))
+
+                place[score_lookup] = score
+                place[rank_lookup] = rank
+
+            # byscore = sorted(self.places.dicts,
+            #                  key=operator.itemgetter(score_lookup),
+            #                  reverse=True)
+            # # now rank
+            # # for year in self.years:
+            # rank = 1
+            # last_score = 10000 # a large number bigger than max score
+            # for count, place in enumerate(byscore):
+            #     if place[score_lookup] < last_score:
+            #         rank = count + 1
+            #     last_score = place[score_lookup]
+            #     place[rank_lookup] = rank
 
         self._write_csv(self.places.dicts, 'data/places.csv', fieldnames)
 
     def run_summary(self):
-        fieldnames = [ 'id', 'title', 'value']
-        numentries = len(self.entries.dicts)
-        numopen = len([ x for x in self.entries.dicts if x.isopen ])
-        percentopen = int(round((100.0 * numopen) / numentries, 0))
+        fieldnames = ['id', 'title', 'value']
+        extra_years = [y for y in self.years if y != self.current_year]
+        for year in extra_years:
+            fieldnames += ['value_{0}'.format(year)]
+
         rows = [
-            ['places_count', 'Number of Places', len(self.places.dicts)],
-            ['entries_count', 'Number of Entries', numentries],
-            ['open_count', 'Number of Open Datasets', numopen ],
-            ['open_percent', 'Percent Open', percentopen]
-            ]
+            ['places_count', 'Number of Places'],
+            ['entries_count', 'Number of Entries'],
+            ['open_count', 'Number of Open Datasets'],
+            ['open_percent', 'Percent Open']
+        ]
+
+        for year in self.years:
+            value_lookup = 'value'
+            if not year == self.current_year:
+                value_lookup = 'value_{0}'.format(year)
+            year_numentries = len([x for x in self.writable_entries if
+                                   x[2] == year])
+            year_numplaces = len(set([x[0] for x in
+                                      self.writable_entries if
+                                      x[2] == year]))
+            year_numopen = len([x for x in self.entries.dicts if x.isopen])
+            year_percentopen = int(round((100.0 * year_numopen) /
+                                          year_numentries, 0))
+            rows[0].append(year_numplaces)
+            rows[1].append(year_numentries)
+            rows[2].append(year_numopen)
+            rows[3].append(year_percentopen)
+
         self._write_csv([fieldnames] + rows, 'data/summary.csv')
 
     def _tidy_entry(self, entry_dict):
@@ -211,30 +306,41 @@ class Extractor(object):
             return memo;
         return reduce(summer, self.questions.dicts, 0)
 
-    def _rank_entries(self):
-        def _tmp(_dict):
-            return (_dict['dataset'], -_dict['score'])
-        tmpsort = sorted(self.entries.dicts, key=_tmp)
-        # now walk through and assign ranks
-        # ranks are per dataset (i.e. we rank places per dataset)
-        # equal scores get same rank
-        current_rank, count, last_score = [1,0,0]
-        def reset():
-            current_rank = 1
-            count = 0
-            last_score = 0
-        last_dataset = 'budget'
-        for entry in tmpsort:
-            count += 1
-            # reset on each new dataset
-            if entry.dataset != last_dataset:
-                reset()
-            if entry.score < last_score:
-                current_rank = count
+    def _rank_entries(self, entries):
 
-            last_dataset = entry.dataset
-            last_score = entry.score
-            entry['rank'] = current_rank
+        rv = OrderedDict()
+
+        def _tmp(_dict):
+            return _dict[1]['dataset'], -_dict[1]['score']
+
+        for year in self.years:
+            year_entries = OrderedDict(
+                sorted([e for e in entries.iteritems() if
+                        e[0][2] == year], key=_tmp)
+            )
+
+            # assign rank for entries in scope of place/dataset/year
+            current_rank, count, last_score = [1,0,0]
+            def reset():
+                current_rank = 1
+                count = 0
+                last_score = 0
+            last_dataset = 'budget'
+            for k, v in year_entries.iteritems():
+                count += 1
+                # reset on each new dataset
+                if v.dataset != last_dataset:
+                    reset()
+                if v.score < last_score:
+                    current_rank = count
+
+                last_dataset = v.dataset
+                last_score = v.score
+                v.rank = current_rank
+
+            rv.update(year_entries)
+
+        return rv
 
     @classmethod
     def _load_csv(self, path):
