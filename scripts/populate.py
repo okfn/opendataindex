@@ -66,7 +66,6 @@ class Populate(object):
         # do it
         self.write_places()
         self.write_datasets()
-        self.write_historical()
 
     def commit_file(self, filepath, filetemplate, filecontext):
         with open(filepath, 'w+') as f:
@@ -75,32 +74,6 @@ class Populate(object):
     def ensure_dir(self, dirpath):
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
-
-    def write_historical(self):
-        """Write source files for historical overviews."""
-
-        # set the default display_type
-        display_type = 'overview'
-
-        # ensure the historical directory exists
-        historical_dir = os.path.join(self.dest_path, 'historical')
-        self.ensure_dir(historical_dir)
-
-        # write the historical overviews
-        for year in self.years:
-            if year != self.current_year:
-
-                # ensure this historical/year directory exists
-                dirpath = os.path.join(historical_dir, year)
-                self.ensure_dir(dirpath)
-
-                # write this historical/year index file
-                filepath = os.path.join(dirpath, self.file)
-                filecontext = {
-                    'year': year,
-                    'display_type': display_type
-                }
-                self.commit_file(filepath, historical_template, filecontext)
 
     def write_datasets(self):
         """Write source files for datasets."""
@@ -175,7 +148,23 @@ class Populate(object):
             'year': self.current_year,
             'display_type': display_type
         }
-        self.commit_file(filepath, place_overview_template, filecontext)
+        self.commit_file(filepath, overview_template, filecontext)
+
+        # write the historical overviews
+        for year in self.years:
+            if year != self.current_year:
+
+                # ensure this places/year directory exists
+                dirpath = os.path.join(places_dir, year)
+                self.ensure_dir(dirpath)
+
+                # write this places/year index file
+                filepath = os.path.join(dirpath, self.file)
+                filecontext = {
+                    'year': year,
+                    'display_type': display_type
+                }
+                self.commit_file(filepath, overview_historical_template, filecontext)
 
         # write files per place
         for place in self.places:
@@ -288,12 +277,18 @@ class Populate(object):
                                          filecontext)
 
 
-place_overview_template = u"""type: {display_type}
-title: Places comparison
+overview_template = u"""type: {display_type}
+title: Open Data Index
 slug: places
 year: {year}
 """
 
+
+overview_historical_template = u"""type: {display_type}
+title: Open Data Index {year}
+slug: places/{year}
+year: {year}
+"""
 
 place_template = u"""type: {display_type}
 title: {place_name}
@@ -348,13 +343,6 @@ dataset_historical_template = u"""type: {display_type}
 title: {dataset_name}
 slug: datasets/{dataset_slug}/{year}
 dataset: {dataset_slug}
-year: {year}
-"""
-
-
-historical_template = u"""type: {display_type}
-title: Open Data Index {year}
-slug: historical/{year}
 year: {year}
 """
 
