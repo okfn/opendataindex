@@ -1,4 +1,4 @@
 type: overview
-title: Places comparison
+title: Open Data Index
 slug: places
 year: 2014
