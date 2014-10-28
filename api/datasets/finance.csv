@@ -1,3 +1,3 @@
-id,title,category,description
-budget,Government Budget,Finance,Info about that
-government-spending,Government Spending,Finance,Info about that
+id,title,category,description,icon
+budget,Government Budget,Finance,"National government budget at a high level (e.g. spending by sector, department etc). This category is about *budgets* which are government *plans* for expenditure (not actual expenditure in the past).",None
+spending,Government Spending,Finance,Records of actual (past) national government spending at a detailed transactional level; at the level of month to month government expenditure on specific items (usually this means individual records of spending amounts under $1m or even under $100k). (Note: Just a database of contracts awarded or similar is *not* considered sufficient. This data category refers to detailed ongoing data on *actual* expenditure),None

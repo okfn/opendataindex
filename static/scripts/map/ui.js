@@ -14,7 +14,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
         mapTileLayer = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         map = L.map('map').setView([20.0, 5.0], 2),
         placeInfo = L.control(),
-        placeInfoTmpl = '<div class="odi-visualisation-place-information-name">NAME</div><div class="odi-visualisation-place-information-title">Open Data Index YEAR</div><div class="odi-visualisation-place-information-text"><ul><li><span class="label">Score</span>SCORE%</li><li><span class="label">Rank</span> #RANK</li></ul><a href="/places/SLUG/" title="More information about NAME in the YEAR Open Data Index">More information</a></div>',
+        placeInfoTmpl = '<div class="odi-visualisation-place-information-name">NAME</div><div class="odi-visualisation-place-information-title">Open Data Index YEAR</div><div class="odi-visualisation-place-information-text"><ul><li><span class="label">Score</span>SCORE%</li><li><span class="label">Rank</span> #RANK</li></ul><a href="SITEURL/places/SLUG/" title="More information about NAME in the YEAR Open Data Index">More information</a></div>',
         queryString = window.location.search,
         topics = {
             init: 'init',
@@ -85,7 +85,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
             typeof(dataSlice.dataset) === 'undefined') {
 
             // get calculated total scores from the place data
-            match = _.find(places, {'id': feature.properties.iso_a2});
+            match = _.find(places, {'id': feature.properties.iso_a2.toLowerCase()});
 
             if (match) {
                 score = parseInt(match.score, 10);
@@ -96,7 +96,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
 
             // calculate for this dataset/year/place from entries data
             match = _.find(entries, {
-                'place': feature.properties.iso_a2,
+                'place': feature.properties.iso_a2.toLowerCase(),
                 'year': dataSlice.year,
                 'dataset': dataSlice.dataset
             });
@@ -294,15 +294,18 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
                 rendered_tmpl = placeInfoTmpl;
 
             if (properties) {
-                match = _.find(places, {'id': properties.iso_a2});
+                match = _.find(places, {'id': properties.iso_a2.toLowerCase()});
+
                 score = parseInt(match.score, 10);
                 rank = parseInt(match.rank, 10);
                 rendered_tmpl = placeInfoTmpl
                                   .replace(/YEAR/g, year || '2014')
                                   .replace(/NAME/g, match.name)
-                                  .replace(/SLUG/g, match.slug)
+                                  .replace(/SLUG/g, match.id)
                                   .replace(/SCORE/g, score)
-                                  .replace(/RANK/g, rank);
+                                  .replace(/RANK/g, rank)
+                                  .replace(/SITEURL/g, siteUrl);
+
             } else {
                 rendered_tmpl = 'Hover on a place';
             }
