@@ -1,5 +1,11 @@
 {% from 'macros.html' import popover_slice_title, popover_slice_content %}
 
+
+{% set scope_dataset = page.dataset %}
+{% set scope_place = page.place %}
+{% set scope_year = page.year %}
+
+
 {% if scope_year %}
     {% if scope_year == ODI.current_year %}
     {% set rank_lookup = 'rank' %}
@@ -13,16 +19,15 @@
     {% set score_lookup = 'score' %}
 {% endif %}
 
+
 {% set entries = datastore.entries.dict %}
 {% set datasets = datastore.datasets.dict %}
 {% set places = datastore.places.dict|sort(attribute=rank_lookup) %}
 {% set questions = datastore.questions.dict %}
-{% set scope_dataset = page.dataset %}
-{% set scope_place = page.place %}
-{% set scope_year = page.year %}
+
 
 {% if page.place %}
-{% set places = places|where('slug', page.place) %}
+{% set places = places|where('id', page.place) %}
 {% endif %}
 
 <div class="row">
@@ -61,7 +66,7 @@
                     <td>
                         <ul class="availability availability-slice">
                             {% for question in questions %}
-                            {% if question.has_score %}
+                            {% if question.score %}
 
                             {% if entry %}
                             {% set state = entry[question.id] %}
@@ -69,7 +74,7 @@
                             {% set state = '' %}
                             {% endif %}
 
-                            <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
+                            <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
                             {% endif %}
                             {% endfor %}
                         </ul>

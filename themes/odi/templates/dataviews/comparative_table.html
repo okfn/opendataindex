@@ -1,5 +1,11 @@
 {% from 'macros.html' import popover_comparison_title, popover_comparison_content %}
 
+
+{% set scope_dataset = page.dataset %}
+{% set scope_place = page.place %}
+{% set scope_year = page.year %}
+
+
 {% if scope_year %}
     {% if scope_year == ODI.current_year %}
     {% set rank_lookup = 'rank' %}
@@ -13,16 +19,15 @@
     {% set score_lookup = 'score' %}
 {% endif %}
 
+
 {% set entries = datastore.entries.dict %}
 {% set datasets = datastore.datasets.dict %}
 {% set places = datastore.places.dict|sort(attribute=rank_lookup) %}
 {% set questions = datastore.questions.dict %}
-{% set scope_dataset = page.dataset %}
-{% set scope_place = page.place %}
-{% set scope_year = page.year %}
+
 
 {% if page.place %}
-{% set places = places|where("slug", page.place) %}
+{% set places = places|where('id', page.place) %}
 {% endif %}
 
 
@@ -50,19 +55,19 @@
                             {{ place[rank_lookup] }}
                         </td>
                         <td>
-                            <a href="{{ SITEURL }}/places/{{ place.slug }}/" title="{{ place.name }}">
+                            <a href="{{ SITEURL }}/places/{{ place.id }}/" title="{{ place.name }}">
                                 {{ place.name }}
                             </a>
                         </td>
                         {% for dataset in datasets %}
                         <td>
-                            {% set entry = entries|where("place", place.slug)|where("dataset", dataset.id)|where("year", scope_year)|first %}
+                            {% set entry = entries|where('place', place.id)|where('dataset', dataset.id)|where('year', scope_year)|first %}
                             {% if entry %}
                             <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(entry, place, dataset, questions)|e|safe }}">
                                 {% for question in questions %}
-                                {% if question.has_score %}
+                                {% if question.score %}
                                 {% set state = entry[question.id] %}
-                                <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == '?' %}maybe{% endif %}" data-content="{{ state }}">&nbsp;</li>
+                                <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}" data-content="{{ state }}">&nbsp;</li>
                                 {% endif %}
                                 {% endfor %}
                             </ul>
@@ -71,7 +76,7 @@
 
                             <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(entry, place, dataset, questions)|e|safe }}">
                                 {% for question in questions %}
-                                {% if question.has_score %}
+                                {% if question.score %}
                                 <li class="" data-content="no data">&nbsp;</li>
                                 {% endif %}
                                 {% endfor %}
