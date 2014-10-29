@@ -60,7 +60,7 @@ TAGS_SAVE_AS = False
 ARCHIVES_SAVE_AS = False
 
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
-PLUGINS = ['datastore', 'datastore_api', 'datastore_assets']
+PLUGINS = ['datastore', 'datastore_api', 'datastore_assets', 'i18n_subsites']
 
 THEME = os.path.join(PROJECT_ROOT, 'themes', 'odi')
 THEME_STATIC_DIR = 'static'
@@ -126,7 +126,21 @@ ODI = {
         'url': u'https://okfn.org/'
     },
     'googleanalytics': u'',
-    'mailinglist': u''
+    'mailinglist': u'',
+    'cli':  {
+      'test_path': 'tests',
+      'content_path': PATH,
+      'output_path': OUTPUT_PATH,
+      'trans_path': 'themes/odi/translations',
+      'deploy_remote': 'upstream',
+      "database": {
+          'submissions': '',
+          'entries': '',
+          'questions': '',
+          'datasets': '',
+          'places': ''
+      }
+    }
 }
 
 JINJA_EXTENSIONS = [
@@ -140,3 +154,5 @@ JINJA_FILTERS = {
   'where': filters.where,
   'markdown': filters.markdown
 }
+
+DEFAULT_LANG = 'en'

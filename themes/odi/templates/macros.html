@@ -6,47 +6,47 @@
 {% macro popover_comparison_content(entry, place, dataset, questions) -%}
 
 {% if not entry %}
-There is no data available.
+{{ gettext('There is no data available.') }}.
 {% else %}
 <ul>
     {% for question in questions %}
-    {% if question.has_score %}
+    {% if question.score %}
     {% set state = entry[question.id] %}
-    {% if state == 'Yes'%}
+    {% if state == 'Y' %}
     {% set no = '' %}
-    {% elif state == 'No' %}
+    {% elif state == 'N' %}
     {% set no = 'not' %}
     {% else %}
     {% set no = 'unclear if it\'s ' %}
     {% endif %}
     <li>
         {% if question.id == 'exists' %}
-        {% if state == 'Yes' %}
-        Data Exists
+        {% if state == 'Y' %}
+        {{ gettext('Data exists') }}
         {% else %}
-        Data does not exist
+        {{ gettext('Data does not exist') }}
         {% endif %}
         {% elif question.id == 'digital' %}
-        It's {{ no }} digital
+        {{ gettext('It\'s %(no)s digital', no=no) }}
         {% elif question.id == 'public' %}
-        It's {{ no }} public
+        {{ gettext('It\'s %(no)s public', no=no) }}
         {% elif question.id == 'free' %}
-        It's {{ no }} free
+        {{ gettext('It\'s %(no)s free', no=no) }}
         {% elif question.id == 'online' %}
-        It's {{ no }} online
+        {{ gettext('It\'s %(no)s online', no=no) }}
         {% if no == '' %}
-        <a href="{{ questions['url'] }}" title="{{ dataset.id }} for {{ place.name }} on the web">
-            here
+        <a href="{{ questions['url'] }}" title="{{ gettext('%(dataset)s for %(place)s on the web', dataset=dataset.id, place=place.name) }}">
+            {{ gettext('here') }}
         </a>
         {% endif %}
         {% elif question.id == 'machinereadable' %}
-        It's {{ no }} machine readable
+        {{ gettext('It\'s %(no)s machine readable', no=no) }}
         {% elif question.id == 'bulk' %}
-        It's {{ no }} available in bulk
+        {{ gettext('It\'s %(no)s available in bulk', no=no) }}
         {% elif question.id == 'openlicense' %}
-        It's {{ no }} only licensed
+        {{ gettext('It\'s %(no)s only licensed', no=no) }}
         {% elif question.id == 'uptodate' %}
-        It's {{ no }} up to date
+        {{ gettext('It\'s %(no)s up to date', no=no) }}
         {% endif %}
     </li>
     {% endif %}
@@ -55,8 +55,8 @@ There is no data available.
 <p>
     {{ entry.details }}
 </p>
-<a href="{{ SITEURL }}/places/{{ place.slug }}/datasets/{{ dataset.id }}/">
-    Read more &raquo;
+<a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ dataset.id }}/">
+    {{ gettext('Read more') }} &raquo;
 </a>
 {% endif %}
 {%- endmacro %}
@@ -66,13 +66,13 @@ There is no data available.
 
 {# namespace = 'historical' or 'datasets' #}
 
-<h4>See this data over time</h4>
+<h4>{{ gettext('See this data over time') }} </h4>
 <ul>
     {% for year in odi.years %}
 
     {% if year == odi.current_year %}
     {% set route = page.url %}
-    {% set anchor = 'Current' %}
+    {% set anchor = gettext('Current') %}
     {% else %}
     {% set route = '%s/%s/%s/'|format(SITEURL, namespace, year) %}
     {% set anchor = year %}

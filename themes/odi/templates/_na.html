@@ -1,4 +1,4 @@
-<h3>Sorry.</h3>
+<h3>{{ gettext('Sorry') }}.</h3>
 <p>
-    There is no data available for {{ page.title }} in the Index.
+    {{ gettext('There is no data available for %(page)s in the Index.', page=page.title) }}
 </p>

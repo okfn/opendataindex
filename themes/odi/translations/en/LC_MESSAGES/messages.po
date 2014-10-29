@@ -1,0 +1,616 @@
+# English translations for PROJECT.
+# Copyright (C) 2014 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2014-10-29 14:59+0200\n"
+"PO-Revision-Date: 2014-10-29 15:11+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: themes/odi/templates/_download.html:6
+msgid "Archive"
+msgstr ""
+
+#: themes/odi/templates/_download.html:11
+msgid "All data as an archive file."
+msgstr ""
+
+#: themes/odi/templates/_download.html:13 themes/odi/templates/_home.html:24
+#: themes/odi/templates/_home.html:26
+msgid "The whole Index displayed in an easy-to-read table."
+msgstr ""
+
+#: themes/odi/templates/_download.html:13 themes/odi/templates/base.html:89
+msgid "Download"
+msgstr ""
+
+#: themes/odi/templates/_download.html:18
+#: themes/odi/templates/_download.html:51
+#: themes/odi/templates/_download.html:52
+#: themes/odi/templates/_download.html:56
+#: themes/odi/templates/_download.html:57
+#: themes/odi/templates/_download.html:58
+#: themes/odi/templates/_download.html:59
+#: themes/odi/templates/_download.html:60
+msgid "CSV"
+msgstr ""
+
+#: themes/odi/templates/_download.html:23
+msgid "Data in CSV format."
+msgstr ""
+
+#: themes/odi/templates/_download.html:25
+#: themes/odi/templates/_download.html:38
+msgid "Entries"
+msgstr ""
+
+#: themes/odi/templates/_download.html:25
+#: themes/odi/templates/_download.html:38
+msgid "Datasets"
+msgstr ""
+
+#: themes/odi/templates/_download.html:25
+#: themes/odi/templates/_download.html:38
+msgid "Places"
+msgstr ""
+
+#: themes/odi/templates/_download.html:25
+#: themes/odi/templates/_download.html:38
+msgid "Questions"
+msgstr ""
+
+#: themes/odi/templates/_download.html:31
+#: themes/odi/templates/_download.html:51
+#: themes/odi/templates/_download.html:52
+#: themes/odi/templates/_download.html:56
+#: themes/odi/templates/_download.html:57
+#: themes/odi/templates/_download.html:58
+#: themes/odi/templates/_download.html:59
+#: themes/odi/templates/_download.html:60
+msgid "JSON"
+msgstr ""
+
+#: themes/odi/templates/_download.html:36
+msgid "Data in JSON format."
+msgstr ""
+
+#: themes/odi/templates/_download.html:46
+msgid "Additional downloads"
+msgstr ""
+
+#: themes/odi/templates/_download.html:48
+msgid ""
+"We also have a range of data slices available in both CSV and JSON "
+"formats."
+msgstr ""
+
+#: themes/odi/templates/_download.html:51
+msgid "Entries 2014"
+msgstr ""
+
+#: themes/odi/templates/_download.html:51
+msgid "2014 entries in CSV format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:51
+msgid "2014 entries in JSON format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:52
+msgid "Entries 2013"
+msgstr ""
+
+#: themes/odi/templates/_download.html:52
+msgid "2013 entries in CSV format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:52
+msgid "2013 entries in JSON format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:54
+msgid "Datasets by category:"
+msgstr ""
+
+#: themes/odi/templates/_download.html:56
+msgid "Civic Information"
+msgstr ""
+
+#: themes/odi/templates/_download.html:56
+msgid "Civic Information datasets in CSV format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:56
+msgid "Civic Information datasets in JSON format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:57
+msgid "Environment"
+msgstr ""
+
+#: themes/odi/templates/_download.html:57
+msgid "Environment datasets in CSV format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:57
+msgid "Environment datasets in JSON format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:58
+msgid "Finance"
+msgstr ""
+
+#: themes/odi/templates/_download.html:58
+msgid "Finance datasets in CSV format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:58
+msgid "Finance datasets in JSON format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:59
+msgid "Geodata"
+msgstr ""
+
+#: themes/odi/templates/_download.html:59
+msgid "Geodata datasets in CSV format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:59
+msgid "Geodata datasets in JSON format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:60
+msgid "Transport"
+msgstr ""
+
+#: themes/odi/templates/_download.html:60
+msgid "Transport datasets in CSV format"
+msgstr ""
+
+#: themes/odi/templates/_download.html:60
+msgid "Transport datasets in JSON format"
+msgstr ""
+
+#: themes/odi/templates/_empty.html:2
+#, python-format
+msgid ""
+"We do not current have any data for %(page)s. But you can help change "
+"that!"
+msgstr ""
+
+#: themes/odi/templates/_empty.html:8
+msgid "Add information"
+msgstr ""
+
+#: themes/odi/templates/_empty.html:13
+msgid "Contact us for help"
+msgstr ""
+
+#: themes/odi/templates/_home.html:7
+msgid "About the Open Data Index"
+msgstr ""
+
+#: themes/odi/templates/_home.html:19
+msgid "Table view"
+msgstr ""
+
+#: themes/odi/templates/_home.html:26 themes/odi/templates/_home.html:38
+#: themes/odi/templates/_home.html:50 themes/odi/templates/_vis_gallery.html:13
+msgid "Go there"
+msgstr ""
+
+#: themes/odi/templates/_home.html:31
+msgid "Downloads & API"
+msgstr ""
+
+#: themes/odi/templates/_home.html:36 themes/odi/templates/_home.html:38
+msgid "Download the raw Index data directly or use it via a CSV/JSON API."
+msgstr ""
+
+#: themes/odi/templates/_home.html:43 themes/odi/templates/base.html:84
+msgid "Methodology"
+msgstr ""
+
+#: themes/odi/templates/_home.html:48 themes/odi/templates/_home.html:50
+msgid "Read about the methodology behind the Index here."
+msgstr ""
+
+#: themes/odi/templates/_na.html:1
+msgid "Sorry"
+msgstr ""
+
+#: themes/odi/templates/_na.html:3
+#, python-format
+msgid "There is no data available for %(page)s in the Index."
+msgstr ""
+
+#: themes/odi/templates/_place.html:48
+msgid "in the Index"
+msgstr ""
+
+#: themes/odi/templates/_place.html:51
+msgid "Previously"
+msgstr ""
+
+#: themes/odi/templates/_place.html:81 themes/odi/templates/base.html:79
+msgid "Contributors"
+msgstr ""
+
+#: themes/odi/templates/_place.html:83
+msgid "The following people have made this possible"
+msgstr ""
+
+#: themes/odi/templates/_place.html:85
+msgid "Reviews"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:26
+msgid "All Datasets"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:30
+msgid "Get the embed code for this visualisation"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:30
+msgid "Share this visualisation on Twitter"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:30
+msgid "Share this visualisation on Facebook"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:30
+msgid "Share this visualisation on Google+"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:56
+msgid "How does this work?"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:60
+msgid ""
+"By default, places on the map are color coded by their \"Openness\", as "
+"determined by the results of the Open Data Index. Scaled from green to "
+"red, where green is \"open\" and red is \"closed\"."
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:68
+msgid "Go to the permalink for this visualisation"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:68
+msgid "Permalink"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:68
+#, python-format
+msgid "Go to the %(sitename)s website"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:68
+#, python-format
+msgid "Go to the %(survey)s website"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:71
+msgid "An"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:71
+#, python-format
+msgid "Go to the %(sponsor)s"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:71
+msgid "project"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:77
+msgid "Embed this visualisation"
+msgstr ""
+
+#: themes/odi/templates/_vis_embed.map.html:81
+msgid "Use the following code to embed this visualisation in your own website."
+msgstr ""
+
+#: themes/odi/templates/_vis_gallery.html:6
+msgid "Open Data Index Map"
+msgstr ""
+
+#: themes/odi/templates/_vis_gallery.html:11
+msgid "Explore the Open Data Index on a map."
+msgstr ""
+
+#: themes/odi/templates/_vis_gallery.html:18
+#: themes/odi/templates/_vis_gallery.html:25
+msgid "Coming soon"
+msgstr ""
+
+#: themes/odi/templates/_vis_gallery.html:23
+#: themes/odi/templates/_vis_gallery.html:25
+msgid "Stories using the Open Data Index."
+msgstr ""
+
+#: themes/odi/templates/base.html:55
+msgid "Part of the Open Knowledge Network"
+msgstr ""
+
+#: themes/odi/templates/base.html:55
+msgid "An Open Knowledge Site"
+msgstr ""
+
+#: themes/odi/templates/base.html:66
+msgid "Open Data Index"
+msgstr ""
+
+#: themes/odi/templates/base.html:66
+msgid "by Open Knowledge"
+msgstr ""
+
+#: themes/odi/templates/base.html:73
+msgid "About the Open Data Index project"
+msgstr ""
+
+#: themes/odi/templates/base.html:74
+msgid "About"
+msgstr ""
+
+#: themes/odi/templates/base.html:78
+msgid "See all the contributors to the Open Data Index"
+msgstr ""
+
+#: themes/odi/templates/base.html:83
+msgid "About the methodology used in creating the Open Data Index"
+msgstr ""
+
+#: themes/odi/templates/base.html:88
+msgid "Download Open Data Index data"
+msgstr ""
+
+#: themes/odi/templates/base.html:93 themes/odi/templates/base.html:94
+msgid "Visualisations"
+msgstr ""
+
+#: themes/odi/templates/base.html:102
+msgid "Join the mailing list for this project"
+msgstr ""
+
+#: themes/odi/templates/base.html:102
+msgid "List"
+msgstr ""
+
+#: themes/odi/templates/base.html:108
+msgid "See the code for this project"
+msgstr ""
+
+#: themes/odi/templates/base.html:108
+msgid "Repo"
+msgstr ""
+
+#: themes/odi/templates/base.html:114
+msgid "Follow this project on Twitter"
+msgstr ""
+
+#: themes/odi/templates/macros.html:9
+msgid "There is no data available."
+msgstr ""
+
+#: themes/odi/templates/macros.html:25
+msgid "Data exists"
+msgstr ""
+
+#: themes/odi/templates/macros.html:27
+msgid "Data does not exist"
+msgstr ""
+
+#: themes/odi/templates/macros.html:30
+#, python-format
+msgid "It's %(no)s digital"
+msgstr ""
+
+#: themes/odi/templates/macros.html:32
+#, python-format
+msgid "It's %(no)s public"
+msgstr ""
+
+#: themes/odi/templates/macros.html:34
+#, python-format
+msgid "It's %(no)s free"
+msgstr ""
+
+#: themes/odi/templates/macros.html:36
+#, python-format
+msgid "It's %(no)s online"
+msgstr ""
+
+#: themes/odi/templates/macros.html:38
+#, python-format
+msgid "%(dataset)s for %(place)s on the web"
+msgstr ""
+
+#: themes/odi/templates/macros.html:39
+msgid "here"
+msgstr ""
+
+#: themes/odi/templates/macros.html:43
+#, python-format
+msgid "It's %(no)s machine readable"
+msgstr ""
+
+#: themes/odi/templates/macros.html:45
+#, python-format
+msgid "It's %(no)s available in bulk"
+msgstr ""
+
+#: themes/odi/templates/macros.html:47
+#, python-format
+msgid "It's %(no)s only licensed"
+msgstr ""
+
+#: themes/odi/templates/macros.html:49
+#, python-format
+msgid "It's %(no)s up to date"
+msgstr ""
+
+#: themes/odi/templates/macros.html:59
+msgid "Read more"
+msgstr ""
+
+#: themes/odi/templates/macros.html:69
+msgid "See this data over time"
+msgstr ""
+
+#: themes/odi/templates/macros.html:75
+msgid "Current"
+msgstr ""
+
+#: themes/odi/templates/content/footer_attribution.md:2
+#: themes/odi/templates/content/footer_attribution.md:5
+msgid "Open Online Software Service"
+msgstr ""
+
+#: themes/odi/templates/content/footer_attribution.md:8
+msgid "Open Content"
+msgstr ""
+
+#: themes/odi/templates/content/footer_attribution.md:12
+msgid "Content Licensed under a CC Attribution"
+msgstr ""
+
+#: themes/odi/templates/content/footer_links.md:1
+msgid "Open Knowledge"
+msgstr ""
+
+#: themes/odi/templates/content/footer_links.md:2
+msgid "What is Open Data?"
+msgstr ""
+
+#: themes/odi/templates/content/footer_links.md:3
+msgid "Run your own Index"
+msgstr ""
+
+#: themes/odi/templates/content/footer_meta.md:2
+msgid "This service is run by"
+msgstr ""
+
+#: themes/odi/templates/content/footer_meta.md:4
+msgid "Source Code"
+msgstr ""
+
+#: themes/odi/templates/content/historical_intro.md:1
+msgid ""
+"**The Open Data Index assesses the state of open government data around "
+"the world.**"
+msgstr ""
+
+#: themes/odi/templates/content/historical_intro.md:3
+#, python-format
+msgid "This is historical data from %(year)s."
+msgstr ""
+
+#: themes/odi/templates/dataviews/comparative_table_header.html:3
+msgid "Rank"
+msgstr ""
+
+#: themes/odi/templates/dataviews/comparative_table_header.html:6
+#: themes/odi/templates/dataviews/slice_table_header.html:3
+msgid "Place"
+msgstr ""
+
+#: themes/odi/templates/dataviews/comparative_table_header.html:14
+#: themes/odi/templates/dataviews/slice_table_header.html:6
+msgid "Score"
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_dataset.html:56
+#: themes/odi/templates/dataviews/slice_table_place.html:28
+#, python-format
+msgid "%(dataset)s in %(place)s"
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_dataset.html:84
+#: themes/odi/templates/dataviews/slice_table_place.html:57
+msgid "No URL for this dataset."
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_dataset.html:89
+#: themes/odi/templates/dataviews/slice_table_place.html:62
+#, python-format
+msgid "Since %(year)s"
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_dataset.html:92
+#: themes/odi/templates/dataviews/slice_table_place.html:65
+#, python-format
+msgid "in %(format)s format."
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_header.html:3
+msgid "Dataset"
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_header.html:9
+msgid "Breakdown"
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_header.html:12
+msgid "Location (URL)"
+msgstr ""
+
+#: themes/odi/templates/dataviews/slice_table_header.html:15
+msgid "Information"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_key.html:2
+msgid "Key"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_key.html:4
+msgid "Yes"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_key.html:5
+msgid "No"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_key.html:6
+msgid "Unsure"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_key.html:7
+msgid "No data"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_tools.html:2
+msgid "Tools"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_tools.html:4
+msgid "Sort by"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_tools.html:8
+msgid "Rank/Score"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_tools.html:14
+msgid "# Yes"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_tools.html:20
+msgid "A-Z"
+msgstr ""
+

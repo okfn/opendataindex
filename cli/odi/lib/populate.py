@@ -1,58 +1,38 @@
 import os
 import sys
 import codecs
+import shutil
 import logging
+
+
+
+def run(limited):
+    Populate(limited=limited)
 
 
 class Populate(object):
 
     def __init__(self, *args, **kwargs):
 
-        # TODO: tidy up the init method and import stuff from the right places
-
-        SCRIPTS_ROOT = os.path.abspath(os.path.dirname(__file__))
-        PROJECT_ROOT = os.path.abspath(os.path.dirname(SCRIPTS_ROOT))
+        base_path = os.path.join(os.getcwd())
+        PROJECT_ROOT = base_path
         PLUGINS = os.path.join(PROJECT_ROOT, 'plugins')
-        CONF = os.path.join(PROJECT_ROOT, 'pelicanconf.py')
-        sys.path.insert(1, PLUGINS)
-        sys.path.insert(1, CONF)
+        CONF = os.path.join(PROJECT_ROOT,)
+        sys.path.append(PLUGINS)
+        sys.path.append(CONF)
 
         import datastore
-
+        import config_default
         self.conf = {
-            'DATASTORE':
-                {
-                'location': os.path.join(PROJECT_ROOT, 'data'),
-                'formats': ['.csv'],
-                'true_strings': ['TRUE', 'True', 'true'],
-                'false_strings': ['FALSE', 'False', 'false'],
-                'none_strings': ['NULL', 'Null', 'null', 'NONE', 'None', 'none',
-                                 'NIL', 'Nil', 'nil', '-', 'NaN', 'N/A', 'n/a', ''],
-                'api': { # settings for the datastore_api plugin
-                    'base': 'api', # directory relative to `output`
-                    'formats': ['json', 'csv'], # output API in these formats
-                    'filters': {
-                        # Key must match a datastore file name.
-                        # Values must match headers in that file.
-                        'entries': ['year'],
-                        'datasets': ['category']
-                        #'places': ['region']
-                    },
-                    'exclude': [] # datastore files to exclude from API (by name of type)
-                },
-                'assets': {
-                    'location': 'downloads'
-                }
-            },
-            'ODI': {
-                'years': ['2014', '2013'],
-                'current_year': '2014'
-            }
+            'DATASTORE': config_default.DATASTORE,
+            'ODI': config_default.ODI
         }
 
         ds = datastore.DataStore(self.conf)
 
         self.dest_path = os.path.join(PROJECT_ROOT, 'content', 'pages')
+        self.datasets_dir = os.path.join(self.dest_path, 'datasets')
+        self.places_dir = os.path.join(self.dest_path, 'places')
         self.file = 'index.md'
         self.empty_display_type = u'empty'
         self.na_display_type = u'na'
@@ -63,7 +43,15 @@ class Populate(object):
         self.years = self.conf['ODI']['years']
         self.current_year = self.conf['ODI']['current_year']
 
-        # do it
+        if kwargs['limited']:
+            l_places = ('au',)
+            l_datasets = ('timetables',)
+            self.places = [p for p in self.places if p['id'] in l_places]
+            self.datasets = [d for d in self.datasets if d['id'] in l_datasets]
+
+        self.ensure_dir(self.datasets_dir, clean_slate=True)
+        self.ensure_dir(self.places_dir, clean_slate=True)
+
         self.write_places()
         self.write_datasets()
 
@@ -71,7 +59,9 @@ class Populate(object):
         with open(filepath, 'w+') as f:
             f.write(filetemplate.format(**filecontext).encode('utf-8'))
 
-    def ensure_dir(self, dirpath):
+    def ensure_dir(self, dirpath, clean_slate=False):
+        if clean_slate:
+            shutil.rmtree(dirpath)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)
 
@@ -81,12 +71,8 @@ class Populate(object):
         # set the default display_type
         display_type = u'overview'
 
-        # ensure the datasets directory exists
-        datasets_dir = os.path.join(self.dest_path, 'datasets')
-        self.ensure_dir(datasets_dir)
-
         # write the datasets overview
-        filepath = os.path.join(datasets_dir, self.file)
+        filepath = os.path.join(self.datasets_dir, self.file)
         filecontext = {
             'year': self.current_year,
             'display_type': display_type
@@ -100,7 +86,7 @@ class Populate(object):
             display_type = u'dataset'
 
             # ensure this dataset's directory exists
-            dirpath = os.path.join(datasets_dir, dataset['id'])
+            dirpath = os.path.join(self.datasets_dir, dataset['id'])
             self.ensure_dir(dirpath)
 
             # write the dataset index file for the current year
@@ -118,7 +104,8 @@ class Populate(object):
                 if year != self.current_year:
 
                     # ensure this dataset/year directory exists
-                    dirpath = os.path.join(datasets_dir, dataset['id'], year)
+                    dirpath = os.path.join(self.datasets_dir, dataset['id'],
+                                           year)
                     self.ensure_dir(dirpath)
 
                     # write this dataset/year index file
@@ -138,12 +125,8 @@ class Populate(object):
         # set the default display_type
         display_type = u'overview'
 
-        # ensure the places directory exists
-        places_dir = os.path.join(self.dest_path, 'places')
-        self.ensure_dir(places_dir)
-
         # write the places overview
-        filepath = os.path.join(places_dir, self.file)
+        filepath = os.path.join(self.places_dir, self.file)
         filecontext = {
             'year': self.current_year,
             'display_type': display_type
@@ -155,7 +138,7 @@ class Populate(object):
             if year != self.current_year:
 
                 # ensure this places/year directory exists
-                dirpath = os.path.join(places_dir, year)
+                dirpath = os.path.join(self.places_dir, year)
                 self.ensure_dir(dirpath)
 
                 # write this places/year index file
@@ -173,7 +156,7 @@ class Populate(object):
             display_type = u'place'
 
             # ensure this place's directory exists
-            dirpath = os.path.join(places_dir, place['id'])
+            dirpath = os.path.join(self.places_dir, place['id'])
             self.ensure_dir(dirpath)
 
             # write the place index file for the current year
@@ -199,7 +182,7 @@ class Populate(object):
                         display_type = self.na_display_type
 
                     # ensure this place/year directory exists
-                    dirpath = os.path.join(places_dir, place['id'], year)
+                    dirpath = os.path.join(self.places_dir, place['id'], year)
                     self.ensure_dir(dirpath)
 
                     # write this place/year index file
@@ -229,8 +212,8 @@ class Populate(object):
                     display_type = self.empty_display_type
 
                 # ensure this place/dataset directory exists
-                dirpath = os.path.join(places_dir, place['id'], 'datasets',
-                                       dataset['id'])
+                dirpath = os.path.join(self.places_dir, place['id'],
+                                       'datasets', dataset['id'])
                 self.ensure_dir(dirpath)
 
                 # write the place/dataset index file for the current year
@@ -345,7 +328,3 @@ slug: datasets/{dataset_slug}/{year}
 dataset: {dataset_slug}
 year: {year}
 """
-
-
-if __name__ == '__main__':
-    Populate()

@@ -40,13 +40,15 @@
             </h1>
             <div>
                 page text here: {{ page.content }}
+                <br /><br /><br />
+
             </div>
             <div class="row">
-                <div class="col-md-8 place-rank">
-                    #{{ place[rank_lookup] }} in the Index
+                <div class="place-rank col-md-8">
+                    #{{ place[rank_lookup] }} {{ gettext('in the Index') }}
                 </div>
                 <div class="col-md-4">
-                    <span>Previously</span>
+                    <span>{{ gettext('Previously') }}</span>
                     <ul>
                         <li>2013</li>
                         <li>2012</li>
@@ -76,11 +78,11 @@
 {{ historical_navigation(page, ODI, fragment) }}
 
 <section id="place-contributors">
-    <h2>Contributors</h2>
+    <h2>{{ gettext('Contributors') }}</h2>
     <p>
-        The following people have made this possible:
+        {{ gettext('The following people have made this possible') }}:
     </p>
-    <h4>Reviews</h4>
+    <h4>{{ gettext('Reviews') }}</h4>
     <ul>
         <li>Someone</li>
     </ul>

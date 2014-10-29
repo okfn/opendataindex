@@ -23,11 +23,11 @@
 
             </select>
             <select class="odi-filter-dataset">
-                <option value="all">All Datasets</option>
+                <option value="all">{{ gettext('All Datasets') }}</option>
             </select>
         </div>
         <div class="odi-visualisation-share">
-            <span class="odi-visualisation-embed-toggle" title="Get the embed code for this visualisation"><i class="icon icon-code"></i></span>&nbsp;<a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}/{{ page.slug }}&text={{ share_page_template }}" title="Share this visualisation on Twitter"><i class="icon icon-twitter-squared"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.slug }}" title="Share this visualisation on Facebook"><i class="icon icon-facebook-squared"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.slug }}" title="Share this visualisation on Google+"><i class="icon icon-gplus-squared"></i></a>&nbsp;
+            <span class="odi-visualisation-embed-toggle" title="{{ gettext('Get the embed code for this visualisation') }}"><i class="icon icon-code"></i></span>&nbsp;<a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}/{{ page.slug }}&text={{ share_page_template }}" title="{{ gettext('Share this visualisation on Twitter') }}"><i class="icon icon-twitter-squared"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.slug }}" title="{{ gettext('Share this visualisation on Facebook') }}"><i class="icon icon-facebook-squared"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.slug }}" title="{{ gettext('Share this visualisation on Google+') }}"><i class="icon icon-gplus-squared"></i></a>&nbsp;
         </div>
     </div>
     <div class="odi-visualisation-view">
@@ -53,11 +53,11 @@
                 </ul>
                 <div class="odi-visualisation-legend-explanation">
                     <div class="odi-visualisation-legend-explanation-title">
-                        How does this work?
+                        {{ gettext('How does this work?') }}
                         <span class="odi-visualisation-legend-explanation-toggle">x</span>
                     </div>
                     <div class="odi-visualisation-legend-explanation-text">
-                        By default, places on the map are color coded by their "Openness", as determined by the results of the Open Data Index. Scaled from green to red, where green is "open" and red is "closed".
+                        {{ gettext('By default, places on the map are color coded by their "Openness", as determined by the results of the Open Data Index. Scaled from green to red, where green is "open" and red is "closed".') }}
                     </div>
                 </div>
             </div>
@@ -65,20 +65,20 @@
     </div>
     <div class="odi-visualisation-footer">
         <div class="odi-visualisation-links">
-            <a class="odi-visualisation-permalink" target="_blank" href="{{ SITEURL }}/{{ page.rel_permalink }}" title="Go to the permalink for this visualisation">Permalink</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="{{ SITEURL }}/" title="Go to the {{ SITENAME }} website">{{ SITENAME }}</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="{{ ODI.survey.domain }}" title="Go to the {{ ODI.survey.name }} website">{{ ODI.survey.name }}</a>
+            <a class="odi-visualisation-permalink" target="_blank" href="{{ SITEURL }}/{{ page.rel_permalink }}" title="{{ gettext('Go to the permalink for this visualisation') }}">{{ gettext('Permalink') }}</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">{{ SITENAME }}</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="{{ ODI.survey.domain }}" title="{{ gettext('Go to the %(survey)s website', survey=ODI.survey.name) }}">{{ ODI.survey.name }}</a>
         </div>
         <div class="odi-visualisation-credits">
-            An <a target="_blank" href="{{ ODI.sponsor.domain }}" title="Go to the {{ ODI.sponsor.name }} website">{{ ODI.sponsor.name }}</a> project. [Licensing and usage terms]
+            {{ gettext('An') }} <a target="_blank" href="{{ ODI.sponsor.domain }}" title="{{ gettext('Go to the %(sponsor)s', sponsor=ODI.sponsor.name) }} website') }}">{{ ODI.sponsor.name }}</a> {{ gettext('project') }}. [Licensing and usage terms]
         </div>
     </div>
 
     <div class="odi-visualisation-embed-iframe">
         <div class="odi-visualisation-embed-iframe-title">
-            Embed this visualisation
+            {{ gettext('Embed this visualisation') }}
             <span class="odi-visualisation-embed-toggle" title="Close this modal">x</span>
         </div>
         <div class="odi-visualisation-embed-iframe-text">
-            Use the following code to embed this visualisation in your own website.
+            {{ gettext('Use the following code to embed this visualisation in your own website.') }}
         </div>
         <xmp contenteditable="true"><iframe width="100%" height="100%"src="{{ SITEURL }}/{{ page.slug }}" frameBorder="0"></iframe></xmp>
     </div>

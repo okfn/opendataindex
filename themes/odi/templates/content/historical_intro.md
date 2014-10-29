@@ -1,3 +1,3 @@
-**The Open Data Index assesses the state of open government data around the world.**
+{{ gettext('**The Open Data Index assesses the state of open government data around the world.**') }}
 
-This is historical data from {{ page.year }}.
+{{ gettext('This is historical data from %(year)s.', year=page.year) }}

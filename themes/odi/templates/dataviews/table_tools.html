@@ -1,23 +1,23 @@
 <section class="data-tools">
-    <h4>Tools</h4>
+    <h4>{{ gettext('Tools') }}</h4>
     <form role="form" class="data-table-tools">
-        <span>Sort by:</span>
+        <span>{{ gettext('Sort by') }}</span>
         <div class="radio-inline">
         <label>
             <input type="radio" class="sort-table" name="sort-table" value="score" checked/>
-            Rank/Score
+            {{ gettext('Rank/Score') }}
         </label>
         </div>
         <div class="radio-inline">
         <label>
             <input type="radio" class="sort-table" name="sort-table" value="yes_count" />
-            # Yes
+            {{ gettext('# Yes') }}
         </label>
         </div>
         <div class="radio-inline">
         <label>
             <input type="radio" class="sort-table" name="sort-table" value="alpha" />
-            A-Z
+            {{ gettext('A-Z') }}
         </label>
         </div>
         <div class="form-group">

@@ -53,7 +53,7 @@
                     {% set earliest_in_series = entries|where("place", place.id)|where("dataset", scope_dataset)|last %}
                     <tr data-rank="{% if entry %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}" data-score="{% if entry %}{{ entry.score }}{% else %}{{ ODI.na }}{% endif %}" data-place="{{ place.slug }}">
                         <td>
-                            <a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ scope_dataset }}/" title="{{ scope_dataset }} in {{ place.name }}">{{ place.name }}</a>
+                            <a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ scope_dataset }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=scope_dataset, place=place.name) }}">{{ place.name }}</a>
                         </td>
                         <td>
                             {% if entry %}
@@ -79,17 +79,17 @@
                         </td>
                         <td>
                             {% if entry and entry.url %}
-                            <a href="{{ entry.url }}" title="">{{ entry.url }}</a>
+                            <a href="{{ entry.url }}" title="{{ entry.url }}">{{ entry.url }}</a>
                             {% else %}
-                            No URL for this dataset.
+                            {{ gettext('No URL for this dataset.') }}
                             {% endif %}
                         </td>
                         <td>
                             {% if earliest_in_series %}
-                            Since {{ earliest_in_series.year }}
+                            {{ gettext('Since %(year)s', year=earliest_in_series.year) }}
                             {% endif %}
                             {% if entry and entry.format %}
-                             in {{ entry.format }} format.
+                             {{ gettext('in %(format)s format.', format=entry.format) }}
                             {% endif %}
                         </td>
                     </tr>

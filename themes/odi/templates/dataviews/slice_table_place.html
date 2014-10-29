@@ -25,7 +25,7 @@
 
                 <tr data-rank="{% if entry %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}" data-score="{% if entry %}{{ entry.score }}{% else %}{{ ODI.na }}{% endif %}" data-place="{% if entry %}{{ entry.place }}{% else %}{{ ODI.na }}{% endif %}">
                     <td>
-                        <a href="{{ SITEURL }}/places/{{ scope_place }}/datasets/{{ dataset.id }}/" title="{{ dataset.title }} in {{ scope_place }}">{{ dataset.title }}</a>
+                        <a href="{{ SITEURL }}/places/{{ scope_place }}/datasets/{{ dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=dataset.title, place=scope_place) }}">{{ dataset.title }}</a>
                     </td>
                     <td>
                         {% if entry and entry.score %}
@@ -54,15 +54,15 @@
                         {% if entry and entry.url %}
                         <a href="{{ entry.url }}" title="">{{ entry.url }}</a>
                         {% else %}
-                        No URL for this dataset.
+                        {{ gettext('No URL for this dataset.') }}
                         {% endif %}
                     </td>
                     <td>
                         {% if earliest_in_series %}
-                        Since {{ earliest_in_series.year }}
+                        {{ gettext('Since %(year)s', year=earliest_in_series.year) }}
                         {% endif %}
                         {% if entry and entry.format %}
-                         in {{ entry.format }} format.
+                         {{ gettext('in %(format)s format.', format=entry.format) }}
                         {% endif %}
                     </td>
                 </tr>

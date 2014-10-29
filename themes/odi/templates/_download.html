@@ -3,39 +3,39 @@
 <section class="row">
     <div class="col-md-4">
         <div class="attention">
-            <h3>Archive</h3>
+            <h3>{{ gettext('Archive') }}</h3>
             <div>
                 <i class="fa fa-archive"></i>
             </div>
             <p>
-                All data as an archive file.
+                {{ gettext('All data as an archive file.') }}
             </p>
-            <a class="btn btn-info" href="{{ SITEURL }}/places/" title="The whole Index displayed in an easy-to-read table.">Download</a>
+            <a class="btn btn-info" href="{{ SITEURL }}/places/" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">{{ gettext('Download') }}</a>
         </div>
     </div>
     <div class="col-md-4">
         <div class="attention">
-            <h3>CSV</h3>
+            <h3>{{ gettext('CSV') }}</h3>
             <div>
                 <i class="fa fa-table"></i>
             </div>
             <p>
-                Data in CSV format.
+                {{ gettext('Data in CSV format.') }}
                 <br />
-                <a class="label label-info" href="{{ SITEURL }}/api/entries.csv" title="">Entries</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.csv" title="">Datasets</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.csv" title="">Places</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.csv" title="">Questions</a>
+                <a class="label label-info" href="{{ SITEURL }}/api/entries.csv" title="{{ gettext('Entries') }}">{{ gettext('Entries') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.csv" title="{{ gettext('Datasets') }}">{{ gettext('Datasets') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.csv" title="{{ gettext('Places') }}">{{ gettext('Places') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.csv" title="{{ gettext('Questions') }}">{{ gettext('Questions') }}</a>
             </p>
         </div>
     </div>
     <div class="col-md-4">
         <div class="attention">
-            <h3>JSON</h3>
+            <h3>{{ gettext('JSON') }}</h3>
             <div>
                 <i class="fa fa-cogs"></i>
             </div>
             <p>
-                Data in JSON format.
+                {{ gettext('Data in JSON format.') }}
                 <br />
-                <a class="label label-info" href="{{ SITEURL }}/api/entries.json" title="">Entries</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.json" title="">Datasets</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.json" title="">Places</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.json" title="">Questions</a>
+                <a class="label label-info" href="{{ SITEURL }}/api/entries.json" title="{{ gettext('Entries') }}">{{ gettext('Entries') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.json" title="{{ gettext('Datasets') }}">{{ gettext('Datasets') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.json" title="{{ gettext('Places') }}">{{ gettext('Places') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.json" title="{{ gettext('Questions') }}">{{ gettext('Questions') }}</a>
             </p>
         </div>
     </div>
@@ -43,21 +43,21 @@
 
 <section class="row">
     <div class="col-md-12">
-        <h3>Additional downloads</h3>
+        <h3>{{ gettext('Additional downloads') }}</h3>
         <p>
-        We also have a range of data slices available in both CSV and JSON formats.
+        {{ gettext('We also have a range of data slices available in both CSV and JSON formats.') }}
         </p>
         <ul>
-            <li><strong>Entries 2014</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.csv" title="2014 entries in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.json" title="2014 entries in JSON format">JSON</a></li>
-            <li><strong>Entries 2013</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.csv" title="2013 entries in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.json" title="2013 entries in JSON format">JSON</a></li>
+            <li><strong>{{ gettext('Entries 2014') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.csv" title="{{ gettext('2014 entries in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.json" title="{{ gettext('2014 entries in JSON format') }}">{{ gettext('JSON') }}</a></li>
+            <li><strong>{{ gettext('Entries 2013') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.csv" title="{{ gettext('2013 entries in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.json" title="{{ gettext('2013 entries in JSON format') }}">{{ gettext('JSON') }}</a></li>
             <li>
-                <strong>Datasets by category:</strong><br />
+                <strong>{{ gettext('Datasets by category:') }}</strong><br />
                 <ul>
-                    <li><strong>Civic Information</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.csv" title="Civic Information datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.json" title="Civic Information datasets in JSON format">JSON</a></li>
-                    <li><strong>Environment</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.csv" title="Environment datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.json" title="Environment datasets in JSON format">JSON</a></li>
-                    <li><strong>Finance</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.csv" title="Finance datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.json" title="Finance datasets in JSON format">JSON</a></li>
-                    <li><strong>Geodata</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.csv" title="Geodata datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.json" title="Geodata datasets in JSON format">JSON</a></li>
-                    <li><strong>Transport</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.csv" title="Transport datasets in CSV format">CSV</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.json" title="Transport datasets in JSON format">JSON</a></li>
+                    <li><strong>{{ gettext('Civic Information') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.csv" title="{{ gettext('Civic Information datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.json" title="{{ gettext('Civic Information datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
+                    <li><strong>{{ gettext('Environment') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.csv" title="{{ gettext('Environment datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.json" title="{{ gettext('Environment datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
+                    <li><strong>{{ gettext('Finance') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.csv" title="{{ gettext('Finance datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.json" title="{{ gettext('Finance datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
+                    <li><strong>{{ gettext('Geodata') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.csv" title="{{ gettext('Geodata datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.json" title="{{ gettext('Geodata datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
+                    <li><strong>{{ gettext('Transport') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.csv" title="{{ gettext('Transport datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.json" title="{{ gettext('Transport datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
                 </ul>
             </li>
         </ul>

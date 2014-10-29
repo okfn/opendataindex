@@ -52,7 +52,7 @@
             </div>
             <div class="container">
                 <div class="okfn-ribbon">
-                    <a href="http://okfn.org/" data-toggle="collapse" data-target="#okf-panel" title="Part of the Open Knowledge Foundation Network">An Open Knowledge Foundation Site</a>
+                    <a href="http://okfn.org/" data-toggle="collapse" data-target="#okf-panel" title="{{ gettext('Part of the Open Knowledge Network') }}">{{ gettext('An Open Knowledge Site') }}</a>
                 </div>
             </div>
         </div>
@@ -63,35 +63,35 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ SITEURL }}/">
+                    <a class="navbar-brand" href="{{ SITEURL }}/" title="{{ gettext('Open Data Index') }} {{ ODI.current_year }} {{ gettext('by Open Knowledge') }}">
                         {{ SITENAME }}
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="{{ SITEURL }}/about/" title="about">
-                                About
+                            <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
+                                {{ gettext('About') }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ SITEURL }}/contributors/" title="contributors">
-                                Contributors
+                            <a href="{{ SITEURL }}/contributors/" title="{{ gettext('See all the contributors to the Open Data Index') }}">
+                                {{ gettext('Contributors') }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ SITEURL }}/methodology/" title="methodology">
-                                Methodology
+                            <a href="{{ SITEURL }}/methodology/" title="{{ gettext('About the methodology used in creating the Open Data Index') }}">
+                                {{ gettext('Methodology') }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ SITEURL }}/download/" title="download">
-                                Download
+                            <a href="{{ SITEURL }}/download/" title="{{ gettext('Download Open Data Index data') }}">
+                                {{ gettext('Download') }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ SITEURL }}/vis/" title="Visualisations">
-                                Visualisations
+                            <a href="{{ SITEURL }}/vis/" title="{{ gettext('Visualisations') }}">
+                                {{ gettext('Visualisations') }}
                             </a>
                         </li>
                     </ul>
@@ -99,19 +99,19 @@
                         {% if ODI.mailinglist %}
                         <li class="divider-vertical"></li>
                         <li>
-                            <a href="{{ ODI.mailinglist }}" title="Join the discussion">List</a>
+                            <a href="{{ ODI.mailinglist }}" title="{{ gettext('Join the mailing list for this project') }}">{{ gettext('List') }}</a>
                         </li>
                         {% endif %}
                         {% if ODI.repo %}
                         <li class="divider-vertical"></li>
                         <li>
-                            <a href="{{ ODI.repo }}"><i class="fa fa-github"></i> Repo</a>
+                            <a href="{{ ODI.repo }}" title="{{ gettext('See the code for this project') }}"><i class="fa fa-github"></i> {{ gettext('Repo') }}</a>
                         </li>
                         {% endif %}
                         {% if ODI.twitter %}
                         <li class="divider-vertical"></li>
                         <li>
-                            <a href="https://twitter.com/{{ ODI.twitter }}"><i class="fa fa-twitter"></i> @{{ ODI.twitter }}</a>
+                            <a href="https://twitter.com/{{ ODI.twitter }}"><i class="fa fa-twitter" title="{{ gettext('Follow this project on Twitter') }}"></i> @{{ ODI.twitter }}</a>
                         </li>
                         {% endif %}
                         <li class="divider-vertical"></li>

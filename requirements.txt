@@ -4,3 +4,4 @@ tablib
 ghp-import
 click
 coverage
+babel

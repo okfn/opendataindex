@@ -4,7 +4,7 @@
     {% include 'dataviews/embed_map.html' %}
 </section>
 
-<h2>About the Open Data Index</h2>
+<h2>{{ gettext('About the Open Data Index') }}</h2>
 <div class="row">
     <div class="col-md-2 centered"></div>
     <div class="col-md-8 centered">
@@ -16,38 +16,38 @@
 <div class="row">
     <div class="col-md-4">
         <div class="attention">
-            <h3>Table View</h3>
+            <h3>{{ gettext('Table view') }}</h3>
             <div>
                 <i class="fa fa-table"></i>
             </div>
             <p>
-                The whole Index displayed in an easy-to-read table.
+                {{ gettext('The whole Index displayed in an easy-to-read table.') }}
             </p>
-            <a class="btn btn-info" href="{{ SITEURL }}/places/" title="The whole Index displayed in an easy-to-read table.">Go there</a>
+            <a class="btn btn-info" href="{{ SITEURL }}/places/" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">{{ gettext('Go there') }}</a>
         </div>
     </div>
     <div class="col-md-4">
         <div class="attention">
-            <h3>Downloads & API</h3>
+            <h3>{{ gettext('Downloads & API') }}</h3>
             <div>
                 <i class="fa fa-cloud-download"></i>
             </div>
             <p>
-                Download the raw Index data directly or use it via a CSV/JSON API.
+                {{ gettext('Download the raw Index data directly or use it via a CSV/JSON API.') }}
             </p>
-            <a class="btn btn-info" href="{{ SITEURL }}/download/" title="Download the raw Index data directly or use it via a CSV/JSON API.">Go there</a>
+            <a class="btn btn-info" href="{{ SITEURL }}/download/" title="{{ gettext('Download the raw Index data directly or use it via a CSV/JSON API.') }}">{{ gettext('Go there') }}</a>
         </div>
     </div>
     <div class="col-md-4">
         <div class="attention">
-            <h3>Methodology</h3>
+            <h3>{{ gettext('Methodology') }}</h3>
             <div>
                 <i class="fa fa-book"></i>
             </div>
             <p>
-                Read about the methodology behind the Index here.
+                {{ gettext('Read about the methodology behind the Index here.') }}
             </p>
-            <a class="btn btn-info" href="{{ SITEURL }}/methodology/" title="Read about the methodology behind the Index here.">Go there</a>
+            <a class="btn btn-info" href="{{ SITEURL }}/methodology/" title="{{ gettext('Read about the methodology behind the Index here.') }}">{{ gettext('Go there') }}</a>
         </div>
     </div>
 </div>

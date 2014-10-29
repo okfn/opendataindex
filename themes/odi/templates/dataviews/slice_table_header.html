@@ -1,17 +1,17 @@
 <tr>
     <th class="data-table-column-heading">
-        <div>{% if page.layout == "place" %}Dataset{% else %}Place{% endif %}</div>
+        <div>{% if page.layout == "place" %}{{ gettext('Dataset') }}{% else %}{{ gettext('Place') }}{% endif %}</div>
     </th>
     <th class="data-table-column-heading">
-        <div>Score</div>
+        <div>{{ gettext('Score') }}</div>
     </th>
     <th class="data-table-column-heading">
-        <div>Breakdown</div>
+        <div>{{ gettext('Breakdown') }}</div>
     </th>
     <th class="data-table-column-heading">
-        <div>Location (URL)</div>
+        <div>{{ gettext('Location (URL)') }}</div>
     </th>
     <th class="data-table-column-heading">
-        <div>Information</div>
+        <div>{{ gettext('Information') }}</div>
     </th>
 </tr>

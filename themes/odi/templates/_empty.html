@@ -1,16 +1,16 @@
 <p>
-    We do not current have any data for {{ page.title }}. But you can help change that!
+    {{ gettext('We do not current have any data for %(page)s. But you can help change that!', page=page.title) }}
 </p>
 
 <section class="row">
     <div class="col-md-4">
         <a href="{{ ODI.survey.domain }}{{ ODI.survey.submit_route }}?place={{ page.place }}&dataset={{ page.dataset }}&year={{ page.year }}" class="btn btn-success">
-            Add information
+            {{ gettext('Add information') }}
         </a>
     </div>
     <div class="col-md-4">
         <a href="" class="btn btn-success">
-            Contact us for help
+            {{ gettext('Contact us for help') }}
         </a>
     </div>
     <div class="col-md-4">
