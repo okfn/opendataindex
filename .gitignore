@@ -9,6 +9,8 @@ cache/
 output/
 sandbox/*
 bower_components/*
+content/pages/places/*
+content/pages/datasets/*
 /cli/build
 /cli/dist
 /cli/*.egg-info

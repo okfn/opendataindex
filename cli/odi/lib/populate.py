@@ -60,7 +60,7 @@ class Populate(object):
             f.write(filetemplate.format(**filecontext).encode('utf-8'))
 
     def ensure_dir(self, dirpath, clean_slate=False):
-        if clean_slate:
+        if clean_slate and os.path.exists(dirpath):
             shutil.rmtree(dirpath)
         if not os.path.exists(dirpath):
             os.makedirs(dirpath)

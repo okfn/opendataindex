@@ -10,6 +10,8 @@ Some brief instructions, proper docs to come.
 * Setup a virtual env
 * Install dependencies: `pip install -r requirements.txt`
 * Install the CLI: `cd cli && python setup.py install && cd ../`
+* Grab data from the database: `python scripts/process.py`
+* Populate the content sources from data: `odi populate --limited`
 * `pelican content -o output -s config_default.py`
 * `./develop-server` to run a server that watches and builds
 
@@ -20,9 +22,8 @@ Some brief instructions, proper docs to come.
 
 Steps to create a snapshot for deployment::
 
-    pelican content -o output -s config_deploy.py
-    ghp-import output
-    git push origin gh-pages
+    odi populate
+    odi deploy
 
 
 ## Data
