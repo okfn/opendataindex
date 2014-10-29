@@ -49,7 +49,7 @@ Once the data has been prepared via the `process.py` script, there is an additio
 
 ## Visualisations
 
-The Open Data Index has a small set of tools and patterns for implementing visualisations. The first visualisation is the **Chloropeth map** (described below), and this is the reference implementation for other visualisations to follow.
+The Open Data Index has a small set of tools and patterns for implementing visualisations. The first visualisation is the **Choropleth map** (described below), and this is the reference implementation for other visualisations to follow.
 
 Visualisations have the following features:
 
@@ -59,7 +59,7 @@ Visualisations have the following features:
 * Tools to filter data in the visualisation
 * An interface to pass state to a visualisation via URL params
 
-### Chloropeth map
+### Choropleth map
 
 Displays Open Data Index data via a map interface.
 
