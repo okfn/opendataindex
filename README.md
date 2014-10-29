@@ -9,7 +9,8 @@ Some brief instructions, proper docs to come.
 
 * Setup a virtual env
 * Install dependencies: `pip install -r requirements.txt`
-* `pelican content -o output -s pelicanconf.py`
+* Install the CLI: `cd cli && python setup.py install && cd ../`
+* `pelican content -o output -s config_default.py`
 * `./develop-server` to run a server that watches and builds
 
 [Pelican documentation for more information](http://docs.getpelican.com)
@@ -19,7 +20,7 @@ Some brief instructions, proper docs to come.
 
 Steps to create a snapshot for deployment::
 
-    pelican content -o output -s publishconf.py
+    pelican content -o output -s config_deploy.py
     ghp-import output
     git push origin gh-pages
 

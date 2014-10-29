@@ -25,14 +25,14 @@ def clean():
         local('mkdir {deploy_path}'.format(**env))
 
 def build():
-    local('pelican -s pelicanconf.py')
+    local('pelican -s config_default.py')
 
 def rebuild():
     clean()
     build()
 
 def regenerate():
-    local('pelican -r -s pelicanconf.py')
+    local('pelican -r -s config_default.py')
 
 def serve():
     os.chdir(env.deploy_path)
@@ -51,7 +51,7 @@ def reserve():
     serve()
 
 def preview():
-    local('pelican -s publishconf.py')
+    local('pelican -s config_deploy.py')
 
 def cf_upload():
     rebuild()
@@ -63,7 +63,7 @@ def cf_upload():
 
 @hosts(production)
 def publish():
-    local('pelican -s publishconf.py')
+    local('pelican -s config_deploy.py')
     project.rsync_project(
         remote_dir=dest_path,
         exclude=".DS_Store",
