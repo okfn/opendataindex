@@ -11,9 +11,7 @@ sys.path.append(os.curdir)
 from config_default import *
 
 RELATIVE_URLS = False
-# set to 'opendataindex' while we are serving from a subdirectory on gh-pages
-# SITEURL = 'http://staging.index.okfn.org'
-SITEURL = '/opendataindex'
+SITEURL = 'http://staging.index.okfn.org'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = None
