@@ -1,10 +1,91 @@
 {% from 'macros.html' import historical_navigation %}
 
 
-{{ page.content }}
+{% set scope_dataset = page.dataset %}
+{% set scope_place = page.place %}
+{% set scope_year = page.year %}
 
 
-{% include 'dataviews/slice_table_place.html' %}
+{% if scope_year %}
+    {% if scope_year == ODI.current_year %}
+    {% set rank_lookup = 'rank' %}
+    {% set score_lookup = 'score' %}
+    {% else %}
+    {% set rank_lookup = '%s%s'|format('rank_', scope_year) %}
+    {% set score_lookup = '%s%s'|format('score_', scope_year) %}
+    {% endif %}
+{% else %}
+    {% set rank_lookup = 'rank' %}
+    {% set score_lookup = 'score' %}
+{% endif %}
+
+
+{% set entries = datastore.entries.dict %}
+{% set datasets = datastore.datasets.dict %}
+{% set places = datastore.places.dict|sort(attribute=rank_lookup) %}
+{% set questions = datastore.questions.dict %}
+
+
+{% if page.place %}
+{% set place = places|where('id', page.place)|first %}
+{% endif %}
+
+
+<section id="place-intro">
+    <div class="row">
+        <div class="col-md-7">
+            <h1>
+                {{ place.name }}
+                <span class="place-openness">{{ place[score_lookup] }}% open</span>
+            </h1>
+            <div>
+                page text here: {{ page.content }}
+            </div>
+            <div class="row">
+                <div class="col-md-8 place-rank">
+                    #{{ place[rank_lookup] }} in the Index
+                </div>
+                <div class="col-md-4">
+                    <span>Previously</span>
+                    <ul>
+                        <li>2013</li>
+                        <li>2012</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            {% include '_vis_embed.map.html' %}
+        </div>
+    </div>
+</section>
+
+
+
+<section id="place-slice-table">
+    <div>
+        {% filter markdown %}
+        {% include "content/slice_table_place_help.md" %}
+        {% endfilter %}
+    </div>
+    {% include 'dataviews/slice_table_place.html' %}
+</section>
+
 
 {% set fragment = '%s%s'|format('places/', page.place) %}
 {{ historical_navigation(page, ODI, fragment) }}
+
+<section id="place-contributors">
+    <h2>Contributors</h2>
+    <p>
+        The following people have made this possible:
+    </p>
+    <h4>Reviews</h4>
+    <ul>
+        <li>Someone</li>
+    </ul>
+    <h4>Submissions</h4>
+    <ul>
+        <li>Someone</li>
+    </ul>
+</section>

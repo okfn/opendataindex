@@ -1,0 +1,1 @@
+This table shows the state of open data across each key dataset (displayed down the left hand side). To find out more about each dataset, click on the info icon. Each icon in the data availability column represents important factors indicating data accessibility or availability - mouse over the icons to see what they are and the colours correspond to yes / no / unsure / no data.

@@ -7,6 +7,10 @@
 
 {% block body_classes %}{{ page.type }}{% endblock body_classes %}
 
+{% if page.type == 'place' %}
+{% block heading %}{% endblock heading %}
+{% endif %}
+
 {% block page_title -%}
 {{ page.title }}
 {%- endblock page_title %}

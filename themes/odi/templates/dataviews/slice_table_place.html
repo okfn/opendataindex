@@ -1,35 +1,6 @@
 {% from 'macros.html' import popover_slice_title, popover_slice_content %}
 
 
-{% set scope_dataset = page.dataset %}
-{% set scope_place = page.place %}
-{% set scope_year = page.year %}
-
-
-{% if scope_year %}
-    {% if scope_year == ODI.current_year %}
-    {% set rank_lookup = 'rank' %}
-    {% set score_lookup = 'score' %}
-    {% else %}
-    {% set rank_lookup = '%s%s'|format('rank_', scope_year) %}
-    {% set score_lookup = '%s%s'|format('score_', scope_year) %}
-    {% endif %}
-{% else %}
-    {% set rank_lookup = 'rank' %}
-    {% set score_lookup = 'score' %}
-{% endif %}
-
-
-{% set entries = datastore.entries.dict %}
-{% set datasets = datastore.datasets.dict %}
-{% set places = datastore.places.dict|sort(attribute=rank_lookup) %}
-{% set questions = datastore.questions.dict %}
-
-
-{% if page.place %}
-{% set places = places|where('id', page.place) %}
-{% endif %}
-
 <div class="row">
     <div class="col-md-8">
         {% include 'dataviews/table_tools.html' %}
