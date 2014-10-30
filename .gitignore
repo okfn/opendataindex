@@ -9,6 +9,7 @@ cache/
 output/
 sandbox/*
 bower_components/*
+node_modules
 content/pages/places/*
 content/pages/datasets/*
 /cli/build
