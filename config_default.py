@@ -60,7 +60,8 @@ TAGS_SAVE_AS = False
 ARCHIVES_SAVE_AS = False
 
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
-PLUGINS = ['datastore', 'datastore_api', 'datastore_assets', 'i18n_subsites']
+PLUGINS = ['datastore', 'datastore_api', 'datastore_assets', 'i18n_subsites',
+           'pelican_alias']
 
 THEME = os.path.join(PROJECT_ROOT, 'themes', 'odi')
 THEME_STATIC_DIR = 'static'

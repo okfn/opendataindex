@@ -5,3 +5,4 @@ ghp-import
 click
 coverage
 babel
+pelican-alias
