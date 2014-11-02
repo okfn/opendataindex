@@ -6,3 +6,4 @@ click
 coverage
 babel
 pelican-alias
+natsort

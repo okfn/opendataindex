@@ -153,7 +153,8 @@ JINJA_EXTENSIONS = [
 
 JINJA_FILTERS = {
   'where': filters.where,
-  'markdown': filters.markdown
+  'markdown': filters.markdown,
+  'natsort': filters.natsort
 }
 
 DEFAULT_LANG = 'en'
