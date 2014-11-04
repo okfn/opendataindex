@@ -8056,27 +8056,28 @@ button.close {
   font-weight: 200;
   font-style: italic;
 }
-.data-glance {
-  padding-top: 32px;
-  padding-bottom: 32px;
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-.data-point {
-  height: 2.5em;
-  line-height: 2.5em;
-  font-size: 1em;
-}
-.data-point-key {
-  display: inline-block;
-}
-.data-point-value {
-  display: inline-block;
-  text-align: center;
-  background-color: black;
+#home-stats {
+  background-color: #7AB800;
   color: white;
-  width: 2.5em;
-  height: 2.5em;
+  margin-top: -20px;
+  padding: 20px 0;
+}
+#home-stats h1 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 48px;
+}
+#home-stats-items {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+#home-stats-items .col-md-3 {
+  text-align: center;
+}
+#home-stats-items .col-md-3 strong {
+  padding: 5px 10px;
+  background-color: #699f00;
 }
 .data-table-column-heading div {
   -webkit-transform: rotate(-45deg);
@@ -8239,10 +8240,6 @@ table#slice-table tr th:nth-child(2) {
 }
 .attention i {
   font-size: 64px;
-}
-.home h1,
-h2 {
-  text-align: center;
 }
 #home-visualisation,
 #permalink-visualisation {
