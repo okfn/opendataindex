@@ -4,13 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="{{ AUTHOR }}" />
-        <meta name="description" content="{% block meta_description %}{{ ODI.description }}{% endblock meta_description %}" />
+        <meta name="author" content="{{ AUTHOR }}">
+        <meta name="description" content="{% block meta_description %}{{ ODI.description }}{% endblock meta_description %}">
         <title>{{ SITENAME }} - {{ ODI.author.name }}</title>
         <base href="/">
         {% block head_css %}
-        <link rel="stylesheet" href="{{ SITEURL }}/static/css/site.css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/static/css/site.css">
         {% endblock head_css %}
+        <link rel="icon" href="{{ SITEURL }}/static/images/favicon.ico">
         <script>
             var siteUrl = '{{ SITEURL }}';
         </script>

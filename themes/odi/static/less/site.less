@@ -1,5 +1,6 @@
 @import (less) '../vendor/bootstrap/less/bootstrap';
 @import (less) '../vendor/font-awesome/less/font-awesome';
+@import (less) '../vendor/lato/less/lato';
 
 
 @fa-font-path: '../vendor/font-awesome/fonts';
@@ -275,18 +276,24 @@ table#slice-table tr th:nth-child(2), {
   background-color: #dfdfdf;
 }
 
+.navbar-default {
+  border-width: 0;
+}
+
 #header {
-  background-color: #00A5E0;
+  background-color: #FFF;
   height: 70px;
 }
 
 #header-brand {
   float: left;
   width: 300px;
+  padding: 0 15px;
   a {
     display: block;
     margin: 10px 0;
-    color: white;
+    font-family: Lato;
+    color: #7ab800;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 16px;
@@ -301,7 +308,11 @@ table#slice-table tr th:nth-child(2), {
     }
   }
   &.has-sub-brand a {
-    line-height: 25px;
+    padding-top: 5px;
+    line-height: 21px;
+    img {
+      margin-top: -5px;
+    }
     span {
       display: block;
       font-weight: 300;
