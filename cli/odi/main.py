@@ -58,7 +58,8 @@ def deploy():
 
 @cli.command()
 @click.argument('action')
-def trans(action):
+@click.option('--lang', default='en', help='Pass in a language. Only used for `init`')
+def trans(action, lang):
     """Run various translation tasks."""
 
     actions = ('init', 'extract', 'compile', 'update')
@@ -71,7 +72,7 @@ def trans(action):
 
     _init = ['pybabel', 'init', '-i',
              '{}/messages.pot'.format(config['trans_path']), '-d',
-             config['trans_path'], '-l', 'en']
+             config['trans_path'], '-l', lang]
     _extract = ['pybabel', 'extract', '-F', 'babel.config', '-k',
                 'lazy_gettext', '-o',
                 '{0}/messages.pot'.format(config['trans_path']), '.']
