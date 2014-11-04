@@ -104,7 +104,11 @@ def populate(limited):
     config = utilities.get_config()
 
     click.echo('Populating the content source files from data.')
-    lib.populate.run(limited)
+    if limited:
+        lib.populate.run(limited_places=config['limited']['places'],
+                         limited_datasets=config['limited']['datasets'])
+    else:
+        lib.populate.run()
 
 
 if __name__ == '__main__':

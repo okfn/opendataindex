@@ -5,9 +5,8 @@ import shutil
 import logging
 
 
-
-def run(limited):
-    Populate(limited=limited)
+def run(limited_places=None, limited_datasets=None):
+    Populate(limited_places=limited_places, limited_datasets=limited_datasets)
 
 
 class Populate(object):
@@ -43,11 +42,13 @@ class Populate(object):
         self.years = self.conf['ODI']['years']
         self.current_year = self.conf['ODI']['current_year']
 
-        if kwargs['limited']:
-            l_places = ('au',)
-            l_datasets = ('timetables',)
-            self.places = [p for p in self.places if p['id'] in l_places]
-            self.datasets = [d for d in self.datasets if d['id'] in l_datasets]
+        if kwargs.get('limited_places'):
+            self.places = [p for p in self.places if
+                           p['id'] in kwargs['limited_places']]
+
+        if kwargs.get('limited_datasets'):
+            self.datasets = [d for d in self.datasets if
+                           d['id'] in kwargs['limited_datasets']]
 
         self.ensure_dir(self.datasets_dir, clean_slate=True)
         self.ensure_dir(self.places_dir, clean_slate=True)
@@ -261,6 +262,7 @@ class Populate(object):
 
 
 overview_template = u"""type: {display_type}
+template: {display_type}
 title: Open Data Index
 slug: places
 year: {year}
@@ -268,12 +270,14 @@ year: {year}
 
 
 overview_historical_template = u"""type: {display_type}
+template: {display_type}
 title: Open Data Index {year}
 slug: places/{year}
 year: {year}
 """
 
 place_template = u"""type: {display_type}
+template: {display_type}
 title: {place_name}
 slug: places/{place_slug}
 place: {place_slug}
@@ -282,6 +286,7 @@ year: {year}
 
 
 place_historical_template = u"""type: {display_type}
+template: {display_type}
 title: {place_name}
 slug: places/{place_slug}/{year}
 place: {place_slug}
@@ -290,6 +295,7 @@ year: {year}
 
 
 place_dataset_template = u"""type: {display_type}
+template: {display_type}
 title: {place_name} / {dataset_name}
 slug: places/{place_slug}/datasets/{dataset_id}
 place: {place_slug}
@@ -299,6 +305,7 @@ year: {year}
 
 
 place_dataset_historical_template = u"""type: {display_type}
+template: {display_type}
 title: {place_name} / {dataset_name} ({year})
 slug: places/{place_slug}/datasets/{dataset_id}/{year}
 place: {place_slug}
@@ -308,6 +315,7 @@ year: {year}
 
 
 dataset_overview_template = u"""type: {display_type}
+template: {display_type}
 title: Dataset comparison
 slug: datasets
 year: {year}
@@ -315,6 +323,7 @@ year: {year}
 
 
 dataset_template = u"""type: {display_type}
+template: {display_type}
 title: {dataset_name}
 slug: datasets/{dataset_slug}
 dataset: {dataset_slug}
@@ -323,6 +332,7 @@ year: {year}
 
 
 dataset_historical_template = u"""type: {display_type}
+template: {display_type}
 title: {dataset_name}
 slug: datasets/{dataset_slug}/{year}
 dataset: {dataset_slug}
