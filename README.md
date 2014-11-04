@@ -1,17 +1,22 @@
 # Open Data Index
 
-This is the code that powers the [Open Data Index](http://index.okfn.org/).
+This is the code that powers the [Open Data Index](http://index.okfn.org/), an [Open Knowledge](http://okfn.org/) initiative.
 
+The Open Data Index displays a snapshot of data collected in an [Open Data Survey](http://census.okfn.org).
+
+This new Index codebase was written for the [2014 Global Survey](http://global.census.okfn.org), and can be used with any survey powered by the [survey codebase](https://github.com/okfn/opendatacensus).
+
+The code generates a static site using [Pelican](http://docs.getpelican.com), a Python-based static site generator.
 
 ## Setup
 
-Some brief instructions, proper docs to come.
+Getting setup with the code is easy if you have some familiarity with Python and virtualenv.
 
-* Setup a virtual env
-* Install dependencies: `pip install -r requirements.txt`
+* Setup a virtualenv for the project
+* Install the dependencies: `pip install -r requirements.txt`
 * Install the CLI: `cd cli && python setup.py install && cd ../`
 * Grab data from the database: `python scripts/process.py`
-* Populate the content sources from data: `odi populate --limited`
+* Populate the content sources: `odi populate` or `odi populate --limited` if you have a large amount of data (like the global Index), and want a smaller set for local development
 * `pelican content -o output -s config_default.py`
 * `./develop-server` to run a server that watches and builds
 
