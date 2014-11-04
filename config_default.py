@@ -106,6 +106,7 @@ ODI = {
     },
     'years': [u'2014', u'2013'],
     'current_year': u'2014',
+    'previous_year': u'2013',
     'na': u'n/a',
     'email': u'index@okfn.org',
     'description': u'The Open Data Index assesses the state of open government data around the world.',

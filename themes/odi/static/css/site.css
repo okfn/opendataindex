@@ -8318,3 +8318,6 @@ table#slice-table tr th:nth-child(2) {
 .icon-block .fa {
   font-size: 64px;
 }
+.summary-compared {
+  font-size: 0.75em;
+}
