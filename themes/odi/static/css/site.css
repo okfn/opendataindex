@@ -8057,7 +8057,7 @@ button.close {
   font-style: italic;
 }
 #home-stats {
-  background-color: #7AB800;
+  background-color: #7ab800;
   color: white;
   margin-top: -20px;
   padding: 20px 0;
@@ -8308,4 +8308,13 @@ table#slice-table tr th:nth-child(2) {
   display: block;
   font-weight: 300;
   font-size: 14px;
+}
+.icon-block {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #EEE;
+  border-radius: 2px;
+}
+.icon-block .fa {
+  font-size: 64px;
 }

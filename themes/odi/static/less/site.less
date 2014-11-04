@@ -5,15 +5,7 @@
 @import 'http://assets.okfn.org/themes/okfn/okf-panel.css';
 
 @fa-font-path: '../vendor/font-awesome/fonts';
-
-
-// // STICKY FOOTER
-// @footerheight: 160px;
-// html { position: relative; min-height: 100%; }
-// body { margin-bottom: @footerheight; }
-// #footer { position: absolute; bottom: 0; width: 100%; height: @footerheight; }
-// // END STICKY FOOTER
-
+@color-okf-green: #7AB800;
 @color-maybe: #39bef9;
 @color-yes: #8bdd3a;
 @color-no: #dd3d3a;
@@ -35,7 +27,7 @@
 }
 
 #home-stats {
-  background-color: #7AB800;
+  background-color: @color-okf-green;
   color: white;
   margin-top: -20px;
   padding: 20px 0;
@@ -54,7 +46,7 @@
     text-align: center;
     strong {
       padding: 5px 10px;
-      background-color: darken(#7AB800, 5%);
+      background-color: darken(@color-okf-green, 5%);
     }
   }
 }
@@ -239,10 +231,6 @@ table#slice-table tr th:nth-child(2), {
   font-size: 64px;
 }
 
-// .home h1, h2 {
-//   text-align: center;
-// }
-
 #home-visualisation, #permalink-visualisation {
   width: 100%;
   height: 700px;
@@ -318,5 +306,15 @@ table#slice-table tr th:nth-child(2), {
       font-weight: 300;
       font-size: 14px;
     }
+  }
+}
+
+.icon-block {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #EEE;
+  border-radius: 2px;
+  .fa {
+    font-size: 64px;
   }
 }
