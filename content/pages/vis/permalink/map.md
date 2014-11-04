@@ -1,4 +1,5 @@
-type: vis_perma.map
+type: map.permalink
+template: map.permalink
 slug: vis/map
 title:  Map Visualisation
 

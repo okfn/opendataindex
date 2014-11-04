@@ -1,0 +1,14 @@
+{% extends 'page.html' %}
+{% from 'macros.html' import history %}
+
+{% block content %}
+{% from '_scope.html' import scope with context %}
+{% do scope.update({
+    'entries': scope.entries|where('dataset', page.dataset),
+    'dataset': scope.datasets|where('id', page.dataset)|first
+})%}
+
+{{ page.content }}
+{% include 'dataviews/table_slice_dataset.html' %}
+{{ history(page, ODI, '%s%s'|format('datasets/', page.dataset)) }}
+{% endblock content %}

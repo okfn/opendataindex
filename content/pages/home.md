@@ -1,4 +1,5 @@
 type: home
+template: home
 title: Open government data around the world, right now.
 save_as: index.html
 year: 2014

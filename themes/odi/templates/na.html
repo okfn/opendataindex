@@ -1,0 +1,8 @@
+{% extends 'page.html' %}
+
+{% block content %}
+<h3>{{ gettext('Sorry') }}</h3>
+<p>
+    {{ gettext('There is no data available for %(page)s in the Index.', page=page.title) }}
+</p>
+{% endblock content %}

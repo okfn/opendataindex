@@ -62,7 +62,7 @@
 {%- endmacro %}
 
 
-{% macro historical_navigation(page, odi, namespace) -%}
+{% macro history(page, odi, namespace) -%}
 
 {# namespace = 'historical' or 'datasets' #}
 
@@ -71,11 +71,11 @@
     {% for year in odi.years %}
 
     {% if year == odi.current_year %}
-    {% set route = page.url %}
-    {% set anchor = gettext('Current') %}
+        {% set route = page.url %}
+        {% set anchor = gettext('Current') %}
     {% else %}
-    {% set route = '%s/%s/%s/'|format(SITEURL, namespace, year) %}
-    {% set anchor = year %}
+        {% set route = '%s/%s/%s/'|format(SITEURL, namespace, year) %}
+        {% set anchor = year %}
     {% endif %}
 
     <li>

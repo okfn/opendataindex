@@ -1,3 +1,5 @@
+type: page
+template: page
 title:  Contributors
 slug: contributors
 

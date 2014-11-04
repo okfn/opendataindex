@@ -1,71 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="{{ AUTHOR }}" />
         <meta name="description" content="{% block meta_description %}{{ ODI.description }}{% endblock meta_description %}" />
-
         <title>{{ SITENAME }} - {{ ODI.author.name }}</title>
-
         <base href="/">
-
-        {% if OK.ribbon %}
-        <!-- okf ribbon -->
-        <link rel="stylesheet" href="http://assets.okfn.org/themes/okfn/okf-panel.css"/>
-        {% endif %}
-
         {% block head_css %}
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="http://okfnlabs.org/jekyll-template/css/v2/style.css" />
-        <link rel="stylesheet" href="{{ SITEURL }}/static/css/app.css" />
+        <link rel="stylesheet" href="{{ SITEURL }}/static/css/site.css" />
         {% endblock head_css %}
         <script>
             var siteUrl = '{{ SITEURL }}';
         </script>
         {% block head_scripts %}
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <script src="{{ SITEURL }}/static/scripts/vendor/chroma.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="{{ SITEURL }}/static/scripts/app.js"></script>
+        <script data-main="{{ SITEURL }}/static/scripts/site" src="{{ SITEURL }}/static/scripts/require.js"></script>
         {% endblock head_scripts %}
-
     </head>
-
     <body class="{% block body_classes %}{% endblock body_classes %}">
-
-        {% if OK.ribbon %}
-        <!-- OKF Panel -->
-        <div class="absolute-okf-panel">
-            <div id="okf-panel" class="collapse">
-                <iframe src="http://assets.okfn.org/themes/okfn/okf-panel.html" scrolling="no"></iframe>
-            </div>
-            <div class="container">
-                <div class="okfn-ribbon">
-                    <a href="http://okfn.org/" data-toggle="collapse" data-target="#okf-panel" title="{{ gettext('Part of the Open Knowledge Network') }}">{{ gettext('An Open Knowledge Site') }}</a>
-                </div>
-            </div>
-        </div>
-        <!-- End OKF Panel -->
-        {% endif %}
-
         {% block header %}
         <header id="header">
             <div class="container">
               <div id="header-brand"{# class="has-sub-brand"#}>
-                <a href="{{ SITEURL }}/" title="{{ gettext('Open Data Index') }} {{ ODI.current_year }} {{ gettext('by Open Knowledge') }}">
+                <a href="{{ SITEURL }}/" title="{{ SITENAME }} {{ ODI.current_year }} {{ ODI.sponsor.name }}">
                     <img src="{{ SITEURL }}/static/images/logo.png" height="50">
-                    {{ gettext('Open Data Index') }}
+                    {{ SITENAME }}
                     {#<span>{{ gettext('Global') }}</span>#}
                 </a>
               </div>
@@ -126,7 +86,6 @@
             </div>
         </nav>
         {% endblock header %}
-
         {% block main %}
         <div class="container">
             <div class="content">
@@ -134,7 +93,7 @@
                     <div class="col-md-12">
                         {% block heading %}
                         <header class="page-header">
-                            <h1>{% block page_title %}Open Data Index{% endblock page_title %}</h1>
+                            <h1>{% block page_title %}{{ SITENAME }}{% endblock page_title %}</h1>
                         </header>
                         {% endblock heading %}
 
@@ -145,7 +104,6 @@
             </div>
         </div>
         {% endblock main %}
-
         {% block footer %}
         <footer id="footer">
             <div class="container">
@@ -171,17 +129,7 @@
             </div>
         </footer>
         {% endblock footer %}
-
         {% block body_scripts %}
-
-        {% if OK.ribbon %}
-        <script src="http://assets.okfn.org/themes/okfn/collapse.min.js" type="text/javascript"></script>
-        <script src="http://assets.okfn.org/themes/okfn/okf-panel.js" type="text/javascript"></script>
-        {% endif %}
-
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <!--script src="js/bootstrap.min.js"></script-->
-
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', '{{ ODI.googleanalytics }}']);
@@ -194,6 +142,5 @@
             })();
         </script>
         {% endblock body_scripts %}
-
     </body>
 </html>

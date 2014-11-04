@@ -1,0 +1,36 @@
+{#
+
+_scope.html exposes the `scope` variable - a dict with common stuff we need throughout the templates. It is used like this:
+
+{% from '_scope.html' import scope with context %}
+
+#}
+
+
+{% set scope = {} %}
+
+{% if (page.year == ODI.current_year) or not page.year %}
+    {% do scope.update({
+        'rank_lookup': 'rank',
+        'score_lookup': 'score',
+        'value_lookup': 'value'
+    })%}
+{% else %}
+    {% do scope.update({
+        'rank_lookup': '%s%s'|format('rank_', page.year),
+        'score_lookup': '%s%s'|format('score_', page.year),
+        'value_lookup': '%s%s'|format('value_', page.year)
+    })%}
+{% endif %}
+
+{% do scope.update({
+    'summary': datastore.summary.dict,
+    'entries': datastore.entries.dict,
+    'datasets': datastore.datasets.dict,
+    'questions': datastore.questions.dict,
+    'places': datastore.places.dict|where(scope.score_lookup, None, 'is_not')|natsort(attribute=scope.score_lookup, reverse=True),
+    'place_count': datastore.summary.dict[0],
+    'entry_count': datastore.summary.dict[1],
+    'open_count': datastore.summary.dict[2],
+    'open_percent': datastore.summary.dict[3]
+}) %}

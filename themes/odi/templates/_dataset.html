@@ -1,9 +1,0 @@
-{% from 'macros.html' import historical_navigation %}
-
-
-{{ page.content }}
-
-{% include 'dataviews/slice_table_dataset.html' %}
-
-{% set fragment = '%s%s'|format('datasets/', page.dataset) %}
-{{ historical_navigation(page, ODI, fragment) }}

@@ -1,14 +1,14 @@
 require.config({
-    baseUrl: 'SITEURL/static/scripts'.replace('SITEURL', siteUrl),
+    baseUrl: 'SITEURL/static'.replace('SITEURL', siteUrl),
     paths: {
-        app: 'map/main',
+        app: 'scripts/map/main',
         leaflet: 'vendor/leaflet',
         jquery: 'vendor/jquery.min',
         chroma: 'vendor/chroma.min',
         pubsub: 'vendor/pubsub',
         lodash: 'vendor/lodash.compat.min',
-        data: 'map/data',
-        ui: 'map/ui'
+        data: 'scripts/map/data',
+        ui: 'scripts/map/ui'
     }
 });
 

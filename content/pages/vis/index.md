@@ -1,4 +1,5 @@
-type: vis_gallery
+type: gallery
+template: gallery
 title: Visualisations
 slug: vis
 

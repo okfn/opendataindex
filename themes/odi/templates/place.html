@@ -1,0 +1,69 @@
+{% extends 'page.html' %}
+{% from 'macros.html' import history %}
+
+{% block heading %}{% endblock heading %}
+
+{% block content %}
+{% from '_scope.html' import scope with context %}
+{% do scope.update({
+    'entries': scope.entries|where('place', page.place),
+    'place': scope.places|where('id', page.place)|first
+}) %}
+
+<section id="place-intro">
+    <div class="row">
+        <div class="col-md-7">
+            <h1>
+                {{ scope.place.name }}
+                <span class="place-openness">{{ scope.place[score_lookup] }}% open</span>
+            </h1>
+            <div>
+                page text here: {{ page.content }}
+                <br /><br /><br />
+
+            </div>
+            <div class="row">
+                <div class="place-rank col-md-8">
+                    #{{ scope.place[rank_lookup] }} {{ gettext('in the Index') }}
+                </div>
+                <div class="col-md-4">
+                    <span>{{ gettext('Previously') }}</span>
+                    <ul>
+                        <li>2013</li>
+                        <li>2012</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            {#{% include '_vis_embed.map.html' %}#}
+        </div>
+    </div>
+</section>
+
+<section id="place-slice-table">
+    <div>
+        {% filter markdown %}
+        {% include "content/table_slice_place_help.md" %}
+        {% endfilter %}
+    </div>
+    {% include 'dataviews/table_slice_place.html' %}
+</section>
+
+<section id="place-contributors">
+    <h2>{{ gettext('Contributors') }}</h2>
+    <p>
+        {{ gettext('The following people have made this possible') }}:
+    </p>
+    <h4>{{ gettext('Reviews') }}</h4>
+    <ul>
+        <li>Someone</li>
+    </ul>
+    <h4>Submissions</h4>
+    <ul>
+        <li>Someone</li>
+    </ul>
+</section>
+
+{{ history(page, ODI, '%s%s'|format('places/', page.place)) }}
+{% endblock content %}
