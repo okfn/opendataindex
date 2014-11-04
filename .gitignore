@@ -12,6 +12,7 @@ bower_components/*
 node_modules
 content/pages/places/*
 content/pages/datasets/*
+config_instance.py
 /cli/build
 /cli/dist
 /cli/*.egg-info
