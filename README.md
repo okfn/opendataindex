@@ -121,3 +121,13 @@ Returns all places in the database.
 #### /api/questions.{format}
 
 Returns all questions in the database.
+
+
+## Translations
+
+There are two types of Open Data Index content to translate: strings in the codebase, and strings in the source data.
+
+
+## URL Aliases
+
+If migrating from a previous Index site to the new static site, you'll need to implement aliases from some old URLs to the new ones. For all common URLs related to the Open Data Index, this is taken care of via the `alias` meta data per page. For the content sources that are **not** auto-generated (such as about, methodology, etc.), you can simply add a list of comma-separated URL paths to `alias`.

@@ -7,7 +7,6 @@ import datetime
 
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-
 UTILITIES = os.path.join(PROJECT_ROOT, 'utilities')
 sys.path.insert(1, UTILITIES)
 
@@ -19,6 +18,8 @@ AUTORELOAD_IGNORE_CACHE = True
 AUTHOR = u'Open Knowledge'
 SITENAME = u'Open Data Index'
 SITEURL = u''
+DEFAULT_LANG = 'en'
+LANGUAGES = ['en', 'es']
 
 STATIC_PATHS = ['extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
@@ -129,18 +130,23 @@ ODI = {
     'googleanalytics': u'',
     'mailinglist': u'',
     'cli':  {
-      'test_path': 'tests',
-      'content_path': PATH,
-      'output_path': OUTPUT_PATH,
-      'trans_path': 'themes/odi/translations',
-      'deploy_remote': 'upstream',
-      "database": {
-          'submissions': '',
-          'entries': '',
-          'questions': '',
-          'datasets': '',
-          'places': ''
-      }
+        'languages': LANGUAGES,
+        'test_path': 'tests',
+        'content_path': PATH,
+        'output_path': OUTPUT_PATH,
+        'trans_path': 'themes/odi/translations',
+        'deploy_remote': 'upstream',
+        'database': {
+            'submissions': '',
+            'entries': '',
+            'questions': '',
+            'datasets': '',
+            'places': ''
+        },
+        'limited': {
+            'places': ['au', 'gb'],
+            'datasets': ['timetables', 'spending']
+        }
     }
 }
 
@@ -156,5 +162,3 @@ JINJA_FILTERS = {
   'markdown': filters.markdown,
   'natsort': filters.natsort
 }
-
-DEFAULT_LANG = 'en'

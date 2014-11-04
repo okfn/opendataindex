@@ -6,4 +6,5 @@ click
 coverage
 babel
 pelican-alias
+webassets
 natsort
