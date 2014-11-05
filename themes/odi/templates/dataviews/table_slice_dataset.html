@@ -2,10 +2,10 @@
 
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
         {% include 'dataviews/table_tools.html' %}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         {% include 'dataviews/table_key.html' %}
     </div>
 </div>
@@ -27,6 +27,9 @@
                         </th>
                         <th class="data-table-column-heading">
                             <div>{{ gettext('Location (URL)') }}</div>
+                        </th>
+                        <th class="data-table-column-heading">
+                            <div>{{ gettext('Format') }}</div>
                         </th>
                         <th class="data-table-column-heading">
                             <div>{{ gettext('Information') }}</div>
@@ -69,11 +72,17 @@
                             {% endif %}
                         </td>
                         <td>
-                            {% if earliest_in_series %}
-                            {{ gettext('Since %(year)s', year=earliest_in_series.year) }}
-                            {% endif %}
                             {% if entry and entry.format %}
-                             {{ gettext('in %(format)s format.', format=entry.format) }}
+                            {{ entry.format }}
+                            {% else %}
+                            {{ gettext('Format unknown') }}
+                            {% endif %}
+                        </td>
+                        <td title="{% if entry and entry.details %}{{ entry.details }}{% endif %}">
+                            {% if entry and entry.details %}
+                            {{ entry.details|truncate(10) }}
+                            {% else %}
+                            {{ gettext('No additional details') }}
                             {% endif %}
                         </td>
                     </tr>

@@ -9,6 +9,12 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 
 {% set scope = {} %}
 
+{% do scope.update({
+    'lower': gettext('Down'),
+    'higher': gettext('Up'),
+    'no_change': gettext('No change')
+})%}
+
 {% if (page.year == ODI.current_year) or not page.year %}
     {% do scope.update({
         'rank_lookup': 'rank',
@@ -17,6 +23,8 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
     }) %}
     {% if page.year %}
         {% do scope.update({
+            'rank_lookup_previous': '%s%s'|format('rank_', ODI.previous_year),
+            'score_lookup_previous': '%s%s'|format('score_', ODI.previous_year),
             'value_lookup_previous': '%s%s'|format('value_', ODI.previous_year)
         }) %}
     {% endif %}
@@ -25,6 +33,11 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
         'rank_lookup': '%s%s'|format('rank_', page.year),
         'score_lookup': '%s%s'|format('score_', page.year),
         'value_lookup': '%s%s'|format('value_', page.year)
+    }) %}
+    {% do scope.update({
+        'rank_lookup_previous': '',
+        'score_lookup_previous': '',
+        'value_lookup_previous': ''
     }) %}
 {% endif %}
 

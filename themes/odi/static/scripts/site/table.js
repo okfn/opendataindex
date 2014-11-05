@@ -22,23 +22,12 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
     }
 
-    function sortYesCount(a, b) {
-
-        var _a = $(a).find('.yes').length,
-        _b = $(b).find('.yes').length;
-        var comp = _b - _a;
-        return comp !== 0 ? comp : sortPlace(a, b);
-
-    }
-
     function sortTable(table, sortBy, $actor) {
 
         var sortFunc;
 
         if (sortBy === 'score') {
             sortFunc = sortScore;
-        } else if (sortBy === 'yes_count') {
-            sortFunc = sortYesCount;
         } else {
             sortFunc = sortPlace;
         }
@@ -120,20 +109,17 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
         });
 
-        console.log('YO MAN');
-
         $.each($scoreDisplay, function(index, el) {
-            var score;
-            if ($(el).data('score') === naString) {
+            var score,
+                $el = $(el);
+            if ($el.data('score') === naString) {
                 score = 0;
             } else {
-                score = parseInt($(el).data('score'), 10);
+                score = parseInt($el.data('score'), 10);
             }
-            console.log(score);
+            $el.css('backgroundColor', colorScale(score).hex());
         });
 
-        // class="score" data-score="{{ place[score_lookup] }}"
-        // fillColor = colorScale(score).hex();
     }
 
     function initializeTable() {

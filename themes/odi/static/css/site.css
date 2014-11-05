@@ -8080,17 +8080,12 @@ button.close {
   background-color: #699f00;
 }
 .data-table-column-heading div {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
   text-align: left;
   writing-mode: tb-rl;
   vertical-align: middle;
-  padding: 8px 0;
-  height: 75px;
-  width: 90px;
+  padding: 0 0.5em 0 0;
   font-weight: bold;
+  font-size: 0.925em;
 }
 .rank,
 .score {
@@ -8098,12 +8093,20 @@ button.close {
 }
 .data-tools,
 .data-legend {
-  min-height: 160px;
   margin: 20px 0;
   padding: 15px 30px 15px 15px;
   border-left: 5px solid #eee;
   background-color: #eee;
   border-color: #777;
+}
+.data-tools h4,
+.data-legend h4 {
+  display: inline-block;
+  padding-right: 2em;
+}
+form.data-table-tools,
+ul.data-table-key {
+  display: inline-block;
 }
 .callout {
   margin: 20px 0;
@@ -8137,7 +8140,7 @@ button.close {
   border-color: #777;
 }
 ul.availability,
-ul.table-key {
+ul.data-table-key {
   padding-left: 0;
   cursor: pointer;
 }
@@ -8151,20 +8154,20 @@ ul.table-key {
   padding-right: 10px;
   text-align: center;
 }
-.table-key li {
+.data-table-key li {
   display: inline-block;
   border-left: 16px solid #CCC;
   line-height: 16px;
   padding-left: 5px;
   padding-right: 10px;
 }
-.table-key li.maybe {
+.data-table-key li.maybe {
   border-color: #39bef9;
 }
-.table-key li.yes {
+.data-table-key li.yes {
   border-color: #8bdd3a;
 }
-.table-key li.no {
+.data-table-key li.no {
   border-color: #dd3d3a;
 }
 .availability-comparative li {
@@ -8256,7 +8259,6 @@ table#slice-table tr th:nth-child(2) {
 }
 .place-openness {
   float: right;
-  background-color: green;
   padding-left: 24px;
   padding-right: 24px;
 }
@@ -8320,4 +8322,7 @@ table#slice-table tr th:nth-child(2) {
 }
 .summary-compared {
   font-size: 0.75em;
+}
+.search-tool {
+  padding-left: 1.5em;
 }

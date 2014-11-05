@@ -15,28 +15,38 @@
         <div class="col-md-7">
             <h1>
                 {{ scope.place.name }}
-                <span class="place-openness">{{ scope.place[score_lookup] }}% open</span>
+                <span class="place-openness" data-score="94">{{ scope.place[scope.score_lookup] }}% open</span>
             </h1>
             <div>
-                page text here: {{ page.content }}
+                {{ page.content }}
                 <br /><br /><br />
 
             </div>
             <div class="row">
-                <div class="place-rank col-md-8">
-                    #{{ scope.place[rank_lookup] }} {{ gettext('in the Index') }}
-                </div>
-                <div class="col-md-4">
-                    <span>{{ gettext('Previously') }}</span>
-                    <ul>
-                        <li>2013</li>
-                        <li>2012</li>
-                    </ul>
+                <div class="place-rank col-md-12">
+                    #{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}
+                    {% if scope.place[scope.rank_lookup_previous] %}
+                    <br />
+                    <span class="summary-compared">
+                        {% if scope.place[scope.rank_lookup_previous]|int >
+                           scope.place[scope.rank_lookup]|int
+                        %}
+                        {{ scope.lower }}
+                        {% elif scope.place[scope.rank_lookup_previous]|int <
+                           scope.place[scope.rank_lookup]|int
+                        %}
+                        {{ scope.higher }}
+                        {% else %}
+                        {{ scope.no_change }}
+                        {% endif %}
+                        from #{{ scope.place[scope.rank_lookup_previous] }} in {{ ODI.previous_year }}
+                    </span>
+                    {% endif %}
                 </div>
             </div>
         </div>
         <div class="col-md-5">
-            {#{% include '_vis_embed.map.html' %}#}
+            {% include 'dataviews/embed_map.html' %}
         </div>
     </div>
 </section>
