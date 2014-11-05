@@ -2476,7 +2476,6 @@ body {
   height: 100%;
   width: 100%;
   font-size: 16px;
-  background-color: #2d2d2d;
 }
 a,
 span.odi-visualisation-embed-toggle,
@@ -2515,13 +2514,13 @@ span.odi-visualisation-legend-explanation-toggle:hover {
 }
 .odi-visualisation-header,
 .odi-visualisation-footer {
-  background-color: #2d2d2d;
+  background-color: #f5f5f5;
   padding-left: 1%;
   padding-right: 1%;
 }
 .odi-visualisation-header {
-  font-size: 1rem;
-  height: 0.25rem;
+  font-size: 2rem;
+  height: 10%;
 }
 .odi-visualisation-footer {
   font-size: 0.75rem;
@@ -2537,7 +2536,7 @@ span.odi-visualisation-legend-explanation-toggle:hover {
 }
 .odi-visualisation-display {
   width: 92.5%;
-  padding: 0 1%;
+  padding: 1%;
   word-wrap: break-word;
 }
 .odi-visualisation-display #map,
@@ -2644,22 +2643,4 @@ a.odi-visualisation-permalink {
   color: #f5f5f5;
   padding-left: 3px;
   padding-right: 3px;
-}
-.leaflet-container {
-  background-color: #80afd0 !important;
-  outline: 0;
-}
-.leaflet-container a {
-  color: #0078A8;
-}
-.leaflet-container a.leaflet-active {
-  outline: 2px solid orange;
-}
-.leaflet-zoom-box {
-  border: 2px dotted #38f;
-  background: rgba(255, 255, 255, 0.5);
-}
-/* general typography */
-.leaflet-container {
-  font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
