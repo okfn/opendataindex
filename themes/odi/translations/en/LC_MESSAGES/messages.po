@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-04 08:28+0200\n"
+"POT-Creation-Date: 2014-11-05 10:48+0200\n"
 "PO-Revision-Date: 2014-10-29 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -18,59 +17,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: themes/odi/templates/base.html:39
-msgid "About the Open Data Index project"
+#: themes/odi/templates/base.html:27
+msgid "Part of the Open Knowledge Foundation Network"
 msgstr ""
 
-#: themes/odi/templates/base.html:40
-msgid "About"
-msgstr ""
-
-#: themes/odi/templates/base.html:44
-msgid "See all the contributors to the Open Data Index"
-msgstr ""
-
-#: themes/odi/templates/base.html:45
-msgid "Contributors"
+#: themes/odi/templates/base.html:27
+msgid "An Open Knowledge Foundation Site"
 msgstr ""
 
 #: themes/odi/templates/base.html:49
-msgid "About the methodology used in creating the Open Data Index"
+msgid "About the Open Data Index project"
 msgstr ""
 
-#: themes/odi/templates/base.html:50 themes/odi/templates/home.html:45
-msgid "Methodology"
+#: themes/odi/templates/base.html:50
+msgid "About"
 msgstr ""
 
 #: themes/odi/templates/base.html:54
+msgid "See all the contributors to the Open Data Index"
+msgstr ""
+
+#: themes/odi/templates/base.html:55
+msgid "Contributors"
+msgstr ""
+
+#: themes/odi/templates/base.html:59
+msgid "About the methodology used in creating the Open Data Index"
+msgstr ""
+
+#: themes/odi/templates/base.html:60 themes/odi/templates/home.html:61
+msgid "Methodology"
+msgstr ""
+
+#: themes/odi/templates/base.html:64
 msgid "Download Open Data Index data"
 msgstr ""
 
-#: themes/odi/templates/base.html:55 themes/odi/templates/download.html:15
+#: themes/odi/templates/base.html:65 themes/odi/templates/download.html:15
 msgid "Download"
 msgstr ""
 
-#: themes/odi/templates/base.html:59 themes/odi/templates/base.html:60
+#: themes/odi/templates/base.html:69 themes/odi/templates/base.html:70
 msgid "Visualisations"
 msgstr ""
 
-#: themes/odi/templates/base.html:68
+#: themes/odi/templates/base.html:78
 msgid "Join the mailing list for this project"
 msgstr ""
 
-#: themes/odi/templates/base.html:68
+#: themes/odi/templates/base.html:78
 msgid "List"
 msgstr ""
 
-#: themes/odi/templates/base.html:74
+#: themes/odi/templates/base.html:84
 msgid "See the code for this project"
 msgstr ""
 
-#: themes/odi/templates/base.html:74
+#: themes/odi/templates/base.html:84
 msgid "Repo"
 msgstr ""
 
-#: themes/odi/templates/base.html:80
+#: themes/odi/templates/base.html:90
 msgid "Follow this project on Twitter"
 msgstr ""
 
@@ -82,8 +89,8 @@ msgstr ""
 msgid "All data as an archive file."
 msgstr ""
 
-#: themes/odi/templates/download.html:15 themes/odi/templates/home.html:26
-#: themes/odi/templates/home.html:28
+#: themes/odi/templates/download.html:15 themes/odi/templates/home.html:35
+#: themes/odi/templates/home.html:37
 msgid "The whole Index displayed in an easy-to-read table."
 msgstr ""
 
@@ -246,8 +253,7 @@ msgstr ""
 msgid "Explore the Open Data Index on a map."
 msgstr ""
 
-#: themes/odi/templates/gallery.html:15 themes/odi/templates/home.html:28
-#: themes/odi/templates/home.html:40 themes/odi/templates/home.html:52
+#: themes/odi/templates/gallery.html:15
 msgid "Go there"
 msgstr ""
 
@@ -259,24 +265,40 @@ msgstr ""
 msgid "Stories using the Open Data Index."
 msgstr ""
 
-#: themes/odi/templates/home.html:10
+#: themes/odi/templates/home.html:18
 msgid "About the Open Data Index"
 msgstr ""
 
-#: themes/odi/templates/home.html:21
+#: themes/odi/templates/home.html:33
 msgid "Table view"
 msgstr ""
 
-#: themes/odi/templates/home.html:33
+#: themes/odi/templates/home.html:37
+msgid "View data in table"
+msgstr ""
+
+#: themes/odi/templates/home.html:47
 msgid "Downloads & API"
 msgstr ""
 
-#: themes/odi/templates/home.html:38 themes/odi/templates/home.html:40
+#: themes/odi/templates/home.html:49
+msgid "Download the raw data directly or as CSV/JSON via API."
+msgstr ""
+
+#: themes/odi/templates/home.html:51
 msgid "Download the raw Index data directly or use it via a CSV/JSON API."
 msgstr ""
 
-#: themes/odi/templates/home.html:50 themes/odi/templates/home.html:52
+#: themes/odi/templates/home.html:51
+msgid "Download data"
+msgstr ""
+
+#: themes/odi/templates/home.html:63 themes/odi/templates/home.html:65
 msgid "Read about the methodology behind the Index here."
+msgstr ""
+
+#: themes/odi/templates/home.html:65
+msgid "Read the methodology"
 msgstr ""
 
 #: themes/odi/templates/macros.html:9
@@ -475,6 +497,18 @@ msgstr ""
 msgid "This is historical data from %(year)s."
 msgstr ""
 
+#: themes/odi/templates/dataviews/summary.html:1
+msgid "Down"
+msgstr ""
+
+#: themes/odi/templates/dataviews/summary.html:2
+msgid "Up"
+msgstr ""
+
+#: themes/odi/templates/dataviews/summary.html:3
+msgid "No change"
+msgstr ""
+
 #: themes/odi/templates/dataviews/table_comparative.html:19
 msgid "Rank"
 msgstr ""
@@ -487,6 +521,7 @@ msgstr ""
 #: themes/odi/templates/dataviews/table_comparative.html:30
 #: themes/odi/templates/dataviews/table_slice_dataset.html:23
 #: themes/odi/templates/dataviews/table_slice_place.html:23
+#: themes/odi/templates/dataviews/table_tools.html:8
 msgid "Score"
 msgstr ""
 
@@ -523,30 +558,33 @@ msgstr ""
 
 #: themes/odi/templates/dataviews/table_slice_dataset.html:32
 #: themes/odi/templates/dataviews/table_slice_place.html:32
+msgid "Format"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_slice_dataset.html:35
+#: themes/odi/templates/dataviews/table_slice_place.html:35
 msgid "Information"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:43
-#: themes/odi/templates/dataviews/table_slice_place.html:44
+#: themes/odi/templates/dataviews/table_slice_dataset.html:46
+#: themes/odi/templates/dataviews/table_slice_place.html:47
 #, python-format
 msgid "%(dataset)s in %(place)s"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:68
-#: themes/odi/templates/dataviews/table_slice_place.html:67
+#: themes/odi/templates/dataviews/table_slice_dataset.html:71
+#: themes/odi/templates/dataviews/table_slice_place.html:70
 msgid "No URL for this dataset."
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:73
-#: themes/odi/templates/dataviews/table_slice_place.html:72
-#, python-format
-msgid "Since %(year)s"
+#: themes/odi/templates/dataviews/table_slice_dataset.html:78
+#: themes/odi/templates/dataviews/table_slice_place.html:77
+msgid "Format unknown"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:76
-#: themes/odi/templates/dataviews/table_slice_place.html:75
-#, python-format
-msgid "in %(format)s format."
+#: themes/odi/templates/dataviews/table_slice_dataset.html:85
+#: themes/odi/templates/dataviews/table_slice_place.html:84
+msgid "No additional details"
 msgstr ""
 
 #: themes/odi/templates/dataviews/table_slice_place.html:20
@@ -558,19 +596,15 @@ msgid "Tools"
 msgstr ""
 
 #: themes/odi/templates/dataviews/table_tools.html:4
-msgid "Sort by"
-msgstr ""
-
-#: themes/odi/templates/dataviews/table_tools.html:8
-msgid "Rank/Score"
+msgid "Sort"
 msgstr ""
 
 #: themes/odi/templates/dataviews/table_tools.html:14
-msgid "# Yes"
+msgid "A-Z"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_tools.html:20
-msgid "A-Z"
+#: themes/odi/templates/dataviews/table_tools.html:18
+msgid "Search"
 msgstr ""
 
 #~ msgid "in the Index"
@@ -595,5 +629,20 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "by Open Knowledge"
+#~ msgstr ""
+
+#~ msgid "Since %(year)s"
+#~ msgstr ""
+
+#~ msgid "in %(format)s format."
+#~ msgstr ""
+
+#~ msgid "Sort by"
+#~ msgstr ""
+
+#~ msgid "Rank/Score"
+#~ msgstr ""
+
+#~ msgid "# Yes"
 #~ msgstr ""
 

@@ -8,3 +8,4 @@ babel
 pelican-alias
 webassets
 natsort
+transifex-client

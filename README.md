@@ -137,6 +137,10 @@ Returns all questions in the database.
 
 There are two types of Open Data Index content to translate: strings in the codebase, and strings in the source data.
 
+Translations are managed with the Transifex client:
+
+http://docs.transifex.com/developer/client/
+
 
 ## URL Aliases
 
