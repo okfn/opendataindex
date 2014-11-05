@@ -53,7 +53,7 @@
     {% endfor %}
 </ul>
 <p>
-    {{ entry.details }}
+    {{ entry.details|markdown }}
 </p>
 <a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ dataset.id }}/">
     {{ gettext('Read more') }} &raquo;
