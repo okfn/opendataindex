@@ -1,310 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Open Knowledge" />
-        <meta name="description" content="The Open Data Index assesses the state of open government data around the world." />
-
+        <meta name="author" content="Open Knowledge">
+        <meta name="description" content="The Open Data Index assesses the state of open government data around the world.">
         <title>Open Data Index - Open Knowledge</title>
-
         <base href="/">
-
-
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="http://okfnlabs.org/jekyll-template/css/v2/style.css" />
-        <link rel="stylesheet" href="http://staging.index.okfn.org/static/css/app.css" />
+        <link rel="stylesheet" href="http://staging.index.okfn.org/static/css/site.css">
+        <link rel="icon" href="http://staging.index.okfn.org/static/images/favicon.ico">
         <script>
             var siteUrl = 'http://staging.index.okfn.org';
         </script>
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <script src="http://staging.index.okfn.org/static/scripts/vendor/chroma.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script src="http://staging.index.okfn.org/static/scripts/app.js"></script>
-
+        <script data-main="http://staging.index.okfn.org/static/scripts/site" src="http://staging.index.okfn.org/static/scripts/require.js"></script>
     </head>
-
     <body class="place">
-
-
+        <div class="absolute-okf-panel">
+          <div class="container">
+            <div class="okfn-ribbon active">
+              <a href="http://okfn.org/" title="Part of the Open Knowledge Foundation Network">An Open Knowledge Foundation Site</a>
+            </div>
+          </div>
+        </div>
+        <header id="header">
+            <div class="container">
+              <div id="header-brand">
+                <a href="http://staging.index.okfn.org/" title="Open Data Index 2014 Open Knowledge">
+                    <img src="http://staging.index.okfn.org/static/images/logo.png" height="50">
+                    Open Data Index
+                </a>
+              </div>
+            </div>
+        </header>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="http://staging.index.okfn.org/">
-                        Open Data Index
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="http://staging.index.okfn.org/about/" title="about">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://staging.index.okfn.org/contributors/" title="contributors">
-                                Contributors
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://staging.index.okfn.org/methodology/" title="methodology">
-                                Methodology
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://staging.index.okfn.org/download/" title="download">
-                                Download
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://staging.index.okfn.org/vis/" title="Visualisations">
-                                Visualisations
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right ">
-                        <li class="divider-vertical"></li>
-                        <li>
-                            <a href="https://github.com/okfn/opendataindex"><i class="fa fa-github"></i> Repo</a>
-                        </li>
-                        <li class="divider-vertical"></li>
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://staging.index.okfn.org/about/" title="About the Open Data Index project">
+                            about
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://staging.index.okfn.org/methodology/" title="About the methodology used in creating the Open Data Index">
+                            methodology
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://staging.index.okfn.org/download/" title="Download Open Data Index data">
+                            download
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://staging.index.okfn.org/contributors/" title="See all the contributors to the Open Data Index">
+                            contributors
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://staging.index.okfn.org/vis/" title="See the Open Data Index through a range of visualisations">
+                            visualisations
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
-
         <div class="container">
             <div class="content">
                 <div class="row">
                     <div class="col-md-12">
 
 
-
-
-
-
-
-
-
-
-
-
-
-<section id="place-intro">
-    <div class="row">
-        <div class="col-md-7">
-            <h1>
-                Indonesia
-                <span class="place-openness">42% open</span>
-            </h1>
-            <div>
-                page text here: 
-            </div>
-            <div class="row">
-                <div class="col-md-8 place-rank">
-                    #80 in the Index
-                </div>
-                <div class="col-md-4">
-                    <span>Previously</span>
-                    <ul>
-                        <li>2013</li>
-                        <li>2012</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5">
-
-<link rel="stylesheet" type="text/css" href="http://staging.index.okfn.org/static/css/map.css" />
-
-
-
-<script data-main="http://staging.index.okfn.org/static/scripts/map" src="http://staging.index.okfn.org/static/scripts/require.js"></script>
-
-
-
-
-
-<div class="odi-visualisation">
-    <div class="odi-visualisation-header">
-        <div class="odi-visualisation-tools">
-            <i class="icon icon-filter" title="Filter the visualisation data"></i>
-            <select class="odi-filter-year">
-
-            </select>
-            <select class="odi-filter-dataset">
-                <option value="all">All Datasets</option>
-            </select>
-        </div>
-        <div class="odi-visualisation-share">
-            <span class="odi-visualisation-embed-toggle" title="Get the embed code for this visualisation"><i class="icon icon-code"></i></span>&nbsp;<a target="_blank" href="http://twitter.com/share?url=http://staging.index.okfn.org/places/id&text=" title="Share this visualisation on Twitter"><i class="icon icon-twitter-squared"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://staging.index.okfn.org/places/id" title="Share this visualisation on Facebook"><i class="icon icon-facebook-squared"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url=http://staging.index.okfn.org/places/id" title="Share this visualisation on Google+"><i class="icon icon-gplus-squared"></i></a>&nbsp;
-        </div>
+<header id="place-intro" class="page-header">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>
+        Indonesia
+        <span class="label label-default place-openness" data-score="42">42% open</span>
+      </h1>
+      <p class="lead">
+        #80 in the Index
+          <br>
+          <small>
+            Up
+            from #76 in 2013
+          </small>
+      </p>
+      
     </div>
-    <div class="odi-visualisation-view">
-        <div class="odi-visualisation-display">
-
-            <div id="map"></div>
-
-        </div>
-        <div class="odi-visualisation-legend odi-visualisation-legend-explanation-toggle">
-            <div class="odi-visualisation-legend-key">
-                <ul>
-                    <li data-score="100">100</li>
-                    <li data-score="90">90</li>
-                    <li data-score="80">80</li>
-                    <li data-score="70">70</li>
-                    <li data-score="60">60</li>
-                    <li data-score="50">50</li>
-                    <li data-score="40">40</li>
-                    <li data-score="30">30</li>
-                    <li data-score="20">20</li>
-                    <li data-score="10">10</li>
-                    <li data-score="0">0</li>
-                </ul>
-                <div class="odi-visualisation-legend-explanation">
-                    <div class="odi-visualisation-legend-explanation-title">
-                        How does this work?
-                        <span class="odi-visualisation-legend-explanation-toggle">x</span>
-                    </div>
-                    <div class="odi-visualisation-legend-explanation-text">
-                        By default, places on the map are color coded by their "Openness", as determined by the results of the Open Data Index. Scaled from green to red, where green is "open" and red is "closed".
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="odi-visualisation-footer">
-        <div class="odi-visualisation-links">
-            <a class="odi-visualisation-permalink" target="_blank" href="http://staging.index.okfn.org/" title="Go to the permalink for this visualisation">Permalink</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://staging.index.okfn.org/" title="Go to the Open Data Index website">Open Data Index</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://global.census.okfn.org/" title="Go to the Open Data Index Survey website">Open Data Index Survey</a>
-        </div>
-        <div class="odi-visualisation-credits">
-            An <a target="_blank" href="https://okfn.org/" title="Go to the Open Knowledge website">Open Knowledge</a> project. [Licensing and usage terms]
-        </div>
-    </div>
-
-    <div class="odi-visualisation-embed-iframe">
-        <div class="odi-visualisation-embed-iframe-title">
-            Embed this visualisation
-            <span class="odi-visualisation-embed-toggle" title="Close this modal">x</span>
-        </div>
-        <div class="odi-visualisation-embed-iframe-text">
-            Use the following code to embed this visualisation in your own website.
-        </div>
-        <xmp contenteditable="true"><iframe width="100%" height="100%"src="http://staging.index.okfn.org/places/id" frameBorder="0"></iframe></xmp>
-    </div>
-
-</div>
-
-        </div>
-    </div>
-</section>
-
-
+    <div class="col-md-6">
+<iframe width="100%" height="100%" src="http://staging.index.okfn.org/vis/map/embed/" frameBorder="0"></iframe>    </div>
+  </div>
+</header>
 
 <section id="place-slice-table">
-    <div>
-<p>This table shows the state of open data across each key dataset (displayed down the left hand side). To find out more about each dataset, click on the info icon. Each icon in the data availability column represents important factors indicating data accessibility or availability - mouse over the icons to see what they are and the colours correspond to yes / no / unsure / no data.</p>    </div>
-
 
 <div class="row">
-    <div class="col-md-8">
-<section class="data-tools">
-    <h4>Tools</h4>
-    <form role="form" class="data-table-tools">
-        <span>Sort by:</span>
-        <div class="radio-inline">
-        <label>
-            <input type="radio" class="sort-table" name="sort-table" value="score" checked/>
-            Rank/Score
-        </label>
-        </div>
-        <div class="radio-inline">
-        <label>
-            <input type="radio" class="sort-table" name="sort-table" value="yes_count" />
-            # Yes
-        </label>
-        </div>
-        <div class="radio-inline">
-        <label>
-            <input type="radio" class="sort-table" name="sort-table" value="alpha" />
-            A-Z
-        </label>
-        </div>
-        <div class="form-group">
-            <input class="form-control filter-table" type="search" name="filter-table" placeholder="Search for a place" />
-        </div>
-    </form>
-</section>    </div>
-    <div class="col-md-4">
-<section class="data-legend">
-    <h4>Key</h4>
-    <ul class="table-key">
-        <li class="yes">Yes</li>
-        <li class="no">No</li>
-        <li class="maybe">Unsure</li>
-        <li>No data</li>
-    </ul>
-</section>    </div>
+  <div class="col-md-6">
+<h4>Tools</h4>
+<form role="form" class="form-inline data-table-tools">
+  <span>Sort:</span>
+  <div class="radio-inline">
+    <label>
+      <input type="radio" class="sort-table" name="sort-table" value="score" checked/>
+      Score
+    </label>
+  </div>
+  <div class="radio-inline">
+    <label>
+      <input type="radio" class="sort-table" name="sort-table" value="alpha" />
+      A-Z
+    </label>
+  </div>
+  <div class="form-group search-tool">
+    <span>Search:</span>
+    <input class="form-control filter-table" type="search" name="filter-table" placeholder="Search for a place" />
+  </div>
+</form>  </div>
+  <div class="col-md-6">
+    <div class="pull-right">
+      <button type="button" class="btn btn-info" data-toggle="popover" data-placement="left" data-content="<p>This table shows the state of open data across each key dataset (displayed down the left hand side). To find out more about each dataset, click on the info icon. Each icon in the data availability column represents important factors indicating data accessibility or availability - mouse over the icons to see what they are and the colours correspond to yes / no / unsure / no data.</p>">
+        <i class="fa fa-question-circle"></i>
+      </button>
+    </div>
+<h4>Key</h4>
+<ul class="data-table-key">
+  <li class="yes">Yes</li>
+  <li class="no">No</li>
+  <li class="maybe">Unsure</li>
+  <li>No data</li>
+</ul>  </div>
 </div>
 
-<section class="data-display">
-    <div class="row">
-        <div class="col-md-12">
-            <table id="slice-table" class="table table-striped data-table">
-                <thead>
-<tr>
-    <th class="data-table-column-heading">
-        <div>Place</div>
-    </th>
-    <th class="data-table-column-heading">
-        <div>Score</div>
-    </th>
-    <th class="data-table-column-heading">
-        <div>Breakdown</div>
-    </th>
-    <th class="data-table-column-heading">
-        <div>Location (URL)</div>
-    </th>
-    <th class="data-table-column-heading">
-        <div>Information</div>
-    </th>
-</tr>                </thead>
-                <tbody>
+<hr>
+
+<table id="slice-table" class="table table-striped data-table">
+  <col style="width:3.5%">
+  <col style="width:13.5%">
+  <col style="width:5%">
+  <col style="width:15%">
+  <col style="width:20%">
+  <col style="width:10%">
+  <col style="width:10%">
+  <col style="width:10%">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Dataset</th>
+      <th>Score</th>
+      <th>Change</th>
+      <th>Breakdown</th>
+      <th>Location (URL)</th>
+      <th>Format</th>
+      <th>Information</th>
+    </tr>
+  </thead>
+  <tbody>
 
 
-                <tr data-rank="720" data-score="35" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/timetables/" title="Transport Timetables in id">Transport Timetables</a>
-                    </td>
-                    <td>
-                        35%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="720" data-score="35" data-place="id">
+      <td>
+720      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/timetables/" title="Transport Timetables in id">Transport Timetables</a>
+      </td>
+      <td class="score" data-score="35">
+35%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -313,13 +192,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -339,11 +218,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -353,47 +232,54 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://satulayanan.net/kategori/transportasi" title="">http://satulayanan.net/kategori/transportasi</a>
-                    </td>
-                    <td>
-                        Since 2013
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://satulayanan.net/kategori/transportasi" title="">http://satulayanan.net/kategori/transportasi</a>
+      </td>
+      <td>
+        Unknown
+      </td>
+      <td title="Timetable data is spread over state-owned transportation companies websites. Quality of the data varies.">
+        <p>Timetable data is spread ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="39" data-score="45" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/budget/" title="Government Budget in id">Government Budget</a>
-                    </td>
-                    <td>
-                        45%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="39" data-score="45" data-place="id">
+      <td>
+39      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/budget/" title="Government Budget in id">Government Budget</a>
+      </td>
+      <td class="score" data-score="45">
+45%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -402,13 +288,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -428,11 +314,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -442,48 +328,54 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://satupemerintah.net/ProgramApbns" title="">http://satupemerintah.net/ProgramApbns</a>
-                    </td>
-                    <td>
-                        Since 2013
-                         in PDF format.
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://satupemerintah.net/ProgramApbns" title="">http://satupemerintah.net/ProgramApbns</a>
+      </td>
+      <td>
+        PDF
+      </td>
+      <td title="Data portal covers Government of Indonesia National Budget 1968-2012.">
+        <p>Data portal covers ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="578" data-score="0" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/spending/" title="Government Spending in id">Government Spending</a>
-                    </td>
-                    <td>
-                        0%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="578" data-score="0" data-place="id">
+      <td>
+578      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/spending/" title="Government Spending in id">Government Spending</a>
+      </td>
+      <td class="score" data-score="0">
+0%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -492,13 +384,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -518,11 +410,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -532,47 +424,54 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        No URL for this dataset.
-                    </td>
-                    <td>
-                        Since 2014
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        No URL for this dataset.
+      </td>
+      <td>
+        Unknown
+      </td>
+      <td title="It is unknown whether such a database currently exist. The Ministry of Finance of the Republic of Indonesia had planned to implement the SPAN (Sistem Perbendaharaan dan Anggaran Negara/State Treasury and Budget System) in 2013, but it has been delayed. The SPAN is meant to be an internal integrated system of all processes related to the management of the budget, including budget preparation, budget document management, procurement management, payment management, revenue management, cash management, and reporting. Before, such transactional-level data seem to be scattered among individual line ministries instead of being in a unified database. Whether such detailed data is considered 'public' is unknown. A much more aggregated realized spending report, however, is available for download in PDF form from http://www.depkeu.go.id/indekskatalogdata/559 (quarterly report) or ftp://ftp1.perbendaharaan.go.id/produk/dia/lkpp/ (annual report). A database of nationwide government awarded contracts is also available at the LKPP LPSE e-Procurement portal http://inaproc.lkpp.go.id/.">
+        <p>It is unknown whether such ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="188" data-score="45" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/elections/" title="Election Results in id">Election Results</a>
-                    </td>
-                    <td>
-                        45%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="188" data-score="45" data-place="id">
+      <td>
+188      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/elections/" title="Election Results in id">Election Results</a>
+      </td>
+      <td class="score" data-score="45">
+45%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -581,13 +480,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -607,11 +506,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -621,48 +520,54 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://mediacenter.kpu.go.id/hasil-pemilu-2009.html" title="">http://mediacenter.kpu.go.id/hasil-pemilu-2009.html</a>
-                    </td>
-                    <td>
-                        Since 2014
-                         in PDF format.
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://mediacenter.kpu.go.id/hasil-pemilu-2009.html" title="">http://mediacenter.kpu.go.id/hasil-pemilu-2009.html</a>
+      </td>
+      <td>
+        PDF
+      </td>
+      <td title="The data only covers the last election (2009) with no detailed records on other election results further in the past.">
+        <p>The data only covers the ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="91" data-score="50" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/companies/" title="Company Register in id">Company Register</a>
-                    </td>
-                    <td>
-                        50%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="91" data-score="50" data-place="id">
+      <td>
+91      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/companies/" title="Company Register in id">Company Register</a>
+      </td>
+      <td class="score" data-score="50">
+50%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -671,13 +576,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -697,11 +602,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -711,48 +616,58 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://www.sisminbakum.go.id/perusahaan/default.php" title="">http://www.sisminbakum.go.id/perusahaan/default.php</a>
-                    </td>
-                    <td>
-                        Since 2013
-                         in HTML table format.
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://www.sisminbakum.go.id/perusahaan/default.php" title="">http://www.sisminbakum.go.id/perusahaan/default.php</a>
+      </td>
+      <td>
+        HTML table
+      </td>
+      <td title="This website gives a more extensive list of limited companies which includes both state-owned as well as private enterprises, and across sectors (not limited to industry, as opposed to the previous link). However it only provides information regarding the company name and location in the resulting table, although it gives an option to display results based on a selected sectors. I argue that it is not available in bulk as, although the option is available to list all registered companies in all geographical regions and across all sectors, the table it displays only show the company name and a selected geographical unit (either sub-district, city/district, and province name but not all three), and does not include the sector/field it is associated with. So one cannot obtain all the necessary information using the query it provides. Additionally, often times when I attempt to select all, the website crashes.
+
+There is no information regarding licensing so according to the FAQ agreement it is considered not openly licensed.
+
+I am not sure how frequent the data is updated as there is no information regarding this.">
+        <p>This website gives a more ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="417" data-score="40" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/map/" title="National Map in id">National Map</a>
-                    </td>
-                    <td>
-                        40%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="417" data-score="40" data-place="id">
+      <td>
+417      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/map/" title="National Map in id">National Map</a>
+      </td>
+      <td class="score" data-score="40">
+40%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -761,13 +676,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -787,11 +702,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -801,47 +716,54 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://www.bakosurtanal.go.id/produk-peta/" title="">http://www.bakosurtanal.go.id/produk-peta/</a>
-                    </td>
-                    <td>
-                        Since 2013
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://www.bakosurtanal.go.id/produk-peta/" title="">http://www.bakosurtanal.go.id/produk-peta/</a>
+      </td>
+      <td>
+        Unknown
+      </td>
+      <td title="Official basemap produced by Indonesian government is owned by National Geospatial Agency as a paid product. However, it can be viewed online at http://tanahair.indonesia.go.id/home/webmap/viewer.html?useExisting=1 and can be accessed via REST API.">
+        <p>Official basemap produced ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="632" data-score="65" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/statistics/" title="National Statistics in id">National Statistics</a>
-                    </td>
-                    <td>
-                        65%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="632" data-score="65" data-place="id">
+      <td>
+632      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/statistics/" title="National Statistics in id">National Statistics</a>
+      </td>
+      <td class="score" data-score="65">
+65%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -850,13 +772,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -876,11 +798,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -890,47 +812,58 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://bps.go.id/" title="">http://bps.go.id/</a>
-                    </td>
-                    <td>
-                        Since 2014
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://bps.go.id/" title="">http://bps.go.id/</a>
+      </td>
+      <td>
+        Unknown
+      </td>
+      <td title="According to Law number 16 of 1997 on statistics, basic statistics and sectoral statistics are available for public utilization unless it is specified
+otherwise in prevailing legislation. Basic statistics being defined as statistics utilized for a broad range of (both government and community)
+purposes, which have cross-sectoral characteristics, are on a national and macro scale, and will be the responsibility of the Statistics Agency.
+
+Demographic data are outdated (2010) and only available in PDFs. No plans on making them available via easily explored data portal online.">
+        <p>According to Law number 16 ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="310" data-score="90" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/legislation/" title="Legislation in id">Legislation</a>
-                    </td>
-                    <td>
-                        90%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="310" data-score="90" data-place="id">
+      <td>
+310      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/legislation/" title="Legislation in id">Legislation</a>
+      </td>
+      <td class="score" data-score="90">
+90%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -939,13 +872,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -965,11 +898,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -979,48 +912,54 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://ditjenpp.kemenkumham.go.id/database-peraturan.html" title="">http://ditjenpp.kemenkumham.go.id/database-peraturan.html</a>
-                    </td>
-                    <td>
-                        Since 2013
-                         in PDF and HTML format.
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://ditjenpp.kemenkumham.go.id/database-peraturan.html" title="">http://ditjenpp.kemenkumham.go.id/database-peraturan.html</a>
+      </td>
+      <td>
+        PDF and HTML
+      </td>
+      <td title="As there is no information on licensing, following the FAQ agreement it would be considered as not openly licensed.">
+        <p>As there is no information ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="509" data-score="0" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/postcodes/" title="Postcodes / Zipcodes in id">Postcodes / Zipcodes</a>
-                    </td>
-                    <td>
-                        0%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="509" data-score="0" data-place="id">
+      <td>
+509      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/postcodes/" title="Postcodes / Zipcodes in id">Postcodes / Zipcodes</a>
+      </td>
+      <td class="score" data-score="0">
+0%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -1029,13 +968,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -1055,11 +994,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -1069,47 +1008,54 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://kodepos.posindonesia.co.id" title="">http://kodepos.posindonesia.co.id</a>
-                    </td>
-                    <td>
-                        Since 2014
-                    </td>
-                </tr>
+        </ul>
+      </td>
+      <td>
+        <a href="http://kodepos.posindonesia.co.id" title="">http://kodepos.posindonesia.co.id</a>
+      </td>
+      <td>
+        Unknown
+      </td>
+      <td title="The data is available via search form, but no corresponding geolocations (which must be manually referenced to another separate subdistrict geolocation databases which are non-free)">
+        <p>The data is available via ...
+      </td>
+    </tr>
 
 
-                <tr data-rank="259" data-score="45" data-place="id">
-                    <td>
-                        <a href="http://staging.index.okfn.org/places/id/datasets/emissions/" title="Emissions of pollutants in id">Emissions of pollutants</a>
-                    </td>
-                    <td>
-                        45%
-                    </td>
-                    <td>
-                        <ul class="availability availability-slice">
+    <tr data-rank="259" data-score="45" data-place="id">
+      <td>
+259      </td>
+      <td>
+        <a href="http://staging.index.okfn.org/places/id/datasets/emissions/" title="Emissions of pollutants in id">Emissions of pollutants</a>
+      </td>
+      <td class="score" data-score="45">
+45%      </td>
+      <td>
+        No previous entry on record
+      </td>
+      <td>
+        <ul class="availability availability-slice">
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Does the data exist&lt;/p&gt;" data-content="&lt;p&gt;We are looking for government data from an official resource either issued directly by the government or by a third party representing the government. &lt;/p&gt;
 &lt;p&gt;Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.&lt;/p&gt;
 &lt;p&gt;This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).&lt;/p&gt;"><i class="fa fa-file-alt"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is data in digital form&lt;/p&gt;" data-content="&lt;p&gt;Can the data can be accessed from a computer or is it in the old paper form? 
 If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note that data can be digital, but not accessible online&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).&lt;/p&gt;"><i class="fa fa-save"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Publicly available&lt;/p&gt;" data-content="&lt;p&gt;This mean the data the can be accessed by the public and it it is not restricted. Click &#34;Show more&#34; to she the conditions for publicly open. &lt;/p&gt;
 &lt;p&gt;The data can be considered public when:
 1. It can be accessed online without the need for a password or permissions.
 2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.&lt;/p&gt;
@@ -1118,13 +1064,13 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 2. It can be accessed only by government officials.&lt;/p&gt;"><i class="fa fa-eye-open"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available for free&lt;/p&gt;" data-content="&lt;p&gt;If you have to pay for it – it is not free.&lt;/p&gt;"><i class="fa fa-dollar"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Is the data available online&lt;/p&gt;" data-content="&lt;p&gt;if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.&lt;/p&gt;"><i class="fa fa-download"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data machine readable&lt;/p&gt;" data-content="&lt;p&gt;Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.  &lt;/p&gt;
 &lt;p&gt;As a rule of thumb the following file types are machine readable:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;XLS&lt;/li&gt;
@@ -1144,11 +1090,11 @@ If you can find it online, then it’s digital, even if it is just a scan of the
 &lt;p&gt;If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.&lt;/p&gt;"><i class="fa fa-keyboard"></i>&nbsp;</li>
 
 
-                            <li class="yes" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
+          <li class="yes" data-toggle="popover" title="&lt;p&gt;Available in bulk&lt;/p&gt;" data-content="&lt;p&gt;Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.&lt;/p&gt;
 &lt;p&gt;For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.&lt;/p&gt;"><i class="fa fa-copy"></i>&nbsp;</li>
 
 
-                            <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
+          <li class="maybe" data-toggle="popover" title="&lt;p&gt;Openly licensed&lt;/p&gt;" data-content="&lt;p&gt;This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Which licenses are open?&lt;/em&gt;
 On the site of The Open Definition you can also see a directory of licenses that are certified open.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How can you find the license?&lt;/em&gt;
@@ -1158,49 +1104,58 @@ Usually, license or Terms &amp;amp; Conditions can be found at the bottom of the
 Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.&lt;/p&gt;"><i class="fa fa-unlock-alt"></i>&nbsp;</li>
 
 
-                            <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
+          <li class="no" data-toggle="popover" title="&lt;p&gt;Is the data provided on a timely and up to date basis&lt;/p&gt;" data-content="&lt;p&gt;This means if the data is relevant to the year/time it is suppose to represent? Click &#34;Show more&#34; to learn about how to find information for this question.&lt;/p&gt;
 &lt;p&gt;For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset. &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;How to find when the data was published?&lt;/em&gt;
 - If the dataset was found on a government portal, there will most often be a timestamp attached to it. 
 - If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section. 
 - Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment). 
 - Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date&lt;/p&gt;"><i class="fa fa-time"></i>&nbsp;</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <a href="http://datin.menlh.go.id/home/iklh/" title="">http://datin.menlh.go.id/home/iklh/</a>
-                    </td>
-                    <td>
-                        Since 2014
-                         in PDF format.
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+        </ul>
+      </td>
+      <td>
+        <a href="http://datin.menlh.go.id/home/iklh/" title="">http://datin.menlh.go.id/home/iklh/</a>
+      </td>
+      <td>
+        PDF
+      </td>
+      <td title="Data aggregated into national environmental index and published annually with 1 year delay (e.g. 2011 report published on December 2012)">
+        <p>Data aggregated into ...
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <div class="row">
+  <div class="col-md-6 col-md-offset-6">
+<h4>Key</h4>
+<ul class="data-table-key">
+  <li class="yes">Yes</li>
+  <li class="no">No</li>
+  <li class="maybe">Unsure</li>
+  <li>No data</li>
+</ul>  </div>
+</div> --></section>
+
+<section id="place-contributors">
+  <h2>Contributors</h2>
+  <p>
+    The following people have made this possible:
+  </p>
+  <h4>Reviews</h4>
+  <ul>
+    <li>Someone</li>
+  </ul>
+  <h4>Submissions</h4>
+  <ul>
+    <li>Someone</li>
+  </ul>
 </section>
 
-<div class="row">
-    <div class="col-md-8">
-        &nbsp;
-    </div>
-    <div class="col-md-4">
-<section class="data-legend">
-    <h4>Key</h4>
-    <ul class="table-key">
-        <li class="yes">Yes</li>
-        <li class="no">No</li>
-        <li class="maybe">Unsure</li>
-        <li>No data</li>
-    </ul>
-</section>    </div>
-</div></section>
 
 
-
-<h4>See this data over time</h4>
-<ul>
+<ul class="nav nav-pills">
+    <li class="disabled"><a>See this data over time:</a></li>
 
 
     <li>
@@ -1217,35 +1172,20 @@ Note that sometimes countries do not license under Creative Commons, but the ter
     </li>
 </ul>
 
-<section id="place-contributors">
-    <h2>Contributors</h2>
-    <p>
-        The following people have made this possible:
-    </p>
-    <h4>Reviews</h4>
-    <ul>
-        <li>Someone</li>
-    </ul>
-    <h4>Submissions</h4>
-    <ul>
-        <li>Someone</li>
-    </ul>
-</section>
 
                     </div>
                 </div>
             </div>
         </div>
-
         <footer id="footer">
             <div class="container">
                 <div class="row">
                     <div class="footer-main col-md-9">
                         <div class="footer-meta">
 <p>
-    This service is run by <a href="https://okfn.org/">Open Knowledge</a>
+    This service is run by <a href="https://okfn.org/" title="Open Knowledge">Open Knowledge</a>
     &ndash;
-    <a href="https://github.com/okfn/opendataindex">Source Code</a>
+    <a href="https://github.com/okfn/opendataindex" title="Source Code">Source Code</a>
 </p>                        </div>
                         <div class="footer-attribution">
 <p>
@@ -1259,7 +1199,7 @@ Note that sometimes countries do not license under Creative Commons, but the ter
         <img src="http://assets.okfn.org/images/ok_buttons/oc_80x15_blue.png" alt="" border="" />
     </a>
     &ndash;
-    <a href="http://creativecommons.org/licenses/by/3.0/">Content Licensed under a CC Attribution</a>
+    <a href="http://creativecommons.org/licenses/by/3.0/" title="Content Licensed under a CC Attribution"></a>
 </p>                        </div>
                     </div>
                     <div class="footer-links col-md-3">
@@ -1271,12 +1211,6 @@ Note that sometimes countries do not license under Creative Commons, but the ter
                 </div>
             </div>
         </footer>
-
-
-
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <!--script src="js/bootstrap.min.js"></script-->
-
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', '']);
@@ -1288,6 +1222,5 @@ Note that sometimes countries do not license under Creative Commons, but the ter
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
-
     </body>
 </html>
