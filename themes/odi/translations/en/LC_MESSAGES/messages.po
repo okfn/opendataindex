@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-11-05 10:48+0200\n"
+"POT-Creation-Date: 2014-11-05 22:58+0200\n"
 "PO-Revision-Date: 2014-10-29 15:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: en <LL@li.org>\n"
@@ -25,209 +25,180 @@ msgstr ""
 msgid "An Open Knowledge Foundation Site"
 msgstr ""
 
-#: themes/odi/templates/base.html:49
+#: themes/odi/templates/base.html:48
 msgid "About the Open Data Index project"
 msgstr ""
 
-#: themes/odi/templates/base.html:50
-msgid "About"
+#: themes/odi/templates/base.html:49
+msgid "about"
 msgstr ""
 
-#: themes/odi/templates/base.html:54
-msgid "See all the contributors to the Open Data Index"
-msgstr ""
-
-#: themes/odi/templates/base.html:55
-msgid "Contributors"
-msgstr ""
-
-#: themes/odi/templates/base.html:59
+#: themes/odi/templates/base.html:53
 msgid "About the methodology used in creating the Open Data Index"
 msgstr ""
 
-#: themes/odi/templates/base.html:60 themes/odi/templates/home.html:61
-msgid "Methodology"
+#: themes/odi/templates/base.html:54
+msgid "methodology"
 msgstr ""
 
-#: themes/odi/templates/base.html:64
+#: themes/odi/templates/base.html:58
 msgid "Download Open Data Index data"
 msgstr ""
 
-#: themes/odi/templates/base.html:65 themes/odi/templates/download.html:15
-msgid "Download"
+#: themes/odi/templates/base.html:59
+msgid "download"
 msgstr ""
 
-#: themes/odi/templates/base.html:69 themes/odi/templates/base.html:70
-msgid "Visualisations"
+#: themes/odi/templates/base.html:63
+msgid "See all the contributors to the Open Data Index"
 msgstr ""
 
-#: themes/odi/templates/base.html:78
-msgid "Join the mailing list for this project"
+#: themes/odi/templates/base.html:64
+msgid "contributors"
 msgstr ""
 
-#: themes/odi/templates/base.html:78
-msgid "List"
+#: themes/odi/templates/base.html:68
+msgid "See the Open Data Index through a range of visualisations"
 msgstr ""
 
-#: themes/odi/templates/base.html:84
-msgid "See the code for this project"
-msgstr ""
-
-#: themes/odi/templates/base.html:84
-msgid "Repo"
-msgstr ""
-
-#: themes/odi/templates/base.html:90
-msgid "Follow this project on Twitter"
+#: themes/odi/templates/base.html:69
+msgid "visualisations"
 msgstr ""
 
 #: themes/odi/templates/download.html:8
 msgid "Archive"
 msgstr ""
 
-#: themes/odi/templates/download.html:13
+#: themes/odi/templates/download.html:9
 msgid "All data as an archive file."
 msgstr ""
 
-#: themes/odi/templates/download.html:15 themes/odi/templates/home.html:35
-#: themes/odi/templates/home.html:37
+#: themes/odi/templates/download.html:11 themes/odi/templates/gallery.html:21
+#: themes/odi/templates/gallery.html:23 themes/odi/templates/home.html:26
+#: themes/odi/templates/home.html:28
 msgid "The whole Index displayed in an easy-to-read table."
 msgstr ""
 
-#: themes/odi/templates/download.html:20 themes/odi/templates/download.html:53
-#: themes/odi/templates/download.html:54 themes/odi/templates/download.html:58
-#: themes/odi/templates/download.html:59 themes/odi/templates/download.html:60
-#: themes/odi/templates/download.html:61 themes/odi/templates/download.html:62
+#: themes/odi/templates/download.html:12
+msgid "Download all data"
+msgstr ""
+
+#: themes/odi/templates/download.html:19
 msgid "CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:25
+#: themes/odi/templates/download.html:20
 msgid "Data in CSV format."
 msgstr ""
 
-#: themes/odi/templates/download.html:27 themes/odi/templates/download.html:40
+#: themes/odi/templates/download.html:24
+msgid "Download CSV"
+msgstr ""
+
+#: themes/odi/templates/download.html:29 themes/odi/templates/download.html:64
 msgid "Entries"
 msgstr ""
 
-#: themes/odi/templates/download.html:27 themes/odi/templates/download.html:40
+#: themes/odi/templates/download.html:34 themes/odi/templates/download.html:69
 msgid "Datasets"
 msgstr ""
 
-#: themes/odi/templates/download.html:27 themes/odi/templates/download.html:40
+#: themes/odi/templates/download.html:39 themes/odi/templates/download.html:74
 msgid "Places"
 msgstr ""
 
-#: themes/odi/templates/download.html:27 themes/odi/templates/download.html:40
+#: themes/odi/templates/download.html:44 themes/odi/templates/download.html:79
 msgid "Questions"
 msgstr ""
 
-#: themes/odi/templates/download.html:33 themes/odi/templates/download.html:53
-#: themes/odi/templates/download.html:54 themes/odi/templates/download.html:58
-#: themes/odi/templates/download.html:59 themes/odi/templates/download.html:60
-#: themes/odi/templates/download.html:61 themes/odi/templates/download.html:62
+#: themes/odi/templates/download.html:54
 msgid "JSON"
 msgstr ""
 
-#: themes/odi/templates/download.html:38
+#: themes/odi/templates/download.html:55
 msgid "Data in JSON format."
 msgstr ""
 
-#: themes/odi/templates/download.html:48
+#: themes/odi/templates/download.html:59
+msgid "Download JSON"
+msgstr ""
+
+#: themes/odi/templates/download.html:89
 msgid "Additional downloads"
 msgstr ""
 
-#: themes/odi/templates/download.html:50
+#: themes/odi/templates/download.html:90
 msgid ""
 "We also have a range of data slices available in both CSV and JSON "
 "formats."
 msgstr ""
 
-#: themes/odi/templates/download.html:53
-msgid "Entries 2014"
+#: themes/odi/templates/download.html:94
+msgid "Entries by year"
 msgstr ""
 
-#: themes/odi/templates/download.html:53
-msgid "2014 entries in CSV format"
+#: themes/odi/templates/download.html:98 themes/odi/templates/download.html:130
+msgid "Download"
 msgstr ""
 
-#: themes/odi/templates/download.html:53
-msgid "2014 entries in JSON format"
+#: themes/odi/templates/download.html:103
+msgid "2014 - CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:54
-msgid "Entries 2013"
+#: themes/odi/templates/download.html:108
+msgid "2014 - JSON"
 msgstr ""
 
-#: themes/odi/templates/download.html:54
-msgid "2013 entries in CSV format"
+#: themes/odi/templates/download.html:113
+msgid "2013 - CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:54
-msgid "2013 entries in JSON format"
+#: themes/odi/templates/download.html:118
+msgid "2013 - JSON"
 msgstr ""
 
-#: themes/odi/templates/download.html:56
-msgid "Datasets by category:"
+#: themes/odi/templates/download.html:126
+msgid "Datasets by category"
 msgstr ""
 
-#: themes/odi/templates/download.html:58
-msgid "Civic Information"
+#: themes/odi/templates/download.html:135
+msgid "Civic Information - CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:58
-msgid "Civic Information datasets in CSV format"
+#: themes/odi/templates/download.html:140
+msgid "Civic Information - JSON"
 msgstr ""
 
-#: themes/odi/templates/download.html:58
-msgid "Civic Information datasets in JSON format"
+#: themes/odi/templates/download.html:145
+msgid "Environment - CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:59
-msgid "Environment"
+#: themes/odi/templates/download.html:150
+msgid "Environment - JSON"
 msgstr ""
 
-#: themes/odi/templates/download.html:59
-msgid "Environment datasets in CSV format"
+#: themes/odi/templates/download.html:155
+msgid "Finance - CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:59
-msgid "Environment datasets in JSON format"
+#: themes/odi/templates/download.html:160
+msgid "Finance - JSON"
 msgstr ""
 
-#: themes/odi/templates/download.html:60
-msgid "Finance"
+#: themes/odi/templates/download.html:165
+msgid "Geodata - CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:60
-msgid "Finance datasets in CSV format"
+#: themes/odi/templates/download.html:170
+msgid "Geodata - JSON"
 msgstr ""
 
-#: themes/odi/templates/download.html:60
-msgid "Finance datasets in JSON format"
+#: themes/odi/templates/download.html:175
+msgid "Transport - CSV"
 msgstr ""
 
-#: themes/odi/templates/download.html:61
-msgid "Geodata"
-msgstr ""
-
-#: themes/odi/templates/download.html:61
-msgid "Geodata datasets in CSV format"
-msgstr ""
-
-#: themes/odi/templates/download.html:61
-msgid "Geodata datasets in JSON format"
-msgstr ""
-
-#: themes/odi/templates/download.html:62
-msgid "Transport"
-msgstr ""
-
-#: themes/odi/templates/download.html:62
-msgid "Transport datasets in CSV format"
-msgstr ""
-
-#: themes/odi/templates/download.html:62
-msgid "Transport datasets in JSON format"
+#: themes/odi/templates/download.html:180
+msgid "Transport - JSON"
 msgstr ""
 
 #: themes/odi/templates/empty.html:5
@@ -246,59 +217,60 @@ msgid "Contact us for help"
 msgstr ""
 
 #: themes/odi/templates/gallery.html:8
-msgid "Open Data Index Map"
+msgid "Choropleth Map"
 msgstr ""
 
-#: themes/odi/templates/gallery.html:13
-msgid "Explore the Open Data Index on a map."
+#: themes/odi/templates/gallery.html:9
+msgid "Explore the Open Data Index via a coded world map."
 msgstr ""
 
-#: themes/odi/templates/gallery.html:15
-msgid "Go there"
+#: themes/odi/templates/gallery.html:11
+msgid "The whole Index displayed on a map."
 msgstr ""
 
-#: themes/odi/templates/gallery.html:20 themes/odi/templates/gallery.html:27
-msgid "Coming soon"
+#: themes/odi/templates/gallery.html:13 themes/odi/templates/gallery.html:25
+#: themes/odi/templates/home.html:30
+msgid "View now"
 msgstr ""
 
-#: themes/odi/templates/gallery.html:25 themes/odi/templates/gallery.html:27
-msgid "Stories using the Open Data Index."
+#: themes/odi/templates/gallery.html:20 themes/odi/templates/home.html:25
+msgid "Table overview"
 msgstr ""
 
-#: themes/odi/templates/home.html:18
+#: themes/odi/templates/home.html:8
+msgid "Open government data around the world, right now."
+msgstr ""
+
+#: themes/odi/templates/home.html:19
 msgid "About the Open Data Index"
 msgstr ""
 
-#: themes/odi/templates/home.html:33
-msgid "Table view"
-msgstr ""
-
 #: themes/odi/templates/home.html:37
-msgid "View data in table"
-msgstr ""
-
-#: themes/odi/templates/home.html:47
 msgid "Downloads & API"
 msgstr ""
 
-#: themes/odi/templates/home.html:49
+#: themes/odi/templates/home.html:38
 msgid "Download the raw data directly or as CSV/JSON via API."
 msgstr ""
 
-#: themes/odi/templates/home.html:51
+#: themes/odi/templates/home.html:40
 msgid "Download the raw Index data directly or use it via a CSV/JSON API."
 msgstr ""
 
-#: themes/odi/templates/home.html:51
+#: themes/odi/templates/home.html:42
 msgid "Download data"
 msgstr ""
 
-#: themes/odi/templates/home.html:63 themes/odi/templates/home.html:65
+#: themes/odi/templates/home.html:49
+msgid "Methodology"
+msgstr ""
+
+#: themes/odi/templates/home.html:50 themes/odi/templates/home.html:52
 msgid "Read about the methodology behind the Index here."
 msgstr ""
 
-#: themes/odi/templates/home.html:65
-msgid "Read the methodology"
+#: themes/odi/templates/home.html:54 themes/odi/templates/macros.html:63
+msgid "Read more"
 msgstr ""
 
 #: themes/odi/templates/macros.html:9
@@ -363,84 +335,86 @@ msgid "It's %(no)s up to date"
 msgstr ""
 
 #: themes/odi/templates/macros.html:59
-msgid "Read more"
+#: themes/odi/templates/dataviews/table_slice_dataset.html:108
+#: themes/odi/templates/dataviews/table_slice_place.html:106
+msgid "No additional details"
 msgstr ""
 
-#: themes/odi/templates/macros.html:69
-msgid "See this data over time"
+#: themes/odi/templates/macros.html:74
+msgid "See this data over time:"
 msgstr ""
 
-#: themes/odi/templates/macros.html:75
+#: themes/odi/templates/macros.html:79
 msgid "Current"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:24
-msgid "All Datasets"
-msgstr ""
-
-#: themes/odi/templates/map.embed.html:28
-msgid "Get the embed code for this visualisation"
-msgstr ""
-
-#: themes/odi/templates/map.embed.html:28
-msgid "Share this visualisation on Twitter"
-msgstr ""
-
-#: themes/odi/templates/map.embed.html:28
-msgid "Share this visualisation on Facebook"
-msgstr ""
-
-#: themes/odi/templates/map.embed.html:28
-msgid "Share this visualisation on Google+"
-msgstr ""
-
-#: themes/odi/templates/map.embed.html:54
+#: themes/odi/templates/map.embed.html:41
 msgid "How does this work?"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:58
+#: themes/odi/templates/map.embed.html:45
 msgid ""
 "By default, places on the map are color coded by their \"Openness\", as "
 "determined by the results of the Open Data Index. Scaled from green to "
 "red, where green is \"open\" and red is \"closed\"."
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:66
+#: themes/odi/templates/map.embed.html:58
+msgid "All Datasets"
+msgstr ""
+
+#: themes/odi/templates/map.embed.html:62
+msgid "Get the embed code for this visualisation"
+msgstr ""
+
+#: themes/odi/templates/map.embed.html:62
+msgid "Share this visualisation on Twitter"
+msgstr ""
+
+#: themes/odi/templates/map.embed.html:62
+msgid "Share this visualisation on Facebook"
+msgstr ""
+
+#: themes/odi/templates/map.embed.html:62
+msgid "Share this visualisation on Google+"
+msgstr ""
+
+#: themes/odi/templates/map.embed.html:65
 msgid "Go to the permalink for this visualisation"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:66
+#: themes/odi/templates/map.embed.html:65
 msgid "Permalink"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:66
+#: themes/odi/templates/map.embed.html:65
 #, python-format
 msgid "Go to the %(sitename)s website"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:66
+#: themes/odi/templates/map.embed.html:65
 #, python-format
 msgid "Go to the %(survey)s website"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:69
+#: themes/odi/templates/map.embed.html:68
 msgid "An"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:69
+#: themes/odi/templates/map.embed.html:68
 #, python-format
 msgid "Go to the %(sponsor)s"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:69
+#: themes/odi/templates/map.embed.html:68
 msgid "project"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:75
+#: themes/odi/templates/map.embed.html:74
 msgid "Embed this visualisation"
 msgstr ""
 
-#: themes/odi/templates/map.embed.html:79
+#: themes/odi/templates/map.embed.html:78
 msgid "Use the following code to embed this visualisation in your own website."
 msgstr ""
 
@@ -497,114 +471,109 @@ msgstr ""
 msgid "This is historical data from %(year)s."
 msgstr ""
 
-#: themes/odi/templates/dataviews/summary.html:1
-msgid "Down"
-msgstr ""
-
-#: themes/odi/templates/dataviews/summary.html:2
-msgid "Up"
-msgstr ""
-
-#: themes/odi/templates/dataviews/summary.html:3
-msgid "No change"
-msgstr ""
-
-#: themes/odi/templates/dataviews/table_comparative.html:19
+#: themes/odi/templates/dataviews/table_comparative.html:24
+#: themes/odi/templates/dataviews/table_slice_dataset.html:26
+#: themes/odi/templates/dataviews/table_slice_place.html:30
 msgid "Rank"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_comparative.html:22
+#: themes/odi/templates/dataviews/table_comparative.html:25
 #: themes/odi/templates/dataviews/table_slice_dataset.html:20
 msgid "Place"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_comparative.html:30
+#: themes/odi/templates/dataviews/table_comparative.html:26
 #: themes/odi/templates/dataviews/table_slice_dataset.html:23
-#: themes/odi/templates/dataviews/table_slice_place.html:23
-#: themes/odi/templates/dataviews/table_tools.html:8
+#: themes/odi/templates/dataviews/table_slice_place.html:32
+#: themes/odi/templates/dataviews/table_tools.html:7
 msgid "Score"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_comparative.html:55
-#: themes/odi/templates/dataviews/table_key.html:7
+#: themes/odi/templates/dataviews/table_comparative.html:60
+#: themes/odi/templates/dataviews/table_key.html:6
 msgid "No data"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_key.html:2
+#: themes/odi/templates/dataviews/table_key.html:1
 msgid "Key"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_key.html:4
+#: themes/odi/templates/dataviews/table_key.html:3
 msgid "Yes"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_key.html:5
+#: themes/odi/templates/dataviews/table_key.html:4
 msgid "No"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_key.html:6
+#: themes/odi/templates/dataviews/table_key.html:5
 msgid "Unsure"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:26
-#: themes/odi/templates/dataviews/table_slice_place.html:26
-msgid "Breakdown"
-msgstr ""
-
 #: themes/odi/templates/dataviews/table_slice_dataset.html:29
-#: themes/odi/templates/dataviews/table_slice_place.html:29
-msgid "Location (URL)"
+#: themes/odi/templates/dataviews/table_slice_place.html:33
+msgid "Change"
 msgstr ""
 
 #: themes/odi/templates/dataviews/table_slice_dataset.html:32
-#: themes/odi/templates/dataviews/table_slice_place.html:32
-msgid "Format"
+#: themes/odi/templates/dataviews/table_slice_place.html:34
+msgid "Breakdown"
 msgstr ""
 
 #: themes/odi/templates/dataviews/table_slice_dataset.html:35
 #: themes/odi/templates/dataviews/table_slice_place.html:35
+msgid "Location (URL)"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_slice_dataset.html:38
+#: themes/odi/templates/dataviews/table_slice_place.html:36
+msgid "Format"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_slice_dataset.html:41
+#: themes/odi/templates/dataviews/table_slice_place.html:37
 msgid "Information"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:46
-#: themes/odi/templates/dataviews/table_slice_place.html:47
+#: themes/odi/templates/dataviews/table_slice_dataset.html:52
+#: themes/odi/templates/dataviews/table_slice_place.html:51
 #, python-format
 msgid "%(dataset)s in %(place)s"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:71
-#: themes/odi/templates/dataviews/table_slice_place.html:70
+#: themes/odi/templates/dataviews/table_slice_dataset.html:75
+#: themes/odi/templates/dataviews/table_slice_place.html:71
+msgid "No previous entry on record"
+msgstr ""
+
+#: themes/odi/templates/dataviews/table_slice_dataset.html:94
+#: themes/odi/templates/dataviews/table_slice_place.html:92
 msgid "No URL for this dataset."
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:78
-#: themes/odi/templates/dataviews/table_slice_place.html:77
-msgid "Format unknown"
+#: themes/odi/templates/dataviews/table_slice_dataset.html:101
+#: themes/odi/templates/dataviews/table_slice_place.html:99
+msgid "Unknown"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_slice_dataset.html:85
-#: themes/odi/templates/dataviews/table_slice_place.html:84
-msgid "No additional details"
-msgstr ""
-
-#: themes/odi/templates/dataviews/table_slice_place.html:20
+#: themes/odi/templates/dataviews/table_slice_place.html:31
 msgid "Dataset"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_tools.html:2
+#: themes/odi/templates/dataviews/table_tools.html:1
 msgid "Tools"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_tools.html:4
-msgid "Sort"
+#: themes/odi/templates/dataviews/table_tools.html:3
+msgid "Sort:"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_tools.html:14
+#: themes/odi/templates/dataviews/table_tools.html:13
 msgid "A-Z"
 msgstr ""
 
-#: themes/odi/templates/dataviews/table_tools.html:18
-msgid "Search"
+#: themes/odi/templates/dataviews/table_tools.html:17
+msgid "Search:"
 msgstr ""
 
 #~ msgid "in the Index"
@@ -644,5 +613,140 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "# Yes"
+#~ msgstr ""
+
+#~ msgid "Down"
+#~ msgstr ""
+
+#~ msgid "Up"
+#~ msgstr ""
+
+#~ msgid "No change"
+#~ msgstr ""
+
+#~ msgid "Format unknown"
+#~ msgstr ""
+
+#~ msgid "About"
+#~ msgstr ""
+
+#~ msgid "Contributors"
+#~ msgstr ""
+
+#~ msgid "Visualisations"
+#~ msgstr ""
+
+#~ msgid "Join the mailing list for this project"
+#~ msgstr ""
+
+#~ msgid "List"
+#~ msgstr ""
+
+#~ msgid "See the code for this project"
+#~ msgstr ""
+
+#~ msgid "Repo"
+#~ msgstr ""
+
+#~ msgid "Follow this project on Twitter"
+#~ msgstr ""
+
+#~ msgid "Entries 2014"
+#~ msgstr ""
+
+#~ msgid "2014 entries in CSV format"
+#~ msgstr ""
+
+#~ msgid "2014 entries in JSON format"
+#~ msgstr ""
+
+#~ msgid "Entries 2013"
+#~ msgstr ""
+
+#~ msgid "2013 entries in CSV format"
+#~ msgstr ""
+
+#~ msgid "2013 entries in JSON format"
+#~ msgstr ""
+
+#~ msgid "Datasets by category:"
+#~ msgstr ""
+
+#~ msgid "Civic Information"
+#~ msgstr ""
+
+#~ msgid "Civic Information datasets in CSV format"
+#~ msgstr ""
+
+#~ msgid "Civic Information datasets in JSON format"
+#~ msgstr ""
+
+#~ msgid "Environment"
+#~ msgstr ""
+
+#~ msgid "Environment datasets in CSV format"
+#~ msgstr ""
+
+#~ msgid "Environment datasets in JSON format"
+#~ msgstr ""
+
+#~ msgid "Finance"
+#~ msgstr ""
+
+#~ msgid "Finance datasets in CSV format"
+#~ msgstr ""
+
+#~ msgid "Finance datasets in JSON format"
+#~ msgstr ""
+
+#~ msgid "Geodata"
+#~ msgstr ""
+
+#~ msgid "Geodata datasets in CSV format"
+#~ msgstr ""
+
+#~ msgid "Geodata datasets in JSON format"
+#~ msgstr ""
+
+#~ msgid "Transport"
+#~ msgstr ""
+
+#~ msgid "Transport datasets in CSV format"
+#~ msgstr ""
+
+#~ msgid "Transport datasets in JSON format"
+#~ msgstr ""
+
+#~ msgid "Open Data Index Map"
+#~ msgstr ""
+
+#~ msgid "Explore the Open Data Index on a map."
+#~ msgstr ""
+
+#~ msgid "Go there"
+#~ msgstr ""
+
+#~ msgid "Coming soon"
+#~ msgstr ""
+
+#~ msgid "Stories using the Open Data Index."
+#~ msgstr ""
+
+#~ msgid "Table view"
+#~ msgstr ""
+
+#~ msgid "View data in table"
+#~ msgstr ""
+
+#~ msgid "Read the methodology"
+#~ msgstr ""
+
+#~ msgid "See this data over time"
+#~ msgstr ""
+
+#~ msgid "Sort"
+#~ msgstr ""
+
+#~ msgid "Search"
 #~ msgstr ""
 
