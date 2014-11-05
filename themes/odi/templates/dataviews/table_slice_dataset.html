@@ -23,6 +23,12 @@
                             <div>{{ gettext('Score') }}</div>
                         </th>
                         <th class="data-table-column-heading">
+                            <div>{{ gettext('Rank') }}</div>
+                        </th>
+                        <th class="data-table-column-heading">
+                            <div>{{ gettext('Change') }}</div>
+                        </th>
+                        <th class="data-table-column-heading">
                             <div>{{ gettext('Breakdown') }}</div>
                         </th>
                         <th class="data-table-column-heading">
@@ -40,16 +46,33 @@
                     {% for place in scope.places %}
 
                     {% set entry = scope.entries|where('place', place.id)|where('dataset', page.dataset)|where('year', page.year)|first %}
-                    {% set earliest_in_series = scope.entries|where("place", place.id)|where("dataset", page.dataset)|last %}
+                    {% set entry_previous = entries|where('place', place.id)|where('year', (page.year|int - 1)|string)|first %}
                     <tr data-rank="{% if entry %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}" data-score="{% if entry %}{{ entry.score }}{% else %}{{ ODI.na }}{% endif %}" data-place="{{ place.slug }}">
                         <td>
                             <a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ page.dataset }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=page.dataset, place=place.name) }}">{{ place.name }}</a>
                         </td>
+                        <td class="score" data-score="{% if entry %}{{ entry.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">
+                            {% if entry and entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}
+                        </td>
                         <td>
-                            {% if entry %}
-                            {{ entry.score }}%
+                            {% if entry and entry.rank %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}
+                        </td>
+                        <td>
+                            {% if entry_previous and entry_previous.score %}
+                                {% if entry_previous.score|int >
+                                   entry.score|int
+                                %}
+                                {{ scope.lower }}
+                                {% elif entry_previous.score|int <
+                                   entry.score|int
+                                %}
+                                {{ scope.higher }}
+                                {% else %}
+                                {{ scope.no_change }}
+                                {% endif %}
+                                from {{ entry_previous.score }} in {{ ODI.previous_year }}
                             {% else %}
-                            {{ ODI.na }}
+                            {{ gettext('No previous entry on record') }}
                             {% endif %}
                         </td>
                         <td>
@@ -75,7 +98,7 @@
                             {% if entry and entry.format %}
                             {{ entry.format }}
                             {% else %}
-                            {{ gettext('Format unknown') }}
+                            {{ gettext('Unknown') }}
                             {% endif %}
                         </td>
                         <td title="{% if entry and entry.details %}{{ entry.details }}{% endif %}">

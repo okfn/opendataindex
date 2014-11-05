@@ -15,7 +15,7 @@
         <div class="col-md-7">
             <h1>
                 {{ scope.place.name }}
-                <span class="place-openness" data-score="94">{{ scope.place[scope.score_lookup] }}% open</span>
+                <span class="place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% open</span>
             </h1>
             <div>
                 {{ page.content }}
