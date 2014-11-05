@@ -3,28 +3,28 @@
 {% block content %}
 {{ page.content }}
 <div class="row">
-    <div class="col-md-6">
-        <div class="attention">
-            <h3>{{ gettext('Open Data Index Map') }}</h3>
-            <div>
-                <i class="fa fa-map-marker"></i>
-            </div>
+    <div class="col-md-4">
+        <div class="well">
+            <h3>{{ gettext('Choropleth Map') }}</h3>
+            <p>{{ gettext('Explore the Open Data Index via a coded world map.') }}</p>
             <p>
-                {{ gettext('Explore the Open Data Index on a map.') }}
+              <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/vis/map/" title="{{ gettext('The whole Index displayed on a map.') }}">
+                <i class="fa fa-map-marker fa-fw"></i>
+                {{ gettext('View now') }}
+              </a>
             </p>
-            <a class="btn btn-info" href="{{ SITEURL }}/vis/map/" title="Explore the Open Data Index via a world map">{{ gettext('Go there') }}</a>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="attention">
-            <h3>{{ gettext('Coming soon') }}</h3>
-            <div>
-                <i class="fa fa-cubes"></i>
-            </div>
+    <div class="col-md-4">
+        <div class="well">
+            <h3>{{ gettext('Table overview') }}</h3>
+            <p>{{ gettext('The whole Index displayed in an easy-to-read table.') }}</p>
             <p>
-                {{ gettext('Stories using the Open Data Index.') }}
+              <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/places/" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">
+                <i class="fa fa-table fa-fw"></i>
+                {{ gettext('View now') }}
+              </a>
             </p>
-            <a class="btn btn-info" href="" title="{{ gettext('Stories using the Open Data Index.') }}" disabled>{{ gettext('Coming soon') }}</a>
         </div>
     </div>
 </div>
