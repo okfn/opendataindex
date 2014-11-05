@@ -53,7 +53,11 @@
     {% endfor %}
 </ul>
 <p>
+    {% if entry and entry.details %}
     {{ entry.details|markdown }}
+    {% else %}
+    {{ gettext('No additional details') }}
+    {% endif %}
 </p>
 <a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ dataset.id }}/">
     {{ gettext('Read more') }} &raquo;

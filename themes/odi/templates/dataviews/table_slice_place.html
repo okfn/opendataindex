@@ -106,7 +106,7 @@
                         </td>
                         <td title="{% if entry and entry.details %}{{ entry.details }}{% endif %}">
                             {% if entry and entry.details %}
-                            {{ entry.details||markdown|truncate(30) }}
+                            {{ entry.details|markdown|truncate(30) }}
                             {% else %}
                             {{ gettext('No additional details') }}
                             {% endif %}
