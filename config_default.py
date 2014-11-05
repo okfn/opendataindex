@@ -121,6 +121,7 @@ ODI = {
     'cli':  {
         'languages': ['en', 'es'],
         'test_path': 'tests',
+        'tmp_path': 'tmp',
         'content_path': PATH,
         'output_path': OUTPUT_PATH,
         'trans_path': 'themes/odi/translations',
@@ -133,8 +134,8 @@ ODI = {
             'places': ''
         },
         'limited': {
-            'places': ['au', 'gb'],
-            'datasets': ['timetables', 'spending']
+            'places': ['au'],
+            'datasets': ['timetables']
         }
     }
 }
