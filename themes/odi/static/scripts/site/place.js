@@ -1,6 +1,6 @@
 define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
-    var colorBoundaries = ['#7AB800', '#ff0000'],
+    var colorBoundaries = ['#ff0000', '#7AB800'],
         colorScale = chroma.scale(colorBoundaries).domain([0, 100]),
         $placeOpeness = $('.place-openness'),
         naString = 'n/a',

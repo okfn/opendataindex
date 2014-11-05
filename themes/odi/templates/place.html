@@ -6,74 +6,61 @@
 {% block content %}
 {% from '_scope.html' import scope with context %}
 {% do scope.update({
-    'entries': scope.entries|where('place', page.place),
-    'place': scope.places|where('id', page.place)|first
+  'entries': scope.entries|where('place', page.place),
+  'place': scope.places|where('id', page.place)|first
 }) %}
 
-<section id="place-intro">
-    <div class="row">
-        <div class="col-md-7">
-            <h1>
-                {{ scope.place.name }}
-                <span class="place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% open</span>
-            </h1>
-            <div>
-                {{ page.content }}
-                <br /><br /><br />
+<header id="place-intro" class="page-header">
+  <h1>
+    {{ scope.place.name }}
+    <span class="label label-default place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% open</span>
+  </h1>
+  <p class="lead">
+    #{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}
+    {% if scope.place[scope.rank_lookup_previous] %}
+      <br>
+      <small>
+        {% if scope.place[scope.rank_lookup_previous]|int >
+           scope.place[scope.rank_lookup]|int
+        %}
+        {{ scope.lower }}
+        {% elif scope.place[scope.rank_lookup_previous]|int <
+           scope.place[scope.rank_lookup]|int
+        %}
+        {{ scope.higher }}
+        {% else %}
+        {{ scope.no_change }}
+        {% endif %}
+        from #{{ scope.place[scope.rank_lookup_previous] }} in {{ ODI.previous_year }}
+      </small>
+    {% endif %}
+  </p>
+  {{ page.content }}
+</header>
 
-            </div>
-            <div class="row">
-                <div class="place-rank col-md-12">
-                    #{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}
-                    {% if scope.place[scope.rank_lookup_previous] %}
-                    <br />
-                    <span class="summary-compared">
-                        {% if scope.place[scope.rank_lookup_previous]|int >
-                           scope.place[scope.rank_lookup]|int
-                        %}
-                        {{ scope.lower }}
-                        {% elif scope.place[scope.rank_lookup_previous]|int <
-                           scope.place[scope.rank_lookup]|int
-                        %}
-                        {{ scope.higher }}
-                        {% else %}
-                        {{ scope.no_change }}
-                        {% endif %}
-                        from #{{ scope.place[scope.rank_lookup_previous] }} in {{ ODI.previous_year }}
-                    </span>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5">
-            {% include 'dataviews/embed_map.html' %}
-        </div>
-    </div>
-</section>
+{#<div>{% include 'dataviews/embed_map.html' %}</div>#}
 
 <section id="place-slice-table">
-    <div>
-        {% filter markdown %}
-        {% include "content/table_slice_place_help.md" %}
-        {% endfilter %}
-    </div>
-    {% include 'dataviews/table_slice_place.html' %}
+  {% include 'dataviews/table_slice_place.html' %}
 </section>
 
 <section id="place-contributors">
-    <h2>{{ gettext('Contributors') }}</h2>
-    <p>
-        {{ gettext('The following people have made this possible') }}:
-    </p>
-    <h4>{{ gettext('Reviews') }}</h4>
-    <ul>
-        <li>Someone</li>
-    </ul>
-    <h4>Submissions</h4>
-    <ul>
-        <li>Someone</li>
-    </ul>
+  <h2>{{ gettext('Contributors') }}</h2>
+  <p>
+    {{ gettext('The following people have made this possible') }}:
+  </p>
+  <h4>{{ gettext('Reviews') }}</h4>
+  <ul>
+    <li>Someone</li>
+  </ul>
+  <h4>Submissions</h4>
+  <ul>
+    <li>Someone</li>
+  </ul>
 </section>
 
+
 {{ history(page, ODI, '%s%s'|format('places/', page.place)) }}
+
+
 {% endblock content %}

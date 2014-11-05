@@ -1,7 +1,7 @@
 define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
     var placeCount = placeCount || 260,
-        colorBoundaries = ['#dd3d3a', '#8bdd3a'],
+        colorBoundaries = ['#ff0000', '#7AB800'],
         colorScale = chroma.scale(colorBoundaries).domain([0, 100]),
         naString = 'n/a',
         $dataTable = $('.data-table'),

@@ -1,22 +1,20 @@
-<section class="data-tools">
-    <h4>{{ gettext('Tools') }}</h4>
-    <form role="form" class="form-inline data-table-tools">
-        <span>{{ gettext('Sort') }}</span>
-        <div class="radio-inline">
-        <label>
-            <input type="radio" class="sort-table" name="sort-table" value="score" checked/>
-            {{ gettext('Score') }}
-        </label>
-        </div>
-        <div class="radio-inline">
-        <label>
-            <input type="radio" class="sort-table" name="sort-table" value="alpha" />
-            {{ gettext('A-Z') }}
-        </label>
-        </div>
-        <div class="form-group search-tool">
-            <span>{{ gettext('Search') }}</span>
-            <input class="form-control filter-table" type="search" name="filter-table" placeholder="Search for a place" />
-        </div>
-    </form>
-</section>
+<h4>{{ gettext('Tools') }}</h4>
+<form role="form" class="form-inline data-table-tools">
+  <span>{{ gettext('Sort:') }}</span>
+  <div class="radio-inline">
+    <label>
+      <input type="radio" class="sort-table" name="sort-table" value="score" checked/>
+      {{ gettext('Score') }}
+    </label>
+  </div>
+  <div class="radio-inline">
+    <label>
+      <input type="radio" class="sort-table" name="sort-table" value="alpha" />
+      {{ gettext('A-Z') }}
+    </label>
+  </div>
+  <div class="form-group search-tool">
+    <span>{{ gettext('Search:') }}</span>
+    <input class="form-control filter-table" type="search" name="filter-table" placeholder="Search for a place" />
+  </div>
+</form>

@@ -41,6 +41,18 @@ textarea {
   font-weight: 300;
 }
 
+.popover {
+  max-width: 360px;
+  width: 360px;
+}
+
+.table {
+  table-layout: fixed;
+  td {
+    overflow: hidden;
+  }
+}
+
 // Header
 .navbar-default {
   background-color: @color-okf-grey;
@@ -128,7 +140,8 @@ textarea {
   }
 }
 
-// Specifics: Homepage
+// Specifics
+// Homepage
 #home-stats {
   background-color: @color-okf-green;
   color: white;
@@ -141,74 +154,25 @@ textarea {
   }
 }
 
+// Individual place page
+#place-intro h1 .label {
+  padding: .2em .6em;
+  font-weight: 200;
+}
+
+// Tables
+.data-table {
+  thead th {
+    font-size: 14px;
+  }
+}
+
 // UNSORTED STYLING...
 
-.data-table-column-heading div {
-  text-align: left;
-  writing-mode: tb-rl;
-  vertical-align: middle;
-  padding: 0 0.5em 0 0;
-  font-weight: bold;
-  font-size: 0.925em;
-}
-
-.rank, .score {
-  background-color: #f5f5f5;
-}
-
-.data-tools, .data-legend {
-
-  .callout;
-  .callout-default;
-
-  h4 {
-    display: inline-block;
-    padding-right: 2em;
-  }
-
-}
-
-form.data-table-tools, ul.data-table-key {
-    display: inline-block;
-}
-
-.callout {
-  margin: 20px 0;
-  padding: 15px 30px 15px 15px;
-  border-left: 5px solid #eee;
-}
-
-.callout h4 {
-  margin-top: 0;
-}
-
-.callout p:last-child {
-  margin-bottom: 0;
-}
-
-.callout code,
-.callout .highlight {
-  background-color: #fff;
-}
-
-.callout-danger {
-  background-color: #fcf2f2;
-  border-color: #dFb5b4;
-}
-
-.callout-warning {
-  background-color: #fefbed;
-  border-color: #f1e7bc;
-}
-
-.callout-info {
-  background-color: #f0f7fd;
-  border-color: #d0e3f0;
-}
-
-.callout-default {
-  background-color: #eee;
-  border-color: #777;
+.rank,
+.score {
+  text-align: center;
+  background-color: @color-okf-grey;
 }
 
 ul.availability, ul.data-table-key {
@@ -248,10 +212,6 @@ ul.availability, ul.data-table-key {
   border-color: @color-no;
 }
 
-// .data-table-column-heading {
-//   font-size: 14px;
-// }
-
 .availability-comparative li {
   display: inline-block;
   line-height: 24px;
@@ -280,92 +240,10 @@ ul.availability, ul.data-table-key {
   background-color: @color-no;
 }
 
-table { table-layout: fixed; }
-table td { overflow: hidden; }
-table tr th, table tr td {
-  width: 4.5%;
-}
-
-table#comparative-table tr th:first-child, table#comparative-table tr td:first-child, table#comparative-table tr th:last-child, table#comparative-table tr td:last-child {
-  width: 2% !important;
-}
-
-// table tr td:first-child {
-//   text-align: right;
-// }
-
-// table tr td:last-child {
-//   text-align: left;
-// }
-
-table#comparative-table tr th:nth-child(2), table#comparative-table tr td:nth-child(2) {
-  width: 6% !important;
-}
-
-table#slice-table tr th:first-child, table#slice-table tr td:first-child {
-  width: 2% !important;
-}
-
-table#slice-table tr th:nth-child(7){
-  width: 2% !important;
-}
-
-table#slice-table tr th:nth-child(4) {
-  width: 4% !important;
-}
-table#slice-table tr th:nth-child(5) {
-  width: 6% !important;
-}
-
-table#slice-table tr th:nth-child(2), table#slice-table tr th:nth-child(3) {
-  width: 1% !important;
-}
-
-.thing {
-  display: none;
-}
-
-.popover {
-  max-width: 360px;
-  width: 360px;
-}
-
 #home-visualisation, #permalink-visualisation {
   margin-bottom: 40px;
   width: 100%;
   height: 700px;
-}
-
-#place-intro {
-
-    h1, .place-openness {
-        font-size: 48px;
-    }
-
-    // overidding the MAP
-    .odi-visualisation-header, .odi-visualisation-links {
-      display: none !important;
-    }
-}
-
-.place-openness {
-  float: right;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.place-rank {
-    background-color: #b1b1b1;
-}
-
-.icon-block {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #EEE;
-  border-radius: 2px;
-  .fa {
-    font-size: 64px;
-  }
 }
 
 .summary-compared {
