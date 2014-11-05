@@ -7988,73 +7988,175 @@ button.close {
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-black.eot);
-  src: local('Lato Black'), local('Lato-Black'), url(../vendor/lato/font/lato-black.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-black.woff) format('woff'), url(../vendor/lato/font/lato-black.ttf) format('truetype'), url(../vendor/lato/font/lato-black.svg#lato) format('svg');
+  src: url(../font/lato-black.eot);
+  src: local('Lato Black'), local('Lato-Black'), url(../font/lato-black.eot?#iefix) format('embedded-opentype'), url(../font/lato-black.woff) format('woff'), url(../font/lato-black.ttf) format('truetype'), url(../font/lato-black.svg#lato) format('svg');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-blackitalic.eot);
-  src: local('Lato Black Italic'), local('Lato-BlackItalic'), url(../vendor/lato/font/lato-blackitalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-blackitalic.woff) format('woff'), url(../vendor/lato/font/lato-blackitalic.ttf) format('truetype'), url(../vendor/lato/font/lato-blackitalic.svg#lato) format('svg');
+  src: url(../font/lato-blackitalic.eot);
+  src: local('Lato Black Italic'), local('Lato-BlackItalic'), url(../font/lato-blackitalic.eot?#iefix) format('embedded-opentype'), url(../font/lato-blackitalic.woff) format('woff'), url(../font/lato-blackitalic.ttf) format('truetype'), url(../font/lato-blackitalic.svg#lato) format('svg');
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-bold.eot);
-  src: local('Lato Bold'), local('Lato-Bold'), url(../vendor/lato/font/lato-bold.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-bold.woff) format('woff'), url(../vendor/lato/font/lato-bold.ttf) format('truetype'), url(../vendor/lato/font/lato-bold.svg#lato) format('svg');
+  src: url(../font/lato-bold.eot);
+  src: local('Lato Bold'), local('Lato-Bold'), url(../font/lato-bold.eot?#iefix) format('embedded-opentype'), url(../font/lato-bold.woff) format('woff'), url(../font/lato-bold.ttf) format('truetype'), url(../font/lato-bold.svg#lato) format('svg');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-bolditalic.eot);
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(../vendor/lato/font/lato-bolditalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-bolditalic.woff) format('woff'), url(../vendor/lato/font/lato-bolditalic.ttf) format('truetype'), url(../vendor/lato/font/lato-bolditalic.svg#lato) format('svg');
+  src: url(../font/lato-bolditalic.eot);
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(../font/lato-bolditalic.eot?#iefix) format('embedded-opentype'), url(../font/lato-bolditalic.woff) format('woff'), url(../font/lato-bolditalic.ttf) format('truetype'), url(../font/lato-bolditalic.svg#lato) format('svg');
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-regular.eot);
-  src: local('Lato Regular'), local('Lato-Regular'), url(../vendor/lato/font/lato-regular.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-regular.woff) format('woff'), url(../vendor/lato/font/lato-regular.ttf) format('truetype'), url(../vendor/lato/font/lato-regular.svg#lato) format('svg');
+  src: url(../font/lato-regular.eot);
+  src: local('Lato Regular'), local('Lato-Regular'), url(../font/lato-regular.eot?#iefix) format('embedded-opentype'), url(../font/lato-regular.woff) format('woff'), url(../font/lato-regular.ttf) format('truetype'), url(../font/lato-regular.svg#lato) format('svg');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-italic.eot);
-  src: local('Lato Italic'), local('Lato-Italic'), url(../vendor/lato/font/lato-italic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-italic.woff) format('woff'), url(../vendor/lato/font/lato-italic.ttf) format('truetype'), url(../vendor/lato/font/lato-italic.svg#lato) format('svg');
+  src: url(../font/lato-italic.eot);
+  src: local('Lato Italic'), local('Lato-Italic'), url(../font/lato-italic.eot?#iefix) format('embedded-opentype'), url(../font/lato-italic.woff) format('woff'), url(../font/lato-italic.ttf) format('truetype'), url(../font/lato-italic.svg#lato) format('svg');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-light.eot);
-  src: local('Lato Light'), local('Lato-Light'), url(../vendor/lato/font/lato-light.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-light.woff) format('woff'), url(../vendor/lato/font/lato-light.ttf) format('truetype'), url(../vendor/lato/font/lato-light.svg#lato) format('svg');
+  src: url(../font/lato-light.eot);
+  src: local('Lato Light'), local('Lato-Light'), url(../font/lato-light.eot?#iefix) format('embedded-opentype'), url(../font/lato-light.woff) format('woff'), url(../font/lato-light.ttf) format('truetype'), url(../font/lato-light.svg#lato) format('svg');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-lightitalic.eot);
-  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(../vendor/lato/font/lato-lightitalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-lightitalic.woff) format('woff'), url(../vendor/lato/font/lato-lightitalic.ttf) format('truetype'), url(../vendor/lato/font/lato-lightitalic.svg#lato) format('svg');
+  src: url(../font/lato-lightitalic.eot);
+  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(../font/lato-lightitalic.eot?#iefix) format('embedded-opentype'), url(../font/lato-lightitalic.woff) format('woff'), url(../font/lato-lightitalic.ttf) format('truetype'), url(../font/lato-lightitalic.svg#lato) format('svg');
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-hairline.eot);
-  src: local('Lato Hairline'), local('Lato-Hairline'), url(../vendor/lato/font/lato-hairline.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-hairline.woff) format('woff'), url(../vendor/lato/font/lato-hairline.ttf) format('truetype'), url(../vendor/lato/font/lato-hairline.svg#lato) format('svg');
+  src: url(../font/lato-hairline.eot);
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(../font/lato-hairline.eot?#iefix) format('embedded-opentype'), url(../font/lato-hairline.woff) format('woff'), url(../font/lato-hairline.ttf) format('truetype'), url(../font/lato-hairline.svg#lato) format('svg');
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: 'Lato';
-  src: url(../vendor/lato/font/lato-hairlineitalic.eot);
-  src: local('Lato Hairline Italic'), local('Lato-HairlineItalic'), url(../vendor/lato/font/lato-hairlineitalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-hairlineitalic.woff) format('woff'), url(../vendor/lato/font/lato-hairlineitalic.ttf) format('truetype'), url(../vendor/lato/font/lato-hairlineitalic.svg#lato) format('svg');
+  src: url(../font/lato-hairlineitalic.eot);
+  src: local('Lato Hairline Italic'), local('Lato-HairlineItalic'), url(../font/lato-hairlineitalic.eot?#iefix) format('embedded-opentype'), url(../font/lato-hairlineitalic.woff) format('woff'), url(../font/lato-hairlineitalic.ttf) format('truetype'), url(../font/lato-hairlineitalic.svg#lato) format('svg');
   font-weight: 200;
   font-style: italic;
+}
+body,
+input,
+textarea {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px;
+}
+.page-header h1 {
+  font-weight: 300;
+}
+.btn-primary {
+  background-color: #7ab800;
+  border-color: #699f00;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-color: #588500;
+  border-color: #476c00;
+}
+.jumbotron p {
+  font-weight: 300;
+}
+.navbar-default {
+  background-color: #f0f0f0;
+  border-width: 0;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #2d2d2d;
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #8e8e8e;
+  background-color: #dfdfdf;
+}
+#header {
+  background-color: #FFF;
+  height: 80px;
+}
+#header-brand {
+  float: left;
+  width: 300px;
+  padding: 0 15px;
+}
+#header-brand a {
+  display: block;
+  margin: 10px 0;
+  color: #7ab800;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .23em;
+  line-height: 60px;
+}
+#header-brand a img {
+  float: left;
+  margin-right: 15px;
+}
+#header-brand a:hover {
+  text-decoration: none;
+}
+#header-brand.has-sub-brand a {
+  padding-top: 5px;
+  line-height: 21px;
+}
+#header-brand.has-sub-brand a img {
+  margin-top: -5px;
+}
+#header-brand.has-sub-brand a span {
+  display: block;
+  font-weight: 300;
+  font-size: 14px;
+}
+#footer {
+  margin-top: 40px;
+  background: #f0f0f0;
+  border-top: 10px solid #7ab800;
+  padding: 30px 0 19px 0;
+}
+#footer a {
+  color: #7ab800;
+}
+#summary-stats {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+#summary-stats .col-md-3 {
+  text-align: center;
+}
+#summary-stats .col-md-3 strong {
+  padding: 5px 10px;
+  background-color: #699f00;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#summary-stats .col-md-3 small {
+  display: block;
+  opacity: 0.75;
+  margin-top: 5px;
 }
 #home-stats {
   background-color: #7ab800;
@@ -8066,18 +8168,6 @@ button.close {
   text-align: center;
   font-weight: 100;
   font-size: 48px;
-}
-#home-stats-items {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-#home-stats-items .col-md-3 {
-  text-align: center;
-}
-#home-stats-items .col-md-3 strong {
-  padding: 5px 10px;
-  background-color: #699f00;
 }
 .data-table-column-heading div {
   text-align: left;
@@ -8141,6 +8231,7 @@ ul.data-table-key {
 }
 ul.availability,
 ul.data-table-key {
+  margin-bottom: 0;
   padding-left: 0;
   cursor: pointer;
 }
@@ -8162,13 +8253,13 @@ ul.data-table-key {
   padding-right: 10px;
 }
 .data-table-key li.maybe {
-  border-color: #39bef9;
+  border-color: #2980b9;
 }
 .data-table-key li.yes {
-  border-color: #8bdd3a;
+  border-color: #7ab800;
 }
 .data-table-key li.no {
-  border-color: #dd3d3a;
+  border-color: #ff0000;
 }
 .availability-comparative li {
   display: inline-block;
@@ -8185,13 +8276,13 @@ ul.data-table-key {
   padding-right: 0;
 }
 .availability li.maybe {
-  background-color: #39bef9;
+  background-color: #2980b9;
 }
 .availability li.yes {
-  background-color: #8bdd3a;
+  background-color: #7ab800;
 }
 .availability li.no {
-  background-color: #dd3d3a;
+  background-color: #ff0000;
 }
 table {
   table-layout: fixed;
@@ -8208,12 +8299,6 @@ table#comparative-table tr td:first-child,
 table#comparative-table tr th:last-child,
 table#comparative-table tr td:last-child {
   width: 2% !important;
-}
-table tr td:first-child {
-  text-align: right;
-}
-table tr td:last-child {
-  text-align: left;
 }
 table#comparative-table tr th:nth-child(2),
 table#comparative-table tr td:nth-child(2) {
@@ -8243,16 +8328,9 @@ table#slice-table tr th:nth-child(3) {
   max-width: 360px;
   width: 360px;
 }
-.attention {
-  text-align: center;
-  background-color: #f5f5f5;
-  padding: 16px;
-}
-.attention i {
-  font-size: 64px;
-}
 #home-visualisation,
 #permalink-visualisation {
+  margin-bottom: 40px;
   width: 100%;
   height: 700px;
 }
@@ -8271,52 +8349,6 @@ table#slice-table tr th:nth-child(3) {
 }
 .place-rank {
   background-color: #b1b1b1;
-}
-.navbar .nav > li > a:hover {
-  color: #8e8e8e;
-  background-color: #dfdfdf;
-}
-.navbar-default {
-  border-width: 0;
-}
-#header {
-  background-color: #FFF;
-  height: 80px;
-}
-#header-brand {
-  float: left;
-  width: 300px;
-  padding: 0 15px;
-}
-#header-brand a {
-  display: block;
-  margin: 10px 0;
-  font-family: Lato;
-  color: #7ab800;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: .23em;
-  line-height: 60px;
-}
-#header-brand a img {
-  float: left;
-  margin-right: 15px;
-}
-#header-brand a:hover {
-  text-decoration: none;
-}
-#header-brand.has-sub-brand a {
-  padding-top: 5px;
-  line-height: 21px;
-}
-#header-brand.has-sub-brand a img {
-  margin-top: -5px;
-}
-#header-brand.has-sub-brand a span {
-  display: block;
-  font-weight: 300;
-  font-size: 14px;
 }
 .icon-block {
   text-align: center;

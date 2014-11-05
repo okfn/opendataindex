@@ -3,66 +3,186 @@
 {% block content %}
 {{ page.content }}
 <section class="row">
-    <div class="col-md-4">
-        <div class="attention">
-            <h3>{{ gettext('Archive') }}</h3>
-            <div>
-                <i class="fa fa-archive"></i>
-            </div>
-            <p>
-                {{ gettext('All data as an archive file.') }}
-            </p>
-            <a class="btn btn-info" href="{{ SITEURL }}/static/downloads/opendataindex_data_{{ TIMESTAMP }}.tar.gz" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">{{ gettext('Download') }}</a>
-        </div>
+  <div class="col-md-4">
+    <div class="well">
+      <h3>{{ gettext('Archive') }}</h3>
+      <p>{{ gettext('All data as an archive file.') }}</p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/static/downloads/opendataindex_data_{{ TIMESTAMP }}.tar.gz" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">
+          {{ gettext('Download all data') }}
+        </a>
+      </p>
     </div>
-    <div class="col-md-4">
-        <div class="attention">
-            <h3>{{ gettext('CSV') }}</h3>
-            <div>
-                <i class="fa fa-table"></i>
-            </div>
-            <p>
-                {{ gettext('Data in CSV format.') }}
-                <br />
-                <a class="label label-info" href="{{ SITEURL }}/api/entries.csv" title="{{ gettext('Entries') }}">{{ gettext('Entries') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.csv" title="{{ gettext('Datasets') }}">{{ gettext('Datasets') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.csv" title="{{ gettext('Places') }}">{{ gettext('Places') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.csv" title="{{ gettext('Questions') }}">{{ gettext('Questions') }}</a>
-            </p>
+  </div>
+  <div class="col-md-4">
+    <div class="well">
+      <h3>{{ gettext('CSV') }}</h3>
+      <p>{{ gettext('Data in CSV format.') }}</p>
+      <p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">
+            {{ gettext('Download CSV') }} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="{{ SITEURL }}/api/entries.csv">
+                {{ gettext('Entries') }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ SITEURL }}/api/datasets.csv">
+                {{ gettext('Datasets') }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ SITEURL }}/api/places.csv">
+                {{ gettext('Places') }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ SITEURL }}/api/questions.csv">
+                {{ gettext('Questions') }}
+              </a>
+            </li>
+          </ul>
         </div>
+      </p>
     </div>
-    <div class="col-md-4">
-        <div class="attention">
-            <h3>{{ gettext('JSON') }}</h3>
-            <div>
-                <i class="fa fa-cogs"></i>
-            </div>
-            <p>
-                {{ gettext('Data in JSON format.') }}
-                <br />
-                <a class="label label-info" href="{{ SITEURL }}/api/entries.json" title="{{ gettext('Entries') }}">{{ gettext('Entries') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/datasets.json" title="{{ gettext('Datasets') }}">{{ gettext('Datasets') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/places.json" title="{{ gettext('Places') }}">{{ gettext('Places') }}</a>&nbsp;<a class="label label-info" href="{{ SITEURL }}/api/questions.json" title="{{ gettext('Questions') }}">{{ gettext('Questions') }}</a>
-            </p>
+  </div>
+  <div class="col-md-4">
+    <div class="well">
+      <h3>{{ gettext('JSON') }}</h3>
+      <p>{{ gettext('Data in JSON format.') }}</p>
+      <p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">
+            {{ gettext('Download JSON') }} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="{{ SITEURL }}/api/entries.json">
+                {{ gettext('Entries') }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ SITEURL }}/api/datasets.json">
+                {{ gettext('Datasets') }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ SITEURL }}/api/places.json">
+                {{ gettext('Places') }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ SITEURL }}/api/questions.json">
+                {{ gettext('Questions') }}
+              </a>
+            </li>
+          </ul>
         </div>
+      </p>
     </div>
+  </div>
 </section>
 
+<h2>{{ gettext('Additional downloads') }}</h2>
+<p>{{ gettext('We also have a range of data slices available in both CSV and JSON formats.') }}</p>
+
 <section class="row">
-    <div class="col-md-12">
-        <h3>{{ gettext('Additional downloads') }}</h3>
-        <p>
-        {{ gettext('We also have a range of data slices available in both CSV and JSON formats.') }}
-        </p>
-        <ul>
-            <li><strong>{{ gettext('Entries 2014') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.csv" title="{{ gettext('2014 entries in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2014.json" title="{{ gettext('2014 entries in JSON format') }}">{{ gettext('JSON') }}</a></li>
-            <li><strong>{{ gettext('Entries 2013') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.csv" title="{{ gettext('2013 entries in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/entries/2013.json" title="{{ gettext('2013 entries in JSON format') }}">{{ gettext('JSON') }}</a></li>
+  <div class="col-md-4">
+    <h3>{{ gettext('Entries by year') }}</h3>
+    <p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
+          {{ gettext('Download') }} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a href="{{ SITEURL }}/api/entries/2014.csv">
+              {{ gettext('2014 - CSV') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/entries/2014.json">
+              {{ gettext('2014 - JSON') }}
+            </a>
+          </li>
             <li>
-                <strong>{{ gettext('Datasets by category:') }}</strong><br />
-                <ul>
-                    <li><strong>{{ gettext('Civic Information') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.csv" title="{{ gettext('Civic Information datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/civic-information.json" title="{{ gettext('Civic Information datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
-                    <li><strong>{{ gettext('Environment') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.csv" title="{{ gettext('Environment datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/environment.json" title="{{ gettext('Environment datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
-                    <li><strong>{{ gettext('Finance') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.csv" title="{{ gettext('Finance datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/finance.json" title="{{ gettext('Finance datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
-                    <li><strong>{{ gettext('Geodata') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.csv" title="{{ gettext('Geodata datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/geodata.json" title="{{ gettext('Geodata datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
-                    <li><strong>{{ gettext('Transport') }}</strong>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.csv" title="{{ gettext('Transport datasets in CSV format') }}">{{ gettext('CSV') }}</a>&nbsp;<a href="{{ SITEURL }}/api/datasets/transport.json" title="{{ gettext('Transport datasets in JSON format') }}">{{ gettext('JSON') }}</a></li>
-                </ul>
+              <a href="{{ SITEURL }}/api/entries/2013.csv">
+                {{ gettext('2013 - CSV') }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ SITEURL }}/api/entries/2013.json">
+                {{ gettext('2013 - JSON') }}
+              </a>
             </li>
         </ul>
-    </div>
+      </div>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h3>{{ gettext('Datasets by category') }}</h3>
+    <p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
+          {{ gettext('Download') }} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/civic-information.csv">
+              {{ gettext('Civic Information - CSV') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/civic-information.json">
+              {{ gettext('Civic Information - JSON') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/environment.csv">
+              {{ gettext('Environment - CSV') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/environment.json">
+              {{ gettext('Environment - JSON') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/finance.csv">
+              {{ gettext('Finance - CSV') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/finance.json">
+              {{ gettext('Finance - JSON') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/geodata.csv">
+              {{ gettext('Geodata - CSV') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/geodata.json">
+              {{ gettext('Geodata - JSON') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/transport.csv">
+              {{ gettext('Transport - CSV') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ SITEURL }}/api/datasets/transport.json">
+              {{ gettext('Transport - JSON') }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </p>
+  </div>
 </section>
 {% endblock content %}

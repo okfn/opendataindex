@@ -43,56 +43,33 @@
         </header>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
-                <div class="navbar-collapse" id="main-navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
-                                {{ gettext('About') }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ SITEURL }}/contributors/" title="{{ gettext('See all the contributors to the Open Data Index') }}">
-                                {{ gettext('Contributors') }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ SITEURL }}/methodology/" title="{{ gettext('About the methodology used in creating the Open Data Index') }}">
-                                {{ gettext('Methodology') }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ SITEURL }}/download/" title="{{ gettext('Download Open Data Index data') }}">
-                                {{ gettext('Download') }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ SITEURL }}/vis/" title="{{ gettext('Visualisations') }}">
-                                {{ gettext('Visualisations') }}
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right {% if OK.ribbon %}open-knowledge-ribbon{% endif %}">
-                        {% if ODI.mailinglist %}
-                        <li class="divider-vertical"></li>
-                        <li>
-                            <a href="{{ ODI.mailinglist }}" title="{{ gettext('Join the mailing list for this project') }}">{{ gettext('List') }}</a>
-                        </li>
-                        {% endif %}
-                        {% if ODI.repo %}
-                        <li class="divider-vertical"></li>
-                        <li>
-                            <a href="{{ ODI.repo }}" title="{{ gettext('See the code for this project') }}"><i class="fa fa-github"></i> {{ gettext('Repo') }}</a>
-                        </li>
-                        {% endif %}
-                        {% if ODI.twitter %}
-                        <li class="divider-vertical"></li>
-                        <li>
-                            <a href="https://twitter.com/{{ ODI.twitter }}"><i class="fa fa-twitter" title="{{ gettext('Follow this project on Twitter') }}"></i> @{{ ODI.twitter }}</a>
-                        </li>
-                        {% endif %}
-                        <li class="divider-vertical"></li>
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
+                            {{ gettext('About') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITEURL }}/contributors/" title="{{ gettext('See all the contributors to the Open Data Index') }}">
+                            {{ gettext('Contributors') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITEURL }}/methodology/" title="{{ gettext('About the methodology used in creating the Open Data Index') }}">
+                            {{ gettext('Methodology') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITEURL }}/download/" title="{{ gettext('Download Open Data Index data') }}">
+                            {{ gettext('Download') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITEURL }}/vis/" title="{{ gettext('Visualisations') }}">
+                            {{ gettext('Visualisations') }}
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
         {% endblock header %}

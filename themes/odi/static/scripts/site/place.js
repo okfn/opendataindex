@@ -1,6 +1,6 @@
 define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
-    var colorBoundaries = ['#dd3d3a', '#8bdd3a'],
+    var colorBoundaries = ['#7AB800', '#ff0000'],
         colorScale = chroma.scale(colorBoundaries).domain([0, 100]),
         $placeOpeness = $('.place-openness'),
         naString = 'n/a',
@@ -15,7 +15,10 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
             } else {
                 score = parseInt($el.data('score'), 10);
             }
-            $el.css('backgroundColor', colorScale(score).hex());
+            $el.css({
+              'background-color': colorScale(score).hex(),
+              'color': 'white'
+            });
         });
 
     }

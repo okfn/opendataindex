@@ -5,28 +5,130 @@
 @import 'http://assets.okfn.org/themes/okfn/okf-panel.css';
 
 @fa-font-path: '../vendor/font-awesome/fonts';
-@lato-font-path: '../vendor/lato/font';
+
 @color-okf-green: #7AB800;
-@color-maybe: #39bef9;
-@color-yes: #8bdd3a;
-@color-no: #dd3d3a;
+@color-okf-grey: #f0f0f0;
 
-.footer-main {
+@color-maybe: #2980b9;
+@color-yes: @color-okf-green;
+@color-no: #ff0000;
 
+
+// Generics
+body,
+input,
+textarea {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px;
 }
 
-.footer-meta {
-
+// Generics: Bootstrap overrides
+.page-header h1 {
+  font-weight: 300;
 }
 
-.footer-attribution {
-
+.btn-primary {
+  background-color: @color-okf-green;
+  border-color: darken(@color-okf-green, 5%);
 }
 
-.footer-links {
-
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background-color: darken(@color-okf-green, 10%);
+  border-color: darken(@color-okf-green, 15%);
 }
 
+.jumbotron p {
+  font-weight: 300;
+}
+
+// Header
+.navbar-default {
+  background-color: @color-okf-grey;
+  border-width: 0;
+  .navbar-nav > li {
+    > a {
+      color: #2d2d2d;
+      padding-top: 19px;
+      padding-bottom: 19px;
+      &:hover {
+        color: #8e8e8e;
+        background-color: #dfdfdf;
+      }
+    }
+  }
+}
+
+#header {
+  background-color: #FFF;
+  height: 80px;
+}
+
+#header-brand {
+  float: left;
+  width: 300px;
+  padding: 0 15px;
+  a {
+    display: block;
+    margin: 10px 0;
+    color: #7ab800;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: .23em;
+    line-height: 60px;
+    img {
+      float: left;
+      margin-right: 15px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.has-sub-brand a {
+    padding-top: 5px;
+    line-height: 21px;
+    img {
+      margin-top: -5px;
+    }
+    span {
+      display: block;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+}
+
+// Footer
+#footer {
+  margin-top: 40px;
+  background: #f0f0f0;
+  border-top: 10px solid @color-okf-green;
+  padding: 30px 0 19px 0;
+  a {
+    color: @color-okf-green;
+  }
+}
+
+// Summary of stats for current year
+#summary-stats {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  .col-md-3 {
+    text-align: center;
+    strong {
+      padding: 5px 10px;
+      background-color: darken(@color-okf-green, 5%);
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    small {
+      display: block;
+      opacity: 0.75;
+      margin-top: 5px;
+    }
+  }
+}
+
+// Specifics: Homepage
 #home-stats {
   background-color: @color-okf-green;
   color: white;
@@ -39,18 +141,7 @@
   }
 }
 
-#home-stats-items {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  .col-md-3 {
-    text-align: center;
-    strong {
-      padding: 5px 10px;
-      background-color: darken(@color-okf-green, 5%);
-    }
-  }
-}
+// UNSORTED STYLING...
 
 .data-table-column-heading div {
   text-align: left;
@@ -121,6 +212,7 @@ form.data-table-tools, ul.data-table-key {
 }
 
 ul.availability, ul.data-table-key {
+  margin-bottom: 0;
   padding-left: 0;
   cursor: pointer;
 }
@@ -155,6 +247,10 @@ ul.availability, ul.data-table-key {
 .data-table-key li.no {
   border-color: @color-no;
 }
+
+// .data-table-column-heading {
+//   font-size: 14px;
+// }
 
 .availability-comparative li {
   display: inline-block;
@@ -194,13 +290,13 @@ table#comparative-table tr th:first-child, table#comparative-table tr td:first-c
   width: 2% !important;
 }
 
-table tr td:first-child {
-  text-align: right;
-}
+// table tr td:first-child {
+//   text-align: right;
+// }
 
-table tr td:last-child {
-  text-align: left;
-}
+// table tr td:last-child {
+//   text-align: left;
+// }
 
 table#comparative-table tr th:nth-child(2), table#comparative-table tr td:nth-child(2) {
   width: 6% !important;
@@ -234,17 +330,8 @@ table#slice-table tr th:nth-child(2), table#slice-table tr th:nth-child(3) {
   width: 360px;
 }
 
-.attention {
-  text-align: center;
-  background-color: #f5f5f5;
-  padding: 16px;
-}
-
-.attention i {
-  font-size: 64px;
-}
-
 #home-visualisation, #permalink-visualisation {
+  margin-bottom: 40px;
   width: 100%;
   height: 700px;
 }
@@ -269,56 +356,6 @@ table#slice-table tr th:nth-child(2), table#slice-table tr th:nth-child(3) {
 
 .place-rank {
     background-color: #b1b1b1;
-}
-
-.navbar .nav > li > a:hover {
-  color: #8e8e8e;
-  background-color: #dfdfdf;
-}
-
-.navbar-default {
-  border-width: 0;
-}
-
-#header {
-  background-color: #FFF;
-  height: 80px;
-}
-
-#header-brand {
-  float: left;
-  width: 300px;
-  padding: 0 15px;
-  a {
-    display: block;
-    margin: 10px 0;
-    font-family: Lato;
-    color: #7ab800;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 16px;
-    letter-spacing: .23em;
-    line-height: 60px;
-    img {
-      float: left;
-      margin-right: 15px;
-    }
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  &.has-sub-brand a {
-    padding-top: 5px;
-    line-height: 21px;
-    img {
-      margin-top: -5px;
-    }
-    span {
-      display: block;
-      font-weight: 300;
-      font-size: 14px;
-    }
-  }
 }
 
 .icon-block {
