@@ -156,6 +156,15 @@ class Populate(object):
             # set the default display_type
             display_type = u'place'
 
+            # the display type depends on the presence
+            # of entries in the current year
+            entries = [e for e in self.entries if
+                       e['place'] == place['id'] and
+                       e['year'] == self.current_year]
+
+            if not entries:
+                display_type = self.empty_display_type
+
             # ensure this place's directory exists
             dirpath = os.path.join(self.places_dir, place['id'])
             self.ensure_dir(dirpath)
