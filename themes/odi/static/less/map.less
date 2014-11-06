@@ -3,10 +3,17 @@
 @import (less) '../vendor/leaflet.css';
 
 @fa-font-path: '../vendor/font-awesome/fonts';
-
+@lato-font-path: '../vendor/lato/font';
 
 @action: rgb(68, 80, 255);
 
+body,
+input,
+select,
+textarea {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px;
+}
 
 html, body {
     height: 100%;
@@ -198,4 +205,18 @@ a.odi-visualisation-permalink {
     color: #f5f5f5;
     padding-left: 3px;
     padding-right: 3px;
+}
+
+.odi-visualisation-brand {
+    background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
+    background-repeat: no-repeat;
+    background-position: center -27px;
+    width: 48px;
+    height: 73px;
+    display: block;
+    cursor: pointer;
+    text-indent: -999px;
+    //overflow: hidden;
+    //position: absolute;
+    z-index: 1;
 }
