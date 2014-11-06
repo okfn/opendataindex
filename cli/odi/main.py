@@ -45,7 +45,7 @@ def deploy():
 
     _generate = ['pelican', config['content_path'], '-o',
                  config['output_path'], '-s', 'config_deploy.py']
-    _copy = ['ghp-import', config['output_path']]
+    _copy = ['ghp-import', '-m', 'New site build', config['output_path']]
     _push = ['git', 'push', config['deploy_remote'], 'gh-pages', '--force']
 
     click.echo('Generating the static site')
