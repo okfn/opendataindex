@@ -1,20 +1,41 @@
-define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(leaflet, $, pubsub, _, chroma, data) {
+define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], function(leaflet, $, pubsub, _, chroma, marked, data) {
 
-    var $tools = $('.odi-visualisation-tools'),
-        $legend = $('.odi-visualisation-legend-key ul'),
-        $display = $('.odi-visualisation-display'),
-        $embedTrigger = $('.odi-visualisation-embed-toggle'),
-        $embedModal = $('.odi-visualisation-embed-iframe'),
-        $legendExplanationTrigger = $('.odi-visualisation-legend-explanation-toggle'),
-        $legendExplanationModal = $('.odi-visualisation-legend-explanation'),
+    var $tools = $('.odi-vis-tools'),
+        $legend = $('.odi-vis-legend ul'),
+        $display = $('.odi-vis-display'),
+        $infoTrigger = $('.odi-vis-show-info'),
+        $infoBox = $('.odi-vis-info'),
+        $infoClose = $('.odi-vis-info-close'),
+        $placeBox = $('.odi-vis-place'),
+        $placeClose = $('.odi-vis-place-close'),
         $datasetFilter = $tools.find('.odi-filter-dataset').first(),
         $yearFilter = $tools.find('.odi-filter-year').first(),
-        colorBoundaries = ['#dd3d3a', '#8bdd3a'],
-        colorScale = chroma.scale(colorBoundaries).domain([0, 100]),
-        mapTileLayer = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        map = L.map('map').setView([20.0, 5.0], 2),
-        placeInfo = L.control(),
-        placeInfoTmpl = '<div class="odi-visualisation-place-information-name">NAME</div><div class="odi-visualisation-place-information-title">Open Data Index YEAR</div><div class="odi-visualisation-place-information-text"><ul><li><span class="label">Score</span>SCORE%</li><li><span class="label">Rank</span> #RANK</li></ul><a href="SITEURL/places/SLUG/" title="More information about NAME in the YEAR Open Data Index">More information</a></div>',
+        colorLight = '#f5f5f5',
+        colorDark = '#2d2d2d',
+        colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
+        colorScale = chroma.scale(colorSteps).domain([0, 100]),
+        mapInitObj = {
+            zoomControl: false,
+            attributionControl: false
+        },
+        map = leaflet.map('map', mapInitObj).setView([20.0, 5.0], 2),
+        placeControl = leaflet.control(),
+        placeBoxClass = 'odi-vis-place',
+        placeBoxTmpl = _.template($('script.place-box').html()),
+        placeStyleBase = {
+            weight: 1,
+            opacity: 1,
+            color: colorDark,
+            dashArray: '2',
+            fillOpacity: 1
+        },
+        placeStyleFocus = {
+            weight: 1.5,
+            color: colorDark,
+            dashArray: '',
+        },
+        infoBoxTmpl = _.template($('script.info-box').html()),
+        embedCode = $('.odi-vis-info-iframe-code').html(),
         queryString = window.location.search,
         topics = {
             init: 'init',
@@ -37,7 +58,6 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
     pubsub.subscribe(topics.data_slice_change, redrawDisplay);
 
     function setDataSlice(topic, data) {
-
         var sliceargs = {
                 year: undefined,
                 dataset: undefined
@@ -50,15 +70,12 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
                 }
             });
         });
-
         dataSlice = sliceargs;
         pubsub.publish(topics.data_slice_change, sliceargs);
         return dataSlice;
-
     }
 
     function getArgsFromWindow() {
-
         var cleaned = queryString
                     .replace(/\?/g, '')
                     .replace(/\//g, '')
@@ -69,14 +86,11 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
             tmp = value.split('=');
             args[tmp[0]] = tmp[1];
         });
-
         return args;
-
     }
 
     function setPlaceColors(feature) {
-
-        var fillColor = '#f5f5f5',
+        var fillColor = colorLight,
         score = 0,
         match;
 
@@ -107,56 +121,31 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
             }
 
         }
-
-        return {
-                fillColor: fillColor,
-                weight: 1,
-                opacity: 1,
-                color: '#6f6c75',
-                dashArray: '2',
-                fillOpacity: 0.5
-        };
-
+        rv = _.clone(placeStyleBase);
+        rv.fillColor = fillColor;
+        return rv;
     }
 
-    function placeHoverHandler(e) {
+    function placeHoverHandler(event) {
+        var layer = event.target;
 
-        var layer = e.target;
-
-        layer.setStyle({
-            weight: 3,
-            color: '#605d65',
-            dashArray: '',
-            fillOpacity: 0.5
-        });
-
-        if (!L.Browser.ie && !L.Browser.opera) {
+        layer.setStyle(placeStyleFocus);
+        if (!leaflet.Browser.ie && !leaflet.Browser.opera) {
             layer.bringToFront();
         }
-
-        placeInfo.update(layer.feature.properties);
-
     }
 
-    function placeExitHandler(e) {
-
-        geojson.resetStyle(e.target);
-        // we want to leave the display until next place hover
-        //placeInfo.update();
-
+    function placeExitHandler(event) {
+        geojson.resetStyle(event.target);
     }
 
-    function placeClickHandler(e) {
-
-        map.fitBounds(e.target.getBounds());
-
+    function placeClickHandler(event) {
+        map.fitBounds(event.target.getBounds());
+        placeControl.update(event.target.feature.properties);
     }
 
     function setGeoColorScale(geo) {
-
-        // Consider without tiles? Looks better IMHO.
-        // L.tileLayer(mapTileLayer).addTo(map);
-        geojson = L.geoJson(geo, {
+        geojson = leaflet.geoJson(geo, {
             style: setPlaceColors,
             onEachFeature: onEachPlace
         }).addTo(map);
@@ -164,17 +153,14 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
     }
 
     function onEachPlace(feature, layer) {
-
         layer.on({
             mouseover: placeHoverHandler,
             mouseout: placeExitHandler,
             click: placeClickHandler
         });
-
     }
 
     function metaHandler(topic, data) {
-
         meta = data;
 
         _.each(data.years, function(value) {
@@ -189,25 +175,19 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
 
             $yearFilter.append(tmpl);
         });
-
     }
 
     function placeHandler(topic, data) {
-
         places = data.places;
         geo = data.geo;
         geoHandler(geo);
-
     }
 
     function geoHandler(data) {
-
         setGeoColorScale(data);
-
     }
 
     function datasetHandler(topic, data) {
-
         datasets = data;
 
         _.each(data, function(value) {
@@ -223,109 +203,152 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'data'], function(lea
 
             $datasetFilter.append(tmpl);
         });
-
     }
 
     function entryHandler(topic, data) {
-
         entries = data;
-
     }
 
-    function initializeLegend() {
-
-        $legendExplanationTrigger.on('click', function() {
-            $legendExplanationModal.toggle();
-        });
-
-        _.each($legend.find('li'), function(value) {
-            var $this = $(value);
-            var score = parseInt($this.data('score'), 10);
-            $this.css('background-color', colorScale(score).hex());
-        });
-
+    function redrawDisplay(topic, data) {
+        setGeoColorScale(geo);
     }
 
-    function initializeShare() {
+    /**
+     * Bootstraps listeners for the info panel
+     */
+     function initMetaInfo() {
+        var $this,
+            embedClass = 'odi-vis-embed',
+            context = {},
+            activeInfo = '_activeinfo';
 
-        $embedTrigger.on('click', function() {
-            $embedModal.toggle();
+        $infoClose.on('click', function() {
+            console.log('BOOM');
+            $infoBox.empty();
+            $infoBox.hide();
         });
 
-    }
+        $infoTrigger.on('click', function() {
+            $this = $(this);
+            if ($this.hasClass(activeInfo)) {
+                $this.removeClass(activeInfo);
+                $infoBox.empty();
+                $infoBox.hide();
+            } else {
+                context.title = $this.data('title');
+                context.text = marked($this.data('text'));
+                if ($this.hasClass(embedClass)) {
+                    context.embed_code = embedCode;
+                } else {
+                    context.embed_code = '';
+                }
+                $this.siblings().removeClass(activeInfo);
+                $this.addClass(activeInfo);
+                $infoBox.html(infoBoxTmpl(context));
+                $infoBox.show();
+            }
+        });
+     }
 
-    function initializeTools() {
-
-        var data = {};
+    /**
+     * Bootstraps visualisation tools
+     */
+    function initMetaTools() {
+        var $this,
+            data = {};
 
         $datasetFilter.on('change', function() {
-            data.dataset = $(this).val();
+            $this = $(this);
+            data.dataset = $this.val();
             data.year = $yearFilter.val();
             pubsub.publish(topics.tool_change, data);
         });
 
         $yearFilter.on('change', function() {
-            data.year = $(this).val();
+            $this = $(this);
+            data.year = $this.val();
             data.dataset = $datasetFilter.val();
             pubsub.publish(topics.tool_change, data);
         });
-
     }
 
-    function redrawDisplay(topic, data) {
+    /**
+     * Bootstraps visualisation legend
+     */
+    function initMetaLegend() {
+        var $this,
+            score;
 
-        setGeoColorScale(geo);
-
+        _.each($legend.find('li'), function(value) {
+            $this = $(value);
+            score = parseInt($this.data('score'), 10);
+            $this.css('background-color', colorScale(score).hex());
+        });
     }
 
-    function initializeDisplay() {
+    /**
+     * Bootstraps the visualisation meta section
+     */
+    function initMeta() {
+        initMetaTools();
+        initMetaLegend();
+        initMetaInfo();
+    }
 
-        placeInfo.onAdd = function (map) {
-            this._div = L.DomUtil.create('div', 'odi-visualisation-place-information'); // create a div with a class "info"
+    /**
+     * Bootstraps the visualisation place box, which displays data on places
+     */
+    function initViewPlaceBox() {
+        placeControl.onAdd = function (map) {
+            this._div = leaflet.DomUtil.create('div', placeBoxClass);
             this.update();
             return this._div;
         };
 
-        placeInfo.update = function (properties) {
-            var score,
-                rank,
-                year,
-                match,
-                rendered_tmpl = placeInfoTmpl;
+        placeControl.update = function (properties) {
+            var context = {},
+                match;
 
             if (properties) {
                 match = _.find(places, {'id': properties.iso_a2.toLowerCase()});
-
-                score = parseInt(match.score, 10);
-                rank = parseInt(match.rank, 10);
-                rendered_tmpl = placeInfoTmpl
-                                  .replace(/YEAR/g, year || '2014')
-                                  .replace(/NAME/g, match.name)
-                                  .replace(/SLUG/g, match.id)
-                                  .replace(/SCORE/g, score)
-                                  .replace(/RANK/g, rank)
-                                  .replace(/SITEURL/g, siteUrl);
-
-            } else {
-                rendered_tmpl = 'Hover on a place';
+                context.year = '2014';
+                context.name = match.name;
+                context.slug = match.id;
+                context.score = parseInt(match.score, 10);
+                context.rank = parseInt(match.rank, 10);
+                context.improvement_phrase = 'an improvment on';
+                context.previous_score = '50';
+                $placeBox.html(placeBoxTmpl(context));
+                $placeBox.show();
             }
-            this._div.innerHTML = rendered_tmpl;
         };
-
-        placeInfo.addTo(map);
-
     }
 
-    function initializeUI() {
-        initializeLegend();
-        initializeShare();
-        initializeDisplay();
-        initializeTools();
+    /**
+     * Bootstraps the visualisation map
+     */
+    function initViewMap() {
+        new leaflet.Control.Zoom({ position: 'bottomright' }).addTo(map);
+    }
 
+    /**
+     * Bootstraps the visualisation view section
+     */
+    function initView() {
+        initViewMap();
+        initViewPlaceBox();
+    }
+
+    /**
+     * Boostraps the visualisation interface
+     */
+    function initUI() {
+        initMeta();
+        initView();
     }
 
     return {
-        init: initializeUI
+        init: initUI
     };
 
 });

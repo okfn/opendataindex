@@ -13,73 +13,79 @@
 {% block body_scripts %}{% endblock body_scripts %}
 
 {% block content %}
-<div class="odi-visualisation">
-    <div class="odi-visualisation-header">
-        <div class="odi-visualisation-tools">
-            <i class="icon icon-filter" title="Filter the visualisation data"></i>
-            <select class="odi-filter-year">
-
-            </select>
-            <select class="odi-filter-dataset">
-                <option value="all">{{ gettext('All Datasets') }}</option>
-            </select>
-        </div>
-        <div class="odi-visualisation-share">
-            <span class="odi-visualisation-embed-toggle" title="{{ gettext('Get the embed code for this visualisation') }}"><i class="fa fa-code"></i></span>&nbsp;<a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}/{{ page.slug }}&text={{ share_page_template }}" title="{{ gettext('Share this visualisation on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.slug }}" title="{{ gettext('Share this visualisation on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.slug }}" title="{{ gettext('Share this visualisation on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
-        </div>
+<div class="odi-vis odi-vis-choropleth">
+    <div class="odi-vis-view">
+        <div class="odi-vis-display"><div id="map"></div></div>
     </div>
-    <div class="odi-visualisation-view">
-        <div class="odi-visualisation-display">
+    <div class="odi-vis-meta">
+        <div class="odi-vis-meta-left">
 
-            <div id="map"></div>
+            <a class="odi-vis-logo" target="_parent" href="{{ ODI.sponsor.domain }}" title="{{ gettext('Go to the %(sponsor)s website', sponsor=ODI.sponsor.name) }}">&nbsp;</a>
 
-        </div>
-        <div class="odi-visualisation-legend odi-visualisation-legend-explanation-toggle">
-            <div class="odi-visualisation-legend-key">
-                <ul>
-                    <li data-score="100">100</li>
-                    <li data-score="90">90</li>
-                    <li data-score="80">80</li>
-                    <li data-score="70">70</li>
-                    <li data-score="60">60</li>
-                    <li data-score="50">50</li>
-                    <li data-score="40">40</li>
-                    <li data-score="30">30</li>
-                    <li data-score="20">20</li>
-                    <li data-score="10">10</li>
-                    <li data-score="0">0</li>
-                </ul>
-                <div class="odi-visualisation-legend-explanation">
-                    <div class="odi-visualisation-legend-explanation-title">
-                        {{ gettext('How does this work?') }}
-                        <span class="odi-visualisation-legend-explanation-toggle">x</span>
-                    </div>
-                    <div class="odi-visualisation-legend-explanation-text">
-                        {{ gettext('By default, places on the map are color coded by their "Openness", as determined by the results of the Open Data Index. Scaled from green to red, where green is "open" and red is "closed".') }}
-                    </div>
-                </div>
+            <a class="odi-vis-name" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">{{ SITENAME }}</a>
+
+            <div class="odi-vis-tools">
+                <i class="icon icon-filter" title="Filter the vis data"></i>
+                <select class="odi-filter-year"></select>
+                <select class="odi-filter-dataset">
+                    <option value="all">{{ gettext('All Datasets') }}</option>
+                </select>
             </div>
-        </div>
-    </div>
-    <div class="odi-visualisation-footer">
-        <div class="odi-visualisation-links">
-            <a class="odi-visualisation-permalink" target="_blank" href="{{ SITEURL }}/{{ page.rel_permalink }}" title="{{ gettext('Go to the permalink for this visualisation') }}">{{ gettext('Permalink') }}</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">{{ SITENAME }}</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="{{ ODI.survey.domain }}" title="{{ gettext('Go to the %(survey)s website', survey=ODI.survey.name) }}">{{ ODI.survey.name }}</a>
-        </div>
-        <div class="odi-visualisation-credits">
-            {{ gettext('An') }} <a target="_blank" href="{{ ODI.sponsor.domain }}" title="{{ gettext('Go to the %(sponsor)s', sponsor=ODI.sponsor.name) }} website') }}">{{ ODI.sponsor.name }}</a> {{ gettext('project') }}. [Licensing and usage terms]
-        </div>
-    </div>
 
-    <div class="odi-visualisation-embed-iframe">
-        <div class="odi-visualisation-embed-iframe-title">
-            {{ gettext('Embed this visualisation') }}
-            <span class="odi-visualisation-embed-toggle" title="Close this modal">x</span>
         </div>
-        <div class="odi-visualisation-embed-iframe-text">
-            {{ gettext('Use the following code to embed this visualisation in your own website.') }}
-        </div>
-        <xmp contenteditable="true"><iframe width="100%" height="100%"src="{{ SITEURL }}/{{ page.slug }}" frameBorder="0"></iframe></xmp>
-    </div>
+        <div class="odi-vis-meta-right">
 
+            <div class="odi-vis-legend odi-vis-show-info"
+                 title="{{ gettext('Information on the how to read the map') }}"
+                 data-title="{{ gettext('How to read the map') }}"
+                 data-text="{{ gettext('This visualisation presents data from the Open Data Index on a choropleth map. Each place is coloured according to the score it received in the Index for the current data view, where green is best (100&#37; open data) and red is worst (0&#37; open data). Places in grey were not in the Index (no data was collected). Click on any place for more information and to further navigation to a detail page of the results for that place.') }}">
+                <ul>
+                    <li data-score="0">&nbsp;</li>
+                    <li data-score="50">&nbsp;</li>
+                    <li data-score="100">&nbsp;</li>
+                </ul>
+            </div>
+
+            <div class="odi-vis-help odi-vis-show-info"
+                 title="{{ gettext('See the credits and license information') }}"
+                 data-title="{{ gettext('About and credits') }}"
+                 data-text="{{ gettext('The Open Data Index is an initiative of Open Knowledge. Information about licensing, and credits and copyright goes right here.') }}">
+                <span class="odi-vis-action"><i class="fa fa-info-circle"></i></span>
+            </div>
+
+            <div class="odi-vis-embed odi-vis-show-info"
+                 title="{{ gettext('Embed this visualisation') }}"
+                 data-title="{{ gettext('Embed this visualisation') }}"
+                 data-text="{{ gettext('This visualisation can be embedded anywhere you can put HTML. You probably need to know a bit about how this works. Copy the embed code below, and adjust the params as required for your website.') }}">
+                <span class="odi-vis-action"><i class="fa fa-code"></i></span>
+            </div>
+
+            <div class="odi-vis-share"
+                 title="{{ gettext('Share this visualisation with others') }}">
+                <a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}/{{ page.slug }}&text={{ share_page_template }}" title="{{ gettext('Share this visualisation on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.slug }}" title="{{ gettext('Share this visualisation on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.slug }}" title="{{ gettext('Share this visualisation on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
+            </div>
+
+        </div>
+    </div>
+    <div class="odi-vis-info"></div>
+    <div class="odi-vis-place"></div>
+    <div class="odi-vis-info-iframe-code"><xmp contenteditable="true"><iframe width="100%" height="100%"src="{{ SITEURL }}/{{ page.slug }}" frameBorder="0"></iframe></xmp></div>
 </div>
+
+<!--Templates for LoDash-->
+<script type="text/template" class="info-box">
+    <div class="odi-vis-info-title"><%= title %><span class="odi-vis-info-close fa fa-close"></span></div>
+    <div class="odi-vis-info-text"><%= text %></div>
+    <%= embed_code %>
+</script>
+
+<script type="text/template" class="place-box">
+    <div class="odi-vis-place-title"><%= name %><span class="odi-vis-place-close fa fa-close"></span></div>
+    <div class="odi-vis-place-text">
+        <p>
+            <%= name %> {{ gettext('is ranked at') }} <strong><%= rank %></strong> {{ gettext('in the') }} <%= year %> {{ gettext('Index') }} {{ gettext('with a score of') }} <strong><%= score %>&#37;</strong>. {{ gettext('That&#39;s') }} <%= improvement_phrase %> {{ gettext('from') }} <%= previous_score %>&#37; {{ gettext('the previous year') }}.
+        </p>
+        <a class="odi-vis-place-action" href="{{ SITEURL }}/places/<%= slug %>/" title="{{ gettext('More information about') }} <%= name %> {{ gettext('in the') }} <%= year %> {{ SITENAME }}">{{ gettext('Find out more') }}</a>
+    </div>
+</script>
 {% endblock content %}

@@ -81,6 +81,19 @@ Or its embeddable version:
 
 * /vis/map/embed/
 
+### Data tables
+
+Displays the Index data in a tabular format. **These visualisation is not currently embeddedable.**
+
+There are two types of tables:
+
+* Overview:
+* Slice:
+
+#### Features
+
+* Enter a search term to filter the table by match on place name. Use ';' as a seperator to match multiple places (e.g.: "United States; United Kingdom")
+
 
 ## API
 

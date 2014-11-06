@@ -7,6 +7,7 @@ require.config({
         chroma: 'vendor/chroma.min',
         pubsub: 'vendor/pubsub',
         lodash: 'vendor/lodash.compat.min',
+        marked: 'vendor/marked',
         data: 'scripts/map/data',
         ui: 'scripts/map/ui'
     }

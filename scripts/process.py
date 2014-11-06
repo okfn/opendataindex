@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 import urllib
 import shutil
@@ -8,33 +9,47 @@ import unittest
 from collections import OrderedDict
 from pprint import pprint
 
+
+def get_config():
+    base_path = os.path.join(os.getcwd())
+    sys.path.append(base_path)
+    import config_default
+    config = config_default.ODI['cli']
+    sys.path.remove(base_path)
+    return config
+
+
+config = get_config()
+
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdGNBWWJDaTlnMU1wN1BQZlgxNHBxd0E&usp=drive_web#gid=0
-survey_submissions = 'https://docs.google.com/spreadsheet/pub?key=0AqR8dXc6Ji4JdGNBWWJDaTlnMU1wN1BQZlgxNHBxd0E&single=true&gid=0&output=csv'
-survey_entries = 'https://docs.google.com/spreadsheet/pub?key=0AqR8dXc6Ji4JdGNBWWJDaTlnMU1wN1BQZlgxNHBxd0E&single=true&gid=1&output=csv'
+survey_submissions = config['database']['submissions']
+survey_entries = config['database']['entries']
 
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdFI0QkpGUEZyS0wxYWtLdG1nTk9zU3c&usp=drive_web#gid=0
-survey_questions = 'https://docs.google.com/spreadsheet/pub?key=0AqR8dXc6Ji4JdFI0QkpGUEZyS0wxYWtLdG1nTk9zU3c&single=true&gid=0&output=csv'
+survey_questions = config['database']['questions']
 
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0Aon3JiuouxLUdEVHQ0c4RGlRWm9Gak54NGV0UlpfOGc&usp=drive_web#gid=0
-survey_datasets = 'https://docs.google.com/spreadsheet/pub?key=0Aon3JiuouxLUdEVHQ0c4RGlRWm9Gak54NGV0UlpfOGc&single=true&gid=0&output=csv'
+survey_datasets = config['database']['datasets']
 
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdE1QUS1qNjhvRDJaQy1TbTdJZDMtNFE&usp=drive_web#gid=1
-survey_places = 'https://docs.google.com/spreadsheet/pub?key=0AqR8dXc6Ji4JdE1QUS1qNjhvRDJaQy1TbTdJZDMtNFE&single=true&gid=1&output=csv'
+survey_places = config['database']['places']
+
 
 class AttrDict(dict):
     __getattr__ = dict.__getitem__
     __setattr__ = dict.__setitem__
 
+
 class Processor(object):
     def download(self):
         '''Download source data from the survey to tmp directory.'''
-        if not os.path.exists('tmp'):
-            os.makedirs('tmp')
-        urllib.urlretrieve(survey_submissions, 'tmp/submissions.csv')
-        urllib.urlretrieve(survey_entries, 'tmp/entries.csv')
-        urllib.urlretrieve(survey_questions, 'tmp/questions.csv')
-        urllib.urlretrieve(survey_datasets, 'tmp/datasets.csv')
-        urllib.urlretrieve(survey_places, 'tmp/places.csv')
+        if not os.path.exists(config['tmp_path']):
+            os.makedirs(config['tmp_path'])
+        urllib.urlretrieve(survey_submissions, '{0}/submissions.csv'.format(config['tmp_path']))
+        urllib.urlretrieve(survey_entries, '{0}/entries.csv'.format(config['tmp_path']))
+        urllib.urlretrieve(survey_questions, '{0}/questions.csv'.format(config['tmp_path']))
+        urllib.urlretrieve(survey_datasets, '{0}/datasets.csv'.format(config['tmp_path']))
+        urllib.urlretrieve(survey_places, '{0}/places.csv'.format(config['tmp_path']))
 
     def extract(self):
         '''Extract data from raw Survey files, process and save to data dir'''

@@ -2028,6 +2028,76 @@ th {
 .fa-meanpath:before {
   content: "\f20c";
 }
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-black.eot);
+  src: local('Lato Black'), local('Lato-Black'), url(../vendor/lato/font/lato-black.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-black.woff) format('woff'), url(../vendor/lato/font/lato-black.ttf) format('truetype'), url(../vendor/lato/font/lato-black.svg#lato) format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-blackitalic.eot);
+  src: local('Lato Black Italic'), local('Lato-BlackItalic'), url(../vendor/lato/font/lato-blackitalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-blackitalic.woff) format('woff'), url(../vendor/lato/font/lato-blackitalic.ttf) format('truetype'), url(../vendor/lato/font/lato-blackitalic.svg#lato) format('svg');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-bold.eot);
+  src: local('Lato Bold'), local('Lato-Bold'), url(../vendor/lato/font/lato-bold.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-bold.woff) format('woff'), url(../vendor/lato/font/lato-bold.ttf) format('truetype'), url(../vendor/lato/font/lato-bold.svg#lato) format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-bolditalic.eot);
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(../vendor/lato/font/lato-bolditalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-bolditalic.woff) format('woff'), url(../vendor/lato/font/lato-bolditalic.ttf) format('truetype'), url(../vendor/lato/font/lato-bolditalic.svg#lato) format('svg');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-regular.eot);
+  src: local('Lato Regular'), local('Lato-Regular'), url(../vendor/lato/font/lato-regular.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-regular.woff) format('woff'), url(../vendor/lato/font/lato-regular.ttf) format('truetype'), url(../vendor/lato/font/lato-regular.svg#lato) format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-italic.eot);
+  src: local('Lato Italic'), local('Lato-Italic'), url(../vendor/lato/font/lato-italic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-italic.woff) format('woff'), url(../vendor/lato/font/lato-italic.ttf) format('truetype'), url(../vendor/lato/font/lato-italic.svg#lato) format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-light.eot);
+  src: local('Lato Light'), local('Lato-Light'), url(../vendor/lato/font/lato-light.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-light.woff) format('woff'), url(../vendor/lato/font/lato-light.ttf) format('truetype'), url(../vendor/lato/font/lato-light.svg#lato) format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-lightitalic.eot);
+  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(../vendor/lato/font/lato-lightitalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-lightitalic.woff) format('woff'), url(../vendor/lato/font/lato-lightitalic.ttf) format('truetype'), url(../vendor/lato/font/lato-lightitalic.svg#lato) format('svg');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-hairline.eot);
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(../vendor/lato/font/lato-hairline.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-hairline.woff) format('woff'), url(../vendor/lato/font/lato-hairline.ttf) format('truetype'), url(../vendor/lato/font/lato-hairline.svg#lato) format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(../vendor/lato/font/lato-hairlineitalic.eot);
+  src: local('Lato Hairline Italic'), local('Lato-HairlineItalic'), url(../vendor/lato/font/lato-hairlineitalic.eot?#iefix) format('embedded-opentype'), url(../vendor/lato/font/lato-hairlineitalic.woff) format('woff'), url(../vendor/lato/font/lato-hairlineitalic.ttf) format('truetype'), url(../vendor/lato/font/lato-hairlineitalic.svg#lato) format('svg');
+  font-weight: 200;
+  font-style: italic;
+}
 /* required styles */
 .leaflet-map-pane,
 .leaflet-tile,
@@ -2471,194 +2541,280 @@ th {
   background: #fff;
   border: 1px solid #666;
 }
-body,
-input,
-select,
-textarea {
-  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 17px;
+.odi-display-panel-title {
+  font-size: 1.425rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid #f5f5f5;
 }
 html,
 body {
   height: 100%;
   width: 100%;
-  font-size: 16px;
+  font-size: 1rem;
 }
-a,
-span.odi-visualisation-embed-toggle,
-span.odi-visualisation-legend-explanation-toggle {
-  text-decoration: none;
-  color: #4450ff;
-  cursor: pointer;
+html,
+body,
+input,
+select,
+textarea {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-a:hover,
-span.odi-visualisation-embed-toggle:hover,
-span.odi-visualisation-legend-explanation-toggle:hover {
-  text-decoration: none;
-  color: #1120ff;
-}
-.odi-visualisation-legend-explanation-toggle {
-  cursor: help;
-}
-.odi-visualisation {
+.odi-vis.odi-vis-choropleth {
   box-sizing: border-box;
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 508px;
+  padding: 0.75rem 0.75rem 0 0.75rem;
+  background-color: #2d2d2d;
+  color: #f5f5f5;
 }
-.odi-visualisation-header,
-.odi-visualisation-footer,
-.odi-visualisation-view,
-.odi-visualisation-tools,
-.odi-visualisation-share {
+.odi-vis.odi-vis-choropleth a,
+.odi-vis.odi-vis-choropleth span.odi-vis-action,
+.odi-vis.odi-vis-choropleth .leaflet-container a {
+  text-decoration: none;
+  color: #4450ff;
+  cursor: pointer;
+}
+.odi-vis.odi-vis-choropleth a:hover,
+.odi-vis.odi-vis-choropleth span.odi-vis-action:hover,
+.odi-vis.odi-vis-choropleth .leaflet-container a:hover {
+  text-decoration: none;
+  color: #1120ff;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-view,
+.odi-vis.odi-vis-choropleth .odi-vis-meta {
   box-sizing: border-box;
-  width: 100%;
-}
-.odi-visualisation-header,
-.odi-visualisation-footer,
-.odi-visualisation-view {
-  display: table;
-}
-.odi-visualisation-header,
-.odi-visualisation-footer {
-  background-color: #f5f5f5;
-  padding-left: 1%;
-  padding-right: 1%;
-}
-.odi-visualisation-header {
-  font-size: 2rem;
-  height: 10%;
-}
-.odi-visualisation-footer {
-  font-size: 0.75rem;
-  height: 7.5%;
-}
-.odi-visualisation-view {
-  height: 82.5%;
-}
-.odi-visualisation-display,
-.odi-visualisation-legend {
-  display: table-cell;
-  vertical-align: middle;
-}
-.odi-visualisation-display {
-  width: 92.5%;
-  padding: 1%;
-  word-wrap: break-word;
-}
-.odi-visualisation-display #map,
-.odi-visualisation-display p {
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-}
-.odi-visualisation-legend {
-  width: 7.5%;
-  padding-top: 1%;
-}
-.odi-visualisation-legend-title {
-  font-size: 1.25rem;
-  text-align: center;
-  height: 10%;
-}
-.odi-visualisation-legend-key {
-  height: 100%;
-}
-.odi-visualisation-legend-key ul {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0 5%;
-  list-style-type: none;
-  height: 100%;
-}
-.odi-visualisation-legend-key li {
   float: left;
-  display: block;
-  height: 9%;
   width: 100%;
-  text-align: center;
-  color: white;
 }
-.odi-visualisation-tools,
-.odi-visualisation-share,
-.odi-visualisation-credits,
-.odi-visualisation-links {
-  width: 50%;
-  display: table-cell;
-  vertical-align: middle;
+.odi-vis.odi-vis-choropleth .odi-vis-view {
+  height: 90%;
 }
-.odi-visualisation-tools,
-.odi-visualisation-link {
-  text-align: left;
+.odi-vis.odi-vis-choropleth .odi-vis-view .odi-vis-display {
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  height: 100%;
 }
-.odi-visualisation-share,
-.odi-visualisation-credits {
+.odi-vis.odi-vis-choropleth .odi-vis-view .odi-vis-display #map {
+  width: 100%;
+  height: 100%;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta {
+  font-size: 1.5rem;
+  height: 3rem;
+  line-height: 3rem;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta a,
+.odi-vis.odi-vis-choropleth .odi-vis-meta span.odi-vis-action {
+  color: #f5f5f5;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta a:hover,
+.odi-vis.odi-vis-choropleth .odi-vis-meta span.odi-vis-action:hover {
+  color: #dcdcdc;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-right {
+  box-sizing: border-box;
+  float: right;
+  width: 30%;
   text-align: right;
 }
-.odi-visualisation-embed-iframe,
-.odi-visualisation-legend-explanation {
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-left {
   box-sizing: border-box;
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -13.5%;
-  /* center positioning */
-  margin-left: -17.5%;
-  /* center positioning */
-  width: 30%;
-  height: 50%;
-  min-height: 142px;
-  padding: 2%;
-  word-wrap: break-word;
-  background-color: #f5f5f5;
-  border: 3px solid #d4d4d4;
+  float: left;
+  width: 70%;
+  text-align: left;
 }
-.odi-visualisation-embed-iframe-title,
-.odi-visualisation-legend-explanation-title {
-  font-size: 1.5rem;
-}
-.odi-visualisation-embed-iframe-text,
-.odi-visualisation-legend-explanation-text {
-  font-size: 1rem;
-}
-.odi-visualisation-place-information {
-  width: 260px;
-  padding: 2%;
-  background: #f5f5f5;
-  border: 3px solid #d4d4d4;
-}
-.odi-visualisation-place-information li {
-  margin-top: 3px;
-  margin-bottom: 3px;
-}
-.odi-visualisation-place-information-title {
-  font-size: 16px;
-}
-.odi-visualisation-place-information-name {
-  font-size: 20px;
-}
-.odi-visualisation-place-information .label {
-  background-color: #292a2e;
-  color: #f5f5f5;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 3px;
-}
-a.odi-visualisation-permalink {
-  background-color: #4450ff;
-  color: #f5f5f5;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-.odi-visualisation-brand {
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-logo {
+  box-sizing: border-box;
+  float: left;
+  width: 3rem;
   background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
   background-repeat: no-repeat;
-  background-position: center -27px;
-  width: 48px;
-  height: 73px;
-  display: block;
+  background-position: center -240px;
+  height: 48px;
   cursor: pointer;
   text-indent: -999px;
   z-index: 1;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
+  box-sizing: border-box;
+  float: left;
+  width: 8rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
+    display: none;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
+  box-sizing: border-box;
+  float: left;
+  width: auto;
+  margin-top: -0.25rem;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share {
+  box-sizing: border-box;
+  float: right;
+  width: 6rem;
+  text-align: center;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share {
+    display: none;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-embed {
+  box-sizing: border-box;
+  float: right;
+  width: 2rem;
+  text-align: center;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-embed {
+    font-size: 1rem;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
+  box-sizing: border-box;
+  float: right;
+  width: 2rem;
+  text-align: center;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
+    font-size: 1rem;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
+  box-sizing: border-box;
+  float: right;
+  width: 4.625rem;
+  margin-top: 0.675rem;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
+    font-size: 1rem;
+    width: 3.125rem;
+    margin-top: 1rem;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
+  box-sizing: border-box;
+  float: left;
+  width: 4.625rem;
+  height: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border: 1px solid #cacaca;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
+    width: 3.125rem;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
+  box-sizing: border-box;
+  float: left;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-show-info {
+  cursor: pointer;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-info {
+  padding: 1rem;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  color: #2d2d2d;
+  border: 2px solid #474747;
+  min-height: 411px;
+  height: 411px;
+  width: 25%;
+  display: none;
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-info-close,
+.odi-vis.odi-vis-choropleth .odi-vis-place-close {
+  float: right;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-info-title {
+  font-size: 1.425rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-info-iframe-code {
+  display: none;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-place {
+  padding: 1rem;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  color: #2d2d2d;
+  border: 2px solid #474747;
+  min-height: 130px;
+  height: auto;
+  width: 25%;
+  display: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-place-title {
+  font-size: 1.425rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+.odi-vis.odi-vis-choropleth a.odi-vis-place-action {
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+  padding: 0.5rem;
+}
+.odi-vis.odi-vis-choropleth a.odi-vis-place-action:hover {
+  background-color: #3a3a3a;
+  color: #f5f5f5;
+}
+.odi-vis.odi-vis-choropleth .leaflet-container {
+  font-family: 'Lato,' 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: #8bbee1 !important;
+  outline: 0;
+}
+.odi-vis.odi-vis-choropleth .leaflet-zoom-box {
+  border: 2px dotted #38f;
+  background: rgba(255, 255, 255, 0.5);
+}
+.odi-vis.odi-vis-choropleth a.leaflet-control-zoom-in,
+.odi-vis.odi-vis-choropleth a.leaflet-control-zoom-out {
+  color: #535353;
+  background-color: #f5f5f5;
+}
+.odi-vis.odi-vis-choropleth a.leaflet-control-zoom-in:hover,
+.odi-vis.odi-vis-choropleth a.leaflet-control-zoom-out:hover {
+  background-color: #dcdcdc;
+}
+.odi-vis.odi-vis-choropleth .leaflet-bar {
+  box-shadow: none;
+  border-radius: none;
 }
