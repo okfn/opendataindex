@@ -4,7 +4,9 @@
         <base target="_parent" />
         {% block head_css %}{% endblock head_css %}
         <script>
-            var siteUrl = '{{ SITEURL }}';
+            var siteUrl = {{ SITEURL|tojson|safe }},
+                currentYear = {{ ODI.current_year|tojson|safe }},
+                years = {{ ODI.years|tojson|safe }};
         </script>
         {% block head_scripts %}{% endblock head_scripts %}
     </head>

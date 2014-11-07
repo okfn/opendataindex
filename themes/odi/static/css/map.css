@@ -2693,7 +2693,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
   box-sizing: border-box;
   float: right;
-  width: 4.625rem;
+  width: 3.125rem;
   margin-top: 0.675rem;
 }
 @media (max-width: 568px) {
@@ -2706,7 +2706,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
   box-sizing: border-box;
   float: left;
-  width: 4.625rem;
+  width: 3.125rem;
   height: 100%;
   display: block;
   padding: 0;
@@ -2716,7 +2716,7 @@ textarea {
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
-    width: 3.125rem;
+    width: 2.125rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {

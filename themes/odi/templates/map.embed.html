@@ -41,7 +41,6 @@
                  data-text="{{ gettext('This visualisation presents data from the Open Data Index on a choropleth map. Each place is coloured according to the score it received in the Index for the current data view, where green is best (100&#37; open data) and red is worst (0&#37; open data). Places in grey were not in the Index (no data was collected). Click on any place for more information and to further navigation to a detail page of the results for that place.') }}">
                 <ul>
                     <li data-score="0">&nbsp;</li>
-                    <li data-score="50">&nbsp;</li>
                     <li data-score="100">&nbsp;</li>
                 </ul>
             </div>
@@ -69,7 +68,6 @@
     </div>
     <div class="odi-vis-info"></div>
     <div class="odi-vis-place"></div>
-    <div class="odi-vis-info-iframe-code"><xmp contenteditable="true"><iframe width="100%" height="100%"src="{{ SITEURL }}/{{ page.slug }}" frameBorder="0"></iframe></xmp></div>
 </div>
 
 <!--Templates for LoDash-->
@@ -88,4 +86,17 @@
         <a class="odi-vis-place-action" href="{{ SITEURL }}/places/<%= slug %>/" title="{{ gettext('More information about') }} <%= name %> {{ gettext('in the') }} <%= year %> {{ SITENAME }}">{{ gettext('Find out more') }}</a>
     </div>
 </script>
+
+<script type="text/template" class="year-options">
+    <option value="<%= year %>" <%= selected %>><%= year %></option>
+</script>
+
+<script type="text/template" class="dataset-options">
+    <option value="<%= dataset_id %>" <%= selected %>><%= dataset %></option>
+</script>
+
+<script type="text/template" class="embed-code">
+    <xmp contenteditable="true"><iframe width="100%" height="100%"src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
+</script>
+
 {% endblock content %}

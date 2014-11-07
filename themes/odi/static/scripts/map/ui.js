@@ -10,6 +10,16 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
         $placeClose = $('.odi-vis-place-close'),
         $datasetFilter = $tools.find('.odi-filter-dataset').first(),
         $yearFilter = $tools.find('.odi-filter-year').first(),
+        $sharePanel = $('.odi-vis-share'),
+        $embedPanel = $('.odi-vis-embed'),
+        $helpPanel = $('.odi-vis-help'),
+        topics = {
+            init: 'init',
+            tool_change: 'tool.change',
+            state_change: 'state.change'
+        },
+        trueStrings = ['true', 'yes'],
+        falseStrings = ['false', 'no'],
         colorLight = '#f5f5f5',
         colorDark = '#2d2d2d',
         colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
@@ -18,7 +28,9 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
             zoomControl: false,
             attributionControl: false
         },
-        map = leaflet.map('map', mapInitObj).setView([20.0, 5.0], 2),
+        mapLatLongBase = [20.0, 5.0],
+        mapZoomBase = 2,
+        map = leaflet.map('map', mapInitObj).setView(mapLatLongBase, mapZoomBase),
         placeControl = leaflet.control(),
         placeBoxClass = 'odi-vis-place',
         placeBoxTmpl = _.template($('script.place-box').html()),
@@ -35,58 +47,206 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
             dashArray: '',
         },
         infoBoxTmpl = _.template($('script.info-box').html()),
-        embedCode = $('.odi-vis-info-iframe-code').html(),
-        queryString = window.location.search,
-        topics = {
-            init: 'init',
-            tool_change: 'tool.change',
-            data_slice_change: 'data_slice.change'
-        },
-        dataSlice = setDataSlice(topics.init, getArgsFromWindow()),
+        yearOptionsTmpl = _.template($('script.year-options').html()),
+        datasetOptionsTmpl = _.template($('script.dataset-options').html()),
+        embedCodeTmpl = _.template($('script.embed-code').html()),
         geojson,
-        meta,
-        places,
-        datasets,
-        entries,
-        geo;
+        dataStore = {
+            meta: undefined,
+            summary: undefined,
+            places: undefined,
+            datasets: undefined,
+            entries: undefined,
+            geo: undefined
+        },
+        queryString = window.location.search,
+        uiStateDefaults = {
+            filter: {
+                year: currentYear,
+                dataset: 'all'
+            },
+            panel: {
+                logo: true,
+                name: true,
+                share: true,
+                embed: true,
+                help: true,
+                legend: true,
+            },
+            map: {
+                lat: '20.0',
+                long: '5.0',
+                place: undefined
+            },
+            asQueryString: undefined
+        },
+        uiState = setUIState(topics.init, getUIStateArgs());
 
     pubsub.subscribe(data.topics.meta, metaHandler);
-    pubsub.subscribe(data.topics.places, placeHandler);
-    pubsub.subscribe(data.topics.datasets, datasetHandler);
-    pubsub.subscribe(data.topics.entries, entryHandler);
-    pubsub.subscribe(topics.tool_change, setDataSlice);
-    pubsub.subscribe(topics.data_slice_change, redrawDisplay);
+    pubsub.subscribe(data.topics.summary, summaryHandler);
+    pubsub.subscribe(data.topics.places, placesHandler);
+    pubsub.subscribe(data.topics.datasets, datasetsHandler);
+    pubsub.subscribe(data.topics.entries, entriesHandler);
+    pubsub.subscribe(topics.tool_change, updateUIState);
+    pubsub.subscribe(topics.state_change, redrawDisplay);
+    pubsub.subscribe(topics.state_change, pushStateToURL);
+    pubsub.subscribe(topics.init, setPanels);
+    pubsub.subscribe(topics.state_change, setPanels);
 
-    function setDataSlice(topic, data) {
-        var sliceargs = {
-                year: undefined,
-                dataset: undefined
-        };
+    function metaHandler(topic, data) {
+        var context = {};
 
-        _.each(sliceargs, function(value, key) {
-            _.forOwn(data, function(value, key) {
-                if (_.has(sliceargs, key)) {
-                    sliceargs[key] = value;
-                }
-            });
+        dataStore.meta = data;
+        _.each(data.years, function(value) {
+            context.year = value;
+            if (uiState.filter.year === value) {
+                context.selected = 'selected';
+            } else {
+                context.selected = '';
+            }
+            $yearFilter.append(yearOptionsTmpl(context));
         });
-        dataSlice = sliceargs;
-        pubsub.publish(topics.data_slice_change, sliceargs);
-        return dataSlice;
     }
 
-    function getArgsFromWindow() {
-        var cleaned = queryString
-                    .replace(/\?/g, '')
-                    .replace(/\//g, '')
-                    .split("&"),
-            args = {};
+    function summaryHandler(topic, data) {
 
-        _.each(cleaned, function(value) {
-            tmp = value.split('=');
-            args[tmp[0]] = tmp[1];
+    }
+
+    function placesHandler(topic, data) {
+        dataStore.places = data.places;
+        dataStore.geo = data.geo;
+        geoHandler(data.geo);
+    }
+
+    function geoHandler(data) {
+        setGeoColorScale(data);
+    }
+
+    function datasetsHandler(topic, data) {
+        var context = {};
+
+        dataStore.datasets = data;
+        _.each(data, function(value) {
+            context.dataset_id = value.id;
+            context.dataset = value.title;
+            if (uiState.filter.dataset === value.id) {
+                context.selected = 'selected';
+            } else {
+                context.selected = '';
+            }
+            $datasetFilter.append(datasetOptionsTmpl(context));
         });
-        return args;
+    }
+
+    function entriesHandler(topic, data) {
+        dataStore.entries = data;
+    }
+
+    function setPanels(topic, data) {
+        if (!data.panel.share) {
+            $sharePanel.hide();
+        }
+        if (!data.panel.embed) {
+            $embedPanel.hide();
+        }
+        if (!data.panel.help) {
+            $helpPanel.hide();
+        }
+    }
+
+    function pushStateToURL(topic, data) {
+        history.pushState({}, '', data.asQueryString);
+    }
+
+    function setStateQueryString(state) {
+        var qargs = [];
+        _.forOwn(state, function(value, key) {
+            if (key !== 'asQueryString') {
+                // key namespace
+                ns = 'K_'.replace('K', key);
+                _.forOwn(value, function(nv, nk) {
+                    // ONLY add params for non-default values
+                    if (nv !== uiStateDefaults[key][nk]) {
+                        // param key
+                        pk = encodeURIComponent('NS_K'.replace('NS_', ns).replace('K', nk));
+                        pv = encodeURIComponent(nv);
+                        param = 'K=V'.replace('K', pk).replace('V', pv);
+                        qargs.push(param);
+                    }
+                });
+            }
+        });
+        if(qargs.length > 0){
+            qs = '?QARGS'.replace('QARGS', qargs.join('&'));
+        } else {
+           qs = '';
+        }
+        return qs;
+    }
+
+    function setUIState(topic, data) {
+        var rv = _.cloneDeep(uiStateDefaults);
+
+        _.forOwn(data, function(value, key) {
+            _.assign(rv[key], value);
+        });
+        rv.asQueryString = setStateQueryString(rv);
+        return rv;
+    }
+
+    function updateUIState(topic, data) {
+        uiState = setUIState(topic, getUIStateArgs(data));
+        pubsub.publish(topics.state_change, uiState);
+    }
+
+    /**
+     * Bootstraps the UI state from passed args.
+     * Args come from query params, but if `data` is passed,
+     * it overrides query params (and updates them).
+     */
+    function getUIStateArgs(data) {
+        var cleanedQuery = queryString
+                        .replace(/\?/g, '')
+                        .replace(/\//g, '')
+                        .split("&"),
+            allowedArgs = [
+                'filter_year',
+                'filter_dataset',
+                'panel_logo',
+                'panel_name',
+                'panel_share',
+                'panel_embed',
+                'panel_help',
+                'panel_legend',
+                'map_latlong',
+                'map_place'
+            ],
+            passedState = {
+                filter: {},
+                panel: {},
+                map: {}
+            };
+
+        if (typeof(data) !== 'undefined') {
+            return data;
+        } else {
+            _.each(cleanedQuery, function(value) {
+                // get key/value from string
+                kv = value.split('=');
+                if (_.contains(allowedArgs, kv[0])) {
+                    // get namespace args from key
+                    ns = kv[0].split('_');
+                    // force true/false strings to boolean values
+                    if (_.contains(trueStrings, kv[1].toLowerCase())) {
+                        kv[1] = true;
+                    } else if (_.contains(falseStrings, kv[1].toLowerCase())) {
+                        kv[1] = false;
+                    }
+                    passedState[ns[0]][ns[1]] = kv[1];
+                }
+            });
+            return passedState;
+        }
     }
 
     function setPlaceColors(feature) {
@@ -94,32 +254,25 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
         score = 0,
         match;
 
-        if (dataSlice.dataset === 'all' ||
-            typeof(dataSlice) === 'undefined' ||
-            typeof(dataSlice.dataset) === 'undefined') {
-
+        if (uiState.filter.dataset === 'all' ||
+            typeof(uiState.filter.dataset) === 'undefined') {
             // get calculated total scores from the place data
-            match = _.find(places, {'id': feature.properties.iso_a2.toLowerCase()});
-
+            match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (match) {
                 score = parseInt(match.score, 10);
                 fillColor = colorScale(score).hex();
             }
-
         } else {
-
             // calculate for this dataset/year/place from entries data
-            match = _.find(entries, {
+            match = _.find(dataStore.entries, {
                 'place': feature.properties.iso_a2.toLowerCase(),
-                'year': dataSlice.year,
-                'dataset': dataSlice.dataset
+                'year': uiState.filter.year,
+                'dataset': uiState.filter.dataset
             });
-
             if (match) {
                 score = parseInt(match.score, 10);
                 fillColor = colorScale(score).hex();
             }
-
         }
         rv = _.clone(placeStyleBase);
         rv.fillColor = fillColor;
@@ -160,57 +313,8 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
         });
     }
 
-    function metaHandler(topic, data) {
-        meta = data;
-
-        _.each(data.years, function(value) {
-            tmpl = '<option value="YEAR" SEL>YEAR</option>'
-                     .replace(/YEAR/g, value);
-
-            if (dataSlice.year === value) {
-                tmpl = tmpl.replace('SEL', 'selected');
-            } else {
-                tmpl = tmpl.replace('SEL', '');
-            }
-
-            $yearFilter.append(tmpl);
-        });
-    }
-
-    function placeHandler(topic, data) {
-        places = data.places;
-        geo = data.geo;
-        geoHandler(geo);
-    }
-
-    function geoHandler(data) {
-        setGeoColorScale(data);
-    }
-
-    function datasetHandler(topic, data) {
-        datasets = data;
-
-        _.each(data, function(value) {
-            tmpl = '<option value="ID" SEL>NAME</option>'
-                     .replace('ID', value.id)
-                     .replace('NAME', value.title);
-
-            if (dataSlice.dataset === value.id) {
-                tmpl = tmpl.replace('SEL', 'selected');
-            } else {
-                tmpl = tmpl.replace('SEL', '');
-            }
-
-            $datasetFilter.append(tmpl);
-        });
-    }
-
-    function entryHandler(topic, data) {
-        entries = data;
-    }
-
     function redrawDisplay(topic, data) {
-        setGeoColorScale(geo);
+        setGeoColorScale(dataStore.geo);
     }
 
     /**
@@ -238,7 +342,8 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
                 context.title = $this.data('title');
                 context.text = marked($this.data('text'));
                 if ($this.hasClass(embedClass)) {
-                    context.embed_code = embedCode;
+                    context.state_params = uiState.asQueryString;
+                    context.embed_code = embedCodeTmpl(context);
                 } else {
                     context.embed_code = '';
                 }
@@ -254,21 +359,20 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
      * Bootstraps visualisation tools
      */
     function initMetaTools() {
-        var $this,
-            data = {};
+        var $this;
 
         $datasetFilter.on('change', function() {
             $this = $(this);
-            data.dataset = $this.val();
-            data.year = $yearFilter.val();
-            pubsub.publish(topics.tool_change, data);
+            uiState.filter.dataset = $this.val();
+            uiState.filter.year = $yearFilter.val();
+            pubsub.publish(topics.tool_change, uiState);
         });
 
         $yearFilter.on('change', function() {
             $this = $(this);
-            data.year = $this.val();
-            data.dataset = $datasetFilter.val();
-            pubsub.publish(topics.tool_change, data);
+            uiState.filter.year = $this.val();
+            uiState.filter.dataset = $datasetFilter.val();
+            pubsub.publish(topics.tool_change, uiState);
         });
     }
 
@@ -310,7 +414,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
                 match;
 
             if (properties) {
-                match = _.find(places, {'id': properties.iso_a2.toLowerCase()});
+                match = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
                 context.year = '2014';
                 context.name = match.name;
                 context.slug = match.id;
@@ -345,11 +449,11 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
     function initUI() {
         initMeta();
         initView();
+        pubsub.publish(topics.init, uiState);
     }
 
     return {
         init: initUI
     };
-
 });
 
