@@ -53,7 +53,8 @@ JINJA_EXTENSIONS = [
 JINJA_FILTERS = {
   'where': filters.where,
   'markdown': filters.markdown,
-  'natsort': filters.natsort
+  'natsort': filters.natsort,
+  'tojson': filters.tojson
 }
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
 PLUGINS = [
