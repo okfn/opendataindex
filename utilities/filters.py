@@ -2,6 +2,7 @@
 
 
 import operator
+import json
 import jinja2
 import markdown as mdlib
 import natsort as natsortlib
@@ -41,3 +42,9 @@ def natsort(iterable, attribute=None, reverse=False):
 
     return natsortlib.natsorted(iterable, key=operator.itemgetter(attribute),
                                 reverse=reverse)
+
+
+def tojson(content):
+    """."""
+
+    return json.dumps(content)
