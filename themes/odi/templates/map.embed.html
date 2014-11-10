@@ -72,13 +72,13 @@
 
 <!--Templates for LoDash-->
 <script type="text/template" class="info-box">
-    <div class="odi-vis-info-title"><%= title %><span class="odi-vis-info-close fa fa-close"></span></div>
+    <div class="odi-vis-info-title"><%= title %><span class="odi-vis-info-close" title="something for nothing"><i class="fa fa-close"></i></span></div>
     <div class="odi-vis-info-text"><%= text %></div>
     <%= embed_code %>
 </script>
 
 <script type="text/template" class="place-box">
-    <div class="odi-vis-place-title"><%= name %><span class="odi-vis-place-close fa fa-close"></span></div>
+    <div class="odi-vis-place-title"><%= name %><span class="odi-vis-place-close"><i class="fa fa-close"></i></span></div>
     <div class="odi-vis-place-text">
         <p>
             <%= name %> {{ gettext('is ranked at') }} <strong><%= rank %></strong> {{ gettext('in the') }} <%= year %> {{ gettext('Index') }} {{ gettext('with a score of') }} <strong><%= score %>&#37;</strong>. {{ gettext('That&#39;s') }} <%= improvement_phrase %> {{ gettext('from') }} <%= previous_score %>&#37; {{ gettext('the previous year') }}.
@@ -96,7 +96,7 @@
 </script>
 
 <script type="text/template" class="embed-code">
-    <xmp contenteditable="true"><iframe width="100%" height="100%"src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
+    <xmp contenteditable="true"><iframe width="100%" height="508px" src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
 </script>
 
 {% endblock content %}

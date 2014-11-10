@@ -68,6 +68,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
             panel: {
                 logo: true,
                 name: true,
+                tools: true,
                 share: true,
                 embed: true,
                 help: true,
@@ -143,6 +144,9 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
     }
 
     function setPanels(topic, data) {
+        if (!data.panel.tools) {
+            $toolsPanel.hide();
+        }
         if (!data.panel.share) {
             $sharePanel.hide();
         }
@@ -158,7 +162,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
         history.pushState({}, '', data.asQueryString);
     }
 
-    function setStateQueryString(state) {
+    function getStateQueryString(state) {
         var qargs = [];
         _.forOwn(state, function(value, key) {
             if (key !== 'asQueryString') {
@@ -190,7 +194,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
         _.forOwn(data, function(value, key) {
             _.assign(rv[key], value);
         });
-        rv.asQueryString = setStateQueryString(rv);
+        rv.asQueryString = getStateQueryString(rv);
         return rv;
     }
 
@@ -214,11 +218,13 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
                 'filter_dataset',
                 'panel_logo',
                 'panel_name',
+                'panel_tools',
                 'panel_share',
                 'panel_embed',
                 'panel_help',
                 'panel_legend',
-                'map_latlong',
+                'map_lat',
+                'map_long',
                 'map_place'
             ],
             passedState = {
@@ -342,7 +348,13 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
                 context.title = $this.data('title');
                 context.text = marked($this.data('text'));
                 if ($this.hasClass(embedClass)) {
-                    context.state_params = uiState.asQueryString;
+                    // we want to always enforce certain
+                    // state conditions on embeds, so...
+                    var embedState = _.cloneDeep(uiState);
+                    embedState.panel.share = false;
+                    embedState.panel.embed = false;
+                    embedState.panel.tools = false;
+                    context.state_params = getStateQueryString(embedState);
                     context.embed_code = embedCodeTmpl(context);
                 } else {
                     context.embed_code = '';
