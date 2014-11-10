@@ -81,6 +81,51 @@ Or its embeddable version:
 
 * /vis/map/embed/
 
+#### Map state
+
+The state of the map is configurable: internally, via the uiState object, and via query params passed on the URL to the map.
+
+The use case for this is to enable embedding of a particular state. The uiState object has the following defaults:
+
+    uiStateDefaults = {
+        filter: {
+            year: currentYear,
+            dataset: 'all'
+        },
+        panel: {
+            logo: true,
+            name: true,
+            tools: true,
+            share: true,
+            embed: true,
+            help: true,
+            legend: true,
+        },
+        map: {
+            lat: '20.0',
+            long: '5.0',
+            place: undefined
+        },
+        asQueryString: undefined
+    }
+
+These defaults can be customized on initialisation of the map via URL params (a subset of the full uiState object):
+
+* `filter_year`
+* `filter_dataset`
+* `panel_logo`
+* `panel_name`
+* `panel_tools`
+* `panel_share`
+* `panel_embed`
+* `panel_help`
+* `panel_legend`
+* `map_place`
+
+An example query:
+
+* `http://index.okfn.org/vis/map/embed/?filter_year=2013&filter_dataset=timetables&panel_tools=false`
+
 ### Data tables
 
 Displays the Index data in a tabular format. **These visualisation is not currently embeddedable.**
@@ -89,10 +134,6 @@ There are two types of tables:
 
 * Overview:
 * Slice:
-
-#### Features
-
-* Enter a search term to filter the table by match on place name. Use ';' as a seperator to match multiple places (e.g.: "United States; United Kingdom")
 
 
 ## API
