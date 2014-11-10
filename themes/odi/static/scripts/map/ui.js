@@ -1,4 +1,4 @@
-define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], function(leaflet, $, pubsub, _, chroma, marked, data) {
+define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], function(leaflet, leaflet_zoommin, $, pubsub, _, chroma, marked, data) {
 
     var $tools = $('.odi-vis-tools'),
         $legend = $('.odi-vis-legend ul'),
@@ -24,12 +24,14 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
         colorDark = '#2d2d2d',
         colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
         colorScale = chroma.scale(colorSteps).domain([0, 100]),
-        mapInitObj = {
-            zoomControl: false,
-            attributionControl: false
-        },
         mapLatLongBase = [20.0, 5.0],
         mapZoomBase = 2,
+        mapInitObj = {
+            zoomControl: false,
+            attributionControl: false,
+            minZoom: 2,
+            maxZoom: 4
+        },
         map = leaflet.map('map', mapInitObj).setView(mapLatLongBase, mapZoomBase),
         placeControl = leaflet.control(),
         placeBoxClass = 'odi-vis-place',
@@ -444,7 +446,7 @@ define(['leaflet', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], fu
      * Bootstraps the visualisation map
      */
     function initViewMap() {
-        new leaflet.Control.Zoom({ position: 'bottomright' }).addTo(map);
+        new L.Control.ZoomMin({ position: 'bottomright' }).addTo(map);
     }
 
     /**
