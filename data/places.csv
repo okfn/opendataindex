@@ -1,251 +1,214 @@
-id,name,slug,score,rank,score_2013,rank_2013
-af,Afghanistan,afghanistan,,80,,76
-ax,Åland Islands,aland-islands,,80,,76
-al,Albania,albania,,80,,76
-dz,Algeria,algeria,,80,,76
-as,American Samoa,american-samoa,,80,,76
-ad,Andorra,andorra,,80,,76
-ao,Angola,angola,,80,,76
-ai,Anguilla,anguilla,,80,,76
-aq,Antarctica,antarctica,,80,,76
-ag,Antigua and Barbuda,antigua-and-barbuda,,80,,76
-ar,Argentina,argentina,,80,,76
-am,Armenia,armenia,,80,,76
-aw,Aruba,aruba,,80,,76
-au,Australia,australia,66,80,66,76
-at,Austria,austria,51,80,51,76
-az,Azerbaijan,azerbaijan,,80,,76
-bs,Bahamas,bahamas,24,80,24,76
-bh,Bahrain,bahrain,16,80,16,76
-bd,Bangladesh,bangladesh,34,80,34,76
-bb,Barbados,barbados,24,80,24,76
-by,Belarus,belarus,,80,,76
-be,Belgium,belgium,27,80,27,76
-bz,Belize,belize,,80,,76
-bj,Benin,benin,,80,,76
-bm,Bermuda,bermuda,36,80,36,76
-bt,Bhutan,bhutan,1,80,,76
-bo,"Bolivia, Plurinational State of",bolivia-plurinational-state-of,,80,,76
-bq,"Bonaire, Sint Eustatius and Saba",bonaire-sint-eustatius-and-saba,,80,,76
-ba,Bosnia and Herzegovina,bosnia-and-herzegovina,,80,,76
-bw,Botswana,botswana,,80,,76
-bv,Bouvet Island,bouvet-island,,80,,76
-br,Brazil,brazil,48,80,48,76
-io,British Indian Ocean Territory,british-indian-ocean-territory,,80,,76
-bn,Brunei Darussalam,brunei-darussalam,,80,,76
-bg,Bulgaria,bulgaria,52,80,52,76
-bf,Burkina Faso,burkina-faso,37,80,37,76
-bi,Burundi,burundi,,80,,76
-kh,Cambodia,cambodia,,80,,76
-cm,Cameroon,cameroon,,80,,76
-ca,Canada,canada,59,80,59,76
-cv,Cape Verde,cape-verde,,80,,76
-ky,Cayman Islands,cayman-islands,31,80,31,76
-cf,Central African Republic,central-african-republic,,80,,76
-td,Chad,chad,,80,,76
-cl,Chile,chile,,80,,76
-cn,China,china,42,80,42,76
-cx,Christmas Island,christmas-island,,80,,76
-cc,Cocos (Keeling) Islands,cocos-islands,,80,,76
-co,Colombia,colombia,,80,,76
-km,Comoros,comoros,,80,,76
-cg,Congo,congo,,80,,76
-cd,"Congo, the Democratic Republic of the",congo-the-democratic-republic-of-the,,80,,76
-ck,Cook Islands,cook-islands,,80,,76
-cr,Costa Rica,costa-rica,35,80,35,76
-ci,Côte d'Ivoire,côte-d'ivoire,,80,,76
-hr,Croatia,croatia,45,80,45,76
-cu,Cuba,cuba,,80,,76
-cw,Curaçao,curacao,,80,,76
-cy,Cyprus,cyprus,3,80,3,76
-cz,Czech Republic,czech-republic,45,80,45,76
-dk,Denmark,denmark,87,80,87,76
-dj,Djibouti,djibouti,,80,,76
-dm,Dominica,dominica,,80,,76
-do,Dominican Republic,dominican-republic,,80,,76
-ec,Ecuador,ecuador,43,80,43,76
-eg,Egypt,egypt,31,80,31,76
-sv,El Salvador,el-salvador,,80,,76
-gq,Equatorial Guinea,equatorial-guinea,,80,,76
-er,Eritrea,eritrea,,80,,76
-ee,Estonia,estonia,,80,,76
-et,Ethiopia,ethiopia,,80,,76
-fk,Falkland Islands (Malvinas),falkland-islands-(malvinas),,80,,76
-fo,Faroe Islands,faroe-islands,,80,,76
-fj,Fiji,fiji,,80,,76
-fi,Finland,finland,72,80,72,76
-fr,France,france,69,80,69,76
-gf,French Guiana,french-guiana,,80,,76
-pf,French Polynesia,french-polynesia,,80,,76
-tf,French Southern Territories,french-southern-territories,,80,,76
-ga,Gabon,gabon,,80,,76
-gm,Gambia,gambia,,80,,76
-ge,Georgia,georgia,,80,,76
-de,Germany,germany,61,80,61,76
-gh,Ghana,ghana,,80,,76
-gi,Gibraltar,gibraltar,27,80,27,76
-gr,Greece,greece,40,80,40,76
-gl,Greenland,greenland,,80,,76
-gd,Grenada,grenada,,80,,76
-gp,Guadeloupe,guadeloupe,,80,,76
-gu,Guam,guam,,80,,76
-gt,Guatemala,guatemala,,80,,76
-gg,Guernsey,guernsey,39,80,39,76
-gn,Guinea,guinea,,80,,76
-gw,Guinea-Bissau,guinea-bissau,,80,,76
-gy,Guyana,guyana,,80,,76
-ht,Haiti,haiti,,80,,76
-hm,Heard Island and McDonald Mcdonald Islands,heard-island-and-mcdonald-mcdonald-islands,,80,,76
-va,Holy See (Vatican City State),holy-see-(vatican-city-state),,80,,76
-hn,Honduras,honduras,,80,,76
-hk,Hong Kong,hong-kong,27,80,27,76
-hu,Hungary,hungary,42,80,42,76
-is,Iceland,iceland,55,80,55,76
-in,India,india,46,80,46,76
-id,Indonesia,indonesia,42,80,42,76
-ir,"Iran, Islamic Republic of",iran-islamic-republic-of,,80,,76
-iq,Iraq,iraq,,80,,76
-ie,Ireland,ireland,40,80,40,76
-im,Isle of Man,isle-of-man,52,80,52,76
-il,Israel,israel,48,80,48,76
-it,Italy,italy,52,80,52,76
-jm,Jamaica,jamaica,,80,,76
-jp,Japan,japan,46,80,46,76
-je,Jersey,jersey,39,80,39,76
-jo,Jordan,jordan,,80,,76
-kz,Kazakhstan,kazakhstan,,80,,76
-ke,Kenya,kenya,20,80,20,76
-ki,Kiribati,kiribati,,80,,76
-kp,"Korea, Democratic People's Republic of",korea-democratic-people's-republic-of,,80,,76
-kr,"Korea, Republic of",korea-republic-of,43,80,43,76
-kw,Kuwait,kuwait,,80,,76
-ko,Kosovo,kosovo,,80,,76
-kg,Kyrgyzstan,kyrgyzstan,,80,,76
-la,Lao People's Democratic Republic,lao-people's-democratic-republic,,80,,76
-lv,Latvia,latvia,,80,,76
-lb,Lebanon,lebanon,,80,,76
-ls,Lesotho,lesotho,,80,,76
-lr,Liberia,liberia,,80,,76
-ly,Libya,libya,0,80,0,76
-li,Liechtenstein,liechtenstein,,80,,76
-lt,Lithuania,lithuania,32,80,32,76
-lu,Luxembourg,luxembourg,,80,,76
-mo,Macao,macao,,80,,76
-mk,"Macedonia, the Former Yugoslav Republic of",macedonia-the-former-yugoslav-republic-of,,80,,76
-mg,Madagascar,madagascar,,80,,76
-mw,Malawi,malawi,,80,,76
-my,Malaysia,malaysia,,80,,76
-mv,Maldives,maldives,,80,,76
-ml,Mali,mali,,80,,76
-mt,Malta,malta,52,80,52,76
-mh,Marshall Islands,marshall-islands,,80,,76
-mq,Martinique,martinique,,80,,76
-mr,Mauritania,mauritania,,80,,76
-mu,Mauritius,mauritius,,80,,76
-yt,Mayotte,mayotte,,80,,76
-mx,Mexico,mexico,47,80,47,76
-fm,"Micronesia, Federated States of",micronesia-federated-states-of,,80,,76
-md,"Moldova, Republic of",moldova-republic-of,53,80,53,76
-mc,Monaco,monaco,,80,,76
-mn,Mongolia,mongolia,,80,,76
-me,Montenegro,montenegro,,80,,76
-ms,Montserrat,montserrat,,80,,76
-ma,Morocco,morocco,29,80,9,76
-mz,Mozambique,mozambique,,80,,76
-mm,Myanmar,myanmar,,80,,76
-na,Namibia,namibia,,80,,76
-nr,Nauru,nauru,,80,,76
-np,Nepal,nepal,30,80,30,76
-nl,Netherlands,netherlands,74,80,74,76
-nc,New Caledonia,new-caledonia,,80,,76
-nz,New Zealand,new-zealand,66,80,66,76
-ni,Nicaragua,nicaragua,,80,,76
-ne,Niger,niger,,80,,76
-ng,Nigeria,nigeria,28,80,28,76
-nu,Niue,niue,,80,,76
-nf,Norfolk Island,norfolk-island,,80,,76
-mp,Northern Mariana Islands,northern-mariana-islands,,80,,76
-no,Norway,norway,76,80,76,76
-om,Oman,oman,7,80,7,76
-pk,Pakistan,pakistan,48,80,15,76
-pw,Palau,palau,,80,,76
-ps,"Palestine, State of",palestine-state-of,,80,,76
-pa,Panama,panama,,80,,76
-pg,Papua New Guinea,papua-new-guinea,,80,,76
-py,Paraguay,paraguay,45,80,,76
-pe,Peru,peru,,80,,76
-ph,Philippines,philippines,,80,,76
-pn,Pitcairn,pitcairn,,80,,76
-pl,Poland,poland,42,80,42,76
-pt,Portugal,portugal,50,80,50,76
-pr,Puerto Rico,puerto-rico,,80,,76
-qa,Qatar,qatar,,80,,76
-re,Réunion,réunion,,80,,76
-ro,Romania,romania,58,80,58,76
-ru,Russian Federation,russian-federation,43,80,43,76
-rw,Rwanda,rwanda,,80,,76
-bl,Saint Barthélemy,saint-barthélemy,,80,,76
-sh,"Saint Helena, Ascension and Tristan da Cunha",saint-helena-ascension-and-tristan-da-cunha,,80,,76
-kn,Saint Kitts and Nevis,saint-kitts-and-nevis,9,80,9,76
-lc,Saint Lucia,saint-lucia,5,80,5,76
-mf,Saint Martin (French part),saint-martin-(french-part),,80,,76
-pm,Saint Pierre and Miquelon,saint-pierre-and-miquelon,,80,,76
-vc,Saint Vincent and the Grenadines,saint-vincent-and-the-grenadines,,80,,76
-ws,Samoa,samoa,,80,,76
-sm,San Marino,san-marino,,80,,76
-st,Sao Tome and Principe,sao-tome-and-principe,,80,,76
-sa,Saudi Arabia,saudi-arabia,28,80,28,76
-sn,Senegal,senegal,22,80,22,76
-rs,Serbia,serbia,44,80,44,76
-sc,Seychelles,seychelles,,80,,76
-sl,Sierra Leone,sierra-leone,,80,,76
-sg,Singapore,singapore,34,80,34,76
-sx,Sint Maarten (Dutch part),sint-maarten-(dutch-part),,80,,76
-sk,Slovakia,slovakia,39,80,39,76
-si,Slovenia,slovenia,73,80,73,76
-sb,Solomon Islands,solomon-islands,,80,,76
-so,Somalia,somalia,,80,,76
-za,South Africa,south-africa,32,80,32,76
-gs,South Georgia and the South Sandwich Islands,south-georgia-and-the-south-sandwich-islands,,80,,76
-ss,South Sudan,south-sudan,,80,,76
-es,Spain,spain,46,80,46,76
-lk,Sri Lanka,sri-lanka,,80,,76
-sd,Sudan,sudan,,80,,76
-sr,Suriname,suriname,,80,,76
-sj,Svalbard and Jan Mayen,svalbard-and-jan-mayen,,80,,76
-sz,Swaziland,swaziland,,80,,76
-se,Sweden,sweden,67,80,67,76
-ch,Switzerland,switzerland,59,80,59,76
-sy,Syrian Arab Republic,syrian-arab-republic,,80,,76
-tw,Taiwan,taiwan,42,80,42,76
-tj,Tajikistan,tajikistan,,80,,76
-tz,"Tanzania, United Republic of",tanzania-united-republic-of,,80,,76
-th,Thailand,thailand,,80,,76
-tl,Timor-Leste,timor-leste,,80,,76
-tg,Togo,togo,,80,,76
-tk,Tokelau,tokelau,,80,,76
-to,Tonga,tonga,,80,,76
-tt,Trinidad and Tobago,trinidad-and-tobago,,80,,76
-tn,Tunisia,tunisia,34,80,34,76
-tr,Turkey,turkey,,80,,76
-tm,Turkmenistan,turkmenistan,,80,,76
-tc,Turks and Caicos Islands,turks-and-caicos-islands,3,80,3,76
-tv,Tuvalu,tuvalu,,80,,76
-ug,Uganda,uganda,,80,,76
-ua,Ukraine,ukraine,33,80,,76
-ae,United Arab Emirates,united-arab-emirates,,80,,76
-gb,United Kingdom,united-kingdom,94,80,94,76
-us,United States,united-states,87,80,87,76
-um,United States Minor Outlying Islands,united-states-minor-outlying-islands,,80,,76
-uy,Uruguay,uruguay,77,80,,76
-uz,Uzbekistan,uzbekistan,,80,,76
-vu,Vanuatu,vanuatu,,80,,76
-ve,"Venezuela, Bolivarian Republic of",venezuela-bolivarian-republic-of,,80,,76
-vn,Viet Nam,viet-nam,,80,,76
-vg,"Virgin Islands, British",virgin-islands-british,13,80,13,76
-vi,"Virgin Islands, U.S.",virgin-islands-u.s.,,80,,76
-wf,Wallis and Futuna,wallis-and-futuna,,80,,76
-eh,Western Sahara,western-sahara,,80,,76
-ye,Yemen,yemen,14,80,14,76
-zm,Zambia,zambia,,80,,76
-zw,Zimbabwe,zimbabwe,,80,,76
+id,name,slug,reviewers,region,continent,score,rank,score_2013,rank_2013,submitters,reviewers
+af,Afghanistan,afghanistan,,Asia,Asia,,,,,,
+al,Albania,albania,Mor Rubinstein,Europe,Europe,,,,,Ayyy Lmao,Mor Rubinstein
+dz,Algeria,algeria,,Africa,MENA,,,,,,
+ad,Andorra,andorra,,Europe,Europe,,,,,,
+ao,Angola,angola,,Africa,Africa,,,,,Nick Ingalls,
+ai,Anguilla,anguilla,,LATAM,Americas,,,,,,
+ag,Antigua and Barbuda,antigua-and-barbuda,,LATAM,Americas,,,,,Nick Ingalls,
+ar,Argentina,argentina,Silvana Fumega,LATAM,Americas,18,46,,,Martín Szyszlican,Silvana Fumega
+am,Armenia,armenia,,Europe,Europe,,,,,,
+aw,Aruba,aruba,,LATAM,Americas,,,,,Nick Ingalls,
+au,Australia,australia,,Oceania,Oceania,66,11,66,8,Alex Sadleir,
+at,Austria,austria,Sander van der Waal,Europe,Europe,51,16,51,16,,Sander van der Waal
+az,Azerbaijan,azerbaijan,,Asia,Asia,,,,,,
+bs,Bahamas,bahamas,Christian Villum,LATAM,Americas,24,41,24,35,Christian Villum,Christian Villum
+bh,Bahrain,bahrain,Rayna Stamboliyska,MENA,Asia,16,47,16,38,Rayna Stamboliyska,Rayna Stamboliyska
+bd,Bangladesh,bangladesh,,Asia,Asia,34,33,34,29,Daniela Mattern,
+bb,Barbados,barbados,Graeme Jones,LATAM,Americas,24,41,24,35,Graeme Jones,Graeme Jones
+by,Belarus,belarus,,Europe,Europe,,,,,Alexey Medvetsky,
+be,Belgium,belgium,,Europe,Europe,27,39,27,34,Bert Van Nuffelen,
+bz,Belize,belize,,LATAM,Americas,,,,,Nick Ingalls,
+bj,Benin,benin,,Africa,Africa,,,,,Pierre Chrzanowski,
+bm,Bermuda,bermuda,,LATAM,Americas,36,31,36,27,Louis Galipeau,
+bt,Bhutan,bhutan,,Asia,Asia,1,55,,,Rufus Pollock,
+bo,"Bolivia, Plurinational State of",bolivia-plurinational-state-of,,LATAM,Americas,,,,,Anonymous,
+bq,"Bonaire, Sint Eustatius and Saba",bonaire-sint-eustatius-and-saba,,LATAM,Americas,,,,,,
+ba,Bosnia and Herzegovina,bosnia-and-herzegovina,Stevan Gostojić,Europe,Europe,23,42,,,Mor Rubinstein,Stevan Gostojić
+bw,Botswana,botswana,,Africa,Africa,0,56,,,Anonymous,
+bv,Bouvet Island,bouvet-island,,Europe,Europe,,,,,,
+br,Brazil,brazil,,LATAM,Americas,48,19,48,17,Erick Muzart Fonseca dos Santos,
+bn,Brunei Darussalam,brunei-darussalam,,Asia,Asia,,,,,,
+bg,Bulgaria,bulgaria,,Europe,Europe,52,15,52,15,Mor Rubinstein,
+bf,Burkina Faso,burkina-faso,Idriss TINTO,Africa,Africa,47,20,37,26,T. Idriss TINTO,Idriss TINTO
+bi,Burundi,burundi,,Asia,Asia,,,,,Nick Ingalls,
+kh,Cambodia,cambodia,Vantharith Oum,Asia,Asia,27,39,,,Vantharith Oum,Vantharith Oum
+cm,Cameroon,cameroon,,Africa,Africa,,,,,Nick Ingalls,
+ca,Canada,canada,James McKinney,North America,Americas,59,13,59,10,Frank Hangler,James McKinney
+cv,Cape Verde,cape-verde,,Africa,Africa,,,,,,
+ky,Cayman Islands,cayman-islands,Irina,North America,Americas,31,36,31,31,,Irina
+cf,Central African Republic,central-african-republic,,Africa,Africa,,,,,Nick Ingalls,
+td,Chad,chad,,Africa,Africa,,,,,,
+cl,Chile,chile,,LATAM,Americas,,,,,Anonymous,
+cn,China,china,FENG GAO,Asia,Asia,37,30,42,23,FENG GAO,FENG GAO
+cx,Christmas Island,christmas-island,,Oceania,Oceania,,,,,,
+co,Colombia,colombia,,LATAM,Americas,,,,,Lina Gomez,
+km,Comoros,comoros,,Africa,Africa,,,,,Nick Ingalls,
+cg,Congo,congo,,Africa,Africa,,,,,Nick Ingalls,
+cd,"Congo, the Democratic Republic of the",congo-the-democratic-republic-of-the,,Africa,Africa,,,,,Nick Ingalls,
+cr,Costa Rica,costa-rica,,LATAM,Americas,35,32,35,28,Ignacio Alfaro,
+ci,Côte d'Ivoire,côte-d'ivoire,,Africa,Africa,,,,,Sarah Clavel,
+hr,Croatia,croatia,,Europe,Europe,45,22,45,20,Drazen Hoffmann,
+cu,Cuba,cuba,,North America,Americas,,,,,,
+cy,Cyprus,cyprus,Andreas P,Asia,Asia,21,44,3,45,Anonymous,Andreas P
+cz,Czech Republic,czech-republic,Michaela Rybičková,Europe,Europe,72,7,45,20,Michaela Rybičková,Michaela Rybičková
+dk,Denmark,denmark,,Europe,Europe,87,2,87,2,Niels Erik Kaaber Rasmussen,
+dj,Djibouti,djibouti,,Africa,Africa,,,,,Nick Ingalls,
+dm,Dominica,dominica,,LATAM,Americas,,,,,Nick Ingalls,
+do,Dominican Republic,dominican-republic,,LATAM,Americas,,,,,,
+ec,Ecuador,ecuador,,LATAM,Americas,43,24,43,22,Eduardo Bejar,
+eg,Egypt,egypt,,MENA,Africa,31,36,31,31,Tarek Amr,
+sv,El Salvador,el-salvador,,LATAM,Americas,,,,,Iris Palma,
+gq,Equatorial Guinea,equatorial-guinea,,Africa,Africa,,,,,Nick Ingalls,
+er,Eritrea,eritrea,,Africa,Africa,,,,,Nick Ingalls,
+ee,Estonia,estonia,,Europe,Europe,,,,,,
+et,Ethiopia,ethiopia,,Africa,Africa,,,,,,
+fj,Fiji,fiji,,Oceania,Oceania,,,,,Nick Ingalls,
+fi,Finland,finland,,Europe,Europe,72,7,72,6,Heli Mikkelä,
+fr,France,france,Pierre Chrzanowski,Europe,Europe,70,8,59,10,Pierre Chrzanowski,Pierre Chrzanowski
+gf,French Guiana,french-guiana,,LATAM,Americas,,,,,,
+pf,French Polynesia,french-polynesia,,Oceania,Oceania,,,,,,
+ga,Gabon,gabon,,Africa,Africa,,,,,,
+gm,Gambia,gambia,,Africa,Africa,,,,,Nick Ingalls,
+ge,Georgia,georgia,,Asia,Asia,,,,,Derek Dohler,
+de,Germany,germany,Daniel Dietrich,Europe,Europe,65,12,61,9,walter palmetshofer,Daniel Dietrich
+gh,Ghana,ghana,,Africa,Africa,,,,,Jerry Sam,
+gi,Gibraltar,gibraltar,Christian Villum,Europe,Europe,27,39,27,34,Christian Villum,Christian Villum
+gr,Greece,greece,Andreas P,Europe,Europe,38,29,40,24,Charalampos Bratsas,Andreas P
+gd,Grenada,grenada,,North America,Americas,,,,,Nick Ingalls,
+gp,Guadeloupe,guadeloupe,,LATAM,Americas,,,,,,
+gu,Guam,guam,,Oceania,Oceania,,,,,,
+gt,Guatemala,guatemala,,LATAM,Americas,,,,,Anonymous,
+gg,Guernsey,guernsey,Graeme Jones,Europe,Europe,39,28,39,25,Graeme Jones,Graeme Jones
+gn,Guinea,guinea,,Africa,Africa,,,,,DIALLO Aboubacar,
+gw,Guinea-Bissau,guinea-bissau,,Africa,Africa,,,,,Janet Gunter,
+gy,Guyana,guyana,,LATAM,Americas,,,,,Nick Ingalls,
+ht,Haiti,haiti,,LATAM,Americas,,,,,Pierre Chrzanowski,
+va,Holy See (Vatican City State),holy-see-(vatican-city-state),Graeme Jones,Europe,Europe,1,55,,,Graeme Jones,Graeme Jones
+hn,Honduras,honduras,,LATAM,Americas,,,,,,
+hk,Hong Kong,hong-kong,,Asia,Asia,27,39,27,34,Haruka Nakamura,
+hu,Hungary,hungary,,Europe,Europe,42,25,42,23,Anna Orosz,
+is,Iceland,iceland,Páll Hilmarsson,Europe,Europe,67,10,55,13,Tryggvi Björgvinsson,Páll Hilmarsson
+in,India,india,,Asia,Asia,46,21,46,19,SUSIL KUMAR Sahoo,
+id,Indonesia,indonesia,,Asia,Asia,42,25,42,23,Diah Setiawaty,
+ir,"Iran, Islamic Republic of",iran-islamic-republic-of,,MENA,Asia,,,,,Morteza Milani,
+iq,Iraq,iraq,,MENA,Asia,,,,,,
+ie,Ireland,ireland,,Europe,Europe,40,27,40,24,Denis Parfenov,
+im,Isle of Man,isle-of-man,Graeme Jones,Europe,Europe,76,4,55,13,Graeme Jones,Graeme Jones
+il,Israel,israel,Mor Rubinstein,,,49,18,48,17,ido ivri,Mor Rubinstein
+it,Italy,italy,Maurizio Napolitano,Europe,Europe,59,13,52,15,Maurizio Napolitano,Maurizio Napolitano
+jm,Jamaica,jamaica,,LATAM,Americas,,,,,Geez,
+jp,Japan,japan,,Asia,Asia,69,9,46,19,Pierre Chrzanowski,
+je,Jersey,jersey,Graeme Jones,Europe,Europe,39,28,39,25,Graeme Jones,Graeme Jones
+jo,Jordan,jordan,,MENA,Asia,,,,,Mohammad Fraij,
+kz,Kazakhstan,kazakhstan,,Asia,Asia,,,,,,
+ke,Kenya,kenya,,Africa,Africa,20,45,20,37,Anonymous,
+ki,Kiribati,kiribati,,Oceania,Oceania,,,,,Nick Ingalls,
+kp,"Korea, Democratic People's Republic of",korea-democratic-people's-republic-of,,Asia,Asia,,,,,,
+kr,"Korea, Republic of",korea-republic-of,,Asia,Asia,43,24,43,22,Young-Je Lim,
+kw,Kuwait,kuwait,,MENA,Asia,,,,,,
+ko,Kosovo,kosovo,,Europe,Europe,,,,,Arianit Dobroshi,
+kg,Kyrgyzstan,kyrgyzstan,,Asia,Asia,,,,,,
+la,Lao People's Democratic Republic,lao-people's-democratic-republic,,Asia,Asia,,,,,,
+lv,Latvia,latvia,,Europe,Europe,,,,,Uldis Bojars,
+lb,Lebanon,lebanon,,MENA,Asia,,,,,Heidi Jaafar,
+ls,Lesotho,lesotho,,Africa,Africa,,,,,Ciarán Staunton,
+lr,Liberia,liberia,,Africa,Africa,,,,,Luther Jeke,
+ly,Libya,libya,,MENA,Africa,0,56,0,46,Ala Haraty,
+li,Liechtenstein,liechtenstein,,Europe,Europe,,,,,,
+lt,Lithuania,lithuania,,Europe,Europe,32,35,32,30,Karolis Granickas,
+lu,Luxembourg,luxembourg,,Europe,Europe,,,,,,
+mo,Macao,macao,,Asia,Asia,,,,,Nick Ingalls,
+mk,"Macedonia, the Former Yugoslav Republic of",macedonia-the-former-yugoslav-republic-of,,Europe,Europe,,,,,Metamorphosis Foundation,
+mg,Madagascar,madagascar,,Africa,Africa,,,,,,
+mw,Malawi,malawi,,Africa,Africa,,,,,,
+my,Malaysia,malaysia,,Asia,Asia,,,,,Khairil Yusof,
+mv,Maldives,maldives,,Asia,Asia,,,,,,
+ml,Mali,mali,,Africa,Africa,0,56,,,Pierre Chrzanowski,
+mt,Malta,malta,,Europe,Europe,52,15,52,15,Pierre Chrzanowski,
+mh,Marshall Islands,marshall-islands,,Oceania,Oceania,,,,,,
+mr,Mauritania,mauritania,,Africa,Africa,,,,,Nick Ingalls,
+mu,Mauritius,mauritius,,Africa,Africa,,,,,Nick Ingalls,
+mx,Mexico,mexico,,LATAM,Americas,47,20,47,18,Enrique Zapata,
+fm,"Micronesia, Federated States of",micronesia-federated-states-of,Victoria Vlad,Oceania,Oceania,,,,,,Victoria Vlad
+md,"Moldova, Republic of",moldova-republic-of,Ovidiu Voicu,Europe,Europe,53,14,53,14,Victoria Vlad,Ovidiu Voicu
+mc,Monaco,monaco,,Europe,Europe,,,,,Josep Miquel Serrano Jurado,
+mn,Mongolia,mongolia,,Asia,Asia,,,,,,
+me,Montenegro,montenegro,,Europe,Europe,,,,,Anonymous,
+ms,Montserrat,montserrat,,North America,Americas,,,,,,
+ma,Morocco,morocco,Rayna St,Africa,Africa,29,37,12,41,Rayna St,Rayna St
+mz,Mozambique,mozambique,,Africa,Africa,,,,,Janet Gunter,
+mm,Myanmar,myanmar,,Asia,Asia,,,,,,
+na,Namibia,namibia,,Africa,Africa,,,,,,
+np,Nepal,nepal,Kshitiz Khanal,Asia,Asia,41,26,30,32,Nikesh Balami,Kshitiz Khanal
+nl,Netherlands,netherlands,Arjan El Fassed,Europe,Europe,67,10,74,4,Arjan El Fassed,Arjan El Fassed
+nc,New Caledonia,new-caledonia,,Oceania,Oceania,,,,,,
+nz,New Zealand,new-zealand,,Oceania,Oceania,66,11,66,8,Mark Heseltine,
+ni,Nicaragua,nicaragua,,LATAM,Americas,,,,,,
+ne,Niger,niger,,Africa,Africa,,,,,,
+ng,Nigeria,nigeria,,Africa,Africa,25,40,28,33,Oludotun Babayemi,
+no,Norway,norway,,Europe,Europe,76,4,76,3,Øystein Åsnes,
+om,Oman,oman,,MENA,Asia,7,52,7,43,Riyadh Al-Balushi,
+pk,Pakistan,pakistan,Nouman Nazim,Asia,Asia,49,18,16,38,Mujtaba Hussain,Nouman Nazim
+ps,"Palestine, State of",palestine-state-of,,MENA,Asia,,,,,,
+pa,Panama,panama,,LATAM,Americas,,,,,Luis López,
+pg,Papua New Guinea,papua-new-guinea,,Oceania,Oceania,,,,,,
+py,Paraguay,paraguay,Mor Rubinstein,LATAM,Americas,46,21,,,Pablo Lopez,Mor Rubinstein
+pe,Peru,peru,,LATAM,Americas,,,,,Municipalidad Metropolitana de Lima,
+ph,Philippines,philippines,,Asia,Asia,,,,,Jo De Guia,
+pl,Poland,poland,Sander van der Waal,Europe,Europe,42,25,42,23,,Sander van der Waal
+pt,Portugal,portugal,Ricardo Lafuente,Europe,Europe,50,17,56,12,Ana Carvalho,Ricardo Lafuente
+pr,Puerto Rico,puerto-rico,,LATAM,Americas,,,,,,
+qa,Qatar,qatar,,MENA,Asia,,,,,Riyadh Al-Balushi,
+ro,Romania,romania,Silviu Vert,Europe,Europe,75,5,58,11,Ovidiu Voicu,Silviu Vert
+ru,Russian Federation,russian-federation,,Europe,Europe,43,24,43,22,Irina Radchenko,
+rw,Rwanda,rwanda,,Africa,Africa,,,,,Stephen Abbott Pugh,
+kn,Saint Kitts and Nevis,saint-kitts-and-nevis,,Asia,Asia,9,50,9,42,,
+lc,Saint Lucia,saint-lucia,Graeme Jones,LATAM,Americas,5,53,5,44,Graeme Jones,Graeme Jones
+mf,Saint Martin (French part),saint-martin-(french-part),,Europe,Europe,,,,,,
+pm,Saint Pierre and Miquelon,saint-pierre-and-miquelon,,Europe,Europe,,,,,,
+sa,Saudi Arabia,saudi-arabia,Christian Villum,MENA,Asia,28,38,28,33,Christian Villum,Christian Villum
+sn,Senegal,senegal,,Africa,Africa,22,43,22,36,Mor Rubinstein,
+rs,Serbia,serbia,,Europe,Europe,44,23,44,21,Stevan Gostojić,
+sc,Seychelles,seychelles,,Africa,Africa,,,,,,
+sl,Sierra Leone,sierra-leone,,Africa,Africa,,,,,Pierre Chrzanowski,
+sg,Singapore,singapore,Christian Villum,Asia,Asia,34,33,34,29,Christian Villum,Christian Villum
+sx,Sint Maarten (Dutch part),sint-maarten-(dutch-part),,,,,,,,Ľubor Illek,
+sk,Slovakia,slovakia,Jano Suchal,Europe,Europe,35,32,39,25,Peter Hanecak,Jano Suchal
+si,Slovenia,slovenia,,Europe,Europe,73,6,73,5,Anonymous,
+sb,Solomon Islands,solomon-islands,,Oceania,Oceania,,,,,,
+so,Somalia,somalia,,Africa,Africa,,,,,,
+za,South Africa,south-africa,,Africa,Africa,32,35,32,30,sarah levi,
+ss,South Sudan,south-sudan,,Africa,Africa,,,,,,
+es,Spain,spain,,Europe,Europe,46,21,46,19,José Félix Ontañón,
+lk,Sri Lanka,sri-lanka,,Asia,Asia,,,,,,
+sd,Sudan,sudan,,MENA,Africa,,,,,,
+sr,Suriname,suriname,,LATAM,Americas,,,,,,
+sz,Swaziland,swaziland,,Africa,Africa,,,,,,
+se,Sweden,sweden,,Europe,Europe,66,11,67,7,Asmen Gül,
+ch,Switzerland,switzerland,,Europe,Europe,59,13,59,10,Oleg Lavrovsky,
+tw,Taiwan,taiwan,,Asia,Asia,47,20,42,23,TH Schee,
+tj,Tajikistan,tajikistan,,Asia,Asia,,,,,,
+tz,"Tanzania, United Republic of",tanzania-united-republic-of,,Africa,Africa,,,,,Anonymous,
+th,Thailand,thailand,,Asia,Asia,,,,,Surasak Suksathit,
+tg,Togo,togo,,Africa,Africa,,,,,,
+tt,Trinidad and Tobago,trinidad-and-tobago,,Americas,Americas,,,,,Geez,
+tn,Tunisia,tunisia,Rayna St,MENA,Africa,34,33,34,29,Rayna St,Rayna St
+tr,Turkey,turkey,,Asia,Asia,,,,,@emrekko,
+tm,Turkmenistan,turkmenistan,Graeme Jones,Asia,Asia,,,,,Graeme Jones,Graeme Jones
+tc,Turks and Caicos Islands,turks-and-caicos-islands,,Americas,Americas,3,54,3,45,,
+ug,Uganda,uganda,,Africa,Africa,,,,,Reinier Battenberg,
+ua,Ukraine,ukraine,,Europe,Europe,33,34,,,Denis Gursky,
+ae,United Arab Emirates,united-arab-emirates,Graeme Jones,MENA,UAE,8,51,,,Graeme Jones,Graeme Jones
+gb,United Kingdom,united-kingdom,,Europe,Europe,94,1,94,1,Anonymous,
+us,United States,united-states,,Americas,Americas,87,2,87,2,Neal Bastek,
+um,United States Minor Outlying Islands,united-states-minor-outlying-islands,,Americas,Americas,,,,,,
+uy,Uruguay,uruguay,,LATAM,Americas,77,3,,,Daniel Carranza (Chino),
+uz,Uzbekistan,uzbekistan,,Asia,Asia,,,,,,
+ve,"Venezuela, Bolivarian Republic of",venezuela-bolivarian-republic-of,,LATAM,Americas,,,,,Gerardo,
+vn,Viet Nam,viet-nam,,Asia,Asia,,,,,Nguyễn Quốc Tuấn,
+vg,"Virgin Islands, British",virgin-islands-british,,Americas,Americas,13,49,13,40,,
+vi,"Virgin Islands, U.S.",virgin-islands-u.s.,Graeme Jones,Americas,Americas,9,50,,,Graeme Jones,Graeme Jones
+ye,Yemen,yemen,Rayna Stamboliyska,MENA,Asia,14,48,14,39,,Rayna Stamboliyska
+zm,Zambia,zambia,,Africa,Africa,,,,,Likumbi Kapihya,
+zw,Zimbabwe,zimbabwe,,Africa,Africa,,,,,,
