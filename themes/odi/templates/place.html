@@ -54,14 +54,18 @@
   <p>
     {{ gettext('The following people have made this possible') }}:
   </p>
-  <h4>{{ gettext('Reviews') }}</h4>
+  {% if scope.place.reviewers %}
+  <h4>{{ gettext('Reviewers') }}</h4>
   <ul>
-    <li>Someone</li>
+    <li>{{ scope.place.reviewers }}</li>
   </ul>
-  <h4>Submissions</h4>
+  {% endif %}
+  {% if scope.place.submitters %}
+  <h4>{{ gettext('Submitters') }}</h4>
   <ul>
-    <li>Someone</li>
+    <li>{{ scope.place.submitters }}</li>
   </ul>
+  {% endif %}
 </section>
 
 
