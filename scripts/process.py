@@ -5,6 +5,7 @@ import urllib
 import shutil
 import csv
 import operator
+import itertools
 import unittest
 from collections import OrderedDict
 from pprint import pprint
@@ -72,17 +73,14 @@ class Processor(object):
         suite = unittest.TestLoader().loadTestsFromTestCase(TestIndexData)
         unittest.TextTestRunner(verbosity=2).run(suite)
 
-# At the moment we will only have an entry for current year and will not
-# record earlier years. Sometimes we may not have new data for current year
-# (previous year is still good) and we will then use that previous year
-# entry as this year's entry
-# TODO: support multiple years
+
 class Extractor(object):
     def __init__(self):
         self.places = self._load_csv('tmp/places.csv')
         self.entries = self._load_csv('tmp/entries.csv')
         self.datasets = self._load_csv('tmp/datasets.csv')
         self.questions = self._load_csv('tmp/questions.csv')
+        self.submissions = self._load_csv('tmp/submissions.csv')
 
         self.current_year = '2014'
         self.years = ['2014', '2013']
@@ -198,59 +196,85 @@ class Extractor(object):
         extra_years = [y for y in self.years if y != self.current_year]
         for year in extra_years:
             fieldnames += ['score_{0}'.format(year), 'rank_{0}'.format(year)]
+        fieldnames += ['submitters', 'reviewers']
 
-        ## score then rank
+        ## set scores
         for place in self.places.dicts:
-            # write score and rank for each year we have
             for year in self.years:
-                total_places = len(set([x[1].place for x in self.writable_entries.iteritems() if x[1].year == year]))
                 score_lookup = 'score'
-                rank_lookup = 'rank'
                 if not year == self.current_year:
                     score_lookup = 'score_{0}'.format(year)
-                    rank_lookup = 'rank_{0}'.format(year)
 
                 to_score = [x[1].score for x in
                             self.writable_entries.iteritems() if
                             x[1].place == place.id and x[1].year == year and
                             x[1].score is not None]
 
-                if not to_score:
-                    score = None
-                    rank = total_places
-                else:
-                    score = sum(to_score)
-                    # TODO: rank
-                    rank = total_places
-
                 # 10 datasets * 100 score per dataset
                 total_possible_score = 10 * 100.0
 
-                # score is a percentage (runs from 0 to 100)
-                # TODO: should we round like this as we lose distinction b/w 68 an
-                # 68.5
-
-                # if place.id == 'au':
-                #     import ipdb;ipdb.set_trace()
-
-                if not score is None:
-                    score = int(round(100 * score / total_possible_score, 0))
+                if not to_score:
+                    score = None
+                else:
+                    score = int(round(100 * sum(to_score) /
+                                total_possible_score, 0))
 
                 place[score_lookup] = score
-                place[rank_lookup] = rank
 
-            # byscore = sorted(self.places.dicts,
-            #                  key=operator.itemgetter(score_lookup),
-            #                  reverse=True)
-            # # now rank
-            # # for year in self.years:
-            # rank = 1
-            # last_score = 10000 # a large number bigger than max score
-            # for count, place in enumerate(byscore):
-            #     if place[score_lookup] < last_score:
-            #         rank = count + 1
-            #     last_score = place[score_lookup]
-            #     place[rank_lookup] = rank
+        # build lookups for rank, now that we have scores
+        lookup = {}
+        for year in self.years:
+            score_lookup = 'score'
+            rank_lookup = 'rank'
+            if not year == self.current_year:
+                score_lookup = 'score_{0}'.format(year)
+                rank_lookup = 'rank_{0}'.format(year)
+            year_scores = sorted(list(set([p[score_lookup] for p in
+                                 self.places.dicts])))
+            year_scores.reverse()
+            year_lookup = {}
+            for index, score in enumerate(year_scores):
+                if score is None:
+                    pass
+                else:
+                    year_lookup.update({str(score): index + 1})
+
+            lookup.update({year: year_lookup})
+
+        # set ranks
+        for place in self.places.dicts:
+            for year in self.years:
+                score_lookup = 'score'
+                rank_lookup = 'rank'
+                if not year == self.current_year:
+                    score_lookup = 'score_{0}'.format(year)
+                    rank_lookup = 'rank_{0}'.format(year)
+
+                if place[score_lookup] is None:
+                    place[rank_lookup] = None
+                else:
+                    place[rank_lookup] = lookup[year][str(place[score_lookup])]
+
+        # set reviewers and submitters
+        submitreviewlookup = {}
+        for submission in self.submissions.dicts:
+            if submitreviewlookup.get('place'):
+                submitreviewlookup['place']['submitters'] += u'{0}{1}'.format(
+                    ';', submission['submitter'])
+                submitreviewlookup['place']['reviewers'] += u'{0}{1}'.format(
+                    ';', submission['reviewer'])
+            else:
+                submitreviewlookup.update({
+                    submission['place']: {
+                        'reviewers': submission['reviewer'],
+                        'submitters': submission['submitter']
+                    }
+                })
+
+        for place in self.places.dicts:
+            if place['id'] in submitreviewlookup:
+                place['submitters'] = submitreviewlookup[place['id']]['submitters']
+                place['reviewers'] = submitreviewlookup[place['id']]['reviewers']
 
         self._write_csv(self.places.dicts, 'data/places.csv', fieldnames)
 
@@ -323,37 +347,37 @@ class Extractor(object):
 
     def _rank_entries(self, entries):
 
-        rv = OrderedDict()
+        def _datasetscoresort(obj):
+            return obj[1]['dataset'], -obj[1]['score']
 
-        def _tmp(_dict):
-            return _dict[1]['dataset'], -_dict[1]['score']
+        def _scoresort(obj):
+            return obj[1]['score']
+
+        rv = OrderedDict()
+        workspace = []
 
         for year in self.years:
             year_entries = OrderedDict(
                 sorted([e for e in entries.iteritems() if
-                        e[0][2] == year], key=_tmp)
+                        e[0][2] == year], key=_datasetscoresort)
             )
 
-            # assign rank for entries in scope of place/dataset/year
-            current_rank, count, last_score = [1,0,0]
-            def reset():
-                current_rank = 1
-                count = 0
-                last_score = 0
-            last_dataset = 'budget'
-            for k, v in year_entries.iteritems():
-                count += 1
-                # reset on each new dataset
-                if v.dataset != last_dataset:
-                    reset()
-                if v.score < last_score:
-                    current_rank = count
+            for dataset in [d[0] for d in self.datasets['rows'][1:]]:
+                workspace.append(
+                    OrderedDict(sorted([(k, v) for k, v in
+                                year_entries.iteritems() if k[1] == dataset],
+                                key=_scoresort, reverse=True)
+                ))
 
-                last_dataset = v.dataset
-                last_score = v.score
-                v.rank = current_rank
-
-            rv.update(year_entries)
+        for o in workspace:
+            lookup = {}
+            scores = sorted(list(set([v['score'] for k, v in o.iteritems()])))
+            scores.reverse()
+            for index, score in enumerate(scores):
+                lookup.update({str(score): index + 1})
+            for e in o.iteritems():
+                e[1]['rank'] = lookup[str(e[1]['score'])]
+            rv.update(OrderedDict(o))
 
         return rv
 
