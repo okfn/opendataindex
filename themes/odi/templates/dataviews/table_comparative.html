@@ -1,36 +1,37 @@
 {% from 'macros.html' import popover_comparison_title,
-popover_comparison_content %}
+popover_comparison_content, history, share %}
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     {% include 'dataviews/table_tools.html' %}
   </div>
-  <div class="col-md-6">
-    {% include 'dataviews/table_key.html' %}
+  <div class="col-md-4">
+    {{ history(page, ODI, fragment) }}
+  </div>
+  <div class="col-md-4">
+    {{ share(page, ODI, fragment) }}
   </div>
 </div>
 
 <hr>
 
-<table class="table table-striped data-table">
+<table class="table data-table">
   <col style="width:3.5%">
   <col style="width:13%">
-  <col style="width:3.5%">
   {% for dataset in scope.datasets %}
-    <col style="width:8%">
+    <col style="width:9%">
   {% endfor %}
+  <col style="width:3.5%">
   <thead>
     <tr>
       <th>{{ gettext('Rank') }}</th>
       <th>{{ gettext('Place') }}</th>
-      <th>{{ gettext('Score') }}</th>
       {% for dataset in scope.datasets %}
         <th>
-          <a href="{{ SITEURL }}/datasets/{{ dataset.id }}/" title="{{ dataset.title }}">
             {{ dataset.title }}
-          </a>
         </th>
       {% endfor %}
+      <th>{{ gettext('Score') }}</th>
     </tr>
   </thead>
   <tbody>
@@ -43,9 +44,6 @@ popover_comparison_content %}
           <a href="{{ SITEURL }}/places/{{ place.id }}/" title="{{ place.name }}">
             {{ place.name }}
           </a>
-        </td>
-        <td class="score" data-score="{{ place[scope.score_lookup] or ODI.na }}">
-          {{ place[scope.score_lookup] or ODI.na }}
         </td>
         {% for dataset in scope.datasets %}
           <td>
@@ -62,6 +60,9 @@ popover_comparison_content %}
             </ul>
           </td>
         {% endfor %}
+        <td class="score" data-score="{{ place[scope.score_lookup] or ODI.na }}">
+          {{ place[scope.score_lookup] or ODI.na }}
+        </td>
       </tr>
     {% endfor %}
   </tbody>

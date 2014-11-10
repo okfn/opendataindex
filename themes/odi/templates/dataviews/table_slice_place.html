@@ -1,47 +1,31 @@
 {% from 'macros.html' import popover_slice_title, popover_slice_content %}
 
-<div class="row">
-  <div class="col-md-6">
-    {% include 'dataviews/table_tools.html' %}
-  </div>
-  <div class="col-md-6">
-    <div class="pull-right">
-      <button type="button" class="btn btn-info" data-toggle="popover" data-placement="left" data-content="{% filter markdown %}{% include "content/table_slice_place_help.md" %}{% endfilter %}">
-        <i class="fa fa-question-circle"></i>
-      </button>
-    </div>
-    {% include 'dataviews/table_key.html' %}
-  </div>
-</div>
-
-<hr>
-
-<table id="slice-table" class="table table-striped data-table">
-  <col style="width:3.5%">
-  <col style="width:13.5%">
+<table id="slice-table" class="table data-table">
   <col style="width:5%">
-  <col style="width:15%">
+  <col style="width:20%">
+  <col style="width:22.5%">
   <col style="width:20%">
   <col style="width:10%">
-  <col style="width:10%">
-  <col style="width:10%">
+  <col style="width:5%">
+  <col style="width:12.5%">
+  <col style="width:5%">
   <thead>
     <tr>
       <th>{{ gettext('Rank') }}</th>
       <th>{{ gettext('Dataset') }}</th>
-      <th>{{ gettext('Score') }}</th>
-      <th>{{ gettext('Change') }}</th>
       <th>{{ gettext('Breakdown') }}</th>
       <th>{{ gettext('Location (URL)') }}</th>
       <th>{{ gettext('Format') }}</th>
-      <th>{{ gettext('Information') }}</th>
+      <th>{{ gettext('Info') }}</th>
+      <th>{{ gettext('Previous') }}</th>
+      <th>{{ gettext('Score') }}</th>
     </tr>
   </thead>
   <tbody>
   {% for dataset in scope.datasets %}
 
   {% set entry = scope.entries|where('dataset', dataset.id)|where('year', page.year)|first %}
-  {% set entry_previous = entries|where('dataset', dataset.id)|where('year', (page.year|int - 1)|string)|first %}
+  {% set entry_previous = scope.entries|where('dataset', dataset.id)|where('year', (page.year|int - 1)|string)|first %}
 
     <tr data-rank="{% if entry %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}" data-score="{% if entry %}{{ entry.score }}{% else %}{{ ODI.na }}{% endif %}" data-place="{% if entry %}{{ entry.place }}{% else %}{{ ODI.na }}{% endif %}">
       <td>
@@ -49,27 +33,6 @@
       </td>
       <td>
         <a href="{{ SITEURL }}/places/{{ page.place }}/datasets/{{ dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=dataset.title, place=page.place) }}">{{ dataset.title }}</a>
-      </td>
-      <td class="score" data-score="{% if entry %}{{ entry.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">
-        {% if entry and entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}
-      </td>
-      <td>
-        {% if entry_previous and entry_previous.score %}
-          {% if entry_previous.score|int >
-             entry.score|int
-          %}
-          {{ scope.lower }}
-          {% elif entry_previous.score|int <
-             entry.score|int
-          %}
-          {{ scope.higher }}
-          {% else %}
-          {{ scope.no_change }}
-          {% endif %}
-          from {{ entry_previous.score }} in {{ ODI.previous_year }}
-        {% else %}
-        {{ gettext('No previous entry on record') }}
-        {% endif %}
       </td>
       <td>
         <ul class="availability availability-slice">
@@ -81,38 +44,50 @@
           {% set state = '' %}
           {% endif %}
 
-          <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
+          <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question, state)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
         {% endfor %}
         </ul>
       </td>
       <td>
         {% if entry and entry.url %}
-        <a href="{{ entry.url }}" title="">{{ entry.url }}</a>
+        <a href="{{ entry.url }}" title="{{ entry.url }}">{{ entry.url|truncate(30) }}</a>
         {% else %}
-        {{ gettext('No URL for this dataset.') }}
+        {{ ODI.na }}
         {% endif %}
       </td>
       <td>
         {% if entry and entry.format %}
-        {{ entry.format }}
+        {{ entry.format|truncate(10) }}
         {% else %}
-        {{ gettext('Unknown') }}
+        {{ ODI.na }}
         {% endif %}
       </td>
       <td title="{% if entry and entry.details %}{{ entry.details }}{% endif %}">
         {% if entry and entry.details %}
-        {{ entry.details|markdown|truncate(30) }}
+        <i class="fa fa-info-circle"></i>
         {% else %}
-        {{ gettext('No additional details') }}
+        {{ ODI.na }}
         {% endif %}
+      </td>
+      <td>
+        {% if entry_previous and entry_previous.score %}
+            {#{% if entry_previous.score|int > entry.score|int %}
+            {{ scope.lower }}
+            {% elif entry_previous.score|int < entry.score|int %}
+            {{ scope.higher }}
+            {% else %}
+            {{ scope.no_change }}
+            {% endif %}
+            from #}
+            {{ entry_previous.score }}%, #{{ entry_previous.rank }}
+        {% else %}
+            {{ ODI.na }}
+        {% endif %}
+      </td>
+      <td class="score" data-score="{% if entry %}{{ entry.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">
+        {% if entry and entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}
       </td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
-
-<!-- <div class="row">
-  <div class="col-md-6 col-md-offset-6">
-    {% include 'dataviews/table_key.html' %}
-  </div>
-</div> -->

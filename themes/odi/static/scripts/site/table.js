@@ -1,8 +1,8 @@
 define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
     var placeCount = placeCount || 260,
-        colorBoundaries = ['#ff0000', '#7AB800'],
-        colorScale = chroma.scale(colorBoundaries).domain([0, 100]),
+        colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
+        colorScale = chroma.scale(colorSteps).domain([0, 100]),
         naString = 'n/a',
         $dataTable = $('.data-table'),
         $visiblePopover,

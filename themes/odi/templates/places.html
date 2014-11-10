@@ -1,0 +1,31 @@
+{% extends 'page.html' %}
+{% from 'macros.html' import history, share %}
+
+{% block heading %}{% endblock heading %}
+
+{% block content %}
+{% from '_scope.html' import scope with context %}
+{% set fragment = 'places' %}
+
+<header id="place-intro" class="page-header">
+  <div class="row">
+  <div class="col-md-12">
+      <h1>
+        {{ gettext('Place overview')}}
+      </h1>
+      <hr />
+      {{ page.content }}
+      {% include 'dataviews/summary.html' %}
+      </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+</header>
+
+{% include 'dataviews/table_comparative.html' %}
+
+{% endblock content %}

@@ -8056,11 +8056,27 @@ button.close {
   font-weight: 200;
   font-style: italic;
 }
+.navbar-nav li a {
+  line-height: 36px;
+}
 body,
 input,
 textarea {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
+}
+table {
+  font-size: 14px;
+}
+.table > thead > tr > th,
+.table > thead > tr > td {
+  vertical-align: bottom;
+}
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle;
 }
 .page-header h1 {
   font-weight: 300;
@@ -8245,6 +8261,34 @@ ul.data-table-key {
 }
 .availability li.no {
   background-color: #ff0000;
+}
+.availability-single li {
+  height: 32px;
+  line-height: 32px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #f5f5f5;
+}
+ul.availability-single {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.availability-single li i {
+  height: 32px;
+  line-height: 32px;
+  width: 32px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+.availability-single li.yes i {
+  background-color: #7ab800;
+}
+.availability-single li.no i {
+  background-color: #ff0000;
+}
+.availability-single li.maybe i {
+  background-color: #2980b9;
 }
 #home-visualisation,
 #permalink-visualisation {

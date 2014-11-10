@@ -1,5 +1,7 @@
 {% extends 'page.html' %}
-{% from 'macros.html' import history %}
+{% from 'macros.html' import history, share %}
+
+{% block heading %}{% endblock heading %}
 
 {% block content %}
 {% from '_scope.html' import scope with context %}
@@ -8,7 +10,49 @@
     'dataset': scope.datasets|where('id', page.dataset)|first
 })%}
 
-{{ page.content }}
-{% include 'dataviews/table_slice_dataset.html' %}
-{{ history(page, ODI, '%s%s'|format('datasets/', page.dataset)) }}
+{% set fragment = '%s%s'|format('datasets/', page.dataset) %}
+
+<header id="place-intro" class="page-header">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>
+        {{ scope.dataset.title }}
+        <span class="label label-default dataset-openness" data-score="{{ scope.dataset[scope.score_lookup] or ODI.na }}">{{ scope.dataset[scope.score_lookup] }}% open</span>
+      </h1>
+      <p class="lead">
+        <strong>#{{ scope.dataset[scope.rank_lookup] }} {{ gettext('in the Index') }}</strong>
+        {% if scope.dataset[scope.rank_lookup_previous] %}
+          <br>
+          <small>
+            {% if scope.dataset[scope.rank_lookup_previous]|int >
+               scope.dataset[scope.rank_lookup]|int
+            %}
+            {{ scope.higher }}
+            {% elif scope.dataset[scope.rank_lookup_previous]|int <
+               scope.dataset[scope.rank_lookup]|int
+            %}
+            {{ scope.lower }}
+            {% else %}
+            {{ scope.no_change }}
+            {% endif %}
+            from #{{ scope.dataset[scope.rank_lookup_previous] }} in {{ ODI.previous_year }}
+          </small>
+        {% endif %}
+      </p>
+      {{ page.content }}
+      {{ history(page, ODI, fragment) }}
+      {{ share(page, ODI, fragment) }}
+    </div>
+    <div class="col-md-6">
+      {% set embed_width = '100%' %}
+      {% set embed_height = '430px' %}
+      {% include 'dataviews/embed_map.html' %}
+    </div>
+  </div>
+</header>
+
+<section id="dataset-slice-table">
+  {% include 'dataviews/table_slice_dataset.html' %}
+</section>
+
 {% endblock content %}

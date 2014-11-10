@@ -67,33 +67,43 @@
 
 
 {% macro history(page, odi, namespace) -%}
-
-{# namespace = 'historical' or 'datasets' #}
-
+<h4>{{ gettext('See this data over time') }}</h4>
 <ul class="nav nav-pills">
-    <li class="disabled"><a>{{ gettext('See this data over time:') }}</a></li>
     {% for year in odi.years %}
 
     {% if year == odi.current_year %}
-        {% set route = page.url %}
+        {% set route = '%s/'|format(namespace) %}
         {% set anchor = gettext('Current') %}
     {% else %}
-        {% set route = '%s/%s/%s/'|format(SITEURL, namespace, year) %}
+        {% set route = '%s/%s/'|format(namespace, year) %}
         {% set anchor = year %}
     {% endif %}
 
+    {% if route == page.url %}
+    {% else %}
     <li>
-        <a href="{{ route }}" title="{{ anchor }}">
+        <a href="{{ SITEURL }}/{{ route }}" title="{{ anchor }}">
             {{ anchor }}
         </a>
     </li>
+    {% endif %}
     {% endfor %}
 </ul>
 {%- endmacro %}
 
 
-{% macro popover_slice_title(question) -%}
-{{ question|markdown }}
+{% macro share(page, odi, namespace) -%}
+<h4>{{ gettext('Share this data with others') }}</h4>
+<div class="page-share"
+     title="{{ gettext('Share this data with others') }}"
+     style="font-size: 32px;">
+    <a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}/{{ page.url }}&text={{ share_page_template }}" title="{{ gettext('Share this data on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.url }}" title="{{ gettext('Share this data on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.url }}" title="{{ gettext('Share this data on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
+</div>
+{%- endmacro %}
+
+
+{% macro popover_slice_title(question, state) -%}
+<h4>{% filter markdown %}{{ question }}? {% if state == 'Y' %}{{ gettext('Yes') }}{% elif state == 'N' %}{{ gettext('No') }}{% elif state == '?' %}{{ gettext('Unknown') }}{% endif %}{% endfilter %}</h4>
 {%- endmacro %}
 
 

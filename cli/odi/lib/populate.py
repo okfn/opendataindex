@@ -70,7 +70,7 @@ class Populate(object):
         """Write source files for datasets."""
 
         # set the default display_type
-        display_type = u'overview'
+        display_type = u'datasets'
 
         # write the datasets overview
         filepath = os.path.join(self.datasets_dir, self.file)
@@ -124,7 +124,7 @@ class Populate(object):
         """Write source files for places."""
 
         # set the default display_type
-        display_type = u'overview'
+        display_type = u'places'
 
         # write the places overview
         filepath = os.path.join(self.places_dir, self.file)

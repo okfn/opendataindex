@@ -1,5 +1,5 @@
 {% extends 'page.html' %}
-{% from 'macros.html' import history %}
+{% from 'macros.html' import history, share %}
 
 {% block heading %}{% endblock heading %}
 
@@ -10,6 +10,8 @@
   'place': scope.places|where('id', page.place)|first
 }) %}
 
+{% set fragment = '%s%s'|format('places/', page.place) %}
+
 <header id="place-intro" class="page-header">
   <div class="row">
     <div class="col-md-6">
@@ -18,18 +20,18 @@
         <span class="label label-default place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% open</span>
       </h1>
       <p class="lead">
-        #{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}
+        <strong>#{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}</strong>
         {% if scope.place[scope.rank_lookup_previous] %}
           <br>
           <small>
             {% if scope.place[scope.rank_lookup_previous]|int >
                scope.place[scope.rank_lookup]|int
             %}
-            {{ scope.lower }}
+            {{ scope.higher }}
             {% elif scope.place[scope.rank_lookup_previous]|int <
                scope.place[scope.rank_lookup]|int
             %}
-            {{ scope.higher }}
+            {{ scope.lower }}
             {% else %}
             {{ scope.no_change }}
             {% endif %}
@@ -38,8 +40,12 @@
         {% endif %}
       </p>
       {{ page.content }}
+      {{ history(page, ODI, fragment) }}
+      {{ share(page, ODI, fragment) }}
     </div>
     <div class="col-md-6">
+      {% set embed_width = '100%' %}
+      {% set embed_height = '430px' %}
       {% include 'dataviews/embed_map.html' %}
     </div>
   </div>
@@ -67,9 +73,5 @@
   </ul>
   {% endif %}
 </section>
-
-
-{{ history(page, ODI, '%s%s'|format('places/', page.place)) }}
-
 
 {% endblock content %}

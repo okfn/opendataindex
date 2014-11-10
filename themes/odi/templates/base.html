@@ -31,42 +31,49 @@
         {% endblock okf_ribbon %}
         {% block header %}
         <header id="header">
+
+        <nav class="navbar navbar-default" role="navigation">
             <div class="container">
+                <ul class="nav navbar-nav">
+                <li>
               <div id="header-brand"{# class="has-sub-brand"#}>
                 <a href="{{ SITEURL }}/" title="{{ SITENAME }} {{ ODI.current_year }} {{ ODI.sponsor.name }}">
                     <img src="{{ SITEURL }}/static/images/logo.png" height="50">
                     {{ SITENAME }}
                     {#<span>{{ gettext('Global') }}</span>#}
                 </a>
-              </div>
-            </div>
-        </header>
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <ul class="nav navbar-nav">
+                </div>
+                </li>
                     <li>
-                        <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
-                            {{ gettext('about') }}
+                        <a href="{{ SITEURL }}/places/" title="{{ gettext('About the Open Data Index project') }}">
+                            {{ gettext('Places') }}
                         </a>
                     </li>
                     <li>
-                        <a href="{{ SITEURL }}/methodology/" title="{{ gettext('About the methodology used in creating the Open Data Index') }}">
-                            {{ gettext('methodology') }}
+                        <a href="{{ SITEURL }}/datasets/" title="{{ gettext('About the Open Data Index project') }}">
+                            {{ gettext('Datasets') }}
                         </a>
                     </li>
                     <li>
                         <a href="{{ SITEURL }}/download/" title="{{ gettext('Download Open Data Index data') }}">
-                            {{ gettext('download') }}
+                            {{ gettext('Download') }}
                         </a>
                     </li>
                     <li>
-                        <a href="{{ SITEURL }}/vis/" title="{{ gettext('See the Open Data Index through a range of visualisations') }}">
-                            {{ gettext('visualisations') }}
+                        <a href="{{ SITEURL }}/about/" title="{{ gettext('See the Open Data Index through a range of visualisations') }}">
+                            {{ gettext('Contact') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
+                            {{ gettext('About') }}
                         </a>
                     </li>
                 </ul>
             </div>
         </nav>
+        </header>
+
         {% endblock header %}
         {% block main %}
         <div class="container">

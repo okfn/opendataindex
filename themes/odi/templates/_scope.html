@@ -44,7 +44,7 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 {% do scope.update({
     'summary': datastore.summary.dict,
     'entries': datastore.entries.dict,
-    'datasets': datastore.datasets.dict,
+    'datasets': datastore.datasets.dict|where(scope.score_lookup, None, 'is_not')|natsort(attribute=scope.score_lookup, reverse=True),
     'questions': datastore.questions.dict,
     'places': datastore.places.dict|where(scope.score_lookup, None, 'is_not')|natsort(attribute=scope.score_lookup, reverse=True),
     'place_count': datastore.summary.dict[0],

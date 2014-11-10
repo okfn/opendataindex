@@ -1,0 +1,10 @@
+{% extends 'page.html' %}
+{% from 'macros.html' import history, share %}
+
+{% block heading %}{% endblock heading %}
+
+{% block content %}
+{% from '_scope.html' import scope with context %}
+{% set fragment = 'places' %}
+
+{% endblock content %}

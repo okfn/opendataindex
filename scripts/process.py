@@ -181,13 +181,96 @@ class Extractor(object):
         writer.writerows([x[1] for x in self.writable_entries.iteritems()])
 
     def run_datasets(self):
-        self._write_csv(self.datasets['rows'], 'data/datasets.csv')
+        fieldnames = self.datasets.columns
+        fieldnames += ['score', 'rank']
+        extra_years = [y for y in self.years if y != self.current_year]
+        for year in extra_years:
+            fieldnames += ['score_{0}'.format(year), 'rank_{0}'.format(year)]
+
+        ## set scores
+        for dataset in self.datasets.dicts:
+            for year in self.years:
+                score_lookup = 'score'
+                if not year == self.current_year:
+                    score_lookup = 'score_{0}'.format(year)
+
+                to_score = [x[1].score for x in
+                            self.writable_entries.iteritems() if
+                            x[1].dataset == dataset.id and x[1].year == year and
+                            x[1].score is not None]
+
+                # place count * 100 score per place
+                place_count = len(set([x[0][0] for x in
+                            self.writable_entries.iteritems() if
+                            x[1].dataset == dataset.id and
+                            x[1].year == year and
+                            x[1].score is not None]))
+
+                total_possible_score = place_count * 100.0
+
+                if not to_score:
+                    score = None
+                else:
+                    score = int(round(100 * sum(to_score) /
+                                total_possible_score, 0))
+
+                dataset[score_lookup] = score
+
+        # build lookups for rank, now that we have scores
+        lookup = {}
+        for year in self.years:
+            score_lookup = 'score'
+            rank_lookup = 'rank'
+            if not year == self.current_year:
+                score_lookup = 'score_{0}'.format(year)
+                rank_lookup = 'rank_{0}'.format(year)
+            year_scores = sorted(list(set([d[score_lookup] for d in
+                                 self.datasets.dicts])))
+            year_scores.reverse()
+            year_lookup = {}
+            for index, score in enumerate(year_scores):
+                if score is None:
+                    pass
+                else:
+                    year_lookup.update({str(score): index + 1})
+
+            lookup.update({year: year_lookup})
+
+        # set ranks
+        for dataset in self.datasets.dicts:
+            for year in self.years:
+                score_lookup = 'score'
+                rank_lookup = 'rank'
+                if not year == self.current_year:
+                    score_lookup = 'score_{0}'.format(year)
+                    rank_lookup = 'rank_{0}'.format(year)
+
+                if dataset[score_lookup] is None:
+                    dataset[rank_lookup] = None
+                else:
+                    dataset[rank_lookup] = lookup[year][str(dataset[score_lookup])]
+
+        self._write_csv(self.datasets.dicts, 'data/datasets.csv', fieldnames)
 
     def run_questions(self):
         # get rid of translations (column 8 onwards) for the time being as not
         # checked and not being used
+        icon_translate = {
+            'file-alt': 'file-o',
+            'eye-open': 'eye',
+            'keyboard': 'keyboard-o',
+            'time': 'clock-o'
+        }
         transposed = list(zip(*list(self.questions.rows)))
         newrows = list(zip(*(transposed[:8])))
+        for index, q in enumerate(newrows):
+            if q[6] and q[6] in icon_translate:
+                # import ipdb;ipdb.set_trace()
+                q = list(q)
+                q[6] = icon_translate[q[6]]
+                q = tuple(q)
+                newrows[index] = q
+
         self._write_csv(newrows, 'data/questions.csv')
 
     def run_places(self):

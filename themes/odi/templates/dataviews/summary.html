@@ -1,5 +1,25 @@
 <div id="summary-stats" class="row">
   <div class="col-md-3">
+    <span>{{ scope.open_percent.title }}</span>
+    <strong>{{ scope.open_percent[scope.value_lookup] }}%</strong>
+    {% if scope.open_percent[scope.value_lookup_previous] %}
+    <small>
+        {% if scope.open_percent[scope.value_lookup_previous]|int >
+           scope.open_percent[scope.value_lookup]|int
+        %}
+        {{ scope.lower }}
+        {% elif scope.open_percent[scope.value_lookup_previous]|int <
+           scope.open_percent[scope.value_lookup]|int
+        %}
+        {{ scope.higher }}
+        {% else %}
+        {{ scope.no_change }}
+        {% endif %}
+        from {{ scope.open_percent[scope.value_lookup_previous] }}% in {{ ODI.previous_year }}
+    </small>
+    {% endif %}
+  </div>
+  <div class="col-md-3">
     <span>{{ scope.place_count.title }}</span>
     <strong>{{ scope.place_count[scope.value_lookup] }}</strong>
     {% if scope.place_count[scope.value_lookup_previous] %}
@@ -57,26 +77,6 @@
         {{ scope.no_change }}
         {% endif %}
         from {{ scope.open_count[scope.value_lookup_previous] }} in {{ ODI.previous_year }}
-    </small>
-    {% endif %}
-  </div>
-  <div class="col-md-3">
-    <span>{{ scope.open_percent.title }}</span>
-    <strong>{{ scope.open_percent[scope.value_lookup] }}%</strong>
-    {% if scope.open_percent[scope.value_lookup_previous] %}
-    <small>
-        {% if scope.open_percent[scope.value_lookup_previous]|int >
-           scope.open_percent[scope.value_lookup]|int
-        %}
-        {{ scope.lower }}
-        {% elif scope.open_percent[scope.value_lookup_previous]|int <
-           scope.open_percent[scope.value_lookup]|int
-        %}
-        {{ scope.higher }}
-        {% else %}
-        {{ scope.no_change }}
-        {% endif %}
-        from {{ scope.open_percent[scope.value_lookup_previous] }}% in {{ ODI.previous_year }}
     </small>
     {% endif %}
   </div>
