@@ -1,0 +1,58 @@
+{% from 'macros.html' import popover_comparison_title,
+popover_comparison_content, history, share %}
+
+<div class="row">
+  <div class="col-md-4">
+    {% include 'dataviews/table_tools.html' %}
+  </div>
+  <div class="col-md-4">
+    {{ history(page, ODI, fragment) }}
+  </div>
+  <div class="col-md-4">
+    {{ share(page, ODI, fragment) }}
+  </div>
+</div>
+
+<hr>
+
+<table class="table data-table">
+  <col style="width:5%">
+  <col style="width:10%">
+  <col style="width:40%">
+  <col style="width:10%">
+  <col style="width:5%">
+  <thead>
+    <tr>
+      <th>{{ gettext('Rank') }}</th>
+      <th>{{ gettext('Title') }}</th>
+      <th>{{ gettext('Description') }}</th>
+      <th>{{ gettext('Top') }}</th>
+      <th>{{ gettext('Average') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for dataset in scope.datasets %}
+      {% set top_entry = scope.entries|where('dataset', dataset.id)|where('year', page.year)|first %}
+
+      <tr data-rank="{{ dataset[scope.rank_lookup] or ODI.na }}" data-score="{{ dataset[scope.score_lookup] or ODI.na }}" data-dataset="{{ dataset.slug }}">
+        <td class="rank" data-rank="{{ dataset[scope.rank_lookup] }}">
+          {{ dataset[scope.rank_lookup] }}
+        </td>
+        <td>
+          <a href="{{ SITEURL }}/datasets/{{ dataset.id }}/" title="{{ dataset.title }}">
+            {{ dataset.title }}
+          </a>
+        </td>
+        <td>
+          {{ dataset.description }}
+        </td>
+        <td>
+          {{ top_entry.score }}% / {{ top_entry.place }}
+        </td>
+        <td class="score" data-score="{{ dataset[scope.score_lookup] or ODI.na }}">
+          {{ dataset[scope.score_lookup] or ODI.na }}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
