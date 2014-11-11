@@ -1,6 +1,8 @@
 {% extends 'page.html' %}
 
 {% block content %}
+{% from '_scope.html' import scope with context %}
+
 {{ page.content }}
 <section id="permalink-visualisation">
     {% include 'dataviews/embed_map.html' %}
