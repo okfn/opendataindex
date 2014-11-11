@@ -1,4 +1,3 @@
-@import 'http://assets.okfn.org/themes/okfn/okf-panel.css';
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -8056,27 +8055,11 @@ button.close {
   font-weight: 200;
   font-style: italic;
 }
-.navbar-nav li a {
-  line-height: 36px;
-}
 body,
 input,
 textarea {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
-}
-table {
-  font-size: 14px;
-}
-.table > thead > tr > th,
-.table > thead > tr > td {
-  vertical-align: bottom;
-}
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-  vertical-align: middle;
 }
 .page-header h1 {
   font-weight: 300;
@@ -8102,10 +8085,21 @@ table {
   width: 360px;
 }
 .table {
+  font-size: 14px;
   table-layout: fixed;
 }
 .table td {
   overflow: hidden;
+}
+.table > thead > tr > th,
+.table > thead > tr > td {
+  vertical-align: bottom;
+}
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle;
 }
 .navbar-default {
   background-color: #f0f0f0;
@@ -8120,43 +8114,23 @@ table {
   color: #8e8e8e;
   background-color: #dfdfdf;
 }
-#header {
-  background-color: #FFF;
-  height: 80px;
-}
-#header-brand {
-  float: left;
-  width: 300px;
-  padding: 0 15px;
-}
-#header-brand a {
+.navbar-default .navbar-brand {
   display: block;
-  margin: 10px 0;
+  padding: 0;
+  line-height: 58px;
+  margin-right: 20px;
+}
+.navbar-default .navbar-brand img {
+  display: inline;
+  margin-top: -5px;
+  margin-right: 5px;
+}
+.navbar-default .navbar-brand span {
   color: #7ab800;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: .23em;
-  line-height: 60px;
-}
-#header-brand a img {
-  float: left;
-  margin-right: 15px;
-}
-#header-brand a:hover {
-  text-decoration: none;
-}
-#header-brand.has-sub-brand a {
-  padding-top: 5px;
-  line-height: 21px;
-}
-#header-brand.has-sub-brand a img {
-  margin-top: -5px;
-}
-#header-brand.has-sub-brand a span {
-  display: block;
-  font-weight: 300;
-  font-size: 14px;
 }
 #footer {
   margin-top: 40px;
@@ -8301,4 +8275,23 @@ ul.availability-single {
 }
 .search-tool {
   padding-left: 1.5em;
+}
+@media (max-width: 992px) {
+  .navbar-default .navbar-brand span {
+    letter-spacing: 0.1em;
+  }
+  .navbar-default .navbar-subbrand a {
+    display: block;
+    overflow: hidden;
+    width: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-default .navbar-brand {
+    margin-top: -5px;
+  }
+  .navbar-default .navbar-subbrand a {
+    display: inline;
+    width: inherit;
+  }
 }

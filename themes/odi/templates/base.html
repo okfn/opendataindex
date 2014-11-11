@@ -25,56 +25,57 @@
         {% endblock head_scripts %}
     </head>
     <body class="{% block body_classes %}{% endblock body_classes %}">
-        {% block okf_ribbon %}
-        <div class="absolute-okf-panel">
-          <div class="container">
-            <div class="okfn-ribbon active">
-              <a href="http://okfn.org/" title="{{ gettext('Part of the Open Knowledge Foundation Network') }}">{{ gettext('An Open Knowledge Foundation Site') }}</a>
-            </div>
-          </div>
-        </div>
-        {% endblock okf_ribbon %}
         {% block header %}
         <header id="header">
 
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
-                <ul class="nav navbar-nav">
-                <li>
-              <div id="header-brand"{# class="has-sub-brand"#}>
-                <a href="{{ SITEURL }}/" title="{{ SITENAME }} {{ ODI.current_year }} {{ ODI.sponsor.name }}">
-                    <img src="{{ SITEURL }}/static/images/logo.png" height="50">
-                    {{ SITENAME }}
-                    {#<span>{{ gettext('Global') }}</span>#}
-                </a>
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">{{ gettext('Toggle navigation') }}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="{{ SITEURL }}/">
+                    <img src="{{ SITEURL }}/static/images/logo.png" height="44">
+                    <span>{{ SITENAME }}</span>
+                  </a>
                 </div>
-                </li>
-                    <li>
-                        <a href="{{ SITEURL }}/places/" title="{{ gettext('About the Open Data Index project') }}">
-                            {{ gettext('Places') }}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ SITEURL }}/datasets/" title="{{ gettext('About the Open Data Index project') }}">
-                            {{ gettext('Datasets') }}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ SITEURL }}/download/" title="{{ gettext('Download Open Data Index data') }}">
-                            {{ gettext('Download') }}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ SITEURL }}/about/" title="{{ gettext('See the Open Data Index through a range of visualisations') }}">
-                            {{ gettext('Contact') }}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
-                            {{ gettext('About') }}
-                        </a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{{ SITEURL }}/places/" title="{{ gettext('About the Open Data Index project') }}">
+                                {{ gettext('Places') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/datasets/" title="{{ gettext('About the Open Data Index project') }}">
+                                {{ gettext('Datasets') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/download/" title="{{ gettext('Download Open Data Index data') }}">
+                                {{ gettext('Download') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/about/" title="{{ gettext('See the Open Data Index through a range of visualisations') }}">
+                                {{ gettext('Contact') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
+                                {{ gettext('About') }}
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="navbar-subbrand navbar-text navbar-right">
+                      <a href="http://okfn.org/">
+                        <img src="http://assets.okfn.org/p/okfn/img/okfn-logo-landscape-black-s.png" alt="" height="28">
+                      </a>
+                    </p>
+                </div>
             </div>
         </nav>
         </header>

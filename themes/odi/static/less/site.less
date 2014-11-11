@@ -2,8 +2,6 @@
 @import (less) '../vendor/font-awesome/less/font-awesome';
 @import (less) '../vendor/lato/less/lato';
 
-@import 'http://assets.okfn.org/themes/okfn/okf-panel.css';
-
 @fa-font-path: '../vendor/font-awesome/fonts';
 @lato-font-path: '../vendor/lato/font';
 
@@ -14,28 +12,12 @@
 @color-yes: @color-okf-green;
 @color-no: #ff0000;
 
-// temp here just for check
-.navbar-nav li a {line-height:36px;}
-
 // Generics
 body,
 input,
 textarea {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
-}
-
-table {
-    font-size: 14px;
-}
-
-.table > thead > tr > th, .table > thead > tr > td, {
-  vertical-align: bottom;
-}
-
-
-.table > tbody > tr > th, .table > tfoot > tr > th, .table > tbody > tr > td, .table > tfoot > tr > td {
-  vertical-align: middle;
 }
 
 // Generics: Bootstrap overrides
@@ -63,10 +45,23 @@ table {
 }
 
 .table {
+  font-size: 14px;
   table-layout: fixed;
   td {
     overflow: hidden;
   }
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td, {
+  vertical-align: bottom;
+}
+
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle;
 }
 
 // Header
@@ -84,44 +79,22 @@ table {
       }
     }
   }
-}
-
-#header {
-  background-color: #FFF;
-  height: 80px;
-}
-
-#header-brand {
-  float: left;
-  width: 300px;
-  padding: 0 15px;
-  a {
+  .navbar-brand {
     display: block;
-    margin: 10px 0;
-    color: #7ab800;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 16px;
-    letter-spacing: .23em;
-    line-height: 60px;
+    padding: 0;
+    line-height: 58px;
+    margin-right: 20px;
     img {
-      float: left;
-      margin-right: 15px;
-    }
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  &.has-sub-brand a {
-    padding-top: 5px;
-    line-height: 21px;
-    img {
+      display: inline;
       margin-top: -5px;
+      margin-right: 5px;
     }
     span {
-      display: block;
-      font-weight: 300;
-      font-size: 14px;
+      color: @color-okf-green;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: .23em;
     }
   }
 }
@@ -301,4 +274,29 @@ ul.availability-single {
 
 .search-tool {
     padding-left: 1.5em;
+}
+
+// Responsive: small
+@media (max-width: 992px) {
+  .navbar-default {
+    .navbar-brand span {
+      letter-spacing: 0.1em;
+    }
+    .navbar-subbrand a {
+      display: block;
+      overflow: hidden;
+      width: 30px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .navbar-default {
+    .navbar-brand {
+      margin-top: -5px;
+    }
+    .navbar-subbrand a {
+      display: inline;
+      width: inherit;
+    }
+  }
 }
