@@ -8061,6 +8061,9 @@ textarea {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
 }
+.page-header {
+  margin-top: 0;
+}
 .page-header h1 {
   font-weight: 300;
 }
@@ -8100,6 +8103,10 @@ textarea {
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   vertical-align: middle;
+}
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
 }
 .navbar-default {
   background-color: #f0f0f0;

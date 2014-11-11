@@ -84,10 +84,9 @@
             {% endif %}
             </td>
             <td class="score" data-score="{% if entry %}{{ entry.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">
-                {% if entry and entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}
+                <span>{% if entry and entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}</span>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-
