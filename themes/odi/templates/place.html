@@ -8,7 +8,9 @@
 {% do scope.update({
   'entries': scope.entries|where('place', page.place),
   'place': scope.places|where('id', page.place)|first,
-  'embed_height': '430px'
+  'embed_height': '430px',
+  'panel_tools': 'false',
+  'panel_share': 'false'
 }) %}
 
 {% set fragment = '%s%s'|format('places/', page.place) %}
