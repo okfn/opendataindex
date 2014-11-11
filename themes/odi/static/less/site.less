@@ -7,6 +7,7 @@
 
 @color-okf-green: #7AB800;
 @color-okf-grey: #f0f0f0;
+@color-okf-yellow: #E9D046;
 
 @color-maybe: #2980b9;
 @color-yes: @color-okf-green;
@@ -118,12 +119,16 @@ textarea {
     text-align: center;
     strong {
       padding: 5px 10px;
-      background-color: darken(@color-okf-green, 5%);
+      font-size: 2em;
       background-color: rgba(0, 0, 0, 0.1);
+    }
+    span {
+      display: block;
+      margin-top: 10px;
     }
     small {
       display: block;
-      opacity: 0.75;
+      opacity: 0.66;
       margin-top: 5px;
     }
   }
@@ -132,14 +137,18 @@ textarea {
 // Specifics
 // Homepage
 #home-stats {
-  background-color: @color-okf-green;
-  color: white;
+  color: black;
+  background-color: @color-okf-yellow;
   margin-top: -20px;
   padding: 20px 0;
   h1 {
     text-align: center;
-    font-weight: 100;
-    font-size: 48px;
+    font-weight: 300;
+    font-size: 2.8em;
+  }
+  .col-md-3 strong {
+    color: white;
+    background-color: black;
   }
 }
 

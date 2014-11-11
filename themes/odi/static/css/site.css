@@ -8150,24 +8150,32 @@ textarea {
 }
 #summary-stats .col-md-3 strong {
   padding: 5px 10px;
-  background-color: #699f00;
+  font-size: 2em;
   background-color: rgba(0, 0, 0, 0.1);
+}
+#summary-stats .col-md-3 span {
+  display: block;
+  margin-top: 10px;
 }
 #summary-stats .col-md-3 small {
   display: block;
-  opacity: 0.75;
+  opacity: 0.66;
   margin-top: 5px;
 }
 #home-stats {
-  background-color: #7ab800;
-  color: white;
+  color: black;
+  background-color: #e9d046;
   margin-top: -20px;
   padding: 20px 0;
 }
 #home-stats h1 {
   text-align: center;
-  font-weight: 100;
-  font-size: 48px;
+  font-weight: 300;
+  font-size: 2.8em;
+}
+#home-stats .col-md-3 strong {
+  color: white;
+  background-color: black;
 }
 #place-intro h1 .label {
   padding: .2em .6em;
