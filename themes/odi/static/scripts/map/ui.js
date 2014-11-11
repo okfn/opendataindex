@@ -6,9 +6,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         $display = $('.odi-vis-display'),
         $infoTrigger = $('.odi-vis-show-info'),
         $infoBox = $('.odi-vis-info'),
-        $infoClose = $('.odi-vis-info-close'),
         $placeBox = $('.odi-vis-place'),
-        $placeClose = $('.odi-vis-place-close'),
         $datasetFilter = $tools.find('.odi-filter-dataset').first(),
         $yearFilter = $tools.find('.odi-filter-year').first(),
         $sharePanel = $('.odi-vis-share'),
@@ -38,6 +36,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         map = leaflet.map('map', mapInitObj).setView(mapLatLongBase, mapZoomBase),
         placeControl = leaflet.control(),
         placeBoxClass = 'odi-vis-place',
+        placeBoxCloseClass = 'odi-vis-place-close',
         placeBoxTmpl = _.template($('script.place-box').html()),
         placeToolTipTmpl = _.template($('script.place-tooltip').html()),
         placeStyleBase = {
@@ -52,6 +51,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
             color: colorDark,
             dashArray: '',
         },
+        infoBoxCloseClass = 'odi-vis-info-close',
         infoBoxTmpl = _.template($('script.info-box').html()),
         yearOptionsTmpl = _.template($('script.year-options').html()),
         datasetOptionsTmpl = _.template($('script.dataset-options').html()),
@@ -349,10 +349,16 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
             context = {},
             activeInfo = '_activeinfo';
 
-        $infoClose.on('click', function() {
-            console.log('BOOM');
+        // box is rendered on demand in a lodash tmpl, so, listen on body
+        $('body').on('click', '.'+infoBoxCloseClass, function () {
             $infoBox.empty();
             $infoBox.hide();
+        });
+
+        // box is rendered on demand in a lodash tmpl, so, listen on body
+        $('body').on('click', '.'+placeBoxCloseClass, function () {
+            $placeBox.empty();
+            $placeBox.hide();
         });
 
         $infoTrigger.on('click', function() {
