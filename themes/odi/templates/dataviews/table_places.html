@@ -61,7 +61,7 @@ popover_comparison_content, history, share %}
           </td>
         {% endfor %}
         <td class="score" data-score="{{ place[scope.score_lookup] or ODI.na }}">
-          {{ place[scope.score_lookup] or ODI.na }}
+          <span>{{ place[scope.score_lookup] or ODI.na }}</span>
         </td>
       </tr>
     {% endfor %}

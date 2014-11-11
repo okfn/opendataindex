@@ -3,6 +3,16 @@
 
 {% block heading %}{% endblock heading %}
 
+{% block breadcrumbs_inner %}
+  {% from '_scope.html' import scope with context %}
+  {% do scope.update({
+      'entries': scope.entries|where('dataset', page.dataset),
+      'dataset': scope.datasets|where('id', page.dataset)|first
+  })%}
+  <li><a href="{{ SITEURL }}/datasets/">{{ gettext('Datasets') }}</a></li>
+  <li class="active">{{ scope.dataset.title }}</li>
+{% endblock breadcrumbs_inner %}
+
 {% block content %}
 {% from '_scope.html' import scope with context %}
 {% do scope.update({

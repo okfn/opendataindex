@@ -3,27 +3,19 @@
 
 {% block heading %}{% endblock heading %}
 
+{% block breadcrumbs_inner %}
+  <li class="active">{{ gettext('Places') }}</li>
+{% endblock breadcrumbs_inner %}
+
 {% block content %}
 {% from '_scope.html' import scope with context %}
 {% set fragment = 'places' %}
 
 <header id="place-intro" class="page-header">
-  <div class="row">
-  <div class="col-md-12">
-      <h1>
-        {{ gettext('Place overview')}}
-      </h1>
-      <hr />
-      {{ page.content }}
-      {% include 'dataviews/summary.html' %}
-      </div>
-    <div class="col-md-6">
-
-    </div>
-    <div class="col-md-6">
-
-    </div>
-  </div>
+  <h1>{{ gettext('Place overview')}}</h1>
+  <hr />
+  {{ page.content }}
+  {% include 'dataviews/summary.html' %}
 </header>
 
 {% include 'dataviews/table_places.html' %}

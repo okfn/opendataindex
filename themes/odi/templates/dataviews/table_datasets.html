@@ -50,7 +50,7 @@ popover_comparison_content, history, share %}
           {{ top_entry.score }}% / {{ top_entry.place }}
         </td>
         <td class="score" data-score="{{ dataset[scope.score_lookup] or ODI.na }}">
-          {{ dataset[scope.score_lookup] or ODI.na }}
+          <span>{{ dataset[scope.score_lookup] or ODI.na }}</span>
         </td>
       </tr>
     {% endfor %}

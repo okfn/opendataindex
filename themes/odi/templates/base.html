@@ -86,6 +86,15 @@
             <div class="content">
                 <div class="row">
                     <div class="col-md-12">
+                        {% block breadcrumbs %}
+                        <ol class="breadcrumb">
+                          <li>
+                            <a href="{{ SITEURL }}/">{{ gettext('Home') }}</a>
+                          </li>
+                          {% block breadcrumbs_inner %}
+                          {% endblock breadcrumbs_inner %}
+                        </ol>
+                        {% endblock breadcrumbs %}
                         {% block heading %}
                         <header class="page-header">
                             <h1>{% block page_title %}{{ SITENAME }}{% endblock page_title %}</h1>

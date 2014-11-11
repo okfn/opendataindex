@@ -1,9 +1,5 @@
 {% extends 'page.html' %}
 {% from 'macros.html' import history, share %}
-
-{% block heading %}{% endblock heading %}
-
-{% block content %}
 {% from '_scope.html' import scope with context %}
 {% do scope.update({
   'entries': scope.entries|where('place', page.place),
@@ -12,6 +8,15 @@
   'panel_tools': 'false',
   'panel_share': 'false'
 }) %}
+
+{% block heading %}{% endblock heading %}
+
+{% block breadcrumbs_inner %}
+  <li><a href="{{ SITEURL }}/places">{{ gettext('Places')}}</a></li>
+  <li class="active">{{ scope.place.name }}</li>
+{% endblock breadcrumbs_inner %}
+
+{% block content %}
 
 {% set fragment = '%s%s'|format('places/', page.place) %}
 

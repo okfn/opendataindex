@@ -1,7 +1,28 @@
 {% extends 'page.html' %}
 {% from 'macros.html' import history, share, popover_slice_title, popover_slice_content %}
 
-{% block heading %}{% endblock heading %}
+{% block page_title %}
+  {% from '_scope.html' import scope with context %}
+  {% do scope.update({
+    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first,
+    'place': scope.places|where('id', page.place)|first,
+    'dataset': scope.datasets|where('id', page.dataset)|first
+  }) %}
+  {{ scope.dataset.title }}
+{% endblock page_title %}
+
+{% block breadcrumbs_inner %}
+
+  {% from '_scope.html' import scope with context %}
+  {% do scope.update({
+    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first,
+    'place': scope.places|where('id', page.place)|first,
+    'dataset': scope.datasets|where('id', page.dataset)|first
+  }) %}
+  <li><a href="{{ SITEURL }}/places">{{ gettext('Places')}}</a></li>
+  <li><a href="{{ SITEURL }}/places/{{ page.place }}">{{ scope.place.name }}</a></li>
+  <li class="active">{{ scope.dataset.title }}</li>
+{% endblock breadcrumbs_inner %}
 
 {% block content %}
 {% from '_scope.html' import scope with context %}
@@ -10,51 +31,9 @@
   'place': scope.places|where('id', page.place)|first,
   'dataset': scope.datasets|where('id', page.dataset)|first
 }) %}
-
 {% set fragment = '%s%s/%s/%s'|format('places/', page.place, 'datasets', page.dataset) %}
 
-<header id="place-intro" class="page-header">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>
-        {{ scope.place.name }} / {{ scope.dataset.title }}
-        <span class="label label-default place-openness" data-score="{{ scope.entry[scope.score_lookup] or ODI.na }}">{{ scope.entry[scope.score_lookup] }}% open</span>
-      </h1>
-      <p class="lead">
-        <strong>#{{ scope.entry.rank }} {{ gettext('in the Index') }}</strong>
-        {% if scope.entry[scope.rank_lookup_previous] %}
-          <br>
-          <small>
-            {% if scope.entry[scope.rank_lookup_previous]|int >
-               scope.entry[scope.rank_lookup]|int
-            %}
-            {{ scope.higher }}
-            {% elif scope.entry[scope.rank_lookup_previous]|int <
-               scope.entry[scope.rank_lookup]|int
-            %}
-            {{ scope.lower }}
-            {% else %}
-            {{ scope.no_change }}
-            {% endif %}
-            from #{{ scope.entry[scope.rank_lookup_previous] }} in {{ ODI.previous_year }}
-          </small>
-        {% endif %}
-      </p>
-      {{ page.content }}
-      {{ history(page, ODI, fragment) }}
-      {{ share(page, ODI, fragment) }}
-    </div>
-    <div class="col-md-6">
-      {% set embed_width = '100%' %}
-      {% set embed_height = '430px' %}
-      {% include 'dataviews/embed_map.html' %}
-    </div>
-  </div>
-</header>
-
 <section>
-    <h2>{{ gettext('About %(dataset)s data', dataset=scope.dataset.title) }}</h2>
-    <hr />
     {{ scope.dataset.description|markdown }}
 </section>
 

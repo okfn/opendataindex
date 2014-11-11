@@ -8061,6 +8061,9 @@ textarea {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 17px;
 }
+.page-header {
+  margin-top: 0;
+}
 .page-header h1 {
   font-weight: 300;
 }
@@ -8100,6 +8103,10 @@ textarea {
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   vertical-align: middle;
+}
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
 }
 .navbar-default {
   background-color: #f0f0f0;
@@ -8188,6 +8195,21 @@ textarea {
 .score {
   text-align: center;
   background-color: #f0f0f0;
+}
+.table td.score {
+  position: relative;
+  padding: 0;
+}
+.table td.score span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 5px;
+  bottom: 0;
+  color: black;
+  line-height: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 ul.availability,
 ul.data-table-key {

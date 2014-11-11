@@ -1,21 +1,13 @@
 {% extends 'page.html' %}
-{% from 'macros.html' import history, share %}
 
-{% block heading %}{% endblock heading %}
+{% block page_title %}{{ gettext('Dataset overview')}}{% endblock page_title %}
+
+{% block breadcrumbs_inner %}
+  <li class="active">{{ gettext('Datasets') }}</li>
+{% endblock breadcrumbs_inner %}
 
 {% block content %}
-{% from '_scope.html' import scope with context %}
-{% set fragment = 'places' %}
-
-<header id="place-intro" class="page-header">
-  <div class="row">
-  <div class="col-md-12">
-      <h1>
-        {{ gettext('Dataset overview')}}
-      </h1>
-  </div>
-</header>
-
-{% include 'dataviews/table_datasets.html' %}
-
+  {% from '_scope.html' import scope with context %}
+  {% set fragment = 'places' %}
+  {% include 'dataviews/table_datasets.html' %}
 {% endblock content %}

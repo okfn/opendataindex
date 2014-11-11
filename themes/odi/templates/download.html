@@ -1,5 +1,9 @@
 {% extends 'page.html' %}
 
+{% block breadcrumbs_inner %}
+  <li class="active">{{ gettext('Download') }}</li>
+{% endblock breadcrumbs_inner %}
+
 {% block content %}
 {{ page.content }}
 <section class="row">
