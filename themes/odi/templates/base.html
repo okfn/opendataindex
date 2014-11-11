@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="{{ AUTHOR }}">
         <meta name="description" content="{% block meta_description %}{{ ODI.description }}{% endblock meta_description %}">
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{ SITENAME }} - {{ ODI.author.name }}" />
+        <meta property="og:site_name" content="{{ SITENAME }}" />
+        <meta property="og:description" content="{{ ODI.description }}" />
+        <meta property="og:image" content="{{ SITEURL }}/static/images/favicon.ico" />
         <title>{{ SITENAME }} - {{ ODI.author.name }}</title>
         <base href="/">
         {% block head_css %}
