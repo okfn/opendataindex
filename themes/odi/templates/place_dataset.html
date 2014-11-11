@@ -73,7 +73,9 @@
                 <span class="label label-success">{{ gettext('Format') }}</span>&nbsp;&nbsp;{{ scope.entry.format }}
             </p>
             {% endif %}
+            {% if scope.entry.details %}
             {{ scope.entry.details|markdown }}
+            {% endif %}
         </div>
         <div class="col-md-5">
             <ul class="availability-single">
