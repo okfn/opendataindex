@@ -1,6 +1,7 @@
 define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], function(leaflet, leaflet_zoommin, $, pubsub, _, chroma, marked, data) {
 
-    var $tools = $('.odi-vis-tools'),
+    var $container = $('.odi-vis.odi-vis-choropleth'),
+        $tools = $('.odi-vis-tools'),
         $legend = $('.odi-vis-legend ul'),
         $display = $('.odi-vis-display'),
         $infoTrigger = $('.odi-vis-show-info'),
@@ -13,6 +14,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         $sharePanel = $('.odi-vis-share'),
         $embedPanel = $('.odi-vis-embed'),
         $helpPanel = $('.odi-vis-help'),
+        $toolsPanel = $('.odi-vis-tools'),
         topics = {
             init: 'init',
             tool_change: 'tool.change',
@@ -28,6 +30,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         mapZoomBase = 2,
         mapInitObj = {
             zoomControl: false,
+            zoomAnimation: false,
             attributionControl: false,
             minZoom: 2,
             maxZoom: 4
@@ -36,6 +39,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         placeControl = leaflet.control(),
         placeBoxClass = 'odi-vis-place',
         placeBoxTmpl = _.template($('script.place-box').html()),
+        placeToolTipTmpl = _.template($('script.place-tooltip').html()),
         placeStyleBase = {
             weight: 1,
             opacity: 1,
@@ -63,6 +67,10 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         },
         queryString = window.location.search,
         uiStateDefaults = {
+            embed: {
+                width: '100%',
+                height: '508px',
+            },
             filter: {
                 year: currentYear,
                 dataset: 'all'
@@ -93,6 +101,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
     pubsub.subscribe(topics.tool_change, updateUIState);
     pubsub.subscribe(topics.state_change, redrawDisplay);
     pubsub.subscribe(topics.state_change, pushStateToURL);
+    pubsub.subscribe(topics.init, setDimensions);
     pubsub.subscribe(topics.init, setPanels);
     pubsub.subscribe(topics.state_change, setPanels);
 
@@ -143,6 +152,11 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
 
     function entriesHandler(topic, data) {
         dataStore.entries = data;
+    }
+
+    function setDimensions(topic, data) {
+        $container.css('width', data.embed.width);
+        $container.css('height', data.embed.height);
     }
 
     function setPanels(topic, data) {
@@ -216,6 +230,8 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
                         .replace(/\//g, '')
                         .split("&"),
             allowedArgs = [
+                'embed_width',
+                'embed_height',
                 'filter_year',
                 'filter_dataset',
                 'panel_logo',
@@ -225,11 +241,10 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
                 'panel_embed',
                 'panel_help',
                 'panel_legend',
-                'map_lat',
-                'map_long',
                 'map_place'
             ],
             passedState = {
+                embed: {},
                 filter: {},
                 panel: {},
                 map: {}
@@ -461,9 +476,9 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
      * Boostraps the visualisation interface
      */
     function initUI() {
+        pubsub.publish(topics.init, uiState);
         initMeta();
         initView();
-        pubsub.publish(topics.init, uiState);
     }
 
     return {
