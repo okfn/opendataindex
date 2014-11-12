@@ -59,7 +59,7 @@
     {{ gettext('No additional details') }}
     {% endif %}
 </p>
-<a class="btn btn-primary" href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ dataset.id }}/">
+<a class="btn btn-primary" href="{{ SITEURL }}/place/{{ place.slug }}/{{ dataset.id }}/">
     {{ gettext('Read more') }} &raquo;
 </a>
 {% endif %}
