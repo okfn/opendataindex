@@ -32,7 +32,7 @@
         {% if entry and entry.rank %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}
       </td>
       <td>
-        <a href="{{ SITEURL }}/places/{{ page.place }}/datasets/{{ dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=dataset.title, place=page.place) }}">{{ dataset.title }}</a>
+        <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/{{ dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=dataset.title, place=page.place) }}">{{ dataset.title }}</a>
       </td>
       <td>
         <ul class="availability availability-slice">

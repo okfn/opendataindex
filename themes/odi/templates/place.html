@@ -3,7 +3,6 @@
 {% from '_scope.html' import scope with context %}
 {% do scope.update({
   'entries': scope.entries|where('place', page.place),
-  'place': scope.places|where('id', page.place)|first,
   'embed_height': '430px',
   'panel_tools': 'false',
   'panel_share': 'false'
@@ -18,7 +17,7 @@
 
 {% block content %}
 
-{% set fragment = '%s%s'|format('places/', page.place) %}
+{% set fragment = '%s%s'|format('place/', page.place) %}
 
 <header id="place-intro" class="page-header">
   <div class="row">

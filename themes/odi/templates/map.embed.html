@@ -83,7 +83,7 @@
         <p>
             <%= name %> {{ gettext('is ranked at') }} <strong><%= rank %></strong> {{ gettext('in the') }} <%= year %> {{ gettext('Index') }} {{ gettext('with a score of') }} <strong><%= score %>&#37;</strong>. {{ gettext('That&#39;s') }} <%= improvement_phrase %> {{ gettext('from') }} <%= previous_score %>&#37; {{ gettext('the previous year') }}.
         </p>
-        <a class="odi-vis-place-action" href="{{ SITEURL }}/places/<%= slug %>/" title="{{ gettext('More information about') }} <%= name %> {{ gettext('in the') }} <%= year %> {{ SITENAME }}">{{ gettext('Find out more') }}</a>
+        <a class="odi-vis-place-action" href="{{ SITEURL }}/place/<%= slug %>/" title="{{ gettext('More information about') }} <%= name %> {{ gettext('in the') }} <%= year %> {{ SITENAME }}">{{ gettext('Find out more') }}</a>
     </div>
 </script>
 

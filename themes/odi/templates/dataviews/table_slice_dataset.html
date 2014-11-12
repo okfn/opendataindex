@@ -1,7 +1,5 @@
 {% from 'macros.html' import popover_slice_title, popover_slice_content %}
 
-
-
 <table id="slice-table" class="table data-table">
   <col style="width:5%">
   <col style="width:20%">
@@ -33,7 +31,7 @@
             {% if entry and entry.rank %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}
           </td>
             <td>
-                <a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ page.dataset }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=page.dataset, place=place.name) }}">{{ place.name }}</a>
+                <a href="{{ SITEURL }}/place/{{ place.slug }}/{{ scope.dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=page.dataset, place=place.name) }}">{{ place.name }}</a>
             </td>
             <td>
                 <ul class="availability availability-slice">

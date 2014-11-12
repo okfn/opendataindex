@@ -30,8 +30,8 @@ class Populate(object):
         ds = datastore.DataStore(self.conf)
 
         self.dest_path = os.path.join(PROJECT_ROOT, 'content', 'pages')
-        self.datasets_dir = os.path.join(self.dest_path, 'datasets')
-        self.places_dir = os.path.join(self.dest_path, 'places')
+        self.datasets_dir = os.path.join(self.dest_path, 'dataset')
+        self.places_dir = os.path.join(self.dest_path, 'place')
         self.file = 'index.md'
         self.empty_display_type = u'empty'
         self.na_display_type = u'na'
@@ -189,7 +189,8 @@ class Populate(object):
             filepath = os.path.join(dirpath, self.file)
             filecontext = {
                 'place_name': place['name'],
-                'place_slug': place['id'],
+                'place_id': place['id'],
+                'place_slug': place['slug'],
                 'year': self.current_year,
                 'display_type': display_type
             }
@@ -215,7 +216,8 @@ class Populate(object):
                     filepath = os.path.join(dirpath, self.file)
                     filecontext = {
                         'place_name': place['name'],
-                        'place_slug': place['id'],
+                        'place_id': place['id'],
+                        'place_slug': place['slug'],
                         'year': year,
                         'display_type': display_type
                     }
@@ -239,14 +241,15 @@ class Populate(object):
 
                 # ensure this place/dataset directory exists
                 dirpath = os.path.join(self.places_dir, place['id'],
-                                       'datasets', dataset['id'])
+                                       dataset['id'])
                 self.ensure_dir(dirpath)
 
                 # write the place/dataset index file for the current year
                 filepath = os.path.join(dirpath, self.file)
                 filecontext = {
                     'place_name': place['name'],
-                    'place_slug': place['id'],
+                    'place_id': place['id'],
+                    'place_slug': place['slug'],
                     'dataset_name': dataset['title'],
                     'dataset_id': dataset['id'],
                     'year': self.current_year,
@@ -275,7 +278,8 @@ class Populate(object):
                         filepath = os.path.join(dirpath, self.file)
                         filecontext = {
                             'place_name': place['name'],
-                            'place_slug': place['id'],
+                            'place_id': place['id'],
+                            'place_slug': place['slug'],
                             'dataset_name': dataset['title'],
                             'dataset_id': dataset['id'],
                             'year': year,
@@ -321,8 +325,8 @@ year: {year}
 place_template = u"""type: {display_type}
 template: {display_type}
 title: {place_name}
-slug: places/{place_slug}
-place: {place_slug}
+slug: place/{place_slug}
+place: {place_id}
 year: {year}
 """
 
@@ -330,8 +334,8 @@ year: {year}
 place_historical_template = u"""type: {display_type}
 template: {display_type}
 title: {place_name}
-slug: places/{place_slug}/{year}
-place: {place_slug}
+slug: place/{place_slug}/{year}
+place: {place_id}
 year: {year}
 """
 
@@ -339,8 +343,8 @@ year: {year}
 place_dataset_template = u"""type: {display_type}
 template: {display_type}
 title: {place_name} / {dataset_name}
-slug: places/{place_slug}/datasets/{dataset_id}
-place: {place_slug}
+slug: place/{place_slug}/{dataset_id}
+place: {place_id}
 dataset: {dataset_id}
 year: {year}
 """
@@ -349,8 +353,8 @@ year: {year}
 place_dataset_historical_template = u"""type: {display_type}
 template: {display_type}
 title: {place_name} / {dataset_name} ({year})
-slug: places/{place_slug}/datasets/{dataset_id}/{year}
-place: {place_slug}
+slug: place/{place_slug}/{dataset_id}/{year}
+place: {place_id}
 dataset: {dataset_id}
 year: {year}
 """
@@ -359,7 +363,7 @@ year: {year}
 dataset_template = u"""type: {display_type}
 template: {display_type}
 title: {dataset_name}
-slug: datasets/{dataset_slug}
+slug: dataset/{dataset_slug}
 dataset: {dataset_slug}
 year: {year}
 """
@@ -368,7 +372,7 @@ year: {year}
 dataset_historical_template = u"""type: {display_type}
 template: {display_type}
 title: {dataset_name}
-slug: datasets/{dataset_slug}/{year}
+slug: dataset/{dataset_slug}/{year}
 dataset: {dataset_slug}
 year: {year}
 """

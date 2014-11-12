@@ -4,9 +4,7 @@
 {% block page_title %}
   {% from '_scope.html' import scope with context %}
   {% do scope.update({
-    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first,
-    'place': scope.places|where('id', page.place)|first,
-    'dataset': scope.datasets|where('id', page.dataset)|first
+    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first
   }) %}
   {{ scope.dataset.title }}
 {% endblock page_title %}
@@ -15,23 +13,19 @@
 
   {% from '_scope.html' import scope with context %}
   {% do scope.update({
-    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first,
-    'place': scope.places|where('id', page.place)|first,
-    'dataset': scope.datasets|where('id', page.dataset)|first
+    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first
   }) %}
   <li><a href="{{ SITEURL }}/places">{{ gettext('Places')}}</a></li>
-  <li><a href="{{ SITEURL }}/places/{{ page.place }}">{{ scope.place.name }}</a></li>
+  <li><a href="{{ SITEURL }}/place/{{ page.place }}">{{ scope.place.name }}</a></li>
   <li class="active">{{ scope.dataset.title }}</li>
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
 {% from '_scope.html' import scope with context %}
 {% do scope.update({
-  'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first,
-  'place': scope.places|where('id', page.place)|first,
-  'dataset': scope.datasets|where('id', page.dataset)|first
+  'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first
 }) %}
-{% set fragment = '%s%s/%s/%s'|format('places/', page.place, 'datasets', page.dataset) %}
+{% set fragment = '%s%s/%s/%s'|format('place/', page.place, 'datasets', page.dataset) %}
 
 <section>
     {{ scope.dataset.description|markdown }}

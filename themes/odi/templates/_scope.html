@@ -6,15 +6,9 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 
 #}
 
-
 {% set scope = {} %}
 
-{% do scope.update({
-    'lower': gettext('Down'),
-    'higher': gettext('Up'),
-    'no_change': gettext('No change')
-})%}
-
+{# helpers to lookup scores, ranks and values based on current page #}
 {% if (page.year == ODI.current_year) or not page.year %}
     {% do scope.update({
         'rank_lookup': 'rank',
@@ -41,6 +35,7 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
     }) %}
 {% endif %}
 
+{# setup our core datasets #}
 {% do scope.update({
     'summary': datastore.summary.dict,
     'entries': datastore.entries.dict|natsort(attribute='score', reverse=True),
@@ -53,7 +48,23 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
     'open_percent': datastore.summary.dict[3]
 }) %}
 
-{# for the map vis #}
+{# resolve place and dataset args to full objects, if page has them #}
+{% if page.place %}
+    {% do scope.update({'place': scope.places|where('id', page.place)|first}) %}
+{% endif %}
+
+{% if page.dataset %}
+    {% do scope.update({'dataset': scope.datasets|where('id', page.dataset)|first}) %}
+{% endif %}
+
+{# helpers for text when comparing two scores or ranks #}
+{% do scope.update({
+    'lower': gettext('Down'),
+    'higher': gettext('Up'),
+    'no_change': gettext('No change')
+})%}
+
+{# pass config into the map vis #}
 {% do scope.update({
     'embed_width': '100%',
     'embed_height': '508px',
