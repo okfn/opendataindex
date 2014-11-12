@@ -14,7 +14,6 @@ LOAD_CONTENT_CACHE = False
 AUTORELOAD_IGNORE_CACHE = True
 AUTHOR = u'Open Knowledge'
 SITENAME = u'Open Data Index'
-SITEURL = u''
 DEFAULT_LANG = u'en'
 STATIC_PATHS = ['extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
@@ -97,6 +96,9 @@ OK = {
 
 # OPEN DATA INDEX CONFIGURATION
 ODI = {
+    'scheme': u'',
+    'domain': u'',
+    'production_domain': u'index.okfn.org',
     'survey': {
       'name': u'Open Data Index Survey',
       'domain': u'http://global.census.okfn.org/',
@@ -105,6 +107,9 @@ ODI = {
     'sponsor': {
       'name': u'Open Knowledge',
       'domain': u'https://okfn.org/',
+    },
+    'analytics': {
+      'google': u''
     },
     'years': [u'2014', u'2013'],
     'current_year': u'2014',
@@ -118,7 +123,6 @@ ODI = {
         'name': AUTHOR,
         'url': u'https://okfn.org/'
     },
-    'googleanalytics': u'',
     'mailinglist': u'',
     'cli':  {
         'languages': ['en', 'es'],
@@ -141,6 +145,8 @@ ODI = {
         }
     }
 }
+
+SITEURL = u'{0}{1}'.format(ODI['scheme'], ODI['domain'])
 
 # If `config_instance` exists, load it for instance-specific configuration.
 # See `config_instance.example` to get started.
