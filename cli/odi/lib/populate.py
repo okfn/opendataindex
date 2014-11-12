@@ -295,6 +295,7 @@ template: {display_type}
 title: Place overview
 slug: places
 year: {year}
+alias: /country/
 """
 
 
@@ -328,6 +329,7 @@ title: {place_name}
 slug: place/{place_slug}
 place: {place_id}
 year: {year}
+alias: /country/overview/{place_name}/
 """
 
 
@@ -347,6 +349,7 @@ slug: place/{place_slug}/{dataset_id}
 place: {place_id}
 dataset: {dataset_id}
 year: {year}
+alias: /country/overview/{place_name}/{dataset_id}/
 """
 
 
@@ -366,6 +369,7 @@ title: {dataset_name}
 slug: dataset/{dataset_slug}
 dataset: {dataset_slug}
 year: {year}
+alias: /country/dataset/{dataset_slug}/
 """
 
 
