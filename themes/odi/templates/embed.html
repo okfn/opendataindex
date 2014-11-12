@@ -12,6 +12,8 @@
     </head>
     <body>
         {% block content %}{% endblock content %}
-        {% block body_scripts %}{% endblock body_scripts %}
+        {% block body_scripts %}
+        {% include '_analytics.html' %}
+        {% endblock body_scripts %}
     </body>
 </html>

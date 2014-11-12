@@ -1,5 +1,7 @@
 {% extends 'page.html' %}
 
+{% set fragment = 'datasets' %}
+
 {% block page_title %}{{ gettext('Dataset overview')}}{% endblock page_title %}
 
 {% block breadcrumbs_inner %}
@@ -7,7 +9,7 @@
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-  {% from '_scope.html' import scope with context %}
-  {% set fragment = 'datasets' %}
-  {% include 'dataviews/table_datasets.html' %}
+{% from '_scope.html' import scope with context %}
+
+{% include 'dataviews/table_datasets.html' %}
 {% endblock content %}

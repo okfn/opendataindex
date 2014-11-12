@@ -8335,3 +8335,23 @@ ul.availability-single {
 td.previous-results {
   text-align: center;
 }
+#map-container {
+  margin-top: 20px;
+}
+h1,
+.h1 {
+  font-size: 34px;
+}
+h1 a,
+.h1 a {
+  color: black;
+}
+h1 a:hover,
+.h1 a:hover {
+  color: block;
+  text-decoration: underline;
+}
+h1 .place-openness,
+h1 .dataset-openness {
+  float: right;
+}

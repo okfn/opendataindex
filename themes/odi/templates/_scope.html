@@ -50,11 +50,23 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 
 {# resolve place and dataset args to full objects, if page has them #}
 {% if page.place %}
-    {% do scope.update({'place': scope.places|where('id', page.place)|first}) %}
+    {% do scope.update({
+        'place': scope.places|where('id', page.place)|first,
+        'entries': scope.entries|where('place', page.place)
+    }) %}
 {% endif %}
 
 {% if page.dataset %}
-    {% do scope.update({'dataset': scope.datasets|where('id', page.dataset)|first}) %}
+    {% do scope.update({
+        'dataset': scope.datasets|where('id', page.dataset)|first,
+        'entries': scope.entries|where('dataset', page.dataset)
+    }) %}
+{% endif %}
+
+{% if page.place and page.dataset and page.year %}
+    {% do scope.update({
+        'entry': scope.entries|where('year', page.year)|first,
+    }) %}
 {% endif %}
 
 {# helpers for text when comparing two scores or ranks #}

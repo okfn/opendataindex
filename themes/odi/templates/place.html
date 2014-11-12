@@ -1,12 +1,15 @@
 {% extends 'page.html' %}
+
 {% from 'macros.html' import history, share %}
 {% from '_scope.html' import scope with context %}
+
 {% do scope.update({
-  'entries': scope.entries|where('place', page.place),
   'embed_height': '430px',
   'panel_tools': 'false',
   'panel_share': 'false'
 }) %}
+
+{% set fragment = '%s/%s'|format('place', scope.place.slug) %}
 
 {% block heading %}{% endblock heading %}
 
@@ -16,15 +19,12 @@
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-
-{% set fragment = '%s%s'|format('place/', page.place) %}
-
 <header id="place-intro" class="page-header">
   <div class="row">
     <div class="col-md-6">
       <h1>
         {{ scope.place.name }}
-        <span class="label label-default place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% open</span>
+        <span class="label label-default place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}%</span>
       </h1>
       <p class="lead">
         <strong>#{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}</strong>
@@ -51,7 +51,9 @@
       {{ share(page, ODI, fragment) }}
     </div>
     <div class="col-md-6">
-      {% include 'dataviews/embed_map.html' %}
+      <div id="map-container">
+        {% include 'dataviews/embed_map.html' %}
+      </div>
     </div>
   </div>
 </header>
@@ -78,5 +80,4 @@
   </ul>
   {% endif %}
 </section>
-
 {% endblock content %}
