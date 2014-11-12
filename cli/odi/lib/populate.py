@@ -80,6 +80,22 @@ class Populate(object):
         }
         self.commit_file(filepath, dataset_overview_template, filecontext)
 
+        # write the historical overviews
+        for year in self.years:
+            if year != self.current_year:
+
+                # ensure this datasets/year directory exists
+                dirpath = os.path.join(self.datasets_dir, year)
+                self.ensure_dir(dirpath)
+
+                # write this datasets/year index file
+                filepath = os.path.join(dirpath, self.file)
+                filecontext = {
+                    'year': year,
+                    'display_type': display_type
+                }
+                self.commit_file(filepath, dataset_overview_historical_template, filecontext)
+
         # write files per dataset
         for dataset in self.datasets:
 
@@ -132,7 +148,7 @@ class Populate(object):
             'year': self.current_year,
             'display_type': display_type
         }
-        self.commit_file(filepath, overview_template, filecontext)
+        self.commit_file(filepath, place_overview_template, filecontext)
 
         # write the historical overviews
         for year in self.years:
@@ -148,7 +164,7 @@ class Populate(object):
                     'year': year,
                     'display_type': display_type
                 }
-                self.commit_file(filepath, overview_historical_template, filecontext)
+                self.commit_file(filepath, place_overview_historical_template, filecontext)
 
         # write files per place
         for place in self.places:
@@ -270,20 +286,37 @@ class Populate(object):
                                          filecontext)
 
 
-overview_template = u"""type: {display_type}
+place_overview_template = u"""type: {display_type}
 template: {display_type}
-title: Open Data Index
+title: Place overview
 slug: places
 year: {year}
 """
 
 
-overview_historical_template = u"""type: {display_type}
+place_overview_historical_template = u"""type: {display_type}
 template: {display_type}
-title: Open Data Index {year}
+title: Place overview {year}
 slug: places/{year}
 year: {year}
 """
+
+
+dataset_overview_template = u"""type: {display_type}
+template: {display_type}
+title: Dataset overview
+slug: datasets
+year: {year}
+"""
+
+
+dataset_overview_historical_template = u"""type: {display_type}
+template: {display_type}
+title: Dataset overview {year}
+slug: datasets/{year}
+year: {year}
+"""
+
 
 place_template = u"""type: {display_type}
 template: {display_type}
@@ -319,14 +352,6 @@ title: {place_name} / {dataset_name} ({year})
 slug: places/{place_slug}/datasets/{dataset_id}/{year}
 place: {place_slug}
 dataset: {dataset_id}
-year: {year}
-"""
-
-
-dataset_overview_template = u"""type: {display_type}
-template: {display_type}
-title: Dataset comparison
-slug: datasets
 year: {year}
 """
 

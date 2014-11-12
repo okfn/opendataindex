@@ -16,12 +16,12 @@ popover_comparison_content, history, share %}
 <hr>
 
 <table class="table data-table">
-  <col style="width:3.5%">
-  <col style="width:13%">
+  <col style="width:5%">
+  <col style="width:15%">
   {% for dataset in scope.datasets %}
-    <col style="width:9%">
+    <col style="width:7.5%">
   {% endfor %}
-  <col style="width:3.5%">
+  <col style="width:5%">
   <thead>
     <tr>
       <th>{{ gettext('Rank') }}</th>
@@ -42,7 +42,7 @@ popover_comparison_content, history, share %}
         </td>
         <td>
           <a href="{{ SITEURL }}/places/{{ place.id }}/" title="{{ place.name }}">
-            {{ place.name }}
+            {{ place.name|truncate(25) }}
           </a>
         </td>
         {% for dataset in scope.datasets %}
@@ -61,7 +61,7 @@ popover_comparison_content, history, share %}
           </td>
         {% endfor %}
         <td class="score" data-score="{{ place[scope.score_lookup] or ODI.na }}">
-          <span>{{ place[scope.score_lookup] or ODI.na }}</span>
+          <span>{{ place[scope.score_lookup] or ODI.na }}%</span>
         </td>
       </tr>
     {% endfor %}

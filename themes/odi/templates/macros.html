@@ -54,12 +54,12 @@
 </ul>
 <p>
     {% if entry and entry.details %}
-    {{ entry.details|markdown }}
+    {{ entry.details|truncate(100)|markdown }}
     {% else %}
     {{ gettext('No additional details') }}
     {% endif %}
 </p>
-<a href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ dataset.id }}/">
+<a class="btn btn-primary" href="{{ SITEURL }}/places/{{ place.id }}/datasets/{{ dataset.id }}/">
     {{ gettext('Read more') }} &raquo;
 </a>
 {% endif %}

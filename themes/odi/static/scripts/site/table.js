@@ -6,7 +6,7 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
         naString = 'n/a',
         $dataTable = $('.data-table'),
         $visiblePopover,
-        $scoreDisplay = $('td.score'),
+        $scoreDisplay = $('.score'),
         popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
 
     function sortPlace(a, b) {
