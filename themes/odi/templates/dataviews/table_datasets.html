@@ -54,7 +54,7 @@ popover_comparison_content, history, share %}
           <td>
             <span class="score score-top" data-score="{{ _top.score or ODI.na }}">{{ _top.score }}%</span>
             {% for place in top_places %}
-            <a href="{{ SITEURL }}/place/{{ place.slug }}/">{{ place.name }}</a>&nbsp;
+            <a href="{{ SITEURL }}/place/{{ place.slug }}/{{ dataset.id }}/">{{ place.name }}</a>&nbsp;
             {% endfor %}
           </td>
           <td class="score" data-score="{{ dataset[scope.score_lookup] or ODI.na }}">
