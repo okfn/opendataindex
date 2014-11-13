@@ -51,7 +51,7 @@
         </td>
         <td>
           {% if entry and entry.url %}
-          <a href="{{ entry.url }}" title="{{ entry.url }}">{{ entry.url|truncate(30) }}</a>
+          {{ entry.url|urlize(30) }}
           {% else %}
           {{ ODI.na }}
           {% endif %}
