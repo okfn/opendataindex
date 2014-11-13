@@ -1,4 +1,4 @@
-define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], function(leaflet, leaflet_zoommin, $, pubsub, _, chroma, marked, data) {
+define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], function(leaflet, leaflet_zoommin, leaflet_label, $, pubsub, _, chroma, marked, data) {
 
     var $container = $('.odi-vis.odi-vis-choropleth'),
         $tools = $('.odi-vis-tools'),
@@ -26,7 +26,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
         colorScale = chroma.scale(colorSteps).domain([0, 100]),
         mapLatLongBase = [20.0, 5.0],
-        mapZoomBase = 2,
+        mapZoomBase = 2.1,
         mapInitObj = {
             zoomControl: false,
             zoomAnimation: false,
@@ -72,7 +72,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         uiStateDefaults = {
             embed: {
                 width: '100%',
-                height: '508px',
+                height: '100%',
                 title: 'Open Data Index'
             },
             filter: {
@@ -358,6 +358,24 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
     }
 
     function onEachPlace(feature, layer) {
+        var place,
+            context = {};
+
+        if (feature && feature.properties && feature.properties.iso_a2) {
+
+            place = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
+
+            if (typeof(place) !== 'undefined') {
+                context = {
+                    place: place.name,
+                    score: place.score,
+                    rank: place.rank
+                };
+
+                layer.bindLabel(placeToolTipTmpl(context)).addTo(map);
+            }
+        }
+
         layer.on({
             mouseover: placeHoverHandler,
             mouseout: placeExitHandler,

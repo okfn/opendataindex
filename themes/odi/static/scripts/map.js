@@ -6,12 +6,16 @@ require.config({
         },
         leaflet_zoommin: {
             deps: ['leaflet']
+        },
+        leaflet_label: {
+            deps: ['leaflet']
         }
     },
     paths: {
         app: 'scripts/map/main',
         leaflet: 'vendor/leaflet',
         leaflet_zoommin: 'vendor/L.Control.ZoomMin',
+        leaflet_label: 'vendor/leaflet.label',
         jquery: 'vendor/jquery.min',
         chroma: 'vendor/chroma.min',
         pubsub: 'vendor/pubsub',

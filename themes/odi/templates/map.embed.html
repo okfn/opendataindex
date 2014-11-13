@@ -23,7 +23,7 @@
     <div class="odi-vis-meta">
         <div class="odi-vis-meta-left">
 
-            <a class="odi-vis-logo" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">&nbsp;</a>
+            <!--a class="odi-vis-logo" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">&nbsp;</a-->
 
             <a class="odi-vis-name" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">{{ SITENAME }}</a>
 
@@ -90,8 +90,8 @@
     </div>
 </script>
 
-<script type="text/template" class="place-toolip">
-    <span><%= place %>: </span><span><%= score %>%</span>, <span><%= rank %></span>
+<script type="text/template" class="place-tooltip">
+    <span><%= place %>: </span><span><%= score %>%</span>, <span>#<%= rank %></span>
 </script>
 
 <script type="text/template" class="year-options">

@@ -3,6 +3,7 @@
 @import (less) '../vendor/lato/less/lato';
 @import (less) '../vendor/leaflet.css';
 @import (less) '../vendor/L.Control.ZoomMin.css';
+@import (less) '../vendor/leaflet.label.css';
 
 @fa-font-path: '../vendor/font-awesome/fonts';
 @lato-font-path: '../vendor/lato/font';
@@ -62,7 +63,7 @@
 html, body {
     height: 100%;
     width: 100%;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 html, body, input, select, textarea {
@@ -77,9 +78,9 @@ html, body, input, select, textarea {
     .object();
     position: relative;
     width: 100%;
-    min-width: 430px;
     height: 100%;
-    min-height: 430px;
+    min-width: 26.875rem;
+    min-height: 27.5rem;
     padding: 0.75rem 0.75rem 0 0.75rem;
     background-color: @color-dark;
     color: @color-light;
@@ -104,8 +105,10 @@ html, body, input, select, textarea {
 
     // the view panel; where the vis is rendered
     .odi-vis-view {
-
+        width: 100%;
         height: 90%;
+        min-width: 25.375rem;
+        min-height: 24.875rem;
 
         .odi-vis-display {
             .layout-object();
@@ -121,9 +124,11 @@ html, body, input, select, textarea {
 
     // the meta panel; contains contextual tools and information for the vis
     .odi-vis-meta {
-
-        font-size: 1.5rem;
+        width: 100%;
         height: 10%;
+        min-width: 25.375rem;
+        min-height: 2rem;
+        font-size: 1.5rem;
         padding-top: 0.875%;
 
         a, span.odi-vis-action {
@@ -136,13 +141,13 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-meta-right {
-            .layout-object(@width: 30%; @float: right);
+            .layout-object(@width: 25%; @float: right);
             height: 100%;
             text-align: right;
         }
 
         .odi-vis-meta-left {
-            .layout-object(@width: 70%; @float: left);
+            .layout-object(@width: 75%; @float: left);
             height: 100%;
             text-align: left;
         }
@@ -151,8 +156,8 @@ html, body, input, select, textarea {
             .layout-object(3rem);
             background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
             background-repeat: no-repeat;
-            background-position: center -240px;
-            height: 48px;
+            background-position: center -244px;
+            height: 38px;
             cursor: pointer;
             text-indent: -999px;
             z-index: 1;
@@ -163,54 +168,81 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-name {
-            .layout-object(8rem);
+            .layout-object(7rem);
             font-size: 0.75rem;
             text-transform: uppercase;
 
+            @media @max568 {
+                font-size: 0.625rem;
+            }
         }
 
         .odi-vis-tools {
             .layout-object(auto);
+            font-size: 1rem;
             margin-top: -0.25rem;
+
+            select, option {
+                color: @color-dark
+            }
+
+            @media @max568 {
+                font-size: 0.5rem;
+                padding-top: 0.25rem;
+            }
         }
 
         .odi-vis-share {
             .layout-object(6rem; right);
+            font-size: 1.175rem;
+            padding: 0 0.5rem;
+            margin-top: -0.125rem;
             text-align: center;
 
             @media @max568 {
                 display: none;
+                padding: 0 0.25rem;
             }
         }
 
         .odi-vis-embed {
-            .layout-object(2rem; right);
+            .layout-object(1.25rem; right);
+            font-size: 1.175rem;
+            padding: 0 0.75rem;
+            margin-top: -0.125rem;
             text-align: center;
 
             @media @max568 {
                 font-size: 1rem;
+                padding: 0 0.25rem;
             }
         }
 
         .odi-vis-help {
-            .layout-object(2rem; right);
+            .layout-object(1.25rem; right);
+            font-size: 1.175rem;
+            padding: 0 0.75rem;
+            margin-top: -0.125rem;
             text-align: center;
 
             @media @max568 {
                 font-size: 1rem;
+                padding: 0 0.25rem;
             }
         }
 
         .odi-vis-legend {
             .layout-object(3.125rem; right);
+            font-size: 1.175rem;
+            padding-left: 0.25rem;
 
             @media @max568 {
                 font-size: 1rem;
-                width: 3.125rem;
+                width: 2.125rem;
             }
 
             ul {
-                .layout-object(3.125rem);
+                .layout-object(2.125rem);
                 float: right;
                 height: 100%;
                 display: block;
@@ -225,8 +257,8 @@ html, body, input, select, textarea {
             }
 
             li {
-                .layout-object(1.5rem);
-                height: 1.5rem;
+                .layout-object(1rem);
+                height: 1rem;
 
                 @media @max568 {
                     width: 1rem;

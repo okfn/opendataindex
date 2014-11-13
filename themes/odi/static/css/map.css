@@ -2552,6 +2552,55 @@ th {
 .leaflet-control-zoom-min.leaflet-disabled {
   background-image: url(data:image/gif;base64,R0lGODlhGAAYAOZGAHp6eoWFhX9/f3t7e4KCgtvb2319faSkpJSUlMTExOzs7JiYmO/v79DQ0KWlpdXV1ZeXl8LCwq2trZWVldTU1KysrJOTk8HBwbS0tLW1tZ2dnaOjo5ubm9nZ2aurq+bm5oCAgMPDw+vr6+np6ZKSkomJicXFxYuLi9zc3Lm5ub+/v+Dg4J6enszMzMDAwN3d3djY2Pr6+oODg46OjqCgoHx8fJGRkaqqqr29vaampqenp7a2to+Pj7Ozs7u7u9HR0aKioqmpqX5+fs7OzsfHx66urv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEYALAAAAAAYABgAQAf/gEaCg0YMERskBAQkGxeEhCoAkhOPlR8GkpmOApmdICwUBSednQKDDwMALo89nBwTnQMPggSkKYQvFC2knQSDJqm8ACWCIwsAAyaVRh0ByAs1HBYGzpkBHY8VABDLRigQP4MemRVGCJk83UYwIMIWB7xCDUYQAJjCkgeF1fgW84IpMAVgsKwIJ2ECJKgTpMDDQV4CKojoFiKVBhQrVhSIkUADqQERCClw5qNSNSJGMuSwNtEIJwNDuiko9mBHJlPwJN1Y+KEErwO1MmHohgEfgXOdZuAQBERSEHwAEEQQNkFBgws0oAIIYUSCVh0HZKhwMCqTQkEFguGjMCgDsgKVFwrw62QjwTEAAeAuNJLAAQJFCBwk6BYIADs=);
 }
+.leaflet-label {
+  background: #ebebeb;
+  background: rgba(235, 235, 235, 0.81);
+  background-clip: padding-box;
+  border-color: #777;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 4px;
+  color: #111;
+  display: block;
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 1px 6px;
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 6;
+}
+.leaflet-label.leaflet-clickable {
+  cursor: pointer;
+  pointer-events: auto;
+}
+.leaflet-label:before,
+.leaflet-label:after {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  content: none;
+  position: absolute;
+  top: 5px;
+}
+.leaflet-label:before {
+  border-right: 6px solid black;
+  border-right-color: inherit;
+  left: -10px;
+}
+.leaflet-label:after {
+  border-left: 6px solid black;
+  border-left-color: inherit;
+  right: -10px;
+}
+.leaflet-label-right:before,
+.leaflet-label-left:after {
+  content: "";
+}
 .odi-display-panel-title {
   font-size: 1.425rem;
   font-weight: normal;
@@ -2562,7 +2611,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-size: 1rem;
+  font-size: 16px;
 }
 html,
 body,
@@ -2575,9 +2624,9 @@ textarea {
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  min-width: 430px;
   height: 100%;
-  min-height: 430px;
+  min-width: 26.875rem;
+  min-height: 27.5rem;
   padding: 0.75rem 0.75rem 0 0.75rem;
   background-color: #2d2d2d;
   color: #f5f5f5;
@@ -2602,7 +2651,10 @@ textarea {
   width: 100%;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-view {
+  width: 100%;
   height: 90%;
+  min-width: 25.375rem;
+  min-height: 24.875rem;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-view .odi-vis-display {
   box-sizing: border-box;
@@ -2615,8 +2667,11 @@ textarea {
   height: 100%;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta {
-  font-size: 1.5rem;
+  width: 100%;
   height: 10%;
+  min-width: 25.375rem;
+  min-height: 2rem;
+  font-size: 1.5rem;
   padding-top: 0.875%;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta a,
@@ -2630,14 +2685,14 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-right {
   box-sizing: border-box;
   float: right;
-  width: 30%;
+  width: 25%;
   height: 100%;
   text-align: right;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-left {
   box-sizing: border-box;
   float: left;
-  width: 70%;
+  width: 75%;
   height: 100%;
   text-align: left;
 }
@@ -2647,8 +2702,8 @@ textarea {
   width: 3rem;
   background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
   background-repeat: no-repeat;
-  background-position: center -240px;
-  height: 48px;
+  background-position: center -244px;
+  height: 38px;
   cursor: pointer;
   text-indent: -999px;
   z-index: 1;
@@ -2661,64 +2716,94 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
   box-sizing: border-box;
   float: left;
-  width: 8rem;
+  width: 7rem;
   font-size: 0.75rem;
   text-transform: uppercase;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
+    font-size: 0.625rem;
+  }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
   box-sizing: border-box;
   float: left;
   width: auto;
+  font-size: 1rem;
   margin-top: -0.25rem;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools select,
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools option {
+  color: #2d2d2d;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
+    font-size: 0.5rem;
+    padding-top: 0.25rem;
+  }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share {
   box-sizing: border-box;
   float: right;
   width: 6rem;
+  font-size: 1.175rem;
+  padding: 0 0.5rem;
+  margin-top: -0.125rem;
   text-align: center;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share {
     display: none;
+    padding: 0 0.25rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-embed {
   box-sizing: border-box;
   float: right;
-  width: 2rem;
+  width: 1.25rem;
+  font-size: 1.175rem;
+  padding: 0 0.75rem;
+  margin-top: -0.125rem;
   text-align: center;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-embed {
     font-size: 1rem;
+    padding: 0 0.25rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
   box-sizing: border-box;
   float: right;
-  width: 2rem;
+  width: 1.25rem;
+  font-size: 1.175rem;
+  padding: 0 0.75rem;
+  margin-top: -0.125rem;
   text-align: center;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
     font-size: 1rem;
+    padding: 0 0.25rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
   box-sizing: border-box;
   float: right;
   width: 3.125rem;
+  font-size: 1.175rem;
+  padding-left: 0.25rem;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
     font-size: 1rem;
-    width: 3.125rem;
+    width: 2.125rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
   box-sizing: border-box;
   float: left;
-  width: 3.125rem;
+  width: 2.125rem;
   float: right;
   height: 100%;
   display: block;
@@ -2735,8 +2820,8 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
   box-sizing: border-box;
   float: left;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
