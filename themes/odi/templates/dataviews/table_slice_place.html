@@ -74,7 +74,7 @@
         </td>
         <td class="previous-results">
           {% if entry_previous and entry_previous.score %}
-              <span class="rank rank-previous">#{{ entry_previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{% if entry %}{{ entry.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">{{ entry_previous.score }}%</span>
+              <span class="rank rank-previous">#{{ entry_previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{% if entry_previous %}{{ entry_previous.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">{{ entry_previous.score }}%</span>
           {% else %}
               {{ ODI.na }}
           {% endif %}

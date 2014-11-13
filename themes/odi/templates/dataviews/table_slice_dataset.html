@@ -18,7 +18,7 @@
         <th>{{ gettext('Location (URL)') }}</th>
         <th>{{ gettext('Format') }}</th>
         <th>{{ gettext('Info') }}</th>
-        <th>{{ gettext('Previous') }}</th>
+        <th>{{ gettext('Previous') }} {% if page.year == ODI.current_year %}({{ ODI.previous_year }}){% endif %}</th>
         <th>{{ gettext('Score') }}</th>
       </tr>
     </thead>
@@ -26,7 +26,7 @@
       {% for place in scope.places %}
 
       {% set entry = scope.entries|where('place', place.id)|where('dataset', page.dataset)|where('year', page.year)|first %}
-      {% set entry_previous = entries|where('place', place.id)|where('year', (page.year|int - 1)|string)|first %}
+      {% set entry_previous = scope.entries|where('place', place.id)|where('year', (page.year|int - 1)|string)|first %}
       <tr data-rank="{% if entry %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}" data-score="{% if entry %}{{ entry.score }}{% else %}{{ ODI.na }}{% endif %}" data-place="{{ place.slug }}">
       <td>
         {% if entry and entry.rank %}{{ entry.rank }}{% else %}{{ ODI.na }}{% endif %}
@@ -48,7 +48,7 @@
         </td>
         <td>
           {% if entry and entry.url %}
-          <a href="{{ entry.url }}" title="{{ entry.url }}">{{ entry.url|truncate(30) }}</a>
+          {{ entry.url|urlize(30) }}
           {% else %}
           {{ ODI.na }}
           {% endif %}
@@ -67,20 +67,12 @@
             {{ ODI.na }}
           {% endif %}
         </td>
-        <td>
-        {% if entry_previous and entry_previous.score %}
-          {#{% if entry_previous.score|int > entry.score|int %}
-            {{ scope.lower }}
-          {% elif entry_previous.score|int < entry.score|int %}
-            {{ scope.higher }}
+        <td class="previous-results">
+          {% if entry_previous and entry_previous.score %}
+              <span class="rank rank-previous">#{{ entry_previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{% if entry_previous %}{{ entry_previous.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">{{ entry_previous.score }}%</span>
           {% else %}
-            {{ scope.no_change }}
+              {{ ODI.na }}
           {% endif %}
-          from #}
-          {{ entry_previous.score }}%, #{{ entry_previous.rank }}
-        {% else %}
-          {{ ODI.na }}
-        {% endif %}
         </td>
         <td class="score" data-score="{% if entry %}{{ entry.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">
           <span>{% if entry and entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}</span>
