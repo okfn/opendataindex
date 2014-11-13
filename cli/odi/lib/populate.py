@@ -295,7 +295,7 @@ class Populate(object):
 place_overview_template = u"""type: {display_type}
 template: {display_type}
 title: Place overview
-slug: places
+slug: place
 year: {year}
 alias: /country/
 """
@@ -304,7 +304,7 @@ alias: /country/
 place_overview_historical_template = u"""type: {display_type}
 template: {display_type}
 title: Place overview {year}
-slug: places/{year}
+slug: place/{year}
 year: {year}
 """
 
@@ -312,7 +312,7 @@ year: {year}
 dataset_overview_template = u"""type: {display_type}
 template: {display_type}
 title: Dataset overview
-slug: datasets
+slug: dataset
 year: {year}
 """
 
@@ -320,7 +320,7 @@ year: {year}
 dataset_overview_historical_template = u"""type: {display_type}
 template: {display_type}
 title: Dataset overview {year}
-slug: datasets/{year}
+slug: dataset/{year}
 year: {year}
 """
 
