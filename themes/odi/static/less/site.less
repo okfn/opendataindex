@@ -183,6 +183,37 @@ textarea {
   }
 }
 
+#slice-table {
+  tr.details {
+    background-color: @color-okf-grey;
+  }
+  td {
+    &.breakdown {
+      padding: 5px 8px;
+    }
+    &.info-expander {
+      padding: 0;
+      a {
+        display: block;
+        cursor: pointer;
+        padding: 8px;
+        text-align: center;
+        color: black;
+        background-color: #DDD;
+        &.collapsed {
+          color: @link-color;
+          background-color: transparent;
+          &:hover,
+          &:focus
+          &:active {
+            background-color: @color-okf-grey;
+          }
+        }
+      }
+    }
+  }
+}
+
 // UNSORTED STYLING...
 
 .rank,

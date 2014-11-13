@@ -8200,6 +8200,31 @@ textarea {
 .data-table thead th {
   font-size: 14px;
 }
+#slice-table tr.details {
+  background-color: #f0f0f0;
+}
+#slice-table td.breakdown {
+  padding: 5px 8px;
+}
+#slice-table td.info-expander {
+  padding: 0;
+}
+#slice-table td.info-expander a {
+  display: block;
+  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  color: black;
+  background-color: #DDD;
+}
+#slice-table td.info-expander a.collapsed {
+  color: #428bca;
+  background-color: transparent;
+}
+#slice-table td.info-expander a.collapsed:hover,
+#slice-table td.info-expander a.collapsed:focus #slice-table td.info-expander a.collapsed:active {
+  background-color: #f0f0f0;
+}
 .rank,
 .score {
   text-align: center;
