@@ -42,8 +42,43 @@ define(['jquery', 'pubsub'], function($, pubsub) {
      * Gets place data and passes to `callback` for further processing
      */
     function getPlaceData(callback) {
+
+        function setPlaceImprovement(place) {
+            var previous,
+                current;
+
+            if (place.score === null && place.score_2013 === null) {
+              return null;
+            } else if (place.score_2013 === null && place.score) {
+              return '100';
+            } else {
+              previous = parseInt(place.score_2013, 10);
+              current = parseInt(place.score, 10);
+              return ((current - previous)/previous)*100;
+            }
+        }
+
+        function setPlaceImprovementScaled(place) {
+            var previous,
+                current;
+
+            if (place.score === null && place.score_2013 === null) {
+              return null;
+            } else if (place.score_2013 === null && place.score) {
+              return '100';
+            } else {
+              previous = parseInt(place.score_2013, 10);
+              current = parseInt(place.score, 10);
+              return ((((current - previous)/previous)*100) + 100)/2;
+            }
+        }
+
         $.get(api.places)
           .done(function(data) {
+            _.each(data, function(value) {
+              value.improvement = setPlaceImprovement(value);
+              value.improvement_scaled = setPlaceImprovementScaled(value);
+            });
             // callback publishes the places topic
             callback(data);
         });

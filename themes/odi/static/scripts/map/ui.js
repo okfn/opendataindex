@@ -161,7 +161,8 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
     }
 
     function datasetsHandler(topic, data) {
-        var context = {};
+        var context = {},
+            ext_context = {};
 
         dataStore.datasets = data;
         _.each(data, function(value) {
@@ -174,6 +175,11 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             }
             $datasetFilter.append(datasetOptionsTmpl(context));
         });
+
+        ext_context.dataset_id = 'improvement';
+        ext_context.dataset = '* Most Improved';
+        ext_context.selected = '';
+        $datasetFilter.append(datasetOptionsTmpl(ext_context));
     }
 
     function entriesHandler(topic, data) {
@@ -338,6 +344,12 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (match) {
                 score = parseInt(match.score, 10);
+                fillColor = colorScale(score).hex();
+            }
+        } else if (uiState.filter.dataset === 'improvement') {
+            match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
+            if (match) {
+                score = parseInt(match.improvement_scaled, 10);
                 fillColor = colorScale(score).hex();
             }
         } else {
@@ -530,6 +542,10 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                         previousScore = parseInt(place[scorePrevious(uiState.filter.year)], 10);
                     }
                 }
+            } else if (uiState.filter.dataset === 'improvement') {
+                if (place) {
+                    score = parseInt(place.improvement, 10);
+                }
             } else {
                 // calculate for this dataset/year/place from entries data
                 match = _.find(dataStore.entries, {
@@ -586,6 +602,11 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                         dataStore.meta.currentYear) {
                         previousScore = parseInt(place[scorePrevious(uiState.filter.year)], 10);
                     }
+                }
+            } else if (uiState.filter.dataset === 'improvement') {
+            place = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
+                if (place) {
+                    score = parseInt(place.improvement, 10);
                 }
             } else {
                 // calculate for this dataset/year/place from entries data

@@ -91,7 +91,7 @@
 </script>
 
 <script type="text/template" class="place-tooltip">
-    <span><%= title %>: <span>#<%= rank %></span> </span><span><%= score %>%</span>
+    <span><%= title %>: <% if (rank) { %><span>#<%= rank %></span><% } %> </span><span><%= score %>%</span>
 </script>
 
 <script type="text/template" class="year-options">
@@ -107,7 +107,7 @@
 </script>
 
 <script type="text/template" class="embed-code">
-    <xmp contenteditable="true"><iframe width="100%" height="508px" src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
+    <xmp contenteditable="true"><iframe width="100%" height="100%" src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
 </script>
 
 {% endblock content %}
