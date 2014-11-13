@@ -101,7 +101,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
     pubsub.subscribe(data.topics.datasets, datasetsHandler);
     pubsub.subscribe(data.topics.entries, entriesHandler);
     pubsub.subscribe(topics.tool_change, updateUIState);
-    pubsub.subscribe(topics.state_change, updatePlaceBox);
     pubsub.subscribe(topics.state_change, redrawDisplay);
     pubsub.subscribe(topics.state_change, pushStateToURL);
     pubsub.subscribe(topics.init, setDimensions);
@@ -484,28 +483,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         initMetaInfo();
     }
 
-    function updatePlaceBox(topic, data) {
-        console.log('BOOMYA');
-        placeControl.update = function (properties) {
-            var context = {},
-                match;
-
-            if (properties) {
-                match = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
-                context.year = data.filter.year;
-                context.name = match.name;
-                context.slug = match.slug;
-                context.score = parseInt(match.score, 10);
-                context.rank = parseInt(match.rank, 10);
-                context.improvement_phrase = 'an improvment on it';
-                context.previous_score = '50';
-                $placeBox.html(placeBoxTmpl(context));
-                $placeBox.show();
-            }
-        };
-
-        placeControl.update(event.target.feature.properties);
-    }
     /**
      * Bootstraps the visualisation place box, which displays data on places
      */
