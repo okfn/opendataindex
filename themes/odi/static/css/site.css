@@ -8152,19 +8152,19 @@ textarea {
   margin-top: 40px;
   margin-bottom: 20px;
 }
-#summary-stats .col-md-3 {
+#summary-stats .stat {
   text-align: center;
 }
-#summary-stats .col-md-3 strong {
+#summary-stats .stat strong {
   padding: 5px 10px;
   font-size: 2em;
   background-color: rgba(0, 0, 0, 0.1);
 }
-#summary-stats .col-md-3 span {
+#summary-stats .stat span {
   display: block;
   margin-top: 10px;
 }
-#summary-stats .col-md-3 small {
+#summary-stats .stat small {
   display: block;
   opacity: 0.66;
   margin-top: 5px;
@@ -8180,7 +8180,16 @@ textarea {
   font-weight: 300;
   font-size: 2.8em;
 }
-#home-stats .col-md-3 strong {
+#home-stats .stat {
+  font-size: 125%;
+}
+#home-stats .stat i {
+  font-size: 2em;
+  font-style: normal;
+  margin: 0 .1em;
+  font-weight: 300;
+}
+#home-stats .stat strong {
   color: white;
   background-color: black;
 }

@@ -1,25 +1,5 @@
 <div id="summary-stats" class="row">
-  <div class="col-md-3">
-    <strong>{{ scope.open_percent[scope.value_lookup] }}%</strong>
-    <span>{{ scope.open_percent.title }}</span>
-    {% if scope.open_percent[scope.value_lookup_previous] %}
-    <small>
-        {% if scope.open_percent[scope.value_lookup_previous]|int >
-           scope.open_percent[scope.value_lookup]|int
-        %}
-        {{ scope.lower }}
-        {% elif scope.open_percent[scope.value_lookup_previous]|int <
-           scope.open_percent[scope.value_lookup]|int
-        %}
-        {{ scope.higher }}
-        {% else %}
-        {{ scope.no_change }}
-        {% endif %}
-        from {{ scope.open_percent[scope.value_lookup_previous] }}% in {{ ODI.previous_year }}
-    </small>
-    {% endif %}
-  </div>
-  <div class="col-md-3">
+  <div class="stat col-md-4 col-md-offset-2">
     <strong>{{ scope.place_count[scope.value_lookup] }}</strong>
     <span>{{ scope.place_count.title }}</span>
     {% if scope.place_count[scope.value_lookup_previous] %}
@@ -39,8 +19,10 @@
     </small>
     {% endif %}
   </div>
-  <div class="col-md-3">
+  <div class="stat col-md-4">
     <strong>{{ scope.entry_count[scope.value_lookup] }}</strong>
+    <i>{{ gettext('of') }}</i>
+    <strong>1000</strong>
     <span>{{ scope.entry_count.title }}</span>
     {% if scope.entry_count[scope.value_lookup_previous] %}
     <small>
@@ -56,26 +38,6 @@
         {{ scope.no_change }}
         {% endif %}
         from {{ scope.entry_count[scope.value_lookup_previous] }} in {{ ODI.previous_year }}
-    </small>
-    {% endif %}
-  </div>
-  <div class="col-md-3">
-    <strong>{{ scope.open_count[scope.value_lookup] }}</strong>
-    <span>{{ scope.open_count.title }}</span>
-    {% if scope.open_count[scope.value_lookup_previous] %}
-    <small>
-        {% if scope.open_count[scope.value_lookup_previous]|int >
-           scope.open_count[scope.value_lookup]|int
-        %}
-        {{ scope.lower }}
-        {% elif scope.open_count[scope.value_lookup_previous]|int <
-           scope.open_count[scope.value_lookup]|int
-        %}
-        {{ scope.higher }}
-        {% else %}
-        {{ scope.no_change }}
-        {% endif %}
-        from {{ scope.open_count[scope.value_lookup_previous] }} in {{ ODI.previous_year }}
     </small>
     {% endif %}
   </div>
