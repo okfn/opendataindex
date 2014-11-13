@@ -16,7 +16,7 @@
 {% block heading %}{% endblock heading %}
 
 {% block breadcrumbs_inner %}
-  <li><a href="{{ SITEURL }}/places">{{ gettext('Places')}}</a></li>
+  <li><a href="{{ SITEURL }}/place">{{ gettext('Places')}}</a></li>
   <li><a href="{{ SITEURL }}/place/{{ scope.place.slug }}/">{{ scope.place.name }}</a></li>
   <li class="active">{{ scope.dataset.title }}</li>
 {% endblock breadcrumbs_inner %}
