@@ -6,6 +6,7 @@
         <script>
             var siteUrl = {{ SITEURL|tojson|safe }},
                 currentYear = {{ ODI.current_year|tojson|safe }},
+                previousYear = {{ ODI.previous_year|tojson|safe }},
                 years = {{ ODI.years|tojson|safe }};
         </script>
         {% block head_scripts %}{% endblock head_scripts %}

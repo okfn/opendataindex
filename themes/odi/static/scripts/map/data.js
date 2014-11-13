@@ -22,6 +22,7 @@ define(['jquery', 'pubsub'], function($, pubsub) {
     function getMetaData() {
         data = {
             currentYear: currentYear,
+            previousYear: previousYear,
             years: years
         };
         pubsub.publish(topics.meta, data);

@@ -108,9 +108,32 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
     pubsub.subscribe(topics.state_change, setPanels);
     pubsub.subscribe(topics.geolayer_ready, setMapView);
 
+    function rankLookup(year) {
+        if (year === dataStore.meta.currentYear) {
+            return 'rank';
+        } else {
+            return 'rank_YEAR'.replace('YEAR', year);
+        }
+    }
+
+    function rankPrevious(year) {
+        return  'rank_YEAR'.replace('YEAR', dataStore.meta.previousYear);
+    }
+
+    function scoreLookup(year) {
+        if (year === dataStore.meta.currentYear) {
+            return 'score';
+        } else {
+            return 'score_YEAR'.replace('YEAR', year);
+        }
+    }
+
+    function scorePrevious(year) {
+        return  'score_YEAR'.replace('YEAR', dataStore.meta.previousYear);
+    }
+
     function metaHandler(topic, data) {
         var context = {};
-
         dataStore.meta = data;
         _.each(data.years, function(value) {
             context.year = value;
@@ -183,10 +206,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             // we want the full view of the map
             map.setView(mapLatLongBase, mapZoomBase);
         }
-    }
-
-    function clearGeoLayer() {
-        geoLayer.clearLayers();
     }
 
     function setDimensions(topic, data) {
@@ -353,25 +372,16 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
 
     function placeClickHandler(event) {
         map.fitBounds(event.target.getBounds());
-        placeControl.update(event.target.feature.properties);
+        setPlaceBox(event.target.feature.properties);
     }
 
     function onEachPlace(feature, layer) {
-        var place,
-            context = {};
+        var place;
 
         if (feature && feature.properties && feature.properties.iso_a2) {
-
             place = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
-
-            if (typeof(place) !== 'undefined') {
-                context = {
-                    place: place.name,
-                    score: place.score,
-                    rank: place.rank
-                };
-
-                layer.bindLabel(placeToolTipTmpl(context)).addTo(map);
+            if (place) {
+                layer.bindLabel(getPlaceToolTip(place)).addTo(map);
             }
         }
 
@@ -384,6 +394,8 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
 
     function redrawDisplay(topic, data) {
         addGeoDataToLayer(dataStore.geo);
+        $placeBox.empty();
+        $placeBox.hide();
     }
 
     /**
@@ -483,33 +495,130 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         initMetaInfo();
     }
 
-    /**
-     * Bootstraps the visualisation place box, which displays data on places
-     */
-    function initViewPlaceBox() {
-        placeControl.onAdd = function (map) {
-            this._div = leaflet.DomUtil.create('div', placeBoxClass);
-            this.update();
-            return this._div;
-        };
 
-        placeControl.update = function (properties) {
-            var context = {},
-                match;
+    function getPlaceToolTip(place) {
+        var context = {},
+            place,
+            match,
+            score,
+            rank;
 
-            if (properties) {
-                match = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
-                context.year = '2014';
-                context.name = match.name;
-                context.slug = match.slug;
-                context.score = parseInt(match.score, 10);
-                context.rank = parseInt(match.rank, 10);
-                context.improvement_phrase = 'an improvment on';
-                context.previous_score = '50';
-                $placeBox.html(placeBoxTmpl(context));
-                $placeBox.show();
+        function makeTitle() {
+            var title = place.name;
+
+            if (uiState.filter.dataset !== 'all' ||
+                typeof(uiState.filter.dataset) !== 'undefined') {
+                title = title + ' ' + uiState.filter.dataset;
             }
-        };
+
+            if (typeof(uiState.filter.year) !== 'undefined') {
+                title = title + ' ' + uiState.filter.year;
+            }
+            return title;
+        }
+
+        if (typeof(place) !== 'undefined') {
+
+            if (uiState.filter.dataset === 'all' ||
+                typeof(uiState.filter.dataset) === 'undefined') {
+                // get calculated total scores from the place data
+                if (place) {
+                    score = parseInt(place[scoreLookup(uiState.filter.year)], 10);
+                    rank = parseInt(place[rankLookup(uiState.filter.year)], 10);
+                    if (uiState.filter.year ===
+                        dataStore.meta.currentYear) {
+                        previousScore = parseInt(place[scorePrevious(uiState.filter.year)], 10);
+                    }
+                }
+            } else {
+                // calculate for this dataset/year/place from entries data
+                match = _.find(dataStore.entries, {
+                    'place': place.id,
+                    'year': uiState.filter.year,
+                    'dataset': uiState.filter.dataset
+                });
+                if (match) {
+                    score = parseInt(match.score, 10);
+                    rank = parseInt(match.rank, 10);
+                }
+            }
+
+                context.title = makeTitle();
+                context.place = place.name;
+                context.score = score;
+                context.rank = rank;
+        }
+        return placeToolTipTmpl(context);
+    }
+
+    function setPlaceBox(properties) {
+            var context = {},
+                place,
+                match,
+                score,
+                rank,
+                previousScore;
+
+        function makeTitle() {
+            var title = place.name;
+
+            if (uiState.filter.dataset !== 'all' ||
+                typeof(uiState.filter.dataset) !== 'undefined') {
+                title = title + ' ' + uiState.filter.dataset;
+            }
+
+            if (typeof(uiState.filter.year) !== 'undefined') {
+                title = title + ' ' + uiState.filter.year;
+            }
+            return title;
+        }
+
+        if (properties) {
+
+            if (uiState.filter.dataset === 'all' ||
+                typeof(uiState.filter.dataset) === 'undefined') {
+                // get calculated total scores from the place data
+                place = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
+                if (place) {
+                    score = parseInt(place[scoreLookup(uiState.filter.year)], 10);
+                    rank = parseInt(place[rankLookup(uiState.filter.year)], 10);
+                    if (uiState.filter.year ===
+                        dataStore.meta.currentYear) {
+                        previousScore = parseInt(place[scorePrevious(uiState.filter.year)], 10);
+                    }
+                }
+            } else {
+                // calculate for this dataset/year/place from entries data
+                match = _.find(dataStore.entries, {
+                    'place': properties.iso_a2.toLowerCase(),
+                    'year': uiState.filter.year,
+                    'dataset': uiState.filter.dataset
+                });
+                previousMatch = _.find(dataStore.entries, {
+                    'place': properties.iso_a2.toLowerCase(),
+                    'year': (parseInt(uiState.filter.year, 10) - 1).toString(),
+                    'dataset': uiState.filter.dataset
+                });
+                if (match) {
+                    place = _.find(dataStore.places, {'id': match.place});
+                    score = parseInt(match.score, 10);
+                    rank = parseInt(match.rank, 10);
+                    if (previousMatch) {
+                        previousScore = parseInt(previousMatch.score, 10);
+                    }
+                }
+            }
+
+            context.year = uiState.filter.year;
+            context.title = makeTitle();
+            context.name = place.name;
+            context.slug = place.slug;
+            context.score = score;
+            context.rank = rank;
+            context.previous_score = previousScore;
+            $placeBox.html(placeBoxTmpl(context));
+            $placeBox.show();
+        }
     }
 
     /**
@@ -524,7 +633,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
      */
     function initView() {
         initViewMap();
-        initViewPlaceBox();
     }
 
     /**
@@ -540,4 +648,3 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         init: initUI
     };
 });
-

@@ -81,17 +81,17 @@
 </script>
 
 <script type="text/template" class="place-box">
-    <div class="odi-vis-place-title"><%= name %><span class="odi-vis-place-close"><i class="fa fa-close"></i></span></div>
+    <div class="odi-vis-place-title"><%= title %><span class="odi-vis-place-close"><i class="fa fa-close"></i></span></div>
     <div class="odi-vis-place-text">
         <p>
-            <%= name %> {{ gettext('is ranked at') }} <strong><%= rank %></strong> {{ gettext('in the') }} <%= year %> {{ gettext('Index') }} {{ gettext('with a score of') }} <strong><%= score %>&#37;</strong>. <!--{{ gettext('That&#39;s') }} <%= improvement_phrase %> {{ gettext('from') }} <%= previous_score %>&#37; {{ gettext('the previous year') }}.-->
+            <%= name %> {{ gettext('is ranked at') }} <strong>#<%= rank %></strong> {{ gettext('in the') }} <%= year %> {{ gettext('Index') }} {{ gettext('with a score of') }} <strong><%= score %>&#37;</strong><% if (previous_score) { %>, (<%= previous_score %>&#37; {{ gettext('the previous year') }})<% } %>.
         </p>
         <a class="odi-vis-place-action" href="{{ SITEURL }}/place/<%= slug %>/" title="{{ gettext('More information about') }} <%= name %> {{ gettext('in the') }} <%= year %> {{ SITENAME }}">{{ gettext('Find out more') }}</a>
     </div>
 </script>
 
 <script type="text/template" class="place-tooltip">
-    <span><%= place %>: </span><span><%= score %>%</span>, <span>#<%= rank %></span>
+    <span><%= title %>: <span>#<%= rank %></span> </span><span><%= score %>%</span>
 </script>
 
 <script type="text/template" class="year-options">
