@@ -8225,6 +8225,14 @@ textarea {
 #slice-table td.info-expander a.collapsed:focus #slice-table td.info-expander a.collapsed:active {
   background-color: #f0f0f0;
 }
+.table-header-stuck thead {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+.table-header-stuck thead.stuck {
+  background-color: #FFF;
+}
 .rank,
 .score {
   text-align: center;

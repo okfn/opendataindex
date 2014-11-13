@@ -1,7 +1,8 @@
 require.config({
     baseUrl: 'SITEURL/static'.replace('SITEURL', siteUrl),
     shim : {
-        bootstrap: {deps:['jquery']}
+        bootstrap: {deps:['jquery']},
+        table: {deps:['sticky']}
     },
     paths: {
         app: 'scripts/site/main',
@@ -9,6 +10,7 @@ require.config({
         bootstrap: 'vendor/bootstrap/js/bootstrap.min',
         chroma: 'vendor/chroma.min',
         lodash: 'vendor/lodash.compat.min',
+        sticky: 'vendor/sticky',
         table: 'scripts/site/table',
         place: 'scripts/site/place'
     }

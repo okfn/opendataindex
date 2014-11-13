@@ -125,8 +125,17 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
     }
 
+    function setColumnTHWidths() {
+        $('.table-header-stuck th')
+            .each(function () {
+                var width = $(this).outerWidth();
+                $(this).css('width', width);
+            });
+    }
+
     function initializeTable() {
         setInteractions();
+        setColumnTHWidths();
     }
 
     return {
