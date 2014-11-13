@@ -5,8 +5,9 @@
 
 {% do scope.update({
   'embed_height': '430px',
+  'embed_title': '%s %s'|format(scope.place.name, page.year),
   'panel_tools': 'false',
-  'panel_share': 'false'
+  'panel_share': 'false',
 }) %}
 
 {% set fragment = '%s/%s'|format('place', scope.place.slug) %}

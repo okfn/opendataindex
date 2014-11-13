@@ -5,6 +5,7 @@
 
 {% do scope.update({
   'embed_height': '430px',
+  'embed_title': '%s %s'|format(scope.dataset.title, page.year),
   'panel_tools': 'false',
   'panel_share': 'false'
 }) %}

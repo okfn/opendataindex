@@ -2575,6 +2575,7 @@ textarea {
   box-sizing: border-box;
   position: relative;
   width: 100%;
+  min-width: 430px;
   height: 100%;
   min-height: 430px;
   padding: 0.75rem 0.75rem 0 0.75rem;
@@ -2615,8 +2616,8 @@ textarea {
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta {
   font-size: 1.5rem;
-  height: 3rem;
-  line-height: 3rem;
+  height: 10%;
+  padding-top: 0.875%;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta a,
 .odi-vis.odi-vis-choropleth .odi-vis-meta span.odi-vis-action {
@@ -2630,12 +2631,14 @@ textarea {
   box-sizing: border-box;
   float: right;
   width: 30%;
+  height: 100%;
   text-align: right;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-left {
   box-sizing: border-box;
   float: left;
   width: 70%;
+  height: 100%;
   text-align: left;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-logo {
@@ -2650,17 +2653,17 @@ textarea {
   text-indent: -999px;
   z-index: 1;
 }
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-logo {
+    display: none;
+  }
+}
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
   box-sizing: border-box;
   float: left;
   width: 8rem;
   font-size: 0.75rem;
   text-transform: uppercase;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
-    display: none;
-  }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
   box-sizing: border-box;
@@ -2705,19 +2708,18 @@ textarea {
   box-sizing: border-box;
   float: right;
   width: 3.125rem;
-  margin-top: 0.675rem;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
     font-size: 1rem;
     width: 3.125rem;
-    margin-top: 1rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
   box-sizing: border-box;
   float: left;
   width: 3.125rem;
+  float: right;
   height: 100%;
   display: block;
   padding: 0;
@@ -2828,4 +2830,26 @@ textarea {
 .odi-vis.odi-vis-choropleth .leaflet-bar {
   box-shadow: none;
   border-radius: none;
+}
+.odi-vis-title {
+  padding: 1rem;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  color: #2d2d2d;
+  border: 2px solid #474747;
+  min-height: 20px;
+  height: 20px;
+  width: 50%;
+  z-index: 1;
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
+  background-repeat: no-repeat;
+  background-position: left -240px;
+  text-indent: 48px;
+  text-align: left;
+  font-size: 12px;
+  background-color: transparent !important;
+  border: none;
 }
