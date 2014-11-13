@@ -1,15 +1,9 @@
 require.config({
     baseUrl: 'SITEURL/static'.replace('SITEURL', siteUrl),
     shim: {
-        leaflet: {
-            exports: 'L'
-        },
-        leaflet_zoommin: {
-            deps: ['leaflet']
-        },
-        leaflet_label: {
-            deps: ['leaflet']
-        }
+        leaflet: {exports: 'L'},
+        leaflet_zoommin: {deps: ['leaflet']},
+        leaflet_label: {deps: ['leaflet']}
     },
     paths: {
         app: 'scripts/map/main',

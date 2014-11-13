@@ -8397,3 +8397,21 @@ h1 .place-openness,
 h1 .dataset-openness {
   float: right;
 }
+#places_overview_table thead tr th:first-child,
+#datasets_overview_table thead tr th:first-child,
+#slice-table thead tr th:first-child {
+  cursor: pointer;
+  color: #262626;
+}
+#places_overview_table thead tr th:nth-child(2),
+#datasets_overview_table thead tr th:nth-child(2),
+#slice-table thead tr th:nth-child(2) {
+  cursor: pointer;
+  color: #262626;
+}
+#places_overview_table thead tr th:last-child,
+#datasets_overview_table thead tr th:last-child,
+#slice-table thead tr th:last-child {
+  cursor: pointer;
+  color: #262626;
+}

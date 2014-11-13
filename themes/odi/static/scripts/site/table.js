@@ -1,4 +1,4 @@
-define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
+define(['jquery', 'bootstrap', 'chroma', 'tablesorter'], function($, bootstrap, chroma, tablesorter) {
 
     var placeCount = placeCount || 260,
         colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
@@ -8,6 +8,10 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
         $visiblePopover,
         $scoreDisplay = $('.score'),
         popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
+
+    $('#places_overview_table').tablesorter({sortList: [[0,0], [1,1], [12,0]]});
+    $('#datasets_overview_table').tablesorter({sortList: [[0,0], [1,1], [4,0]]});
+    $('#slice-table').tablesorter({sortList: [[0,0], [1,1], [7,0]]});
 
     function sortPlace(a, b) {
 

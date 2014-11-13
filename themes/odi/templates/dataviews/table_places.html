@@ -18,7 +18,7 @@ popover_comparison_content, history, share %}
 <hr>
 
 <div class="table-responsive">
-  <table class="table data-table table-header-stuck">
+  <table id="places_overview_table" class="table data-table table-header-stuck tablesorter">
     <col style="width:5%">
     <col style="width:15%">
     {% for dataset in scope.datasets %}
@@ -27,14 +27,14 @@ popover_comparison_content, history, share %}
     <col style="width:5%">
     <thead>
       <tr>
-        <th>{{ gettext('Rank') }}</th>
-        <th>{{ gettext('Place') }}</th>
+        <th title="{{ gettext('Sort by Rank') }}">{{ gettext('Rank') }}</th>
+        <th title="{{ gettext('Sort by A-Z') }}">{{ gettext('Place') }}</th>
         {% for dataset in scope.datasets %}
           <th>
               {{ dataset.title }}
           </th>
         {% endfor %}
-        <th>{{ gettext('Score') }}</th>
+        <th title="{{ gettext('Sort by Score') }}">{{ gettext('Score') }}</th>
       </tr>
     </thead>
     <tbody>
