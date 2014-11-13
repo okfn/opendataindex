@@ -68,7 +68,7 @@
 
 {% macro history(page, odi, namespace) -%}
 <h4>{{ gettext('See this data over time') }}</h4>
-<ul class="nav nav-pills">
+<div class="btn-group">
     {% for year in odi.years %}
 
     {% if year == odi.current_year %}
@@ -81,23 +81,27 @@
 
     {% if route == page.url %}
     {% else %}
-    <li>
-        <a href="{{ SITEURL }}/{{ route }}" title="{{ anchor }}">
+        <a href="{{ SITEURL }}/{{ route }}" title="{{ anchor }}" class="btn btn-default">
             {{ anchor }}
         </a>
-    </li>
     {% endif %}
     {% endfor %}
-</ul>
+</div>
 {%- endmacro %}
 
 
 {% macro share(page, odi, namespace) -%}
 <h4>{{ gettext('Share this data with others') }}</h4>
-<div class="page-share"
-     title="{{ gettext('Share this data with others') }}"
-     style="font-size: 32px;">
-    <a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}/{{ page.url }}&text={{ share_page_template }}" title="{{ gettext('Share this data on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.url }}" title="{{ gettext('Share this data on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.url }}" title="{{ gettext('Share this data on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
+<div class="btn-group">
+  <a href="http://twitter.com/share?url={{ SITEURL }}/{{ page.url }}&text={{ share_page_template }}" class="btn btn-default" target="_blank">
+    <i class="fa fa-twitter-square"></i> {{ gettext('Twitter') }}
+  </a>
+  <a href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.url }}" class="btn btn-default" target="_blank">
+    <i class="fa fa-facebook-square"></i> {{ gettext('Facebook') }}
+  </a>
+  <a href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.url }}" class="btn btn-default" target="_blank">
+    <i class="fa fa-google-plus-square"></i> {{ gettext('Google+') }}
+  </a>
 </div>
 {%- endmacro %}
 

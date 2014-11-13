@@ -14,52 +14,54 @@ popover_comparison_content, history, share %}
 
 <hr>
 
-<table class="table data-table">
-  <col style="width:5%">
-  <col style="width:10%">
-  <col style="width:60%">
-  <col style="width:20%">
-  <col style="width:5%">
-  <thead>
-    <tr>
-      <th>{{ gettext('Rank') }}</th>
-      <th>{{ gettext('Title') }}</th>
-      <th>{{ gettext('Description') }}</th>
-      <th>{{ gettext('Best') }}</th>
-      <th>{{ gettext('Avg.') }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for dataset in scope.datasets %}
-      {% set _top = scope.entries|where('dataset', dataset.id)|where('year', page.year)|first %}
-      {% set _matches = scope.entries|where('dataset', dataset.id)|where('year', page.year)|where('score', _top.score) %}
-      {% set top_places = [] %}
-      {% for e in _matches %}
-        {% do top_places.extend(scope.places|where('id', e.place)) %}
-      {% endfor %}
-
-      <tr data-rank="{{ dataset[scope.rank_lookup] or ODI.na }}" data-score="{{ dataset[scope.score_lookup] or ODI.na }}" data-dataset="{{ dataset.slug }}">
-        <td class="rank" data-rank="{{ dataset[scope.rank_lookup] }}">
-          {{ dataset[scope.rank_lookup] }}
-        </td>
-        <td>
-          <a href="{{ SITEURL }}/dataset/{{ dataset.id }}/" title="{{ dataset.title }}">
-            {{ dataset.title }}
-          </a>
-        </td>
-        <td>
-          {{ dataset.description }}
-        </td>
-        <td>
-          <span class="score score-top" data-score="{{ _top.score or ODI.na }}">{{ _top.score }}%</span>
-          {% for place in top_places %}
-          <a href="{{ SITEURL }}/place/{{ place.slug }}/">{{ place.name }}</a>&nbsp;
-          {% endfor %}
-        </td>
-        <td class="score" data-score="{{ dataset[scope.score_lookup] or ODI.na }}">
-          <span>{{ dataset[scope.score_lookup] or ODI.na }}%</span>
-        </td>
+<div class="table-responsive">
+  <table class="table data-table">
+    <col style="width:5%">
+    <col style="width:10%">
+    <col style="width:60%">
+    <col style="width:20%">
+    <col style="width:5%">
+    <thead>
+      <tr>
+        <th>{{ gettext('Rank') }}</th>
+        <th>{{ gettext('Title') }}</th>
+        <th>{{ gettext('Description') }}</th>
+        <th>{{ gettext('Best') }}</th>
+        <th>{{ gettext('Avg.') }}</th>
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {% for dataset in scope.datasets %}
+        {% set _top = scope.entries|where('dataset', dataset.id)|where('year', page.year)|first %}
+        {% set _matches = scope.entries|where('dataset', dataset.id)|where('year', page.year)|where('score', _top.score) %}
+        {% set top_places = [] %}
+        {% for e in _matches %}
+          {% do top_places.extend(scope.places|where('id', e.place)) %}
+        {% endfor %}
+
+        <tr data-rank="{{ dataset[scope.rank_lookup] or ODI.na }}" data-score="{{ dataset[scope.score_lookup] or ODI.na }}" data-dataset="{{ dataset.slug }}">
+          <td class="rank" data-rank="{{ dataset[scope.rank_lookup] }}">
+            {{ dataset[scope.rank_lookup] }}
+          </td>
+          <td>
+            <a href="{{ SITEURL }}/dataset/{{ dataset.id }}/" title="{{ dataset.title }}">
+              {{ dataset.title }}
+            </a>
+          </td>
+          <td>
+            {{ dataset.description }}
+          </td>
+          <td>
+            <span class="score score-top" data-score="{{ _top.score or ODI.na }}">{{ _top.score }}%</span>
+            {% for place in top_places %}
+            <a href="{{ SITEURL }}/place/{{ place.slug }}/">{{ place.name }}</a>&nbsp;
+            {% endfor %}
+          </td>
+          <td class="score" data-score="{{ dataset[scope.score_lookup] or ODI.na }}">
+            <span>{{ dataset[scope.score_lookup] or ODI.na }}%</span>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
