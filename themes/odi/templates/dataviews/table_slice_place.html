@@ -63,14 +63,12 @@
           {{ ODI.na }}
           {% endif %}
         </td>
-        <td>
-          <a href="#">
-            {% if entry and entry.details %}
-              <i class="fa fa-info-circle"></i>
-            {% else %}
-              {{ ODI.na }}
-            {% endif %}
-          </a>
+        <td title="{% if entry and entry.details %}{{ entry.details }}{% endif %}">
+          {% if entry and entry.details %}
+            <i class="fa fa-info-circle"></i>
+          {% else %}
+            {{ ODI.na }}
+          {% endif %}
         </td>
         <td class="previous-results">
           {% if entry_previous and entry_previous.score %}
@@ -83,13 +81,6 @@
           <span>{% if entry and entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}</span>
         </td>
       </tr>
-      {% if entry and entry.details %}
-        <tr>
-          <td colspan="8">
-            {{ entry.details }}
-          </td>
-        </tr>
-      {% endif %}
       {% endfor %}
     </tbody>
   </table>
