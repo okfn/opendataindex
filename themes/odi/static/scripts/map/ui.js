@@ -7,6 +7,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         $infoTrigger = $('.odi-vis-show-info'),
         $infoBox = $('.odi-vis-info'),
         $placeBox = $('.odi-vis-place'),
+        $titleBox = $('.odi-vis-title'),
         $datasetFilter = $tools.find('.odi-filter-dataset').first(),
         $yearFilter = $tools.find('.odi-filter-year').first(),
         $sharePanel = $('.odi-vis-share'),
@@ -33,7 +34,9 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
             minZoom: 2,
             maxZoom: 4
         },
-        map = leaflet.map('map', mapInitObj).setView(mapLatLongBase, mapZoomBase),
+        map = leaflet.map('map', mapInitObj),
+        geoLayer = setGeoLayer(),
+        geoLayerLookup = {},
         placeControl = leaflet.control(),
         placeBoxClass = 'odi-vis-place',
         placeBoxCloseClass = 'odi-vis-place-close',
@@ -56,7 +59,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         yearOptionsTmpl = _.template($('script.year-options').html()),
         datasetOptionsTmpl = _.template($('script.dataset-options').html()),
         embedCodeTmpl = _.template($('script.embed-code').html()),
-        geojson,
+        titleBoxTmpl = _.template($('script.title-box').html()),
         dataStore = {
             meta: undefined,
             summary: undefined,
@@ -70,6 +73,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
             embed: {
                 width: '100%',
                 height: '508px',
+                title: 'Open Data Index'
             },
             filter: {
                 year: currentYear,
@@ -85,8 +89,6 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
                 legend: true,
             },
             map: {
-                lat: '20.0',
-                long: '5.0',
                 place: undefined
             },
             asQueryString: undefined
@@ -99,11 +101,13 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
     pubsub.subscribe(data.topics.datasets, datasetsHandler);
     pubsub.subscribe(data.topics.entries, entriesHandler);
     pubsub.subscribe(topics.tool_change, updateUIState);
+    pubsub.subscribe(topics.state_change, updatePlaceBox);
     pubsub.subscribe(topics.state_change, redrawDisplay);
     pubsub.subscribe(topics.state_change, pushStateToURL);
     pubsub.subscribe(topics.init, setDimensions);
     pubsub.subscribe(topics.init, setPanels);
     pubsub.subscribe(topics.state_change, setPanels);
+    pubsub.subscribe(topics.geolayer_ready, setMapView);
 
     function metaHandler(topic, data) {
         var context = {};
@@ -121,7 +125,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
     }
 
     function summaryHandler(topic, data) {
-
+        // console.log('summary data is ready');
     }
 
     function placesHandler(topic, data) {
@@ -131,7 +135,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
     }
 
     function geoHandler(data) {
-        setGeoColorScale(data);
+        addGeoDataToLayer(data);
     }
 
     function datasetsHandler(topic, data) {
@@ -152,6 +156,38 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
 
     function entriesHandler(topic, data) {
         dataStore.entries = data;
+    }
+
+    function setGeoLayer() {
+        var geoLayerOptions = {
+            style: setPlaceColors,
+            onEachFeature: onEachPlace
+        };
+
+        return leaflet.geoJson(undefined, geoLayerOptions).addTo(map);
+    }
+
+    function addGeoDataToLayer(geoData) {
+        geoLayer.addData(geoData);
+        geoLayer.eachLayer(function(layer){
+            geoLayerLookup[layer.feature.properties.iso_a2.toLowerCase()] = layer;
+        });
+        pubsub.publish(topics.geolayer_ready, geoLayer);
+    }
+
+    function setMapView(topic, data) {
+        if (uiState.map.place !== 'undefined' &&
+            geoLayerLookup.hasOwnProperty(uiState.map.place)) {
+            // we want to init the map focused on a place
+            map.fitBounds(geoLayerLookup[uiState.map.place].getBounds());
+        } else {
+            // we want the full view of the map
+            map.setView(mapLatLongBase, mapZoomBase);
+        }
+    }
+
+    function clearGeoLayer() {
+        geoLayer.clearLayers();
     }
 
     function setDimensions(topic, data) {
@@ -232,6 +268,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
             allowedArgs = [
                 'embed_width',
                 'embed_height',
+                'embed_title',
                 'filter_year',
                 'filter_dataset',
                 'panel_logo',
@@ -312,20 +349,12 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
     }
 
     function placeExitHandler(event) {
-        geojson.resetStyle(event.target);
+        geoLayer.resetStyle(event.target);
     }
 
     function placeClickHandler(event) {
         map.fitBounds(event.target.getBounds());
         placeControl.update(event.target.feature.properties);
-    }
-
-    function setGeoColorScale(geo) {
-        geojson = leaflet.geoJson(geo, {
-            style: setPlaceColors,
-            onEachFeature: onEachPlace
-        }).addTo(map);
-
     }
 
     function onEachPlace(feature, layer) {
@@ -337,7 +366,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
     }
 
     function redrawDisplay(topic, data) {
-        setGeoColorScale(dataStore.geo);
+        addGeoDataToLayer(dataStore.geo);
     }
 
     /**
@@ -388,6 +417,9 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
                 $infoBox.show();
             }
         });
+
+        $titleBox.html(titleBoxTmpl({'title': decodeURIComponent(uiState.embed.title)}));
+
      }
 
     /**
@@ -434,6 +466,28 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
         initMetaInfo();
     }
 
+    function updatePlaceBox(topic, data) {
+        console.log('BOOMYA');
+        placeControl.update = function (properties) {
+            var context = {},
+                match;
+
+            if (properties) {
+                match = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
+                context.year = data.filter.year;
+                context.name = match.name;
+                context.slug = match.slug;
+                context.score = parseInt(match.score, 10);
+                context.rank = parseInt(match.rank, 10);
+                context.improvement_phrase = 'an improvment on it';
+                context.previous_score = '50';
+                $placeBox.html(placeBoxTmpl(context));
+                $placeBox.show();
+            }
+        };
+
+        placeControl.update(event.target.feature.properties);
+    }
     /**
      * Bootstraps the visualisation place box, which displays data on places
      */
@@ -452,7 +506,7 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
                 match = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
                 context.year = '2014';
                 context.name = match.name;
-                context.slug = match.id;
+                context.slug = match.slug;
                 context.score = parseInt(match.score, 10);
                 context.rank = parseInt(match.rank, 10);
                 context.improvement_phrase = 'an improvment on';

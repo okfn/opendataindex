@@ -1,31 +1,65 @@
 {% extends 'page.html' %}
-{% from 'macros.html' import history, share, popover_slice_title, popover_slice_content %}
 
-{% block page_title %}
-  {% from '_scope.html' import scope with context %}
-  {% do scope.update({
-    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first
-  }) %}
-  {{ scope.dataset.title }}
-{% endblock page_title %}
+{% from 'macros.html' import history, share, popover_slice_title, popover_slice_content %}
+{% from '_scope.html' import scope with context %}
+
+{% do scope.update({
+  'embed_height': '430px',
+  'embed_title': '%s / %s %s'|format(scope.place.name, scope.dataset.title, page.year),
+  'panel_tools': 'false',
+  'panel_share': 'false',
+}) %}
+
+{% set fragment = '%s/%s/%s'|format('place', scope.place.slug, scope.dataset.id) %}
+{% set entry_previous = scope.entries|where('year', (scope.entry.year|int - 1)|string)|first %}
+
+{% block heading %}{% endblock heading %}
 
 {% block breadcrumbs_inner %}
-
-  {% from '_scope.html' import scope with context %}
-  {% do scope.update({
-    'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first
-  }) %}
   <li><a href="{{ SITEURL }}/places">{{ gettext('Places')}}</a></li>
-  <li><a href="{{ SITEURL }}/place/{{ page.place }}">{{ scope.place.name }}</a></li>
+  <li><a href="{{ SITEURL }}/place/{{ scope.place.slug }}/">{{ scope.place.name }}</a></li>
   <li class="active">{{ scope.dataset.title }}</li>
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-{% from '_scope.html' import scope with context %}
-{% do scope.update({
-  'entry': scope.entries|where('place', page.place)|where('dataset', page.dataset)|where('year', page.year)|first
-}) %}
-{% set fragment = '%s%s/%s/%s'|format('place/', page.place, 'datasets', page.dataset) %}
+<header id="place-intro" class="page-header">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>
+        <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/" title="">{{ scope.place.name }}</a> / <a href="{{ SITEURL }}/dataset/{{ scope.dataset.id }}/" title="">{{ scope.dataset.title }}</a>
+        <span class="label label-default place-openness" data-score="{{ scope.entry.score or ODI.na }}">{{ scope.entry.score }}%</span>
+      </h1>
+      <p class="lead">
+        <strong>#{{ scope.entry.rank }} {{ gettext('in the Index') }}</strong>
+        {% if entry_previous and entry_previous.rank %}
+          <br>
+          <small>
+            {% if entry_previous.rank|int >
+               scope.entry.rank|int
+            %}
+            {{ scope.higher }}
+            {% elif entry_previous.rank|int <
+               scope.entry.rank|int
+            %}
+            {{ scope.lower }}
+            {% else %}
+            {{ scope.no_change }}
+            {% endif %}
+            from #{{ entry_previous.rank }} in {{ ODI.previous_year }}
+          </small>
+        {% endif %}
+      </p>
+      {{ page.content }}
+      {{ history(page, ODI, fragment) }}
+      {{ share(page, ODI, fragment) }}
+    </div>
+    <div class="col-md-6">
+      <div id="map-container">
+        {% include 'dataviews/embed_map.html' %}
+      </div>
+    </div>
+  </div>
+</header>
 
 <section>
     {{ scope.dataset.description|markdown }}

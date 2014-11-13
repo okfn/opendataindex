@@ -56,22 +56,9 @@ define(['jquery', 'pubsub'], function($, pubsub) {
         $.get(api.geo)
           .done(function(data) {
             d.places = place_data;
-
-            // add centroid to properies of each feature
-            _.each(data.features, function(value) {
-                if (value.geometry.type === 'Polygon') {
-                    value.properties.centroid = getCentroidFromPolygon(
-                        value.geometry.coordinates);
-                } else {
-                    value.properties.centroid = getCentroidFromPolygon(
-                        value.geometry.coordinates[0]);
-                }
-            });
-
             d.geo = data;
             pubsub.publish(topics.places, d);
         });
-
     }
 
     /**
@@ -104,29 +91,10 @@ define(['jquery', 'pubsub'], function($, pubsub) {
         getEntryData();
     }
 
-    function getCentroidFromPolygon(polygon) {
-        // adapted from Leaflet's getCenter
-        var i, j, len, p1, p2, f, area, x, y,
-            points = polygon[0];
-
-        area = x = y = 0;
-
-        for (i = 0, len = points.length, j = len - 1; i < len; j = i++) {
-                p1 = points[i];
-                p2 = points[j];
-                f = p1[1] * p2[0] - p2[1] * p1[0];
-                x += (p1[0] + p2[0]) * f;
-                y += (p1[1] + p2[1]) * f;
-                area += f * 3;
-        }
-        return [x / area, y / area];
-    }
-
     return {
         init: initData,
         topics: topics
     };
-
 });
 
 

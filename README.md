@@ -102,9 +102,12 @@ The use case for this is to enable embedding of a particular state. The uiState 
             legend: true,
         },
         map: {
-            lat: '20.0',
-            long: '5.0',
             place: undefined
+        },
+        embed: {
+            width: '100%', // min-width for the map is 430px
+            height: '508px',// min-height for the map is 430px
+            title: 'Open Data Index'
         },
         asQueryString: undefined
     }
@@ -121,6 +124,9 @@ These defaults can be customized on initialisation of the map via URL params (a 
 * `panel_help`
 * `panel_legend`
 * `map_place`
+* `embed_width`
+* `embed_height`
+* `embed_title`
 
 An example query:
 

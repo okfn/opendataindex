@@ -189,6 +189,7 @@ class Populate(object):
             filepath = os.path.join(dirpath, self.file)
             filecontext = {
                 'place_name': place['name'],
+                'place_encname': place['name'].replace(',', '').replace(' ', '%20'),
                 'place_id': place['id'],
                 'place_slug': place['slug'],
                 'year': self.current_year,
@@ -248,6 +249,7 @@ class Populate(object):
                 filepath = os.path.join(dirpath, self.file)
                 filecontext = {
                     'place_name': place['name'],
+                    'place_encname': place['name'].replace(',', '').replace(' ', '%20'),
                     'place_id': place['id'],
                     'place_slug': place['slug'],
                     'dataset_name': dataset['title'],
@@ -329,7 +331,7 @@ title: {place_name}
 slug: place/{place_slug}
 place: {place_id}
 year: {year}
-alias: /country/overview/{place_name}/
+alias: /country/overview/{place_encname}/
 """
 
 
@@ -349,7 +351,7 @@ slug: place/{place_slug}/{dataset_id}
 place: {place_id}
 dataset: {dataset_id}
 year: {year}
-alias: /country/overview/{place_name}/{dataset_id}/
+alias: /country/overview/{place_encname}/{dataset_id}/
 """
 
 

@@ -10,7 +10,7 @@ ar,Argentina,argentina,Silvana Fumega,LATAM,Americas,18,47,,,Martín Szyszlican,
 am,Armenia,armenia,,Europe,Europe,,,,,,
 aw,Aruba,aruba,,LATAM,Americas,,,,,Nick Ingalls,
 au,Australia,australia,,Oceania,Oceania,66,12,66,8,Alex Sadleir,
-at,Austria,austria,Sander van der Waal,Europe,Europe,51,17,51,16,,Sander van der Waal
+at,Austria,austria,,Europe,Europe,51,17,51,16,Mathias Huter,
 az,Azerbaijan,azerbaijan,,Asia,Asia,,,,,,
 bs,Bahamas,bahamas,Christian Villum,LATAM,Americas,24,41,24,35,Christian Villum,Christian Villum
 bh,Bahrain,bahrain,Rayna Stamboliyska,MENA,Asia,16,48,16,38,Rayna Stamboliyska,Rayna Stamboliyska
@@ -22,13 +22,13 @@ bz,Belize,belize,,LATAM,Americas,,,,,Nick Ingalls,
 bj,Benin,benin,,Africa,Africa,19,46,,,Pierre Chrzanowski,
 bm,Bermuda,bermuda,,LATAM,Americas,36,32,36,27,Louis Galipeau,
 bt,Bhutan,bhutan,,Asia,Asia,1,56,,,Rufus Pollock,
-bo,"Bolivia, Plurinational State of",bolivia-plurinational-state-of,,LATAM,Americas,,,,,Anonymous,
+bo,"Bolivia, Plurinational State of",bolivia,,LATAM,Americas,,,,,Anonymous,
 bq,"Bonaire, Sint Eustatius and Saba",bonaire-sint-eustatius-and-saba,,LATAM,Americas,,,,,,
 ba,Bosnia and Herzegovina,bosnia-and-herzegovina,Stevan Gostojić,Europe,Europe,23,42,,,Mor Rubinstein,Stevan Gostojić
 bw,Botswana,botswana,,Africa,Africa,0,57,,,Mor Rubinstein,
 bv,Bouvet Island,bouvet-island,,Europe,Europe,,,,,,
 br,Brazil,brazil,,LATAM,Americas,48,20,48,17,Erick Muzart Fonseca dos Santos,
-bn,Brunei Darussalam,brunei-darussalam,,Asia,Asia,,,,,,
+bn,Brunei Darussalam,brunei,,Asia,Asia,,,,,,
 bg,Bulgaria,bulgaria,,Europe,Europe,52,16,52,15,Mor Rubinstein,
 bf,Burkina Faso,burkina-faso,Idriss TINTO,Africa,Africa,47,21,37,26,T. Idriss TINTO,Idriss TINTO
 bi,Burundi,burundi,,Asia,Asia,,,,,Nick Ingalls,
@@ -45,13 +45,13 @@ cx,Christmas Island,christmas-island,,Oceania,Oceania,,,,,,
 co,Colombia,colombia,,LATAM,Americas,,,,,Lina Gomez,
 km,Comoros,comoros,,Africa,Africa,,,,,Nick Ingalls,
 cg,Congo,congo,,Africa,Africa,,,,,Nick Ingalls,
-cd,"Congo, the Democratic Republic of the",congo-the-democratic-republic-of-the,,Africa,Africa,,,,,Nick Ingalls,
+cd,"Congo, the Democratic Republic of the",congo-democratic-republic,,Africa,Africa,,,,,Nick Ingalls,
 cr,Costa Rica,costa-rica,,LATAM,Americas,35,33,35,28,Ignacio Alfaro,
-ci,Côte d'Ivoire,côte-d'ivoire,,Africa,Africa,,,,,Sarah Clavel,
+ci,Côte d'Ivoire,cote-divoire,,Africa,Africa,,,,,Sarah Clavel,
 hr,Croatia,croatia,,Europe,Europe,45,23,45,20,Drazen Hoffmann,
 cu,Cuba,cuba,,North America,Americas,,,,,,
 cy,Cyprus,cyprus,Andreas P,Asia,Asia,21,44,3,45,Anonymous,Andreas P
-cz,Czech Republic,czech-republic,Michaela Rybičková,Europe,Europe,68,10,45,20,Michaela Rybičková,Michaela Rybičková
+cz,Czech Republic,czech-republic,Michaela Rybičková,Europe,Europe,65,13,45,20,Michaela Rybičková,Michaela Rybičková
 dk,Denmark,denmark,,Europe,Europe,87,2,87,2,Niels Erik Kaaber Rasmussen,
 dj,Djibouti,djibouti,,Africa,Africa,,,,,Nick Ingalls,
 dm,Dominica,dominica,,LATAM,Americas,,,,,Nick Ingalls,
@@ -64,7 +64,7 @@ er,Eritrea,eritrea,,Africa,Africa,,,,,Nick Ingalls,
 ee,Estonia,estonia,,Europe,Europe,,,,,,
 et,Ethiopia,ethiopia,,Africa,Africa,,,,,,
 fj,Fiji,fiji,,Oceania,Oceania,,,,,Nick Ingalls,
-fi,Finland,finland,,Europe,Europe,72,7,72,6,Heli Mikkelä,
+fi,Finland,finland,,Europe,Europe,72,7,72,6,Margit Suurhasko,
 fr,France,france,Pierre Chrzanowski,Europe,Europe,70,8,59,10,Pierre Chrzanowski,Pierre Chrzanowski
 gf,French Guiana,french-guiana,,LATAM,Americas,,,,,,
 pf,French Polynesia,french-polynesia,,Oceania,Oceania,,,,,,
@@ -84,18 +84,18 @@ gn,Guinea,guinea,,Africa,Africa,,,,,DIALLO Aboubacar,
 gw,Guinea-Bissau,guinea-bissau,,Africa,Africa,,,,,Janet Gunter,
 gy,Guyana,guyana,,LATAM,Americas,,,,,Nick Ingalls,
 ht,Haiti,haiti,,LATAM,Americas,,,,,Pierre Chrzanowski,
-va,Holy See (Vatican City State),holy-see-(vatican-city-state),Graeme Jones,Europe,Europe,1,56,,,Graeme Jones,Graeme Jones
+va,Holy See (Vatican City State),vatican-city,Graeme Jones,Europe,Europe,1,56,,,Graeme Jones,Graeme Jones
 hn,Honduras,honduras,,LATAM,Americas,,,,,,
 hk,Hong Kong,hong-kong,,Asia,Asia,27,40,27,34,Haruka Nakamura,
 hu,Hungary,hungary,,Europe,Europe,42,26,42,23,Anna Orosz,
 is,Iceland,iceland,Páll Hilmarsson,Europe,Europe,67,11,55,13,Tryggvi Björgvinsson,Páll Hilmarsson
 in,India,india,,Asia,Asia,46,22,46,19,SUSIL KUMAR Sahoo,
-id,Indonesia,indonesia,,Asia,Asia,42,26,42,23,Diah Setiawaty,
-ir,"Iran, Islamic Republic of",iran-islamic-republic-of,,MENA,Asia,,,,,Morteza Milani,
+id,Indonesia,indonesia,,Asia,Asia,42,26,42,23,Yuandra Ismiraldi,
+ir,"Iran, Islamic Republic of",iran,,MENA,Asia,,,,,Morteza Milani,
 iq,Iraq,iraq,,MENA,Asia,,,,,,
 ie,Ireland,ireland,,Europe,Europe,40,28,40,24,Denis Parfenov,
 im,Isle of Man,isle-of-man,Graeme Jones,Europe,Europe,76,4,55,13,Graeme Jones,Graeme Jones
-il,Israel,israel,Mor Rubinstein,,,49,19,48,17,ido ivri,Mor Rubinstein
+il,Israel,israel,Mor Rubinstein,,,48,20,48,17,Anonymous,Mor Rubinstein
 it,Italy,italy,Maurizio Napolitano,Europe,Europe,59,14,52,15,Maurizio Napolitano,Maurizio Napolitano
 jm,Jamaica,jamaica,,LATAM,Americas,,,,,Geez,
 jp,Japan,japan,,Asia,Asia,69,9,46,19,Pierre Chrzanowski,
@@ -104,12 +104,12 @@ jo,Jordan,jordan,,MENA,Asia,,,,,Mohammad Fraij,
 kz,Kazakhstan,kazakhstan,,Asia,Asia,,,,,,
 ke,Kenya,kenya,,Africa,Africa,20,45,20,37,Anonymous,
 ki,Kiribati,kiribati,,Oceania,Oceania,,,,,Nick Ingalls,
-kp,"Korea, Democratic People's Republic of",korea-democratic-people's-republic-of,,Asia,Asia,,,,,,
-kr,"Korea, Republic of",korea-republic-of,,Asia,Asia,43,25,43,22,Young-Je Lim,
+kp,"Korea, Democratic People's Republic of",north-korea,,Asia,Asia,,,,,,
+kr,"Korea, Republic of",south-korea,,Asia,Asia,43,25,43,22,Young-Je Lim,
 kw,Kuwait,kuwait,,MENA,Asia,,,,,,
 ko,Kosovo,kosovo,,Europe,Europe,23,42,,,Arianit Dobroshi,
 kg,Kyrgyzstan,kyrgyzstan,,Asia,Asia,,,,,,
-la,Lao People's Democratic Republic,lao-people's-democratic-republic,,Asia,Asia,,,,,,
+la,Lao People's Democratic Republic,lao,,Asia,Asia,,,,,,
 lv,Latvia,latvia,,Europe,Europe,,,,,Uldis Bojars,
 lb,Lebanon,lebanon,,MENA,Asia,,,,,Heidi Jaafar,
 ls,Lesotho,lesotho,,Africa,Africa,,,,,Ciarán Staunton,
@@ -119,7 +119,7 @@ li,Liechtenstein,liechtenstein,,Europe,Europe,,,,,,
 lt,Lithuania,lithuania,,Europe,Europe,32,36,32,30,Karolis Granickas,
 lu,Luxembourg,luxembourg,,Europe,Europe,,,,,,
 mo,Macao,macao,,Asia,Asia,,,,,Nick Ingalls,
-mk,"Macedonia, the Former Yugoslav Republic of",macedonia-the-former-yugoslav-republic-of,,Europe,Europe,,,,,Metamorphosis Foundation,
+mk,"Macedonia, the Former Yugoslav Republic of",macedonia,,Europe,Europe,,,,,Metamorphosis Foundation,
 mg,Madagascar,madagascar,,Africa,Africa,,,,,,
 mw,Malawi,malawi,,Africa,Africa,,,,,,
 my,Malaysia,malaysia,,Asia,Asia,,,,,Khairil Yusof,
@@ -130,8 +130,8 @@ mh,Marshall Islands,marshall-islands,,Oceania,Oceania,,,,,,
 mr,Mauritania,mauritania,,Africa,Africa,,,,,Nick Ingalls,
 mu,Mauritius,mauritius,,Africa,Africa,,,,,Nick Ingalls,
 mx,Mexico,mexico,,LATAM,Americas,47,21,47,18,Enrique Zapata,
-fm,"Micronesia, Federated States of",micronesia-federated-states-of,Victoria Vlad,Oceania,Oceania,,,,,,Victoria Vlad
-md,"Moldova, Republic of",moldova-republic-of,Ovidiu Voicu,Europe,Europe,53,15,53,14,Victoria Vlad,Ovidiu Voicu
+fm,"Micronesia, Federated States of",micronesia,Victoria Vlad,Oceania,Oceania,,,,,,Victoria Vlad
+md,"Moldova, Republic of",moldova,Ovidiu Voicu,Europe,Europe,53,15,53,14,Victoria Vlad,Ovidiu Voicu
 mc,Monaco,monaco,,Europe,Europe,,,,,Josep Miquel Serrano Jurado,
 mn,Mongolia,mongolia,,Asia,Asia,,,,,,
 me,Montenegro,montenegro,,Europe,Europe,,,,,Anonymous,
@@ -150,7 +150,7 @@ ng,Nigeria,nigeria,Oluseun Onigbinde,Africa,Africa,28,39,28,33,Oludotun Babayemi
 no,Norway,norway,,Europe,Europe,76,4,76,3,Øystein Åsnes,
 om,Oman,oman,,MENA,Asia,7,53,7,43,Riyadh Al-Balushi,
 pk,Pakistan,pakistan,Nouman Nazim,Asia,Asia,49,19,16,38,Mujtaba Hussain,Nouman Nazim
-ps,"Palestine, State of",palestine-state-of,,MENA,Asia,,,,,,
+ps,"Palestine, State of",palestine,,MENA,Asia,,,,,,
 pa,Panama,panama,,LATAM,Americas,,,,,Luis López,
 pg,Papua New Guinea,papua-new-guinea,,Oceania,Oceania,,,,,,
 py,Paraguay,paraguay,Mor Rubinstein,LATAM,Americas,46,22,,,Pablo Lopez,Mor Rubinstein
@@ -161,11 +161,11 @@ pt,Portugal,portugal,Ricardo Lafuente,Europe,Europe,50,18,56,12,Ana Carvalho,Ric
 pr,Puerto Rico,puerto-rico,,LATAM,Americas,,,,,,
 qa,Qatar,qatar,,MENA,Asia,,,,,Riyadh Al-Balushi,
 ro,Romania,romania,Silviu Vert,Europe,Europe,75,5,58,11,Ovidiu Voicu,Silviu Vert
-ru,Russian Federation,russian-federation,,Europe,Europe,43,25,43,22,Irina Radchenko,
+ru,Russian Federation,russia,,Europe,Europe,43,25,43,22,Irina Radchenko,
 rw,Rwanda,rwanda,,Africa,Africa,,,,,Stephen Abbott Pugh,
 kn,Saint Kitts and Nevis,saint-kitts-and-nevis,,Asia,Asia,9,51,9,42,,
 lc,Saint Lucia,saint-lucia,Graeme Jones,LATAM,Americas,5,54,5,44,Graeme Jones,Graeme Jones
-mf,Saint Martin (French part),saint-martin-(french-part),,Europe,Europe,,,,,,
+mf,Saint Martin (French part),saint-martin,,Europe,Europe,,,,,,
 pm,Saint Pierre and Miquelon,saint-pierre-and-miquelon,,Europe,Europe,,,,,,
 sa,Saudi Arabia,saudi-arabia,Christian Villum,MENA,Asia,28,39,28,33,Christian Villum,Christian Villum
 sn,Senegal,senegal,,Africa,Africa,22,43,22,36,Mor Rubinstein,
@@ -173,12 +173,12 @@ rs,Serbia,serbia,,Europe,Europe,44,24,44,21,Stevan Gostojić,
 sc,Seychelles,seychelles,,Africa,Africa,,,,,,
 sl,Sierra Leone,sierra-leone,,Africa,Africa,,,,,Pierre Chrzanowski,
 sg,Singapore,singapore,Christian Villum,Asia,Asia,34,34,34,29,Christian Villum,Christian Villum
-sx,Sint Maarten (Dutch part),sint-maarten-(dutch-part),,,,,,,,Ľubor Illek,
+sx,Sint Maarten (Dutch part),sint-maarten,,,,,,,,Ľubor Illek,
 sk,Slovakia,slovakia,Jano Suchal,Europe,Europe,35,33,39,25,Peter Hanecak,Jano Suchal
 si,Slovenia,slovenia,,Europe,Europe,73,6,73,5,Anonymous,
 sb,Solomon Islands,solomon-islands,,Oceania,Oceania,,,,,,
 so,Somalia,somalia,,Africa,Africa,,,,,,
-za,South Africa,south-africa,,Africa,Africa,32,36,32,30,sarah levi,
+za,South Africa,south-africa,,Africa,Africa,32,36,32,30,Francois van Schalkwyk,
 ss,South Sudan,south-sudan,,Africa,Africa,,,,,,
 es,Spain,spain,,Europe,Europe,46,22,46,19,José Félix Ontañón,
 lk,Sri Lanka,sri-lanka,,Asia,Asia,,,,,,
@@ -186,29 +186,29 @@ sd,Sudan,sudan,,MENA,Africa,,,,,,
 sr,Suriname,suriname,,LATAM,Americas,,,,,,
 sz,Swaziland,swaziland,,Africa,Africa,,,,,,
 se,Sweden,sweden,,Europe,Europe,68,10,67,7,Asmen Gül,
-ch,Switzerland,switzerland,,Europe,Europe,59,14,59,10,Oleg Lavrovsky,
-tw,Taiwan,taiwan,,Asia,Asia,47,21,42,23,TH Schee,
+ch,Switzerland,switzerland,Oleg Lavrovsky,Europe,Europe,59,14,59,10,Oleg Lavrovsky,Oleg Lavrovsky
+tw,Taiwan,taiwan,Ying Chu Chen,Asia,Asia,75,5,42,23,TH Schee,Ying Chu Chen
 tj,Tajikistan,tajikistan,,Asia,Asia,,,,,,
-tz,"Tanzania, United Republic of",tanzania-united-republic-of,,Africa,Africa,,,,,Anonymous,
+tz,"Tanzania, United Republic of",tanzania,Joachim Mangilima,Africa,Africa,23,42,,,Anonymous,Joachim Mangilima
 th,Thailand,thailand,,Asia,Asia,,,,,Surasak Suksathit,
 tg,Togo,togo,,Africa,Africa,,,,,,
 tt,Trinidad and Tobago,trinidad-and-tobago,,Americas,Americas,,,,,Geez,
 tn,Tunisia,tunisia,Rayna St,MENA,Africa,34,34,34,29,Rayna St,Rayna St
-tr,Turkey,turkey,,Asia,Asia,,,,,@emrekko,
+tr,Turkey,turkey,,Asia,Asia,49,19,,,@emrekko,
 tm,Turkmenistan,turkmenistan,Graeme Jones,Asia,Asia,,,,,Graeme Jones,Graeme Jones
 tc,Turks and Caicos Islands,turks-and-caicos-islands,,Americas,Americas,3,55,3,45,,
 ug,Uganda,uganda,,Africa,Africa,,,,,Reinier Battenberg,
 ua,Ukraine,ukraine,,Europe,Europe,33,35,,,Denis Gursky,
 ae,United Arab Emirates,united-arab-emirates,Graeme Jones,MENA,UAE,8,52,,,Graeme Jones,Graeme Jones
-gb,United Kingdom,united-kingdom,,Europe,Europe,94,1,94,1,Anonymous,
+gb,United Kingdom,united-kingdom,,Europe,Europe,94,1,94,1,Iain Emsley,
 us,United States,united-states,,Americas,Americas,87,2,87,2,Neal Bastek,
 um,United States Minor Outlying Islands,united-states-minor-outlying-islands,,Americas,Americas,,,,,,
 uy,Uruguay,uruguay,,LATAM,Americas,77,3,,,Daniel Carranza (Chino),
 uz,Uzbekistan,uzbekistan,,Asia,Asia,,,,,,
-ve,"Venezuela, Bolivarian Republic of",venezuela-bolivarian-republic-of,,LATAM,Americas,,,,,Gerardo,
-vn,Viet Nam,viet-nam,,Asia,Asia,,,,,Nguyễn Quốc Tuấn,
+ve,"Venezuela, Bolivarian Republic of",venezuela,,LATAM,Americas,,,,,Gerardo,
+vn,Viet Nam,vietnam,,Asia,Asia,,,,,Nguyễn Quốc Tuấn,
 vg,"Virgin Islands, British",virgin-islands-british,,Americas,Americas,13,50,13,40,,
-vi,"Virgin Islands, U.S.",virgin-islands-u.s.,Graeme Jones,Americas,Americas,9,51,,,Graeme Jones,Graeme Jones
+vi,"Virgin Islands, U.S.",virgin-islands-us,Graeme Jones,Americas,Americas,9,51,,,Graeme Jones,Graeme Jones
 ye,Yemen,yemen,Rayna Stamboliyska,MENA,Asia,14,49,14,39,,Rayna Stamboliyska
 zm,Zambia,zambia,,Africa,Africa,,,,,Likumbi Kapihya,
 zw,Zimbabwe,zimbabwe,,Africa,Africa,,,,,,

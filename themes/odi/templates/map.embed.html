@@ -15,12 +15,15 @@
 {% block content %}
 <div class="odi-vis odi-vis-choropleth">
     <div class="odi-vis-view">
-        <div class="odi-vis-display"><div id="map"></div></div>
+        <div class="odi-vis-display">
+            <div id="map"></div>
+            <div class="odi-vis-title"></div>
+        </div>
     </div>
     <div class="odi-vis-meta">
         <div class="odi-vis-meta-left">
 
-            <a class="odi-vis-logo" target="_parent" href="{{ ODI.sponsor.domain }}" title="{{ gettext('Go to the %(sponsor)s website', sponsor=ODI.sponsor.name) }}">&nbsp;</a>
+            <a class="odi-vis-logo" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">&nbsp;</a>
 
             <a class="odi-vis-name" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">{{ SITENAME }}</a>
 
@@ -38,7 +41,7 @@
             <div class="odi-vis-legend odi-vis-show-info"
                  title="{{ gettext('Information on the how to read the map') }}"
                  data-title="{{ gettext('How to read the map') }}"
-                 data-text="{{ gettext('This visualisation presents data from the Open Data Index on a choropleth map. Each place is coloured according to the score it received in the Index for the current data view, where green is best (100&#37; open data) and red is worst (0&#37; open data). Places in grey were not in the Index (no data was collected). Click on any place for more information and to further navigation to a detail page of the results for that place.') }}">
+                 data-text="{{ gettext('This visualisation presents data from the Open Data Index on a choropleth map, colour-coded based on score.') }}">
                 <ul>
                     <li data-score="0">&nbsp;</li>
                     <li data-score="100">&nbsp;</li>
@@ -55,7 +58,7 @@
             <div class="odi-vis-embed odi-vis-show-info"
                  title="{{ gettext('Embed this visualisation') }}"
                  data-title="{{ gettext('Embed this visualisation') }}"
-                 data-text="{{ gettext('This visualisation can be embedded anywhere you can put HTML. You probably need to know a bit about how this works. Copy the embed code below, and adjust the params as required for your website.') }}">
+                 data-text="{{ gettext('Copy the embed code below, and adjust the params as required for your website.') }}">
                 <span class="odi-vis-action"><i class="fa fa-code"></i></span>
             </div>
 
@@ -72,7 +75,7 @@
 
 <!--Templates for LoDash-->
 <script type="text/template" class="info-box">
-    <div class="odi-vis-info-title"><%= title %><span class="odi-vis-info-close" title="something for nothing"><i class="fa fa-close"></i></span></div>
+    <div class="odi-vis-info-title"><%= title %><span class="odi-vis-info-close"><i class="fa fa-close"></i></span></div>
     <div class="odi-vis-info-text"><%= text %></div>
     <%= embed_code %>
 </script>
@@ -93,6 +96,10 @@
 
 <script type="text/template" class="year-options">
     <option value="<%= year %>" <%= selected %>><%= year %></option>
+</script>
+
+<script type="text/template" class="title-box">
+    <%= title %>
 </script>
 
 <script type="text/template" class="dataset-options">

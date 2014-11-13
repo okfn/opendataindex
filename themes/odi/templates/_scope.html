@@ -50,11 +50,23 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 
 {# resolve place and dataset args to full objects, if page has them #}
 {% if page.place %}
-    {% do scope.update({'place': scope.places|where('id', page.place)|first}) %}
+    {% do scope.update({
+        'place': scope.places|where('id', page.place)|first,
+        'entries': scope.entries|where('place', page.place)
+    }) %}
 {% endif %}
 
 {% if page.dataset %}
-    {% do scope.update({'dataset': scope.datasets|where('id', page.dataset)|first}) %}
+    {% do scope.update({
+        'dataset': scope.datasets|where('id', page.dataset)|first,
+        'entries': scope.entries|where('dataset', page.dataset)
+    }) %}
+{% endif %}
+
+{% if page.place and page.dataset and page.year %}
+    {% do scope.update({
+        'entry': scope.entries|where('year', page.year)|first,
+    }) %}
 {% endif %}
 
 {# helpers for text when comparing two scores or ranks #}
@@ -65,9 +77,31 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 })%}
 
 {# pass config into the map vis #}
+{% if page.year %}
+    {% set filter_year = page.year %}
+{% else %}
+    {% set filter_year = ODI.current_year %}
+{% endif %}
+
+{% if page.dataset %}
+    {% set filter_dataset = page.dataset %}
+{% else %}
+    {% set filter_dataset = 'all' %}
+{% endif %}
+
+{% if page.place %}
+    {% set map_place = scope.place.id %}
+{% else %}
+    {% set map_place = '' %}
+{% endif %}
+
 {% do scope.update({
     'embed_width': '100%',
     'embed_height': '508px',
+    'embed_title': '',
+    'filter_year': filter_year,
+    'filter_dataset': filter_dataset,
     'panel_tools': 'true',
-    'panel_share': 'true'
+    'panel_share': 'true',
+    'map_place': map_place
 }) %}
