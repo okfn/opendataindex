@@ -124,7 +124,7 @@ textarea {
 #summary-stats {
   margin-top: 40px;
   margin-bottom: 20px;
-  .col-md-3 {
+  .stat {
     text-align: center;
     strong {
       padding: 5px 10px;
@@ -155,9 +155,18 @@ textarea {
     font-weight: 300;
     font-size: 2.8em;
   }
-  .col-md-3 strong {
-    color: white;
-    background-color: black;
+  .stat {
+    font-size: 125%;
+    i {
+      font-size: 2em;
+      font-style: normal;
+      margin: 0 .1em;
+      font-weight: 300;
+    }
+    strong {
+      color: white;
+      background-color: black;
+    }
   }
 }
 
@@ -171,6 +180,37 @@ textarea {
 .data-table {
   thead th {
     font-size: 14px;
+  }
+}
+
+#slice-table {
+  tr.details {
+    background-color: @color-okf-grey;
+  }
+  td {
+    &.breakdown {
+      padding: 5px 8px;
+    }
+    &.info-expander {
+      padding: 0;
+      a {
+        display: block;
+        cursor: pointer;
+        padding: 8px;
+        text-align: center;
+        color: black;
+        background-color: #DDD;
+        &.collapsed {
+          color: @link-color;
+          background-color: transparent;
+          &:hover,
+          &:focus
+          &:active {
+            background-color: @color-okf-grey;
+          }
+        }
+      }
+    }
   }
 }
 
