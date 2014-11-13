@@ -89,8 +89,6 @@ define(['leaflet', 'leaflet_zoommin', 'jquery', 'pubsub', 'lodash', 'chroma', 'm
                 legend: true,
             },
             map: {
-                lat: '20.0',
-                long: '5.0',
                 place: undefined
             },
             asQueryString: undefined
