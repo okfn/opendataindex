@@ -8193,6 +8193,9 @@ textarea {
   color: white;
   background-color: black;
 }
+#home-stats .burst {
+  font-size: 175%;
+}
 #place-intro h1 .label {
   padding: .2em .6em;
   font-weight: 200;
@@ -8414,4 +8417,7 @@ h1 .dataset-openness {
 #slice-table thead tr th:last-child {
   cursor: pointer;
   color: #262626;
+}
+.uppercase {
+  text-transform: uppercase;
 }
