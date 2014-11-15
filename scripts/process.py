@@ -341,23 +341,21 @@ class Extractor(object):
         # set reviewers and submitters
         submitreviewlookup = {}
         for submission in self.submissions.dicts:
-            if submitreviewlookup.get('place'):
-                submitreviewlookup['place']['submitters'] += u'{0}{1}'.format(
-                    ';', submission['submitter'])
-                submitreviewlookup['place']['reviewers'] += u'{0}{1}'.format(
-                    ';', submission['reviewer'])
+            if submitreviewlookup.get(submission['place']):
+                submitreviewlookup[submission['place']]['submitters'].append(submission['submitter'])
+                submitreviewlookup[submission['place']]['reviewers'].append(submission['reviewer'])
             else:
                 submitreviewlookup.update({
                     submission['place']: {
-                        'reviewers': submission['reviewer'],
-                        'submitters': submission['submitter']
+                        'reviewers': [submission['reviewer']],
+                        'submitters': [submission['submitter']]
                     }
                 })
 
         for place in self.places.dicts:
             if place['id'] in submitreviewlookup:
-                place['submitters'] = submitreviewlookup[place['id']]['submitters']
-                place['reviewers'] = submitreviewlookup[place['id']]['reviewers']
+                place['submitters'] = ';;'.join(set([s for s in submitreviewlookup[place['id']]['submitters'] if s]))
+                place['reviewers'] = ';;'.join(set([r for r in submitreviewlookup[place['id']]['reviewers'] if r]))
 
         self._write_csv(self.places.dicts, 'data/places.csv', fieldnames)
 

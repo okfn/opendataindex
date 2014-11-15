@@ -68,7 +68,7 @@ PLUGINS = [
 DATASTORE = {
     'location': os.path.join(PROJECT_ROOT, 'data'),
     'formats': ['.csv'],
-    'intrafield_delimiter': ';',
+    'intrafield_delimiter': ';;',
     'true_strings': ['TRUE', 'True', 'true'],
     'false_strings': ['FALSE', 'False', 'false'],
     'none_strings': ['NULL', 'Null', 'null', 'NONE', 'None', 'none',
