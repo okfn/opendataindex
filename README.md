@@ -88,26 +88,23 @@ The state of the map is configurable: internally, via the uiState object, and vi
 The use case for this is to enable embedding of a particular state. The uiState object has the following defaults:
 
     uiStateDefaults = {
+        embed: {
+            width: '100%', // min-width for the map is 460px
+            height: '100%',// min-height for the map is 460px
+            title: 'Open Data Index'
+        },
         filter: {
             year: currentYear,
             dataset: 'all'
         },
         panel: {
-            logo: true,
             name: true,
             tools: true,
-            share: true,
-            embed: true,
             help: true,
             legend: true,
         },
         map: {
             place: undefined
-        },
-        embed: {
-            width: '100%', // min-width for the map is 430px
-            height: '508px',// min-height for the map is 430px
-            title: 'Open Data Index'
         },
         asQueryString: undefined
     }
@@ -119,8 +116,6 @@ These defaults can be customized on initialisation of the map via URL params (a 
 * `panel_logo`
 * `panel_name`
 * `panel_tools`
-* `panel_share`
-* `panel_embed`
 * `panel_help`
 * `panel_legend`
 * `map_place`
@@ -128,9 +123,19 @@ These defaults can be customized on initialisation of the map via URL params (a 
 * `embed_height`
 * `embed_title`
 
-An example query:
+##### Examples
 
-* `http://index.okfn.org/vis/map/embed/?filter_year=2013&filter_dataset=timetables&panel_tools=false`
+1. 2014 / All datsets
+
+<iframe width="100%" height="460" src="http://staging.index.okfn.org/vis/map/embed/?embed_height=460" frameBorder="0"></iframe>
+
+`http://staging.index.okfn.org/vis/map/embed/?embed_height=460`
+
+2. 2014 / Government spending
+
+<iframe width="100%" height="460" src="http://staging.index.okfn.org/vis/map/embed?filter_dataset=spending&embed_height=460" frameBorder="0"></iframe>
+
+`http://staging.index.okfn.org/vis/map/embed?filter_dataset=spending&embed_height=460`
 
 ### Data tables
 

@@ -2,7 +2,10 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
 
     var $container = $('.odi-vis.odi-vis-choropleth'),
         $tools = $('.odi-vis-tools'),
-        $legend = $('.odi-vis-legend ul'),
+        $miniLegend = $('.odi-vis-legend ul'),
+        $fullLegend = $('.odi-vis-legend-full ul'),
+        $fullLegendTrigger = $('.odi-vis-show-legend-full'),
+        $fullLegendBox = $('.odi-vis-legend-full'),
         $display = $('.odi-vis-display'),
         $infoTrigger = $('.odi-vis-show-info'),
         $infoBox = $('.odi-vis-info'),
@@ -10,8 +13,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         $titleBox = $('.odi-vis-title'),
         $datasetFilter = $tools.find('.odi-filter-dataset').first(),
         $yearFilter = $tools.find('.odi-filter-year').first(),
-        $sharePanel = $('.odi-vis-share'),
-        $embedPanel = $('.odi-vis-embed'),
         $helpPanel = $('.odi-vis-help'),
         $toolsPanel = $('.odi-vis-tools'),
         topics = {
@@ -37,11 +38,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         map = leaflet.map('map', mapInitObj),
         geoLayer = setGeoLayer(),
         geoLayerLookup = {},
-        placeControl = leaflet.control(),
-        placeBoxClass = 'odi-vis-place',
-        placeBoxCloseClass = 'odi-vis-place-close',
-        placeBoxTmpl = _.template($('script.place-box').html()),
-        placeToolTipTmpl = _.template($('script.place-tooltip').html()),
         placeStyleBase = {
             weight: 1,
             opacity: 1,
@@ -54,11 +50,16 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             color: colorDark,
             dashArray: '',
         },
+        fullLegendCloseClass = 'odi-vis-legend-full-close',
+        placeControl = leaflet.control(),
+        placeBoxClass = 'odi-vis-place',
+        placeBoxCloseClass = 'odi-vis-place-close',
+        placeBoxTmpl = _.template($('script.place-box').html()),
+        placeToolTipTmpl = _.template($('script.place-tooltip').html()),
         infoBoxCloseClass = 'odi-vis-info-close',
         infoBoxTmpl = _.template($('script.info-box').html()),
         yearOptionsTmpl = _.template($('script.year-options').html()),
         datasetOptionsTmpl = _.template($('script.dataset-options').html()),
-        embedCodeTmpl = _.template($('script.embed-code').html()),
         titleBoxTmpl = _.template($('script.title-box').html()),
         dataStore = {
             meta: undefined,
@@ -80,11 +81,8 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                 dataset: 'all'
             },
             panel: {
-                logo: true,
                 name: true,
                 tools: true,
-                share: true,
-                embed: true,
                 help: true,
                 legend: true,
             },
@@ -223,12 +221,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         if (!data.panel.tools) {
             $toolsPanel.hide();
         }
-        if (!data.panel.share) {
-            $sharePanel.hide();
-        }
-        if (!data.panel.embed) {
-            $embedPanel.hide();
-        }
         if (!data.panel.help) {
             $helpPanel.hide();
         }
@@ -295,11 +287,8 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                 'embed_title',
                 'filter_year',
                 'filter_dataset',
-                'panel_logo',
                 'panel_name',
                 'panel_tools',
-                'panel_share',
-                'panel_embed',
                 'panel_help',
                 'panel_legend',
                 'map_place'
@@ -408,6 +397,8 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         addGeoDataToLayer(dataStore.geo);
         $placeBox.empty();
         $placeBox.hide();
+        $infoBox.empty();
+        $infoBox.hide();
     }
 
     /**
@@ -415,7 +406,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
      */
      function initMetaInfo() {
         var $this,
-            embedClass = 'odi-vis-embed',
             context = {},
             activeInfo = '_activeinfo';
 
@@ -431,6 +421,14 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             $placeBox.hide();
         });
 
+        $('body').on('click', '.'+fullLegendCloseClass, function () {
+            $fullLegendBox.hide();
+        });
+
+        $fullLegendTrigger.on('click', function() {
+            $fullLegendBox.toggle();
+        });
+
         $infoTrigger.on('click', function() {
             $this = $(this);
             if ($this.hasClass(activeInfo)) {
@@ -438,20 +436,12 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                 $infoBox.empty();
                 $infoBox.hide();
             } else {
-                context.title = $this.data('title');
-                context.text = marked($this.data('text'));
-                if ($this.hasClass(embedClass)) {
-                    // we want to always enforce certain
-                    // state conditions on embeds, so...
-                    var embedState = _.cloneDeep(uiState);
-                    embedState.panel.share = false;
-                    embedState.panel.embed = false;
-                    embedState.panel.tools = false;
-                    context.state_params = getStateQueryString(embedState);
-                    context.embed_code = embedCodeTmpl(context);
-                } else {
-                    context.embed_code = '';
-                }
+                // we want to always enforce certain
+                // state conditions on embeds, so...
+                var embedState = _.cloneDeep(uiState);
+                embedState.panel.tools = false;
+                context.state_params = getStateQueryString(embedState);
+
                 $this.siblings().removeClass(activeInfo);
                 $this.addClass(activeInfo);
                 $infoBox.html(infoBoxTmpl(context));
@@ -473,6 +463,14 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             $this = $(this);
             uiState.filter.dataset = $this.val();
             uiState.filter.year = $yearFilter.val();
+
+            if ($this.val() === 'improvement') {
+                $yearFilter.val(currentYear);
+                $yearFilter.attr('disabled', true);
+            } else {
+                $yearFilter.removeAttr('disabled');
+            }
+
             pubsub.publish(topics.tool_change, uiState);
         });
 
@@ -491,7 +489,13 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
         var $this,
             score;
 
-        _.each($legend.find('li'), function(value) {
+        _.each($miniLegend.find('li'), function(value) {
+            $this = $(value);
+            score = parseInt($this.data('score'), 10);
+            $this.css('background-color', colorScale(score).hex());
+        });
+
+        _.each($fullLegend.find('li'), function(value) {
             $this = $(value);
             score = parseInt($this.data('score'), 10);
             $this.css('background-color', colorScale(score).hex());
@@ -604,7 +608,7 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                     }
                 }
             } else if (uiState.filter.dataset === 'improvement') {
-            place = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
+            place = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
                 if (place) {
                     score = parseInt(place.improvement, 10);
                 }

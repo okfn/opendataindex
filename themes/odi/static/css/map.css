@@ -2649,6 +2649,7 @@ textarea {
   box-sizing: border-box;
   float: left;
   width: 100%;
+  position: relative;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-view {
   width: 100%;
@@ -2685,33 +2686,16 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-right {
   box-sizing: border-box;
   float: right;
-  width: 25%;
+  width: 20%;
   height: 100%;
   text-align: right;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-left {
   box-sizing: border-box;
   float: left;
-  width: 75%;
+  width: 80%;
   height: 100%;
   text-align: left;
-}
-.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-logo {
-  box-sizing: border-box;
-  float: left;
-  width: 3rem;
-  background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
-  background-repeat: no-repeat;
-  background-position: center -244px;
-  height: 38px;
-  cursor: pointer;
-  text-indent: -999px;
-  z-index: 1;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-logo {
-    display: none;
-  }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
   box-sizing: border-box;
@@ -2722,7 +2706,8 @@ textarea {
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
+    margin-top: 0.125rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
@@ -2738,38 +2723,8 @@ textarea {
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     padding-top: 0.25rem;
-  }
-}
-.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share {
-  box-sizing: border-box;
-  float: right;
-  width: 6rem;
-  font-size: 1.175rem;
-  padding: 0 0.5rem;
-  margin-top: -0.125rem;
-  text-align: center;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share {
-    display: none;
-    padding: 0 0.25rem;
-  }
-}
-.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-embed {
-  box-sizing: border-box;
-  float: right;
-  width: 1.25rem;
-  font-size: 1.175rem;
-  padding: 0 0.75rem;
-  margin-top: -0.125rem;
-  text-align: center;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-embed {
-    font-size: 1rem;
-    padding: 0 0.25rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
@@ -2783,27 +2738,22 @@ textarea {
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
-    font-size: 1rem;
-    padding: 0 0.25rem;
+    font-size: 1.125rem;
+    padding: 0 0.75rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
   box-sizing: border-box;
   float: right;
-  width: 3.125rem;
+  width: 3.875rem;
   font-size: 1.175rem;
-  padding-left: 0.25rem;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
-    font-size: 1rem;
-    width: 2.125rem;
-  }
+  padding-left: 0.75rem;
+  cursor: pointer;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
   box-sizing: border-box;
   float: left;
-  width: 2.125rem;
+  width: 3.125rem;
   float: right;
   height: 100%;
   display: block;
@@ -2814,7 +2764,7 @@ textarea {
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
-    width: 2.125rem;
+    width: 3.125rem;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
@@ -2832,12 +2782,44 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-show-info {
   cursor: pointer;
 }
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full {
+  padding: 1rem;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  color: #2d2d2d;
+  border-radius: 5px;
+  margin: 0.75rem;
+  min-height: 3rem;
+  height: 3rem;
+  width: 50%;
+  font-size: 0.75rem;
+  position: absolute;
+  top: -6.375rem;
+  left: 0;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full {
+    width: 80%;
+  }
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full ul {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full ul li {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
 .odi-vis.odi-vis-choropleth .odi-vis-info {
   padding: 1rem;
   word-wrap: break-word;
   background-color: #f5f5f5;
   color: #2d2d2d;
-  border: 2px solid #474747;
+  border-radius: 5px;
+  margin: 0.75rem;
   min-height: auto;
   height: auto;
   width: 50%;
@@ -2848,10 +2830,18 @@ textarea {
   left: 0.75rem;
   z-index: 101;
 }
+.odi-vis.odi-vis-choropleth .odi-vis-info .odi-vis-share {
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  font-size: 1.75rem;
+  line-height: 1rem;
+  padding: 0 0.75rem 0 0;
+}
 .odi-vis.odi-vis-choropleth .odi-vis-info-close,
-.odi-vis.odi-vis-choropleth .odi-vis-place-close {
+.odi-vis.odi-vis-choropleth .odi-vis-place-close,
+.odi-vis.odi-vis-choropleth .odi-vis-legend-full-close {
   float: right;
-  margin-top: 0.25rem;
   cursor: pointer;
   width: auto;
   height: auto;
@@ -2870,10 +2860,11 @@ textarea {
   word-wrap: break-word;
   background-color: #f5f5f5;
   color: #2d2d2d;
-  border: 2px solid #474747;
+  border-radius: 5px;
+  margin: 0.75rem;
   min-height: auto;
   height: auto;
-  width: 50%;
+  width: 30%;
   font-size: 0.75rem;
   display: none;
   position: absolute;
@@ -2925,21 +2916,42 @@ textarea {
   word-wrap: break-word;
   background-color: #f5f5f5;
   color: #2d2d2d;
-  border: 2px solid #474747;
+  border-radius: 5px;
+  margin: 0.75rem;
   min-height: 20px;
   height: 20px;
   width: 50%;
   font-size: 0.75rem;
-  z-index: 1;
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
+  z-index: 1;
+  margin: 0;
+  background-image: url(/static/images/logo-black.png);
   background-repeat: no-repeat;
-  background-position: left -240px;
-  text-indent: 48px;
+  text-indent: 2rem;
+  line-height: 1rem;
   text-align: left;
-  font-size: 12px;
+  font-size: 1.125rem;
   background-color: transparent !important;
-  border: none;
+}
+.odi-vis-info-section {
+  width: 50%;
+  float: left;
+}
+.odi-vis-info-subtitle {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.fa-google-plus-square {
+  color: #D34836;
+}
+.fa-twitter-square {
+  color: #4099FF;
+}
+.fa-facebook-square {
+  color: #3B5998;
+}
+.odi-vis-legend-full {
+  display: none;
 }

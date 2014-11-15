@@ -38,12 +38,13 @@
     width: @width;
 }
 
-.odi-display-panel(@width: 50%; @min-height: 411px; @height: 411px;) {
+.odi-display-panel(@width: 50%; @min-height: 430px; @height: 430px;) {
     padding: 1rem;
     word-wrap: break-word;
     background-color: @color-light;
     color: @color-dark;
-    border: 2px solid lighten(@color-dark, 10%);
+    border-radius: 5px;
+    margin: 0.75rem;
     min-height: @min-height;
     height: @height;
     width: @width;
@@ -101,7 +102,7 @@ html, body, input, select, textarea {
 
     .odi-vis-view, .odi-vis-meta {
         .layout-object();
-        //display: table;
+        position: relative;
     }
 
     // the view panel; where the vis is rendered
@@ -142,30 +143,15 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-meta-right {
-            .layout-object(@width: 25%; @float: right);
+            .layout-object(@width: 20%; @float: right);
             height: 100%;
             text-align: right;
         }
 
         .odi-vis-meta-left {
-            .layout-object(@width: 75%; @float: left);
+            .layout-object(@width: 80%; @float: left);
             height: 100%;
             text-align: left;
-        }
-
-        .odi-vis-logo {
-            .layout-object(3rem);
-            background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
-            background-repeat: no-repeat;
-            background-position: center -244px;
-            height: 38px;
-            cursor: pointer;
-            text-indent: -999px;
-            z-index: 1;
-
-            @media @max568 {
-                display: none;
-            }
         }
 
         .odi-vis-name {
@@ -174,7 +160,8 @@ html, body, input, select, textarea {
             text-transform: uppercase;
 
             @media @max568 {
-                font-size: 0.625rem;
+                font-size: 0.75rem;
+                margin-top: 0.125rem;
             }
         }
 
@@ -188,34 +175,8 @@ html, body, input, select, textarea {
             }
 
             @media @max568 {
-                font-size: 0.5rem;
+                font-size: 0.75rem;
                 padding-top: 0.25rem;
-            }
-        }
-
-        .odi-vis-share {
-            .layout-object(6rem; right);
-            font-size: 1.175rem;
-            padding: 0 0.5rem;
-            margin-top: -0.125rem;
-            text-align: center;
-
-            @media @max568 {
-                display: none;
-                padding: 0 0.25rem;
-            }
-        }
-
-        .odi-vis-embed {
-            .layout-object(1.25rem; right);
-            font-size: 1.175rem;
-            padding: 0 0.75rem;
-            margin-top: -0.125rem;
-            text-align: center;
-
-            @media @max568 {
-                font-size: 1rem;
-                padding: 0 0.25rem;
             }
         }
 
@@ -227,23 +188,23 @@ html, body, input, select, textarea {
             text-align: center;
 
             @media @max568 {
-                font-size: 1rem;
-                padding: 0 0.25rem;
+                font-size: 1.125rem;
+                padding: 0 0.75rem;
             }
         }
 
         .odi-vis-legend {
-            .layout-object(3.125rem; right);
+            .layout-object(3.875rem; right);
             font-size: 1.175rem;
-            padding-left: 0.25rem;
+            padding-left: 0.75rem;
+            cursor: pointer;
 
             @media @max568 {
-                font-size: 1rem;
-                width: 2.125rem;
+
             }
 
             ul {
-                .layout-object(2.125rem);
+                .layout-object(3.125rem);
                 float: right;
                 height: 100%;
                 display: block;
@@ -253,7 +214,7 @@ html, body, input, select, textarea {
                 border: 1px solid darken(@color-light, 17%);
 
                 @media @max568 {
-                    width: 2.125rem;
+                    width: 3.125rem;
                 }
             }
 
@@ -274,20 +235,51 @@ html, body, input, select, textarea {
             cursor: pointer;
         }
 
+        .odi-vis-legend-full {
+            .odi-display-panel(@width: 50%; @height: 3rem; @min-height: 3rem);
+            position: absolute;
+            top: -6.375rem;
+            left: 0;
+
+            @media @max568 {
+                width: 80%;
+            }
+
+            ul {
+                display: inline-block;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: inline-block;
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+        }
+
     }
 
     .odi-vis-info {
-        .odi-display-panel(@height: auto; @min-height: auto;);
+        .odi-display-panel(@width: 50%; @height: auto; @min-height: auto;);
         display: none;
         position: absolute;
         top: 0.75rem;
         left: 0.75rem;
         z-index: 101;
+
+        .odi-vis-share {
+            .layout-object();
+            font-size: 1.75rem;
+            line-height: 1rem;
+            padding: 0 0.75rem 0 0;
+
+        }
     }
 
-    .odi-vis-info-close, .odi-vis-place-close {
+    .odi-vis-info-close, .odi-vis-place-close, .odi-vis-legend-full-close {
         float: right;
-        margin-top: 0.25rem;
         cursor: pointer;
         width: auto;
         height: auto;
@@ -302,7 +294,7 @@ html, body, input, select, textarea {
     }
 
     .odi-vis-place {
-        .odi-display-panel(@height: auto; @min-height: auto;);
+        .odi-display-panel(@width: 30%; @height: auto; @min-height: auto;);
         display: none;
         position: absolute;
         top: 0.75rem;
@@ -361,16 +353,42 @@ html, body, input, select, textarea {
 
 .odi-vis-title {
     .odi-display-panel(50%; 20px; 20px);
-    z-index: 1;
     position: absolute;
     top: 0.75rem;
     left: 0.75rem;
-    background-image: url(http://assets.okfn.org/web/images/okf-ribbon.png);
+    z-index: 1;
+    margin: 0;
+    background-image: url(/static/images/logo-black.png);
     background-repeat: no-repeat;
-    background-position: left -240px;
-    text-indent: 48px;
+    text-indent: 2rem;
+    line-height: 1rem;
     text-align: left;
-    font-size: 12px;
+    font-size: 1.125rem;
     background-color: transparent !important;
-    border: none;
+}
+
+.odi-vis-info-section {
+    width: 50%;
+    float: left;
+}
+
+.odi-vis-info-subtitle {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.fa-google-plus-square {
+    color: #D34836;
+}
+
+.fa-twitter-square {
+    color: #4099FF;
+}
+
+.fa-facebook-square {
+    color: #3B5998;
+}
+
+.odi-vis-legend-full {
+    display: none;
 }

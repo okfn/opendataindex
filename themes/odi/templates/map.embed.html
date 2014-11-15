@@ -23,8 +23,6 @@
     <div class="odi-vis-meta">
         <div class="odi-vis-meta-left">
 
-            <!--a class="odi-vis-logo" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">&nbsp;</a-->
-
             <a class="odi-vis-name" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">{{ SITENAME }}</a>
 
             <div class="odi-vis-tools">
@@ -38,35 +36,39 @@
         </div>
         <div class="odi-vis-meta-right">
 
-            <div class="odi-vis-legend odi-vis-show-info"
-                 title="{{ gettext('Information on the how to read the map') }}"
-                 data-title="{{ gettext('How to read the map') }}"
-                 data-text="{{ gettext('This visualisation presents data from the Open Data Index on a choropleth map, colour-coded based on score.') }}">
+            <div class="odi-vis-legend odi-vis-show-legend-full" title="{{ gettext('How to read this visualisation') }}">
                 <ul>
                     <li data-score="0">&nbsp;</li>
+                    <li data-score="50">&nbsp;</li>
                     <li data-score="100">&nbsp;</li>
                 </ul>
             </div>
 
-            <div class="odi-vis-help odi-vis-show-info"
-                 title="{{ gettext('See the credits and license information') }}"
-                 data-title="{{ gettext('About and credits') }}"
-                 data-text="{{ gettext('The Open Data Index is an initiative of Open Knowledge. Information about licensing, and credits and copyright goes right here.') }}">
+            <div class="odi-vis-help odi-vis-show-info" title="{{ gettext('See the credits and license information') }}">
                 <span class="odi-vis-action"><i class="fa fa-info-circle"></i></span>
             </div>
 
-            <div class="odi-vis-embed odi-vis-show-info"
-                 title="{{ gettext('Embed this visualisation') }}"
-                 data-title="{{ gettext('Embed this visualisation') }}"
-                 data-text="{{ gettext('Copy the embed code below, and adjust the params as required for your website.') }}">
-                <span class="odi-vis-action"><i class="fa fa-code"></i></span>
+        </div>
+        <div class="odi-vis-legend-full">
+            <div class="odi-vis-info-title">{{ gettext('How to read the map') }}<span class="odi-vis-legend-full-close"><i class="fa fa-close"></i></span></div>
+            <div class="odi-vis-info-text">
+                <span>
+                    {{ gettext('Colour represents the open data score per place of data for the current selection (0 - 100).') }}
+                </span>
+                <ul>
+                    <li data-score="0">&nbsp;</li>
+                    <li data-score="10">&nbsp;</li>
+                    <li data-score="20">&nbsp;</li>
+                    <li data-score="30">&nbsp;</li>
+                    <li data-score="40">&nbsp;</li>
+                    <li data-score="50">&nbsp;</li>
+                    <li data-score="60">&nbsp;</li>
+                    <li data-score="70">&nbsp;</li>
+                    <li data-score="80">&nbsp;</li>
+                    <li data-score="90">&nbsp;</li>
+                    <li data-score="100">&nbsp;</li>
+                </ul>
             </div>
-
-            <div class="odi-vis-share"
-                 title="{{ gettext('Share this visualisation with others') }}">
-                <a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}&text={{ share_page_template }}" title="{{ gettext('Share this visualisation on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}" title="{{ gettext('Share this visualisation on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}" title="{{ gettext('Share this visualisation on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
-            </div>
-
         </div>
     </div>
     <div class="odi-vis-info"></div>
@@ -75,9 +77,34 @@
 
 <!--Templates for LoDash-->
 <script type="text/template" class="info-box">
-    <div class="odi-vis-info-title"><%= title %><span class="odi-vis-info-close"><i class="fa fa-close"></i></span></div>
-    <div class="odi-vis-info-text"><%= text %></div>
-    <%= embed_code %>
+    <div class="odi-vis-info-title">
+        {{ gettext('About and credits') }}
+        <span class="odi-vis-info-close"><i class="fa fa-close"></i></span>
+    </div>
+    <div class="odi-vis-info-text">
+        <p>
+            {{ gettext('The Open Data Index is an initiative lead by Open Knowledge in conjunction with the global open data community.') }}
+        </p>
+    </div>
+    <div class="odi-vis-info-section">
+        <div class="odi-vis-info-subtitle">{{ gettext('Share') }}</div>
+        <p>
+            {{ gettext('Share this visualisation with others on your preferred social network.') }}
+        </p>
+        <div class="odi-vis-share"
+             title="{{ gettext('Share this visualisation with others') }}">
+            <a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}&text={{ gettext('Check out this data from the Open Data Index') }}" title="{{ gettext('Share this visualisation on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}" title="{{ gettext('Share this visualisation on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}" title="{{ gettext('Share this visualisation on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
+        </div>
+    </div>
+    <div class="odi-vis-info-section">
+        <div class="odi-vis-info-subtitle">{{ gettext('Embed') }}</div>
+        <p>
+            {{ gettext('Use the following code to embed this visualisation into your own website.') }}
+        </p>
+        <div>
+            <xmp contenteditable="true"><iframe width="100%" height="100%" src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
+        </div>
+    </div>
 </script>
 
 <script type="text/template" class="place-box">
@@ -98,16 +125,12 @@
     <option value="<%= year %>" <%= selected %>><%= year %></option>
 </script>
 
-<script type="text/template" class="title-box">
-    <%= title %>
-</script>
-
 <script type="text/template" class="dataset-options">
     <option value="<%= dataset_id %>" <%= selected %>><%= dataset %></option>
 </script>
 
-<script type="text/template" class="embed-code">
-    <xmp contenteditable="true"><iframe width="100%" height="100%" src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
+<script type="text/template" class="title-box">
+    <%= title %>
 </script>
 
 {% endblock content %}
