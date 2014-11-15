@@ -90,10 +90,10 @@
 {%- endmacro %}
 
 
-{% macro share(page, odi, namespace) -%}
+{% macro share(page, odi, namespace, social_share_text) -%}
 <h4>{{ gettext('Share this data with others') }}</h4>
 <div class="btn-group">
-  <a href="http://twitter.com/share?url={{ SITEURL }}/{{ page.url }}&text={{ share_page_template }}" class="btn btn-default" target="_blank">
+  <a href="http://twitter.com/share?url={{ SITEURL }}/{{ page.url }}&text={{ social_share_text }}" class="btn btn-default" target="_blank">
     <i class="fa fa-twitter-square"></i> {{ gettext('Twitter') }}
   </a>
   <a href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.url }}" class="btn btn-default" target="_blank">

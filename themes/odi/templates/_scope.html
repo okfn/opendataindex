@@ -105,3 +105,8 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
     'panel_share': 'true',
     'map_place': map_place
 }) %}
+
+{# general stuff #}
+{% do scope.update({
+    'social_share_text': gettext('Check out this data from the Open Data Index')
+})%}

@@ -51,7 +51,7 @@
       </p>
       {{ page.content }}
       {{ history(page, ODI, fragment) }}
-      {{ share(page, ODI, fragment) }}
+      {{ share(page, ODI, fragment, scope.social_share_text) }}
       <div class="dataset-info">
         <h4>{{ gettext('About %(dataset)s data', dataset=scope.dataset.title) }}</h4>
         {{ scope.dataset.description|markdown }}

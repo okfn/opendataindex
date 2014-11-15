@@ -1,5 +1,7 @@
 {% extends 'embed.html' %}
 
+{% from '_scope.html' import scope with context %}
+
 {% block head_css %}
 {{ super() }}
 <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/static/css/map.css" />
@@ -93,7 +95,7 @@
         </p>
         <div class="odi-vis-share"
              title="{{ gettext('Share this visualisation with others') }}">
-            <a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}&text={{ gettext('Check out this data from the Open Data Index') }}" title="{{ gettext('Share this visualisation on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}" title="{{ gettext('Share this visualisation on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}" title="{{ gettext('Share this visualisation on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
+            <a target="_blank" href="http://twitter.com/share?url={{ SITEURL }}&text={{ scope.social_share_text }}" title="{{ gettext('Share this visualisation on Twitter') }}"><i class="fa fa-twitter-square"></i></a>&nbsp;<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}" title="{{ gettext('Share this visualisation on Facebook') }}"><i class="fa fa-facebook-square"></i></a>&nbsp;<a target="_blank" href="https://plus.google.com/share?url={{ SITEURL }}" title="{{ gettext('Share this visualisation on Google+') }}"><i class="fa fa-google-plus-square"></i></a>&nbsp;
         </div>
     </div>
     <div class="odi-vis-info-section">
