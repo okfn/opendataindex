@@ -27,7 +27,7 @@
     <div class="col-md-6">
       <h1>
         {{ scope.dataset.title }}
-        <span class="label label-default place-openness" data-score="{{ scope.entry.score or ODI.na }}">{{ scope.entry.score }}%</span>
+        <span class="label label-default place-openness" data-score="{{ scope.entry.score or ODI.na }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
       </h1>
       <p class="lead">
         <strong>#{{ scope.entry.rank }} {{ gettext('in the Index') }}</strong>
@@ -52,6 +52,10 @@
       {{ page.content }}
       {{ history(page, ODI, fragment) }}
       {{ share(page, ODI, fragment) }}
+      <div class="dataset-info">
+        <h4>{{ gettext('About %(dataset)s data', dataset=scope.dataset.title) }}</h4>
+        {{ scope.dataset.description|markdown }}
+      </div>
     </div>
     <div class="col-md-6">
       <div id="map-container">
@@ -62,26 +66,22 @@
 </header>
 
 <section>
-    {{ scope.dataset.description|markdown }}
-</section>
-
-<section>
-    <h2>{{ gettext('%(dataset)s data in %(place)s', dataset=scope.dataset.title, place=scope.place.name) }}</h2>
-    <hr />
     <div class="row">
         <div class="col-md-7">
             {% if scope.entry.url %}
             <p>
-                <span class="label label-success">{{ gettext('Location') }}</span>&nbsp;&nbsp;<a href="{{ scope.entry.url }}" title="{{ gettext('%(dataset)s data for %(place)s', dataset=scope.dataset.title, place=scope.place.name) }}">{{ scope.entry.url }}</a>
+                <span class="label label-primary">{{ gettext('Location') }}</span>&nbsp;&nbsp;<a href="{{ scope.entry.url }}" title="{{ gettext('%(dataset)s data for %(place)s', dataset=scope.dataset.title, place=scope.place.name) }}">{{ scope.entry.url }}</a>
             </p>
             {% endif %}
             {% if scope.entry.format %}
             <p>
-                <span class="label label-success">{{ gettext('Format') }}</span>&nbsp;&nbsp;{{ scope.entry.format }}
+                <span class="label label-primary">{{ gettext('Format') }}</span>&nbsp;&nbsp;{{ scope.entry.format }}
             </p>
             {% endif %}
             {% if scope.entry.details %}
-            {{ scope.entry.details|markdown }}
+            <div class="justify">
+              {{ scope.entry.details|markdown }}
+            </div>
             {% endif %}
         </div>
         <div class="col-md-5">

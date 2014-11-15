@@ -8067,7 +8067,8 @@ textarea {
 .page-header h1 {
   font-weight: 300;
 }
-.btn-primary {
+.btn-primary,
+.label-primary {
   background-color: #7ab800;
   border-color: #699f00;
 }
@@ -8320,6 +8321,7 @@ ul.data-table-key {
 ul.availability-single {
   list-style-type: none;
   margin-left: 0;
+  margin-top: 70px;
   padding-left: 0;
 }
 .availability-single li i {
@@ -8420,4 +8422,10 @@ h1 .dataset-openness {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.justify {
+  text-align: justify;
+}
+.dataset-info {
+  font-size: 0.875em;
 }
