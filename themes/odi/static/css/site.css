@@ -8432,3 +8432,15 @@ h1 .dataset-openness {
 .dataset-info {
   font-size: 0.875em;
 }
+th.header.headerSortDown:after {
+  font-family: FontAwesome;
+  content: "\f0ab";
+  text-align: right;
+  float: right;
+}
+th.header.headerSortUp:after {
+  font-family: FontAwesome;
+  content: "\f0aa";
+  text-align: right;
+  float: right;
+}

@@ -9,37 +9,9 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter'], function($, bootstrap, 
         $scoreDisplay = $('.score'),
         popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
 
-    $('#places_overview_table').tablesorter({sortList: [[0,0], [1,1], [12,0]]});
-    $('#datasets_overview_table').tablesorter({sortList: [[0,0], [1,1], [4,0]]});
-    $('#slice-table').tablesorter({sortList: [[0,0], [1,1], [7,0]]});
-
-    function sortPlace(a, b) {
-
-        return $(a).data('place').toUpperCase().localeCompare($(b).data('place').toUpperCase());
-
-    }
-
-    function sortScore(a, b) {
-
-        var comp = parseInt($(b).data('score'), 10) - parseInt($(a).data('score'), 10);
-        return comp !== 0 ? comp : sortPlace(a, b);
-
-    }
-
-    function sortTable(table, sortBy, $actor) {
-
-        var sortFunc;
-
-        if (sortBy === 'score') {
-            sortFunc = sortScore;
-        } else {
-            sortFunc = sortPlace;
-        }
-
-        $actor.attr('checked', true);
-        table.find('tbody tr').sort(sortFunc).appendTo(table);
-
-    }
+    $('#places_overview_table').tablesorter({sortList: [[0,0], [1,0], [12,0]]});
+    $('#datasets_overview_table').tablesorter({sortList: [[0,0], [1,0], [4,0]]});
+    $('#slice-table').tablesorter({sortList: [[0,0], [1,0], [7,0]]});
 
     function filterTable(table, query, $actor) {
 
@@ -92,16 +64,6 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter'], function($, bootstrap, 
             } else { // if it was hidden, then nothing must be showing
                 $visiblePopover = '';
             }
-        });
-
-        $('.sort-table').on('click', function() {
-
-            var $this = $(this),
-                value = $this.val();
-            if ($this.is(':checked')) {
-                sortTable($dataTable, value, $this);
-            }
-
         });
 
         $('.filter-table').on('keyup', function() {
