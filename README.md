@@ -89,8 +89,8 @@ The use case for this is to enable embedding of a particular state. The uiState 
 
     uiStateDefaults = {
         embed: {
-            width: '100%', // min-width for the map is 460px
-            height: '100%',// min-height for the map is 460px
+            width: '100%', // min-width for the map is 400px
+            height: '100%',// min-height for the map is 360px
             title: 'Open Data Index'
         },
         filter: {
@@ -127,15 +127,15 @@ These defaults can be customized on initialisation of the map via URL params (a 
 
 1. 2014 / All datsets
 
-<iframe width="100%" height="460" src="http://staging.index.okfn.org/vis/map/embed/?embed_height=460" frameBorder="0"></iframe>
+<iframe width="100%" height="360" src="http://staging.index.okfn.org/vis/map/embed/?embed_height=460" frameBorder="0"></iframe>
 
-`http://staging.index.okfn.org/vis/map/embed/?embed_height=460`
+`http://staging.index.okfn.org/vis/map/embed/?embed_height=360`
 
 2. 2014 / Government spending
 
-<iframe width="100%" height="460" src="http://staging.index.okfn.org/vis/map/embed?filter_dataset=spending&embed_height=460" frameBorder="0"></iframe>
+<iframe width="100%" height="360" src="http://staging.index.okfn.org/vis/map/embed?filter_dataset=spending&embed_height=460" frameBorder="0"></iframe>
 
-`http://staging.index.okfn.org/vis/map/embed?filter_dataset=spending&embed_height=460`
+`http://staging.index.okfn.org/vis/map/embed?filter_dataset=spending&embed_height=360`
 
 ### Data tables
 

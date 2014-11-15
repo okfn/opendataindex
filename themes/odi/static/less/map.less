@@ -32,22 +32,23 @@
     box-sizing: border-box;
 }
 
-.layout-object(@width: 100%; @float:left;) {
+.layout-object(@float:left; @width: 100%; @height: auto;
+               @min-height: auto; @min-width: auto) {
     .object();
     float: @float;
     width: @width;
+    height: @height;
+    min-height: @min-height;
 }
 
-.odi-display-panel(@width: 50%; @min-height: 430px; @height: 430px;) {
+.odi-display-panel(@width: 50%; @height: 400px; @min-height: 400px) {
+    .layout-object(@width: @width; @height: @height; @min-height: @min-height);
     padding: 1rem;
     word-wrap: break-word;
     background-color: @color-light;
     color: @color-dark;
     border-radius: 5px;
     margin: 0.75rem;
-    min-height: @min-height;
-    height: @height;
-    width: @width;
     font-size: 0.75rem;
 }
 
@@ -75,15 +76,13 @@ html, body, input, select, textarea {
 // NOTE: Making extensive use of nested CSS pattern in LESS
 // to provide namespacing of styles for embed scenarios
 .odi-vis.odi-vis-choropleth {
-
-    // base vis styles
-    .object();
+    .layout-object(@width: 100%; @height: 100%; @min-height: 360px;
+                   @min-width: 400px);
     position: relative;
-    width: 100%;
-    height: 100%;
-    min-width: 26.875rem;
-    min-height: 27.5rem;
-    padding: 0.75rem 0.75rem 0 0.75rem;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
     background-color: @color-dark;
     color: @color-light;
 
@@ -109,8 +108,8 @@ html, body, input, select, textarea {
     .odi-vis-view {
         width: 100%;
         height: 90%;
-        min-width: 25.375rem;
-        min-height: 24.875rem;
+        min-width: 376px;
+        min-height: 300px;
 
         .odi-vis-display {
             .layout-object();
@@ -128,10 +127,10 @@ html, body, input, select, textarea {
     .odi-vis-meta {
         width: 100%;
         height: 10%;
-        min-width: 25.375rem;
-        min-height: 2rem;
-        font-size: 1.5rem;
-        padding-top: 0.875%;
+        min-width: 376px;
+        min-height: 16px;
+        padding-top: 8px;
+        font-size: 16px;
 
         a, span.odi-vis-action {
             color: @color-light;
@@ -149,26 +148,26 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-meta-left {
-            .layout-object(@width: 80%; @float: left);
+            .layout-object(@width: 80%);
             height: 100%;
             text-align: left;
         }
 
         .odi-vis-name {
-            .layout-object(7rem);
+            .layout-object(@width: 116px);
             font-size: 0.75rem;
             text-transform: uppercase;
 
             @media @max568 {
                 font-size: 0.75rem;
-                margin-top: 0.125rem;
+                width: 116px
             }
         }
 
         .odi-vis-tools {
-            .layout-object(auto);
+            .layout-object(@width: 360px);
             font-size: 1rem;
-            margin-top: -0.25rem;
+            margin-top: -3px;
 
             select, option {
                 color: @color-dark
@@ -176,56 +175,36 @@ html, body, input, select, textarea {
 
             @media @max568 {
                 font-size: 0.75rem;
-                padding-top: 0.25rem;
+                width: 224px;
             }
         }
 
         .odi-vis-help {
-            .layout-object(1.25rem; right);
-            font-size: 1.175rem;
-            padding: 0 0.75rem;
-            margin-top: -0.125rem;
+            .layout-object(@width: 20px; @float: right);
+            font-size: 16px;
+            padding: 0 24px;
+            margin-top: -2px;
             text-align: center;
-
-            @media @max568 {
-                font-size: 1.125rem;
-                padding: 0 0.75rem;
-            }
         }
 
         .odi-vis-legend {
-            .layout-object(3.875rem; right);
-            font-size: 1.175rem;
-            padding-left: 0.75rem;
+            .layout-object(@width: 48px; @float: right);
+            font-size: 16px;
+            padding-left: 12px;
             cursor: pointer;
 
-            @media @max568 {
-
-            }
-
             ul {
-                .layout-object(3.125rem);
+                .layout-object(@width: 48px);
                 float: right;
                 height: 100%;
                 display: block;
                 padding: 0;
                 margin: 0;
                 list-style-type: none;
-                border: 1px solid darken(@color-light, 17%);
-
-                @media @max568 {
-                    width: 3.125rem;
-                }
             }
 
             li {
-                .layout-object(1rem);
-                height: 1rem;
-
-                @media @max568 {
-                    width: 1rem;
-                    height: 1rem;
-                }
+                .layout-object(@width: 16px; @height: 16px);
             }
 
         }
@@ -236,13 +215,13 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-legend-full {
-            .odi-display-panel(@width: 50%; @height: 3rem; @min-height: 3rem);
+            .odi-display-panel(@width: 50%; @height: 80px; @min-height: 80px);
             position: absolute;
-            top: -6.375rem;
+            top: -106px;
             left: 0;
 
             @media @max568 {
-                width: 80%;
+                width: 83.5%;
             }
 
             ul {
@@ -253,8 +232,8 @@ html, body, input, select, textarea {
 
                 li {
                     display: inline-block;
-                    width: 1rem;
-                    height: 1rem;
+                    width: 16px;
+                    height: 16px;
                 }
             }
         }
@@ -265,15 +244,19 @@ html, body, input, select, textarea {
         .odi-display-panel(@width: 50%; @height: auto; @min-height: auto;);
         display: none;
         position: absolute;
-        top: 0.75rem;
-        left: 0.75rem;
+        top: 12px;
+        left: 12px;
         z-index: 101;
+
+        @media @max568 {
+            width: 80%;
+        }
 
         .odi-vis-share {
             .layout-object();
-            font-size: 1.75rem;
-            line-height: 1rem;
-            padding: 0 0.75rem 0 0;
+            font-size: 28px;
+            line-height: 16px;
+            padding: 0 12px 0 0;
 
         }
     }
@@ -294,11 +277,11 @@ html, body, input, select, textarea {
     }
 
     .odi-vis-place {
-        .odi-display-panel(@width: 30%; @height: auto; @min-height: auto;);
+        .odi-display-panel(@width: 40%; @height: auto; @min-height: auto;);
         display: none;
         position: absolute;
-        top: 0.75rem;
-        right: 0.75rem;
+        top: 12px;
+        right: 12px;
         z-index: 100;
     }
 
@@ -313,7 +296,7 @@ html, body, input, select, textarea {
     a.odi-vis-place-action {
         background-color: @color-dark;
         color: @color-light;
-        padding: 0.5rem;
+        padding: 8px;
 
         &:hover {
         background-color: lighten(@color-dark, 5%);
@@ -324,8 +307,8 @@ html, body, input, select, textarea {
     // override leaflet
     .leaflet-container {
         font-family: 'Lato,' 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: 16px;
+        line-height: 24px;
         background-color: #8bbee1 !important; // @color-dark;
         outline: 0;
     }
@@ -352,18 +335,18 @@ html, body, input, select, textarea {
 }
 
 .odi-vis-title {
-    .odi-display-panel(@width: 100%; @height: 20px; @min-height: 20px);
+    .odi-display-panel(@width: 80%; @height: 50px; @min-height: 50px);
     position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
+    top: 12px;
+    left: 12px;
     z-index: 1;
     margin: 0;
     background-image: url(/static/images/logo-black.png);
     background-repeat: no-repeat;
-    text-indent: 2rem;
-    line-height: 1rem;
+    text-indent: 32px;
+    line-height: 16px;
     text-align: left;
-    font-size: 1.125rem;
+    font-size: 18px;
     background-color: transparent !important;
 }
 

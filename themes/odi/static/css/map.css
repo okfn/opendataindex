@@ -2622,12 +2622,15 @@ textarea {
 }
 .odi-vis.odi-vis-choropleth {
   box-sizing: border-box;
-  position: relative;
+  float: left;
   width: 100%;
   height: 100%;
-  min-width: 26.875rem;
-  min-height: 27.5rem;
-  padding: 0.75rem 0.75rem 0 0.75rem;
+  min-height: 360px;
+  position: relative;
+  padding-top: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
   background-color: #2d2d2d;
   color: #f5f5f5;
 }
@@ -2649,18 +2652,22 @@ textarea {
   box-sizing: border-box;
   float: left;
   width: 100%;
+  height: auto;
+  min-height: auto;
   position: relative;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-view {
   width: 100%;
   height: 90%;
-  min-width: 25.375rem;
-  min-height: 24.875rem;
+  min-width: 376px;
+  min-height: 300px;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-view .odi-vis-display {
   box-sizing: border-box;
   float: left;
   width: 100%;
+  height: auto;
+  min-height: auto;
   height: 100%;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-view .odi-vis-display #map {
@@ -2670,10 +2677,10 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta {
   width: 100%;
   height: 10%;
-  min-width: 25.375rem;
-  min-height: 2rem;
-  font-size: 1.5rem;
-  padding-top: 0.875%;
+  min-width: 376px;
+  min-height: 16px;
+  padding-top: 8px;
+  font-size: 16px;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta a,
 .odi-vis.odi-vis-choropleth .odi-vis-meta span.odi-vis-action {
@@ -2687,6 +2694,8 @@ textarea {
   box-sizing: border-box;
   float: right;
   width: 20%;
+  height: auto;
+  min-height: auto;
   height: 100%;
   text-align: right;
 }
@@ -2694,28 +2703,34 @@ textarea {
   box-sizing: border-box;
   float: left;
   width: 80%;
+  height: auto;
+  min-height: auto;
   height: 100%;
   text-align: left;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
   box-sizing: border-box;
   float: left;
-  width: 7rem;
+  width: 116px;
+  height: auto;
+  min-height: auto;
   font-size: 0.75rem;
   text-transform: uppercase;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
     font-size: 0.75rem;
-    margin-top: 0.125rem;
+    width: 116px;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
   box-sizing: border-box;
   float: left;
-  width: auto;
+  width: 360px;
+  height: auto;
+  min-height: auto;
   font-size: 1rem;
-  margin-top: -0.25rem;
+  margin-top: -3px;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools select,
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools option {
@@ -2724,82 +2739,73 @@ textarea {
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
     font-size: 0.75rem;
-    padding-top: 0.25rem;
+    width: 224px;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
   box-sizing: border-box;
   float: right;
-  width: 1.25rem;
-  font-size: 1.175rem;
-  padding: 0 0.75rem;
-  margin-top: -0.125rem;
+  width: 20px;
+  height: auto;
+  min-height: auto;
+  font-size: 16px;
+  padding: 0 24px;
+  margin-top: -2px;
   text-align: center;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
-    font-size: 1.125rem;
-    padding: 0 0.75rem;
-  }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
   box-sizing: border-box;
   float: right;
-  width: 3.875rem;
-  font-size: 1.175rem;
-  padding-left: 0.75rem;
+  width: 48px;
+  height: auto;
+  min-height: auto;
+  font-size: 16px;
+  padding-left: 12px;
   cursor: pointer;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
   box-sizing: border-box;
   float: left;
-  width: 3.125rem;
+  width: 48px;
+  height: auto;
+  min-height: auto;
   float: right;
   height: 100%;
   display: block;
   padding: 0;
   margin: 0;
   list-style-type: none;
-  border: 1px solid #cacaca;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
-    width: 3.125rem;
-  }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
   box-sizing: border-box;
   float: left;
-  width: 1rem;
-  height: 1rem;
-}
-@media (max-width: 568px) {
-  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
-    width: 1rem;
-    height: 1rem;
-  }
+  width: 16px;
+  height: 16px;
+  min-height: auto;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-show-info {
   cursor: pointer;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  height: 80px;
+  min-height: 80px;
   padding: 1rem;
   word-wrap: break-word;
   background-color: #f5f5f5;
   color: #2d2d2d;
   border-radius: 5px;
   margin: 0.75rem;
-  min-height: 3rem;
-  height: 3rem;
-  width: 50%;
   font-size: 0.75rem;
   position: absolute;
-  top: -6.375rem;
+  top: -106px;
   left: 0;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full {
-    width: 80%;
+    width: 83.5%;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full ul {
@@ -2810,33 +2816,42 @@ textarea {
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full ul li {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-info {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  height: auto;
+  min-height: auto;
   padding: 1rem;
   word-wrap: break-word;
   background-color: #f5f5f5;
   color: #2d2d2d;
   border-radius: 5px;
   margin: 0.75rem;
-  min-height: auto;
-  height: auto;
-  width: 50%;
   font-size: 0.75rem;
   display: none;
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
+  top: 12px;
+  left: 12px;
   z-index: 101;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-info {
+    width: 80%;
+  }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-info .odi-vis-share {
   box-sizing: border-box;
   float: left;
   width: 100%;
-  font-size: 1.75rem;
-  line-height: 1rem;
-  padding: 0 0.75rem 0 0;
+  height: auto;
+  min-height: auto;
+  font-size: 28px;
+  line-height: 16px;
+  padding: 0 12px 0 0;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-info-close,
 .odi-vis.odi-vis-choropleth .odi-vis-place-close,
@@ -2856,20 +2871,22 @@ textarea {
   display: none;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-place {
+  box-sizing: border-box;
+  float: left;
+  width: 40%;
+  height: auto;
+  min-height: auto;
   padding: 1rem;
   word-wrap: break-word;
   background-color: #f5f5f5;
   color: #2d2d2d;
   border-radius: 5px;
   margin: 0.75rem;
-  min-height: auto;
-  height: auto;
-  width: 30%;
   font-size: 0.75rem;
   display: none;
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: 12px;
+  right: 12px;
   z-index: 100;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-place-title {
@@ -2881,7 +2898,7 @@ textarea {
 .odi-vis.odi-vis-choropleth a.odi-vis-place-action {
   background-color: #2d2d2d;
   color: #f5f5f5;
-  padding: 0.5rem;
+  padding: 8px;
 }
 .odi-vis.odi-vis-choropleth a.odi-vis-place-action:hover {
   background-color: #3a3a3a;
@@ -2889,8 +2906,8 @@ textarea {
 }
 .odi-vis.odi-vis-choropleth .leaflet-container {
   font-family: 'Lato,' 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 24px;
   background-color: #8bbee1 !important;
   outline: 0;
 }
@@ -2912,27 +2929,29 @@ textarea {
   border-radius: none;
 }
 .odi-vis-title {
+  box-sizing: border-box;
+  float: left;
+  width: 80%;
+  height: 50px;
+  min-height: 50px;
   padding: 1rem;
   word-wrap: break-word;
   background-color: #f5f5f5;
   color: #2d2d2d;
   border-radius: 5px;
   margin: 0.75rem;
-  min-height: 20px;
-  height: 20px;
-  width: 100%;
   font-size: 0.75rem;
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
+  top: 12px;
+  left: 12px;
   z-index: 1;
   margin: 0;
   background-image: url(/static/images/logo-black.png);
   background-repeat: no-repeat;
-  text-indent: 2rem;
-  line-height: 1rem;
+  text-indent: 32px;
+  line-height: 16px;
   text-align: left;
-  font-size: 1.125rem;
+  font-size: 18px;
   background-color: transparent !important;
 }
 .odi-vis-info-section {
