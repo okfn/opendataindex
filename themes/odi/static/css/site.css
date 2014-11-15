@@ -8212,6 +8212,7 @@ textarea {
 }
 #slice-table td.info-expander {
   padding: 0;
+  cursor: pointer;
 }
 #slice-table td.info-expander a {
   display: block;
@@ -8378,6 +8379,8 @@ ul.availability-single {
 .rank-top {
   opacity: 0.6;
   padding: 2px;
+  width: 24px;
+  text-align: center;
 }
 td.previous-results {
   text-align: center;
