@@ -8444,3 +8444,12 @@ th.header.headerSortUp:after {
   text-align: right;
   float: right;
 }
+.google-plus {
+  color: #D34836;
+}
+.twitter {
+  color: #4099FF;
+}
+.facebook {
+  color: #3B5998;
+}

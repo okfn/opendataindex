@@ -9,9 +9,9 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter'], function($, bootstrap, 
         $scoreDisplay = $('.score'),
         popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
 
-    $('#places_overview_table').tablesorter({sortList: [[0,0], [1,0], [12,0]]});
-    $('#datasets_overview_table').tablesorter({sortList: [[0,0], [1,0], [4,0]]});
-    $('#slice-table').tablesorter({sortList: [[0,0], [1,0], [7,0]]});
+    $('#places_overview_table').tablesorter({sortList: [[0,0], [1,0], [12,1]]});
+    $('#datasets_overview_table').tablesorter({sortList: [[0,0], [1,0], [4,1]]});
+    $('#slice-table').tablesorter({sortList: [[0,0], [1,0], [7,1]]});
 
     function filterTable(table, query, $actor) {
 
