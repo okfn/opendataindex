@@ -2,7 +2,7 @@
 
 {% set fragment = 'dataset' %}
 
-{% block page_title %}{{ gettext('Dataset overview')}}{% endblock page_title %}
+{% block page_title %}{{ gettext('Dataset overview')}} {% if page.year != ODI.current_year %}{{ page.year }}{% endif %}{% endblock page_title %}
 
 {% block breadcrumbs_inner %}
   <li class="active">{{ gettext('Datasets') }}</li>

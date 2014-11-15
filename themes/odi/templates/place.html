@@ -24,7 +24,7 @@
   <div class="row">
     <div class="col-md-6">
       <h1>
-        {{ scope.place.name }}
+        {{ scope.place.name }} {% if page.year != ODI.current_year %}{{ page.year }}{% endif %}
         <span class="label label-default place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% {{ gettext('open') }}</span>
       </h1>
       <p class="lead">

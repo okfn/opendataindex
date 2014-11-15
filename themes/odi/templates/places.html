@@ -14,7 +14,7 @@
 {% from '_scope.html' import scope with context %}
 
 <header id="place-intro" class="page-header">
-  <h1>{{ gettext('Place overview')}}</h1>
+  <h1>{{ gettext('Place overview')}} {% if page.year != ODI.current_year %}{{ page.year }}{% endif %}</h1>
   <hr />
   {{ page.content }}
   {% include 'dataviews/summary.html' %}
