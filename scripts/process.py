@@ -381,7 +381,7 @@ class Extractor(object):
             year_numplaces = len(set([x[0] for x in
                                       self.writable_entries if
                                       x[2] == year]))
-            year_numopen = len([x for x in self.entries.dicts if x.isopen])
+            year_numopen = len([x for x, z in self.writable_entries.iteritems() if z.isopen and x[2] == year])
             year_percentopen = int(round((100.0 * year_numopen) /
                                           year_numentries, 0))
             rows[0].append(year_numplaces)
