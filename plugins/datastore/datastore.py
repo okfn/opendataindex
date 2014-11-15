@@ -20,6 +20,7 @@ class DataStore(object):
 
     def __init__(self, config, **kwargs):
         self.config = config
+        self.intrafield_delimiter = self.config['DATASTORE']['intrafield_delimiter']
         # TODO: handle the required settings
         if not 'DATASTORE' in self.config:
             raise KeyError
@@ -128,6 +129,9 @@ class DataStore(object):
 
                 if v in self.config['DATASTORE']['none_strings']:
                     item[k] = None
+
+                if self.intrafield_delimiter in v:
+                    item[k] = v.split(self.intrafield_delimiter)
 
         dataset.dict = workspace
 
