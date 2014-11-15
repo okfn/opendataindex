@@ -43,19 +43,19 @@
 
 .odi-display-panel(@width: 50%; @height: 400px; @min-height: 400px) {
     .layout-object(@width: @width; @height: @height; @min-height: @min-height);
-    padding: 1rem;
+    padding: 16px;
     word-wrap: break-word;
     background-color: @color-light;
     color: @color-dark;
     border-radius: 5px;
-    margin: 0.75rem;
-    font-size: 0.75rem;
+    margin: 12px;
+    font-size: 12px;
 }
 
 .odi-display-panel-title {
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 0.25rem;
+    margin-bottom: 4px;
     border-bottom: 1px solid @color-light;
 }
 
@@ -155,18 +155,18 @@ html, body, input, select, textarea {
 
         .odi-vis-name {
             .layout-object(@width: 116px);
-            font-size: 0.75rem;
+            font-size: 12px;
             text-transform: uppercase;
 
             @media @max568 {
-                font-size: 0.75rem;
+                font-size: 12px;
                 width: 116px
             }
         }
 
         .odi-vis-tools {
             .layout-object(@width: 360px);
-            font-size: 1rem;
+            font-size: 16px;
             margin-top: -3px;
 
             select, option {
@@ -174,7 +174,7 @@ html, body, input, select, textarea {
             }
 
             @media @max568 {
-                font-size: 0.75rem;
+                font-size: 12px;
                 width: 224px;
             }
         }
