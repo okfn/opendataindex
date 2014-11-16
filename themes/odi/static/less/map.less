@@ -142,13 +142,13 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-meta-right {
-            .layout-object(@width: 20%; @float: right);
+            .layout-object(@width: 30%; @float: right);
             height: 100%;
             text-align: right;
         }
 
         .odi-vis-meta-left {
-            .layout-object(@width: 80%);
+            .layout-object(@width: 70%);
             height: 100%;
             text-align: left;
         }
@@ -179,10 +179,19 @@ html, body, input, select, textarea {
             }
         }
 
+        .odi-vis-share-embed {
+            .layout-object(@width: 120px; @float: right);
+            font-size: 12px;
+            text-transform: uppercase;
+            @media @max568 {
+                display: none;
+            }
+        }
+
         .odi-vis-help {
             .layout-object(@width: 20px; @float: right);
             font-size: 16px;
-            padding: 0 24px;
+            padding: 0 24px 0 12px;
             margin-top: -2px;
             text-align: center;
         }

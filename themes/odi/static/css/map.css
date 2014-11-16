@@ -2693,7 +2693,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-right {
   box-sizing: border-box;
   float: right;
-  width: 20%;
+  width: 30%;
   height: auto;
   min-height: auto;
   height: 100%;
@@ -2702,7 +2702,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-left {
   box-sizing: border-box;
   float: left;
-  width: 80%;
+  width: 70%;
   height: auto;
   min-height: auto;
   height: 100%;
@@ -2742,6 +2742,20 @@ textarea {
     width: 224px;
   }
 }
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share-embed {
+  box-sizing: border-box;
+  float: right;
+  width: 120px;
+  height: auto;
+  min-height: auto;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-share-embed {
+    display: none;
+  }
+}
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-help {
   box-sizing: border-box;
   float: right;
@@ -2749,7 +2763,7 @@ textarea {
   height: auto;
   min-height: auto;
   font-size: 16px;
-  padding: 0 24px;
+  padding: 0 24px 0 12px;
   margin-top: -2px;
   text-align: center;
 }
