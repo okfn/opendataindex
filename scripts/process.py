@@ -313,18 +313,33 @@ class Extractor(object):
                 score_lookup = 'score_{0}'.format(year)
                 rank_lookup = 'rank_{0}'.format(year)
             year_scores = sorted(list(set([p[score_lookup] for p in
-                                 self.places.dicts])))
-            year_scores.reverse()
+                                 self.places.dicts])), reverse=True)
             year_lookup = {}
-            for index, score in enumerate(year_scores):
-                if score is None:
+            year_lookup.update({
+                str(max(year_scores)): {
+                    'rank': 1,
+                    'score': max(year_scores),
+                    'keys': []
+                }
+            })
+            for place in self.places.dicts:
+                if place[score_lookup] is None:
                     pass
                 else:
-                    year_lookup.update({str(score): index + 1})
+                    if str(place[score_lookup]) in year_lookup.keys():
+                        year_lookup[str(place[score_lookup])]['keys'].append(place['id'])
+                    else:
+                        year_lookup.update({
+                            str(place[score_lookup]): {
+                                'rank': None,
+                                'score': place['score'],
+                                'keys': [place['id']]
+                            }
+                        })
+            sort_by_score = sorted(year_lookup.values(), key=operator.itemgetter('score'), reverse=True)
+            lookup.update({year: sort_by_score})
 
-            lookup.update({year: year_lookup})
-
-        # set ranks
+        # set ranks per year
         for place in self.places.dicts:
             for year in self.years:
                 score_lookup = 'score'
@@ -333,10 +348,12 @@ class Extractor(object):
                     score_lookup = 'score_{0}'.format(year)
                     rank_lookup = 'rank_{0}'.format(year)
 
-                if place[score_lookup] is None:
-                    place[rank_lookup] = None
-                else:
-                    place[rank_lookup] = lookup[year][str(place[score_lookup])]
+                rank = 1
+                for value in lookup[year]:
+                    qty = len(value['keys'])
+                    if place['id'] in value['keys']:
+                        place[rank_lookup] = rank
+                    rank += qty
 
         # set reviewers and submitters
         submitreviewlookup = {}
@@ -438,28 +455,44 @@ class Extractor(object):
         workspace = []
 
         for year in self.years:
-            year_entries = OrderedDict(
-                sorted([e for e in entries.iteritems() if
-                        e[0][2] == year], key=_datasetscoresort)
-            )
+            year_entries = OrderedDict(sorted([e for e in entries.iteritems() if e[0][2] == year], key=_datasetscoresort))
 
             for dataset in [d[0] for d in self.datasets['rows'][1:]]:
-                workspace.append(
-                    OrderedDict(sorted([(k, v) for k, v in
+                workspace.append(OrderedDict(sorted([(k, v) for k, v in
                                 year_entries.iteritems() if k[1] == dataset],
-                                key=_scoresort, reverse=True)
-                ))
+                                key=_scoresort, reverse=True)))
 
         for o in workspace:
-            lookup = {}
-            scores = sorted(list(set([v['score'] for k, v in o.iteritems()])))
-            scores.reverse()
-            for index, score in enumerate(scores):
-                lookup.update({str(score): index + 1})
-            for e in o.iteritems():
-                e[1]['rank'] = lookup[str(e[1]['score'])]
-            rv.update(OrderedDict(o))
+            scores = sorted(list(set([v['score'] for k, v in o.iteritems()])), reverse=True)
+            score_map = {}
+            score_map.update({
+                str(max(scores)): {
+                    'rank': 1,
+                    'score': max(scores),
+                    'keys': []
+                }
+            })
 
+            for e in o.iteritems():
+                if str(e[1]['score']) in score_map.keys():
+                    score_map[str(e[1]['score'])]['keys'].append(e[0])
+                else:
+                    score_map.update({
+                        str(e[1]['score']): {
+                            'rank': None,
+                            'score': e[1]['score'],
+                            'keys': [e[0]]
+                        }
+                    })
+            sort_by_score = sorted(score_map.values(), key=operator.itemgetter('score'), reverse=True)
+            rank = 1
+            for index, value in enumerate(sort_by_score):
+                for key in value['keys']:
+                    qty = len(value['keys'])
+                    o[key]['rank'] = rank
+                rank += qty
+
+            rv.update(OrderedDict(o))
         return rv
 
     @classmethod
