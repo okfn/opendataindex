@@ -158,6 +158,15 @@ class Extractor(object):
                             k: entry_to_copy
                         })
 
+        for k, v in entries_to_write.iteritems():
+            # contribution is cumulative, so we just include all
+            rel_submissions = [s for s in self.submissions.dicts if
+                               s['place'] == v['place'] and
+                               s['dataset'] == v['dataset']]
+
+            v['submitters'] = ';;'.join(set([s['submitter'] for s in rel_submissions if s]))
+            v['reviewers'] = ';;'.join(set([s['reviewer'] for s in rel_submissions if s]))
+
         self.writable_entries = AttrDict(self._rank_entries(OrderedDict(entries_to_write)))
 
         ## write the entries.csv
@@ -172,6 +181,8 @@ class Extractor(object):
         fieldnames.insert(5, 'isopen')
         # move timestamp to the end
         fieldnames.insert(-1, 'timestamp')
+        fieldnames.insert(-1, 'submitters')
+        fieldnames.insert(-1, 'reviewers')
 
         writer = csv.DictWriter(open('data/entries.csv', 'w'),
                 fieldnames=fieldnames,
@@ -265,7 +276,6 @@ class Extractor(object):
         newrows = list(zip(*(transposed[:8])))
         for index, q in enumerate(newrows):
             if q[6] and q[6] in icon_translate:
-                # import ipdb;ipdb.set_trace()
                 q = list(q)
                 q[6] = icon_translate[q[6]]
                 q = tuple(q)
