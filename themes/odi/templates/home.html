@@ -14,13 +14,16 @@
   {% include 'dataviews/embed_map.html' %}
 </section>
 
-<div class="container">
-  <div class="jumbotron">
+<div class="home-about">
+  <div class="container">
     <h2>{{ gettext('About the Open Data Index') }}</h2>
     {{ page.content }}
   </div>
+</div>
+
+<div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 home-box">
       <h3>{{ gettext('Place overview') }}</h3>
       <p>{{ gettext('The whole Index displayed in an easy-to-read table.') }}</p>
       <p>
@@ -30,7 +33,7 @@
         </a>
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 home-box">
       <h3>{{ gettext('Downloads & API') }}</h3>
       <p>{{ gettext('Download the raw data directly or as CSV/JSON via API.') }}</p>
       <p>
@@ -40,7 +43,7 @@
         </a>
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 home-box">
       <h3>{{ gettext('Methodology') }}</h3>
       <p>{{ gettext('Read about the methodology behind the Index here.') }}</p>
       <p>

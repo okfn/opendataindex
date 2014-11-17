@@ -30,13 +30,13 @@ textarea {
 }
 
 .btn-primary, .label-primary {
-  background-color: @color-okf-green;
-  border-color: darken(@color-okf-green, 5%);
+  background-color: @color-okf-yellow;
+  border-color: darken(@color-okf-yellow, 5%);
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background-color: darken(@color-okf-green, 10%);
-  border-color: darken(@color-okf-green, 15%);
+  background-color: darken(@color-okf-yellow, 10%);
+  border-color: darken(@color-okf-yellow, 15%);
 }
 
 .jumbotron p {
@@ -112,11 +112,28 @@ textarea {
 // Footer
 #footer {
   margin-top: 40px;
-  background: #f0f0f0;
-  border-top: 10px solid @color-okf-green;
+  background: #edeeec;
+  border-top: 10px solid #caccc7;
   padding: 30px 0 19px 0;
+  font-size: 12px;
   a {
-    color: @color-okf-green;
+    color: #333333;
+    text-decoration: none;
+    border-bottom: dotted 1px #caccc7;
+
+    &:hover {
+      border-bottom: solid 1px #caccc7;
+      text-decoration: none;
+    }
+  }
+
+  a.naked {
+    text-decoration: none;
+    border-bottom: none;
+    &:hover {
+      text-decoration: none;
+      border-bottom: none;
+    }
   }
 }
 
@@ -352,9 +369,12 @@ ul.availability-single {
   background-color: @color-maybe;
 }
 #home-visualisation, #permalink-visualisation {
-  margin-bottom: 40px;
   width: 100%;
-  min-height:460px;
+  height: auto;
+}
+
+#home-visualisation {
+  background-color: #f0f0f0;
 }
 
 .summary-compared {
@@ -475,4 +495,33 @@ th.header.headerSortUp:after {
 
 .facebook {
     color: #3B5998;
+}
+
+.home-about, #home-visualisation {
+  background-color: #f0f0f0;
+}
+
+.home-about {
+  padding-bottom: 40px;
+  padding-top: 18px;
+
+  h2 {
+    font-size: 42px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+}
+
+.home-box {
+  text-align: center;
+
+  p {
+    padding: 0 60px;
+  }
+
+  h3 {
+    font-weight: 300;
+    font-size: 30px;
+  }
 }

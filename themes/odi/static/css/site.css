@@ -8069,8 +8069,8 @@ textarea {
 }
 .btn-primary,
 .label-primary {
-  background-color: #7ab800;
-  border-color: #699f00;
+  background-color: #e9d046;
+  border-color: #e6ca2f;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -8078,8 +8078,8 @@ textarea {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-  background-color: #588500;
-  border-color: #476c00;
+  background-color: #e1c31b;
+  border-color: #caaf18;
 }
 .jumbotron p {
   font-weight: 300;
@@ -8142,12 +8142,27 @@ textarea {
 }
 #footer {
   margin-top: 40px;
-  background: #f0f0f0;
-  border-top: 10px solid #7ab800;
+  background: #edeeec;
+  border-top: 10px solid #caccc7;
   padding: 30px 0 19px 0;
+  font-size: 12px;
 }
 #footer a {
-  color: #7ab800;
+  color: #333333;
+  text-decoration: none;
+  border-bottom: dotted 1px #caccc7;
+}
+#footer a:hover {
+  border-bottom: solid 1px #caccc7;
+  text-decoration: none;
+}
+#footer a.naked {
+  text-decoration: none;
+  border-bottom: none;
+}
+#footer a.naked:hover {
+  text-decoration: none;
+  border-bottom: none;
 }
 #summary-stats {
   margin-top: 40px;
@@ -8344,9 +8359,11 @@ ul.availability-single {
 }
 #home-visualisation,
 #permalink-visualisation {
-  margin-bottom: 40px;
   width: 100%;
-  min-height: 460px;
+  height: auto;
+}
+#home-visualisation {
+  background-color: #f0f0f0;
 }
 .summary-compared {
   font-size: 0.75em;
@@ -8452,4 +8469,28 @@ th.header.headerSortUp:after {
 }
 .facebook {
   color: #3B5998;
+}
+.home-about,
+#home-visualisation {
+  background-color: #f0f0f0;
+}
+.home-about {
+  padding-bottom: 40px;
+  padding-top: 18px;
+}
+.home-about h2 {
+  font-size: 42px;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.home-box {
+  text-align: center;
+}
+.home-box p {
+  padding: 0 60px;
+}
+.home-box h3 {
+  font-weight: 300;
+  font-size: 30px;
 }

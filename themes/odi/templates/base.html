@@ -112,22 +112,42 @@
         <footer id="footer">
             <div class="container">
                 <div class="row">
-                    <div class="footer-main col-md-9">
+                    <div class="footer-main col-md-8">
+                        <div class="footer-attribution">
+                            <p>
+                                <a href="http://opendefinition.org/ossd/" title="{{ gettext('Open Online Software Service') }}">
+                                    <img src="http://assets.okfn.org/images/ok_buttons/os_80x15_orange_grey.png" alt="" border="" />
+                                </a>
+                                <a href="http://opendefinition.org/okd/" title="{{ gettext('Open Online Software Service') }}">
+                                    <img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" alt="" border="" />
+                                </a>
+                                <a href="http://opendefinition.org/okd/" title="{{ gettext('Open Content') }}">
+                                    <img src="http://assets.okfn.org/images/ok_buttons/oc_80x15_blue.png" alt="" border="" />
+                                </a>
+                                &ndash;
+                                <a href="http://creativecommons.org/licenses/by/3.0/" title="{{ gettext('Content Licensed under a CC Attribution') }}"></a>
+                                <a href="http://opendatacommons.org/licenses/pddl/1.0" title="{{ gettext('Data License (Public Domain)') }}">{{ gettext('Data License (Public Domain)') }}</a>
+                            </p>
+                        </div>
                         <div class="footer-meta">
                             {% filter markdown %}
                             {% include "content/footer_meta.md" %}
                             {% endfilter %}
-                        </div>
-                        <div class="footer-attribution">
-                            {% filter markdown %}
-                            {% include "content/footer_attribution.md" %}
-                            {% endfilter %}
+                            <a class="naked" href="http://okfn.org/" title="{{ gettext('Open Knowledge') }}"><img src="http://assets.okfn.org/p/okfn/img/okfn-logo-landscape-black-s.png" alt="" height="28"></a>
                         </div>
                     </div>
-                    <div class="footer-links col-md-3">
-                        {% filter markdown %}
-                        {% include "content/footer_links.md" %}
-                        {% endfilter %}
+                    <div class="footer-links col-md-2">
+                        <li><a href="http://okfn.org/" title="{{ gettext('Open Knowledge') }}">{{ gettext('Open Knowledge') }}</a></li>
+                        <li><a href="http://okfn.org/opendata/" title="{{ gettext('What is Open Data?') }}">{{ gettext('What is Open Data?') }}</a></li>
+                        <li><a href="http://census.okfn.org/" title="{{ gettext('Run your own Index') }}">{{ gettext('Run your own Index') }}</a></li>
+                        <li><a href="{{ ODI.repo }}" title="{{ gettext('The source code for %(site)s', site=SITENAME) }}">{{ gettext('Source Code') }}</a></li>
+                    </div>
+                    <div class="footer-links col-md-2">
+                        <li><a href="{{ SITEURL }}/" title="{{ gettext('%(name)s home', name=SITENAME) }}">{{ gettext('Home') }}</a></li>
+                        <li><a href="{{ SITEURL }}/download/" title="{{ gettext('Download data') }}">{{ gettext('Download') }}</a></li>
+                        <li><a href="{{ SITEURL }}/methodology/" title="{{ gettext('The methodology behind the %(name)s', name=SITENAME) }}">{{ gettext('Methodology') }}</a></li>
+                        <li><a href="{{ SITEURL }}/about/" title="{{ gettext('About the %(site)s', site=SITENAME) }}">{{ gettext('About') }}</a></li>
+                        <li><a href="mailto:{{ ODI.email }}" title="{{ gettext('Contact us') }}">{{ gettext('Contact') }}</a></li>
                     </div>
                 </div>
             </div>
