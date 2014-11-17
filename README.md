@@ -1,5 +1,7 @@
 # Open Data Index
 
+(c) 2013-2015 Open Knowledge. Licensed under the [AGPL](http://www.gnu.org/licenses/agpl-3.0.html)
+
 This is the code that powers the [Open Data Index](http://index.okfn.org/), an [Open Knowledge](http://okfn.org/) initiative.
 
 The Open Data Index displays a snapshot of data collected in an [Open Data Survey](http://census.okfn.org).
