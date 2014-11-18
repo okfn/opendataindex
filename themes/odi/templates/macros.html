@@ -3,7 +3,7 @@
 {%- endmacro %}
 
 
-{% macro popover_comparison_content(entry, place, dataset, questions) -%}
+{% macro popover_comparison_content(scope, entry, place, dataset, questions) -%}
 
 {% if not entry %}
 {{ gettext('There is no data available.') }}.
@@ -57,18 +57,18 @@
     {{ gettext('No additional details') }}
     {% endif %}
 </p>
-<a class="btn btn-primary" href="{{ SITEURL }}/place/{{ place.slug }}/{{ dataset.id }}/">
+<a class="btn btn-primary" href="{{ scope.siteurl }}/place/{{ place.slug }}/{{ dataset.id }}/">
     {{ gettext('Read more') }} &raquo;
 </a>
 {% endif %}
 {%- endmacro %}
 
-{% macro history(page, odi, namespace, as_buttons=True) -%}
+{% macro history(scope, namespace, as_buttons=True) -%}
 <h4>{{ gettext('See other years') }}</h4>
 <div class="{% if as_buttons %}btn-group{% endif %}">
-    {% for year in odi.years %}
+    {% for year in scope.odi.years %}
 
-    {% if year == odi.current_year %}
+    {% if year == scope.odi.current_year %}
         {% set route = '%s/'|format(namespace) %}
         {% set anchor = gettext('Current') %}
     {% else %}
@@ -76,16 +76,16 @@
         {% set anchor = year %}
     {% endif %}
 
-    {% if route == page.url %}
+    {% if route == scope.page.url %}
     {% else %}
-        <a class="{% if as_buttons %}btn btn-default{% endif %}" href="{{ SITEURL }}/{{ route }}" title="{{ anchor }}">{{ anchor }}</a>
+        <a class="{% if as_buttons %}btn btn-default{% endif %}" href="{{ scope.siteurl }}/{{ route }}" title="{{ anchor }}">{{ anchor }}</a>
     {% endif %}
     {% endfor %}
 </div>
 {%- endmacro %}
 
 
-{% macro share(scope, page, odi, namespace, social_share_text, with_embed=False, with_text=True) -%}
+{% macro share(scope, namespace, with_embed=False, with_text=True) -%}
 <h4>{{ gettext('Share this data') }}</h4>
 <div class="btn-group">
   {% if with_embed %}
@@ -93,13 +93,13 @@
     <i class="fa fa-code"></i> {{ gettext('Embed') }}
   </a>
   {% endif %}
-  <a href="http://twitter.com/share?url={{ SITEURL }}/{{ page.url }}&text={{ social_share_text }}" class="btn btn-default twitter" target="_blank">
+  <a href="http://twitter.com/share?url={{ scope.siteurl }}/{{ scope.page.url }}&text={{ scope.social_share_text }}" class="btn btn-default twitter" target="_blank">
     <i class="fa fa-twitter"></i>{% if with_text %} {{ gettext('Twitter') }}{% endif %}
   </a>
-  <a href="http://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ page.url }}" class="btn btn-default facebook" target="_blank">
+  <a href="http://www.facebook.com/sharer/sharer.php?u={{ scope.siteurl }}/{{ scope.page.url }}" class="btn btn-default facebook" target="_blank">
     <i class="fa fa-facebook"></i>{% if with_text %} {{ gettext('Facebook') }}{% endif %}
   </a>
-  <a href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.url }}" class="btn btn-default google-plus" target="_blank">
+  <a href="https://plus.google.com/share?url={{ scope.siteurl }}/{{ scope.page.url }}" class="btn btn-default google-plus" target="_blank">
     <i class="fa fa-google-plus"></i>{% if with_text %} {{ gettext('Google+') }}{% endif %}
   </a>
 </div>
@@ -114,7 +114,7 @@
         <p>
             {{ gettext('Use the following code to embed the map visualisation into your own website.') }}
         </p>
-        <xmp contenteditable="true"><iframe width="{{ scope.embed_width }}" height="{{ scope.embed_height }}" src="{{ SITEURL }}/vis/map/embed/?embed_width={{ scope.embed_width }}&embed_height={{ scope.embed_height }}&filter_year={{ scope.filter_year }}&filter_dataset={{ scope.filter_dataset }}&panel_tools={{ scope.panel_tools }}&panel_share={{ scope.panel_share }}{% if scope.embed_title %}&embed_title={{ scope.embed_title }}{% endif %}&map_place={{ scope.map_place }}" frameBorder="0"></iframe></xmp>
+        <xmp contenteditable="true"><iframe width="{{ scope.embed_width }}" height="{{ scope.embed_height }}" src="{{ scope.siteurl }}/vis/map/embed/?embed_width={{ scope.embed_width }}&embed_height={{ scope.embed_height }}&filter_year={{ scope.filter_year }}&filter_dataset={{ scope.filter_dataset }}&panel_tools={{ scope.panel_tools }}&panel_share={{ scope.panel_share }}{% if scope.embed_title %}&embed_title={{ scope.embed_title }}{% endif %}&map_place={{ scope.map_place }}" frameBorder="0"></iframe></xmp>
         <p>
         {{ gettext('If you are a developer, you can read more about the embed options here') }}: <a href="https://github.com/okfn/opendataindex/#choropleth-map" title="{{ gettext('Embed options') }}">{{ gettext('Embed options') }}</a>
         </p>

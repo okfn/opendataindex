@@ -6,10 +6,14 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 
 #}
 
-{% set scope = {} %}
+{% set scope = {
+    'siteurl': SITEURL,
+    'odi': ODI,
+    'page': page
+} %}
 
 {# helpers to lookup scores, ranks and values based on current page #}
-{% if (page.year == ODI.current_year) or not page.year %}
+{% if (page.year == scope.odi.current_year) or not page.year %}
     {% do scope.update({
         'rank_lookup': 'rank',
         'score_lookup': 'score',
@@ -17,9 +21,9 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
     }) %}
     {% if page.year %}
         {% do scope.update({
-            'rank_lookup_previous': '%s%s'|format('rank_', ODI.previous_year),
-            'score_lookup_previous': '%s%s'|format('score_', ODI.previous_year),
-            'value_lookup_previous': '%s%s'|format('value_', ODI.previous_year)
+            'rank_lookup_previous': '%s%s'|format('rank_', scope.odi.previous_year),
+            'score_lookup_previous': '%s%s'|format('score_', scope.odi.previous_year),
+            'value_lookup_previous': '%s%s'|format('value_', scope.odi.previous_year)
         }) %}
     {% endif %}
 {% else %}
@@ -80,7 +84,7 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 {% if page.year %}
     {% set filter_year = page.year %}
 {% else %}
-    {% set filter_year = ODI.current_year %}
+    {% set filter_year = scope.odi.current_year %}
 {% endif %}
 
 {% if page.dataset %}

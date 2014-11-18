@@ -5,11 +5,11 @@
         {% block head_css %}{% endblock head_css %}
         <script>
             var siteUrl = {{ SITEURL|tojson|safe }},
-                currentYear = {{ ODI.current_year|tojson|safe }},
-                previousYear = {{ ODI.previous_year|tojson|safe }},
-                years = {{ ODI.years|tojson|safe }},
+                currentYear = {{ scope.odi.current_year|tojson|safe }},
+                previousYear = {{ scope.odi.previous_year|tojson|safe }},
+                years = {{ scope.odi.years|tojson|safe }},
                 sitename = {{ SITENAME|tojson|safe }},
-                sponsor = {{ ODI.sponsor.name|tojson|safe }};
+                sponsor = {{ scope.odi.sponsor.name|tojson|safe }};
         </script>
         {% block head_scripts %}{% endblock head_scripts %}
     </head>

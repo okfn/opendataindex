@@ -27,14 +27,14 @@
     <div class="row">
         <div class="col-md-6">
             <h1>
-                <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.place.name, site=SITENAME) }}">{{ scope.place.name|truncate(20) }}</a> / <a href="{{ SITEURL }}/dataset/{{ scope.dataset.id }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.dataset.title, site=SITENAME) }}">{{ scope.dataset.title|truncate(30) }}</a>{% if page.year != ODI.current_year %} / <a href="{{ SITEURL }}/place/{{ page.year }}/" title="{{ gettext('See more Index data in %(year)s', year=page.year) }}">{{ page.year }}</a>{% endif %}
+                <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.place.name, site=SITENAME) }}">{{ scope.place.name|truncate(20) }}</a> / <a href="{{ SITEURL }}/dataset/{{ scope.dataset.id }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.dataset.title, site=SITENAME) }}">{{ scope.dataset.title|truncate(30) }}</a>{% if page.year != scope.odi.current_year %} / <a href="{{ SITEURL }}/place/{{ page.year }}/" title="{{ gettext('See more Index data in %(year)s', year=page.year) }}">{{ page.year }}</a>{% endif %}
             </h1>
             <div class="row statistics">
                 <div class="col-md-7">
                     <span class="place-rank">#{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
                 </div>
                 <div class="col-md-5">
-                    <span class="place-openness" data-score="{{ scope.entry.score or ODI.na }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
+                    <span class="place-openness" data-score="{{ scope.entry.score or scope.odina }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
                     {% if scope.entry.isopen %}
                     <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
                     {% endif %}
@@ -44,7 +44,7 @@
             <div class="row relative">
                 <div class="col-md-1 change"><i class="fa fa-{% if entry_previous.rank|int > scope.entry.rank|int %}arrow-up{% elif entry_previous.rank|int < scope.entry.rank|int %}arrow-down{% else %}fa-minus{% endif %}"></i></div>
                 <div class="col-md-11">
-                    {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} is {% if entry_previous.rank|int > scope.entry.rank|int %}{{ scope.higher|lower }}{% elif entry_previous.rank|int < scope.entry.rank|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ entry_previous.rank }} {{ gettext('in') }} {{ ODI.previous_year }}
+                    {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} is {% if entry_previous.rank|int > scope.entry.rank|int %}{{ scope.higher|lower }}{% elif entry_previous.rank|int < scope.entry.rank|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ entry_previous.rank }} {{ gettext('in') }} {{ scope.odi.previous_year }}
                 </div>
             </div>
             {% endif %}
@@ -53,10 +53,10 @@
             {% endif %}
             <div class="row navigate">
                 <div class="col-md-6">
-                    {{ history(page, ODI, fragment, as_buttons=False) }}
+                    {{ history(scope, fragment, as_buttons=False) }}
                 </div>
                 <div class="col-md-6">
-                    {{ share(scope, page, ODI, fragment, scope.social_share_text, with_embed=True, with_text=False) }}
+                    {{ share(scope, fragment, with_embed=True, with_text=False) }}
                 </div>
             </div>
         </div>

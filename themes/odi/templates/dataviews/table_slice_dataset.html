@@ -18,7 +18,7 @@
                 <th>{{ gettext('Location (URL)') }}</th>
                 <th>{{ gettext('Format') }}</th>
                 <th>{{ gettext('Info') }}</th>
-                <th>{{ gettext('Prev.') }} {% if page.year == ODI.current_year %}({{ ODI.previous_year }}){% endif %}</th>
+                <th>{{ gettext('Prev.') }} {% if page.year == scope.odi.current_year %}({{ scope.odi.previous_year }}){% endif %}</th>
                 <th>{{ gettext('Score') }}</th>
             </tr>
         </thead>
@@ -30,9 +30,9 @@
             'previous': scope.entries|where('place', entry.place)|where('year', (page.year|int - 1)|string)|first
         }) %}
 
-            <tr data-rank="{{ entry.rank or ODI.na }}" data-score="{{ entry.score }}" data-place="{{ entry.place.slug }}">
+            <tr data-rank="{{ entry.rank or scope.odina }}" data-score="{{ entry.score }}" data-place="{{ entry.place.slug }}">
                 <td>
-                    {{ entry.rank or ODI.na }}
+                    {{ entry.rank or scope.odina }}
                 </td>
                 <td>
                   <a href="{{ SITEURL }}/place/{{ entry.place.slug }}/{{ scope.dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=page.dataset, place=entry.place.name) }}">{{ entry.place.name }}</a>
@@ -46,10 +46,10 @@
                     </ul>
                 </td>
                 <td>
-                    {% if entry.url %}{{ entry.url|urlize(30) }}{% else %}{{ ODI.na }}{% endif %}
+                    {% if entry.url %}{{ entry.url|urlize(30) }}{% else %}{{ scope.odi.na }}{% endif %}
                 </td>
                 <td>
-                    {% if entry.format %}{{ entry.format|truncate(10) }}{% else %}{{ ODI.na }}{% endif %}
+                    {% if entry.format %}{{ entry.format|truncate(10) }}{% else %}{{ scope.odi.na }}{% endif %}
                 </td>
                 <td class="info-expander" title="{{ gettext('Click for full details') }}">
                 {% if entry.details %}
@@ -57,18 +57,18 @@
                       <i class="fa fa-info-circle"></i>
                     </a>
                 {% else %}
-                    {{ ODI.na }}
+                    {{ scope.odi.na }}
                 {% endif %}
                 </td>
                 <td class="previous-results">
                 {% if entry.previous and entry.previous.score %}
-                    <span class="rank rank-previous">#{{ entry.previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{% if entry.previous %}{{ entry.previous.score or ODI.na }}{% else %}{{ ODI.na }}{% endif %}">{{ entry.previous.score }}%</span>
+                    <span class="rank rank-previous">#{{ entry.previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{% if entry.previous %}{{ entry.previous.score or scope.odina }}{% else %}{{ scope.odi.na }}{% endif %}">{{ entry.previous.score }}%</span>
                 {% else %}
-                    {{ ODI.na }}
+                    {{ scope.odi.na }}
                 {% endif %}
                 </td>
-                <td class="score" data-score="{{ entry.score or ODI.na }}">
-                    <span>{% if entry.score %}{{ entry.score }}%{% else %}{{ ODI.na }}{% endif %}</span>
+                <td class="score" data-score="{{ entry.score or scope.odina }}">
+                    <span>{% if entry.score %}{{ entry.score }}%{% else %}{{ scope.odi.na }}{% endif %}</span>
                 </td>
             </tr>
             {% if entry.details %}

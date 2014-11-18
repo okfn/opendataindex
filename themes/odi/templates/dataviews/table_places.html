@@ -8,10 +8,10 @@ popover_comparison_content, history, share %}
     {% include 'dataviews/table_tools.html' %}
   </div>
   <div class="col-md-4">
-    {{ history(page, ODI, fragment) }}
+    {{ history(scope, fragment) }}
   </div>
   <div class="col-md-4">
-    {{ share(scope, page, ODI, fragment, scope.social_share_text) }}
+    {{ share(scope, fragment) }}
   </div>
 </div>
 
@@ -39,7 +39,7 @@ popover_comparison_content, history, share %}
     </thead>
     <tbody>
       {% for place in scope.places %}
-        <tr data-rank="{{ place[scope.rank_lookup] or ODI.na }}" data-score="{{ place[scope.score_lookup] or ODI.na }}" data-place="{{ place.slug }}">
+        <tr data-rank="{{ place[scope.rank_lookup] or scope.odina }}" data-score="{{ place[scope.score_lookup] or scope.odina }}" data-place="{{ place.slug }}">
           <td class="rank" data-rank="{{ place[scope.rank_lookup] }}">
             {{ place[scope.rank_lookup] }}
           </td>
@@ -51,7 +51,7 @@ popover_comparison_content, history, share %}
           {% for dataset in scope.datasets %}
             <td>
               {% set entry = scope.entries|where('place', place.id)|where('dataset', dataset.id)|where('year', page.year)|first %}
-              <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(entry, place, dataset, scope.questions)|e|safe }}">
+              <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(scope, entry, place, dataset, scope.questions)|e|safe }}">
               {% for question in scope.questions if question.score %}
                 {% if entry %}
                   {% set state = entry[question.id] %}
@@ -63,8 +63,8 @@ popover_comparison_content, history, share %}
               </ul>
             </td>
           {% endfor %}
-          <td class="score" data-score="{{ place[scope.score_lookup] or ODI.na }}">
-            <span>{{ place[scope.score_lookup] or ODI.na }}%</span>
+          <td class="score" data-score="{{ place[scope.score_lookup] or scope.odina }}">
+            <span>{{ place[scope.score_lookup] or scope.odina }}%</span>
           </td>
         </tr>
       {% endfor %}

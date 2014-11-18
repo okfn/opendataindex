@@ -5,10 +5,10 @@ popover_comparison_content, history, share %}
 
 <div class="row">
   <div class="col-md-6">
-    {{ history(page, ODI, fragment) }}
+    {{ history(scope, fragment) }}
   </div>
   <div class="col-md-6">
-    {{ share(scope, page, ODI, fragment, scope.social_share_text) }}
+    {{ share(scope, fragment) }}
   </div>
 </div>
 
@@ -39,7 +39,7 @@ popover_comparison_content, history, share %}
           {% do top_places.extend(scope.places|where('id', e.place)) %}
         {% endfor %}
 
-        <tr data-rank="{{ dataset[scope.rank_lookup] or ODI.na }}" data-score="{{ dataset[scope.score_lookup] or ODI.na }}" data-dataset="{{ dataset.slug }}">
+        <tr data-rank="{{ dataset[scope.rank_lookup] or scope.odina }}" data-score="{{ dataset[scope.score_lookup] or scope.odina }}" data-dataset="{{ dataset.slug }}">
           <td class="rank" data-rank="{{ dataset[scope.rank_lookup] }}">
             {{ dataset[scope.rank_lookup] }}
           </td>
@@ -52,13 +52,13 @@ popover_comparison_content, history, share %}
             {{ dataset.description }}
           </td>
           <td>
-            <span class="score score-top" data-score="{{ _top.score or ODI.na }}">{{ _top.score }}%</span>
+            <span class="score score-top" data-score="{{ _top.score or scope.odina }}">{{ _top.score }}%</span>
             {% for place in top_places %}
             <a href="{{ SITEURL }}/place/{{ place.slug }}/{{ dataset.id }}/">{{ place.name }}</a>&nbsp;
             {% endfor %}
           </td>
-          <td class="score" data-score="{{ dataset[scope.score_lookup] or ODI.na }}">
-            <span>{{ dataset[scope.score_lookup] or ODI.na }}%</span>
+          <td class="score" data-score="{{ dataset[scope.score_lookup] or scope.odina }}">
+            <span>{{ dataset[scope.score_lookup] or scope.odina }}%</span>
           </td>
         </tr>
       {% endfor %}
