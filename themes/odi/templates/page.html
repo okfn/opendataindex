@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 
+{% block meta_description -%}
+{% from '_scope.html' import scope with context %}
+{% if scope and scope.metadescription %}
+{{ scope.metadescription }}
+{% else %}
+{{ ODI.description }}
+{% endif %}
+{%- endblock meta_description %}
+
+{% block meta_keywords -%}
+{% from '_scope.html' import scope with context %}
+{% if scope and scope.metakeywords %}
+{{ scope.metakeywords }}, {{ ODI.keywords }}
+{% else %}
+{{ ODI.keywords }}
+{% endif %}
+{%- endblock meta_keywords %}
+
 {% block body_classes -%}{{ page.type }}{%- endblock body_classes %}
 {% block page_title -%}{{ page.title }}{%- endblock page_title %}
 
