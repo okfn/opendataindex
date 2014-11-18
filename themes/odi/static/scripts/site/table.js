@@ -1,4 +1,4 @@
-define(['jquery', 'bootstrap', 'chroma', 'tablesorter'], function($, bootstrap, chroma, tablesorter) {
+define(['jquery', 'bootstrap', 'chroma', 'tablesorter', 'stickykit'], function($, bootstrap, chroma, tablesorter, stickykit) {
 
     var placeCount = placeCount || 260,
         colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
@@ -12,6 +12,10 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter'], function($, bootstrap, 
     $('#places_overview_table').tablesorter({sortList: [[0,0]]});
     $('#datasets_overview_table').tablesorter({sortList: [[0,0]]});
     $('#slice-table').tablesorter({sortList: [[0,0]]});
+
+    $("#places_overview_table thead").stick_in_parent();
+    $("#datasets_overview_table thead").stick_in_parent();
+    $("#slice-table thead").stick_in_parent();
 
     function filterTable(table, query, $actor) {
 
@@ -92,7 +96,7 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter'], function($, bootstrap, 
     }
 
     function setColumnTHWidths() {
-        $('.table-header-stuck th')
+        $('thead th')
             .each(function () {
                 var width = $(this).outerWidth();
                 $(this).css('width', width);

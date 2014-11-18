@@ -8539,3 +8539,9 @@ th.header.headerSortUp:after {
   text-align: center;
   font-size: 32px;
 }
+.is_stuck {
+  background-color: white;
+}
+.is_stuck th {
+  min-width: 69px;
+}
