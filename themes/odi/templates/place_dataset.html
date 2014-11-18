@@ -34,7 +34,7 @@
                     <span class="place-rank">#{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
                 </div>
                 <div class="col-md-5">
-                    <span class="place-openness" data-score="{{ scope.entry.score or scope.odina }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
+                    <span class="place-openness" data-score="{{ scope.entry.score or scope.odi.na }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
                     {% if scope.entry.isopen %}
                     <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
                     {% endif %}

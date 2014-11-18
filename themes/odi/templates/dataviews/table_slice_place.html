@@ -30,9 +30,9 @@
             'previous': scope.entries|where('dataset', entry.dataset)|where('year', (page.year|int - 1)|string)|first
         }) %}
 
-            <tr data-rank="{{ entry.rank or scope.odina }}" data-score="{{ entry.score }}" data-place="{{ entry.place }}">
+            <tr data-rank="{{ entry.rank or scope.odi.na }}" data-score="{{ entry.score }}" data-place="{{ entry.place }}">
                 <td class="rank">
-                    {{ entry.rank or scope.odina }}
+                    {{ entry.rank or scope.odi.na }}
                 </td>
                 <td>
                     <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/{{ entry.dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=entry.dataset.title, place=scope.place.name) }}">{{ entry.dataset.title }}</a>
@@ -62,19 +62,33 @@
                 </td>
                 <td class="previous-results">
                 {% if entry.previous and entry.previous.score %}
-                    <span class="rank rank-previous">#{{ entry.previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{{ entry.previous.score or scope.odina }}">{{ entry.previous.score }}%</span>
+                    <span class="rank rank-previous">#{{ entry.previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{{ entry.previous.score or scope.odi.na }}">{{ entry.previous.score }}%</span>
                 {% else %}
                     {{ scope.odi.na }}
                 {% endif %}
                 </td>
-                <td class="score" data-score="{{ entry.score or scope.odina }}">
+                <td class="score" data-score="{{ entry.score or scope.odi.na }}">
                   <span>{% if entry.score %}{{ entry.score }}%{% else %}{{ scope.odi.na }}{% endif %}</span>
                 </td>
             </tr>
             {% if entry.details %}
             <tr id="detail-{{ entry.dataset.id }}" class="details collapse">
-                <td></td>
-                <td colspan="7">{{ entry.details|markdown }}</td>
+                <td>{# hack around tablesorter and our row toggler #}<span style="visibility: hidden">{{ entry.rank or scope.odi.na }}</span></td>
+                <td colspan="7">
+                    {# hack around tablesorter and our row toggler #}<span style="visibility: hidden;">{{ entry.dataset.title }}</span>
+                    <br />
+                    {% if entry.url or entry.format %}
+                    {% if entry.url %}<span><strong>{{ gettext('URL') }}:</strong> <a href="{{ entry.url }}" title="{{ entry.url }}">{{ entry.url }}</a></span>
+                    <br />
+                    {% endif %}{% if entry.format %}<span><strong>{{ gettext('Format') }}:</strong> {{ entry.format }}</span>
+                    {% endif %}
+                    {% endif %}
+                    {% if entry.details %}
+                    <br /><br />
+                    {{ entry.details|markdown }}
+                    <br />
+                    {% endif %}
+                </td>
             </tr>
             {% endif %}
         {% endfor %}

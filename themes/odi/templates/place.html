@@ -32,7 +32,7 @@
                     <span class="place-rank">#{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}</span>
                 </div>
                 <div class="col-md-5">
-                    <span class="place-openness" data-score="{{ scope.place[scope.score_lookup] or scope.odina }}">{{ scope.place[scope.score_lookup] }}% {{ gettext('open') }}</span>
+                    <span class="place-openness" data-score="{{ scope.place[scope.score_lookup] or scope.odi.na }}">{{ scope.place[scope.score_lookup] }}% {{ gettext('open') }}</span>
                     {% if scope.place[scope.score_lookup]|int >= 90 %}
                     <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
                     {% endif %}
