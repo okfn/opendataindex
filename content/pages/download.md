@@ -4,4 +4,4 @@ title:  Download
 slug: download
 
 
-This is the download page. Get the raw data in various ways here.
+Select which way you would like to download your raw data: select your format (Archive, CSV, JSON), data by year and datasets by category (including the 10 categories of dataset questions).
