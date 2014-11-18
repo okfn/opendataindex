@@ -31,7 +31,7 @@ popover_comparison_content, history, share %}
       </tr>
     </thead>
     <tbody>
-      {% for dataset in scope.datasets %}
+      {% for dataset in scope.datasets|natsort(attribute=scope.score_lookup, reverse=True) %}
         {% set _top = scope.entries|where('dataset', dataset.id)|where('year', page.year)|first %}
         {% set _matches = scope.entries|where('dataset', dataset.id)|where('year', page.year)|where('score', _top.score) %}
         {% set top_places = [] %}
