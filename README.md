@@ -141,7 +141,7 @@ These defaults can be customized on initialisation of the map via URL params (a 
 
 ### Data tables
 
-Displays the Index data in a tabular format. **These visualisation is not currently embeddedable.**
+Displays the Index data in a tabular format. **This visualisation is not currently embeddedable.**
 
 There are two types of tables:
 

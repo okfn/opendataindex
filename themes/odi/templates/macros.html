@@ -85,11 +85,11 @@
 {%- endmacro %}
 
 
-{% macro share(page, odi, namespace, social_share_text, with_embed=False, with_text=True) -%}
+{% macro share(scope, page, odi, namespace, social_share_text, with_embed=False, with_text=True) -%}
 <h4>{{ gettext('Share this data') }}</h4>
 <div class="btn-group">
   {% if with_embed %}
-  <a href="" class="btn btn-default embed">
+  <a href="" class="btn btn-default embed" data-toggle="modal" data-target="#embed-instructions">
     <i class="fa fa-code"></i> {{ gettext('Embed') }}
   </a>
   {% endif %}
@@ -102,6 +102,28 @@
   <a href="https://plus.google.com/share?url={{ SITEURL }}/{{ page.url }}" class="btn btn-default google-plus" target="_blank">
     <i class="fa fa-google-plus"></i>{% if with_text %} {{ gettext('Google+') }}{% endif %}
   </a>
+</div>
+<div class="modal fade" id="embed-instructions" tabindex="-1" role="dialog" aria-labelledby="embedLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{ gettext('Close') }}</span></button>
+        <h4 class="modal-title" id="embedLabel">{{ gettext('Map embed code') }}</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+            {{ gettext('Use the following code to embed the map visualisation into your own website.') }}
+        </p>
+        <xmp contenteditable="true"><iframe width="{{ scope.embed_width }}" height="{{ scope.embed_height }}" src="{{ SITEURL }}/vis/map/embed/?embed_width={{ scope.embed_width }}&embed_height={{ scope.embed_height }}&filter_year={{ scope.filter_year }}&filter_dataset={{ scope.filter_dataset }}&panel_tools={{ scope.panel_tools }}&panel_share={{ scope.panel_share }}{% if scope.embed_title %}&embed_title={{ scope.embed_title }}{% endif %}&map_place={{ scope.map_place }}" frameBorder="0"></iframe></xmp>
+        <p>
+        {{ gettext('If you are a developer, you can read more about the embed options here') }}: <a href="https://github.com/okfn/opendataindex/#choropleth-map" title="{{ gettext('Embed options') }}">{{ gettext('Embed options') }}</a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ gettext('Close') }}</button>
+      </div>
+    </div>
+  </div>
 </div>
 {%- endmacro %}
 
