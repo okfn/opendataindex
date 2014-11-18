@@ -8529,6 +8529,7 @@ th.header.headerSortUp:after {
 #data-header .statistics .open-badge {
   text-align: right;
   float: right;
+  clear: both;
 }
 #data-header .relative {
   font-size: 20px;
