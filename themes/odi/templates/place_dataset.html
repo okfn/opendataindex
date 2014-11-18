@@ -5,7 +5,7 @@
 
 {% do scope.update({
   'embed_height': '360px',
-  'embed_title': '%s / %s %s'|format(scope.place.name, scope.dataset.title, page.year),
+  'embed_title': '%s ; %s ; %s'|e|format(scope.place.name, scope.dataset.title, page.year),
   'panel_tools': 'false',
   'panel_share': 'false',
 }) %}
@@ -16,79 +16,81 @@
 {% block heading %}{% endblock heading %}
 
 {% block breadcrumbs_inner %}
-  <li><a href="{{ SITEURL }}/place">{{ gettext('Places')}}</a></li>
-  <li><a href="{{ SITEURL }}/place/{{ scope.place.slug }}/">{{ scope.place.name }}</a></li>
-  <li class="active">{{ scope.dataset.title }}</li>
+<li><a href="{{ SITEURL }}/place">{{ gettext('Places')}}</a></li>
+<li><a href="{{ SITEURL }}/place/{{ scope.place.slug }}/">{{ scope.place.name }}</a></li>
+<li class="active">{{ scope.dataset.title }}</li>
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-<header id="place-intro" class="page-header">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>
-        {{ scope.dataset.title }} {% if page.year != ODI.current_year %}{{ page.year }}{% endif %}
-        <span class="label label-default place-openness" data-score="{{ scope.entry.score or ODI.na }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
-      </h1>
-      <p class="lead">
-        <strong>#{{ scope.entry.rank }} {{ gettext('in the Index') }}</strong>
-        {% if entry_previous and entry_previous.rank %}
-          <br>
-          <small>
-            {% if entry_previous.rank|int >
-               scope.entry.rank|int
-            %}
-            {{ scope.higher }}
-            {% elif entry_previous.rank|int <
-               scope.entry.rank|int
-            %}
-            {{ scope.lower }}
-            {% else %}
-            {{ scope.no_change }}
-            {% endif %}
-            from #{{ entry_previous.rank }} in {{ ODI.previous_year }}
-          </small>
-        {% endif %}
-      </p>
-      {{ page.content }}
-      {{ history(page, ODI, fragment) }}
-      {{ share(page, ODI, fragment, scope.social_share_text) }}
-      <div class="dataset-info">
-        <h4>{{ gettext('About %(dataset)s data', dataset=scope.dataset.title) }}</h4>
-        {{ scope.dataset.description|markdown }}
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div id="map-container">
-        {% include 'dataviews/embed_map.html' %}
-      </div>
-    </div>
-  </div>
-</header>
 
-<section>
+<section id="data-header">
     <div class="row">
-        <div class="col-md-7">
-            {% if scope.entry.url %}
-            <p>
-                <span class="label label-primary">{{ gettext('Location') }}</span>&nbsp;&nbsp;<a href="{{ scope.entry.url }}" title="{{ gettext('%(dataset)s data for %(place)s', dataset=scope.dataset.title, place=scope.place.name) }}">{{ scope.entry.url }}</a>
-            </p>
-            {% endif %}
-            {% if scope.entry.format %}
-            <p>
-                <span class="label label-primary">{{ gettext('Format') }}</span>&nbsp;&nbsp;{{ scope.entry.format }}
-            </p>
-            {% endif %}
-            {% if scope.entry.details %}
-            <div class="justify">
-              {{ scope.entry.details|markdown }}
+        <div class="col-md-6">
+            <h1>
+                <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.place.name, site=SITENAME) }}">{{ scope.place.name|truncate(20) }}</a> / <a href="{{ SITEURL }}/dataset/{{ scope.dataset.id }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.dataset.title, site=SITENAME) }}">{{ scope.dataset.title|truncate(30) }}</a>{% if page.year != ODI.current_year %} / <a href="{{ SITEURL }}/place/{{ page.year }}/" title="{{ gettext('See more Index data in %(year)s', year=page.year) }}">{{ page.year }}</a>{% endif %}
+            </h1>
+            <div class="row statistics">
+                <div class="col-md-7">
+                    <span class="place-rank">#{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
+                </div>
+                <div class="col-md-5">
+                    <span class="place-openness" data-score="{{ scope.entry.score or ODI.na }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
+                    {% if scope.entry.isopen %}
+                    <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if entry_previous and entry_previous.rank %}
+            <div class="row relative">
+                <div class="col-md-1 change"><i class="fa fa-{% if entry_previous.rank|int > scope.entry.rank|int %}arrow-up{% elif entry_previous.rank|int < scope.entry.rank|int %}arrow-down{% else %}fa-minus{% endif %}"></i></div>
+                <div class="col-md-11">
+                    {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} is {% if entry_previous.rank|int > scope.entry.rank|int %}{{ scope.higher|lower }}{% elif entry_previous.rank|int < scope.entry.rank|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ entry_previous.rank }} {{ gettext('in') }} {{ ODI.previous_year }}
+                </div>
             </div>
             {% endif %}
+            {% if page.content %}
+            <div class="row content">{{ page.content }}</div>
+            {% endif %}
+            <div class="row navigate">
+                <div class="col-md-6">
+                    {{ history(page, ODI, fragment, as_buttons=False) }}
+                </div>
+                <div class="col-md-6">
+                    {{ share(page, ODI, fragment, scope.social_share_text, with_embed=True, with_text=False) }}
+                </div>
+            </div>
         </div>
-        <div class="col-md-5">
-            <ul class="availability-single">
-            {% for question in scope.questions if question.score %}
-                {% set state = scope.entry[question.id] %}
+        <div class="col-md-6">
+            <div id="map-container">
+                {% include 'dataviews/embed_map.html' %}
+            </div>
+        </div>
+    </div>
+</section>
 
+<hr />
+
+<section class="dataset-about">
+    <h3>{{ gettext('About') }}</h3>
+    <div class="row">
+        <div class="col-md-8">
+            {% if scope.entry.url or scope.entry.format or scope.entry.officialtitle or scope.entry.licenseurl %}
+            <ul>
+                {% if scope.entry.url %}<li>{{ gettext('URL') }}: <a href="{{ scope.entry.url }}" title="{{ gettext('%(dataset)s data for %(place)s', dataset=scope.dataset.title, place=scope.place.name) }}">{{ scope.entry.url }}</a></li>{% endif %}
+                {% if scope.entry.format %}<li>{{ gettext('Format') }}: {{ scope.entry.format }}</li>{% endif %}
+                {% if scope.entry.officialtitle %}<li>{{ gettext('Title') }}: {{ scope.entry.officialtitle }}</li>{% endif %}
+                {% if scope.entry.publisher %}<li>{{ gettext('Publisher') }}: {{ scope.entry.publisher }}</li>{% endif %}
+                {% if scope.entry.licenseurl %}<li>{{ gettext('License URL') }}: {{ scope.entry.licenseurl }}</li>{% endif %}
+            </ul>
+            {% endif %}
+            {% if scope.entry.details %}
+            {{ scope.entry.details|markdown }}
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <ul class="availability-single">
+                {% for question in scope.questions if question.score %}
+                {% set state = scope.entry[question.id] %}
                 <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}"
                     data-toggle="popover"
                     title="{{ popover_slice_title(question.question, state)|e|safe }}"
@@ -96,32 +98,43 @@
                     <i class="fa fa-{{ question.icon }}"></i>&nbsp;
                     {{ question.question }}? {% if state == 'Y' %}{{ gettext('Yes') }}{% elif state == 'N' %}{{ gettext('No') }}{% elif state == '?' %}{{ gettext('Unsure') }}{% endif %}
                 </li>
-            {% endfor %}
+                {% endfor %}
             </ul>
+        </div>
+    </div>
+    <div class="row">
+        <h4>
+            {{ gettext('More on %(dataset)s data', dataset=scope.dataset.title) }}
+        </h4>
+        <div class="col-md-12">
+            {{ scope.dataset.description|markdown }}
         </div>
     </div>
 </section>
 
 <section id="place-contributors">
-  <h2>{{ gettext('Contributors') }}</h2>
-  <p>
-    {{ gettext('The following people have made this possible') }}:
-  </p>
-  {% if scope.entry.reviewers %}
-  <h4>{{ gettext('Reviewers') }}</h4>
-  <ul>
-  {% for reviewer in scope.entry.reviewers %}
-    <li>{{ reviewer }}</li>
-  {% endfor %}
-  </ul>
-  {% endif %}
-  {% if scope.entry.submitters %}
-  <h4>{{ gettext('Submitters') }}</h4>
-  <ul>
-  {% for submitter in scope.entry.submitters %}
-    <li>{{ submitter }}</li>
-  {% endfor %}
-  </ul>
-  {% endif %}
+  <div class="row">
+    <h2>{{ gettext('Contributors') }}</h2>
+    <div class="col-md-6">
+      {% if scope.entry.reviewers %}
+      <h4>{{ gettext('Reviewers') }}</h4>
+      <ul>
+          {% for reviewer in scope.entry.reviewers %}
+          <li>{{ reviewer }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+  </div>
+  <div class="col-md-6">
+      {% if scope.entry.submitters %}
+      <h4>{{ gettext('Submitters') }}</h4>
+      <ul>
+          {% for submitter in scope.entry.submitters %}
+          <li>{{ submitter }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+  </div>
+</div>
 </section>
 {% endblock content %}

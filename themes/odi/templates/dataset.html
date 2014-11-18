@@ -5,7 +5,7 @@
 
 {% do scope.update({
   'embed_height': '360px',
-  'embed_title': '%s %s'|format(scope.dataset.title, page.year),
+  'embed_title': '%s ; %s'|e|format(scope.dataset.title, page.year),
   'panel_tools': 'false',
   'panel_share': 'false'
 }) %}
@@ -20,44 +20,60 @@
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-<header id="place-intro" class="page-header">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>
-        {{ scope.dataset.title }} {% if page.year != ODI.current_year %}{{ page.year }}{% endif %}
-        <span class="label label-default dataset-openness" data-score="{{ scope.dataset[scope.score_lookup] or ODI.na }}">{{ scope.dataset[scope.score_lookup] }}% {{ gettext('open') }}</span>
-      </h1>
-      <p class="lead">
-        <strong>#{{ scope.dataset[scope.rank_lookup] }} {{ gettext('in the Index') }}</strong>
-        {% if scope.dataset[scope.rank_lookup_previous] %}
-          <br>
-          <small>
-            {% if scope.dataset[scope.rank_lookup_previous]|int >
-               scope.dataset[scope.rank_lookup]|int
-            %}
-            {{ scope.higher }}
-            {% elif scope.dataset[scope.rank_lookup_previous]|int <
-               scope.dataset[scope.rank_lookup]|int
-            %}
-            {{ scope.lower }}
-            {% else %}
-            {{ scope.no_change }}
+
+<section id="data-header">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>
+                <a href="{{ SITEURL }}/dataset/{{ scope.dataset.id }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.dataset.title, site=SITENAME) }}">{{ scope.dataset.title|truncate(60) }}</a>{% if page.year != ODI.current_year %} / <a href="{{ SITEURL }}/place/{{ page.year }}/" title="{{ gettext('See more Index data in %(year)s', year=page.year) }}">{{ page.year }}</a>{% endif %}
+            </h1>
+            <div class="row statistics">
+                <div class="col-md-7">
+                    <span class="place-rank">#{{ scope.dataset[scope.rank_lookup] }} {{ gettext('in the Index') }}</span>
+                </div>
+                <div class="col-md-5">
+                    <span class="dataset-openness" data-score="{{ scope.dataset[scope.score_lookup] or ODI.na }}">{{ scope.dataset[scope.score_lookup] }}% {{ gettext('open (avg.)') }}</span>
+                    {% if scope.dataset[scope.score_lookup]|int >= 90 %}
+                    <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if scope.dataset[scope.rank_lookup_previous] %}
+            <div class="row relative">
+                <div class="col-md-1 change"><i class="fa fa-{% if scope.dataset[scope.rank_lookup_previous]|int > scope.dataset[scope.rank_lookup]|int %}arrow-up{% elif scope.dataset[scope.rank_lookup_previous]|int < scope.dataset[scope.rank_lookup]|int %}arrow-down{% else %}fa-minus{% endif %}"></i></div>
+                <div class="col-md-11">
+                    {{ gettext('The Index average ranking for ') }} {{ scope.dataset.title }} is {% if scope.dataset[scope.rank_lookup_previous]|int > scope.dataset[scope.rank_lookup]|int %}{{ scope.higher|lower }}{% elif scope.dataset[scope.rank_lookup_previous]|int < scope.dataset[scope.rank_lookup]|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.dataset[scope.rank_lookup_previous] }} {{ gettext('in') }} {{ ODI.previous_year }}
+                </div>
+            </div>
             {% endif %}
-            from #{{ scope.dataset[scope.rank_lookup_previous] }} in {{ ODI.previous_year }}
-          </small>
-        {% endif %}
-      </p>
-      {{ page.content }}
-      {{ history(page, ODI, fragment) }}
-      {{ share(page, ODI, fragment, scope.social_share_text) }}
+            {% if page.content %}
+            <div class="row content">{{ page.content }}</div>
+            {% endif %}
+            <div class="row navigate">
+                <div class="col-md-6">
+                    {{ history(page, ODI, fragment, as_buttons=False) }}
+                </div>
+                <div class="col-md-6">
+                    {{ share(page, ODI, fragment, scope.social_share_text, with_embed=True, with_text=False) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="map-container">
+                {% include 'dataviews/embed_map.html' %}
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-      <div id="map-container">
-        {% include 'dataviews/embed_map.html' %}
-      </div>
-    </div>
-  </div>
-</header>
+</section>
+
+<hr />
+
+<section class="dataset-about">
+  <h3>{{ gettext('About') }}</h3>
+  {{ scope.dataset.description|markdown }}
+</section>
+
+<hr />
 
 <section id="dataset-slice-table">
   {% include 'dataviews/table_slice_dataset.html' %}

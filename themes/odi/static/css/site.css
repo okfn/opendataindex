@@ -8212,10 +8212,6 @@ textarea {
 #home-stats .burst {
   font-size: 175%;
 }
-#place-intro h1 .label {
-  padding: .2em .6em;
-  font-weight: 200;
-}
 .data-table thead th {
   font-size: 14px;
 }
@@ -8328,25 +8324,31 @@ ul.data-table-key {
 .availability li.no {
   background-color: #ff0000;
 }
-.availability-single li {
-  height: 32px;
-  line-height: 32px;
-  margin-bottom: 8px;
-  border-bottom: 2px solid #f5f5f5;
-}
-ul.availability-single {
-  list-style-type: none;
-  margin-left: 0;
-  margin-top: 70px;
-  padding-left: 0;
-}
-.availability-single li i {
-  height: 32px;
-  line-height: 32px;
-  width: 32px;
+.availability-popover li i {
+  width: 20px;
+  height: 20px;
   text-align: center;
   color: white;
-  font-size: 24px;
+  padding: 2px;
+}
+.availability-popover li.yes i {
+  background-color: #7ab800;
+}
+.availability-popover li.maybe i {
+  background-color: #2980b9;
+}
+.availability-popover li.no i {
+  background-color: #ff0000;
+}
+.availability-single li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.availability-single li i {
+  color: white;
+  padding: 2px;
+  width: 22px;
+  text-align: center;
 }
 .availability-single li.yes i {
   background-color: #7ab800;
@@ -8396,8 +8398,9 @@ ul.availability-single {
 .rank-top {
   opacity: 0.6;
   padding: 2px;
-  width: 24px;
+  width: 40px;
   text-align: center;
+  display: inline-block;
 }
 td.previous-results {
   text-align: center;
@@ -8418,9 +8421,21 @@ h1 a:hover,
   color: block;
   text-decoration: underline;
 }
-h1 .place-openness,
-h1 .dataset-openness {
+.place-openness,
+.dataset-openness {
   float: right;
+  border-radius: 0 !important;
+  font-size: 24px;
+  font-weight: 300;
+  padding: 8px;
+}
+.place-rank,
+.dataset-rank {
+  float: left;
+  border-radius: 0 !important;
+  font-size: 30px;
+  font-weight: 300;
+  background-color: #2d2d2d;
 }
 #places_overview_table thead tr th:first-child,
 #datasets_overview_table thead tr th:first-child,
@@ -8493,4 +8508,33 @@ th.header.headerSortUp:after {
 .home-box h3 {
   font-weight: 300;
   font-size: 30px;
+}
+.place-rank {
+  background-color: #f5f5f5;
+  color: #2d2d2d;
+  padding: 8px;
+  font-size: 24px;
+  font-weight: 300;
+}
+#data-header h1 {
+  font-weight: 300;
+}
+#data-header .statistics,
+#data-header .relative,
+#data-header .content,
+#data-header .navigate {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#data-header .statistics .open-badge {
+  text-align: right;
+  float: right;
+}
+#data-header .relative {
+  font-size: 20px;
+  font-weight: 300;
+}
+#data-header .relative .change {
+  text-align: center;
+  font-size: 32px;
 }

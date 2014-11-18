@@ -20,9 +20,9 @@ popover_comparison_content, history, share %}
 <div class="table-responsive">
   <table id="places_overview_table" class="table data-table table-header-stuck">
     <col style="width:6%">
-    <col style="width:15%">
+    <col style="width:13%">
     {% for dataset in scope.datasets %}
-      <col style="width:7.3%">
+      <col style="width:7.5%">
     {% endfor %}
     <col style="width:6%">
     <thead>
@@ -45,7 +45,7 @@ popover_comparison_content, history, share %}
           </td>
           <td>
             <a href="{{ SITEURL }}/place/{{ place.slug }}/" title="{{ place.name }}">
-              {{ place.name|truncate(25) }}
+              {{ place.name|truncate(20) }}
             </a>
           </td>
           {% for dataset in scope.datasets %}

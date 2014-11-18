@@ -74,7 +74,9 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             embed: {
                 width: '100%',
                 height: '100%',
-                title: 'Open Data Index'
+                title: sitename,
+                sponsor: sponsor,
+                sitename: sitename
             },
             filter: {
                 year: currentYear,
@@ -84,7 +86,7 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                 name: true,
                 tools: true,
                 help: true,
-                legend: true,
+                legend: true
             },
             map: {
                 place: undefined
@@ -448,8 +450,8 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                 $infoBox.show();
             }
         });
-
-        $titleBox.html(titleBoxTmpl({'title': decodeURIComponent(uiState.embed.title)}));
+        console.log(uiState.embed.title);
+        $titleBox.html(titleBoxTmpl({'title': decodeURIComponent(uiState.embed.title.replace(/;/g, '/')), 'sitename': uiState.embed.sitename}));
 
      }
 

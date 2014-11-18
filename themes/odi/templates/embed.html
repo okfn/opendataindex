@@ -7,7 +7,9 @@
             var siteUrl = {{ SITEURL|tojson|safe }},
                 currentYear = {{ ODI.current_year|tojson|safe }},
                 previousYear = {{ ODI.previous_year|tojson|safe }},
-                years = {{ ODI.years|tojson|safe }};
+                years = {{ ODI.years|tojson|safe }},
+                sitename = {{ SITENAME|tojson|safe }},
+                sponsor = {{ ODI.sponsor.name|tojson|safe }};
         </script>
         {% block head_scripts %}{% endblock head_scripts %}
     </head>

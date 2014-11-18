@@ -24,7 +24,7 @@
     </div>
     <div class="odi-vis-meta">
         <div class="odi-vis-meta-left">
-            <a class="odi-vis-name" target="_parent" href="{{ SITEURL }}/" title="{{ gettext('Go to the %(sitename)s website', sitename=SITENAME) }}">{{ SITENAME }}</a>
+            <a class="odi-vis-name" target="_parent" href="{{ ODI.sponsor.domain }}" title="{{ gettext('Go to the %(sitename)s website', sitename=ODI.sponsor.name) }}">{{ ODI.sponsor.name }}</a>
             <div class="odi-vis-tools">
                 <i class="icon icon-filter" title="Filter the vis data"></i>
                 <select class="odi-filter-year"></select>
@@ -129,6 +129,6 @@
 </script>
 
 <script type="text/template" class="title-box">
-    <%= title %>
+    <div class="title-box-text"><span class="title-box-text-name"><%= sitename %></span><br /><%= title %></div>
 </script>
 {% endblock content %}

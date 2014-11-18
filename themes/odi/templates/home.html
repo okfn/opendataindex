@@ -3,6 +3,10 @@
 {% block main %}
 {% from '_scope.html' import scope with context %}
 
+{% do scope.update({
+  'embed_title': '%s'|format(page.year),
+}) %}
+
 <div id="home-stats">
   <div class="container">
     <h1>{{ gettext('Open government data around the world, right now.') }}</h1>

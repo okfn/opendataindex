@@ -8,6 +8,8 @@
 @color-okf-green: #7AB800;
 @color-okf-grey: #f0f0f0;
 @color-okf-yellow: #E9D046;
+@color-okf-black: #2d2d2d;
+@color-okf-white: #f5f5f5;
 
 @color-maybe: #2980b9;
 @color-yes: @color-okf-green;
@@ -191,12 +193,6 @@ textarea {
   }
 }
 
-// Individual place page
-#place-intro h1 .label {
-  padding: .2em .6em;
-  font-weight: 200;
-}
-
 // Tables
 .data-table {
   thead th {
@@ -334,27 +330,46 @@ ul.availability, ul.data-table-key {
   background-color: @color-no;
 }
 
+.availability-popover {
+
+  li i {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: white;
+    padding: 2px;
+  }
+
+  li.yes i {
+    background-color: @color-yes;
+  }
+
+  li.maybe i {
+    background-color: @color-maybe;
+  }
+
+  li.no i {
+    background-color: @color-no;
+  }
+
+}
+
+
+
 .availability-single li {
-  height: 32px;
-  line-height: 32px;
-  margin-bottom: 8px;
-  border-bottom: 2px solid #f5f5f5;
+    margin-top: 8px;
+    margin-bottom: 8px
 }
 
 ul.availability-single {
-  list-style-type: none;
-  margin-left: 0;
-  margin-top: 70px;
-  padding-left: 0;
+
 }
 
 .availability-single li i {
-  height: 32px;
-  line-height: 32px;
-  width: 32px;
-  text-align: center;
-  color: white;
-  font-size: 24px;
+    color: white;
+    padding: 2px;
+    width: 22px;
+    text-align: center;
 }
 
 .availability-single li.yes i {
@@ -413,8 +428,9 @@ ul.availability-single {
 .rank-previous, .score-previous, .score-top, .rank-top {
   opacity: 0.6;
   padding: 2px;
-  width: 24px;
-  text-align: center
+  width: 40px;
+  text-align: center;
+  display: inline-block;
 }
 
 td.previous-results {
@@ -437,8 +453,20 @@ h1, .h1 {
   }
 }
 
-h1 .place-openness, h1 .dataset-openness {
+.place-openness, .dataset-openness {
   float: right;
+  border-radius: 0 !important;
+  font-size: 24px;
+  font-weight: 300;
+  padding: 8px;
+}
+
+.place-rank, .dataset-rank {
+  float: left;
+  border-radius: 0 !important;
+  font-size: 30px;
+  font-weight: 300;
+  background-color: @color-okf-black;
 }
 
 #places_overview_table thead tr th, #datasets_overview_table thead tr th, #slice-table thead tr th {
@@ -524,4 +552,48 @@ th.header.headerSortUp:after {
     font-weight: 300;
     font-size: 30px;
   }
+}
+
+.place-rank {
+  background-color: #f5f5f5;
+  color: @color-okf-black;
+  padding: 8px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+#data-header {
+    h1 {
+        font-weight: 300;
+    }
+
+    .statistics, .relative, .content, .navigate {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .statistics {
+
+        .open-badge {
+            text-align: right;
+            float: right;
+        }
+    }
+
+    .relative {
+        font-size: 20px;
+        font-weight: 300;
+
+        .change {
+            text-align: center;
+            font-size: 32px;
+        }
+    }
+}
+
+.dataset-about {
+
+    h3 {
+        //font-weight: 300;
+    }
 }

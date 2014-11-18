@@ -5,7 +5,7 @@
 
 {% do scope.update({
   'embed_height': '360px',
-  'embed_title': '%s %s'|format(scope.place.name, page.year),
+  'embed_title': '%s ; %s'|e|format(scope.place.name, page.year),
   'panel_tools': 'false',
   'panel_share': 'false',
 }) %}
@@ -20,69 +20,81 @@
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-<header id="place-intro" class="page-header">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>
-        {{ scope.place.name }} {% if page.year != ODI.current_year %}{{ page.year }}{% endif %}
-        <span class="label label-default place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% {{ gettext('open') }}</span>
-      </h1>
-      <p class="lead">
-        <strong>#{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}</strong>
-        {% if scope.place[scope.rank_lookup_previous] %}
-          <br>
-          <small>
-            {% if scope.place[scope.rank_lookup_previous]|int >
-               scope.place[scope.rank_lookup]|int
-            %}
-            {{ scope.higher }}
-            {% elif scope.place[scope.rank_lookup_previous]|int <
-               scope.place[scope.rank_lookup]|int
-            %}
-            {{ scope.lower }}
-            {% else %}
-            {{ scope.no_change }}
+
+<section id="data-header">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>
+                <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.place.name, site=SITENAME) }}">{{ scope.place.name|truncate(60) }}</a>{% if page.year != ODI.current_year %} / <a href="{{ SITEURL }}/place/{{ page.year }}/" title="{{ gettext('See more Index data in %(year)s', year=page.year) }}">{{ page.year }}</a>{% endif %}
+            </h1>
+            <div class="row statistics">
+                <div class="col-md-7">
+                    <span class="place-rank">#{{ scope.place[scope.rank_lookup] }} {{ gettext('in the Index') }}</span>
+                </div>
+                <div class="col-md-5">
+                    <span class="place-openness" data-score="{{ scope.place[scope.score_lookup] or ODI.na }}">{{ scope.place[scope.score_lookup] }}% {{ gettext('open') }}</span>
+                    {% if scope.place[scope.score_lookup]|int >= 90 %}
+                    <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
+                    {% endif %}
+                </div>
+            </div>
+            {% if scope.place[scope.rank_lookup_previous] %}
+            <div class="row relative">
+                <div class="col-md-1 change"><i class="fa fa-{% if scope.place[scope.rank_lookup_previous]|int > scope.place[scope.rank_lookup]|int %}arrow-up{% elif scope.place[scope.rank_lookup_previous]|int < scope.place[scope.rank_lookup]|int %}arrow-down{% else %}fa-minus{% endif %}"></i></div>
+                <div class="col-md-11">
+                    {{ scope.place.name }}'s {{ gettext('overall Index ranking') }} is {% if scope.place[scope.rank_lookup_previous]|int > scope.place[scope.rank_lookup]|int %}{{ scope.higher|lower }}{% elif scope.place[scope.rank_lookup_previous]|int < scope.place[scope.rank_lookup]|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.place[scope.rank_lookup_previous] }} {{ gettext('in') }} {{ ODI.previous_year }}
+                </div>
+            </div>
             {% endif %}
-            from #{{ scope.place[scope.rank_lookup_previous] }} in {{ ODI.previous_year }}
-          </small>
-        {% endif %}
-      </p>
-      {{ page.content }}
-      {{ history(page, ODI, fragment) }}
-      {{ share(page, ODI, fragment, scope.social_share_text) }}
+            {% if page.content %}
+            <div class="row content">{{ page.content }}</div>
+            {% endif %}
+            <div class="row navigate">
+                <div class="col-md-6">
+                    {{ history(page, ODI, fragment, as_buttons=False) }}
+                </div>
+                <div class="col-md-6">
+                    {{ share(page, ODI, fragment, scope.social_share_text, with_embed=True, with_text=False) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="map-container">
+                {% include 'dataviews/embed_map.html' %}
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-      <div id="map-container">
-        {% include 'dataviews/embed_map.html' %}
-      </div>
-    </div>
-  </div>
-</header>
+</section>
+
+<hr />
 
 <section id="place-slice-table">
   {% include 'dataviews/table_slice_place.html' %}
 </section>
 
 <section id="place-contributors">
-  <h2>{{ gettext('Contributors') }}</h2>
-  <p>
-    {{ gettext('The following people have made this possible') }}:
-  </p>
-  {% if scope.place.reviewers %}
-  <h4>{{ gettext('Reviewers') }}</h4>
-  <ul>
-  {% for reviewer in scope.place.reviewers %}
-    <li>{{ reviewer }}</li>
-  {% endfor %}
-  </ul>
-  {% endif %}
-  {% if scope.place.submitters %}
-  <h4>{{ gettext('Submitters') }}</h4>
-  <ul>
-  {% for submitter in scope.place.submitters %}
-    <li>{{ submitter }}</li>
-  {% endfor %}
-  </ul>
-  {% endif %}
+  <div class="row">
+    <h2>{{ gettext('Contributors') }}</h2>
+    <div class="col-md-6">
+      {% if scope.place.reviewers %}
+      <h4>{{ gettext('Reviewers') }}</h4>
+      <ul>
+      {% for reviewer in scope.place.reviewers %}
+        <li>{{ reviewer }}</li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      {% if scope.place.submitters %}
+      <h4>{{ gettext('Submitters') }}</h4>
+      <ul>
+      {% for submitter in scope.place.submitters %}
+        <li>{{ submitter }}</li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
 </section>
 {% endblock content %}
