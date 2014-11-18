@@ -101,7 +101,7 @@
             {{ gettext('Use the following code to embed this visualisation into your own website.') }}
         </p>
         <div>
-            <xmp contenteditable="true"><iframe width="100%" height="100%" src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
+            <xmp contenteditable="true"><iframe width="{{ scope.embed_width }}" height="{{ scope.embed_height }}" src="{{ SITEURL }}/{{ page.slug }}<%= state_params %>" frameBorder="0"></iframe></xmp>
         </div>
     </div>
 </script>

@@ -1,5 +1,7 @@
 {% extends 'page.html' %}
 
+{% from '_scope.html' import scope with context %}
+
 {% block content %}
 <p>
     {{ gettext('We do not current have any data for %(page)s. But you can help change that!', page=page.title) }}

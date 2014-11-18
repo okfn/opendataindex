@@ -94,7 +94,7 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 {% endif %}
 
 {% if page.place %}
-    {% set map_place = scope.place.id %}
+    {% set map_place = page.place %}
 {% else %}
     {% set map_place = '' %}
 {% endif %}
