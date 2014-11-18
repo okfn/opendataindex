@@ -36,6 +36,7 @@
                 </td>
                 <td>
                     <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/{{ entry.dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=entry.dataset.title, place=scope.place.name) }}">{{ entry.dataset.title }}</a>
+                    <span class="dataset-context" data-toggle="popover" title="{{ entry.dataset.title }}" data-content="{{ entry.dataset.description|markdown|e|safe }}"><i class="fa fa-info-circle"></i></span>
                 </td>
                 <td class="breakdown">
                     <ul class="availability availability-slice">
