@@ -112,21 +112,21 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
 }) %}
 
 {# set the meta data for the page #}
-{% if page.place %}
+{% if scope.place %}
     {% do scope.update({
         'metadescription': 'The state of government open data in %(place)s'|format(place=scope.place.name),
         'metakeywords': '%(place)s'|format(place=scope.place.name)
     }) %}
 {% endif %}
 
-{% if page.dataset %}
+{% if scope.dataset %}
     {% do scope.update({
         'metadescription': 'The state of government open data for %(dataset)s'|format(dataset=scope.dataset.title),
         'metakeywords': '%(dataset)s'|format(dataset=scope.dataset.title)
     }) %}
 {% endif %}
 
-{% if page.place and page.dataset and page.year %}
+{% if scope.place and scope.dataset and page.year %}
     {% do scope.update({
         'metadescription': 'The state of government open data in %(place)s for %(dataset)s in %(year)s'|format(place=scope.place.name, dataset=scope.dataset.title, year=page.year),
         'metakeywords': '%(place)s, %(dataset)s, %(year)s'|format(place=scope.place.name, dataset=scope.dataset.title, year=page.year)

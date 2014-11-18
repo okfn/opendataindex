@@ -12,7 +12,7 @@
         <meta property="og:site_name" content="{{ SITENAME }}" />
         <meta property="og:description" content="{% if scope and scope.metadescription %}{{ scope.metadescription }}{% else %}{{ ODI.description }}{% endif %}" />
         <meta property="og:image" content="{{ SITEURL }}/static/images/favicon.ico" />
-        <title>{{ SITENAME }} - {{ ODI.author.name }}</title>
+        <title>{% block meta_title %}{{ SITENAME }} {{ gettext('by') }} {{ ODI.author.name }}{% endblock meta_title %}</title>
         <base href="/">
         {% block head_css %}
         <link rel="stylesheet" href="{{ SITEURL }}/static/css/site.css">
@@ -40,7 +40,7 @@
                   </button>
                   <a class="navbar-brand" href="{{ SITEURL }}/">
                     <img src="{{ SITEURL }}/static/images/logo.png" height="44">
-                    <span>{{ SITENAME }}</span>
+                    <span>{{ gettext('Global') }} {{ SITENAME }}</span>
                   </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse">

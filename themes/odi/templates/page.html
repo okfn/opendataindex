@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block meta_title %}
+{{ page.title }} | {{ super() }}
+{% endblock meta_title %}
+
 {% block meta_description -%}
 {% from '_scope.html' import scope with context %}
 {% if scope and scope.metadescription %}
