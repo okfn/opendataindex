@@ -15,9 +15,11 @@ AUTORELOAD_IGNORE_CACHE = True
 AUTHOR = u'Open Knowledge'
 SITENAME = u'Open Data Index'
 DEFAULT_LANG = u'en'
-STATIC_PATHS = ['extra/CNAME']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 PATH = 'content'
+STATIC_PATHS = ['extra/CNAME', 'data']
+EXTRA_PATH_METADATA = {
+  'extra/CNAME': {'path': 'CNAME'},
+}
 OUTPUT_PATH = 'output'
 TIMEZONE = 'UTC'
 FEED_ALL_ATOM = None
@@ -66,9 +68,9 @@ PLUGINS = [
 
 # DATASTORE PLUGIN CONFIGURATION
 DATASTORE = {
-    'location': os.path.join(PROJECT_ROOT, 'data'),
+    'location': os.path.join(PROJECT_ROOT, 'content', 'data'),
     'formats': ['.csv'],
-    'intrafield_delimiter': ';;',
+    'intrafield_delimiter': '~*',
     'true_strings': ['TRUE', 'True', 'true'],
     'false_strings': ['FALSE', 'False', 'false'],
     'none_strings': ['NULL', 'Null', 'null', 'NONE', 'None', 'none',

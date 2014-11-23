@@ -14,6 +14,7 @@ content/pages/places/*
 content/pages/datasets/*
 content/pages/place/*
 content/pages/dataset/*
+content/data/*.csv
 config_instance.py
 /cli/build
 /cli/dist

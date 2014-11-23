@@ -112,5 +112,18 @@ def populate(limited):
         lib.populate.run()
 
 
+@cli.command()
+@click.option('--extract_only', is_flag=True)
+def etl(extract_only):
+    """Run the source data extraction/transform/load flow.
+
+    What happens:
+    * Extract data from the live database
+    * Transform the live data into the schema that the Index requires
+    * Load the transformed data into the Index database
+
+    """
+
+
 if __name__ == '__main__':
     cli()

@@ -16,11 +16,21 @@ def get_config():
     sys.path.append(base_path)
     import config_default
     config = config_default.ODI['cli']
+    datastore_config = config_default.DATASTORE
     sys.path.remove(base_path)
     return config
 
 
+def get_datastore_config():
+    base_path = os.path.join(os.getcwd())
+    sys.path.append(base_path)
+    import config_default
+    config = config_default.DATASTORE
+    sys.path.remove(base_path)
+    return config
+
 config = get_config()
+datastore_config = get_datastore_config()
 
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdGNBWWJDaTlnMU1wN1BQZlgxNHBxd0E&usp=drive_web#gid=0
 survey_submissions = config['database']['submissions']
@@ -34,6 +44,13 @@ survey_datasets = config['database']['datasets']
 
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdE1QUS1qNjhvRDJaQy1TbTdJZDMtNFE&usp=drive_web#gid=1
 survey_places = config['database']['places']
+
+entries_dest = os.path.join(datastore_config['location'], 'entries.csv')
+submissions_dest = os.path.join(datastore_config['location'], 'submissions.csv')
+questions_dest = os.path.join(datastore_config['location'], 'questions.csv')
+datasets_dest = os.path.join(datastore_config['location'], 'datasets.csv')
+places_dest = os.path.join(datastore_config['location'], 'places.csv')
+summary_dest = os.path.join(datastore_config['location'], 'summary.csv')
 
 
 class AttrDict(dict):
@@ -164,8 +181,8 @@ class Extractor(object):
                                s['place'] == v['place'] and
                                s['dataset'] == v['dataset']]
 
-            v['submitters'] = ';;'.join(set([s['submitter'] for s in rel_submissions if s]))
-            v['reviewers'] = ';;'.join(set([s['reviewer'] for s in rel_submissions if s]))
+            v['submitters'] = '~*'.join(set([s['submitter'] for s in rel_submissions if s['submitter']]))
+            v['reviewers'] = '~*'.join(set([s['reviewer'] for s in rel_submissions if s['reviewer']]))
 
         self.writable_entries = AttrDict(self._rank_entries(OrderedDict(entries_to_write)))
 
@@ -184,7 +201,7 @@ class Extractor(object):
         fieldnames.insert(-1, 'submitters')
         fieldnames.insert(-1, 'reviewers')
 
-        writer = csv.DictWriter(open('data/entries.csv', 'w'),
+        writer = csv.DictWriter(open(entries_dest, 'w'),
                 fieldnames=fieldnames,
                 lineterminator='\n'
                 )
@@ -261,7 +278,7 @@ class Extractor(object):
                 else:
                     dataset[rank_lookup] = lookup[year][str(dataset[score_lookup])]
 
-        self._write_csv(self.datasets.dicts, 'data/datasets.csv', fieldnames)
+        self._write_csv(self.datasets.dicts, datasets_dest, fieldnames)
 
     def run_questions(self):
         # get rid of translations (column 8 onwards) for the time being as not
@@ -281,7 +298,7 @@ class Extractor(object):
                 q = tuple(q)
                 newrows[index] = q
 
-        self._write_csv(newrows, 'data/questions.csv')
+        self._write_csv(newrows, questions_dest)
 
     def run_places(self):
         fieldnames = self.places.columns
@@ -381,10 +398,10 @@ class Extractor(object):
 
         for place in self.places.dicts:
             if place['id'] in submitreviewlookup:
-                place['submitters'] = ';;'.join(set([s for s in submitreviewlookup[place['id']]['submitters'] if s]))
-                place['reviewers'] = ';;'.join(set([r for r in submitreviewlookup[place['id']]['reviewers'] if r]))
+                place['submitters'] = '~*'.join(set([s for s in submitreviewlookup[place['id']]['submitters'] if s]))
+                place['reviewers'] = '~*'.join(set([r for r in submitreviewlookup[place['id']]['reviewers'] if r]))
 
-        self._write_csv(self.places.dicts, 'data/places.csv', fieldnames)
+        self._write_csv(self.places.dicts, places_dest, fieldnames)
 
     def run_summary(self):
         fieldnames = ['id', 'title', 'value']
@@ -416,7 +433,7 @@ class Extractor(object):
             rows[2].append(year_numopen)
             rows[3].append(year_percentopen)
 
-        self._write_csv([fieldnames] + rows, 'data/summary.csv')
+        self._write_csv([fieldnames] + rows, summary_dest)
 
     def _tidy_entry(self, entry_dict):
         # TODO: tidy up timestamp
@@ -530,8 +547,8 @@ class Extractor(object):
 
 class TestIndexData(unittest.TestCase):
     def setUp(self):
-        self.entries = Extractor._load_csv('data/entries.csv')
-        self.places = Extractor._load_csv('data/places.csv')
+        self.entries = Extractor._load_csv(entries_dest)
+        self.places = Extractor._load_csv(places_dest)
         self.keyed = dict([ [(e.place, e.dataset), e] for e in
             self.entries.dicts ])
 
@@ -560,7 +577,7 @@ class TestIndexData(unittest.TestCase):
         self.assertEqual(out['au'].rank, '10')
 
     def test_summary(self):
-        summary_all = Extractor._load_csv('data/summary.csv')
+        summary_all = Extractor._load_csv(summary_dest)
         summary = AttrDict([[x.id, x] for x in summary_all.dicts])
 
         self.assertEqual(summary.places_count.value, '249')
