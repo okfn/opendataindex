@@ -2,14 +2,12 @@
 
 {% from 'macros.html' import history, share %}
 {% from '_scope.html' import scope with context %}
-
 {% do scope.update({
   'embed_height': '360px',
   'embed_title': '%s ; %s'|e|format(scope.dataset.title, page.year),
   'panel_tools': 'false',
   'panel_share': 'false'
 }) %}
-
 {% set fragment = '%s%s'|format('dataset/', page.dataset) %}
 
 {% block heading %}{% endblock heading %}
@@ -20,7 +18,6 @@
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-
 <section id="data-header">
     <div class="row">
         <div class="col-md-6">

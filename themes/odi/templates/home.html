@@ -2,7 +2,6 @@
 
 {% block main %}
 {% from '_scope.html' import scope with context %}
-
 {% do scope.update({
   'embed_title': '%s'|format(page.year),
 }) %}

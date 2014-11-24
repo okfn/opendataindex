@@ -1,18 +1,16 @@
 {% extends 'page.html' %}
 
 {% from 'macros.html' import history, share %}
-
+{% from '_scope.html' import scope with context %}
 {% set fragment = 'place' %}
 
 {% block heading %}{% endblock heading %}
 
 {% block breadcrumbs_inner %}
-  <li class="active">{{ gettext('Places') }}</li>
+    <li class="active">{{ gettext('Places') }}</li>
 {% endblock breadcrumbs_inner %}
 
 {% block content %}
-{% from '_scope.html' import scope with context %}
-
 <header id="place-intro" class="page-header">
   <h1>{{ gettext('Place overview')}} {% if page.year != scope.odi.current_year %}{{ page.year }}{% endif %}</h1>
   <hr />

@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
-{% block meta_title %}
+{% block meta_title -%}
 {{ page.title }} | {{ super() }}
-{% endblock meta_title %}
+{%- endblock meta_title %}
 
 {% block meta_description -%}
-{% from '_scope.html' import scope with context %}
 {% if scope and scope.metadescription %}
 {{ scope.metadescription }}
 {% else %}
@@ -14,7 +13,6 @@
 {%- endblock meta_description %}
 
 {% block meta_keywords -%}
-{% from '_scope.html' import scope with context %}
 {% if scope and scope.metakeywords %}
 {{ scope.metakeywords }}, {{ ODI.keywords }}
 {% else %}
@@ -26,6 +24,5 @@
 {% block page_title -%}{{ page.title }}{%- endblock page_title %}
 
 {% block content -%}
-{% from '_scope.html' import scope with context %}
 {{ page.content }}
 {%- endblock content %}

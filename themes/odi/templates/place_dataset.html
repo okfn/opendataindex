@@ -2,14 +2,12 @@
 
 {% from 'macros.html' import history, share, popover_slice_title, popover_slice_content %}
 {% from '_scope.html' import scope with context %}
-
 {% do scope.update({
   'embed_height': '360px',
   'embed_title': '%s ; %s ; %s'|e|format(scope.place.name, scope.dataset.title, page.year),
   'panel_tools': 'false',
   'panel_share': 'false',
 }) %}
-
 {% set fragment = '%s/%s/%s'|format('place', scope.place.slug, scope.dataset.id) %}
 {% set entry_previous = scope.entries|where('year', (scope.entry.year|int - 1)|string)|first %}
 
