@@ -4,4 +4,6 @@ title:  Download
 slug: download
 
 
-Select which way you would like to download your raw data: select your format (Archive, CSV, JSON), data by year and datasets by category (including the 10 categories of dataset questions).
+The data of the Index is available for use under a [public domain data license](http://opendatacommons.org/licenses/pddl/1.0/). We provide the data as a single archive, and as indivdual files in CSV and JSON formats (as part of the [API](https://github.com/okfn/opendataindex#api)).
+
+A lot of work goes into preparing the Index each year, and we are eager to get feedback on how you use the data, so please do help us with this by filling out the form below.

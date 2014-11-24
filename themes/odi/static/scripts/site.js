@@ -14,7 +14,8 @@ require.config({
         chroma: 'vendor/chroma.min',
         lodash: 'vendor/lodash.compat.min',
         table: 'scripts/site/table',
-        place: 'scripts/site/place'
+        place: 'scripts/site/place',
+        ui: 'scripts/site/ui'
     }
 });
 

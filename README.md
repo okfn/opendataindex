@@ -212,3 +212,9 @@ http://docs.transifex.com/developer/client/
 ## URL Aliases
 
 If migrating from a previous Index site to the new static site, you'll need to implement aliases from some old URLs to the new ones. For all common URLs related to the Open Data Index, this is taken care of via the `alias` meta data per page. For the content sources that are **not** auto-generated (such as about, methodology, etc.), you can simply add a list of comma-separated URL paths to `alias`.
+
+## Forms
+
+### Download feedback form
+
+The site features integration with Google Forms for feedback on the download page.

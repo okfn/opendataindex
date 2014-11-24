@@ -1,18 +1,22 @@
 {% extends 'page.html' %}
 
+
 {% block breadcrumbs_inner %}
   <li class="active">{{ gettext('Download') }}</li>
 {% endblock breadcrumbs_inner %}
 
+
 {% block content %}
-{{ page.content }}
 <section class="row">
+    <div class="col-md-12">
+    {{ page.content }}
+    </div>
   <div class="col-md-4">
     <div class="">
       <h3>{{ gettext('Archive') }}</h3>
       <p>{{ gettext('All data as an archive file.') }}</p>
       <p>
-        <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/static/downloads/opendataindex_data_{{ TIMESTAMP }}.tar.gz" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">
+        <a class="btn btn-primary btn-lg {% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/static/downloads/opendataindex_data_{{ TIMESTAMP }}.tar.gz" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">
           {{ gettext('Download all data') }}
         </a>
       </p>
@@ -29,23 +33,33 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="{{ SITEURL }}/api/entries.csv">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/entries.csv">
                 {{ gettext('Entries') }}
               </a>
             </li>
             <li>
-              <a href="{{ SITEURL }}/api/datasets.csv">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/datasets.csv">
                 {{ gettext('Datasets') }}
               </a>
             </li>
             <li>
-              <a href="{{ SITEURL }}/api/places.csv">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/places.csv">
                 {{ gettext('Places') }}
               </a>
             </li>
             <li>
-              <a href="{{ SITEURL }}/api/questions.csv">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/questions.csv">
                 {{ gettext('Questions') }}
+              </a>
+            </li>
+          <li>
+            <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/entries/2014.csv">
+              {{ gettext('Entries (2014 only)') }}
+            </a>
+          </li>
+            <li>
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/entries/2013.csv">
+                {{ gettext('Entries (2013 only)') }}
               </a>
             </li>
           </ul>
@@ -64,23 +78,33 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="{{ SITEURL }}/api/entries.json">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/entries.json">
                 {{ gettext('Entries') }}
               </a>
             </li>
             <li>
-              <a href="{{ SITEURL }}/api/datasets.json">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/datasets.json">
                 {{ gettext('Datasets') }}
               </a>
             </li>
             <li>
-              <a href="{{ SITEURL }}/api/places.json">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/places.json">
                 {{ gettext('Places') }}
               </a>
             </li>
             <li>
-              <a href="{{ SITEURL }}/api/questions.json">
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/questions.json">
                 {{ gettext('Questions') }}
+              </a>
+            </li>
+          <li>
+            <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/entries/2014.json">
+              {{ gettext('Entries (2014 only)') }}
+            </a>
+          </li>
+            <li>
+              <a class="{% if ODI.forms.download %}download-action{% endif %}" href="{{ SITEURL }}/api/entries/2013.json">
+                {{ gettext('Entries (2013 only)') }}
               </a>
             </li>
           </ul>
@@ -90,103 +114,37 @@
   </div>
 </section>
 
-<h2>{{ gettext('Additional downloads') }}</h2>
-<p>{{ gettext('We also have a range of data slices available in both CSV and JSON formats.') }}</p>
-
-<section class="row">
-  <div class="col-md-4">
-    <h3>{{ gettext('Entries by year') }}</h3>
-    <p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
-          {{ gettext('Download') }} <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li>
-            <a href="{{ SITEURL }}/api/entries/2014.csv">
-              {{ gettext('2014 - CSV') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/entries/2014.json">
-              {{ gettext('2014 - JSON') }}
-            </a>
-          </li>
-            <li>
-              <a href="{{ SITEURL }}/api/entries/2013.csv">
-                {{ gettext('2013 - CSV') }}
-              </a>
-            </li>
-            <li>
-              <a href="{{ SITEURL }}/api/entries/2013.json">
-                {{ gettext('2013 - JSON') }}
-              </a>
-            </li>
-        </ul>
-      </div>
-    </p>
-  </div>
-  <div class="col-md-4">
-    <h3>{{ gettext('Datasets by category') }}</h3>
-    <p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown">
-          {{ gettext('Download') }} <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/civic-information.csv">
-              {{ gettext('Civic Information - CSV') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/civic-information.json">
-              {{ gettext('Civic Information - JSON') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/environment.csv">
-              {{ gettext('Environment - CSV') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/environment.json">
-              {{ gettext('Environment - JSON') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/finance.csv">
-              {{ gettext('Finance - CSV') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/finance.json">
-              {{ gettext('Finance - JSON') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/geodata.csv">
-              {{ gettext('Geodata - CSV') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/geodata.json">
-              {{ gettext('Geodata - JSON') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/transport.csv">
-              {{ gettext('Transport - CSV') }}
-            </a>
-          </li>
-          <li>
-            <a href="{{ SITEURL }}/api/datasets/transport.json">
-              {{ gettext('Transport - JSON') }}
-            </a>
-          </li>
-        </ul>
-      </div>
-    </p>
-  </div>
+{% if ODI.forms.download %}
+<section>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="tell-me-embedded">
+                <iframe src="{{ ODI.forms.download.url }}" width="{{ ODI.forms.download.width }}" height="{{ ODI.forms.download.height }}" frameborder="0" marginheight="0" marginwidth="0">{{ gettext('Loading') }}...</iframe>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
 </section>
+{% endif %}
+
+{% if ODI.forms.download %}
+<div class="modal" id="tell-us" tabindex="-1" role="dialog" aria-labelledby="tell-us-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">{{ gettext('Close') }}</span></button>
+        <h4 class="modal-title" id="tell-us-label">{{ gettext('Your download has begun') }}</h4>
+      </div>
+      <div class="modal-body">
+        <iframe src="{{ ODI.forms.download.url }}" width="{{ ODI.forms.download.width }}" height="{{ ODI.forms.download.height }}" frameborder="0" marginheight="0" marginwidth="0">{{ gettext('Loading') }}...</iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ gettext('Close') }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 {% endblock content %}
