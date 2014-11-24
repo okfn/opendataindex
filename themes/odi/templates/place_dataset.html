@@ -119,9 +119,13 @@
       {% if scope.entry.reviewers %}
       <h4>{{ gettext('Reviewers') }}</h4>
       <ul>
+          {% if scope.entry.reviewers is not string %}
           {% for reviewer in scope.entry.reviewers %}
           <li>{{ reviewer }}</li>
           {% endfor %}
+          {% else %}
+          <li>{{ scope.entry.reviewers }}</li>
+          {% endif %}
       </ul>
       {% endif %}
   </div>
@@ -129,9 +133,13 @@
       {% if scope.entry.submitters %}
       <h4>{{ gettext('Submitters') }}</h4>
       <ul>
+          {% if scope.entry.submitters is not string %}
           {% for submitter in scope.entry.submitters %}
           <li>{{ submitter }}</li>
           {% endfor %}
+          {% else %}
+          <li>{{ scope.entry.submitters }}</li>
+          {% endif %}
       </ul>
       {% endif %}
   </div>

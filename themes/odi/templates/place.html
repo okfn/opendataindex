@@ -79,9 +79,13 @@
       {% if scope.place.reviewers %}
       <h4>{{ gettext('Reviewers') }}</h4>
       <ul>
-      {% for reviewer in scope.place.reviewers %}
-        <li>{{ reviewer }}</li>
-      {% endfor %}
+          {% if scope.place.reviewers is not string %}
+          {% for reviewer in scope.place.reviewers %}
+          <li>{{ reviewer }}</li>
+          {% endfor %}
+          {% else %}
+          <li>{{ scope.place.reviewers }}</li>
+          {% endif %}
       </ul>
       {% endif %}
     </div>
@@ -89,9 +93,13 @@
       {% if scope.place.submitters %}
       <h4>{{ gettext('Submitters') }}</h4>
       <ul>
-      {% for submitter in scope.place.submitters %}
-        <li>{{ submitter }}</li>
-      {% endfor %}
+          {% if scope.place.submitters is not string %}
+          {% for submitter in scope.place.submitters %}
+          <li>{{ submitter }}</li>
+          {% endfor %}
+          {% else %}
+          <li>{{ scope.place.submitters }}</li>
+          {% endif %}
       </ul>
       {% endif %}
     </div>
