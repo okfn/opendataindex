@@ -127,25 +127,31 @@ ODI = {
         'url': u'https://okfn.org/'
     },
     'mailinglist': u'',
-    'cli':  {
-        'languages': ['en', 'es'],
-        'test_path': 'tests',
-        'tmp_path': 'tmp',
-        'content_path': PATH,
-        'output_path': OUTPUT_PATH,
-        'trans_path': 'themes/odi/translations',
-        'deploy_remote': 'upstream',
-        'database': {
-            'submissions': '',
-            'entries': '',
-            'questions': '',
-            'datasets': '',
-            'places': ''
-        },
-        'limited': {
-            'places': ['au'],
-            'datasets': ['timetables']
-        }
+    'languages': ['en', 'es'],
+    'test_path': 'tests',
+    'tmp_path': 'tmp',
+    'content_path': PATH,
+    'output_path': OUTPUT_PATH,
+    'trans_path': 'themes/odi/translations',
+    'deploy_remote': 'upstream',
+    'database': {
+        'submissions': '',
+        'entries': '',
+        'questions': '',
+        'datasets': '',
+        'places': ''
+    },
+    'limited': {
+        'places': ['au'],
+        'datasets': ['timetables']
+    },
+    'forms': {
+      'download': {
+        'url': 'https://docs.google.com/forms/d/1fEJxaJdOI9SxicgS3INwrgtGLK43qLTPpFiQ-e2ISm0/viewform?embedded=true',
+        'width': '560',
+        'height': '700'
+
+      }
     }
 }
 

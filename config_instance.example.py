@@ -21,25 +21,23 @@
 #     },
 #     'googleanalytics': u'',
 #     'mailinglist': u'',
-#     'cli':  {
-#         'languages': LANGUAGES,
-#         'test_path': 'tests',
-#         'content_path': PATH,
-#         'output_path': OUTPUT_PATH,
-#         'trans_path': 'themes/odi/translations',
-#         'deploy_remote': 'upstream',
-#         'database': {
-#             'submissions': '',
-#             'entries': '',
-#             'questions': '',
-#             'datasets': '',
-#             'places': ''
-#         },
-#         'limited': {
-#             'places': ['au', 'gb'],
-#             'datasets': ['timetables', 'spending']
-#         }
-#     }
+    # 'languages': LANGUAGES,
+    # 'test_path': 'tests',
+    # 'content_path': PATH,
+    # 'output_path': OUTPUT_PATH,
+    # 'trans_path': 'themes/odi/translations',
+    # 'deploy_remote': 'upstream',
+    # 'database': {
+    #     'submissions': '',
+    #     'entries': '',
+    #     'questions': '',
+    #     'datasets': '',
+    #     'places': ''
+    # },
+    # 'limited': {
+    #     'places': ['au', 'gb'],
+    #     'datasets': ['timetables', 'spending']
+    # }
 # }
 
 # I18N_SUBSITES = {
