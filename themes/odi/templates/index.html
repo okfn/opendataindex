@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block meta_title -%}
+{{ gettext('Read our user stories on the 2014 Open Data Index') }} | {{ super() }}
+{%- endblock meta_title %}
+
+{% block meta_description -%}
+{{ gettext('Read our user stories on the 2014 Open Data Index') }}
+{%- endblock meta_description %}
+
+{% block meta_keywords -%}
+{{ ODI.keywords }}
+{%- endblock meta_keywords %}
+
+{% block body_classes -%}stories{%- endblock body_classes %}
+{% block page_title -%}{{ gettext('Index stories') }}{%- endblock page_title %}
+
+{% block content -%}
+{% for article in articles_page.object_list %}
+<article class="hentry">
+    <h2 class="entry-title">
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+    </h2>
+    <a href="{{ article.category.url }}">{{ article.category }}</a>
+    <br />
+    <a href="{{ author_contact }}">{{ author }}</a>
+    <br />
+    <div class="entry-content"> {{ article.summary }} </div>
+</article>
+{% endfor %}
+{%- endblock content %}

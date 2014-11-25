@@ -1,0 +1,20 @@
+type: article
+template: article
+title:  Open Data in Bulgaria
+date: 2014-12-01 10:01
+year: 2014
+slug: bulgaria
+category:Bulgaria
+author: Boyan Yurukov
+author_contact:
+author_bio: Boyan Yurukov is a Software Engineer and Open Data advocate based in Frankfurt. Boyan graduated in Computational Engineering with Data Mining from TU Darmstadt. Currently, he is involved in data liberation, crowdsourcing, visualization, and open data legislation projects in Bulgaria.
+
+Overall, within the past year little has changed in regards to open data in Bulgaria. The political instability and short term of the former cabinet didn't bring us more transparency. Instead, what we mostly got was more vague strategies and documents. A second action plan was devised for participation in Open Government Partnership. While it did contain some important goals directly related to open data, it lacked specifics and didn't built on the old plan. Continuity of decisions and invested efforts has been a persistent issue and that has not improved in the past few years.
+
+There were some positive developments as well. Several interesting proposals have been put up for public consultation and are expected to be enacted quite soon. One of them will make the company registry widely available for the public. For many years now the register allowed full download of its database with real time update service. This however would set you back 15000 Euro per year. The proposal will lower this fee to 50 Euro - the administrative cost for setting up the accounts. Two other such proposal address the existing administrative registry and public consultation portal. Both allow the public to find details on government institutions, legislation and proposals as well as to give feedback. These proposals will improve availability of data and optimize the consultation processes.
+
+There were some minor datasets and registers that were published recently, but they all suffered from the same drawback as those before them - they weren't open. Bulgaria boasts a huge number of registers, public transcripts and other information sources. Almost every regulation or aspect of government has some sort of public information portal - from real time energy production and alcohol licenses to daily reports on child birth and budget spending. Nearly all of it is updated manually, published in proprietary format and in some cases - obfuscated on purpose. Individual queries are easily done, but reusing the datasets has proved nearly impossible.
+
+This is set to change with the growing open data effort in Bulgaria. A new government open data portal based on CKAN has been set up a few months ago. It currently contains only a handful of datasets, but more are coming. Changes in the current requirements on EU spending are underway requiring all new information systems to use open standards and allow export of open data. There's ongoing consultation for adopting the 2013/37/EU directive, which is going quite well. Three of the deputy prime ministers on the current cabinet believe strongly in open data and will work to implement it. One of them is Rumyana Bachvarova, who was behind Bulgaria's participation in Open Government Partnership, and the other is Ivailo Kalfin, who reported on the PSI directive for the European Parliament.
+
+The Global Open Data Index is important for Bulgaria in the sense that it helps up gauge where we are in reference to other countries. It is also an important tool for pushing public officials to improve the current state of open data and transparency by the use of examples from other similar countries. Finally, it serves as an index of open data resources and their limitations, which has already served well in researching data licensing practices.
