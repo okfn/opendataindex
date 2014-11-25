@@ -7,13 +7,6 @@
 <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/static/css/map.css" />
 {% endblock head_css %}
 
-{% block head_scripts %}
-{{ super() }}
-<script data-main="{{ SITEURL }}/static/scripts/map" src="{{ SITEURL }}/static/scripts/require.js"></script>
-{% endblock head_scripts %}
-
-{% block body_scripts %}{% endblock body_scripts %}
-
 {% block content %}
 <div class="odi-vis odi-vis-choropleth">
     <div class="odi-vis-view">
@@ -132,3 +125,8 @@
     <div class="title-box-text"><span class="title-box-text-name"><%= sitename %></span><br /><%= title %></div>
 </script>
 {% endblock content %}
+
+{% block body_scripts %}
+<script data-main="{{ SITEURL }}/static/scripts/map" src="{{ SITEURL }}/static/scripts/require.js"></script>
+{{ super() }}
+{% endblock body_scripts %}

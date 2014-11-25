@@ -18,12 +18,13 @@
         <link rel="stylesheet" href="{{ SITEURL }}/static/css/site.css">
         {% endblock head_css %}
         <link rel="icon" href="{{ SITEURL }}/static/images/favicon.ico">
+        <!--[if lt IE 9]>
+        <script src="{{ SITEURL }}/static/vendor/html5shiv.js"></script>
+        <![endif]-->
         <script>
             var siteUrl = '{{ SITEURL }}';
         </script>
-        {% block head_scripts %}
-        <script data-main="{{ SITEURL }}/static/scripts/site" src="{{ SITEURL }}/static/scripts/require.js"></script>
-        {% endblock head_scripts %}
+        {% block head_scripts %}{% endblock head_scripts %}
     </head>
     <body class="{% block body_classes %}{% endblock body_classes %}">
         {% block header %}
@@ -155,6 +156,7 @@
         </footer>
         {% endblock footer %}
         {% block body_scripts %}
+        <script data-main="{{ SITEURL }}/static/scripts/site" src="{{ SITEURL }}/static/scripts/require.js"></script>
         {% include '_analytics.html' %}
         {% endblock body_scripts %}
     </body>
