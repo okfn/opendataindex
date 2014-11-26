@@ -29,7 +29,7 @@
             </h1>
             <div class="row statistics">
                 <div class="col-md-7">
-                    <span class="place-rank">#{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
+                    <span class="place-rank">{{ scope.place.name }} {{ gettext('is ranked') }} #{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
                 </div>
                 <div class="col-md-5">
                     <span class="place-openness" data-score="{{ scope.entry.score or scope.odi.na }}">{{ scope.entry.score }}% {{ gettext('open') }}</span>
