@@ -68,23 +68,17 @@
 <hr />
 
 <section class="dataset-about">
-    <h3>{{ gettext('About') }}</h3>
     <div class="row">
-        <div class="col-md-8">
-            {% if scope.entry.url or scope.entry.format or scope.entry.officialtitle or scope.entry.licenseurl %}
-            <ul>
-                {% if scope.entry.url %}<li>{{ gettext('URL') }}: <a href="{{ scope.entry.url }}" title="{{ gettext('%(dataset)s data for %(place)s', dataset=scope.dataset.title, place=scope.place.name) }}">{{ scope.entry.url }}</a></li>{% endif %}
-                {% if scope.entry.format %}<li>{{ gettext('Format') }}: {{ scope.entry.format }}</li>{% endif %}
-                {% if scope.entry.officialtitle %}<li>{{ gettext('Title') }}: {{ scope.entry.officialtitle }}</li>{% endif %}
-                {% if scope.entry.publisher %}<li>{{ gettext('Publisher') }}: {{ scope.entry.publisher }}</li>{% endif %}
-                {% if scope.entry.licenseurl %}<li>{{ gettext('License URL') }}: {{ scope.entry.licenseurl }}</li>{% endif %}
-            </ul>
-            {% endif %}
-            {% if scope.entry.details %}
-            {{ scope.entry.details|markdown }}
-            {% endif %}
+        <div class="col-md-12">
+            <h3>{{ gettext('What data is expected?') }}</h3>
+            {{ scope.dataset.description|markdown }}
         </div>
-        <div class="col-md-4">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{ gettext('What data is available') }}</h3>
+        </div>
+        <div class="col-md-6">
             <ul class="availability-single">
                 {% for question in scope.questions if question.score %}
                 {% set state = scope.entry[question.id] %}
@@ -94,17 +88,25 @@
                     data-content="{{ popover_slice_content(question.description)|e|safe }}">
                     <i class="fa fa-{{ question.icon }}"></i>&nbsp;
                     {{ question.question }}? {% if state == 'Y' %}{{ gettext('Yes') }}{% elif state == 'N' %}{{ gettext('No') }}{% elif state == '?' %}{{ gettext('Unsure') }}{% endif %}
+                    {% if question.id == 'online' %}
+                    {% if scope.entry.url %} (<a href="{{ scope.entry.url }}">{{ gettext('Here') }}</a>){% else %} ({{ gettext('No URL given') }}){% endif %}
+                    {% elif question.id == 'machinereadable' %}
+                     ({{ scope.entry.format or scope.odi.na }})
+                    {% elif question.id == 'openlicense' %}
+                    {% if scope.entry.licenseurl %}(<a href="{{ scope.entry.licenseurl }}">{{ gettext('Here') }}</a>){% else %} ({{ gettext('No URL given') }}){% endif %}
+                    {% elif question.id == 'public' %}
+                    {% if scope.entry.officialtitle %}({{ gettext('as') }} {{ scope.entry.officialtitle }}{% endif %}{% if scope.entry.publisher %} {{ gettext('published by') }} {{ scope.entry.publisher }}</a>){% endif %}
+                    {% else %}
+                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>
         </div>
-    </div>
-    <div class="row">
-        <h4>
-            {{ gettext('More on %(dataset)s data', dataset=scope.dataset.title) }}
-        </h4>
-        <div class="col-md-12">
-            {{ scope.dataset.description|markdown }}
+        <div class="col-md-6">
+            {% if scope.entry.details %}
+            <h4>{{ gettext('Details') }}</h4>
+            {{ scope.entry.details|markdown }}
+            {% endif %}
         </div>
     </div>
 </section>
