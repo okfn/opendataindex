@@ -1,10 +1,11 @@
 type: article
 template: article
-title:  Open Data in Germany
+title: Germany
 date: 2014-12-01 10:04
 year: 2014
 slug: germany
 category: Europe
+image: germany.jpg
 author: Maximilian Heimstädt
 author_contact:
 author_bio: Maximilian Heimstädt is a PhD student within the department for organisation theory at Free University Berlin where he researches the emergence and management of municipal open data ecosystems. He previously studied an M.Sc. in Management and Information Technology at the University of St Andrews, Scotland, and worked as a visiting researcher at the Open Data Institute in London.

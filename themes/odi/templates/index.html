@@ -16,16 +16,34 @@
 {% block page_title -%}{{ gettext('Index stories') }}{%- endblock page_title %}
 
 {% block content -%}
-{% for article in articles_page.object_list %}
-<article class="hentry">
-    <h2 class="entry-title">
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-    </h2>
-    <a href="{{ article.category.url }}">{{ article.category }}</a>
-    <br />
-    <a href="{{ author_contact }}">{{ author }}</a>
-    <br />
-    <div class="entry-content"> {{ article.summary }} </div>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            {{ gettext('We invited the community to send in their 2014 open data index stories.') }}
+        </p>
+        <p>
+            {{ gettext('Do you have a case study you would like to contribute?') }} <a href="mailto:{{ ODI.stories.email }}">{{ gettext('Send us an email') }}</a>
+        </p>
+    </div>
+</div>
+{% block articles %}
+{% for category, articles in categories %}
+<h2><a href="{{ category.url }}" title="{{ gettext('Global') }} {{ SITENAME }}: {{ category }}">{{ gettext('Global') }} {{ SITENAME }}: {{ category }}</a></h2>
+{% for article in articles %}
+<article class="row">
+    <div class="col-md-9">
+        <h3>
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }} / {{ article.author }}</a>
+        </h3>
+        <div>
+            {{ article.summary }}
+        </div>
+    </div>
+    <div class="col-md-3 story-preview">
+        <img src="{{ SITEURL }}/static/images/stories/{{ article.year }}/{{ article.image }}" alt="{{ author }} {{ gettext('on the') }} {{ SITENAME }}" />
+    </div>
 </article>
 {% endfor %}
+{% endfor %}
+{% endblock articles %}
 {%- endblock content %}

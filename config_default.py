@@ -118,6 +118,9 @@ ODI = {
     'analytics': {
       'google': u''
     },
+    'stories': {
+      'email': 'emma.beer@okfn.org'
+    },
     'years': [u'2014', u'2013'],
     'current_year': u'2014',
     'previous_year': u'2013',
@@ -147,8 +150,8 @@ ODI = {
         'places': ''
     },
     'limited': {
-        'places': ['dk'],
-        'datasets': ['statistics']
+        'places': ['au'],
+        'datasets': ['timetables']
     },
     'forms': {
       'download': {

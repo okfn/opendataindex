@@ -1,10 +1,11 @@
 type: article
 template: article
-title:  Open Data in Bulgaria
+title: Bulgaria
 date: 2014-12-01 10:01
 year: 2014
 slug: bulgaria
-category:Bulgaria
+category: Europe
+image: bulgaria.jpg
 author: Boyan Yurukov
 author_contact:
 author_bio: Boyan Yurukov is a Software Engineer and Open Data advocate based in Frankfurt. Boyan graduated in Computational Engineering with Data Mining from TU Darmstadt. Currently, he is involved in data liberation, crowdsourcing, visualization, and open data legislation projects in Bulgaria.

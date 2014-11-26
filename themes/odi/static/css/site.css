@@ -8579,3 +8579,18 @@ th.header.headerSortUp:after {
 .inline {
   display: inline;
 }
+.story-preview {
+  text-align: right;
+}
+.story-preview img {
+  width: 120px;
+}
+.story-image {
+  text-align: right;
+}
+.story-image img {
+  width: 260px;
+}
+blockquote {
+  color: #737373;
+}

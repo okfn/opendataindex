@@ -14,13 +14,13 @@
         <meta property="og:image" content="{{ SITEURL }}/static/images/favicon.ico" />
         <title>{% block meta_title %}{{ gettext('Global') }} {{ SITENAME }} {{ gettext('by') }} {{ ODI.author.name }}{% endblock meta_title %}</title>
         <base href="/">
+        <!--[if lt IE 9]>
+        <script src="{{ SITEURL }}/static/vendor/html5shiv.js"></script>
+        <![endif]-->
         {% block head_css %}
         <link rel="stylesheet" href="{{ SITEURL }}/static/css/site.css">
         {% endblock head_css %}
         <link rel="icon" href="{{ SITEURL }}/static/images/favicon.ico">
-        <!--[if lt IE 9]>
-        <script src="{{ SITEURL }}/static/vendor/html5shiv.js"></script>
-        <![endif]-->
         <script>
             var siteUrl = '{{ SITEURL }}';
         </script>
