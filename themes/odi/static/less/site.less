@@ -453,12 +453,29 @@ h1, .h1 {
   }
 }
 
+h3 {
+    a {
+    color: black;
+    &:hover {
+      color: block;
+      text-decoration: underline;
+    }
+  }
+}
 .place-openness, .dataset-openness {
   float: right;
   border-radius: 0 !important;
   font-size: 24px;
   font-weight: 300;
   padding: 8px;
+}
+
+.place-openness {
+  width: 132px;
+}
+
+.dataset-openness {
+  width: 186px;
 }
 
 .place-rank, .dataset-rank {
@@ -563,22 +580,29 @@ th.header.headerSortUp:after {
 }
 
 #data-header {
-    h1 {
+    h1, h3 {
         font-weight: 300;
     }
 
+    .open-badge {
+        text-align: right;
+        float: right;
+        clear: both;
+        width: 132px;
+
+        img {
+          width: 132px;
+        }
+    }
+
     .statistics, .relative, .content, .navigate {
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .statistics {
 
-        .open-badge {
-            text-align: right;
-            float: right;
-            clear: both;
-        }
+
     }
 
     .relative {
@@ -588,6 +612,7 @@ th.header.headerSortUp:after {
         .change {
             text-align: center;
             font-size: 32px;
+            margin-top: 4px;
         }
     }
 }
@@ -615,4 +640,8 @@ th.header.headerSortUp:after {
 
 .tell-me-embedded {
   margin-top: 32px;
+}
+
+.inline {
+  display: inline;
 }

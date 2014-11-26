@@ -8421,6 +8421,13 @@ h1 a:hover,
   color: block;
   text-decoration: underline;
 }
+h3 a {
+  color: black;
+}
+h3 a:hover {
+  color: block;
+  text-decoration: underline;
+}
 .place-openness,
 .dataset-openness {
   float: right;
@@ -8428,6 +8435,12 @@ h1 a:hover,
   font-size: 24px;
   font-weight: 300;
   padding: 8px;
+}
+.place-openness {
+  width: 132px;
+}
+.dataset-openness {
+  width: 186px;
 }
 .place-rank,
 .dataset-rank {
@@ -8516,20 +8529,25 @@ th.header.headerSortUp:after {
   font-size: 24px;
   font-weight: 300;
 }
-#data-header h1 {
+#data-header h1,
+#data-header h3 {
   font-weight: 300;
+}
+#data-header .open-badge {
+  text-align: right;
+  float: right;
+  clear: both;
+  width: 132px;
+}
+#data-header .open-badge img {
+  width: 132px;
 }
 #data-header .statistics,
 #data-header .relative,
 #data-header .content,
 #data-header .navigate {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-#data-header .statistics .open-badge {
-  text-align: right;
-  float: right;
-  clear: both;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 #data-header .relative {
   font-size: 20px;
@@ -8538,6 +8556,7 @@ th.header.headerSortUp:after {
 #data-header .relative .change {
   text-align: center;
   font-size: 32px;
+  margin-top: 4px;
 }
 .is_stuck {
   background-color: white;
@@ -8552,4 +8571,7 @@ th.header.headerSortUp:after {
 }
 .tell-me-embedded {
   margin-top: 32px;
+}
+.inline {
+  display: inline;
 }

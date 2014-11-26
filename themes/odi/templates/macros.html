@@ -63,9 +63,9 @@
 {% endif %}
 {%- endmacro %}
 
-{% macro history(scope, namespace, as_buttons=True) -%}
-<h4>{{ gettext('See other years') }}</h4>
-<div class="{% if as_buttons %}btn-group{% endif %}">
+{% macro history(scope, namespace, as_buttons=True, inline=False) -%}
+<h4 class="{% if inline %}inline{% endif %}">{{ gettext('See other years') }}</h4>
+<div class="{% if as_buttons %}btn-group{% endif %}{% if inline %} inline{% endif %}">
     {% for year in scope.odi.years %}
 
     {% if year == scope.odi.current_year %}

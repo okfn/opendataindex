@@ -450,9 +450,7 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
                 $infoBox.show();
             }
         });
-        console.log(uiState.embed.title);
         $titleBox.html(titleBoxTmpl({'title': decodeURIComponent(uiState.embed.title.replace(/;/g, '/')), 'sitename': uiState.embed.sitename}));
-
      }
 
     /**
