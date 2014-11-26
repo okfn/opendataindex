@@ -123,7 +123,7 @@ ODI = {
     'previous_year': u'2013',
     'na': u'n/a',
     'email': u'index@okfn.org',
-    'description': u'The Open Data Index assesses the state of open government data around the world.',
+    'description': u'The Global Open Data Index assesses the state of open government data around the world.',
     'keywords': 'Open Government, Open Data, Government Transparency, Open Knowledge',
     'twitter': '',
     'repo': u'https://github.com/okfn/opendataindex',
@@ -147,8 +147,8 @@ ODI = {
         'places': ''
     },
     'limited': {
-        'places': ['au'],
-        'datasets': ['timetables']
+        'places': ['dk'],
+        'datasets': ['statistics']
     },
     'forms': {
       'download': {

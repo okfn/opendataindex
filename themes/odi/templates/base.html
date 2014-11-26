@@ -12,7 +12,7 @@
         <meta property="og:site_name" content="{{ SITENAME }}" />
         <meta property="og:description" content="{% if scope and scope.metadescription %}{{ scope.metadescription }}{% else %}{{ ODI.description }}{% endif %}" />
         <meta property="og:image" content="{{ SITEURL }}/static/images/favicon.ico" />
-        <title>{% block meta_title %}{{ SITENAME }} {{ gettext('by') }} {{ ODI.author.name }}{% endblock meta_title %}</title>
+        <title>{% block meta_title %}{{ gettext('Global') }} {{ SITENAME }} {{ gettext('by') }} {{ ODI.author.name }}{% endblock meta_title %}</title>
         <base href="/">
         {% block head_css %}
         <link rel="stylesheet" href="{{ SITEURL }}/static/css/site.css">
