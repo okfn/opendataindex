@@ -2723,10 +2723,33 @@ textarea {
     width: 75%;
   }
 }
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon {
+  box-sizing: border-box;
+  float: left;
+  width: 3%;
+  height: auto;
+  min-height: auto;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon img {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 568px) {
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon {
+    font-size: 12px;
+    width: 20px;
+  }
+  .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon img {
+    width: 16px;
+    height: 16px;
+  }
+}
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
   box-sizing: border-box;
   float: left;
-  width: 33%;
+  width: 30%;
   height: auto;
   min-height: auto;
   font-size: 12px;
