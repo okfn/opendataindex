@@ -30,9 +30,6 @@
                 </div>
                 <div class="col-md-5">
                     <span class="dataset-openness" data-score="{{ scope.dataset[scope.score_lookup] or scope.odi.na }}">{{ scope.dataset[scope.score_lookup] }}% {{ gettext('open (avg.)') }}</span>
-                    {% if scope.dataset[scope.score_lookup]|int >= 90 %}
-                    <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
-                    {% endif %}
                 </div>
             </div>
             {% if scope.dataset[scope.rank_lookup_previous] %}
