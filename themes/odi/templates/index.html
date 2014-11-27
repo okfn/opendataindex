@@ -31,10 +31,12 @@
 <h2><a href="{{ category.url }}" title="{{ gettext('Global') }} {{ SITENAME }}: {{ category }}">{{ gettext('Global') }} {{ SITENAME }}: {{ category }}</a></h2>
 {% for article in articles %}
 <article class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
         <h3>
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }} / {{ article.author }}</a>
         </h3>
+    </div>
+    <div class="col-md-9">
         <div>
             {{ article.summary }}
         </div>

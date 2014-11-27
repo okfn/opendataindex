@@ -5,7 +5,7 @@ date: 2014-12-01 10:05
 year: 2014
 slug: italy
 category: Europe
-image: italy.png
+image: italy.jpg
 author: Maurizio Napolitana
 author_contact:
 author_bio: Maurizio 'napo' Napolitano is coordinator of the Digital Commons Lab of FBK (Fondazione Bruno Kessler) in Trento, Italy. FBK is official node of the Open Data Institute. Napo is also closely involved with communities related to the topic of open knowledge, and is an Ambassador for Open Knowledge in Italy. Specifically, Napo is interested in the study of the processes of creation of collective knowledge with a focus on geographical information.
