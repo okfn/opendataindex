@@ -446,6 +446,29 @@ class Extractor(object):
             'no ': 'N',
             'unsure': '?'
         }
+
+        format_translations = {
+            'xml': 'XML',
+            '.xml': 'XML',
+            'csv': 'CSV',
+            '.csv': 'CSV',
+            'tsv': 'TSV',
+            '.tsv': 'TSV',
+            'excel': 'EXCEL',
+            'xls': 'EXCEL',
+            'xlsx': 'EXCEL',
+            '.xls': 'EXCEL',
+            '.xlsx': 'EXCEL',
+            'html': 'HTML',
+            '.html': 'HTML',
+            'pdf': 'PDF',
+            '.pdf': 'PDF',
+        }
+
+        for k, v in format_translations.items():
+            if k in entry_dict['format'].upper():
+                entry_dict['format'] = entry_dict['format'].upper().replace(k, v)
+
         for qu in self.questions.dicts:
             # y/n questions have a weight
             if qu.score and int(qu.score) > 0:
