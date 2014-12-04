@@ -26,7 +26,7 @@
                 <span class="dataset-openness" data-score="{{ scope.dataset[scope.score_lookup] or scope.odi.na }}">{{ scope.dataset[scope.score_lookup] }}% {{ gettext('open (avg.)') }}</span>
             </h1>
             <div class="col-md-12 place-rank statistics">
-                <span>{{ gettext('Ranked') }} #{{ scope.dataset[scope.rank_lookup] }} {{ gettext('agianst other datasets in the Index (avg.)') }}</span>
+                <span>{{ gettext('Ranked') }} #{{ scope.dataset[scope.rank_lookup] }} {{ gettext('against other datasets in the Index (avg.)') }}</span>
             </div>
             {% if scope.dataset[scope.rank_lookup_previous] %}
             <div class="row relative">
