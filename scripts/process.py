@@ -100,6 +100,9 @@ class Extractor(object):
 
         self.current_year = '2014'
         self.years = ['2014', '2013']
+        self.remove_places = ['tc', 'ae', 'ua', 'kn', 'vg', 'ye', 'bh', 'bs',
+                              'lc', 'bb', 'va', 'bt', 'gi', 'ky', 'gg', 'je',
+                              'ly']
 
         # this will be entry dicts keyed by a tuple of (place_id, dataset_id)
         self.keyed_entries = OrderedDict()
@@ -108,7 +111,8 @@ class Extractor(object):
         self.writable_entries = OrderedDict()
 
         # stub out the keyed entries
-        for p in self.places['dicts']:
+        for p in [p for p in self.places['dicts'] if
+                  not p['id'] in self.remove_places]:
             for d in self.datasets['dicts']:
                 for year in self.years:
                     self.keyed_entries[(p['id'], d['id'], year)] = AttrDict({
@@ -135,7 +139,8 @@ class Extractor(object):
         # eg:
         #   gb,timetables,2013 (have entry)
         #   gb,timetables,2014 (no entry: so copy the 2013 entry forward to 2014)
-        for ent in self.entries.dicts:
+        for ent in [e for e in self.entries.dicts if
+                    not e['place'] in self.remove_places]:
             self._tidy_entry(ent)
             key = (ent['place'], ent['dataset'], ent['year'])
             self.keyed_entries[key] = ent
@@ -307,8 +312,11 @@ class Extractor(object):
             fieldnames += ['score_{0}'.format(year), 'rank_{0}'.format(year)]
         fieldnames += ['submitters', 'reviewers']
 
+        cleaned_places = [p for p in self.places.dicts if
+                          not p['id'] in self.remove_places]
+
         ## set scores
-        for place in self.places.dicts:
+        for place in cleaned_places:
             for year in self.years:
                 score_lookup = 'score'
                 if not year == self.current_year:
@@ -339,7 +347,7 @@ class Extractor(object):
                 score_lookup = 'score_{0}'.format(year)
                 rank_lookup = 'rank_{0}'.format(year)
             year_scores = sorted(list(set([p[score_lookup] for p in
-                                 self.places.dicts])), reverse=True)
+                                 cleaned_places])), reverse=True)
             year_lookup = {}
             year_lookup.update({
                 str(max(year_scores)): {
@@ -348,7 +356,8 @@ class Extractor(object):
                     'keys': []
                 }
             })
-            for place in self.places.dicts:
+            for place in cleaned_places:
+
                 if place[score_lookup] is None:
                     pass
                 else:
@@ -358,7 +367,7 @@ class Extractor(object):
                         year_lookup.update({
                             str(place[score_lookup]): {
                                 'rank': None,
-                                'score': place['score'],
+                                'score': place[score_lookup],
                                 'keys': [place['id']]
                             }
                         })
@@ -366,7 +375,7 @@ class Extractor(object):
             lookup.update({year: sort_by_score})
 
         # set ranks per year
-        for place in self.places.dicts:
+        for place in cleaned_places:
             for year in self.years:
                 score_lookup = 'score'
                 rank_lookup = 'rank'
@@ -383,7 +392,8 @@ class Extractor(object):
 
         # set reviewers and submitters
         submitreviewlookup = {}
-        for submission in self.submissions.dicts:
+        for submission in [s for s in self.submissions.dicts if
+                           not s['place'] in self.remove_places]:
             if submitreviewlookup.get(submission['place']):
                 submitreviewlookup[submission['place']]['submitters'].append(submission['submitter'])
                 submitreviewlookup[submission['place']]['reviewers'].append(submission['reviewer'])
@@ -395,12 +405,12 @@ class Extractor(object):
                     }
                 })
 
-        for place in self.places.dicts:
+        for place in cleaned_places:
             if place['id'] in submitreviewlookup:
                 place['submitters'] = '~*'.join(set([s for s in submitreviewlookup[place['id']]['submitters'] if s]))
                 place['reviewers'] = '~*'.join(set([r for r in submitreviewlookup[place['id']]['reviewers'] if r]))
 
-        self._write_csv(self.places.dicts, places_dest, fieldnames)
+        self._write_csv(cleaned_places, places_dest, fieldnames)
 
     def run_summary(self):
         fieldnames = ['id', 'title', 'value']
