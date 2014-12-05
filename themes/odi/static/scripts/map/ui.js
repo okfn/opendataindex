@@ -176,10 +176,10 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
             $datasetFilter.append(datasetOptionsTmpl(context));
         });
 
-        ext_context.dataset_id = 'improvement';
-        ext_context.dataset = '* Most Improved';
-        ext_context.selected = '';
-        $datasetFilter.append(datasetOptionsTmpl(ext_context));
+        // ext_context.dataset_id = 'improvement';
+        // ext_context.dataset = '* Most Improved';
+        // ext_context.selected = '';
+        // $datasetFilter.append(datasetOptionsTmpl(ext_context));
     }
 
     function entriesHandler(topic, data) {
