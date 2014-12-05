@@ -7,6 +7,7 @@ require.config({
     },
     paths: {
         app: 'scripts/map/main',
+        domReady: 'vendor/domReady',
         leaflet: 'vendor/leaflet',
         leaflet_zoommin: 'vendor/L.Control.ZoomMin',
         leaflet_label: 'vendor/leaflet.label',

@@ -7,6 +7,7 @@ require.config({
     },
     paths: {
         app: 'scripts/site/main',
+        domReady: 'vendor/domReady',
         jquery: 'vendor/jquery.min',
         tablesorter: 'vendor/jquery.tablesorter.min',
         stickykit: 'vendor/jquery.sticky-kit.min',
