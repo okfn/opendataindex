@@ -10,10 +10,19 @@ author: Ahmed Mohamed Maawy
 author_contact:
 author_bio: Ahmed Maawy is a Shaper with the Global Shapers Community (Which is an Initiative of the World Economic Forum) and an Executive Director with M-Power (CBO) as well as Director of Startup Grind Mombasa. He also works as a Software Developer for Volo Broadband. Ahmed is also one of the pioneers in the groundbreaking institution that aims to create a world without boundaries, The Amani Institute's Post Graduate certificate in Social Innovation Management.
 
-The Index was new to all of us this year in Mombasa, and it was the first time we came up
-with the Open Data Task Force. People were passionate about learning about the concept
-that was new to them in regards to the openness of data and were willing to learn more about
-how they can become a part of the process in making data easier to access.
+The Index was new to all of us this year in Mombasa, and it was the first time we came up with the Open Data Task Force. People were passionate about learning about the concept that was new to them in regards to the openness of data and were willing to learn more about how they can become a part of the process in making data easier to access.
+
+![alt text](static/images/stories/2014/kenya_1.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_2.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_3.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_4.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_5.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_6.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_7.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_8.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_9.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_10.jpg "Open Data Task Force")
+![alt text](static/images/stories/2014/kenya_11.jpg "Open Data Task Force")
 
 Around 20 individuals turned out on Sunday the 9th of November 2014. Although there was an effort to revise the Global Index Submissions made, the event was also specifically intended to create an awareness around Open Data and the Global Open Data Index in Mombasa. However, the key part of the event was the group work that was done by the teams - they split into three teams and started deliberating on the Global Open Data Index and assessed the datasets that were available from a variety of sources and brainstormed potential weaknesses using the Global Open Data Index site as a guide on important parameters and made recommendations and suggestions from their findings.
 
