@@ -76,6 +76,11 @@
                                 {{ gettext('About') }}
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ SITEURL }}/press/" title="{{ gettext('Open Data Index Press') }}">
+                                {{ gettext('Press') }}
+                            </a>
+                        </li>
                     </ul>
                     <p class="navbar-subbrand navbar-text navbar-right">
                       <a href="http://okfn.org/">
@@ -154,6 +159,7 @@
                         <li><a href="{{ SITEURL }}/download/" title="{{ gettext('Download data') }}">{{ gettext('Download') }}</a></li>
                         <li><a href="{{ SITEURL }}/methodology/" title="{{ gettext('The methodology behind the %(name)s', name=SITENAME) }}">{{ gettext('Methodology') }}</a></li>
                         <li><a href="{{ SITEURL }}/about/" title="{{ gettext('About the %(site)s', site=SITENAME) }}">{{ gettext('About') }}</a></li>
+                        <li><a href="{{ SITEURL }}/press/" title="{{ gettext('%(site)s Press', site=SITENAME) }}">{{ gettext('Press') }}</a></li>
                         <li><a href="mailto:{{ ODI.email }}" title="{{ gettext('Contact us') }}">{{ gettext('Contact') }}</a></li>
                     </div>
                 </div>
