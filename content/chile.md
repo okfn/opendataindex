@@ -1,4 +1,3 @@
-chile.md
 type: article
 template: article
 title: Chile
