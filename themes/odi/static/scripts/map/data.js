@@ -6,7 +6,9 @@ define(['jquery', 'pubsub'], function($, pubsub) {
             places: 'data.places',
             datasets: 'data.datasets',
             entries: 'data.entries',
-            geo: 'data.geo'
+            geo: 'data.geo',
+            init_entries: 'init_entries',
+            init_places: 'init_places'
         },
         api = {
             summary: 'SITEURL/api/summary.json'.replace('SITEURL', siteUrl),
@@ -15,6 +17,9 @@ define(['jquery', 'pubsub'], function($, pubsub) {
             entries: 'SITEURL/api/entries.json'.replace('SITEURL', siteUrl),
             geo: 'SITEURL/data/geo.json'.replace('SITEURL', siteUrl)
         };
+
+    pubsub.subscribe(topics.init_entries, getPlaceData);
+    pubsub.subscribe(topics.init_places, getGeoData);
 
     /**
      * Gets meta data and publishes topic when ready
@@ -41,7 +46,7 @@ define(['jquery', 'pubsub'], function($, pubsub) {
     /**
      * Gets place data and passes to `callback` for further processing
      */
-    function getPlaceData(callback) {
+    function getPlaceData(topic, entry_data) {
 
         // function setPlaceImprovement(place) {
         //     var previous,
@@ -75,23 +80,26 @@ define(['jquery', 'pubsub'], function($, pubsub) {
 
         $.get(api.places)
           .done(function(data) {
-            _.each(data, function(value) {
+            d = {};
+            d.entries = entry_data;
+            d.places = data;
+            pubsub.publish(topics.init_places, d);
+            // _.each(data, function(value) {
               // value.improvement = setPlaceImprovement(value);
               // value.improvement_scaled = setPlaceImprovementScaled(value);
-            });
-            // callback publishes the places topic
-            callback(data);
+            // });
         });
     }
 
     /**
      * Gets geo data from the available places and publishes topic when ready
      */
-    function getGeoData(place_data) {
+    function getGeoData(topic, _data) {
         var d = {};
         $.get(api.geo)
           .done(function(data) {
-            d.places = place_data;
+            d.places = _data.places;
+            d.entries = _data.entries;
             d.geo = data;
             pubsub.publish(topics.places, d);
         });
@@ -113,7 +121,7 @@ define(['jquery', 'pubsub'], function($, pubsub) {
     function getEntryData() {
         $.get(api.entries)
           .done(function(data) {
-            pubsub.publish(topics.entries, data);
+            pubsub.publish(topics.init_entries, data);
         });
     }
 
@@ -122,7 +130,6 @@ define(['jquery', 'pubsub'], function($, pubsub) {
      */
     function initData() {
         getMetaData();
-        getPlaceData(getGeoData);
         getDatasetData();
         getEntryData();
     }

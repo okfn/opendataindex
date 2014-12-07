@@ -1,4 +1,7 @@
-define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'lodash', 'chroma', 'marked', 'data'], function(leaflet, leaflet_zoommin, leaflet_label, $, pubsub, _, chroma, marked, data) {
+define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
+        'lodash', 'chroma', 'marked', 'data'],
+       function(leaflet, leaflet_zoommin, leaflet_label, $, pubsub, _, chroma,
+                marked, data) {
 
     var $container = $('.odi-vis.odi-vis-choropleth'),
         $tools = $('.odi-vis-tools'),
@@ -153,6 +156,7 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub', 'loda
     function placesHandler(topic, data) {
         dataStore.places = data.places;
         dataStore.geo = data.geo;
+        dataStore.entries = data.entries;
         geoHandler(data.geo);
     }
 
