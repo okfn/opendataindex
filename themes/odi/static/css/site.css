@@ -8572,6 +8572,9 @@ th.header.headerSortUp:after {
 .is_stuck th {
   min-width: 69px;
 }
+.dataset-title-context {
+  cursor: pointer;
+}
 .dataset-context {
   float: right;
   cursor: pointer;

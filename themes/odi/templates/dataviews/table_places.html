@@ -31,7 +31,7 @@ popover_comparison_content, history, share %}
         <th title="{{ gettext('Sort by A-Z') }}">{{ gettext('Place') }}</th>
         {% for dataset in scope.datasets %}
           <th>
-              {{ dataset.title }}
+              <span class="dataset-title-context" data-toggle="popover" title="{{ dataset.title }}" data-content="{{ dataset.description|markdown|e|safe }}">{{ dataset.title }}</span>
           </th>
         {% endfor %}
         <th title="{{ gettext('Sort by Score') }}">{{ gettext('Score') }}</th>
