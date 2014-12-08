@@ -2734,7 +2734,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon {
   box-sizing: border-box;
   float: left;
-  width: 3%;
+  width: 20px;
   height: auto;
   min-height: auto;
   font-size: 12px;
