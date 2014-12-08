@@ -48,46 +48,46 @@ define(['jquery', 'pubsub'], function($, pubsub) {
      */
     function getPlaceData(topic, entry_data) {
 
-        // function setPlaceImprovement(place) {
-        //     var previous,
-        //         current;
+        function setPlaceImprovement(place) {
+            var previous,
+                current;
 
-        //     if (place.score === null && place.score_2013 === null) {
-        //       return null;
-        //     } else if (place.score_2013 === null && place.score) {
-        //       return '100';
-        //     } else {
-        //       previous = parseInt(place.score_2013, 10);
-        //       current = parseInt(place.score, 10);
-        //       return ((current - previous)/previous)*100;
-        //     }
-        // }
+            if (place.score === null && place.score_2013 === null) {
+              return null;
+            } else if (place.score_2013 === null && place.score) {
+              return '100';
+            } else {
+              previous = parseInt(place.score_2013, 10);
+              current = parseInt(place.score, 10);
+              return ((current - previous)/previous)*100;
+            }
+        }
 
-        // function setPlaceImprovementScaled(place) {
-        //     var previous,
-        //         current;
+        function setPlaceImprovementScaled(place) {
+            var previous,
+                current;
 
-        //     if (place.score === null && place.score_2013 === null) {
-        //       return null;
-        //     } else if (place.score_2013 === null && place.score) {
-        //       return '100';
-        //     } else {
-        //       previous = parseInt(place.score_2013, 10);
-        //       current = parseInt(place.score, 10);
-        //       return ((((current - previous)/previous)*100) + 100)/2;
-        //     }
-        // }
+            if (place.score === null && place.score_2013 === null) {
+              return null;
+            } else if (place.score_2013 === null && place.score) {
+              return '100';
+            } else {
+              previous = parseInt(place.score_2013, 10);
+              current = parseInt(place.score, 10);
+              return ((((current - previous)/previous)*100) + 100)/2;
+            }
+        }
 
         $.get(api.places)
           .done(function(data) {
             d = {};
+            _.each(data, function(value) {
+              value.improvement = setPlaceImprovement(value);
+              value.improvement_scaled = setPlaceImprovementScaled(value);
+            });
             d.entries = entry_data;
             d.places = data;
             pubsub.publish(topics.init_places, d);
-            // _.each(data, function(value) {
-              // value.improvement = setPlaceImprovement(value);
-              // value.improvement_scaled = setPlaceImprovementScaled(value);
-            // });
         });
     }
 
