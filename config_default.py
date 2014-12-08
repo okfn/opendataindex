@@ -50,6 +50,7 @@ DISPLAY_TIME_FORMAT = '%H:%M:%S'
 DISPLAY_DATETIME_FORMAT = '{0}T{1}'.format(DISPLAY_DATE_FORMAT,
                                            DISPLAY_TIME_FORMAT)
 TIMESTAMP = datetime.datetime.now().strftime(DISPLAY_DATE_FORMAT)
+SUMMARY_MAX_LENGTH = 25
 JINJA_EXTENSIONS = [
   'jinja2.ext.i18n',
   'jinja2.ext.do',
