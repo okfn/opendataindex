@@ -17,7 +17,7 @@ Getting setup with the code is easy if you have some familiarity with Python and
 * Setup a virtualenv for the project
 * Install the dependencies: `pip install -r requirements.txt`
 * Install the CLI: `cd cli && python setup.py install && cd ../`
-* Grab data from the database: `python scripts/process.py`
+* Grab data from the database: `python scripts/process.py run`
     * You must configure your data sources first: see  Configuration below
 * Populate the content sources: `odi populate`
     * Use `odi populate --limited` if you have a large amount of data (like the Global Index), and want a smaller set for local development (see Configuration below)
