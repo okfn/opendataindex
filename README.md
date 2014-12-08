@@ -18,12 +18,37 @@ Getting setup with the code is easy if you have some familiarity with Python and
 * Install the dependencies: `pip install -r requirements.txt`
 * Install the CLI: `cd cli && python setup.py install && cd ../`
 * Grab data from the database: `python scripts/process.py`
-* Populate the content sources: `odi populate` or `odi populate --limited` if you have a large amount of data (like the global Index), and want a smaller set for local development
-* `pelican content -o output -s config_default.py`
-* `./develop-server` to run a server that watches and builds
+    * You must configure your data sources first: see  Configuration below
+* Populate the content sources: `odi populate`
+    * Use `odi populate --limited` if you have a large amount of data (like the Global Index), and want a smaller set for local development (see Configuration below)
+* `./develop_server.sh run` to run a server that watches and builds
 
 [Pelican documentation for more information](http://docs.getpelican.com)
 
+## Configuration
+
+* Add a `config_instance.py` file to the root of the directory (this will not be version-controlled)
+    * see `config_instance.example.py` for reference
+* All special config for the Open Data Index project is found on the ODI object
+* Override any settings you wish in this file
+* You *must* also configure data sources in this file. A data source can be any URL to a CSV file. Example:
+
+    from config_default import *
+    ODI['database'] = {
+        'submissions': 'http://example.com/submissions.csv',
+        'entries': 'http://example.com/entries.csv',
+        'questions': 'http://example.com/questions.csv',
+        'datasets': 'http://example.com/datasets.csv',
+        'places': 'http://example.com/places.csv'
+    }
+
+* If you have a large dataset, rebuilding and watching on your local development server can be a pain. You can limit the build in this case wth the following settings, and run with `odi populate --limited`:
+
+    from config_default import *
+    ODI['limited']: {
+        'places': ['au'], # any place identifier
+        'datasets': ['timetables'] # any dataset identifier
+    }
 
 ## Deployment
 
