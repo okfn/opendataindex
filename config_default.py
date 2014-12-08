@@ -119,7 +119,10 @@ ODI = {
       'google': u''
     },
     'stories': {
-      'email': 'emma.beer@okfn.org'
+      'email': 'index@okfn.org'
+    },
+    'press': {
+      'email': 'press@okfn.org'
     },
     'years': [u'2014', u'2013'],
     'current_year': u'2014',
