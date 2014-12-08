@@ -9,3 +9,4 @@ pelican-alias
 webassets
 natsort
 transifex-client
+git+https://github.com/r0wb0t/markdown-urlize.git

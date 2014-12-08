@@ -4,9 +4,11 @@
 import operator
 import json
 import jinja2
+import urlize
 import markdown as mdlib
 import natsort as natsortlib
 
+md = mdlib.Markdown(extensions=[urlize.UrlizeExtension()])
 
 operators = {
     '==': operator.eq,
@@ -22,7 +24,7 @@ operators = {
 
 def markdown(content):
     """Parse `content` as markdown."""
-    return jinja2.Markup(mdlib.markdown(content))
+    return jinja2.Markup(md.convert(content))
 
 
 def where(iterable, key, value, op='=='):
