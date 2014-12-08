@@ -33,22 +33,26 @@ Getting setup with the code is easy if you have some familiarity with Python and
 * Override any settings you wish in this file
 * You *must* also configure data sources in this file. A data source can be any URL to a CSV file. Example:
 
-    from config_default import *
-    ODI['database'] = {
-        'submissions': 'http://example.com/submissions.csv',
-        'entries': 'http://example.com/entries.csv',
-        'questions': 'http://example.com/questions.csv',
-        'datasets': 'http://example.com/datasets.csv',
-        'places': 'http://example.com/places.csv'
-    }
+```
+from config_default import *
+ODI['database'] = {
+    'submissions': 'http://example.com/submissions.csv',
+    'entries': 'http://example.com/entries.csv',
+    'questions': 'http://example.com/questions.csv',
+    'datasets': 'http://example.com/datasets.csv',
+    'places': 'http://example.com/places.csv'
+}
+```
 
 * If you have a large dataset, rebuilding and watching on your local development server can be a pain. You can limit the build in this case wth the following settings, and run with `odi populate --limited`:
 
-    from config_default import *
-    ODI['limited']: {
-        'places': ['au'], # any place identifier
-        'datasets': ['timetables'] # any dataset identifier
-    }
+```
+from config_default import *
+ODI['limited']: {
+    'places': ['au'], # any place identifier
+    'datasets': ['timetables'] # any dataset identifier
+}
+```
 
 ## Deployment
 
