@@ -8605,3 +8605,10 @@ blockquote {
 .pointer {
   cursor: pointer;
 }
+a.silent-link {
+  text-decoration: none;
+  color: black;
+}
+a.silent-link:hover {
+  text-decoration: none;
+}
