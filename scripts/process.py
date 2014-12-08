@@ -100,6 +100,7 @@ class Extractor(object):
 
         self.current_year = '2014'
         self.years = ['2014', '2013']
+        self.like_base_year = '2013' # the baseline for "like" comparisons
         self.remove_places = ['tc', 'ae', 'ua', 'kn', 'vg', 'ye', 'bh', 'bs',
                               'lc', 'bb', 'va', 'bt', 'gi', 'ky', 'gg', 'je',
                               'ly']
@@ -422,7 +423,8 @@ class Extractor(object):
             ['places_count', 'Number of Places'],
             ['entries_count', 'Number of Entries'],
             ['open_count', 'Number of Open Datasets'],
-            ['open_percent', 'Percent Open']
+            ['open_percent', 'Percent Open'],
+            ['open_percent_like_for_like', 'Percent Open (like for like)']
         ]
 
         for year in self.years:
@@ -437,10 +439,29 @@ class Extractor(object):
             year_numopen = len([x for x, z in self.writable_entries.iteritems() if z.isopen and x[2] == year])
             year_percentopen = int(round((100.0 * year_numopen) /
                                           year_numentries, 0))
+
+            # like for like % open
+            if year == self.like_base_year:
+                year_percentopen_like_for_like = year_percentopen
+            else:
+                base_year_places = set([x[0] for x in
+                                       self.writable_entries if
+                                       x[2] == self.like_base_year])
+                like_numentries = len([x for x in self.writable_entries
+                                    if x[0] in base_year_places
+                                    and x[2] == year])
+                like_numopen = len([x for x, z in
+                                    self.writable_entries.iteritems() if
+                                    z.isopen and x[0] in base_year_places
+                                    and x[2] == year])
+                year_percentopen_like_for_like = int(
+                    round((100.0 * like_numopen) / like_numentries, 0))
+
             rows[0].append(year_numplaces)
             rows[1].append(year_numentries)
             rows[2].append(year_numopen)
             rows[3].append(year_percentopen)
+            rows[4].append(year_percentopen_like_for_like)
 
         self._write_csv([fieldnames] + rows, summary_dest)
 
