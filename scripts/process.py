@@ -104,6 +104,7 @@ class Extractor(object):
         self.remove_places = ['tc', 'ae', 'ua', 'kn', 'vg', 'ye', 'bh', 'bs',
                               'lc', 'bb', 'va', 'bt', 'gi', 'ky', 'gg', 'je',
                               'ly', 'jo']
+        self.remove_2013_only = ['om', 'pk', 'ma']
 
         # this will be entry dicts keyed by a tuple of (place_id, dataset_id)
         self.keyed_entries = OrderedDict()
@@ -188,6 +189,11 @@ class Extractor(object):
 
             v['submitters'] = '~*'.join(set([s['submitter'] for s in rel_submissions if s['submitter']]))
             v['reviewers'] = '~*'.join(set([s['reviewer'] for s in rel_submissions if s['reviewer']]))
+
+        # remove 2013s marked for filtering
+        entries_to_write = {k: v for k, v in entries_to_write.iteritems()
+                            if not (k[0] in self.remove_2013_only
+                            and k[2] == '2013')}
 
         self.writable_entries = AttrDict(self._rank_entries(OrderedDict(entries_to_write)))
 
