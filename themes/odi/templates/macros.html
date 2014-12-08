@@ -35,7 +35,7 @@
         {% elif question.id == 'online' %}
         {{ gettext('It\'s %(no)s online', no=no) }}
         {% if no == '' %}
-        <a href="{{ questions['url'] }}" title="{{ gettext('%(dataset)s for %(place)s on the web', dataset=dataset.id, place=place.name) }}">{{ gettext('here') }}</a>
+        <a href="{{ entry.url }}" title="{{ gettext('%(dataset)s for %(place)s on the web', dataset=dataset.id, place=place.name) }}">{{ gettext('here') }}</a>
         {% endif %}
         {% elif question.id == 'machinereadable' %}
         {{ gettext('It\'s %(no)s machine readable', no=no) }}
