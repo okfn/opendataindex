@@ -103,7 +103,7 @@ class Extractor(object):
         self.like_base_year = '2013' # the baseline for "like" comparisons
         self.remove_places = ['tc', 'ae', 'ua', 'kn', 'vg', 'ye', 'bh', 'bs',
                               'lc', 'bb', 'va', 'bt', 'gi', 'ky', 'gg', 'je',
-                              'ly']
+                              'ly', 'jo']
 
         # this will be entry dicts keyed by a tuple of (place_id, dataset_id)
         self.keyed_entries = OrderedDict()
