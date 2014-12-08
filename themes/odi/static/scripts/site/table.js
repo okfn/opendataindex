@@ -7,11 +7,43 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter', 'stickykit'], function($
         $dataTable = $('.data-table'),
         $visiblePopover,
         $scoreDisplay = $('.score'),
-        popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
+        popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+        tablesorterPlaceOptions = {
+            sortList: [[0,0]],
+            headers: {
+                2: {sorter: false},
+                3: {sorter: false},
+                4: {sorter: false},
+                5: {sorter: false},
+                6: {sorter: false},
+                7: {sorter: false},
+                8: {sorter: false},
+                9: {sorter: false},
+                10: {sorter: false},
+                11: {sorter: false},
+            }
+        },
+        tablesorterDatasetOptions = {
+            sortList: [[0,0]],
+            headers: {
+                2: {sorter: false},
+                3: {sorter: false},
+            }
+        },
+        tablesorterSliceOptions = {
+            sortList: [[0,0]],
+            headers: {
+                2: {sorter: false},
+                3: {sorter: false},
+                4: {sorter: false},
+                5: {sorter: false},
+                6: {sorter: false},
+            }
+        };
 
-    $('#places_overview_table').tablesorter({sortList: [[0,0]]});
-    $('#datasets_overview_table').tablesorter({sortList: [[0,0]]});
-    $('#slice-table').tablesorter({sortList: [[0,0]]});
+    $('#places_overview_table').tablesorter(tablesorterPlaceOptions);
+    $('#datasets_overview_table').tablesorter(tablesorterDatasetOptions);
+    $('#slice-table').tablesorter(tablesorterSliceOptions);
 
     $("#places_overview_table thead").stick_in_parent();
     $("#datasets_overview_table thead").stick_in_parent();
