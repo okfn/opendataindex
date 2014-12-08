@@ -17,6 +17,12 @@
 {% block body_classes -%}{{ article.type }}{%- endblock body_classes %}
 {% block page_title -%}{{ article.title }}{%- endblock page_title %}
 
+{% block breadcrumbs_inner %}
+    <li><a href="{{ SITEURL }}/stories/">{{ gettext('Stories') }}</a></li>
+    <li><a href="{{ article.category.url }}">{{ article.category }}</a></li>
+    <li class="active">{{ article.title }}</li>
+{% endblock breadcrumbs_inner %}
+
 {% block content -%}
 <div class="row">
     <div class="col-md-7">

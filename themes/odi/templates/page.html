@@ -23,6 +23,10 @@
 {% block body_classes -%}{{ page.type }}{%- endblock body_classes %}
 {% block page_title -%}{{ page.title }}{%- endblock page_title %}
 
+{% block breadcrumbs_inner %}
+  <li class="active">{% if page.slug == 'about' %}{{ gettext('About') }}{% else %}{{ page.title }}{% endif %}</li>
+{% endblock breadcrumbs_inner %}
+
 {% block content -%}
 {{ page.content }}
 {%- endblock content %}

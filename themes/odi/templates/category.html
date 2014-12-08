@@ -4,9 +4,14 @@
 {{ gettext('Global') }} {{ SITENAME }} {{ gettext('stories from') }} {{ category }}
 {%- endblock page_title %}
 
+{% block breadcrumbs_inner %}
+    <li><a href="{{ SITEURL }}/stories/">{{ gettext('Stories') }}</a></li>
+    <li class="active">{{ category }}</li>
+{% endblock breadcrumbs_inner %}
+
 {% block articles %}
 {% for article in articles_page.object_list %}
-<article class="row">
+<article class="row article-summary">
     <div class="col-md-7">
         <h3>
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }} / {{ article.author }}</a>

@@ -15,6 +15,10 @@
 {% block body_classes -%}stories{%- endblock body_classes %}
 {% block page_title -%}{{ gettext('Global %(name)s stories', name=SITENAME) }}{%- endblock page_title %}
 
+{% block breadcrumbs_inner %}
+  <li class="active">{{ gettext('Global %(name)s stories', name=SITENAME) }}</li>
+{% endblock breadcrumbs_inner %}
+
 {% block content -%}
 <div class="row">
     <div class="col-md-12">
