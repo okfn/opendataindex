@@ -2613,6 +2613,14 @@ body {
   width: 100%;
   font-size: 16px;
 }
+xmp {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
 html,
 body,
 input,
