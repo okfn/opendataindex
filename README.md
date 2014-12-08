@@ -237,6 +237,13 @@ Translations are managed with the Transifex client:
 
 http://docs.transifex.com/developer/client/
 
+* We use Babel for translations, and the commands are nicelt wrapped up in our CLI:
+
+* `odi trans init`
+* `odi trans extract`
+* `odi trans update`
+* `odi trans compile`
+
 
 ## URL Aliases
 
