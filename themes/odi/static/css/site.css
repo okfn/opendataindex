@@ -8324,6 +8324,10 @@ ul.data-table-key {
 .availability li.no {
   background-color: #ff0000;
 }
+ul.availability-popover {
+  list-style-type: none;
+  padding-left: 0;
+}
 .availability-popover li i {
   width: 20px;
   height: 20px;

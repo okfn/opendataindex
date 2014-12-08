@@ -198,9 +198,14 @@ We also have other ways you can help:
 [Open Data Census discussion list]( http://lists.okfn.org/mailman/listinfo/open-data-census)
 
 
-
 ### **I'm confused! How can I get help?**
 There are lots of people who can help on the [Open Data Census discussion list]( http://lists.okfn.org/mailman/listinfo/open-data-census)
 and there are no silly questions, so we encourage you to post there.
+
+
+### **What is Open Data according to the Open Definition?** 
+<a name="open-data">&nbsp;</a>
+
+- _“Open data and content can be *freely used, modified, and shared* by *anyone* for *any purpose*”_
 
 
