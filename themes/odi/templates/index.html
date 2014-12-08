@@ -13,7 +13,7 @@
 {%- endblock meta_keywords %}
 
 {% block body_classes -%}stories{%- endblock body_classes %}
-{% block page_title -%}{{ gettext('Index stories') }}{%- endblock page_title %}
+{% block page_title -%}{{ gettext('Global %(name)s stories', name=SITENAME) }}{%- endblock page_title %}
 
 {% block content -%}
 <div class="row">
@@ -28,24 +28,29 @@
 </div>
 {% block articles %}
 {% for category, articles in categories %}
-<h2><a href="{{ category.url }}" title="{{ gettext('Global') }} {{ SITENAME }}: {{ category }}">{{ gettext('Global') }} {{ SITENAME }}: {{ category }}</a></h2>
+<h2><a href="{{ category.url }}" title="{{ gettext('Global') }} {{ SITENAME }}: {{ category }}">{{ category }}</a></h2>
 {% for article in articles %}
-<article class="row">
-    <div class="col-md-12">
+<article class="row article-summary">
+    <div class="col-md-7">
         <h3>
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }} / {{ article.author }}</a>
         </h3>
-    </div>
-    <div class="col-md-9">
         <div>
             {{ article.summary }}
         </div>
+        <a class="btn btn-primary" href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">{{ gettext('Read more') }}</a>
     </div>
-    <div class="col-md-3 story-preview">
+    <div class="col-md-2 story-preview">
         <img src="{{ SITEURL }}/static/images/stories/{{ article.year }}/{{ article.image }}" alt="{{ author }} {{ gettext('on the') }} {{ SITENAME }}" />
     </div>
+    <div class="col-md-2"></div>
 </article>
 {% endfor %}
+<div class="row">
+    <div class="col-md-9">
+        <hr />
+    </div>
+</div>
 {% endfor %}
 {% endblock articles %}
 {%- endblock content %}

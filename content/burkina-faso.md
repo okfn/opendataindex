@@ -10,7 +10,7 @@ author: T. Idriss Tinto
 author_contact:
 author_bio: Teg-wende Idriss TINTO is  a software engineer who spend his free time to fight for freedom. He is deeply engaged in free software and "open everything" movements. He is a Mozilla rep, and a Open Knowledge Ambassador for Burkina Faso.
 
-(This piece was originally posted here: http://bf.okfn.org/2014/11/09/open-data-index-2014/)
+[Translated from the [original French here](http://bf.okfn.org/2014/11/09/open-data-index-2014/)]
 
 This year, Open Knowledge initiated the Global Open Data Index 2014. This Index aims to measure the state of open data around the world through 10 key datasets:
 

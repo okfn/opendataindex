@@ -1,23 +1,25 @@
 {% extends "index.html" %}
 
 {% block page_title -%}
-{{ gettext('Global') }} {{ SITENAME }}: {{ category }}
+{{ gettext('Global') }} {{ SITENAME }} {{ gettext('stories from') }} {{ category }}
 {%- endblock page_title %}
 
 {% block articles %}
 {% for article in articles_page.object_list %}
 <article class="row">
-    <div class="col-md-9">
+    <div class="col-md-7">
         <h3>
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }} / {{ article.author }}</a>
         </h3>
         <div>
             {{ article.summary }}
         </div>
+        <a class="btn btn-primary" href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">{{ gettext('Read more') }}</a>
     </div>
-    <div class="col-md-3 story-preview">
+    <div class="col-md-2 story-preview">
         <img src="{{ SITEURL }}/static/images/stories/{{ article.year }}/{{ article.image }}" alt="{{ author }} {{ gettext('on the') }} {{ SITENAME }}" />
     </div>
+    <div class="col-md-2"></div>
 </article>
 {% endfor %}
 {% endblock articles %}

@@ -8581,6 +8581,7 @@ th.header.headerSortUp:after {
 }
 .story-preview {
   text-align: right;
+  margin-top: 20px;
 }
 .story-preview img {
   width: 120px;
@@ -8593,4 +8594,7 @@ th.header.headerSortUp:after {
 }
 blockquote {
   color: #737373;
+}
+.article-summary {
+  margin-bottom: 20px;
 }

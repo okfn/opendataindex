@@ -19,20 +19,16 @@
 
 {% block content -%}
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-7">
         <blockquote>{{ article.author_bio }}</blockquote>
         <br /><br />
         <strong><a href="{{ SITEURL }}/place/{{ place.slug }}/" title="{{ gettext('%(place)s finished %(rank)s in the %(year)s %(sitename)s', place=place.name, rank=place.rank, year=article.year, sitename=SITENAME) }}">{{ gettext('%(place)s ranked #%(rank)s in the %(year)s %(sitename)s', place=place.name, rank=place.rank, year=article.year, sitename=SITENAME) }}</a></strong> /
         <a href="{{ SITEURL }}/{{ category.url }}" title="{{ gettext('See other stories from %(region)s', region=article.category) }}">{{ gettext('Other stories from %(region)s', region=article.category) }}</a>
         <br /><br />
+        <div>{{ article.content }}</div>
     </div>
-    <div class="col-md-3 story-image">
+    <div class="col-md-2 story-image">
         <img src="{{ SITEURL }}/static/images/stories/{{ article.year }}/{{ article.image }}" alt="{{ author }} {{ gettext('on the') }} {{ SITENAME }}" />
     </div>
-</div>
-
-<div class="row">
-    <div class="col-md-9">{{ article.content }}</div>
-    <div class="col-md-3"></div>
 </div>
 {%- endblock content %}
