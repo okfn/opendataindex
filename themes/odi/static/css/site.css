@@ -8615,3 +8615,6 @@ a.silent-link {
 a.silent-link:hover {
   text-decoration: none;
 }
+.percent-open-context {
+  cursor: pointer;
+}

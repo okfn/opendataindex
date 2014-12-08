@@ -1,7 +1,7 @@
 <div id="summary-stats" class="row">
   <div class="stat col-md-3">
     <strong>{{ scope.open_percent[scope.value_lookup] }}%</strong>
-    <span>{{ scope.open_percent.title }}</span>
+    <span class="percent-open-context" data-toggle="popover" title="{{ gettext('What does this mean?')|e }}" data-content="{{ gettext('This is the percentage of all the dataset entries that are open as per the Open Definition. We get one dataset entry for each dataset and place (e.g. Transport Timetables for the United Kingdom is one dataset entry). For each entry we check whether the dataset is fully open as per the Open Definition, and then divide by the total number of entries to get a percentage. <a href=\"faq/#open-data\">Find out more about Open Data</a>')|e|safe }}">{{ scope.open_percent.title }} <i class="fa fa-question-circle"></i></span>
     {% if scope.open_percent[scope.value_lookup_previous] %}
     <small>
         {% if scope.open_percent[scope.value_lookup_previous]|int >

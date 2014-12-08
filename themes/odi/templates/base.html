@@ -67,13 +67,18 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ SITEURL }}/about/" title="{{ gettext('Contact information for the %(sitename)s', sitename=SITENAME ) }}">
+                                {{ gettext('Contact') }}
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ SITEURL }}/about/" title="{{ gettext('About the Open Data Index project') }}">
                                 {{ gettext('About') }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ SITEURL }}/contact/" title="{{ gettext('Contact and Press information for the %(sitename)s', sitename=SITENAME ) }}">
-                                {{ gettext('Contact') }}
+                            <a href="{{ SITEURL }}/press/" title="{{ gettext('Press information for the %(sitename)s', sitename=SITENAME ) }}">
+                                {{ gettext('Press') }}
                             </a>
                         </li>
                     </ul>
@@ -156,6 +161,7 @@
                         <li><a href="{{ SITEURL }}/faq/" title="{{ gettext(' %(name)s FAQ', name=SITENAME) }}">{{ gettext('FAQ') }}</a></li>
                         <li><a href="{{ SITEURL }}/about/" title="{{ gettext('About the %(site)s', site=SITENAME) }}">{{ gettext('About') }}</a></li>
                         <li><a href="{{ SITEURL }}/about/" title="{{ gettext('Contact us') }}">{{ gettext('Contact') }}</a></li>
+                        <li><a href="{{ SITEURL }}/press/" title="{{ gettext('Press') }}">{{ gettext('Press') }}</a></li>
                     </div>
                 </div>
             </div>
