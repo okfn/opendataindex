@@ -8598,3 +8598,6 @@ blockquote {
 .article-summary {
   margin-bottom: 20px;
 }
+.pointer {
+  cursor: pointer;
+}
