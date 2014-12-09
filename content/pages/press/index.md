@@ -10,6 +10,9 @@ slug: press
 * [2014 Open Data Index Shows Slow Progress by Governments in Opening up Key Data (English)](press/release/english/)
 * [2014 Open Data Index zeigt nur langsamen Fortschritt in Open Data in vielen Staaten (German)](press/release/german/)
 * [El Índice Global de Apertura de Datos  2014 muestra avances lentos por parte de los gobiernos en la apertura de datos relevantes (Spanish)](press/release/spanish/)
+* [L'Open Data Index 2014  montre une lente progression des pays dans l'ouverture de leurs données (French)](press/release/french/)
+* [Índice de Dados Abertos da Open Knowledge indica pouco progresso por parte dos governos em abrir dados chave (Portuguese)](press/release/portuguese/)
+* [オープン・ナレッジ、世界規模でのオープンデータ現況調査にもとづき、2014年オープンデータ・インデックスを公開 (Japanese)](press/release/japanese/)
 
 ## Images for download
 

@@ -1,0 +1,36 @@
+type: page
+template: page
+title: COMUNICADO DE IMPRENSA
+slug: press/release/portuguese
+
+*São Paulo, 9 de dezembro de 2014*
+
+## Índice de Dados Abertos da Open Knowledge indica pouco progresso por parte dos governos em abrir dados chave
+
+### A OPEN KNOWLEDGE PUBLICOU HOJE O ÍNDICE DE DADOS ABERTOS DE 2014 MOSTRANDO O ESTADO DOS DADOS ABERTOS AO REDOR DO MUNDO; BRASIL OCUPA 24ª POSIÇÃO NO RANKING
+
+A Open Knowledge Internacional lançou hoje o Índice Global de Dados Abertos de 2014, que mostra que apesar de haver progressos, a maioria dos governos ainda não está disponibilizando informações chave e em formato acessível para seus cidadãos e empresas. Com as estimativas recentes da empresa de consultoria McKinsey e outras de que os benefícios potenciais dos dados abertos superam US$ 1 trilhão, um progresso lento pode por em risco uma grande oportunidade.
+
+Para Rufus Pollock, fundador e presidente da Open Knowledge Internacional,
+
+*'A abertura de dados governamentais leva à democracia, responsabilidade e inovação e permite que os cidadãos saibam e exerçam seus direitos e traz benefícios à toda a sociedade em áreas que vão desde o transporte até a saúde e educação. Houve nos últimos anos um aumento no apoio aos dados abertos por parte dos governos, mas o Índice deste ano mostra que o verdadeiro progresso caminha mais lentamente do que a retórica'.*
+
+O Índice traz um ranking de países baseado na disponibilidade e acessibilidade de informações em dez áreas centrais que incluem gastos governamentais, resultados eleitorais, horários dos meios de transportes e níveis de poluição.
+
+Nesta edição, o Reino Unido aparece em primeiro lugar, com uma pontuação de 96%, seguido pela Dinamarca e França, que saiu do 12º lugar no ano passado para ocupar a terceira posição. A Finlândia ficou em quarto, enquanto Austrália e Nova Zelândia dividem o quinto lugar. Resultados impressionantes foram obtidos pela Índia – que passou do 27º para o décimo lugar – e por países da América Latina, como Colômbia e Uruguai, que dividem a 12º posição. Dentre os países analisados, Serra Leoa, Mali, Haiti e Guiné obtiveram as piores colocações, porém há governos menos abertos que não foram incluídos no Índice devido à falta de abertura ou de uma sociedade civil engajada. Já o Brasil, apesar de uma pequena melhora (54% contra 48% no ano passado), ainda ocupa o 24º lugar, atrás de países como Uruguai, Colômbia e Chile na América do Sul.
+
+De modo geral, ainda que haja um aumento significativo no número de bases de dados abertas (de 87 para 104), a porcentagem de bases de dados abertas entre todos os países analisados permanece baixa, de apenas 11%.
+
+Mesmo entre os líderes em dados governamentais abertos há ainda espaço para melhorias: os Estados Unidos e Alemanha, por exemplo, não oferecem um registro aberto e consolidado de corporações. Além disso, o grau de abertura de dados detalhados sobre gastos governamentais foi decepcionante: a maioria dos 97 países não publica ou limita as informações disponíveis, com exceção apenas do Reino Unido e Grécia. Isso chama a atenção num momento de crescimento lento e austeridade em muitos países e em que dar acesso aberto e gratuito a este tipo de dado seria uma forma de economizar dinheiro público e aumentar a eficiência do governo.
+
+A Open Knowledge Brasil (OKBr) acredita nos benefícios que os dados abertos podem trazer para um governo mais transparente e eficiente. *"A informação deve ser facilmente compreensível e poder ser utilizada, reutilizada e compartilhada por qualquer pessoa, em qualquer lugar e para qualquer fim de forma livre"*, recorda Everton Zanella Alvarenga, diretor executivo da OKBr.
+
+Informações para os editores:
+
+* O Índice Global de Dados Abertos é realizado pela Open Knowledge Internacional em parceria com uma rede de especialistas e colaboradores. Durante seu processo de elaboração, membros do público, organizações da sociedade civil e especialistas em dados abertos avaliam a disponibilidade e acessibilidade das bases de dados selecionadas ao redor do mundo. As informações são revisadas por pares e checadas por uma equipe de especialistas locais e em bases de dados e os países recebem pontos de acordo com os resultados encontrados.
+* O Índice oferece uma avaliação independente da abertura nas seguintes áreas: horários dos meios de transporte; orçamento governamental; gastos governamentais; resultados eleitorais; registros de empresas; mapas nacionais; estatísticas nacionais; legislação; códigos postais; emissão de poluentes. Para saber mais veja [http://index.okfn.org/dataset/](http://index.okfn.org/dataset/).
+* Os países e lugares avaliados foram (segundo a colocação no ranking): Reino Unido, Dinamarca, França, Finlândia, Austrália, Nova Zelândia, Noruega, Alemanha, Estados Unidos, Índia, Taiwan, Colômbia, República Tcheca, Suécia, Uruguai, Islândia, Holanda, Romênia, Chile, Japão, Ilha de Man, Áustria, Canadá, Suíça, Itália, Brasil, Eslovênia, Coreia do Sul, México, Turquia, Kosovo, Malta, Espanha, Letônia, Georgia, Hungria, Irlanda, África do Sul, Portugal, Israel, Paquistão, Paraguai, Equador, Moldávia, Indonésia, Jamaica, Russia, Argentina, Polônia, Sérvia, Bulgária, Croácia, Bélgica, Costa Rica, Grécia, Hong Kong, China, El Salvador, Burkina Faso, Tailândia, Macedônia, Eslováquia, Bangladesh, Bermuda, Nepal, Senegal, Singapura, Tunísia, Guatemala, Lituânia, Filipinas, Ilhas Virgens Americanas, Nigéria, Ruanda, Arábia Saudita, Cambodja, Zâmbia, Costa do Marfim, Egito, Marrocos, Panamá, Gana, Zimbábue, Camarões, Quênia, Líbano, Bósnia e Herzegovina, Botswana, Chipre, Lesoto, República Unida da Tanzânia, República do Benin, Sultanato de Omã, Serra Leoa, Haiti, Mali e República da Guiné.
+* Veja histórias regionais sobre dados abertos em: [http://index.okfn.org/stories/](http://index.okfn.org/stories/)
+* Incluímos lugares que ainda não são considerados países independentes quando recebemos submissões completas e precisas. Por isso, o Índice Global de Dados Abertos classifica “lugares” e não “países”.
+* Dados Abertos são informações que podem ser livremente utilizadas, reutilizadas e compartilhadas por qualquer pessoa, em qualquer lugar e para qualquer fim. Verdadeiros dados abertos requerem uma série de qualidades técnicas e legais que garantem que qualquer pessoa possa utilizá-los livremente e para seu máximo benefício e o Índice Global de Dados Abertos avalia todas elas. A Definição de Conhecimento Livre estabelece os princípios que definem a abertura em relação aos dados e o conteúdo: [http://opendefinition.org/okd/portugues-brasileiro/](http://opendefinition.org/okd/portugues-brasileiro/).
+* A **Open Knowledge Internacional**, criada em 2004, é uma rede mundial de pessoas apaixonadas pela abertura que através de campanhas, tecnologias e treinamento buscam abrir informações e transformá-las em mudanças. Nosso objetivo é dar a todas as pessoas o poder de usar informações e percepção para o bem. Conheça nossos maiores projetos, que incluem a [http://escoladedados.org/](http://escoladedados.org/) e o [http://OpenSpending.org/](http://openspending.org/) (e em breve o [http://gastosabertos.org/](http://gastosabertos.org/)). Para mais informações, entre em contato com imprensa@okfn.org.br.
