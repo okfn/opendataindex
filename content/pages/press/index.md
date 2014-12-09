@@ -19,8 +19,19 @@ slug: press
 
 ## Infographics
 
+<img src="static/images/press/2014/OpenDataIceberg-400.png" />
+
+* [Open Data Iceberg (400)](static/images/press/2014/OpenDataIceberg-400.png)
+* [Open Data Iceberg (600)](static/images/press/2014/OpenDataIceberg-600.png)
+* [Open Data Iceberg (800)](static/images/press/2014/OpenDataIceberg-800.png)
+
 ## Open Knowledge logo
 
+* [Open Knowledge Logo (CMYK)](static/images/press/2014/OpenKnowledge_CMYK.jpg)
+* [Open Knowledge Logo (RBG)](static/images/press/2014/OpenKnowledge_RGB.png)
+
 ## Background briefing
+
+* [Key Themes Briefing](static/files/2014/GlobalOpenDataIndex2014_KeyThemesBriefing.pdf)
 
 For more information, please contact: <a href="mailto:press@okfn.org">press@okfn.org</a>
