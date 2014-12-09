@@ -34,7 +34,7 @@ Rufus Pollock says:
 
 *‘For the true benefits of open data to be realised, governments must do more than simply put a few spreadsheets online. The information should be easily found and understood, and should be able to be freely used, reused and shared by anyone, anywhere, for any purpose.’*
 
-**Media contact**: Susanne Kendler & Emma Beer, Open Knowledge, email: press@okfn.org, twitter @okfn, phone: 0044 (0)1223 422159
+**Media contact**: Susanne Kendler & Emma Beer, Open Knowledge, email: [press@okfn.org](press@okfn.org), twitter @okfn, phone: 0044 (0)1223 422159
 
 **Notes to the Editor**
 

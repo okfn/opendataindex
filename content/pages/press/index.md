@@ -13,6 +13,7 @@ slug: press
 * [L'Open Data Index 2014  montre une lente progression des pays dans l'ouverture de leurs données (French)](press/release/french/)
 * [Índice de Dados Abertos da Open Knowledge indica pouco progresso por parte dos governos em abrir dados chave (Portuguese)](press/release/portuguese/)
 * [オープン・ナレッジ、世界規模でのオープンデータ現況調査にもとづき、2014年オープンデータ・インデックスを公開 (Japanese)](press/release/japanese/)
+* [Open Data Index 2014 viser små fremskridt indenfor åbning af nøgledata (Danish)](press/release/danish/)
 
 ## Images for download
 
@@ -27,6 +28,7 @@ slug: press
 * [Open Data Iceberg (400)](static/images/press/2014/OpenDataIceberg-400.png)
 * [Open Data Iceberg (600)](static/images/press/2014/OpenDataIceberg-600.png)
 * [Open Data Iceberg (800)](static/images/press/2014/OpenDataIceberg-800.png)
+* [Open Data Iceberg (Mandarin)](static/images/press/2014/OpenDataIceberg-mandarin.png)
 
 ## Open Knowledge logo
 
