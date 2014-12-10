@@ -16,6 +16,11 @@ slug: press
 * [Open Data Index 2014 viser små fremskridt indenfor åbning af nøgledata (Danish)](press/release/danish/)
 * [开放数据指数2014显示全球各国和地区政府开放关键数据集的进展缓慢 (Mandarin)](press/release/mandarin/)
 
+## Commentary
+
+* [Belguim Score Slightly Higher on the Global Open Data Index, Big Expectations for 2015](http://okfn.be/2014/12/09/belgium-scores-slightly-higher-on-the-global-open-data-index-big-expectations-for-2015/)
+* [2014 Open Data Index: Slow Progress by MENA Governments in Opening up Key Data](http://mena.okfn.org/?p=243)
+
 ## Images for download
 
 * [Places](static/images/press/2014/places.jpg)
@@ -30,6 +35,14 @@ slug: press
 * [Open Data Iceberg (600)](static/images/press/2014/OpenDataIceberg-600.png)
 * [Open Data Iceberg (800)](static/images/press/2014/OpenDataIceberg-800.png)
 * [Open Data Iceberg (Mandarin)](static/images/press/2014/OpenDataIceberg-mandarin.png)
+
+<img src="static/images/press/2014/spending-400.png" />
+
+* [Open Spending Data (400)](static/images/press/2014/spending-400.png)
+* [Open Spending Data (600)](static/images/press/2014/spending-600.png)
+* [Open Spending Data (800)](static/images/press/2014/spending-800.png)
+* [Open Spending Data (Print 300dpi)](static/images/press/2014/spending-print300dpi.png)
+* [Open Spending Data (Print PDF)](static/images/press/2014/spending-print.pdf)
 
 ## Open Knowledge logo
 
