@@ -14,6 +14,7 @@ slug: press
 * [Índice de Dados Abertos da Open Knowledge indica pouco progresso por parte dos governos em abrir dados chave (Portuguese)](press/release/portuguese/)
 * [オープン・ナレッジ、世界規模でのオープンデータ現況調査にもとづき、2014年オープンデータ・インデックスを公開 (Japanese)](press/release/japanese/)
 * [Open Data Index 2014 viser små fremskridt indenfor åbning af nøgledata (Danish)](press/release/danish/)
+* [开放数据指数2014显示全球各国和地区政府开放关键数据集的进展缓慢 (Mandarin)](press/release/mandarin/)
 
 ## Images for download
 
