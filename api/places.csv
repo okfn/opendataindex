@@ -1,251 +1,167 @@
-id,name,slug,score,rank,score_2013,rank_2013
-af,Afghanistan,afghanistan,None,80,None,76
-ax,Åland Islands,aland-islands,None,80,None,76
-al,Albania,albania,None,80,None,76
-dz,Algeria,algeria,None,80,None,76
-as,American Samoa,american-samoa,None,80,None,76
-ad,Andorra,andorra,None,80,None,76
-ao,Angola,angola,None,80,None,76
-ai,Anguilla,anguilla,None,80,None,76
-aq,Antarctica,antarctica,None,80,None,76
-ag,Antigua and Barbuda,antigua-and-barbuda,None,80,None,76
-ar,Argentina,argentina,None,80,None,76
-am,Armenia,armenia,None,80,None,76
-aw,Aruba,aruba,None,80,None,76
-au,Australia,australia,66,80,66,76
-at,Austria,austria,51,80,51,76
-az,Azerbaijan,azerbaijan,None,80,None,76
-bs,Bahamas,bahamas,24,80,24,76
-bh,Bahrain,bahrain,16,80,16,76
-bd,Bangladesh,bangladesh,34,80,34,76
-bb,Barbados,barbados,24,80,24,76
-by,Belarus,belarus,None,80,None,76
-be,Belgium,belgium,27,80,27,76
-bz,Belize,belize,None,80,None,76
-bj,Benin,benin,None,80,None,76
-bm,Bermuda,bermuda,36,80,36,76
-bt,Bhutan,bhutan,1,80,None,76
-bo,"Bolivia, Plurinational State of",bolivia-plurinational-state-of,None,80,None,76
-bq,"Bonaire, Sint Eustatius and Saba",bonaire-sint-eustatius-and-saba,None,80,None,76
-ba,Bosnia and Herzegovina,bosnia-and-herzegovina,None,80,None,76
-bw,Botswana,botswana,None,80,None,76
-bv,Bouvet Island,bouvet-island,None,80,None,76
-br,Brazil,brazil,48,80,48,76
-io,British Indian Ocean Territory,british-indian-ocean-territory,None,80,None,76
-bn,Brunei Darussalam,brunei-darussalam,None,80,None,76
-bg,Bulgaria,bulgaria,52,80,52,76
-bf,Burkina Faso,burkina-faso,37,80,37,76
-bi,Burundi,burundi,None,80,None,76
-kh,Cambodia,cambodia,None,80,None,76
-cm,Cameroon,cameroon,None,80,None,76
-ca,Canada,canada,59,80,59,76
-cv,Cape Verde,cape-verde,None,80,None,76
-ky,Cayman Islands,cayman-islands,31,80,31,76
-cf,Central African Republic,central-african-republic,None,80,None,76
-td,Chad,chad,None,80,None,76
-cl,Chile,chile,None,80,None,76
-cn,China,china,42,80,42,76
-cx,Christmas Island,christmas-island,None,80,None,76
-cc,Cocos (Keeling) Islands,cocos-islands,None,80,None,76
-co,Colombia,colombia,None,80,None,76
-km,Comoros,comoros,None,80,None,76
-cg,Congo,congo,None,80,None,76
-cd,"Congo, the Democratic Republic of the",congo-the-democratic-republic-of-the,None,80,None,76
-ck,Cook Islands,cook-islands,None,80,None,76
-cr,Costa Rica,costa-rica,35,80,35,76
-ci,Côte d'Ivoire,côte-d'ivoire,None,80,None,76
-hr,Croatia,croatia,45,80,45,76
-cu,Cuba,cuba,None,80,None,76
-cw,Curaçao,curacao,None,80,None,76
-cy,Cyprus,cyprus,3,80,3,76
-cz,Czech Republic,czech-republic,45,80,45,76
-dk,Denmark,denmark,87,80,87,76
-dj,Djibouti,djibouti,None,80,None,76
-dm,Dominica,dominica,None,80,None,76
-do,Dominican Republic,dominican-republic,None,80,None,76
-ec,Ecuador,ecuador,43,80,43,76
-eg,Egypt,egypt,31,80,31,76
-sv,El Salvador,el-salvador,None,80,None,76
-gq,Equatorial Guinea,equatorial-guinea,None,80,None,76
-er,Eritrea,eritrea,None,80,None,76
-ee,Estonia,estonia,None,80,None,76
-et,Ethiopia,ethiopia,None,80,None,76
-fk,Falkland Islands (Malvinas),falkland-islands-(malvinas),None,80,None,76
-fo,Faroe Islands,faroe-islands,None,80,None,76
-fj,Fiji,fiji,None,80,None,76
-fi,Finland,finland,72,80,72,76
-fr,France,france,69,80,69,76
-gf,French Guiana,french-guiana,None,80,None,76
-pf,French Polynesia,french-polynesia,None,80,None,76
-tf,French Southern Territories,french-southern-territories,None,80,None,76
-ga,Gabon,gabon,None,80,None,76
-gm,Gambia,gambia,None,80,None,76
-ge,Georgia,georgia,None,80,None,76
-de,Germany,germany,61,80,61,76
-gh,Ghana,ghana,None,80,None,76
-gi,Gibraltar,gibraltar,27,80,27,76
-gr,Greece,greece,40,80,40,76
-gl,Greenland,greenland,None,80,None,76
-gd,Grenada,grenada,None,80,None,76
-gp,Guadeloupe,guadeloupe,None,80,None,76
-gu,Guam,guam,None,80,None,76
-gt,Guatemala,guatemala,None,80,None,76
-gg,Guernsey,guernsey,39,80,39,76
-gn,Guinea,guinea,None,80,None,76
-gw,Guinea-Bissau,guinea-bissau,None,80,None,76
-gy,Guyana,guyana,None,80,None,76
-ht,Haiti,haiti,None,80,None,76
-hm,Heard Island and McDonald Mcdonald Islands,heard-island-and-mcdonald-mcdonald-islands,None,80,None,76
-va,Holy See (Vatican City State),holy-see-(vatican-city-state),None,80,None,76
-hn,Honduras,honduras,None,80,None,76
-hk,Hong Kong,hong-kong,27,80,27,76
-hu,Hungary,hungary,42,80,42,76
-is,Iceland,iceland,55,80,55,76
-in,India,india,46,80,46,76
-id,Indonesia,indonesia,42,80,42,76
-ir,"Iran, Islamic Republic of",iran-islamic-republic-of,None,80,None,76
-iq,Iraq,iraq,None,80,None,76
-ie,Ireland,ireland,40,80,40,76
-im,Isle of Man,isle-of-man,52,80,52,76
-il,Israel,israel,48,80,48,76
-it,Italy,italy,52,80,52,76
-jm,Jamaica,jamaica,None,80,None,76
-jp,Japan,japan,46,80,46,76
-je,Jersey,jersey,39,80,39,76
-jo,Jordan,jordan,None,80,None,76
-kz,Kazakhstan,kazakhstan,None,80,None,76
-ke,Kenya,kenya,20,80,20,76
-ki,Kiribati,kiribati,None,80,None,76
-kp,"Korea, Democratic People's Republic of",korea-democratic-people's-republic-of,None,80,None,76
-kr,"Korea, Republic of",korea-republic-of,43,80,43,76
-kw,Kuwait,kuwait,None,80,None,76
-ko,Kosovo,kosovo,None,80,None,76
-kg,Kyrgyzstan,kyrgyzstan,None,80,None,76
-la,Lao People's Democratic Republic,lao-people's-democratic-republic,None,80,None,76
-lv,Latvia,latvia,None,80,None,76
-lb,Lebanon,lebanon,None,80,None,76
-ls,Lesotho,lesotho,None,80,None,76
-lr,Liberia,liberia,None,80,None,76
-ly,Libya,libya,0,80,0,76
-li,Liechtenstein,liechtenstein,None,80,None,76
-lt,Lithuania,lithuania,32,80,32,76
-lu,Luxembourg,luxembourg,None,80,None,76
-mo,Macao,macao,None,80,None,76
-mk,"Macedonia, the Former Yugoslav Republic of",macedonia-the-former-yugoslav-republic-of,None,80,None,76
-mg,Madagascar,madagascar,None,80,None,76
-mw,Malawi,malawi,None,80,None,76
-my,Malaysia,malaysia,None,80,None,76
-mv,Maldives,maldives,None,80,None,76
-ml,Mali,mali,None,80,None,76
-mt,Malta,malta,52,80,52,76
-mh,Marshall Islands,marshall-islands,None,80,None,76
-mq,Martinique,martinique,None,80,None,76
-mr,Mauritania,mauritania,None,80,None,76
-mu,Mauritius,mauritius,None,80,None,76
-yt,Mayotte,mayotte,None,80,None,76
-mx,Mexico,mexico,47,80,47,76
-fm,"Micronesia, Federated States of",micronesia-federated-states-of,None,80,None,76
-md,"Moldova, Republic of",moldova-republic-of,53,80,53,76
-mc,Monaco,monaco,None,80,None,76
-mn,Mongolia,mongolia,None,80,None,76
-me,Montenegro,montenegro,None,80,None,76
-ms,Montserrat,montserrat,None,80,None,76
-ma,Morocco,morocco,29,80,9,76
-mz,Mozambique,mozambique,None,80,None,76
-mm,Myanmar,myanmar,None,80,None,76
-na,Namibia,namibia,None,80,None,76
-nr,Nauru,nauru,None,80,None,76
-np,Nepal,nepal,30,80,30,76
-nl,Netherlands,netherlands,74,80,74,76
-nc,New Caledonia,new-caledonia,None,80,None,76
-nz,New Zealand,new-zealand,66,80,66,76
-ni,Nicaragua,nicaragua,None,80,None,76
-ne,Niger,niger,None,80,None,76
-ng,Nigeria,nigeria,28,80,28,76
-nu,Niue,niue,None,80,None,76
-nf,Norfolk Island,norfolk-island,None,80,None,76
-mp,Northern Mariana Islands,northern-mariana-islands,None,80,None,76
-no,Norway,norway,76,80,76,76
-om,Oman,oman,7,80,7,76
-pk,Pakistan,pakistan,48,80,15,76
-pw,Palau,palau,None,80,None,76
-ps,"Palestine, State of",palestine-state-of,None,80,None,76
-pa,Panama,panama,None,80,None,76
-pg,Papua New Guinea,papua-new-guinea,None,80,None,76
-py,Paraguay,paraguay,45,80,None,76
-pe,Peru,peru,None,80,None,76
-ph,Philippines,philippines,None,80,None,76
-pn,Pitcairn,pitcairn,None,80,None,76
-pl,Poland,poland,42,80,42,76
-pt,Portugal,portugal,50,80,50,76
-pr,Puerto Rico,puerto-rico,None,80,None,76
-qa,Qatar,qatar,None,80,None,76
-re,Réunion,réunion,None,80,None,76
-ro,Romania,romania,58,80,58,76
-ru,Russian Federation,russian-federation,43,80,43,76
-rw,Rwanda,rwanda,None,80,None,76
-bl,Saint Barthélemy,saint-barthélemy,None,80,None,76
-sh,"Saint Helena, Ascension and Tristan da Cunha",saint-helena-ascension-and-tristan-da-cunha,None,80,None,76
-kn,Saint Kitts and Nevis,saint-kitts-and-nevis,9,80,9,76
-lc,Saint Lucia,saint-lucia,5,80,5,76
-mf,Saint Martin (French part),saint-martin-(french-part),None,80,None,76
-pm,Saint Pierre and Miquelon,saint-pierre-and-miquelon,None,80,None,76
-vc,Saint Vincent and the Grenadines,saint-vincent-and-the-grenadines,None,80,None,76
-ws,Samoa,samoa,None,80,None,76
-sm,San Marino,san-marino,None,80,None,76
-st,Sao Tome and Principe,sao-tome-and-principe,None,80,None,76
-sa,Saudi Arabia,saudi-arabia,28,80,28,76
-sn,Senegal,senegal,22,80,22,76
-rs,Serbia,serbia,44,80,44,76
-sc,Seychelles,seychelles,None,80,None,76
-sl,Sierra Leone,sierra-leone,None,80,None,76
-sg,Singapore,singapore,34,80,34,76
-sx,Sint Maarten (Dutch part),sint-maarten-(dutch-part),None,80,None,76
-sk,Slovakia,slovakia,39,80,39,76
-si,Slovenia,slovenia,73,80,73,76
-sb,Solomon Islands,solomon-islands,None,80,None,76
-so,Somalia,somalia,None,80,None,76
-za,South Africa,south-africa,32,80,32,76
-gs,South Georgia and the South Sandwich Islands,south-georgia-and-the-south-sandwich-islands,None,80,None,76
-ss,South Sudan,south-sudan,None,80,None,76
-es,Spain,spain,46,80,46,76
-lk,Sri Lanka,sri-lanka,None,80,None,76
-sd,Sudan,sudan,None,80,None,76
-sr,Suriname,suriname,None,80,None,76
-sj,Svalbard and Jan Mayen,svalbard-and-jan-mayen,None,80,None,76
-sz,Swaziland,swaziland,None,80,None,76
-se,Sweden,sweden,67,80,67,76
-ch,Switzerland,switzerland,59,80,59,76
-sy,Syrian Arab Republic,syrian-arab-republic,None,80,None,76
-tw,Taiwan,taiwan,42,80,42,76
-tj,Tajikistan,tajikistan,None,80,None,76
-tz,"Tanzania, United Republic of",tanzania-united-republic-of,None,80,None,76
-th,Thailand,thailand,None,80,None,76
-tl,Timor-Leste,timor-leste,None,80,None,76
-tg,Togo,togo,None,80,None,76
-tk,Tokelau,tokelau,None,80,None,76
-to,Tonga,tonga,None,80,None,76
-tt,Trinidad and Tobago,trinidad-and-tobago,None,80,None,76
-tn,Tunisia,tunisia,34,80,34,76
-tr,Turkey,turkey,None,80,None,76
-tm,Turkmenistan,turkmenistan,None,80,None,76
-tc,Turks and Caicos Islands,turks-and-caicos-islands,3,80,3,76
-tv,Tuvalu,tuvalu,None,80,None,76
-ug,Uganda,uganda,None,80,None,76
-ua,Ukraine,ukraine,33,80,None,76
-ae,United Arab Emirates,united-arab-emirates,None,80,None,76
-gb,United Kingdom,united-kingdom,94,80,94,76
-us,United States,united-states,87,80,87,76
-um,United States Minor Outlying Islands,united-states-minor-outlying-islands,None,80,None,76
-uy,Uruguay,uruguay,77,80,None,76
-uz,Uzbekistan,uzbekistan,None,80,None,76
-vu,Vanuatu,vanuatu,None,80,None,76
-ve,"Venezuela, Bolivarian Republic of",venezuela-bolivarian-republic-of,None,80,None,76
-vn,Viet Nam,viet-nam,None,80,None,76
-vg,"Virgin Islands, British",virgin-islands-british,13,80,13,76
-vi,"Virgin Islands, U.S.",virgin-islands-u.s.,None,80,None,76
-wf,Wallis and Futuna,wallis-and-futuna,None,80,None,76
-eh,Western Sahara,western-sahara,None,80,None,76
-ye,Yemen,yemen,14,80,14,76
-zm,Zambia,zambia,None,80,None,76
-zw,Zimbabwe,zimbabwe,None,80,None,76
+id,name,slug,,region,continent,score,rank,score_2013,rank_2013,submitters,reviewers
+ao,Angola,angola,None,Africa,Africa,None,None,None,None,"[u'Nick Ingalls', u'Janet Gunter']",None
+ag,Antigua and Barbuda,antigua-and-barbuda,None,LATAM,Americas,None,None,None,None,Nick Ingalls,None
+ar,Argentina,argentina,None,LATAM,Americas,42,48,None,None,"[u'Mart\xedn Szyszlican', u'Santiago Afonso', u'Alejandro Liberman', u'Mor Rubinstein', u'Yamila Garc\xeda (Yas Garc\xeda)']","[u'Mor Rubinstein', u'Silvana Fumega']"
+am,Armenia,armenia,None,Europe,Europe,None,None,None,None,None,None
+aw,Aruba,aruba,None,LATAM,Americas,None,None,None,None,Nick Ingalls,None
+au,Australia,australia,None,Oceania,Oceania,72,5,66,9,"[u'Alex Sadleir', u'Daniela Mattern', u'Rufus Pollock', u'Baden Appleyard', u'Andrew Stott', u'Mor Rubinstein', u'Alexander Sadleir', u'Steven De Costa']","[u'Alex Sadleir', u'Daniela Mattern', u'Laura James', u'Baden Appleyard', u'Mor Rubinstein', u'Rufus Pollock']"
+at,Austria,austria,None,Europe,Europe,59,22,51,23,"[u'Oleg Lavrovsky', u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Ton Zijlstra', u'Mathias Huter', u'vavoida', u'Paul Walsh', u'Johann H\xf6chtl', u'Robert Harm', u'City of Vienna, Office of the CIO']","[u'Lieke Ploeger', u'Ton Zijlstra', u'Daniela Mattern', u'Mor Rubinstein', u'Sander van der Waal', u'Robert Harm']"
+bd,Bangladesh,bangladesh,None,Asia,Asia,34,63,34,47,"[u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Rezwan Alam', u'Mor Rubinstein', u'Nurunnaby Hasive', u'Nabid Hassan']","[u'Mor Rubinstein', u'Laura James', u'Nasir Khan', u'Nabid Hassan']"
+be,Belgium,belgium,None,Europe,Europe,39,53,27,56,"[u'Pieter-Jan Pauwels', u'Bram Wijns', u'Pierre Chrzanowski', u'Bert Van Nuffelen', u'Tryggvi Bj\xf6rgvinsson', u'Olav Peeters', u'Pieter Colpaert', u'Bart Hanssens']","[u'Pieter-Jan Pauwels', u'Sander van der Waal']"
+bj,Benin,benin,None,Africa,Africa,19,92,None,None,"[u'Nick Ingalls', u'Oleg Lavrovsky', u'Pierre Chrzanowski']",Mamadou Diagne
+bm,Bermuda,bermuda,None,LATAM,Americas,34,63,36,45,"[u'Tryggvi Bj\xf6rgvinsson', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Graeme Jones', u'Andrew Simons', u'Louis Galipeau']","[u'Mor Rubinstein', u'Graeme Jones', u'Pierre Chrzanowski', u'Christian Villum']"
+bo,"Bolivia, Plurinational State of",bolivia,None,LATAM,Americas,None,None,None,None,"[u'Anonymous', u'RAUL MOLINA', u'FERNANDO MOLINA']",None
+bq,"Bonaire, Sint Eustatius and Saba",bonaire-sint-eustatius-and-saba,None,LATAM,Americas,None,None,None,None,None,None
+ba,Bosnia and Herzegovina,bosnia-and-herzegovina,None,Europe,Europe,21,87,None,None,"[u'Rayna St', u'Mor Rubinstein', u'Luka']","[u'Rayna St', u'Stevan Gostoji\u0107']"
+bw,Botswana,botswana,None,Africa,Africa,21,87,None,None,"[u'Nick Ingalls', u'Tryggvi Bj\xf6rgvinsson', u'Anonymous', u'Mor Rubinstein']","[u'Mor Rubinstein', u'Christian Villum']"
+br,Brazil,brazil,None,LATAM,Americas,54,26,48,24,"[u'Tryggvi Bj\xf6rgvinsson', u'Nat\xe1lia Mazotte', u'Daniela Mattern', u'Erick Muzart Fonseca dos Santos', u'Augusto Herrmann', u'S\xe9rgio', u'Felipe G. Nievinski']","[u'Mor Rubinstein', u'Everton Alvarenga', u'Daniela Mattern']"
+bn,Brunei Darussalam,brunei,None,Asia,Asia,None,None,None,None,None,None
+bg,Bulgaria,bulgaria,None,Europe,Europe,41,51,52,20,"[u'Peio Popov', u'Boyan Yurukov', u'Mor Rubinstein']","[u'Rayna St', u'Mor Rubinstein', u'Pierre Chrzanowski', u'Boyan Yurukov', u'Sander van der Waal']"
+bf,Burkina Faso,burkina-faso,None,Africa,Africa,36,59,37,44,"[u'Tryggvi Bj\xf6rgvinsson', u'Fofana Bazo B.', u'titinto', u'Saba Moustapha', u'Mor Rubinstein', u'Christian Villum', u'Idriss TINTO', u'T. Idriss TINTO']","[u'Laura James', u'Katelyn Rogers', u'Mor Rubinstein', u'Christian Villum', u'Idriss TINTO', u'titinto']"
+bi,Burundi,burundi,None,Asia,Asia,None,None,None,None,Nick Ingalls,None
+kh,Cambodia,cambodia,None,Asia,Asia,27,76,None,None,"[u'Vantharith Oum', u'Vantharith']",Vantharith Oum
+cm,Cameroon,cameroon,None,Africa,Africa,23,84,None,None,"[u'Nick Ingalls', u'Tryggvi Bj\xf6rgvinsson', u'Jean Brice TETKA', u'Katelyn Rogers']","[u'Mor Rubinstein', u'Katelyn Rogers']"
+ca,Canada,canada,None,North America,Americas,59,22,59,12,"[u'Adam Hill', u'Diane Mercier', u'Daniela Mattern', u'Cameron Wilson', u'Miguel Tremblay', u'Zile Ozols', u'Rufus Pollock', u'Andrew Smith', u'Tracey Lauriault', u'Mor Rubinstein', u'Caitlin Myles', u'James McKinney', u'Frank Hangler', u'Ted Strauss', u'Tracey P. Lauriault', u'Michael Mulley']","[u'Rufus Pollock', u'James McKinney', u'Daniela Mattern', u'Tracey Lauriault']"
+cv,Cape Verde,cape-verde,None,Africa,Africa,None,None,None,None,None,None
+cf,Central African Republic,central-african-republic,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+td,Chad,chad,None,Africa,Africa,None,None,None,None,None,None
+cl,Chile,chile,None,LATAM,Americas,61,19,None,None,"[u'Louis Leclerc', u'Ignacio lopez', u'IGNACIO ESTEBAN RUIZ', u'GONZALO MANUEL URIBE ESTELA', u'Sebastian Massa Slimming', u'Tryggvi Bj\xf6rgvinsson', u'Mor Rubinstein', u'Constanza Zegarra', u'Daniela Tejada', u'Anonymous']","[u'Mor Rubinstein', u'Daniela Tejada']"
+cn,China,china,None,Asia,Asia,37,57,42,36,"[u'FENG GAO', u'Pierre Chrzanowski', u'\u738b\u6d77\u751f']","[u'Feng Gao', u'FENG GAO']"
+co,Colombia,colombia,None,LATAM,Americas,66,12,None,None,"[u'ycantillor@barranquilla.gov.co', u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Marcela Escandon', u'Paulo C\xe9sar Rinc\xf3n', u'Jp Marin Diaz', u'Lina Gomez']","[u'Oscar Montiel', u'Pierre Chrzanowski', u'Daniela Mattern', u'Mor Rubinstein']"
+km,Comoros,comoros,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+cg,Congo,congo,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+cd,"Congo, the Democratic Republic of the",congo-democratic-republic,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+cr,Costa Rica,costa-rica,None,LATAM,Americas,38,54,35,46,"[u'Ignacio Alfaro', u'Tryggvi Bj\xf6rgvinsson', u'Ana Sofia Ruiz', u'Mor Rubinstein']","[u'Oscar Montiel', u'Sander van der Waal', u'Ana Sofia Ruiz', u'Mor Rubinstein', u'Mariel Garc\xeda M']"
+ci,Côte d'Ivoire,cote-divoire,None,Africa,Africa,26,78,None,None,"[u'Daniela Mattern', u'Katelyn Rogers', u'Mor Rubinstein', u'Jan-Ole Beyer', u'Sarah Clavel', u'Nick Ingalls']","[u'Margo Thierry', u'Mor Rubinstein', u'Katelyn Rogers', u'Daniela Mattern']"
+hr,Croatia,croatia,None,Europe,Europe,41,51,45,30,"[u'Tryggvi Bj\xf6rgvinsson', u'Laura James', u'Ivo Babaja', u'Drazen Hoffmann', u'Miroslav Schlossberg', u'Marko Rakar']","[u'Ivo Babaja', u'Laura James', u'Stevan Gostoji\u0107', u'Mor Rubinstein']"
+cu,Cuba,cuba,None,North America,Americas,None,None,None,None,None,None
+cy,Cyprus,cyprus,None,Asia,Asia,21,87,3,60,"[u'Andreas', u'Anonymous']","[u'Rufus Pollock', u'Andreas Pavlou', u'Andreas P']"
+cz,Czech Republic,czech-republic,None,Europe,Europe,66,12,45,30,"[u'J\xe1chym \u010cepick\xfd', u'Tryggvi Bj\xf6rgvinsson', u'Michaela Rybickova', u'Mor Rubinstein', u'Michaela Rybi\u010dkov\xe1 ', u'Jind\u0159ich Mynarz', u'Jakub Mracek', u'Michaela Rybi\u010dkov\xe1']","[u'Mor Rubinstein', u'Sander van der Waal', u'Michaela Rybi\u010dkov\xe1']"
+dk,Denmark,denmark,None,Europe,Europe,83,2,87,2,"[u'Mike', u'samo olsen', u'Daniela Mattern', u'Mor Rubinstein', u'Niels Erik Kaaber Rasmussen', u'Andrew Stott', u'Henrik Liliendahl S\xf8rensen', u'Asmen G\xfcl', u'Samo Olsen', u'Anders Pedersen']","[u'Mor Rubinstein', u'Niels Erik Kaaber Rasmussen', u'Daniela Mattern']"
+dj,Djibouti,djibouti,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+dm,Dominica,dominica,None,LATAM,Americas,None,None,None,None,Nick Ingalls,None
+do,Dominican Republic,dominican-republic,None,LATAM,Americas,None,None,None,None,None,None
+ec,Ecuador,ecuador,None,LATAM,Americas,44,43,43,33,"[u'Eduardo Bejar', u'Mor Rubinstein', u'Mariel Garc\xeda M']","[u'Eduardo Bejar', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Mariel Garc\xeda M']"
+eg,Egypt,egypt,None,MENA,Africa,25,79,31,52,"[u'Rayna St', u'Tryggvi Bj\xf6rgvinsson', u'Rayna Stamboliyska', u'Tarek Amr', u'Mor Rubinstein', u'Riyadh Al-Balushi']","[u'Rayna Stamboliyska', u'Mor Rubinstein', u'Riyadh Al-Balushi', u'Rayna St']"
+sv,El Salvador,el-salvador,None,LATAM,Americas,37,57,None,None,"[u'Mor Rubinstein', u'Lorena Hern\xe1ndez Quir\xf3s', u'Iris Palma']","[u'Mor Rubinstein', u'Lorena Hern\xe1ndez Quir\xf3s']"
+gq,Equatorial Guinea,equatorial-guinea,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+er,Eritrea,eritrea,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+ee,Estonia,estonia,None,Europe,Europe,None,None,None,None,Allan,None
+et,Ethiopia,ethiopia,None,Africa,Africa,None,None,None,None,None,None
+fj,Fiji,fiji,None,Oceania,Oceania,None,None,None,None,Nick Ingalls,None
+fi,Finland,finland,None,Europe,Europe,73,4,72,7,"[u'Tryggvi Bj\xf6rgvinsson', u'Antti Jogi Poikola', u'Daniela Mattern', u'Heli Mikkel\xe4', u'Margit Suurhasko', u'Antti Poikola', u'Andrew Stott', u'Mor Rubinstein', u'Jaakko Korhonen', u'Jari Honkonen', u'Raimo Muurinen']","[u'Mor Rubinstein', u'Daniela Mattern', u'Antti Poikola', u'Antti Jogi Poikola', u'Jaakko Korhonen']"
+fr,France,france,None,Europe,Europe,80,3,59,12,"[u'Simon', u'Daniela Mattern', u'OKF France', u'@logisima', u'Pierre Chrzanowski', u'Beno\xeet Simard', u'Benjamin Ooghe']","[u'Regards Citoyens', u'Pierre Chrzanowski', u'Daniela Mattern']"
+gf,French Guiana,french-guiana,None,LATAM,Americas,None,None,None,None,None,None
+ga,Gabon,gabon,None,Africa,Africa,None,None,None,None,None,None
+gm,Gambia,gambia,None,Africa,Africa,None,None,None,None,Nick Ingalls,None
+ge,Georgia,georgia,None,Asia,Asia,50,35,None,None,"[u'Tryggvi Bj\xf6rgvinsson', u'Eric Barrett (JumpStart Georgia)', u'Derek Dohler', u'Daniela Mattern']","[u'Mor Rubinstein', u'Mathias Huter', u'Daniela Mattern']"
+de,Germany,germany,None,Europe,Europe,69,9,61,11,"[u'Mathias Schindler', u'Daniela Mattern', u'Michael H\xf6rz', u'walter palmetshofer', u'Joris Pekel', u'pudo', u'Stefan', u'michael', u'Joris/Michael', u'Andrew Stott', u'Maximilian Heimst\xe4dt', u'Jan-Ole Beyer', u'Daniel Dietrich', u'Sander van der Waal', u'profemo', u'Dominik Moritz', u'Mor Rubinstein']","[u'Daniela Mattern', u'Mor Rubinstein', u'Maximilian Heimst\xe4dt', u'Daniel Dietrich', u'Sander van der Waal', u'profemo']"
+gh,Ghana,ghana,None,Africa,Africa,24,82,None,None,"[u'Andrews Otoo', u'Tryggvi Bj\xf6rgvinsson', u'Jenny Molloy', u'Mor Rubinstein', u'Jerry Sam', u'Nick Ingalls']",Mor Rubinstein
+gr,Greece,greece,None,Europe,Europe,38,54,40,41,"[u'Charalampos Bratsas', u'charalampos bratsas', u'FOTIS ZYGOULIS', u'Thodoris Papadopoulos', u'Marinos Papadopoulos', u'Konstantinos Stampoulis']","[u'Charalampos Bratsas', u'Andreas P', u'Sander van der Waal']"
+gd,Grenada,grenada,None,North America,Americas,None,None,None,None,Nick Ingalls,None
+gp,Guadeloupe,guadeloupe,None,LATAM,Americas,None,None,None,None,None,None
+gu,Guam,guam,None,Oceania,Oceania,None,None,None,None,None,None
+gt,Guatemala,guatemala,None,LATAM,Americas,33,69,None,None,"[u'Jenny Molloy', u'Mor Rubinstein', u'Tryggvi Bj\xf6rgvinsson', u'Stuardo Rodriguez', u'Anonymous']","[u'Oscar Montiel', u'Mor Rubinstein']"
+gn,Guinea,guinea,None,Africa,Africa,10,97,None,None,"[u'Nick Ingalls', u'Oleg Lavrovsky', u'Pierre Chrzanowski', u'DIALLO Aboubacar']",Pierre Chrzanowski
+gw,Guinea-Bissau,guinea-bissau,None,Africa,Africa,None,None,None,None,Janet Gunter,None
+gy,Guyana,guyana,None,LATAM,Americas,None,None,None,None,Nick Ingalls,None
+ht,Haiti,haiti,None,LATAM,Americas,13,95,None,None,"[u'Tryggvi Bj\xf6rgvinsson', u'Pierre Chrzanowski']","[u'Margo Thierry', u'Mor Rubinstein']"
+hn,Honduras,honduras,None,LATAM,Americas,None,None,None,None,None,None
+hk,Hong Kong,hong-kong,None,Asia,Asia,38,54,27,56,"[u'Tryggvi Bj\xf6rgvinsson', u'Darcy Christ', u'Pierre Chrzanowski', u'Ian Leong', u'FENG GAO', u'Graeme Jones', u'Mart van de Ven', u'Haruka Nakamura', u'Christian Villum']","[u'Christian Villum', u'FENG GAO', u'Graeme Jones', u'Laura James', u'Mor Rubinstein']"
+hu,Hungary,hungary,None,Europe,Europe,48,36,42,36,"[u'Anna Orosz', u'Mor Rubinstein']","[u'Mor Rubinstein', u'Sandor Lederer', u'Julia Keser\u0171', u'Sander van der Waal']"
+is,Iceland,iceland,None,Europe,Europe,64,16,55,17,"[u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Svavar Kjarrval', u'P\xe1ll Hilmarsson', u'Pierre Chrzanowski', u'Mor Rubinstein']","[u'Pierre Chrzanowski', u'Tryggvi Bj\xf6rgvinsson', u'P\xe1ll Hilmarsson', u'Daniela Mattern']"
+in,India,india,None,Asia,Asia,68,10,46,27,"[u'Akhilesh Srivastava', u'Rajdeep Pakanati', u'Vinay Chhabra', u'Daniela Mattern', u'Tuhin Subhro Chakraborty', u'Pierre Chrzanowski', u'Ayan Banerjee', u'SUSIL KUMAR Sahoo', u'Ronak Chandak', u'Shubhendu Das', u'Subhajit Ganguly', u'Sanchit Agarwal', u'Nimit Gupta', u'Anonymous', u'Sneha Dasgupta', u'Shantanu Date', u'Shubhadip Biswas']","[u'Daniela Mattern', u'Laura James', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Subhajit Ganguly', u'Christian Villum']"
+id,Indonesia,indonesia,None,Asia,Asia,43,45,42,36,"[u'Fariz', u'Diah Setiawaty', u'Robertus Theodore', u'Shita Laksmi', u'Yuandra Ismiraldi', u'Mor Rubinstein', u'Ramda Yanurzha']","[u'Mor Rubinstein', u'Alika Tuwo', u'Ramda Yanurzha']"
+ir,"Iran, Islamic Republic of",iran,None,MENA,Asia,None,None,None,None,"[u'Javad', u'Morteza Milani']",None
+iq,Iraq,iraq,None,MENA,Asia,None,None,None,None,None,None
+ie,Ireland,ireland,None,Europe,Europe,48,36,40,41,"[u'Tryggvi Bj\xf6rgvinsson', u'Richard Cantwell', u'Denis Parfenov', u'Tracey Lauriault', u'Mark Breen', u'Dave Corley', u'Richard Harris', u'Anonymous', u'Tracey P. Lauriault', u'Deirdre Lee']","[u'Mor Rubinstein', u'Tracey P. Lauriault', u'Pierre Chrzanowski', u'Denis Parfenov', u'Tracey Lauriault']"
+im,Isle of Man,isle-of-man,None,Europe,Europe,60,21,55,17,"[u'Mor Rubinstein', u'Graeme Jones', u'Tryggvi Bj\xf6rgvinsson', u'Oleg Lavrovsky']","[u'Mor Rubinstein', u'Graeme Jones']"
+il,Israel,israel,None,None,None,46,40,48,24,"[u'Public Knowledege Workshop - Mor', u'Oleg Lavrovsky', u'Ido Ivri', u'The Public Knowledge Workshop', u'Rayna Stamboliyska', u'ido ivri', u'Mor Rubinstein', u'Anonymous', u'Noam Castel', u'Richard Smith', u'Matan Rotman']","[u'Rayna Stamboliyska', u'Mor Rubinstein', u'Ido Ivri', u'Sander van der Waal']"
+it,Italy,italy,None,Europe,Europe,55,25,52,20,"[u'Gianfranco', u'Oluseun Onigbinde', u'stefano bandera', u'Tryggvi Bj\xf6rgvinsson', u'Laura James', u'Maurizio Napolitano', u'Michele Barbera', u'Gianfranco ', u'Andrea Raimondi', u'Aurelio Cilia']","[u'Maurizio Napolitano', u'Mor Rubinstein', u'Sander van der Waal']"
+jm,Jamaica,jamaica,None,LATAM,Americas,43,45,None,None,"[u'Geez', u'Bruce HooFung', u'Bruce Hoo Fung', u'Mor Rubinstein']","[u'Jenny Molloy', u'Mor Rubinstein']"
+jp,Japan,japan,None,Asia,Asia,61,19,46,27,"[u'Tryggvi Bj\xf6rgvinsson', u'Masayuki Hatta', u'Daniela Mattern', u'Masahiko SHOJI', u'Pierre Chrzanowski', u'Andrew Stott', u'Mor Rubinstein', u'Nishizawa Akira', u'Tomoaki Watanabe']","[u'Mor Rubinstein', u'Laura James', u'Masayuki Hatta', u'Daniela Mattern']"
+kz,Kazakhstan,kazakhstan,None,Asia,Asia,None,None,None,None,None,None
+ke,Kenya,kenya,None,Africa,Africa,22,85,20,59,"[u'Ahmed', u'Tryggvi Bj\xf6rgvinsson', u'David Lemayian', u'Oleg Lavrovsky', u'Muchiri Nyaggah', u'Mor Rubinstein', u'Anonymous', u'Christian Villum', u'Emmy Chirchir']","[u'Mor Rubinstein', u'Christian Villum', u'Emmy Chirchir', u'Sander van der Waal']"
+kp,"Korea, Democratic People's Republic of",north-korea,None,Asia,Asia,None,None,None,None,None,None
+kr,"Korea, Republic of",south-korea,None,Asia,Asia,53,28,43,33,"[u'Young-Je Lim', u'Mor Rubinstein', u'Tryggvi Bj\xf6rgvinsson']","[u'Mor Rubinstein', u'\ud64d\uc601\ud0dd (yeongtaek, Hong)']"
+kw,Kuwait,kuwait,None,MENA,Asia,None,None,None,None,None,None
+ko,Kosovo,kosovo,None,Europe,Europe,52,31,None,None,"[u'Mor Rubinstein', u'Tryggvi Bj\xf6rgvinsson', u'Arianit Dobroshi']","[u'Besfort Guri', u'Mor Rubinstein']"
+kg,Kyrgyzstan,kyrgyzstan,None,Asia,Asia,None,None,None,None,None,None
+la,Lao People's Democratic Republic,lao,None,Asia,Asia,None,None,None,None,None,None
+lv,Latvia,latvia,None,Europe,Europe,51,34,None,None,"[u'Tryggvi Bj\xf6rgvinsson', u'Uldis Bojars']",Mor Rubinstein
+lb,Lebanon,lebanon,None,MENA,Asia,22,85,None,None,"[u'Lieke Ploeger', u'Tryggvi Bj\xf6rgvinsson', u'Heidi Jaafar']",Mor Rubinstein
+ls,Lesotho,lesotho,None,Africa,Africa,21,87,None,None,"[u'Mor Rubinstein', u'Pierre Chrzanowski', u'Lehlohonolo Chefa', u'Ciar\xe1n Staunton']","[u'Mor Rubinstein', u'Christian Villum', u'Emma Beer']"
+lr,Liberia,liberia,None,Africa,Africa,None,None,None,None,Luther Jeke,None
+li,Liechtenstein,liechtenstein,None,Europe,Europe,None,None,None,None,None,None
+lt,Lithuania,lithuania,None,Europe,Europe,32,70,32,50,"[u'Lieke Ploeger', u'Viktorija Trubaciute', u'Tryggvi Bj\xf6rgvinsson', u'Karolis Granickas']","[u'Mor Rubinstein', u'Pierre Chrzanowski', u'Karolis Granickas']"
+lu,Luxembourg,luxembourg,None,Europe,Europe,None,None,None,None,None,None
+mo,Macao,macao,None,Asia,Asia,None,None,None,None,Nick Ingalls,None
+mk,"Macedonia, the Former Yugoslav Republic of",macedonia,None,Europe,Europe,35,61,None,None,Metamorphosis Foundation,Daniela Mattern
+mg,Madagascar,madagascar,None,Africa,Africa,None,None,None,None,None,None
+mw,Malawi,malawi,None,Africa,Africa,None,None,None,None,None,None
+my,Malaysia,malaysia,None,Asia,Asia,None,None,None,None,"[u'cheeleong chow', u'Khairil Yusof', u'Tirath Ramdas']",None
+mv,Maldives,maldives,None,Asia,Asia,None,None,None,None,None,None
+ml,Mali,mali,None,Africa,Africa,12,96,None,None,"[u'Margo Thierry', u'Nick Ingalls', u'Pierre Chrzanowski']","[u'Margo Thierry', u'Mor Rubinstein', u'Pierre Chrzanowski']"
+mt,Malta,malta,None,Europe,Europe,52,31,52,20,"[u'Charlie Abela', u'Pierre Chrzanowski']","[u'Charlie Abela', u'Pierre Chrzanowski', u'Sander van der Waal']"
+mx,Mexico,mexico,None,LATAM,Americas,53,28,47,26,"[u'Oscar Montiel', u'Juan M Casanueva', u'Daniela Mattern', u'Juan M. Casanueva', u'Tomas Severino', u'Mor Rubinstein', u'Enrique Zapata']","[u'Juan M. Casanueva', u'Juan M Casanueva', u'Daniela Mattern', u'Mor Rubinstein', u'Sander van der Waal']"
+md,"Moldova, Republic of",moldova,None,Europe,Europe,44,43,53,19,"[u'Mor Rubinstein', u'Tryggvi Bj\xf6rgvinsson', u'Victoria Vlad']","[u'Ovidiu Voicu', u'Mor Rubinstein', u'Daniela Mattern']"
+mn,Mongolia,mongolia,None,Asia,Asia,None,None,None,None,Amarsanaa Ganbold,None
+me,Montenegro,montenegro,None,Europe,Europe,None,None,None,None,Anonymous,None
+ma,Morocco,morocco,None,Africa,Africa,25,79,None,None,"[u'Rayna St', u'Amin', u'azeddine zroura', u'Mor Rubinstein', u'Tarik Nesh-Nash', u'Anass Beddi']","[u'Rayna Stamboliyska', u'Rayna St', u'Mor Rubinstein']"
+mz,Mozambique,mozambique,None,Africa,Africa,None,None,None,None,Janet Gunter,None
+np,Nepal,nepal,None,Asia,Asia,34,63,30,53,"[u'Bibhusan Bista', u'Tryggvi Bj\xf6rgvinsson', u'Prakash Neupane', u'Nikesh Balami', u'Mor Rubinstein', u'Niroj Panta']","[u'Kshitiz Khanal', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Prakash Neupane']"
+nl,Netherlands,netherlands,None,Europe,Europe,64,16,74,5,"[u'Paul Suijkerbuijk', u'Daniela Mattern', u'Ton Zijlstra', u'Joris Pekel', u'arthur van der Molen', u'Maarte n', u'Mor Rubinstein', u'Arjan El Fassed', u'Stefan de Konink', u'OpenState Contact', u'Pierre Chrzanowski']","[u'Mor Rubinstein', u'Daniela Mattern', u'Arjan El Fassed', u'Pierre Chrzanowski', u'Ton Zijlstra']"
+nz,New Zealand,new-zealand,None,Oceania,Oceania,72,5,66,9,"[u'Tryggvi Bj\xf6rgvinsson', u'Ido Ivri', u'Daniela Mattern', u'Mark Heseltine', u'Pierre Chrzanowski', u'Jonathan Hunt', u'Paul Stone']","[u'Alex Sadleir', u'Pierre Chrzanowski', u'Daniela Mattern', u'Mor Rubinstein', u'Jonathan Hunt']"
+ni,Nicaragua,nicaragua,None,LATAM,Americas,None,None,None,None,None,None
+ne,Niger,niger,None,Africa,Africa,None,None,None,None,None,None
+ng,Nigeria,nigeria,None,Africa,Africa,29,73,28,54,"[u'Oluseun Onigbinde', u'Tryggvi Bj\xf6rgvinsson', u'Abdulkarim', u'Oludotun at Cloneshouse Nigeria', u'Pieter Colpaert', u'Oludotun Babayemi']","[u'Oluseun Onigbinde', u'Oluseun Onigbinde ', u'Mor Rubinstein']"
+no,Norway,norway,None,Europe,Europe,71,7,76,4,"[u'Geirmund Knutsen', u'Daniela Mattern', u'Pierre Chrzanowski', u'Livar Bergheim', u'Statens kartverk', u'Andrew Stott', u'Mor Rubinstein', u'Heather Broomfield', u'\xd8ystein \xc5snes', u'Trygve Falch', u'Miska Knapek', u'geirmund']","[u'Andrew Stott', u'Daniela Mattern', u'Pierre Chrzanowski', u'Livar Bergheim', u'Mor Rubinstein', u'Christian Villum', u'Miska Knapek']"
+om,Oman,oman,None,MENA,Asia,18,93,None,None,"[u'Rayna St', u'Riyadh Al-Balushi', u'Tryggvi Bj\xf6rgvinsson', u'Riyadh Al Balushi']","[u'Rayna Stamboliyska', u'Mor Rubinstein', u'Rayna St', u'Tarek Amr']"
+pk,Pakistan,pakistan,None,Asia,Asia,45,41,None,None,"[u'Mujtaba Hussain', u'Mor Rubinstein', u'Umair ul Hassan', u'Tryggvi Bj\xf6rgvinsson', u'Nouman Nazim']","[u'Mor Rubinstein', u'Umair ul Hassan', u'Nouman Nazim']"
+pa,Panama,panama,None,LATAM,Americas,25,79,None,None,"[u'Luis L\xf3pez', u'Ivan Barria Grimaldo', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Carlos Raul Piad T', u'Maria Isabel Vega']","[u'Mariel Garc\xeda M', u'Pierre Chrzanowski', u'Mor Rubinstein']"
+pg,Papua New Guinea,papua-new-guinea,None,Oceania,Oceania,None,None,None,None,None,None
+py,Paraguay,paraguay,None,LATAM,Americas,45,41,None,None,"[u'Clara L\xf3pez', u'Juan Pane', u'Tryggvi Bj\xf6rgvinsson', u'Rodrigo Valdez', u'Verena Ojeda', u'Mor Rubinstein', u'Julio Daniel Reyes', u'Joan Andres Ruax Caballero', u'rafael palau', u'Martin Poletti', u'martin poletti', u'Bel\xe9n Gonz\xe1lez', u'Guillermo Osorio', u'Anonymous', u'Jos\xe9 Salinas', u'Pablo Lopez', u'Sync Ak Belore', u'Natalia Valdez Turcott']","[u'Juan Pane', u'Mor Rubinstein']"
+pe,Peru,peru,None,LATAM,Americas,None,None,None,None,"[u'SAT de Lima ', u'efd', u'Municipalidad Metropolitana de Lima', u'Anonymous']",None
+ph,Philippines,philippines,None,Asia,Asia,31,71,None,None,"[u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Nick Castro', u'Happy Feraren ', u'Anders Pedersen', u'Jo De Guia']","[u'Happy Feraren', u'Daniela Mattern']"
+pl,Poland,poland,None,Europe,Europe,42,48,42,36,"[u'Gosia Klimowicz', u'Pierre Chrzanowski', u'Andrew Stott']","[u'Gosia Klimowicz', u'Pierre Chrzanowski', u'Sander van der Waal']"
+pt,Portugal,portugal,None,Europe,Europe,47,39,56,16,"[u'Paulo Caldeira', u'Olaf Veerman', u'Tryggvi Bj\xf6rgvinsson', u'David Ramalho', u'Filipe Cruz', u'Ana Carvalho', u'Ricardo Lafuente', u'Rui Vieira', u'Nuno Moniz']","[u'Mor Rubinstein', u'Olaf Veerman', u'Gustavo', u'Laura James', u'Ricardo Lafuente']"
+pr,Puerto Rico,puerto-rico,None,LATAM,Americas,None,None,None,None,None,None
+qa,Qatar,qatar,None,MENA,Asia,None,None,None,None,Riyadh Al-Balushi,None
+ro,Romania,romania,None,Europe,Europe,64,16,58,15,"[u'Ovidiu Voicu', u'Silviu Vert', u'Tryggvi Bj\xf6rgvinsson', u'Mor Rubinstein', u'Strainu', u'Tracey P. Lauriault']","[u'Ovidiu Voicu', u'Mor Rubinstein', u'Silviu Vert', u'Pierre Chrzanowski', u'Tracey P. Lauriault']"
+ru,Russian Federation,russia,None,Europe,Europe,43,45,43,33,"[u'Tryggvi Bj\xf6rgvinsson', u'Ivan Begtin', u'Ivan Pavlov', u'\u0422\u0430\u0442\u044c\u044f\u043d\u0430 \u0422\u043e\u043b\u0441\u0442\u0435\u043d\u0435\u0432\u0430', u'Maxim Dubinin', u'Irina Radchenko', u'\u041c\u0438\u0445\u0430\u0438\u043b \u041f\u0430\u0440\u0444\u0435\u043d\u0442\u044c\u0435\u0432']","[u'Ivan Begtin', u'Mor Rubinstein', u'Rufus Pollock']"
+rw,Rwanda,rwanda,None,Africa,Africa,28,74,None,None,"[u'Tryggvi Bj\xf6rgvinsson', u'Stephen Abbott Pugh']",Mor Rubinstein
+sa,Saudi Arabia,saudi-arabia,None,MENA,Asia,28,74,28,54,"[u'Riyadh Al-Balushi', u'Graeme Jones', u'Christian Villum']","[u'Graeme Jones', u'Christian Villum']"
+sn,Senegal,senegal,None,Africa,Africa,34,63,22,58,"[u'Maye Diop', u'Pierre Chrzanowski', u'BOUBA Fanta', u'Mouhamadou Moustapha CAMARA', u'Ndeye Maimouna DIOP', u'Mor Rubinstein', u'Erick FARGEAS', u'alioune dia', u'Tangui Mor', u'Mamadou Diagne', u'Christian Villum', u'Alioune Dia']","[u'Katelyn Rogers', u'Laura James', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Mamadou Diagne', u'Christian Villum']"
+rs,Serbia,serbia,None,Europe,Europe,42,48,44,32,"[u'Larisa Rankovic', u'Stevan Gostoji\u0107', u'Bojana Dzulovic', u'Mor Rubinstein', u'Tryggvi Bj\xf6rgvinsson', u'Bojana D\u017eulovi\u0107']","[u'Mor Rubinstein', u'Pierre Chrzanowski', u'Bojana Dzulovic', u'Sander van der Waal']"
+sl,Sierra Leone,sierra-leone,None,Africa,Africa,15,94,None,None,Pierre Chrzanowski,Katelyn Rogers
+sg,Singapore,singapore,None,Asia,Asia,34,63,34,47,"[u'Mahaveer Mehta', u'Gosia Klimowicz', u'Rufus Pollock', u'Christian Villum', u'Andrew Stott']","[u'Gosia Klimowicz', u'Christian Villum']"
+sk,Slovakia,slovakia,None,Europe,Europe,35,61,39,43,Peter Hanecak,Jano Suchal
+si,Slovenia,slovenia,None,Europe,Europe,54,26,73,6,"[u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Andrew Stott', u'Marieke Guy', u'Mor Rubinstein', u'MatejaP', u'Anonymous', u'Polona Tepina, Information Commissioner Slovenia', u'Jaka Kranjc', u'Christian Villum', u'Ales Versic']","[u'Daniela Mattern', u'Mor Rubinstein', u'IPMIT', u'Sander van der Waal', u'Jaka Kranjc', u'Christian Villum']"
+sb,Solomon Islands,solomon-islands,None,Oceania,Oceania,None,None,None,None,None,None
+so,Somalia,somalia,None,Africa,Africa,None,None,None,None,None,None
+za,South Africa,south-africa,None,Africa,Africa,48,36,32,50,"[u'Adi Eyal', u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Mor Rubinstein', u'Gabriella Razzano', u'sarah levi', u'S Kendler', u'Francois van Schalkwyk', u'nina lewin']","[u'Mor Rubinstein', u'Laura James']"
+ss,South Sudan,south-sudan,None,Africa,Africa,None,None,None,None,None,None
+es,Spain,spain,None,Europe,Europe,52,31,46,27,"[u'Carlos Mu\xf1oz', u'Daniela Mattern', u'Mor Rubinstein', u'J. F\xe9lix Onta\xf1\xf3n', u'Adri\xe0 Mercader', u'Jaime Soler', u'Pierre Chrzanowski', u'David Cabo', u'Graeme Jones', u'Mar\xeda Dotor', u'Alicia Garc\xeda-Garc\xeda', u'Jos\xe9 F\xe9lix Onta\xf1\xf3n', u'alberto abella']","[u'Maria Dotor', u'Daniela Mattern', u'Adri\xe0 Mercader', u'Pierre Chrzanowski', u'Mor Rubinstein', u'Alicia Garc\xeda-Garc\xeda', u'Sander van der Waal']"
+sz,Swaziland,swaziland,None,Africa,Africa,None,None,None,None,None,None
+se,Sweden,sweden,None,Europe,Europe,66,12,67,8,"[u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Peter Krantz', u'Niels Erik Kaaber Rasmussen', u'Ulrika Domell\xf6f Mattsson', u'Asmen G\xfcl', u'Daniel Frisk']","[u'Daniela Mattern', u'Laura James', u'Niels Erik Kaaber Rasmussen', u'Mor Rubinstein', u'Sander van der Waal', u'Christian Villum', u'Miska Knapek', u'Anders Pedersen']"
+ch,Switzerland,switzerland,None,Europe,Europe,58,24,59,12,"[u'Nicolas Martignoni', u'Oleg Lavrovsky', u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern', u'Matthias Hofer', u'Anonymous']","[u'Nicolas Martignoni', u'Oleg Lavrovsky', u'Pierre Chrzanowski', u'Daniela Mattern', u'Mor Rubinstein']"
+tw,Taiwan,taiwan,None,Asia,Asia,67,11,42,36,"[u'Tryggvi Bj\xf6rgvinsson', u'TH Schee', u'Daniela Mattern']","[u'Mor Rubinstein', u'Daniela Mattern', u'Ying Chu Chen']"
+tj,Tajikistan,tajikistan,None,Asia,Asia,None,None,None,None,None,None
+tz,"Tanzania, United Republic of",tanzania,None,Africa,Africa,21,87,None,None,"[u'Yulli Jeremia', u'Tryggvi Bj\xf6rgvinsson', u'Pierre Chrzanowski', u'Anonymous']","[u'Mor Rubinstein', u'Pierre Chrzanowski', u'Joachim Mangilima']"
+th,Thailand,thailand,None,Asia,Asia,36,59,None,None,"[u'Surasak Suksathit', u'Patipat Susumpow', u'Klaikong Vaidhyakarn', u'Anonymous', u'Tryggvi Bj\xf6rgvinsson']","[u'Mor Rubinstein', u'Patipat Susumpow']"
+tg,Togo,togo,None,Africa,Africa,None,None,None,None,None,None
+tt,Trinidad and Tobago,trinidad-and-tobago,None,Americas,Americas,None,None,None,None,Geez,None
+tn,Tunisia,tunisia,None,MENA,Africa,34,63,34,47,"[u'Rayna Stamboliyska', u'Hatem', u'Rayna St', u'Katelyn Rogers', u'Amin Khechine']","[u'Rayna Stamboliyska', u'Rayna St', u'Amin Khechine']"
+tr,Turkey,turkey,None,Asia,Asia,53,28,None,None,"[u'pinardag', u'Mor Rubinstein', u'Enfa Bili\u015fim', u'@emrekko', u'Tryggvi Bj\xf6rgvinsson']","[u'berkin Akkocaoglu', u'Mor Rubinstein']"
+tm,Turkmenistan,turkmenistan,None,Asia,Asia,None,None,None,None,Graeme Jones,Graeme Jones
+ug,Uganda,uganda,None,Africa,Africa,None,None,None,None,"[u'Sally Deffor', u'Reinier Battenberg']",None
+gb,United Kingdom,united-kingdom,None,Europe,Europe,97,1,94,1,"[u'Owen Boswarva', u'Daniela Mattern', u'Iain Emsley', u'Rufus Pollock', u'Katelyn Rogers', u'Andrew Stott', u'Mor Rubinstein', u'Anonymous', u'Fred Saunderson', u'Shaun McDonald']","[u'Daniela Mattern', u'Rufus Pollock', u'Katelyn Rogers', u'Andrew Stott', u'Mor Rubinstein', u'Sander van der Waal', u'Fred Saunderson', u'Laura James']"
+us,United States,united-states,None,Americas,Americas,70,8,87,2,"[u'Daniela Mattern', u'Rufus Pollock', u'Josh Tauberer', u'Mor Rubinstein', u'Rebecca Williams - XFB', u'Jeanne Holm', u'Tracey P. Lauriault', u'Andy Steinitz', u'Neal Bastek']","[u'Eric Mill', u'Daniela Mattern', u'Laura James', u'Katelyn Rogers', u'Mor Rubinstein', u'Kaitlin Devine', u'Tracey P. Lauriault', u'Rufus Pollock']"
+um,United States Minor Outlying Islands,united-states-minor-outlying-islands,None,Americas,Americas,None,None,None,None,None,None
+uy,Uruguay,uruguay,None,LATAM,Americas,66,12,None,None,"[u'Guillermo Moncecchi', u'Tryggvi Bj\xf6rgvinsson', u'Daniel Carranza (Chino)', u'Daniela Mattern', u'Gustavo Miraballes', u'Pierre Chrzanowski', u'Anonymous', u'DATAuy.org']","[u'Mor Rubinstein', u'Daniela Mattern', u'Pierre Chrzanowski', u'Lorena Etcheverry', u'Daniel Carranza (Chino)']"
+uz,Uzbekistan,uzbekistan,None,Asia,Asia,None,None,None,None,None,None
+ve,"Venezuela, Bolivarian Republic of",venezuela,None,LATAM,Americas,None,None,None,None,Gerardo,None
+vn,Viet Nam,vietnam,None,Asia,Asia,None,None,None,None,"[u'Graeme Jones', u'Nguy\u1ec5n Qu\u1ed1c Tu\u1ea5n', u'Christian Villum']","[u'Graeme Jones', u'Christian Villum']"
+vi,"Virgin Islands, U.S.",virgin-islands-us,None,Americas,Americas,30,72,None,None,"[u'Graeme Jones', u'Tryggvi Bj\xf6rgvinsson', u'Daniela Mattern']","[u'Mor Rubinstein', u'Graeme Jones', u'Christian Villum', u'Daniela Mattern']"
+zm,Zambia,zambia,None,Africa,Africa,27,76,None,None,"[u'Mor Rubinstein', u'Fatumata Kabemba', u'Likumbi Kapihya', u'Tryggvi Bj\xf6rgvinsson']","[u'Mor Rubinstein', u'Katelyn Rogers']"
+zw,Zimbabwe,zimbabwe,None,Africa,Africa,24,82,None,None,"[u'Mor Rubinstein', u'Katelyn Rogers']","[u'Mor Rubinstein', u'Katelyn Rogers']"

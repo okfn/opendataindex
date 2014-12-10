@@ -1,41 +1,53 @@
-define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
+define(['jquery', 'bootstrap', 'chroma', 'tablesorter', 'stickykit'], function($, bootstrap, chroma, tablesorter, stickykit) {
 
     var placeCount = placeCount || 260,
-        colorBoundaries = ['#ff0000', '#7AB800'],
-        colorScale = chroma.scale(colorBoundaries).domain([0, 100]),
+        colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
+        colorScale = chroma.scale(colorSteps).domain([0, 100]),
         naString = 'n/a',
         $dataTable = $('.data-table'),
         $visiblePopover,
-        $scoreDisplay = $('td.score'),
-        popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
+        $scoreDisplay = $('.score'),
+        popover_tmpl = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+        tablesorterPlaceOptions = {
+            sortList: [[0,0]],
+            headers: {
+                2: {sorter: false},
+                3: {sorter: false},
+                4: {sorter: false},
+                5: {sorter: false},
+                6: {sorter: false},
+                7: {sorter: false},
+                8: {sorter: false},
+                9: {sorter: false},
+                10: {sorter: false},
+                11: {sorter: false},
+            }
+        },
+        tablesorterDatasetOptions = {
+            sortList: [[0,0]],
+            headers: {
+                2: {sorter: false},
+                3: {sorter: false},
+            }
+        },
+        tablesorterSliceOptions = {
+            sortList: [[0,0]],
+            headers: {
+                2: {sorter: false},
+                3: {sorter: false},
+                4: {sorter: false},
+                5: {sorter: false},
+                6: {sorter: false},
+            }
+        };
 
-    function sortPlace(a, b) {
+    $('#places_overview_table').tablesorter(tablesorterPlaceOptions);
+    $('#datasets_overview_table').tablesorter(tablesorterDatasetOptions);
+    $('#slice-table').tablesorter(tablesorterSliceOptions);
 
-        return $(a).data('place').toUpperCase().localeCompare($(b).data('place').toUpperCase());
-
-    }
-
-    function sortScore(a, b) {
-
-        var comp = parseInt($(b).data('score'), 10) - parseInt($(a).data('score'), 10);
-        return comp !== 0 ? comp : sortPlace(a, b);
-
-    }
-
-    function sortTable(table, sortBy, $actor) {
-
-        var sortFunc;
-
-        if (sortBy === 'score') {
-            sortFunc = sortScore;
-        } else {
-            sortFunc = sortPlace;
-        }
-
-        $actor.attr('checked', true);
-        table.find('tbody tr').sort(sortFunc).appendTo(table);
-
-    }
+    $("#places_overview_table thead").stick_in_parent();
+    $("#datasets_overview_table thead").stick_in_parent();
+    $("#slice-table thead").stick_in_parent();
 
     function filterTable(table, query, $actor) {
 
@@ -90,16 +102,6 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
             }
         });
 
-        $('.sort-table').on('click', function() {
-
-            var $this = $(this),
-                value = $this.val();
-            if ($this.is(':checked')) {
-                sortTable($dataTable, value, $this);
-            }
-
-        });
-
         $('.filter-table').on('keyup', function() {
 
             var $this = $(this),
@@ -125,8 +127,17 @@ define(['jquery', 'bootstrap', 'chroma'], function($, bootstrap, chroma) {
 
     }
 
+    function setColumnTHWidths() {
+        $('thead th')
+            .each(function () {
+                var width = $(this).outerWidth();
+                $(this).css('width', width);
+            });
+    }
+
     function initializeTable() {
         setInteractions();
+        setColumnTHWidths();
     }
 
     return {

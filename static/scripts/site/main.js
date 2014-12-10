@@ -1,4 +1,7 @@
-define(['table', 'place'], function(table, place) {
-    place.init();
-    table.init();
+define(['table', 'place', 'ui', 'domReady'], function(table, place, ui, domReady) {
+    domReady(function() {
+        place.init();
+        table.init();
+        ui.init();
+    });
 });
