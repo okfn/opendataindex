@@ -3,7 +3,7 @@ slug: methodology
 
 The Global Open Data Index collects and presents information on the current state of open data release around the world. The Global Open Data Index is run by [Open Knowledge](http://www.okfn.org/) and reviewed by volunteers from the Open Knowledge network and around the world. The first Open Data Index was released on October 28, 2013.
 
-The following page explains the methodology behind the global Global Open Data Index. If you have any further questions or comments about our methodology please write to the community of volunteers and reviewers who contributed to the Index at our [official discussion list](https://lists.okfn.org/mailman/listinfo/open-data-census).
+The following page explains the methodology behind the global Global Open Data Index. If you have any further questions or comments about our methodology please write to the community of volunteers and reviewers who contributed to the Index at our [official discussion forum](https://discuss.okfn.org/c/open-data-index).
 
 In 2013 the Index included 70 countries. In 2014 we have extended our scope to include 32 additional countries, mainly from Latin America, Africa, and Asia. Therefore we have put additional effort into trying to locate contributors and experts from these regions. This way we believe the Index will more accurately portray the state of the open government data landscape worldwide.
 
