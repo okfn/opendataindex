@@ -76,7 +76,7 @@ If you’re ready to start up a city census in your area you can get started [he
 
 ### **What organisations are involved in the Global Open Data Index?**
 
-The Global Open Data Index was initiated by Open Knowledge. It is maintained, coordinated and hosted by Open Knowledge and its Open Government Data working group with contributions from many members of the wider community around the globe. Join the discussions through the Open Data Census [mailing list]( https://lists.okfn.org/mailman/listinfo/open-data-census).
+The Global Open Data Index was initiated by Open Knowledge. It is maintained, coordinated and hosted by Open Knowledge and its Open Government Data working group with contributions from many members of the wider community around the globe. Join the discussions through the Open Data Census [discussion forum](https://discuss.okfn.org/c/open-data-index).
 
 
 ### **What datasets are included in the Global Open Data Index?**
@@ -151,7 +151,7 @@ Tip: Try to see the comments of countries with similar scores in the given categ
 ### **What do all the questions about the datasets mean?**
 The question about the datasets helps us to measure how open they are in legal and technical terms.
 
-The following questions include recurring questions and issues from submitters and reviewers that have been discussed on the [Census discussion list]( http://lists.okfn.org/mailman/listinfo/open-data-census).
+The following questions include recurring questions and issues from submitters and reviewers that have been discussed on the [Census discussion forum](https://discuss.okfn.org/c/open-data-index).
 
 ### **What should the Postcodes/Zip Codes dataset include?**
 A list of the postcodes alone are not enough, as an important component is the land mass that they refer to. So the data having latitude/longitude components is a key requirement. There could however also be cases where the corresponding location information (eg town name) could be converted to lat/long through the use of other open data (eg an open address register or gazetteer with lat/longs).
@@ -178,7 +178,7 @@ Please see further details in the [tutorial](https://docs.google.com/a/okfn.org/
 
 It’s easy to get started on this activity!  Pick a country where the Index shows there is data missing or where there are comments showing that there's uncertainty about whether the data is available openly (perhaps the licence hasn't been specified, for example) or a country that you know well.
 A targeted search or working in a team with others is a good way to get started.
-You could ask on the [Open Data Census discussion list]( http://lists.okfn.org/mailman/listinfo/open-data-census) whether there's a country or city you could help with.
+You could ask on the [Open Data Census discussion forum](https://discuss.okfn.org/c/open-data-index) whether there's a country or city you could help with.
 Get together with friends, colleagues, your local open data community or Open Knowledge Foundation local group and dig into data on a given topic or for a given country together.
 
 Keep an eye out for our upcoming online sprints and regional sprints.    We would love you to be involved. Follow #odindex14 on Twitter for more updates.
@@ -195,11 +195,11 @@ We also have other ways you can help:
 
 
 ### **Where can I discuss the Global Open Data Index with others?**
-[Open Data Census discussion list]( http://lists.okfn.org/mailman/listinfo/open-data-census)
+[Open Data Census discussion forum](https://discuss.okfn.org/c/open-data-index)
 
 
 ### **I'm confused! How can I get help?**
-There are lots of people who can help on the [Open Data Census discussion list]( http://lists.okfn.org/mailman/listinfo/open-data-census)
+There are lots of people who can help on the [Open Data Census discussion forum](https://discuss.okfn.org/c/open-data-index)
 and there are no silly questions, so we encourage you to post there.
 
 
