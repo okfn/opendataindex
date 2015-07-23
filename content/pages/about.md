@@ -13,4 +13,4 @@ The Global Open Data Index measures and benchmarks the openness of data around t
 
 In 2014 we are expanding to more countries (from 70 in 2013) with an emphasis on countries of the Global South.
 
-See the [blog post](http://blog.okfn.org/2014/09/29/join-the-global-open-data-index-2014-sprint/) launching the 2014 Index. For more information, please see the [FAQ](faq/) and the [methodology](methodology/) section.  Join the conversation with our [Open Data Census discussion list](https://lists.okfn.org/mailman/listinfo/open-data-census).
+See the [blog post](http://blog.okfn.org/2014/09/29/join-the-global-open-data-index-2014-sprint/) launching the 2014 Index. For more information, please see the [FAQ](faq/) and the [methodology](methodology/) section.  Join the conversation with our [Open Data Index discussion forum](https://discuss.okfn.org/c/open-data-index).
