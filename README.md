@@ -17,11 +17,11 @@ Getting setup with the code is easy if you have some familiarity with Python and
 * Setup a virtualenv for the project
 * Install the dependencies: `pip install -r requirements.txt`
 * Install the CLI: `cd cli && python setup.py install && cd ../`
-* Grab data from the database: `python scripts/process.py run`
+* [DEPRECATED] Grab data from the database: `python scripts/process.py run`
     * You must configure your data sources first: see  Configuration below
 * Populate the content sources: `odi populate`
     * Use `odi populate --limited` if you have a large amount of data (like the Global Index), and want a smaller set for local development (see Configuration below)
-* `./develop_server.sh run` to run a server that watches and builds
+* `./develop_server.sh start` to run a server that watches and builds
 
 [Pelican documentation for more information](http://docs.getpelican.com)
 
@@ -174,8 +174,8 @@ Displays the Index data in a tabular format. **This visualisation is not current
 
 There are two types of tables:
 
-* Overview:
-* Slice:
+* Overview
+* Slice
 
 
 ## API

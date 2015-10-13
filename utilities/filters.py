@@ -4,7 +4,7 @@
 import operator
 import json
 import jinja2
-import urlize
+import mdx_urlize as urlize
 import markdown as mdlib
 import natsort as natsortlib
 
