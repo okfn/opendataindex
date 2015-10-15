@@ -1,1 +1,1 @@
-from . import main
+from .commands import cli

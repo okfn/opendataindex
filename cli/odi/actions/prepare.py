@@ -9,27 +9,15 @@ import itertools
 import unittest
 from collections import OrderedDict
 from pprint import pprint
+from .. import helpers
 
 
-def get_config():
-    base_path = os.path.join(os.getcwd())
-    sys.path.append(base_path)
-    import config_default
-    config = config_default.ODI
-    sys.path.remove(base_path)
-    return config
+def run():
+    print('Test!')
 
 
-def get_datastore_config():
-    base_path = os.path.join(os.getcwd())
-    sys.path.append(base_path)
-    import config_default
-    config = config_default.DATASTORE
-    sys.path.remove(base_path)
-    return config
-
-config = get_config()
-datastore_config = get_datastore_config()
+config = helpers.config.get(key='ODI')
+datastore_config = helpers.config.get(key='DATASTORE')
 
 # https://docs.google.com/a/okfn.org/spreadsheet/ccc?key=0AqR8dXc6Ji4JdGNBWWJDaTlnMU1wN1BQZlgxNHBxd0E&usp=drive_web#gid=0
 survey_submissions = config['database']['submissions']
