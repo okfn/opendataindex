@@ -147,11 +147,11 @@ ODI = {
     'trans_path': 'themes/odi/translations',
     'deploy_remote': 'upstream',
     'database': {
-        'submissions': '',
-        'entries': '',
-        'questions': '',
-        'datasets': '',
-        'places': ''
+        'datasets': 'http://global.census.okfn.org/api/datasets.json',
+        'entries': 'http://global.census.okfn.org/api/entries.json',
+        'questions': 'http://global.census.okfn.org/api/questions.json',
+        'places': 'http://global.census.okfn.org/api/places.json',
+        'summary': 'http://global.census.okfn.org/api/summary.json',
     },
     'limited': {
         'places': ['au'],
