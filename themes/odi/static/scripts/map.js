@@ -9,6 +9,8 @@ require.config({
         app: 'scripts/map/main',
         domReady: 'vendor/domReady',
         leaflet: 'vendor/leaflet',
+        proj4: 'vendor/proj4',
+        proj4leaflet: 'vendor/proj4leaflet',
         leaflet_zoommin: 'vendor/L.Control.ZoomMin',
         leaflet_label: 'vendor/leaflet.label',
         jquery: 'vendor/jquery.min',
