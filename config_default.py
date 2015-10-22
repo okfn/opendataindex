@@ -125,9 +125,9 @@ ODI = {
     'press': {
       'email': 'press@okfn.org'
     },
-    'years': [u'2014', u'2013'],
-    'current_year': u'2014',
-    'previous_year': u'2013',
+    'years': [u'2015', u'2014', u'2013'],
+    'current_year': u'2015',
+    'previous_year': u'2014',
     'na': u'n/a',
     'email': u'index@okfn.org',
     'description': u'The Global Open Data Index assesses the state of open government data around the world.',
@@ -146,12 +146,12 @@ ODI = {
     'output_path': OUTPUT_PATH,
     'trans_path': 'themes/odi/translations',
     'deploy_remote': 'upstream',
+    'database': 'endpoint}.json',
     'database': {
-        'datasets': 'http://global.census.okfn.org/api/datasets.json',
-        'entries': 'http://global.census.okfn.org/api/entries.json',
+        'entries': 'http://global.census.okfn.org/api/entries/{year}.cascade.json',
+        'places': 'http://global.census.okfn.org/api/places/score/{year}.cascade.json',
+        'datasets': 'http://global.census.okfn.org/api/datasets/score/{year}.cascade.json',
         'questions': 'http://global.census.okfn.org/api/questions.json',
-        'places': 'http://global.census.okfn.org/api/places.json',
-        'summary': 'http://global.census.okfn.org/api/summary.json',
     },
     'limited': {
         'places': ['au'],
