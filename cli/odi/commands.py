@@ -12,7 +12,7 @@ def cli():
 def deploy():
     """Run the code deployment flow."""
 
-    config = services.config.get(key='ODI')
+    config = services.config.get_config(key='ODI')
 
     click.echo('Deploying the code now')
 
@@ -38,7 +38,7 @@ def populate(limited):
 
     """
 
-    config = services.config.get(key='ODI')
+    config = services.config.get_config(key='ODI')
 
     click.echo('Populating the content source files from data.')
     if limited:
@@ -65,7 +65,7 @@ def prepare():
 def serve():
     """Run the development server."""
 
-    config = services.config.get(key='ODI')
+    config = services.config.get_config(key='ODI')
 
     click.echo('Serving the site now on // NOT IMPLEMENTED')
 
@@ -74,7 +74,7 @@ def serve():
 def test():
     """Run the project tests."""
 
-    config = services.config.get(key='ODI')
+    config = services.config.get_config(key='ODI')
 
     click.echo('Running tests and a coverage report. // NOT IMPLEMENTED')
 
@@ -99,7 +99,7 @@ def trans(action, lang):
         click.echo('Received an invalid action argument')
         raise ValueError
 
-    config = services.config.get(key='ODI')
+    config = services.config.get_config(key='ODI')
 
     _init = ['pybabel', 'init', '-i',
              '{}/messages.pot'.format(config['trans_path']), '-d',
