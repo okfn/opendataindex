@@ -7,6 +7,8 @@ coverage
 babel
 pelican-alias
 webassets
+requests
+unicodecsv
 natsort
 transifex-client
 git+https://github.com/r0wb0t/markdown-urlize.git
