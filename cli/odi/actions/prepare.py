@@ -118,6 +118,21 @@ class Entries(object):
             item['submitters'] = item['submitter']
             item['reviewers'] = item['reviewer']
 
+        # Add rank to items
+        datasets = {}
+        for item in items:
+            datasets.setdefault(item['dataset'], [])
+            datasets[item['dataset']].append(item)
+        for dataset_items in datasets.values():
+            dataset_items.sort(key=lambda item: item['score'], reverse=True)
+            current_rank = None
+            current_score = None
+            for num, item in enumerate(dataset_items):
+                if current_score != item['score']:
+                    current_rank = num + 1
+                    current_score = item['score']
+                item['rank'] = current_rank
+
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
 
