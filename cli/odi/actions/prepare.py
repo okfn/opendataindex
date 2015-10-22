@@ -1,6 +1,5 @@
-import os
 from .. import services
-config = services.config.get()
+config = services.config.get_config()
 
 
 # Interface
@@ -24,37 +23,65 @@ class Datasets(object):
 
     # Public
 
-    source = config.ODI['database']['datasets']
-    target = os.path.join(config.DATASTORE['location'], 'datasets.csv')
+    entity = 'datasets'
     fieldnames = [
         'id',
         'title',
         'category',
         'description',
         'icon',
-        'score',
         'rank',
-        'score_2014',
-        'rank_2014',
+        'score',
     ]
 
     def run(self):
-        items = services.data.load(self.source)
-        services.data.save(items, fieldnames=self.fieldnames, path=self.target)
+        """Load, process and save items.
+        """
+
+        # Load history items by year
+        history = services.data.load_history(self.entity)
+
+        # Get helper data
+        max_score = Places.get_max_score()
+
+        # Update history
+        for year in history:
+            for item in history[year].values():
+                item['score'] = int(100 * item['score'] / max_score)
+
+        # Get current year items
+        items = list(history[config.ODI['current_year']].values())
+
+        # Update items
+        for item in items:
+            item['title'] = item['name']
+
+        # Add prev years to items
+        services.data.add_prev_years(history, self.fieldnames, items)
+
+        # Save items as csv
+        services.data.save_items(self.entity, self.fieldnames, items)
+
+    @classmethod
+    def get_max_score(cls):
+        """Return max available score.
+        """
+        questions_max_score = Questions.get_max_score()
+        item_count = len(services.data.load_items(cls.entity))
+        return questions_max_score * item_count
 
 
 class Entries(object):
 
     # Public
 
-    source = config.ODI['database']['entries']
-    target = os.path.join(config.DATASTORE['location'], 'entries.csv')
+    entity = 'entries'
     fieldnames = [
         'place',
         'dataset',
         'year',
-        'score',
         'rank',
+        'score',
         'isopen',
         'dataset',
         'exists',
@@ -79,16 +106,71 @@ class Entries(object):
     ]
 
     def run(self):
-        items = services.data.load(self.source)
-        services.data.save(items, fieldnames=self.fieldnames, path=self.target)
+        """Load, process and save items.
+        """
+
+        # Get items
+        items = services.data.load_items(self.entity)
+
+        # Update items
+        for item in items:
+            item['isopen'] = item['isOpen']
+            item['submitters'] = item['submitter']
+            item['reviewers'] = item['reviewer']
+
+        # Save items as csv
+        services.data.save_items(self.entity, self.fieldnames, items)
+
+    @classmethod
+    def get_submitters_and_reviewers(cls):
+        """Return submitters and reviwers indexed by place.
+        """
+        submitters = {}
+        reviewers = {}
+        history = services.data.load_history(cls.entity)
+        for year in history:
+            for item in history[year].values():
+                place = item['place']
+                submitters.setdefault(place, set())
+                reviewers.setdefault(place, set())
+                submitters[place].add(item['submitter'])
+                reviewers[place].add(item['reviewer'])
+        return {
+            'submitters': submitters,
+            'reviewers': reviewers,
+        }
+
+    @classmethod
+    def get_statistics(cls):
+        """Return statistics indexed by year.
+        """
+        stats = {}
+        history = services.data.load_history(cls.entity)
+        for year in history:
+            places = set()
+            isopen_count = 0
+            entries = history[year]
+            for item in history[year].values():
+                places.add(item['place'])
+                if item['isOpen'] == 'Yes':
+                    isopen_count += 1
+            places_count = len(places)
+            entries_count = len(entries)
+            isopen_percent = int(100 * isopen_count / entries_count)
+            stats[year] = {
+                'places_count': places_count,
+                'entries_count': entries_count,
+                'isopen_count': isopen_count,
+                'isopen_percent': isopen_percent,
+            }
+        return stats
 
 
 class Questions(object):
 
     # Public
 
-    source = config.ODI['database']['questions']
-    target = os.path.join(config.DATASTORE['location'], 'questions.csv')
+    entity = 'questions'
     fieldnames = [
         'id',
         'question',
@@ -101,49 +183,122 @@ class Questions(object):
     ]
 
     def run(self):
-        items = services.data.load(self.source)
-        services.data.save(items, fieldnames=self.fieldnames, path=self.target)
+        """Load, process and save items.
+        """
+
+        # Get items
+        items = services.data.load_items(self.entity)
+
+        # Save items as csv
+        services.data.save_items(self.entity, self.fieldnames, items)
+
+    @classmethod
+    def get_max_score(cls):
+        """Return max available score.
+        """
+        score = 0
+        items = services.data.load_items(cls.entity)
+        for item in items:
+            score += item['score']
+        return score
 
 
 class Places(object):
 
     # Public
 
-    source = config.ODI['database']['places']
-    target = os.path.join(config.DATASTORE['location'], 'places.csv')
+    entity = 'places'
     fieldnames = [
         'id',
         'name',
         'slug',
-        'undefined',
         'region',
         'continent',
-        'score',
-        'rank',
-        'score_2014',
-        'rank_2014',
         'submitters',
-        'reviewvers',
+        'reviewers',
+        'rank',
+        'score',
     ]
 
     def run(self):
-        items = services.data.load(self.source)
-        services.data.save(items, fieldnames=self.fieldnames, path=self.target)
+        """Load, process and save items.
+        """
+
+        # Load history items by year
+        history = services.data.load_history(self.entity)
+
+        # Get helper data
+        max_score = Datasets.get_max_score()
+        sub_rev = Entries.get_submitters_and_reviewers()
+
+        # Update history
+        for year in history:
+            for item in history[year].values():
+                item['score'] = int(100 * item['score'] / max_score)
+
+        # Get current year items
+        items = list(history[config.ODI['current_year']].values())
+
+        # Update items
+        for item in items:
+            submitters = sub_rev['submitters'].get(item['id'], set())
+            reviewers = sub_rev['reviewers'].get(item['id'], set())
+            item['submitters'] = '~*'.join(submitters)
+            item['reviewers'] = '~*'.join(reviewers)
+
+        # Add prev years to items
+        services.data.add_prev_years(history, self.fieldnames, items)
+
+        # Save items as csv
+        services.data.save_items(self.entity, self.fieldnames, items)
+
+    @classmethod
+    def get_max_score(cls):
+        """Return max available score.
+        """
+        questions_max_score = Questions.get_max_score()
+        item_count = len(services.data.load_items(cls.entity))
+        return questions_max_score * item_count
 
 
+# TODO: refactor
 class Summary(object):
 
     # Public
 
-    source = config.ODI['database']['summary']
-    target = os.path.join(config.DATASTORE['location'], 'summary.csv')
+    entity = 'summary'
     fieldnames = [
         'id',
         'title',
         'value',
         'value_2014',
+        'value_2013',
+    ]
+    metrics = [
+        'places_count',
+        'entries_count',
+        'isopen_count',
+        'isopen_percent',
     ]
 
     def run(self):
+        """Load, process and save items.
+        """
+
+        # Get statistics
+        stats = Entries.get_statistics()
+
+        # Generate items
         items = []
-        services.data.save(items, fieldnames=self.fieldnames, path=self.target)
+        for metric in self.metrics:
+            item = {
+                'id': metric,
+                'title': metric,
+                'value': stats['2015'][metric],
+                'value_2014': stats['2014'][metric],
+                'value_2013': stats['2013'][metric],
+            }
+            items.append(item)
+
+        # Save items as csv
+        services.data.save_items(self.entity, self.fieldnames, items)

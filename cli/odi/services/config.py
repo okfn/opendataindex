@@ -2,8 +2,8 @@ import os
 import sys
 
 
-def get(key=None):
-    """Return config dict.
+def get_config(key=None):
+    """Return config module.
 
     If key is passed it returns value of key.
     """
