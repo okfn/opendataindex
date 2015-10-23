@@ -4,20 +4,23 @@ import unicodecsv as csv
 from collections import OrderedDict
 from . import config
 config = config.get_config()
+cache = {}
 
 
-# TODO: use cache
 def load_items(entity, year=None):
     """Load json results from url.
     """
     if year is None:
         year = config.ODI['current_year']
-    db = config.ODI['database'][entity]
-    url = db.format(year=year)
-    res = requests.get(url)
-    json = res.json()
-    items = json['results']
-    return items
+    hash = '-'.join([entity, year])
+    if hash not in cache:
+        db = config.ODI['database'][entity]
+        url = db.format(year=year)
+        res = requests.get(url)
+        json = res.json()
+        items = json['results']
+        cache[hash] = items
+    return cache[hash]
 
 
 def load_history(entity):
