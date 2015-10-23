@@ -276,7 +276,6 @@ class Places(object):
         return questions_max_score * item_count
 
 
-# TODO: refactor
 class Summary(object):
 
     # Public
@@ -285,9 +284,6 @@ class Summary(object):
     fieldnames = [
         'id',
         'title',
-        'value',
-        'value_2014',
-        'value_2013',
     ]
     metrics = [
         'places_count',
@@ -303,17 +299,29 @@ class Summary(object):
         # Get statistics
         stats = Entries.get_statistics()
 
+        # Add value fieldnames
+        fieldnames = list(self.fieldnames)
+        for year in config.ODI['years']:
+            key = self.generate_value_key(year)
+            fieldnames.append(key)
+
         # Generate items
         items = []
         for metric in self.metrics:
-            item = {
-                'id': metric,
-                'title': metric,
-                'value': stats['2015'][metric],
-                'value_2014': stats['2014'][metric],
-                'value_2013': stats['2013'][metric],
-            }
+            item = {'id': metric, 'title': metric}
+            for year in config.ODI['years']:
+                key = self.generate_value_key(year)
+                item[key] = stats[year][metric]
             items.append(item)
 
         # Save items as csv
-        services.data.save_items(self.entity, self.fieldnames, items)
+        services.data.save_items(self.entity, fieldnames, items)
+
+    @classmethod
+    def generate_value_key(cls, year):
+        """Generate key like `value_2014` for year.
+        """
+        key = 'value'
+        if year != config.ODI['current_year']:
+            key = 'value_{year}'.format(year=year)
+        return key
