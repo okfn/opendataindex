@@ -91,6 +91,19 @@ def add_prev_years_to_items(history, fieldnames, items):
                 item[key] = value
 
 
+def sort_and_add_rank_to_items(items):
+    """Mutate items sorting it and adding rank based on score.
+    """
+    items.sort(key=lambda item: item['score'], reverse=True)
+    current_rank = None
+    current_score = None
+    for num, item in enumerate(items):
+        if current_score != item['score']:
+            current_rank = num + 1
+            current_score = item['score']
+        item['rank'] = current_rank
+
+
 def save_items(entity, fieldnames, items):
     """Save list of dicts to csv with fieldnames.
     """

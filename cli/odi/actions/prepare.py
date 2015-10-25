@@ -64,6 +64,9 @@ class Datasets(object):
         # Add prev years to items
         services.data.add_prev_years_to_items(history, self.fieldnames, items)
 
+        # Sort and add rank to items
+        services.data.sort_and_add_rank_to_items(items)
+
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
 
@@ -128,15 +131,10 @@ class Entries(object):
         for item in items:
             datasets.setdefault(item['dataset'], [])
             datasets[item['dataset']].append(item)
+        items = []
         for dataset_items in datasets.values():
-            dataset_items.sort(key=lambda item: item['score'], reverse=True)
-            current_rank = None
-            current_score = None
-            for num, item in enumerate(dataset_items):
-                if current_score != item['score']:
-                    current_rank = num + 1
-                    current_score = item['score']
-                item['rank'] = current_rank
+            services.data.sort_and_add_rank_to_items(dataset_items)
+            items.extend(dataset_items)
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
@@ -268,6 +266,9 @@ class Places(object):
 
         # Add prev years to items
         services.data.add_prev_years_to_items(history, self.fieldnames, items)
+
+        # Sort and add rank to items
+        services.data.sort_and_add_rank_to_items(items)
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
