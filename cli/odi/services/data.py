@@ -1,26 +1,11 @@
 import os
+import operator
 import requests
 import unicodecsv as csv
 from collections import OrderedDict
 from . import config
 config = config.get_config()
 cache = {}
-
-
-def load_items(entity, year=None):
-    """Load json results from url.
-    """
-    if year is None:
-        year = config.ODI['current_year']
-    hash = '-'.join([entity, year])
-    if hash not in cache:
-        db = config.ODI['database'][entity]
-        url = db.format(year=year)
-        res = requests.get(url)
-        json = res.json()
-        items = json['results']
-        cache[hash] = items
-    return cache[hash]
 
 
 def load_history(entity):
@@ -37,8 +22,58 @@ def load_history(entity):
     return data
 
 
-def add_prev_years(history, fieldnames, items):
-    """Add fields with prev year values of rank and score.
+def load_items(entity, year=None):
+    """Load json results from url.
+    """
+    if year is None:
+        year = config.ODI['current_year']
+    hash = '-'.join([entity, year])
+    if hash not in cache:
+        db = config.ODI['database'][entity]
+        url = db.format(year=year)
+        res = requests.get(url)
+        json = res.json()
+        items = json['results']
+        filter_items(entity, items, year)
+        cache[hash] = items
+    return cache[hash]
+
+
+def filter_items(entity, items, year):
+    """Mutate items against filter based on config.
+    """
+    for filt in ['include', 'exclude']:
+        for item in list(items):
+            skip = True
+            keep = filt == 'exclude'
+            oper = operator.and_ if filt == 'exclude' else operator.or_
+            for filt_entity, filt_list in config.ODI[filt].items():
+                fieldname = filt_entity[:-1]  # like places -> place
+                if entity == filt_entity:
+                    fieldname = 'id'
+                if fieldname not in item:
+                    continue
+                item_hash = '-'.join([item[fieldname], year])  # like gb-2015
+                for filt_hash in filt_list:
+                    filt_keep = item_hash.startswith(filt_hash)
+                    if filt == 'exclude':
+                        filt_keep = not filt_keep
+                    keep = oper(keep, filt_keep)
+                    skip = False
+            if not skip and not keep:  # Remove item
+                try:
+                    items.remove(item)
+                except ValueError:
+                    pass
+    if not len(items):  # Check it's not empty
+        raise ValueError(
+            'Filter for `{entity}-{year}` is to tight. '
+            'There are no items found in the database.'.
+            format(entity=entity, year=year))
+
+
+def add_prev_years_to_items(history, fieldnames, items):
+    """Mutate items adding fields with prev year values of rank and score.
     """
     for item in items:
         for year in config.ODI['years']:

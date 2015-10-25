@@ -5,14 +5,19 @@ config = services.config.get_config()
 # Interface
 
 def run():
+    print('Preparing datasets...')
     datasets = Datasets()
     datasets.run()
+    print('Preparing entries...')
     entries = Entries()
     entries.run()
+    print('Preparing questions...')
     questions = Questions()
     questions.run()
+    print('Preparing places...')
     places = Places()
     places.run()
+    print('Preparing summary...')
     summary = Summary()
     summary.run()
 
@@ -57,7 +62,7 @@ class Datasets(object):
             item['title'] = item['name']
 
         # Add prev years to items
-        services.data.add_prev_years(history, self.fieldnames, items)
+        services.data.add_prev_years_to_items(history, self.fieldnames, items)
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
@@ -262,7 +267,7 @@ class Places(object):
             item['reviewers'] = '~*'.join(reviewers)
 
         # Add prev years to items
-        services.data.add_prev_years(history, self.fieldnames, items)
+        services.data.add_prev_years_to_items(history, self.fieldnames, items)
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)

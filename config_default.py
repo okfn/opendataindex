@@ -146,16 +146,23 @@ ODI = {
     'output_path': OUTPUT_PATH,
     'trans_path': 'themes/odi/translations',
     'deploy_remote': 'upstream',
-    'database': 'endpoint}.json',
     'database': {
-        'entries': 'http://global.census.okfn.org/api/entries/{year}.cascade.json',
-        'places': 'http://global.census.okfn.org/api/places/score/{year}.cascade.json',
         'datasets': 'http://global.census.okfn.org/api/datasets/score/{year}.cascade.json',
+        'entries': 'http://global.census.okfn.org/api/entries/{year}.cascade.json',
         'questions': 'http://global.census.okfn.org/api/questions.json',
+        'places': 'http://global.census.okfn.org/api/places/score/{year}.cascade.json',
+    },
+    'include': {
+        'datasets': [],  # example: 'timetables' or 'timetables-2015'
+        'places': [],  # example: 'au' or 'au-2015'
+    },
+    'exclude': { # it has more priority than include
+        'datasets': [],  # example: 'timetables' or 'timetables-2015'
+        'places': [],  # example: 'au' or 'au-2015'
     },
     'limited': {
+        'datasets': ['timetables'],
         'places': ['au'],
-        'datasets': ['timetables']
     },
     'forms': {
       'download': {
