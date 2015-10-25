@@ -125,9 +125,9 @@ ODI = {
     'press': {
       'email': 'press@okfn.org'
     },
-    'years': [u'2014', u'2013'],
-    'current_year': u'2014',
-    'previous_year': u'2013',
+    'years': [u'2015', u'2014', u'2013'],
+    'current_year': u'2015',
+    'previous_year': u'2014',
     'na': u'n/a',
     'email': u'index@okfn.org',
     'description': u'The Global Open Data Index assesses the state of open government data around the world.',
@@ -147,15 +147,22 @@ ODI = {
     'trans_path': 'themes/odi/translations',
     'deploy_remote': 'upstream',
     'database': {
-        'submissions': '',
-        'entries': '',
-        'questions': '',
-        'datasets': '',
-        'places': ''
+        'datasets': 'http://global.census.okfn.org/api/datasets/score/{year}.cascade.json',
+        'entries': 'http://global.census.okfn.org/api/entries/{year}.cascade.json',
+        'questions': 'http://global.census.okfn.org/api/questions.json',
+        'places': 'http://global.census.okfn.org/api/places/score/{year}.cascade.json',
+    },
+    'include': {
+        'datasets': [],  # example: 'timetables' or 'timetables-2015'
+        'places': [],  # example: 'au' or 'au-2015'
+    },
+    'exclude': { # it has more priority than include
+        'datasets': [],  # example: 'timetables' or 'timetables-2015'
+        'places': [],  # example: 'au' or 'au-2015'
     },
     'limited': {
+        'datasets': ['timetables'],
         'places': ['au'],
-        'datasets': ['timetables']
     },
     'forms': {
       'download': {

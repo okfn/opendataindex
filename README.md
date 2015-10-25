@@ -17,8 +17,7 @@ Getting setup with the code is easy if you have some familiarity with Python and
 * Setup a virtualenv for the project
 * Install the dependencies: `pip install -r requirements.txt`
 * Install the CLI: `cd cli && python setup.py install && cd ../`
-* [DEPRECATED] Grab data from the database: `python scripts/process.py run`
-    * You must configure your data sources first: see  Configuration below
+* Prepare the data (download from the database): `odi prepare`
 * Populate the content sources: `odi populate`
     * Use `odi populate --limited` if you have a large amount of data (like the Global Index), and want a smaller set for local development (see Configuration below)
 * `./develop_server.sh start` to run a server that watches and builds
@@ -31,16 +30,15 @@ Getting setup with the code is easy if you have some familiarity with Python and
     * see `config_instance.example.py` for reference
 * All special config for the Open Data Index project is found on the ODI object
 * Override any settings you wish in this file
-* You *must* also configure data sources in this file. A data source can be any URL to a CSV file. Example:
+* For example to use local database:
 
 ```
 from config_default import *
 ODI['database'] = {
-    'submissions': 'http://example.com/submissions.csv',
-    'entries': 'http://example.com/entries.csv',
-    'questions': 'http://example.com/questions.csv',
-    'datasets': 'http://example.com/datasets.csv',
-    'places': 'http://example.com/places.csv'
+    'entries': 'http://global.dev.census.org:5000/api/entries/{year}.cascade.json',
+    'places': 'http://global.dev.census.org:5000/api/places/score/{year}.cascade.json',
+    'datasets': 'http://global.dev.census.org:5000/api/datasets/score/{year}.cascade.json',
+    'questions': 'http://global.dev.census.org:5000/api/questions.json',
 }
 ```
 
@@ -54,28 +52,15 @@ ODI['limited']: {
 }
 ```
 
-## Deployment
-
-Steps to create a snapshot for deployment::
-
-    odi populate
-    odi deploy
-
-
-## Data
-
-Data is found in the `data` directory. This both powers the site build and is
-usuable in its own right (as a Tabular Data Package).
-
 ### Preparation
 
-Data is prepared by the python script `scripts/process.py`. This pulls data
+Data is prepared by the python script. This pulls data
 from the Open Data Index Survey (Census), processes it in various ways and then
-writes it to the `data` directory. If you want to
+writes it to the `data` directory.
 
 To run the script do:
 
-    python scripts/process.py
+    odi prepare
 
 ### Populate
 
@@ -87,6 +72,17 @@ If your your census data is sizable, or if you have many languages, Pelican's bu
 
     odi populate --limited
 
+## Deployment
+
+Steps to create a snapshot for deployment::
+
+    odi populate
+    odi deploy
+
+## Data
+
+Data is found in the `data` directory. This both powers the site build and is
+usuable in its own right (as a Tabular Data Package).
 
 ## Visualisations
 
