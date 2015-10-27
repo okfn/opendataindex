@@ -158,7 +158,11 @@ ODI = {
     },
     'exclude': { # it has more priority than include
         'datasets': [],  # example: 'timetables' or 'timetables-2015'
-        'places': [],  # example: 'au' or 'au-2015'
+        'places': [  # example: 'au' or 'au-2015'
+            'tc', 'ae', 'ua', 'kn', 'vg', 'ye', 'bh', 'bs', 'lc',
+            'bb', 'va', 'bt', 'gi', 'ky', 'gg', 'je', 'ly', 'jo',
+            'om-2013', 'pk-2013', 'ma-2013',
+        ],
     },
     'limited': {
         'datasets': ['timetables'],
