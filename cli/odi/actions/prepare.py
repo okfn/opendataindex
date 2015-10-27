@@ -218,6 +218,10 @@ class Questions(object):
         # Get items
         items = services.data.load_items(self.entity)
 
+        # Update items
+        for item in items:
+            item['icon'] = config.ODI['icons'].get(item['icon'], '')
+
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
 

@@ -171,7 +171,19 @@ ODI = {
         'height': '720'
 
       }
-    }
+    },
+    # Census -> Font Awesome
+    'icons': {
+        'unlock-alt': 'unlock-alt',
+        'dollar': 'dollar',
+        'keyboard': 'keyboard-o',
+        'copy': 'copy',
+        'time': 'clock-o',
+        'eye-open': 'eye',
+        'save': 'save',
+        'download': 'download',
+        'file-alt': 'file-o',
+    },
 }
 
 SITEURL = u'{0}{1}'.format(ODI['scheme'], ODI['domain'])
