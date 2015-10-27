@@ -118,7 +118,12 @@ class Entries(object):
         """
 
         # Get items
-        items = services.data.load_items(self.entity)
+        items = []
+        for year in config.ODI['years']:
+            year_items = services.data.load_items(self.entity, year=year)
+            for item in year_items:
+                item[year] = year
+            items.extend(year_items)
 
         # Update items
         for item in items:
@@ -127,14 +132,17 @@ class Entries(object):
             item['reviewers'] = item['reviewer']
 
         # Add rank to items
-        datasets = {}
+        # e.g.: 1st place for 2014 year statistics dataset
+        groups = {}
         for item in items:
-            datasets.setdefault(item['dataset'], [])
-            datasets[item['dataset']].append(item)
+            key = '-'.join([str(item['year']), item['dataset']])
+            groups.setdefault(key, [])
+            groups[key].append(item)
         items = []
-        for dataset_items in datasets.values():
-            services.data.sort_and_add_rank_to_items(dataset_items)
-            items.extend(dataset_items)
+        for key in sorted(groups, reverse=True):
+            group_items = groups[key]
+            services.data.sort_and_add_rank_to_items(group_items)
+            items.extend(group_items)
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
