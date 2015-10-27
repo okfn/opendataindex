@@ -2,7 +2,7 @@ type: home
 template: home
 title: Open government data around the world, right now.
 save_as: index.html
-year: 2014
+year: 2015
 
 
 The last few years has seen an explosion of activity around open data and especially open government data. Following initiatives like data.gov and data.gov.uk, numerous local, regional and national bodies have started open government data initiatives and created open data portals (from a handful three years ago there are now nearly 400 open data portals worldwide).
