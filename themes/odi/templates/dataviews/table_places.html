@@ -58,7 +58,7 @@ popover_comparison_content, history, share %}
                 {% else %}
                   {% set state = '' %}
                 {% endif %}
-                <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% else %}{{ state }}{% endif %}" data-content="{% if state %}{{ state }}{% else %}{{ gettext('No data') }}{% endif %}">&nbsp;</li>
+                <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == 'Unsure' %}maybe{% else %}{{ state }}{% endif %}" data-content="{% if state %}{{ state }}{% else %}{{ gettext('No data') }}{% endif %}">&nbsp;</li>
               {% endfor %}
               </ul>
             </td>

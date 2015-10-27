@@ -45,7 +45,7 @@
                       <ul class="availability availability-slice">
                       {% for question in scope.questions if question.score %}
                           {% set state = entry[question.id] or '' %}
-                          <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question, state)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
+                          <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == 'Unsure' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question, state)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
                       {% endfor %}
                       </ul>
                   </td>
