@@ -1,6 +1,7 @@
 """Custom Jinja filters."""
 
 
+import sys
 import operator
 import json
 import jinja2
@@ -42,3 +43,9 @@ def natsort(iterable, attribute=None, reverse=False):
 def tojson(content):
     """Parse content as JSON. Does not handle errors."""
     return json.dumps(content)
+
+def debug(value):
+    sys.stdout.write(value)
+    sys.stdout.write('\n')
+    sys.stdout.flush()
+    return ''
