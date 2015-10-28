@@ -5,6 +5,7 @@ import sys
 import operator
 import json
 import jinja2
+import hashlib
 import mdx_urlize as urlize
 import markdown as mdlib
 import natsort as natsortlib
@@ -23,9 +24,13 @@ operators = {
 }
 
 
+markdown_cache = {}
 def markdown(content):
     """Parse `content` as markdown."""
-    return jinja2.Markup(md.convert(content))
+    hash = hashlib.sha256(content.encode('ascii', 'replace')).hexdigest()
+    if hash not in markdown_cache:
+        markdown_cache[hash] = jinja2.Markup(md.convert(content))
+    return markdown_cache[hash]
 
 
 def where(iterable, key, value, op='=='):
