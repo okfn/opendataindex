@@ -58,21 +58,17 @@ def debug(value):
 
 
 search_cache = {}
-def search(items, entity, **conditions):
+def search(items, namespace, **conditions):
     """Return new filtered list.
 
     Functions use cache to store indexed items.
     First time we index items using conditions,
     then we use indexed items to make fast searches.
-
-    Note: we do not use it for now but it can be used for future optimizations.
     """
-
     # Caclculate outer hash
-    outer_prefix = entity
     outer_keys = sorted(conditions.keys())
     # It's like `<id>-place-year`
-    outer_hash = '-'.join([outer_prefix] + outer_keys)
+    outer_hash = '-'.join([namespace] + outer_keys)
 
     # Calculate inner hash
     inner_keys = []
@@ -93,4 +89,4 @@ def search(items, entity, **conditions):
             store = search_cache[outer_hash].setdefault(item_hash, [])
             store.append(item)
 
-    return search_cache[outer_hash].get(inner_hash, [])
+    return list(search_cache[outer_hash].get(inner_hash, []))

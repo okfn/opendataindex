@@ -50,7 +50,7 @@ popover_comparison_content, history, share %}
           </td>
           {% for dataset in scope.datasets %}
             <td>
-              {% set entry = scope.entries|where('place', place.id)|where('dataset', dataset.id)|where('year', page.year)|first %}
+              {% set entry = scope.entries|search('table_places_entries', dataset=dataset.id, place=place.id, year=page.year)|first %}
               <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(scope, entry, place, dataset, scope.questions)|e|safe }}">
               {% for question in scope.questions if question.score %}
                 {% if entry %}
