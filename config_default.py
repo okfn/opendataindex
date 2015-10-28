@@ -61,7 +61,9 @@ JINJA_FILTERS = {
   'where': filters.where,
   'markdown': filters.markdown,
   'natsort': filters.natsort,
-  'tojson': filters.tojson
+  'tojson': filters.tojson,
+  'debug': filters.debug,
+  'search': filters.search,
 }
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
 PLUGINS = [
@@ -158,7 +160,50 @@ ODI = {
     },
     'exclude': { # it has more priority than include
         'datasets': [],  # example: 'timetables' or 'timetables-2015'
-        'places': [],  # example: 'au' or 'au-2015'
+        'places': [  # example: 'au' or 'au-2015'
+            'ae-2014', 'ae-2013',
+            'am-2015',
+            'ba-2015',
+            'bb-2014', 'bb-2013',
+            'bd-2015',
+            'bh-2014', 'bh-2013',
+            'bs-2014', 'bs-2013',
+            'bt',
+            'by-2015',
+            'cy-2015',
+            'gg-2014', 'gg-2013',
+            'gh-2015',
+            'gi',
+            'hr-2015',
+            'ht-2015',
+            'hu-2015',
+            'je-2014', 'je-2013',
+            'jo-2014', 'jo-2013',
+            'kn-2014', 'kn-2013',
+            'ky-2014', 'ky-2013',
+            'lc-2014', 'lc-2013',
+            'ls-2015',
+            'lt-2015',
+            'ly-2014', 'ly-2013',
+            'ma-2013',
+            'mt-2015',
+            # 'nz-2015',
+            'om-2013',
+            'pe-2015',
+            'pk-2013',
+            'pl-2015',
+            'rs-2015',
+            'si-2015',
+            'sl-2015',
+            'tc-2014', 'tc-2013',
+            'ua-2014', 'ua-2013',
+            'uz-2015',
+            'va',
+            've-2015',
+            'vg',
+            'vi-2015',
+            'ye',
+        ],
     },
     'limited': {
         'datasets': ['timetables'],
@@ -171,7 +216,19 @@ ODI = {
         'height': '720'
 
       }
-    }
+    },
+    # Census -> Font Awesome
+    'icons': {
+        'unlock-alt': 'unlock-alt',
+        'dollar': 'dollar',
+        'keyboard': 'keyboard-o',
+        'copy': 'copy',
+        'time': 'clock-o',
+        'eye-open': 'eye',
+        'save': 'save',
+        'download': 'download',
+        'file-alt': 'file-o',
+    },
 }
 
 SITEURL = u'{0}{1}'.format(ODI['scheme'], ODI['domain'])

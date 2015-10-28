@@ -46,11 +46,9 @@ class Datasets(object):
         # Load history items by year
         history = services.data.load_history(self.entity)
 
-        # Get helper data
-        max_score = Places.get_max_score()
-
         # Update history
         for year in history:
+            max_score = Places.get_max_score(year)
             for item in history[year].values():
                 item['score'] = int(100 * item['score'] / max_score)
 
@@ -71,11 +69,12 @@ class Datasets(object):
         services.data.save_items(self.entity, self.fieldnames, items)
 
     @classmethod
-    def get_max_score(cls):
+    def get_max_score(cls, year):
         """Return max available score.
         """
         questions_max_score = Questions.get_max_score()
-        item_count = len(services.data.load_items(cls.entity))
+        stats = Entries.get_statistics()
+        item_count = stats[year]['%s_count' % cls.entity]
         return questions_max_score * item_count
 
 
@@ -118,7 +117,12 @@ class Entries(object):
         """
 
         # Get items
-        items = services.data.load_items(self.entity)
+        items = []
+        for year in config.ODI['years']:
+            year_items = services.data.load_items(self.entity, year=year)
+            for item in year_items:
+                item[year] = year
+            items.extend(year_items)
 
         # Update items
         for item in items:
@@ -127,14 +131,17 @@ class Entries(object):
             item['reviewers'] = item['reviewer']
 
         # Add rank to items
-        datasets = {}
+        # e.g.: 1st place for 2014 year statistics dataset
+        groups = {}
         for item in items:
-            datasets.setdefault(item['dataset'], [])
-            datasets[item['dataset']].append(item)
+            key = '-'.join([str(item['year']), item['dataset']])
+            groups.setdefault(key, [])
+            groups[key].append(item)
         items = []
-        for dataset_items in datasets.values():
-            services.data.sort_and_add_rank_to_items(dataset_items)
-            items.extend(dataset_items)
+        for key in sorted(groups, reverse=True):
+            group_items = groups[key]
+            services.data.sort_and_add_rank_to_items(group_items)
+            items.extend(group_items)
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
@@ -165,17 +172,21 @@ class Entries(object):
         stats = {}
         history = services.data.load_history(cls.entity)
         for year in history:
+            datasets = set()
             places = set()
             isopen_count = 0
             entries = history[year]
             for item in history[year].values():
+                datasets.add(item['dataset'])
                 places.add(item['place'])
                 if item['isOpen'] == 'Yes':
                     isopen_count += 1
+            datasets_count = len(datasets)
             places_count = len(places)
             entries_count = len(entries)
             isopen_percent = int(100 * isopen_count / entries_count)
             stats[year] = {
+                'datasets_count': datasets_count,
                 'places_count': places_count,
                 'entries_count': entries_count,
                 'isopen_count': isopen_count,
@@ -206,6 +217,10 @@ class Questions(object):
 
         # Get items
         items = services.data.load_items(self.entity)
+
+        # Update items
+        for item in items:
+            item['icon'] = config.ODI['icons'].get(item['icon'], '')
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
@@ -246,11 +261,11 @@ class Places(object):
         history = services.data.load_history(self.entity)
 
         # Get helper data
-        max_score = Datasets.get_max_score()
         sub_rev = Entries.get_submitters_and_reviewers()
 
         # Update history
         for year in history:
+            max_score = Datasets.get_max_score(year)
             for item in history[year].values():
                 item['score'] = int(100 * item['score'] / max_score)
 
@@ -274,11 +289,12 @@ class Places(object):
         services.data.save_items(self.entity, self.fieldnames, items)
 
     @classmethod
-    def get_max_score(cls):
+    def get_max_score(cls, year):
         """Return max available score.
         """
         questions_max_score = Questions.get_max_score()
-        item_count = len(services.data.load_items(cls.entity))
+        stats = Entries.get_statistics()
+        item_count = stats[year]['%s_count' % cls.entity]
         return questions_max_score * item_count
 
 

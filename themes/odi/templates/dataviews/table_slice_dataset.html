@@ -25,65 +25,72 @@
         <tbody>
         {% for entry in scope.entries|where('year', page.year)|natsort(attribute='score', reverse=True) %}
 
-        {% do entry.update({
-            'place': scope.places|where('id', entry.place)|first,
-            'previous': scope.entries|where('place', entry.place)|where('year', (page.year|int - 1)|string)|first
-        }) %}
+          {% set places = scope.places|where('id', entry.place) %}
 
-            <tr data-rank="{{ entry.rank or scope.odi.na }}" data-score="{{ entry.score }}" data-place="{{ entry.place.slug }}">
-                <td>
-                    {{ entry.rank or scope.odi.na }}
-                </td>
-                <td>
-                  <a href="{{ SITEURL }}/place/{{ entry.place.slug }}/{{ scope.dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=page.dataset, place=entry.place.name) }}">{{ entry.place.name }}</a>
-                </td>
-                <td>
-                    <ul class="availability availability-slice">
-                    {% for question in scope.questions if question.score %}
-                        {% set state = entry[question.id] or '' %}
-                        <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question, state)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
-                    {% endfor %}
-                    </ul>
-                </td>
-                <td>
-                    {% if entry.url %}{{ entry.url|urlize(30) }}{% else %}{{ scope.odi.na }}{% endif %}
-                </td>
-                <td>
-                    {% if entry.format %}{{ entry.format|truncate(10) }}{% else %}{{ scope.odi.na }}{% endif %}
-                </td>
-                <td class="info-expander" title="{{ gettext('Click for full details') }}">
-                {% if entry.details %}
-                    <a data-toggle="collapse" data-target="#detail-{{ entry.place.id }}" class="collapsed">
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-                {% else %}
-                    {{ scope.odi.na }}
-                {% endif %}
-                </td>
-                <td class="previous-results">
-                {% if entry.previous and entry.previous.score %}
-                    <span class="rank rank-previous">#{{ entry.previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{% if entry.previous %}{{ entry.previous.score or scope.odi.na }}{% else %}{{ scope.odi.na }}{% endif %}">{{ entry.previous.score }}%</span>
-                {% else %}
-                    {{ scope.odi.na }}
-                {% endif %}
-                </td>
-                <td class="score" data-score="{{ entry.score or scope.odi.na }}">
-                    <span>{% if entry.score %}{{ entry.score }}%{% else %}{{ scope.odi.na }}{% endif %}</span>
-                </td>
-            </tr>
-            {% if entry.details %}
-            <tr id="detail-{{ entry.place.id }}" class="details collapse">
-                <td>{# hack around tablesorter and our row toggler #}<span style="visibility: hidden">{{ entry.rank or scope.odi.na }}</span></td>
-                <td colspan="7">
-                    {# hack around tablesorter and our row toggler #}<span style="visibility: hidden;">{{ entry.place.name }}</span>
-                    {% if entry.details %}
-                    <br /><br />
-                    {{ entry.details|markdown }}
-                    {% endif %}
-                    <br />
-                </td>
-            </tr>
+          {% if places %}
+
+            {% do entry.update({
+                'place': places|first,
+                'previous': scope.entries|where('place', entry.place)|where('year', (page.year|int - 1)|string)|first
+            }) %}
+
+              <tr data-rank="{{ entry.rank or scope.odi.na }}" data-score="{{ entry.score }}" data-place="{{ entry.place.slug }}">
+                  <td>
+                      {{ entry.rank or scope.odi.na }}
+                  </td>
+                  <td>
+                    <a href="{{ SITEURL }}/place/{{ entry.place.slug }}/{{ scope.dataset.id }}/" title="{{ gettext('%(dataset)s in %(place)s', dataset=page.dataset, place=entry.place.name) }}">{{ entry.place.name }}</a>
+                  </td>
+                  <td>
+                      <ul class="availability availability-slice">
+                      {% for question in scope.questions if question.score %}
+                          {% set state = entry[question.id] or '' %}
+                          <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == 'Unsure' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question, state)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;</li>
+                      {% endfor %}
+                      </ul>
+                  </td>
+                  <td>
+                      {% if entry.url %}{{ entry.url|urlize(30) }}{% else %}{{ scope.odi.na }}{% endif %}
+                  </td>
+                  <td>
+                      {% if entry.format %}{{ entry.format|truncate(10) }}{% else %}{{ scope.odi.na }}{% endif %}
+                  </td>
+                  <td class="info-expander" title="{{ gettext('Click for full details') }}">
+                  {% if entry.details %}
+                      <a data-toggle="collapse" data-target="#detail-{{ entry.place.id }}" class="collapsed">
+                        <i class="fa fa-info-circle"></i>
+                      </a>
+                  {% else %}
+                      {{ scope.odi.na }}
+                  {% endif %}
+                  </td>
+                  <td class="previous-results">
+                  {% if entry.previous and entry.previous.score %}
+                      <span class="rank rank-previous">#{{ entry.previous.rank }}</span>&nbsp;&nbsp;<span class="score score-previous" data-score="{% if entry.previous %}{{ entry.previous.score or scope.odi.na }}{% else %}{{ scope.odi.na }}{% endif %}">{{ entry.previous.score }}%</span>
+                  {% else %}
+                      {{ scope.odi.na }}
+                  {% endif %}
+                  </td>
+                  <td class="score" data-score="{{ entry.score or scope.odi.na }}">
+                      <span>{% if entry.score %}{{ entry.score }}%{% else %}{{ scope.odi.na }}{% endif %}</span>
+                  </td>
+              </tr>
+              {% if entry.details %}
+              <tr id="detail-{{ entry.place.id }}" class="details collapse">
+                  <td>{# hack around tablesorter and our row toggler #}<span style="visibility: hidden">{{ entry.rank or scope.odi.na }}</span></td>
+                  <td colspan="7">
+                      {# hack around tablesorter and our row toggler #}<span style="visibility: hidden;">{{ entry.place.name }}</span>
+                      {% if entry.details %}
+                      <br /><br />
+                      {{ entry.details|markdown }}
+                      {% endif %}
+                      <br />
+                  </td>
+              </tr>
+              {% endif %}
+
             {% endif %}
+
         {% endfor %}
         </tbody>
     </table>
