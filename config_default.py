@@ -64,6 +64,7 @@ JINJA_FILTERS = {
   'tojson': filters.tojson,
   'debug': filters.debug,
   'search': filters.search,
+  'first_or_default': filters.first_or_default,
 }
 PLUGIN_PATHS = [os.path.join(PROJECT_ROOT, 'plugins')]
 PLUGINS = [
@@ -187,7 +188,7 @@ ODI = {
             'ly-2014', 'ly-2013',
             'ma-2013',
             'mt-2015',
-            # 'nz-2015',
+            'nz-2015',
             'om-2013',
             'pe-2015',
             'pk-2013',

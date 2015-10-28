@@ -90,3 +90,11 @@ def search(items, namespace, **conditions):
             store.append(item)
 
     return list(search_cache[outer_hash].get(inner_hash, []))
+
+
+def first_or_default(items, default):
+    """Return first item or default if items is empty.
+    """
+    if items:
+        return items[0]
+    return default
