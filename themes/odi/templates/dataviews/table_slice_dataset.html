@@ -25,13 +25,15 @@
         <tbody>
         {% for entry in scope.entries|where('year', page.year)|natsort(attribute='score', reverse=True) %}
 
-          {% set places = scope.places|where('id', entry.place) %}
+          {# place can be None - be carefull! #}
+          {% set place = scope.places|where('id', entry.place)|first_or_default(None) %}
 
-          {% if places %}
+          {% if place %}
 
+            {# previous can be None - be carefull! #}
             {% do entry.update({
-                'place': places|first,
-                'previous': scope.entries|where('place', entry.place)|where('year', (page.year|int - 1)|string)|first
+                'place': place,
+                'previous': scope.entries|where('place', entry.place)|where('year', (page.year|int - 1)|string)|first_or_default(None)
             }) %}
 
               <tr data-rank="{{ entry.rank or scope.odi.na }}" data-score="{{ entry.score }}" data-place="{{ entry.place.slug }}">
