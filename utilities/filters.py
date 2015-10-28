@@ -44,8 +44,48 @@ def tojson(content):
     """Parse content as JSON. Does not handle errors."""
     return json.dumps(content)
 
+
 def debug(value):
     sys.stdout.write(value)
     sys.stdout.write('\n')
     sys.stdout.flush()
     return ''
+
+
+search_cache = {}
+def search(items, entity, **conditions):
+    """Return new filtered list.
+
+    Functions use cache to store indexed items.
+    First time we index items using conditions,
+    then we use indexed items to make fast searches.
+
+    Note: we do not use it for now but it can be used for future optimizations.
+    """
+
+    # Caclculate outer hash
+    outer_prefix = entity
+    outer_keys = sorted(conditions.keys())
+    # It's like `<id>-place-year`
+    outer_hash = '-'.join([outer_prefix] + outer_keys)
+
+    # Calculate inner hash
+    inner_keys = []
+    for outer_key in outer_keys:
+         inner_keys.append(conditions[outer_key])
+    # It's like `au-2015`
+    inner_hash = '-'.join(inner_keys)
+
+    # Prepare indexed items
+    if outer_hash not in search_cache:
+        search_cache[outer_hash] = {}
+        for item in items:
+            item_keys = []
+            for outer_key in outer_keys:
+                item_keys.append(item[outer_key])
+            # It's like `gb-2014`
+            item_hash = '-'.join(item_keys)
+            store = search_cache[outer_hash].setdefault(item_hash, [])
+            store.append(item)
+
+    return search_cache[outer_hash].get(inner_hash, [])
