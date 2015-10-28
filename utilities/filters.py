@@ -51,7 +51,7 @@ def tojson(content):
 
 
 def debug(value):
-    sys.stdout.write(value)
+    sys.stdout.write(str(value))
     sys.stdout.write('\n')
     sys.stdout.flush()
     return ''
