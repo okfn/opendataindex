@@ -9,7 +9,6 @@
   'panel_share': 'false',
 }) %}
 {% set fragment = '%s/%s/%s'|format('place', scope.place.slug, scope.dataset.id) %}
-{% set entry_previous = scope.entries|where('year', (scope.entry.year|int - 1)|string)|first %}
 
 {% block heading %}{% endblock heading %}
 
@@ -38,10 +37,10 @@
                     <span class="">{{ scope.place.name }} {{ gettext('is ranked') }} #{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
             </div>
             <div class="row relative">
-                {% if entry_previous and entry_previous.rank %}
-                <div class="col-md-1 change"><i class="fa fa-{% if entry_previous.rank|int > scope.entry.rank|int %}arrow-up{% elif entry_previous.rank|int < scope.entry.rank|int %}arrow-down{% else %}minus{% endif %}"></i></div>
+                {% if scope.entry_previous and scope.entry_previous.rank %}
+                <div class="col-md-1 change"><i class="fa fa-{% if scope.entry_previous.rank|int > scope.entry.rank|int %}arrow-up{% elif scope.entry_previous.rank|int < scope.entry.rank|int %}arrow-down{% else %}minus{% endif %}"></i></div>
                 <div class="col-md-11">
-                    {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} {% if entry_previous.rank|int > scope.entry.rank|int %}{{ gettext('is') }} {{ scope.higher|lower }}{% elif entry_previous.rank|int < scope.entry.rank|int %}{{ gettext('is') }} {{ scope.lower|lower }}{% else %}{{ gettext('has') }} {{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ entry_previous.rank }} {{ gettext('in') }} {{ scope.odi.previous_year }}
+                    {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} {% if scope.entry_previous.rank|int > scope.entry.rank|int %}{{ gettext('is') }} {{ scope.higher|lower }}{% elif scope.entry_previous.rank|int < scope.entry.rank|int %}{{ gettext('is') }} {{ scope.lower|lower }}{% else %}{{ gettext('has') }} {{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.entry_previous.rank }} {{ gettext('in') }} {{ scope.odi.previous_year }}
                 </div>
                 {% endif %}
             </div>

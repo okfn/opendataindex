@@ -351,6 +351,7 @@ slug: place/{place_slug}/{dataset_id}
 place: {place_id}
 dataset: {dataset_id}
 year: {year}
+fast: true
 alias: /country/overview/{place_encname}/{dataset_id}/
 """
 
@@ -362,6 +363,7 @@ slug: place/{place_slug}/{dataset_id}/{year}
 place: {place_id}
 dataset: {dataset_id}
 year: {year}
+fast: true
 """
 
 

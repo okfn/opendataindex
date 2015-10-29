@@ -1,14 +1,12 @@
 {% extends 'page.html' %}
 
-{% from '_scope.html' import scope with context %}
-
 {% block content %}
 <p>
     {{ gettext('We do not current have any data for %(page)s. But you can help change that!', page=page.title) }}
 </p>
 <section class="row">
     <div class="col-md-4">
-        <a href="{{ scope.odi.survey.domain }}{{ scope.odi.survey.submit_route }}?place={{ page.place }}&dataset={{ page.dataset }}&year={{ page.year }}" class="btn btn-success">
+        <a href="{{ ODI.survey.domain }}{{ ODI.survey.submit_route }}?place={{ page.place }}&dataset={{ page.dataset }}&year={{ page.year }}" class="btn btn-success">
             {{ gettext('Add information') }}
         </a>
     </div>
