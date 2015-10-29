@@ -302,12 +302,16 @@ ul.availability, ul.data-table-key {
   border-color: @color-no;
 }
 
-.availability-comparative li {
-  display: inline-block;
-  line-height: 24px;
-  width: 5px;
-  padding-left: 0;
-  padding-right: 0;
+.availability-comparative {
+    display: table;
+    width: 100%;
+    
+    li {
+      display: table-cell;
+      line-height: 24px;
+      padding-left: 0;
+      padding-right: 0;
+    }
 }
 
 .availability-slice li {
