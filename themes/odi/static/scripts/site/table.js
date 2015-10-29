@@ -44,8 +44,7 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter', 'stickykit'], function($
     $('#places_overview_table').tablesorter(tablesorterPlaceOptions);
     $('#datasets_overview_table').tablesorter(tablesorterDatasetOptions);
     $('#slice-table').tablesorter(tablesorterSliceOptions);
-
-    $("#places_overview_table thead").stick_in_parent();
+    
     $("#datasets_overview_table thead").stick_in_parent();
     $("#slice-table thead").stick_in_parent();
 
