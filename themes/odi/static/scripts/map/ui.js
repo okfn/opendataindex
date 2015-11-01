@@ -357,7 +357,7 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
             // get calculated total scores from the place data
             match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (match) {
-                score = parseInt(match.score, 10);
+                score = parseInt(match[scoreLookup(uiState.filter.year)], 10);
                 fillColor = colorScale(score).hex();
             }
         } else if (uiState.filter.dataset === 'improvement') {
