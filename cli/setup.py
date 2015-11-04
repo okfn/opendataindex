@@ -11,8 +11,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'odi = odi.main:cli',
-            'opendataindex = odi.main:cli',
+            'odi = odi:cli',
+            'opendataindex = odi:cli',
             ]
     },
 )

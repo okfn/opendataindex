@@ -30,9 +30,11 @@ popover_comparison_content, history, share %}
         <th title="{{ gettext('Sort by Rank') }}">{{ gettext('Rank') }}</th>
         <th title="{{ gettext('Sort by A-Z') }}">{{ gettext('Place') }}</th>
         {% for dataset in scope.datasets %}
-          <th>
+          {% if dataset[scope.score_lookup]|int %}
+            <th>
               <span class="dataset-title-context" data-toggle="popover" title="{{ dataset.title }}" data-content="{{ dataset.description|markdown|e|safe }}">{{ dataset.title }}</span>
-          </th>
+            </th>
+          {% endif %}
         {% endfor %}
         <th title="{{ gettext('Sort by Score') }}">{{ gettext('Score') }}</th>
       </tr>
@@ -49,19 +51,21 @@ popover_comparison_content, history, share %}
             </a>
           </td>
           {% for dataset in scope.datasets %}
-            <td>
-              {% set entry = scope.entries|where('place', place.id)|where('dataset', dataset.id)|where('year', page.year)|first %}
-              <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(scope, entry, place, dataset, scope.questions)|e|safe }}">
-              {% for question in scope.questions if question.score %}
-                {% if entry %}
-                  {% set state = entry[question.id] %}
-                {% else %}
-                  {% set state = '' %}
-                {% endif %}
-                <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% else %}{{ state }}{% endif %}" data-content="{% if state %}{{ state }}{% else %}{{ gettext('No data') }}{% endif %}">&nbsp;</li>
-              {% endfor %}
-              </ul>
-            </td>
+            {% if dataset[scope.score_lookup]|int %}
+              <td>
+                {% set entry = scope.entries|search('table_places_entries', dataset=dataset.id, place=place.id, year=page.year)|first %}
+                <ul class="availability availability-comparative" data-toggle="popover" title="{{ popover_comparison_title(dataset, place)|e|safe }}" data-content="{{ popover_comparison_content(scope, entry, place, dataset, scope.questions)|e|safe }}">
+                {% for question in scope.questions if question.score %}
+                  {% if entry %}
+                    {% set state = entry[question.id] %}
+                  {% else %}
+                    {% set state = '' %}
+                  {% endif %}
+                  <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == 'Unsure' %}maybe{% else %}{{ state }}{% endif %}" data-content="{% if state %}{{ state }}{% else %}{{ gettext('No data') }}{% endif %}">&nbsp;</li>
+                {% endfor %}
+                </ul>
+              </td>
+            {% endif %}
           {% endfor %}
           <td class="score" data-score="{{ place[scope.score_lookup] or scope.odi.na }}">
             <span>{{ place[scope.score_lookup] or scope.odi.na }}%</span>

@@ -12,14 +12,14 @@
     {% for question in questions %}
     {% if question.score %}
     {% set state = entry[question.id] %}
-    {% if state == 'Y' %}
+    {% if state == 'Yes' %}
     {% set no = '' %}
-    {% elif state == 'N' %}
+    {% elif state == 'No' %}
     {% set no = 'not' %}
     {% else %}
     {% set no = 'unclear if it\'s ' %}
     {% endif %}
-    <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;
+    <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == 'Unsure' %}maybe{% endif %}"><i class="fa fa-{{ question.icon }}"></i>&nbsp;
         {% if question.id == 'exists' %}
         {% if state == 'Y' %}
         {{ gettext('Data exists') }}

@@ -9,7 +9,6 @@
   'panel_share': 'false',
 }) %}
 {% set fragment = '%s/%s/%s'|format('place', scope.place.slug, scope.dataset.id) %}
-{% set entry_previous = scope.entries|where('year', (scope.entry.year|int - 1)|string)|first %}
 
 {% block heading %}{% endblock heading %}
 
@@ -38,10 +37,10 @@
                     <span class="">{{ scope.place.name }} {{ gettext('is ranked') }} #{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
             </div>
             <div class="row relative">
-                {% if entry_previous and entry_previous.rank %}
-                <div class="col-md-1 change"><i class="fa fa-{% if entry_previous.rank|int > scope.entry.rank|int %}arrow-up{% elif entry_previous.rank|int < scope.entry.rank|int %}arrow-down{% else %}minus{% endif %}"></i></div>
+                {% if scope.entry_previous and scope.entry_previous.rank %}
+                <div class="col-md-1 change"><i class="fa fa-{% if scope.entry_previous.rank|int > scope.entry.rank|int %}arrow-up{% elif scope.entry_previous.rank|int < scope.entry.rank|int %}arrow-down{% else %}minus{% endif %}"></i></div>
                 <div class="col-md-11">
-                    {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} {% if entry_previous.rank|int > scope.entry.rank|int %}{{ gettext('is') }} {{ scope.higher|lower }}{% elif entry_previous.rank|int < scope.entry.rank|int %}{{ gettext('is') }} {{ scope.lower|lower }}{% else %}{{ gettext('has') }} {{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ entry_previous.rank }} {{ gettext('in') }} {{ scope.odi.previous_year }}
+                    {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} {% if scope.entry_previous.rank|int > scope.entry.rank|int %}{{ gettext('is') }} {{ scope.higher|lower }}{% elif scope.entry_previous.rank|int < scope.entry.rank|int %}{{ gettext('is') }} {{ scope.lower|lower }}{% else %}{{ gettext('has') }} {{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.entry_previous.rank }} {{ gettext('in') }} {{ scope.odi.previous_year }}
                 </div>
                 {% endif %}
             </div>
@@ -82,9 +81,9 @@
             <ul class="availability-single">
                 {% for question in scope.questions if question.score %}
                 {% set state = scope.entry[question.id] %}
-                <li class="{% if state == 'Y' %}yes{% elif state == 'N' %}no{% elif state == '?' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question, state)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}" data-placement="right">
+                <li class="{% if state == 'Yes' %}yes{% elif state == 'No' %}no{% elif state == 'Unsure' %}maybe{% endif %}" data-toggle="popover" title="{{ popover_slice_title(question.question, state)|e|safe }}" data-content="{{ popover_slice_content(question.description)|e|safe }}" data-placement="right">
                     <i class="fa fa-{{ question.icon }} pointer" title="{{ gettext('Click for more information')}}"></i>&nbsp;
-                    {{ question.question }}? {% if state == 'Y' %}{{ gettext('Yes') }}{% elif state == 'N' %}{{ gettext('No') }}{% elif state == '?' %}{{ gettext('Unsure') }}{% endif %}
+                    {{ question.question }}? {% if state == 'Yes' %}{{ gettext('Yes') }}{% elif state == 'No' %}{{ gettext('No') }}{% elif state == 'Unsure' %}{{ gettext('Unsure') }}{% endif %}
                     {% if question.id == 'online' %}
                     {% if scope.entry.url %} (<a href="{{ scope.entry.url }}">{{ gettext('Here') }}</a>){% else %} ({{ gettext('No URL given') }}){% endif %}
                     {% elif question.id == 'machinereadable' %}

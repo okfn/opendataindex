@@ -41,39 +41,60 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
     }) %}
 {% endif %}
 
-{# setup our core datasets #}
-{% do scope.update({
-    'summary': datastore.summary.dict,
-    'entries': datastore.entries.dict|natsort(attribute='score', reverse=True),
-    'datasets': datastore.datasets.dict|where(scope.score_lookup, None, 'is_not'),
-    'questions': datastore.questions.dict,
-    'places': datastore.places.dict|where(scope.score_lookup, None, 'is_not')|natsort(attribute=scope.score_lookup, reverse=True),
-    'place_count': datastore.summary.dict[0],
-    'entry_count': datastore.summary.dict[1],
-    'open_count': datastore.summary.dict[2],
-    'open_percent': datastore.summary.dict[3]
-}) %}
+{% if page.fast %}
 
-{# resolve place and dataset args to full objects, if page has them #}
-{% if page.place %}
-    {% do scope.update({
-        'place': scope.places|where('id', page.place)|first,
-        'entries': scope.entries|where('place', page.place)
-    }) %}
+  {# optimized version #}
+  {% set dataset = datastore.datasets.dict|search('scope_fast_datasets', id=page.dataset)|first_or_default(None) %}
+  {% set place = datastore.places.dict|search('scope_fast_places', id=page.place)|first_or_default(None) %}
+  {% set entries = datastore.entries.dict|search('scope_fast_entries', dataset=page.dataset, place=page.place) %}
+  {% set entry = entries|where('year', page.year)|first_or_default(None) %}
+  {% set entry_previous = entries|where('year', (page.year|int - 1)|string)|first_or_default(None) %}
+  {% do scope.update({
+      'dataset': dataset,
+      'place': place,
+      'entry': entry,
+      'entry_previous': entry_previous,
+      'questions': datastore.questions.dict,
+  }) %}
+
+{% else %}
+
+  {# setup our core datasets #}
+  {% do scope.update({
+      'summary': datastore.summary.dict,
+      'entries': datastore.entries.dict|natsort(attribute='score', reverse=True),
+      'datasets': datastore.datasets.dict|where(scope.score_lookup, None, 'is_not'),
+      'questions': datastore.questions.dict,
+      'places': datastore.places.dict|where(scope.score_lookup, None, 'is_not')|natsort(attribute=scope.score_lookup, reverse=True),
+      'place_count': datastore.summary.dict[0],
+      'entry_count': datastore.summary.dict[1],
+      'open_count': datastore.summary.dict[2],
+      'open_percent': datastore.summary.dict[3]
+  }) %}
+
+  {# resolve place and dataset args to full objects, if page has them #}
+  {% if page.place %}
+      {% do scope.update({
+          'place': scope.places|where('id', page.place)|first_or_default(None),
+          'entries': scope.entries|where('place', page.place)
+      }) %}
+  {% endif %}
+
+  {% if page.dataset %}
+      {% do scope.update({
+          'dataset': scope.datasets|where('id', page.dataset)|first_or_default(None),
+          'entries': scope.entries|where('dataset', page.dataset)
+      }) %}
+  {% endif %}
+
+  {% if page.place and page.dataset and page.year %}
+      {% do scope.update({
+          'entry': scope.entries|where('year', page.year)|first_or_default(None)
+      }) %}
+  {% endif %}
+
 {% endif %}
 
-{% if page.dataset %}
-    {% do scope.update({
-        'dataset': scope.datasets|where('id', page.dataset)|first,
-        'entries': scope.entries|where('dataset', page.dataset)
-    }) %}
-{% endif %}
-
-{% if page.place and page.dataset and page.year %}
-    {% do scope.update({
-        'entry': scope.entries|where('year', page.year)|first
-    }) %}
-{% endif %}
 
 {# helpers for text when comparing two scores or ranks #}
 {% do scope.update({

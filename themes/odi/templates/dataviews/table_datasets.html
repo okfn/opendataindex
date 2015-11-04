@@ -32,35 +32,45 @@ popover_comparison_content, history, share %}
     </thead>
     <tbody>
       {% for dataset in scope.datasets|natsort(attribute=scope.score_lookup, reverse=True) %}
-        {% set _top = scope.entries|where('dataset', dataset.id)|where('year', page.year)|first %}
-        {% set _matches = scope.entries|where('dataset', dataset.id)|where('year', page.year)|where('score', _top.score) %}
-        {% set top_places = [] %}
-        {% for e in _matches %}
-          {% do top_places.extend(scope.places|where('id', e.place)) %}
-        {% endfor %}
 
-        <tr data-rank="{{ dataset[scope.rank_lookup] or scope.odi.na }}" data-score="{{ dataset[scope.score_lookup] or scope.odi.na }}" data-dataset="{{ dataset.slug }}">
-          <td class="rank" data-rank="{{ dataset[scope.rank_lookup] }}">
-            {{ dataset[scope.rank_lookup] }}
-          </td>
-          <td>
-            <a href="{{ SITEURL }}/dataset/{{ dataset.id }}/" title="{{ dataset.title }}">
-              {{ dataset.title }}
-            </a>
-          </td>
-          <td>
-            {{ dataset.description }}
-          </td>
-          <td>
-            <span class="score score-top" data-score="{{ _top.score or scope.odi.na }}">{{ _top.score }}%</span>
-            {% for place in top_places %}
-            <a href="{{ SITEURL }}/place/{{ place.slug }}/{{ dataset.id }}/">{{ place.name }}</a>&nbsp;
-            {% endfor %}
-          </td>
-          <td class="score" data-score="{{ dataset[scope.score_lookup] or scope.odi.na }}">
-            <span>{{ dataset[scope.score_lookup] or scope.odi.na }}%</span>
-          </td>
-        </tr>
+        {% set entries = scope.entries|where('dataset', dataset.id)|where('year', page.year) %}
+
+        {% if entries %}
+
+          {% set top_places = [] %}
+          {% set top_entry = entries|first %}
+          {% set top_entries = scope.entries|where('dataset', dataset.id)|where('year', page.year)|where('score', top_entry.score) %}
+          {% for entry in top_entries %}
+            {% do top_places.extend(scope.places|where('id', entry.place)) %}
+          {% endfor %}
+
+          <tr data-rank="{{ dataset[scope.rank_lookup] or scope.odi.na }}" data-score="{{ dataset[scope.score_lookup] or scope.odi.na }}" data-dataset="{{ dataset.slug }}">
+            <td class="rank" data-rank="{{ dataset[scope.rank_lookup] }}">
+              {{ dataset[scope.rank_lookup] }}
+            </td>
+            <td>
+              <a href="{{ SITEURL }}/dataset/{{ dataset.id }}/" title="{{ dataset.title }}">
+                {{ dataset.title }}
+              </a>
+            </td>
+            <td>
+              {{ dataset.description }}
+            </td>
+            <td>
+              {% if top_entry %}
+                <span class="score score-top" data-score="{{ top_entry.score }}">{{ top_entry.score }}%</span>
+                {% for place in top_places %}
+                <a href="{{ SITEURL }}/place/{{ place.slug }}/{{ dataset.id }}/">{{ place.name }}</a>&nbsp;
+                {% endfor %}
+              {% endif %}
+            </td>
+            <td class="score" data-score="{{ dataset[scope.score_lookup] or scope.odi.na }}">
+              <span>{{ dataset[scope.score_lookup] or scope.odi.na }}%</span>
+            </td>
+          </tr>
+
+        {% endif %}
+
       {% endfor %}
     </tbody>
   </table>
