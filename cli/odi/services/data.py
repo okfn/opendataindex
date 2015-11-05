@@ -31,45 +31,19 @@ def load_items(entity, year=None):
     if hash not in cache:
         db = config.ODI['database'][entity]
         url = db.format(year=year)
-        res = requests.get(url)
+        pld = {}
+        for item in ['datasets', 'places']:
+            key = 'exclude_%s' % item
+            try:
+                value = ','.join(config.ODI['exclude'][year][item])
+                pld[key] = value
+            except Exception:
+                pass
+        res = requests.get(url, params=pld)
         json = res.json()
         items = json['results']
-        filter_items(entity, items, year)
         cache[hash] = items
     return cache[hash]
-
-
-def filter_items(entity, items, year):
-    """Mutate items against filter based on config.
-    """
-    for filt in ['include', 'exclude']:
-        for item in list(items):
-            skip = True
-            keep = filt == 'exclude'
-            oper = operator.and_ if filt == 'exclude' else operator.or_
-            for filt_entity, filt_list in config.ODI[filt].items():
-                fieldname = filt_entity[:-1]  # like places -> place
-                if entity == filt_entity:
-                    fieldname = 'id'
-                if fieldname not in item:
-                    continue
-                item_hash = '-'.join([item[fieldname], year])  # like gb-2015
-                for filt_hash in filt_list:
-                    filt_keep = item_hash.startswith(filt_hash)
-                    if filt == 'exclude':
-                        filt_keep = not filt_keep
-                    keep = oper(keep, filt_keep)
-                    skip = False
-            if not skip and not keep:  # Remove item
-                try:
-                    items.remove(item)
-                except ValueError:
-                    pass
-    if not len(items):  # Check it's not empty
-        raise ValueError(
-            'Filter for `{entity}-{year}` is to tight. '
-            'There are no items found in the database.'.
-            format(entity=entity, year=year))
 
 
 def add_prev_years_to_items(history, fieldnames, items):
@@ -83,7 +57,10 @@ def add_prev_years_to_items(history, fieldnames, items):
             for param in ['rank', 'score']:
                 key = '{param}_{year}'.format(param=param, year=year)
                 try:
-                    value = history[year][item['id']][param]
+                    link = param
+                    if param == 'score':
+                        link = 'relativeScore'
+                    value = history[year][item['id']][link]
                 except KeyError:
                     value = ''
                 if key not in fieldnames:
@@ -91,6 +68,9 @@ def add_prev_years_to_items(history, fieldnames, items):
                 item[key] = value
 
 
+#TODO: refactoring
+# It's already not needed for places and datasets,
+# move it to Census for entries to remove from here?
 def sort_and_add_rank_to_items(items):
     """Mutate items sorting it and adding rank based on score.
     """
