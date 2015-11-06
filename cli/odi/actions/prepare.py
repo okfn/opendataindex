@@ -290,10 +290,10 @@ class Summary(object):
         'title',
     ]
     metrics = [
-        'places_count',
-        'entries_count',
-        'isopen_count',
-        'isopen_percent',
+        {'id': 'places_count', 'title': 'Number of Places'},
+        {'id': 'entries_count', 'title': 'Number of Entries'},
+        {'id': 'isopen_count', 'title': 'Number of Open Datasets'},
+        {'id': 'isopen_percent', 'title': 'Percent Open'},
     ]
 
     def run(self):
@@ -312,10 +312,10 @@ class Summary(object):
         # Generate items
         items = []
         for metric in self.metrics:
-            item = {'id': metric, 'title': metric}
+            item = {'id': metric['id'], 'title': metric['title']}
             for year in config.ODI['years']:
                 key = self.generate_value_key(year)
-                item[key] = stats[year][metric]
+                item[key] = stats[year][metric['id']]
             items.append(item)
 
         # Save items as csv
