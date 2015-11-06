@@ -46,8 +46,17 @@ class Datasets(object):
         # Load history items by year
         history = services.data.load_history(self.entity)
 
-        # Get current year items
-        items = list(history[config.ODI['current_year']].values())
+        # Load items (with excluded)
+        items = services.data.load_items(self.entity, exclude=False)
+
+        # Fix item relative scores (because of excluded)
+        # Rank and score will be fixed further
+        for item in items:
+            hist_item = history[config.ODI['current_year']].get(item['id'])
+            if hist_item:
+                item['relativeScore'] = hist_item['relativeScore']
+            else:
+                item['relativeScore'] = 0
 
         # Update items
         for item in items:
@@ -239,8 +248,17 @@ class Places(object):
         # Get helper data
         sub_rev = Entries.get_submitters_and_reviewers()
 
-        # Get current year items
-        items = list(history[config.ODI['current_year']].values())
+        # Load items (with excluded)
+        items = services.data.load_items(self.entity, exclude=False)
+
+        # Fix item relative scores (because of excluded)
+        # Rank and score will be fixed further
+        for item in items:
+            hist_item = history[config.ODI['current_year']].get(item['id'])
+            if hist_item:
+                item['relativeScore'] = hist_item['relativeScore']
+            else:
+                item['relativeScore'] = 0
 
         # Update items
         for item in items:

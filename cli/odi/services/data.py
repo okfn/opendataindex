@@ -22,23 +22,24 @@ def load_history(entity):
     return data
 
 
-def load_items(entity, year=None):
+def load_items(entity, year=None, exclude=True):
     """Load json results from url.
     """
     if year is None:
         year = config.ODI['current_year']
-    hash = '-'.join([entity, year])
+    hash = '-'.join([entity, year, str(exclude)])
     if hash not in cache:
         db = config.ODI['database'][entity]
         url = db.format(year=year)
         pld = {}
-        for item in ['datasets', 'places']:
-            key = 'exclude_%s' % item
-            try:
-                value = ','.join(config.ODI['exclude'][year][item])
-                pld[key] = value
-            except Exception:
-                pass
+        if exclude:
+            for item in ['datasets', 'places']:
+                key = 'exclude_%s' % item
+                try:
+                    value = ','.join(config.ODI['exclude'][year][item])
+                    pld[key] = value
+                except Exception:
+                    pass
         res = requests.get(url, params=pld)
         json = res.json()
         items = json['results']
