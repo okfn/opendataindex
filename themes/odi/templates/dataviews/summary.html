@@ -15,7 +15,7 @@
         {% else %}
         {{ scope.no_change }}
         {% endif %}
-        from {{ scope.open_percent[scope.value_lookup_previous] }}% in {{ scope.odi.previous_year }}
+        from {{ scope.open_percent[scope.value_lookup_previous] }}% in {{ scope.previous_year }}
     </small>
     {% endif %}
   </div>
@@ -35,7 +35,7 @@
         {% else %}
         {{ scope.no_change }}
         {% endif %}
-        from {{ scope.place_count[scope.value_lookup_previous] }} in {{ scope.odi.previous_year }}
+        from {{ scope.place_count[scope.value_lookup_previous] }} in {{ scope.previous_year }}
     </small>
     {% endif %}
   </div>
@@ -55,7 +55,7 @@
         {% else %}
         {{ scope.no_change }}
         {% endif %}
-        from {{ scope.entry_count[scope.value_lookup_previous] }} in {{ scope.odi.previous_year }}
+        from {{ scope.entry_count[scope.value_lookup_previous] }} in {{ scope.previous_year }}
     </small>
     {% endif %}
   </div>
@@ -75,7 +75,7 @@
         {% else %}
         {{ scope.no_change }}
         {% endif %}
-        from {{ scope.open_count[scope.value_lookup_previous] }} in {{ scope.odi.previous_year }}
+        from {{ scope.open_count[scope.value_lookup_previous] }} in {{ scope.previous_year }}
     </small>
     {% endif %}
   </div>
