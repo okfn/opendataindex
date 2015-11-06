@@ -5,7 +5,7 @@ require.config({
         tablesorter: {deps: ['jquery']},
         stickykit: {deps: ['jquery']},
         kinetic: {deps: ['jquery']},
-        sexytables: {deps: ['kinetic']}
+        sexyTables: {deps: ['kinetic']}
     },
     paths: {
         app: 'scripts/site/main',
@@ -20,7 +20,7 @@ require.config({
         place: 'scripts/site/place',
         ui: 'scripts/site/ui',
         kinetic: 'vendor/jquery.kinetic.min',
-        sexytables: 'vendor/sexytables-1.0.min'
+        sexyTables: 'vendor/sexytables-1.0.min'
     }
 });
 

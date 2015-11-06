@@ -19,20 +19,14 @@ popover_comparison_content, history, share %}
 
 <div class="table-responsive">
   <table id="places_overview_table" class="table data-table sexyTable">
-    <col style="width:6%">
-    <col style="width:13%">
-    {% for dataset in scope.datasets %}
-      <col style="width:7.5%">
-    {% endfor %}
-    <col style="width:6%">
     <thead>
       <tr>
-        <th title="{{ gettext('Sort by Rank') }}">{{ gettext('Rank') }}</th>
-        <th title="{{ gettext('Sort by A-Z') }}">{{ gettext('Place') }}</th>
+        <th class="sort_rank" title="{{ gettext('Sort by Rank') }}">{{ gettext('Rank') }}</th>
+        <th class="sort_place" title="{{ gettext('Sort by A-Z') }}">{{ gettext('Place') }}</th>
         {% for dataset in scope.datasets %}
           {% if dataset[scope.score_lookup]|int %}
             <th>
-              <span class="dataset-title-context" data-toggle="popover" title="{{ dataset.title }}" data-content="{{ dataset.description|markdown|e|safe }}">{{ dataset.title }}</span>
+              <div><span class="dataset-title-context" data-toggle="popover" title="{{ dataset.title }}" data-content="{{ dataset.description|markdown|e|safe }}">{{ dataset.title }}</span></div>
             </th>
           {% endif %}
         {% endfor %}
@@ -43,7 +37,7 @@ popover_comparison_content, history, share %}
       {% for place in scope.places %}
         <tr data-rank="{{ place[scope.rank_lookup] or scope.odi.na }}" data-score="{{ place[scope.score_lookup] or scope.odi.na }}" data-place="{{ place.slug }}">
           <td class="rank" data-rank="{{ place[scope.rank_lookup] }}">
-            {{ place[scope.rank_lookup] }}
+            <div>{{ place[scope.rank_lookup] }}</div>
           </td>
           <td>
             <a href="{{ SITEURL }}/place/{{ place.slug }}/" title="{{ place.name }}">
