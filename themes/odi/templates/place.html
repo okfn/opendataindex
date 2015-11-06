@@ -32,7 +32,7 @@
             <div class="row relative">
                 <div class="col-md-2 change"><i class="fa fa-{% if scope.place[scope.rank_lookup_previous]|int > scope.place[scope.rank_lookup]|int %}arrow-up{% elif scope.place[scope.rank_lookup_previous]|int < scope.place[scope.rank_lookup]|int %}arrow-down{% else %}minus{% endif %}"></i></div>
                 <div class="col-md-8">
-                    {{ scope.place.name }}'s {{ gettext('overall Index ranking') }} is {% if scope.place[scope.rank_lookup_previous]|int > scope.place[scope.rank_lookup]|int %}{{ scope.higher|lower }}{% elif scope.place[scope.rank_lookup_previous]|int < scope.place[scope.rank_lookup]|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.place[scope.rank_lookup_previous] }} {{ gettext('in') }} {{ scope.odi.previous_year }}
+                    {{ scope.place.name }}'s {{ gettext('overall Index ranking') }} is {% if scope.place[scope.rank_lookup_previous]|int > scope.place[scope.rank_lookup]|int %}{{ scope.higher|lower }}{% elif scope.place[scope.rank_lookup_previous]|int < scope.place[scope.rank_lookup]|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.place[scope.rank_lookup_previous] }} {{ gettext('in') }} {{ scope.previous_year }}
                 </div>
             </div>
             {% endif %}

@@ -32,12 +32,14 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
     {% set year = page.year or scope.odi.current_year %}
     {% set previous_year = ((year|int)-1)|string %}
     {% do scope.update({
+        'previous_year': previous_year,
         'rank_lookup_previous': '%s%s'|format('rank_', previous_year),
         'score_lookup_previous': '%s%s'|format('score_', previous_year),
         'value_lookup_previous': '%s%s'|format('value_', previous_year)
     }) %}
 {% else %}
     {% do scope.update({
+        'previous_year': '',
         'rank_lookup_previous': '',
         'score_lookup_previous': '',
         'value_lookup_previous': ''
