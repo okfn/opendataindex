@@ -8230,36 +8230,53 @@ textarea {
   background-color: transparent;
   padding: 0;
 }
+.navbar-header {
+  margin-top: 15px;
+}
 .navbar-default {
-  background-color: #f0f0f0;
   border-width: 0;
 }
+.navbar-default .container {
+  background-color: #181818;
+  padding-bottom: 15px;
+}
+.navbar-default ul.navbar-nav {
+  margin-top: 10px;
+}
 .navbar-default .navbar-nav > li > a {
-  color: #2d2d2d;
+  color: #f5f5f5;
   padding-top: 19px;
   padding-bottom: 19px;
+  font-size: 16px;
 }
 .navbar-default .navbar-nav > li > a:hover {
-  color: #8e8e8e;
-  background-color: #dfdfdf;
+  color: #f5f5f5;
+  background-color: #181818;
 }
-.navbar-default .navbar-brand {
+.logo {
+  height: 100%;
+}
+.logo a {
   display: block;
   padding: 0;
-  line-height: 58px;
   margin-right: 20px;
 }
-.navbar-default .navbar-brand img {
-  display: inline;
-  margin-top: -5px;
-  margin-right: 5px;
+.logo a img {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  float: left;
 }
-.navbar-default .navbar-brand span {
-  color: #7AB800;
+.logo a span {
+  color: #f5f5f5;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: .23em;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  float: left;
 }
 #footer {
   margin-top: 40px;
@@ -8580,7 +8597,7 @@ h3 a:hover {
   border-radius: 0 !important;
   font-size: 30px;
   font-weight: 300;
-  background-color: #2d2d2d;
+  background-color: #181818;
 }
 #places_overview_table thead tr th:first-child,
 #datasets_overview_table thead tr th:first-child,
@@ -8667,7 +8684,7 @@ th.header.headerSortUp:after {
 }
 .place-rank {
   background-color: #f5f5f5;
-  color: #2d2d2d;
+  color: #181818;
   padding: 8px;
   font-size: 24px;
   font-weight: 300;
