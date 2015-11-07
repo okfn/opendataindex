@@ -32,7 +32,7 @@
             <div class="row relative">
                 <div class="col-md-1 change"><i class="fa fa-{% if scope.dataset[scope.rank_lookup_previous]|int > scope.dataset[scope.rank_lookup]|int %}arrow-up{% elif scope.dataset[scope.rank_lookup_previous]|int < scope.dataset[scope.rank_lookup]|int %}arrow-down{% else %}minus{% endif %}"></i></div>
                 <div class="col-md-11">
-                    {{ gettext('The Index average ranking for ') }} {{ scope.dataset.title }} is {% if scope.dataset[scope.rank_lookup_previous]|int > scope.dataset[scope.rank_lookup]|int %}{{ scope.higher|lower }}{% elif scope.dataset[scope.rank_lookup_previous]|int < scope.dataset[scope.rank_lookup]|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.dataset[scope.rank_lookup_previous] }} {{ gettext('in') }} {{ scope.odi.previous_year }}
+                    {{ gettext('The Index average ranking for ') }} {{ scope.dataset.title }} is {% if scope.dataset[scope.rank_lookup_previous]|int > scope.dataset[scope.rank_lookup]|int %}{{ scope.higher|lower }}{% elif scope.dataset[scope.rank_lookup_previous]|int < scope.dataset[scope.rank_lookup]|int %}{{ scope.lower|lower }}{% else %}{{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.dataset[scope.rank_lookup_previous] }} {{ gettext('in') }} {{ scope.previous_year }}
                 </div>
             </div>
             {% endif %}
