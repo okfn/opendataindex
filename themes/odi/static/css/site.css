@@ -8235,9 +8235,9 @@ textarea {
 }
 .navbar-default {
   border-width: 0;
+  background-color: #181818;
 }
 .navbar-default .container {
-  background-color: #181818;
   padding-bottom: 15px;
 }
 .navbar-default ul.navbar-nav {
