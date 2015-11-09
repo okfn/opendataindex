@@ -1,0 +1,64 @@
+id,question,description,type,placeholder,score,icon,dependants
+openlicense,Openly licensed,"<p>The licence must comply with the Open Definition which allows data to be freely used, reused and redistributed. The Open Definition provides a list of conformant licences. If the data uses one of these licences, it is openly licensed.</p>
+<p>Licences are commonly found in:</p>
+<ul>
+<li>the web page footer</li>
+<li>a link to Terms &amp; Conditions</li>
+<li>the About section</li>
+</ul>
+<p>Some licences may allow re-use and redistribution but have not been assessed as conformant with the Open Definition. In this case, seek feedback on the Open Data Index discussion forum</p>
+",,,30,unlock-alt,[u'licenseurl']
+free,Is the data available for free,"<p>The data is free if you don’t have to pay for it.</p>
+",,,15,dollar,
+machinereadable,Is the data machine readable,"<p>All files are digital, but not all can be processed or parsed easily by a computer. In order to answer this question, you would need to look at the file type of the dataset. As a rule of thumb the following file types are machine readable:</p>
+<ul>
+<li>XLS</li>
+<li>CSV</li>
+<li>JSON</li>
+<li>XML</li>
+</ul>
+<p>The following formats are NOT machine readable:</p>
+<ul>
+<li>HTML</li>
+<li>PDF</li>
+<li>DOC</li>
+<li>JIF</li>
+<li>JPEG</li>
+<li>PPT</li>
+</ul>
+<p>If you have a different file type and you don’t know if it’s machine readable or not, ask in the Open Data Census forum</p>
+",,,15,keyboard-o,[u'format']
+bulk,Available in bulk,"<p>Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.</p>
+<p>For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.</p>
+",,,10,copy,
+uptodate,Is the data provided on a timely and up to date basis,"<p>Is the data current for the census year? You can determine or estimate when the data was last updated and its update frequency by reviewing:</p>
+<ul>
+<li>the metadata displayed for the data in an open data portal or web page</li>
+<li>the dataset title or filename e.g. Budget 2013-14 or Election_4July2015.csv</li>
+<li>metadata tags embedded in the web page that contains the data</li>
+<li>date values within the data to find the most recent date value</li>
+<li>the timestamp on the data file (although this may not be accurate)</li>
+<li>Some data is not updated on a regular basis. e.g. Pollutant emissions may be updated daily - while postal codes may not change for many years. </li>
+</ul>
+<p>You may need to use your judgement to determine if the data is timely and up to date. Document your rationale in the comments section.</p>
+<p>If you cannot determine a date, answer, &quot;NO&quot; i.e. the data is not timely or up-to-date.</p>
+",,,10,clock-o,
+public,Publicly available,"<p>Can the data be accessed by the public without restrictions? Data is considered publicly available when:</p>
+<ul>
+<li>It can be accessed online without the need for a password or permissions.</li>
+<li>If the data is in paper form, can be accessed by the public, and there is no restrictions on the number of photocopies that can be made.</li>
+</ul>
+<p>Data is <strong>NOT</strong> publicly available when:</p>
+<ul>
+<li>It is only made available after making a request.</li>
+<li>It was availiable because of FOIA. </li>
+<li>It can only be accessed by government officials.</li>
+</ul>
+",,,5,eye,
+digital,Is data in digital form,"<p>Data can be in a digital format, but not accessible online. For example: A country budget can be stored on a spreadsheet or otherwise on a private government network, but not on the Internet. This means that the data is digital, but not publicly available. If you know that the data is digital somewhere inside the government (e.g. a government official tells you so), then you should answer “YES” to this question and note in the comment section how you discovered the data is in digital form.</p>
+",,,5,save,
+online,Is the data available online,"<p>Data is online if it can be accessed via the Internet (e.g. a website or open data portal). If the data has been emailed to you but is not accessible via the Internet, it is not considered to be available online.</p>
+",,,5,download,[u'url']
+exists,Does the data exist,"<p>Data must come from an official resource either issued directly by the government or by a third party officially representing the government. Data offered by companies, citizen initiatives or any non-governmental organisation do not count for the Index.</p>
+<p>If the government has given the right to publish the data to third parties, a submission with a link a to third party site is allowed. The third-party site must explicitly state that the data has been commissioned by the government. Check if the organization has an agreement with the government to be the official source and make a note in the comment section.</p>
+",,,5,file-o,"[u'publisher', u'officialtitle']"

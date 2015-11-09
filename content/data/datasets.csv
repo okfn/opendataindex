@@ -1,0 +1,140 @@
+id,title,category,description,icon,rank,score,rank_2014,score_2014,rank_2013,score_2013
+statistics,National Statistics,Civic Information,"<p>Key national statistics such as demographic and economic indicators (GDP, unemployment, population, etc). To satisfy this category,  the following minimum criteria must be met:</p>
+<ul>
+<li>GDP for the whole country updated at least quarterly</li>
+<li>Unemployment statistics updated at least monthly</li>
+<li>Population updated at least once a year</li>
+</ul>
+",,1,63,2,67,2,68
+budget,Government Budget,Finance,"<p>National government budget at a high level. This category is looking at budgets, or the planned government expenditure for the upcoming year, and not the actual expenditure. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Planned budget divided by government department and sub-department</li>
+<li>Updated once a year.</li>
+<li>The budget should include descriptions regarding the different budget sections.</li>
+</ul>
+",,1,63,1,67,1,69
+legislation,Legislation,Legislative,"<p>This data category requires all national laws and statutes available to be available online, although it is not a requirement that information on legislative behaviour e.g. voting records is available. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Content of the law / status</li>
+<li>If applicable, all relevant amendments to the law</li>
+<li>Date of last amendments</li>
+<li>Data should be updated at least on quarterly  </li>
+</ul>
+",,3,53,4,54,4,59
+elections,Election Results,Civic Information,"<p>This data category requires results by constituency / district for all major national electoral contests. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Result for all major electoral contests</li>
+<li>Number of registered votes</li>
+<li>Number of invalid votes</li>
+<li>Number of spoiled ballots</li>
+<li>All data should be reported at the level of the polling station</li>
+</ul>
+",,4,48,3,60,3,66
+procurement,Procurement tenders ,Finance,"<p>All tenders and awards of the national/federal government aggregated by office. Monitoring tenders can help new groups to participate in tenders and increase government compliance. Data submitted in this category must be aggregated by office, updated at least monthly &amp; satisfy the following minimum criteria:</p>
+<p>Tenders:</p>
+<ul>
+<li>tenders name</li>
+<li>tender description</li>
+<li>tender status</li>
+</ul>
+<p>Awards:</p>
+<ul>
+<li>Award title</li>
+<li>Award description</li>
+<li>value of the award</li>
+<li>suppliers name</li>
+</ul>
+",,5,44,11,0,11,0
+map,National Map,Geodata,"<p>This data category requires a high level national map. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Scale of 1:250,000 (1 cm = 2.5km).</li>
+<li>Markings of national roads</li>
+<li>National borders</li>
+<li>Marking of streams, rivers, lakes, mountains.</li>
+<li>Updated at least once a year.</li>
+</ul>
+",,6,37,5,45,5,52
+timetables,Transport Timetables,Transport,"<p>Timetables of major government operated (or commissioned) <em>national-level</em> public transport services (specifically bus and train). The focus here is on national level services (not those which operate <em>only</em> at a municipal or city level and which are not controlled or regulated by the national government). A &#39;yes&#39; in any question will refer to both types of transport. However, if there is no national level service operated or regulated by the government for a given type of transport (for instance busses), then this type is ignored in this data category. Data submitted in this category should meet the following minimum criteria:</p>
+<ul>
+<li>Time of operating</li>
+<li>Time of leaving first station and arriving to the last station</li>
+<li>Updated at least once a year</li>
+</ul>
+",,7,33,8,38,9,42
+emissions,Pollutant Emissions,Environment,"<p>Aggregate data about the emission of air pollutants especially those potentially harmful to human health (although it is not a requirement to include information on greenhouse gas emissions). Aggregate means national-level or available for at least three major cities. In order to satisfy the minimum requirements for this category, data must be available for the following pollutants and meet the following minimum criteria:</p>
+<ul>
+<li>Particulate matter (PM) Levels</li>
+<li>Sulphur oxides (SOx)</li>
+<li>Nitrogen oxides (NOx)</li>
+<li>Volatile organic compounds (VOCs)</li>
+<li>Carbon monoxide (CO)</li>
+<li>Updated on at least once a week.</li>
+<li>Measured either at a national level by regions or at leasts in 3 big cities.</li>
+</ul>
+",,8,32,7,41,7,44
+companies,Company Register,Civic Information,"<p>List of registered (limited liability) companies. The submissions in this data category does not need to include detailed financial data such as balance sheet etc. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Name of company</li>
+<li>Unique identifier of the company</li>
+<li>Company address</li>
+<li>Updated at least once a month</li>
+</ul>
+",,9,29,6,42,6,45
+weather,Weather forecast,Environment,"<p>5 days forecast of temperature, precipitation and wind as well as recorded data for temperature, wind and precipitation for the past year. In order to satisfy the minimum requirements for this category, data submitted should meet the following criteria:</p>
+<ul>
+<li>5 days forecast of temperature updated daily</li>
+<li>5 days forecast of wind updated daily</li>
+<li>5 days forecast of precipitation updated daily</li>
+<li>Historical temperature data for the past year</li>
+</ul>
+",,10,28,11,0,11,0
+postcodes,Location datasets,Geodata,"<p>A database of postcodes/zipcodes and the corresponding spatial locations in terms of a latitude and a longitude (or similar coordinates in an openly published national coordinate system). If a postcode/zipcode system does not exist in the country, please submit a dataset of administrative borders. Data submitted in this category must satisfy the following minimum conditions</p>
+<ul>
+<li>Zipcodes</li>
+<li>Address</li>
+<li>Coordinate (latitude longitude)</li>
+<li>national level</li>
+<li><p>updated once a year</p>
+</li>
+<li><p>Administrative boundaries</p>
+</li>
+<li>Boarders poligone</li>
+<li>name of poligone (city, neighborhood)</li>
+<li>national level</li>
+<li>updated once a year</li>
+</ul>
+",,11,24,9,27,8,43
+land,Land Ownership,Civic Information,"<p>Cadaster showing land ownership data on a map and include all metadata on the land. Cadaster data submmitted in this category must include the following charateristics: </p>
+<ul>
+<li>Land boarders</li>
+<li>Land owners name</li>
+<li>Land size</li>
+<li>national level</li>
+<li>updated yearly</li>
+</ul>
+",,12,18,11,0,11,0
+water,Water Quality,Environment,"<p>Data, measured at the water source, on the quality of water is essential for both the delivery of services and the prevention of diseases. In order to satisfy the minimum requirements for this category, data should be available on level of the following chemicals by water source and be updated at least weekly:</p>
+<ul>
+<li>fecal coliform</li>
+<li>arsenic</li>
+<li>fluoride levels</li>
+<li>nitrates</li>
+<li>TDS (Total dissolved solids)</li>
+</ul>
+",,13,17,11,0,11,0
+spending,Government Spending,Finance,"<p>Records of actual (past) national government spending at a detailed transactional level; A database of contracts awarded or similar will <em>not</em> considered sufficient. This data category refers to detailed ongoing data on <em>actual</em> expenditure. Data submitted in this category should meet the following minimum criteria:</p>
+<ul>
+<li>Individual record of transactions.</li>
+<li>Date of the transactions</li>
+<li>Government office which had the transaction</li>
+<li>Name of vendor</li>
+<li>amount of the transaction</li>
+<li>Update on a monthly basis</li>
+</ul>
+",,14,13,10,17,10,23
+health,Health performance,Civic Information,"<p>Geo location of public hospitals and health facilities with opening hours and infectious diseases rate, updated at least once a year. Data submitted in this category must include the following:</p>
+<ul>
+<li>Location of public hospitals and clinics.</li>
+<li>Data on infectious diseases rates in a country. </li>
+</ul>
+",,15,6,11,0,11,0
