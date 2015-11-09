@@ -1,0 +1,80 @@
+id,question,description,type,placeholder,score,icon,dependants
+exists,Does the data exist,"We are looking for government data from an official resource either issued directly by the government or by a third party representing the government.
+
+Note that data offered by companies, citizen initiatives or any non-governmental organisation are not valid for submission.
+
+This means that we are looking only for what is officially published by governments. In some cases, the government will give the right to publish the data to third parties and in such cases submissions linking to third party sites are valid. It must, however, be explicitly stated on the data site that it is commissioned by the government (if the data is to be found on a company domain or on a domain of a civil society organisation or initiative, check if the organization has an agreement with the government to be the official source).",,,5,file-o,
+digital,Is data in digital form,"Can the data can be accessed from a computer or is it in the old paper form?
+If you can find it online, then it’s digital, even if it is just a scan of the paper the dataset is on.
+
+*Note that data can be digital, but not accessible online*.
+
+For example: A country budget can be stored on a private network in the government, but not on the Internet. This means that the data is digital, but not publicly accessible, (which is our next criteria, see further below). Still, if you have knowledge that the data is digital somewhere inside the government (for instance, if the government official you speak to tells you so), then you should mark this one “YES” (and add in the notes that you have the information from a phone call with a certain department or official person).
+",,,5,save,
+public,Publicly available,"This mean the data the can be accessed by the public and it it is not restricted. Click ""Show more"" to she the conditions for publicly open.
+
+
+The data can be considered public when:
+1. It can be accessed online without the need for a password or permissions.
+2. If the data is in paper form, can be accessed by the public and there is no restrictions on the number of photocopies that can be made.
+
+Data is **NOT** publicly available in the following cases:
+1. It can be made available only after a freedom of information request (FOIA) is sent.
+2. It can be accessed only by government officials.",,,5,eye,"publisher,title"
+free,Is the data available for free,If you have to pay for it – it is not free. ,,,15,dollar,
+online,Is the data available online,"if it’s on the Internet and you can access it, it’s online. Notice that if the government emailed you the dataset but didn’t upload it to any webpage, it is not to be considered available online.",,,5,download,url
+machinereadable,Is the data machine readable,"Files are digital, yes, but not all can be  processed or parsed easily by a computer.  In order to answer this question, you would need to look at the datasets file type.
+
+As a rule of thumb the following file types are machine readable:
+
+-    XLS
+-      CSV
+-      JSON
+-      XML
+
+If the files are in the following formats, the are NOT machine readable:
+
+-    HTML
+-      PDF
+-      DOC
+-      JIF
+-      JPEG
+-      PPT
+
+If you have a different file type and you don’t know if it’s machine readable or not, send an email to the Open Data Census list.",,,15,keyboard-o,format
+bulk,Available in bulk,"Data is available in bulk if the whole dataset can be downloaded easily. It is considered non-bulk if the citizens are limited to getting parts of the dataset through an online interface.
+
+For example, if restricted to querying a web form and retrieving a few results at a time from a very large database.",,,10,copy,
+openlicense,Openly licensed,"This mean the data term and conditions follows The Open Definition, which stipulates that in order for data to be open, it needs to be free to use, reuse or to redistribute.
+
+*Which licenses are open?*
+On the site of The Open Definition you can also see a directory of licenses that are certified open.
+
+*How can you find the license?*
+That can sometimes be the tricky part.
+Usually, license or Terms & Conditions can be found at the bottom of the website (linked in the footer) or under the website “About” section. If there is no visible license or the license is under the country's name, for example - “Copyrighted under the state of Lebanon” and there is no terms and condition or any other information on the site, the information is not open and you should answer “No”.
+
+If the information is licenced under Creative Commons licences, like in the case of Australia for instance, then the data is openly licensed (except if they are using Creative Commons’ non-commercial licenses - the ones with “NC” or “ND” in them - these are partially open, but not fully open according to The Open Definition - and therefore in this case to be considered not open).
+Note that sometimes countries do not license under Creative Commons, but the terms and conditions do allow use, re-use and distribution.  In that case we suggest you write to the Open Data Census list and get feedback from the community.
+
+",,,30,unlock-alt,licenseurl
+uptodate,Is the data provided on a timely and up to date basis,"This means if the data is relevant to the year/time it is suppose to represent? Click ""Show more"" to learn about how to find information for this question.
+
+For instance, if the latest national budget made available is from 2010, then it is not up-to-date. However, not all datasets need to be updated in the same frequencies. Transportation data can be updated on a daily basis while postal codes might not change for many years. Refere to the tutorial if you are having difficulties to decide the best time option for this dataset.
+
+*How to find when the data was published?*
+- If the dataset was found on a government portal, there will most often be a timestamp attached to it.
+- If the data was on the a government site, sometimes the date will be written next to the dataset link or in the news section.
+- Sometimes the date stamp is in the dataset itself. For example, a tab that is named after the date it suppose to represent (you can also try to download the data and see the creation date of the file, although that might not represent the right date - use your judgement and again, leave good comments about your assessment).
+- Lastly, sometimes there are no timestamps at all. In that case,it might be most fair to mark it not timely or up-to-date",,,10,clock-o,
+url,URL of data online,"The link to the specific dataset if that is possible. Otherwise to the home page for the data. If that is not impossible, then the link to main page of site on which the data is located. Only links to **official** sites are eligeble, not third party sites. When it is necessary for submitters to provide third party links, then they are put in the comments section.",url,http://gov-data-link.gov/...,,,
+format,Format of data,"This question describes the form that the data is available in. For example, for tabular data it might be: Excel, CSV, HTML or even PDF. For geodata it might be shapefiles, geojson or something else. If available in multiple formats, the format descriptors are listed separated with commas. Any further information is put in the comments section.",text,,,,
+licenseurl,URL to license or terms of use,"Please provide the url to the license or terms of use governing access and use of this data (if known). If there is more than one URL you would like to list, please just list the primary one in this field and add further information in the comments box below.",url,,,,
+dateavailable,Date data first openly available,"This question describes when the data first became openly available (online, in digital form, openly licensed etc). Sometimes this is approximate. For example, ""2012"" or ""Jan 2012"". If there is a precise date, then they are typed in in a yyyy-mm-dd format.
+If the data is not open, then this question will instead describe the date the data first became available at all. (Note: Obviously some open data was available in other forms previously, so the date specified here is the date it became openly available).",text,,,,
+title,Title and short description,Please enter the title(s) and excerpted short description(s) of the dataset(s) as provided by the publisher. Description should be kept to a few sentences (max 1 paragraph),text,,,,
+publisher,Data Publisher,"If known, please enter the department / organisation responsible for publishing this dataset along with contact email (if known). If the specific person responsible for this is known please also list them.",text,,,,
+qualityinfo,Rate Quality of the Data (Content),"Rate the quality of the data in terms of its actual content (ignoring structure) - is the data accurate, is it provided at a detailed, granular level, etc (and ignoring whether the data is in PDF or Excel or whether it is just human-readable rather than machine-readable). 1 is worst, 10 is best. Please justify your rating in the details and comments section",select,,,,
+qualitystructure,Rate Quality of Data (Structure),"Rate the quality of the data in terms of how well it is structured, and how easy it is to use. For example, is the data provided in a good data format (CSV vs PDF), are the files well structured and easy to process programmatically (or do you have to clean them before ue), is there an API? 1 is worst, 10 is best. Please justify your rating in the details and comments section.",select,,,,
+details,Further Details and Comments (optional but strongly encouraged),"Please add detail here to expand on and support your answers above. Information on data availability is especially useful, for example, is the data partially available, are there plans to make it available in the future? is the data available from an unofficial source.",textarea,,,,
+,,,,,,,
