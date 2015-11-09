@@ -46,18 +46,22 @@ class Datasets(object):
         # Load history items by year
         history = services.data.load_history(self.entity)
 
-        # Update history
-        for year in history:
-            max_score = Places.get_max_score(year)
-            for item in history[year].values():
-                item['score'] = int(100 * item['score'] / max_score)
+        # Load items (with excluded)
+        items = services.data.load_items(self.entity, exclude=False)
 
-        # Get current year items
-        items = list(history[config.ODI['current_year']].values())
+        # Fix item relative scores (because of excluded)
+        # Rank and score will be fixed further
+        for item in items:
+            hist_item = history[config.ODI['current_year']].get(item['id'])
+            if hist_item:
+                item['relativeScore'] = hist_item['relativeScore']
+            else:
+                item['relativeScore'] = 0
 
         # Update items
         for item in items:
             item['title'] = item['name']
+            item['score'] = item['relativeScore']
 
         # Add prev years to items
         services.data.add_prev_years_to_items(history, self.fieldnames, items)
@@ -67,15 +71,6 @@ class Datasets(object):
 
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
-
-    @classmethod
-    def get_max_score(cls, year):
-        """Return max available score.
-        """
-        questions_max_score = Questions.get_max_score()
-        stats = Entries.get_statistics()
-        item_count = stats[year]['%s_count' % cls.entity]
-        return questions_max_score * item_count
 
 
 class Entries(object):
@@ -225,16 +220,6 @@ class Questions(object):
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
 
-    @classmethod
-    def get_max_score(cls):
-        """Return max available score.
-        """
-        score = 0
-        items = services.data.load_items(cls.entity)
-        for item in items:
-            score += item['score']
-        return score
-
 
 class Places(object):
 
@@ -263,14 +248,17 @@ class Places(object):
         # Get helper data
         sub_rev = Entries.get_submitters_and_reviewers()
 
-        # Update history
-        for year in history:
-            max_score = Datasets.get_max_score(year)
-            for item in history[year].values():
-                item['score'] = int(100 * item['score'] / max_score)
+        # Load items (with excluded)
+        items = services.data.load_items(self.entity, exclude=False)
 
-        # Get current year items
-        items = list(history[config.ODI['current_year']].values())
+        # Fix item relative scores (because of excluded)
+        # Rank and score will be fixed further
+        for item in items:
+            hist_item = history[config.ODI['current_year']].get(item['id'])
+            if hist_item:
+                item['relativeScore'] = hist_item['relativeScore']
+            else:
+                item['relativeScore'] = 0
 
         # Update items
         for item in items:
@@ -278,6 +266,7 @@ class Places(object):
             reviewers = sub_rev['reviewers'].get(item['id'], set())
             item['submitters'] = '~*'.join(submitters)
             item['reviewers'] = '~*'.join(reviewers)
+            item['score'] = item['relativeScore']
 
         # Add prev years to items
         services.data.add_prev_years_to_items(history, self.fieldnames, items)
@@ -288,16 +277,9 @@ class Places(object):
         # Save items as csv
         services.data.save_items(self.entity, self.fieldnames, items)
 
-    @classmethod
-    def get_max_score(cls, year):
-        """Return max available score.
-        """
-        questions_max_score = Questions.get_max_score()
-        stats = Entries.get_statistics()
-        item_count = stats[year]['%s_count' % cls.entity]
-        return questions_max_score * item_count
 
-
+# TODO: refactoring
+# Move stats logic to Census?
 class Summary(object):
 
     # Public
@@ -308,10 +290,10 @@ class Summary(object):
         'title',
     ]
     metrics = [
-        'places_count',
-        'entries_count',
-        'isopen_count',
-        'isopen_percent',
+        {'id': 'places_count', 'title': 'Number of Places'},
+        {'id': 'entries_count', 'title': 'Number of Entries'},
+        {'id': 'isopen_count', 'title': 'Number of Open Datasets'},
+        {'id': 'isopen_percent', 'title': 'Percent Open'},
     ]
 
     def run(self):
@@ -330,10 +312,10 @@ class Summary(object):
         # Generate items
         items = []
         for metric in self.metrics:
-            item = {'id': metric, 'title': metric}
+            item = {'id': metric['id'], 'title': metric['title']}
             for year in config.ODI['years']:
                 key = self.generate_value_key(year)
-                item[key] = stats[year][metric]
+                item[key] = stats[year][metric['id']]
             items.append(item)
 
         # Save items as csv

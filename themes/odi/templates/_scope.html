@@ -21,20 +21,25 @@ _scope.html exposes the `scope` variable - a dict with common stuff we need thro
         'score_lookup': 'score',
         'value_lookup': 'value'
     }) %}
-    {% if page.year %}
-        {% do scope.update({
-            'rank_lookup_previous': '%s%s'|format('rank_', scope.odi.previous_year),
-            'score_lookup_previous': '%s%s'|format('score_', scope.odi.previous_year),
-            'value_lookup_previous': '%s%s'|format('value_', scope.odi.previous_year)
-        }) %}
-    {% endif %}
 {% else %}
     {% do scope.update({
         'rank_lookup': '%s%s'|format('rank_', page.year),
         'score_lookup': '%s%s'|format('score_', page.year),
         'value_lookup': '%s%s'|format('value_', page.year)
     }) %}
+{% endif %}
+{% if (page.year != scope.odi.years[-1]) %}
+    {% set year = page.year or scope.odi.current_year %}
+    {% set previous_year = ((year|int)-1)|string %}
     {% do scope.update({
+        'previous_year': previous_year,
+        'rank_lookup_previous': '%s%s'|format('rank_', previous_year),
+        'score_lookup_previous': '%s%s'|format('score_', previous_year),
+        'value_lookup_previous': '%s%s'|format('value_', previous_year)
+    }) %}
+{% else %}
+    {% do scope.update({
+        'previous_year': '',
         'rank_lookup_previous': '',
         'score_lookup_previous': '',
         'value_lookup_previous': ''
