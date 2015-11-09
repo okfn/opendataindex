@@ -20,3 +20,4 @@ config_instance.py
 /cli/*.egg-info
 # data processing stuff
 tmp/*
+venv

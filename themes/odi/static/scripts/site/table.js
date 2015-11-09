@@ -39,15 +39,25 @@ define(['jquery', 'bootstrap', 'chroma', 'tablesorter', 'stickykit'], function($
                 5: {sorter: false},
                 6: {sorter: false},
             }
-        };
+        },
+        sortFlag = true;
 
     $('#places_overview_table').tablesorter(tablesorterPlaceOptions);
     $('#datasets_overview_table').tablesorter(tablesorterDatasetOptions);
     $('#slice-table').tablesorter(tablesorterSliceOptions);
-
-    $("#places_overview_table thead").stick_in_parent();
+    
     $("#datasets_overview_table thead").stick_in_parent();
     $("#slice-table thead").stick_in_parent();
+
+
+    $('.content').on('click', '.sexyHeader .sort_rank, .sexyHeader .sort_place', function(e){
+        $("#places_overview_table").trigger("sorton", [ [[ $(e.target).hasClass('sort_place')/1, sortFlag]] ]);
+        $('.headerSortDown').removeClass('headerSortDown');
+        $('.headerSortUp').removeClass('headerSortUp');
+        $(e.target).addClass((sortFlag)?"headerSortUp":"headerSortDown");
+        sortFlag = !sortFlag;
+    });
+
 
     function filterTable(table, query, $actor) {
 

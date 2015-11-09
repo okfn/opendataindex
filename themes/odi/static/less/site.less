@@ -1,6 +1,7 @@
 @import (less) '../vendor/bootstrap/less/bootstrap';
 @import (less) '../vendor/font-awesome/less/font-awesome';
 @import (less) '../vendor/lato/less/lato';
+@import (less) '_sexytables';
 
 @fa-font-path: '../vendor/font-awesome/fonts';
 @lato-font-path: '../vendor/lato/font';
@@ -8,7 +9,7 @@
 @color-okf-green: #7AB800;
 @color-okf-grey: #f0f0f0;
 @color-okf-yellow: #E9D046;
-@color-okf-black: #2d2d2d;
+@color-okf-black: #181818;
 @color-okf-white: #f5f5f5;
 
 @color-maybe: #2980b9;
@@ -76,37 +77,58 @@ textarea {
   // margin-bottom: 0;
 }
 
+
 // Header
+.navbar-header {
+  margin-top: 15px;
+}
+
 .navbar-default {
-  background-color: @color-okf-grey;
   border-width: 0;
+  .container {
+    background-color: @color-okf-black;
+    padding-bottom: 15px;
+  }
+
+  ul.navbar-nav {
+    margin-top:10px;
+  }
   .navbar-nav > li {
     > a {
-      color: #2d2d2d;
+      color: @color-okf-white;
       padding-top: 19px;
       padding-bottom: 19px;
+      font-size: 16px;
       &:hover {
-        color: #8e8e8e;
-        background-color: #dfdfdf;
+        color: @color-okf-white;
+        background-color: @color-okf-black;
       }
     }
   }
-  .navbar-brand {
+}
+
+.logo {
+  height: 100%;
+  a {
     display: block;
     padding: 0;
-    line-height: 58px;
     margin-right: 20px;
     img {
-      display: inline;
-      margin-top: -5px;
-      margin-right: 5px;
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%;
+      float: left;
     }
     span {
-      color: @color-okf-green;
+      color: @color-okf-white;
       font-weight: bold;
       text-transform: uppercase;
       font-size: 16px;
       letter-spacing: .23em;
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%;
+      float: left;
     }
   }
 }
@@ -242,7 +264,6 @@ textarea {
 }
 
 // UNSORTED STYLING...
-
 .rank,
 .score {
   text-align: center;
@@ -302,12 +323,17 @@ ul.availability, ul.data-table-key {
   border-color: @color-no;
 }
 
-.availability-comparative li {
-  display: inline-block;
-  line-height: 24px;
-  width: 5px;
-  padding-left: 0;
-  padding-right: 0;
+
+.availability-comparative {
+  display: table;
+  width: 100%;
+
+  li {
+    display: table-cell;
+    line-height: 24px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .availability-slice li {
@@ -360,8 +386,8 @@ ul.availability-popover {
 }
 
 .availability-single li {
-    margin-top: 8px;
-    margin-bottom: 8px
+  margin-top: 8px;
+  margin-bottom: 8px
 }
 
 ul.availability-single {
@@ -370,10 +396,10 @@ ul.availability-single {
 }
 
 .availability-single li i {
-    color: white;
-    padding: 2px;
-    width: 22px;
-    text-align: center;
+  color: white;
+  padding: 2px;
+  width: 22px;
+  text-align: center;
 }
 
 .availability-single li.yes i {
@@ -401,7 +427,7 @@ ul.availability-single {
 }
 
 .search-tool {
-    padding-left: 1.5em;
+  padding-left: 1.5em;
 }
 
 // Responsive: small
@@ -458,7 +484,7 @@ h1, .h1 {
 }
 
 h3 {
-    a {
+  a {
     color: black;
     &:hover {
       color: block;
@@ -508,6 +534,18 @@ h3 {
   }
 }
 
+#places_overview_table {
+  thead tr th {
+    height: 100px;
+
+    .dataset-title-context {
+      display: block;
+      .rotate(-90deg);
+      padding: 8px;
+    }
+  }
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -521,29 +559,29 @@ h3 {
 }
 
 th.header.headerSortDown:after {
-   font-family: FontAwesome;
-   content: @fa-var-arrow-circle-down;
-   text-align: right;
-   float: right;
+  font-family: FontAwesome;
+  content: @fa-var-arrow-circle-down;
+  text-align: right;
+  float: right;
 }
 
 th.header.headerSortUp:after {
-   font-family: FontAwesome;
-   content: @fa-var-arrow-circle-up;
-   text-align: right;
-   float: right;
+  font-family: FontAwesome;
+  content: @fa-var-arrow-circle-up;
+  text-align: right;
+  float: right;
 }
 
 .google-plus {
-    color: #D34836;
+  color: #D34836;
 }
 
 .twitter {
-    color: #4099FF;
+  color: #4099FF;
 }
 
 .facebook {
-    color: #3B5998;
+  color: #3B5998;
 }
 
 .home-about, #home-visualisation {
@@ -584,48 +622,48 @@ th.header.headerSortUp:after {
 }
 
 #data-header {
-    h1, h3 {
-        font-weight: 300;
+  h1, h3 {
+    font-weight: 300;
+  }
+
+  .open-badge {
+    text-align: right;
+    float: right;
+    clear: both;
+    width: 132px;
+
+    img {
+      width: 132px;
     }
+  }
 
-    .open-badge {
-        text-align: right;
-        float: right;
-        clear: both;
-        width: 132px;
+  .statistics, .relative, .content, .navigate {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-        img {
-          width: 132px;
-        }
+  .statistics {
+
+
+  }
+
+  .relative {
+    font-size: 20px;
+    font-weight: 300;
+
+    .change {
+      text-align: center;
+      font-size: 32px;
+      margin-top: 4px;
     }
-
-    .statistics, .relative, .content, .navigate {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .statistics {
-
-
-    }
-
-    .relative {
-        font-size: 20px;
-        font-weight: 300;
-
-        .change {
-            text-align: center;
-            font-size: 32px;
-            margin-top: 4px;
-        }
-    }
+  }
 }
 
 .dataset-about {
 
-    h3 {
-        //font-weight: 300;
-    }
+  h3 {
+    //font-weight: 300;
+  }
 }
 
 .is_stuck {
