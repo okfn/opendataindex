@@ -22,6 +22,9 @@ Getting setup with the code is easy if you have some familiarity with Python and
     * Use `odi populate --limited` if you have a large amount of data (like the Global Index), and want a smaller set for local development (see Configuration below)
 * `./develop_server.sh start` to run a server that watches and builds
 
+> Use `python cli/debug.py` commad instead of `odi` command in development mode
+and to be sure it's a fresh version of CLI.
+
 [Pelican documentation for more information](http://docs.getpelican.com)
 
 ## Configuration
