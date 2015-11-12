@@ -180,7 +180,7 @@ ODI = {
             'places': [
                 'am', 'ba', 'bd', 'bt', 'by', 'cy', 'gh', 'gi', 'hr',
                 'ht', 'hu', 'ls', 'lt', 'mt', 'nz', 'pe', 'pl', 'rs',
-                'si', 'sl', 'uz', 'va', 've', 'vg', 'vi', 'ye', 'zm`',
+                'si', 'sl', 'uz', 'va', 've', 'vg', 'vi', 'ye', 'zm',
                 'zw',
             ],
         },
