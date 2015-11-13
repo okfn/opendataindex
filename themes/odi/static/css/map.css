@@ -419,7 +419,7 @@ th {
 }
 .fa-border {
   padding: .2em .25em .15em;
-  border: solid 0.08em #eeeeee;
+  border: solid 0.08em #eee;
   border-radius: .1em;
 }
 .pull-right {
@@ -517,7 +517,7 @@ th {
   font-size: 2em;
 }
 .fa-inverse {
-  color: #ffffff;
+  color: #fff;
 }
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
@@ -2543,7 +2543,7 @@ th {
 }
 .leaflet-control-zoom-min {
   text-indent: -999em;
-  background: #ffffff url(data:image/gif;base64,R0lGODlhGAAYAOZdACIiIiMjIy8vLyoqKsPDwzMzM0xMTDQ0NGlpaUtLS+Tk5J2dnXd3d7m5ueDg4GdnZykpKSYmJkpKSre3t09PT5eXl4KCgrCwsHNzc1lZWWhoaCcnJ5ubm3R0dFJSUp+fn1RUVJqamoODg8TExD09PYqKijo6OpGRkV1dXVFRUUNDQ3FxcZmZmYCAgEVFRXV1dSgoKIaGhlxcXEdHR5SUlMvLy5iYmNXV1VNTU7GxsbOzs9ra2jExMdbW1isrKywsLFtbW6qqqnh4eGpqat3d3XBwcI2NjWRkZLi4uL+/vyUlJZycnNvb297e3r6+vvf392VlZcbGxq2trWFhYWZmZszMzE5OTsDAwG1tbZWVlZaWlqGhod/f3////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAF0ALAAAAAAYABgAQAf/gF2Cg10KLFASAgISVBWEhFkAklaPlT0Rkpk2XRCZnj4oEwQknp4Dgw0BAFqPLZ0ZFJ4BDYICpSWEURNBpZ4Cgx+qvQAmgjs4AAEflV1XBckgShkJEQeeBUmPLwAezF0jKTqDGJkdXQaZLt5dTj/DCRq9MDldHgAbw5kPhdb5AAkXBpXAd0ABMyED8g1gsE6QAwwJhw3oQMQbB1UyRlSpQeDJAiClAoQg5OCZkUrPAGzpImJIpgJNBHWKIMUbF0FMGsTIdOpBphUNb5jo9cBWJgveLOQTgM6TihOCjkgq4s9AiGEUHFyoMMUfAA5dGHjFooEHDQSkMjEUREBYPiSDHEQkI1CJQL9SM5aAkHSAbsMuCxAYUGQAwQJvgQAAOw==) no-repeat scroll center center;
+  background: #fff url(data:image/gif;base64,R0lGODlhGAAYAOZdACIiIiMjIy8vLyoqKsPDwzMzM0xMTDQ0NGlpaUtLS+Tk5J2dnXd3d7m5ueDg4GdnZykpKSYmJkpKSre3t09PT5eXl4KCgrCwsHNzc1lZWWhoaCcnJ5ubm3R0dFJSUp+fn1RUVJqamoODg8TExD09PYqKijo6OpGRkV1dXVFRUUNDQ3FxcZmZmYCAgEVFRXV1dSgoKIaGhlxcXEdHR5SUlMvLy5iYmNXV1VNTU7GxsbOzs9ra2jExMdbW1isrKywsLFtbW6qqqnh4eGpqat3d3XBwcI2NjWRkZLi4uL+/vyUlJZycnNvb297e3r6+vvf392VlZcbGxq2trWFhYWZmZszMzE5OTsDAwG1tbZWVlZaWlqGhod/f3////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAF0ALAAAAAAYABgAQAf/gF2Cg10KLFASAgISVBWEhFkAklaPlT0Rkpk2XRCZnj4oEwQknp4Dgw0BAFqPLZ0ZFJ4BDYICpSWEURNBpZ4Cgx+qvQAmgjs4AAEflV1XBckgShkJEQeeBUmPLwAezF0jKTqDGJkdXQaZLt5dTj/DCRq9MDldHgAbw5kPhdb5AAkXBpXAd0ABMyED8g1gsE6QAwwJhw3oQMQbB1UyRlSpQeDJAiClAoQg5OCZkUrPAGzpImJIpgJNBHWKIMUbF0FMGsTIdOpBphUNb5jo9cBWJgveLOQTgM6TihOCjkgq4s9AiGEUHFyoMMUfAA5dGHjFooEHDQSkMjEUREBYPiSDHEQkI1CJQL9SM5aAkHSAbsMuCxAYUGQAwQJvgQAAOw==) no-repeat scroll center center;
   background-size: 12px 12px;
 }
 .leaflet-control-zoom-min:focus {
@@ -2637,9 +2637,9 @@ textarea {
   position: relative;
   padding-top: 12px;
   padding-right: 12px;
-  padding-bottom: 0;
+  padding-bottom: 12px;
   padding-left: 12px;
-  background-color: #2d2d2d;
+  background-color: #181818;
   color: #f5f5f5;
 }
 .odi-vis.odi-vis-choropleth a,
@@ -2666,7 +2666,7 @@ textarea {
 }
 .odi-vis.odi-vis-choropleth .odi-vis-view {
   width: 100%;
-  height: 94%;
+  height: 92%;
   min-width: 376px;
   min-height: 300px;
 }
@@ -2684,10 +2684,10 @@ textarea {
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta {
   width: 100%;
-  height: 6%;
+  height: 32px;
   min-width: 376px;
   min-height: 16px;
-  padding-top: 6px;
+  margin-top: 6px;
   font-size: 16px;
 }
 @media (max-width: 568px) {
@@ -2706,7 +2706,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-right {
   box-sizing: border-box;
   float: right;
-  width: 37%;
+  width: auto;
   height: auto;
   min-height: auto;
   height: 100%;
@@ -2720,7 +2720,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-meta-left {
   box-sizing: border-box;
   float: left;
-  width: 63%;
+  width: auto;
   height: auto;
   min-height: auto;
   height: 100%;
@@ -2737,46 +2737,49 @@ textarea {
   width: 20px;
   height: auto;
   min-height: auto;
-  font-size: 12px;
+  font-size: 8px;
   text-transform: uppercase;
+  margin-right: 5px;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon img {
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon {
-    font-size: 12px;
-    width: 20px;
+    font-size: 8px;
   }
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-icon img {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
   box-sizing: border-box;
   float: left;
-  width: 30%;
+  width: auto;
   height: auto;
   min-height: auto;
-  font-size: 12px;
+  font-size: 8px;
+  line-height: 22px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-name {
-    font-size: 12px;
+    font-size: 8px;
     width: 116px;
+    line-height: 22px;
+    font-weight: bold;
   }
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools {
   box-sizing: border-box;
-  float: left;
-  width: 67%;
+  float: right;
+  width: auto;
   height: auto;
   min-height: auto;
   font-size: 16px;
-  margin-top: -3px;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools select,
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-tools option {
@@ -2810,13 +2813,33 @@ textarea {
   min-height: auto;
   font-size: 16px;
   padding: 0 0 0 12px;
-  margin-top: -2px;
+  margin-top: -3px;
   text-align: center;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-nav {
+  box-sizing: border-box;
+  float: right;
+  width: 82px;
+  height: auto;
+  min-height: auto;
+}
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-nav a {
+  margin-left: 5px;
+  display: block;
+  float: left;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  background-color: #f5f5f5;
+  color: #181818;
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend {
   box-sizing: border-box;
   float: right;
-  width: 60px;
+  width: 30px;
   height: auto;
   min-height: auto;
   font-size: 16px;
@@ -2826,7 +2849,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend ul {
   box-sizing: border-box;
   float: left;
-  width: 48px;
+  width: 24px;
   height: auto;
   min-height: auto;
   float: right;
@@ -2839,8 +2862,8 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend li {
   box-sizing: border-box;
   float: left;
-  width: 16px;
-  height: 16px;
+  width: 11px;
+  height: 11px;
   min-height: auto;
 }
 @media (max-width: 568px) {
@@ -2854,7 +2877,7 @@ textarea {
 .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full {
   box-sizing: border-box;
   float: left;
-  width: 50%;
+  width: 350px;
   height: 80px;
   min-height: 80px;
   padding: 16px;
@@ -2866,23 +2889,18 @@ textarea {
   font-size: 12px;
   position: absolute;
   top: -106px;
-  left: 0;
+  right: -10px;
 }
 @media (max-width: 568px) {
   .odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full {
     width: 83.5%;
   }
 }
-.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full ul {
-  display: inline-block;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full ul li {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
+.odi-vis.odi-vis-choropleth .odi-vis-meta .odi-vis-legend-full i {
+  line-height: 20px;
+  padding: 2px 4px 2px 4px;
+  border-radius: 4px;
+  font-style: normal;
 }
 .odi-vis.odi-vis-choropleth .odi-vis-info {
   box-sizing: border-box;
@@ -2973,7 +2991,7 @@ textarea {
   font-family: 'Lato,' 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  background-color: #8bbee1 !important;
+  background-color: #181818;
   outline: 0;
 }
 .odi-vis.odi-vis-choropleth .leaflet-zoom-box {

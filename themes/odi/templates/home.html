@@ -6,16 +6,16 @@
   'embed_title': '%s ; %s'|format('All datasets', page.year),
 }) %}
 
+<section id="home-visualisation">
+  {% include 'dataviews/embed_map.html' %}
+</section>
+
 <div id="home-stats">
   <div class="container">
     <h1>{{ gettext('Tracking the state of government open data.') }}</h1>
     {% include 'dataviews/alt_summary.html' %}
   </div>
 </div>
-
-<section id="home-visualisation">
-  {% include 'dataviews/embed_map.html' %}
-</section>
 
 <div class="home-about">
   <div class="container">
@@ -51,7 +51,7 @@
       <p>{{ gettext('Read about the methodology behind the Index here.') }}</p>
       <p>
         <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/methodology/" title="{{ gettext('Read about the methodology behind the Index here.') }}">
-            <i class="fa fa-book fa-fw"></i>
+          <i class="fa fa-book fa-fw"></i>
           {{ gettext('Read more') }}
         </a>
       </p>
