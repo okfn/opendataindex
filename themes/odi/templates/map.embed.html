@@ -14,52 +14,49 @@
             <div id="map"></div>
             <div class="odi-vis-title"></div>
         </div>
-    </div>
-    <div class="odi-vis-meta">
-        <div class="odi-vis-meta-left">
-            <div class="odi-vis-icon"><a target="_parent" href="{{ scope.odi.sponsor.domain }}" title="{{ gettext('Go to the %(sitename)s website', sitename=scope.odi.sponsor.name) }}"><img src="{{ SITEURL }}/static/images/logo-embed.png" /></a></div><a class="odi-vis-name" target="_parent" href="{{ scope.odi.sponsor.domain }}" title="{{ gettext('Go to the %(sitename)s website', sitename=scope.odi.sponsor.name) }}">{{ scope.odi.sponsor.name }}</a>
-            <div class="odi-vis-tools">
-                <i class="icon icon-filter" title="Filter the vis data"></i>
-                <select class="odi-filter-year"></select>
-                <select class="odi-filter-dataset">
-                    <option value="all">{{ gettext('All Datasets') }}</option>
-                </select>
+        <div class="odi-vis-meta">
+            <div class="odi-vis-meta-left">
+                <div class="odi-vis-icon">
+                    <a target="_parent" href="{{ scope.odi.sponsor.domain }}" title="{{ gettext('Go to the %(sitename)s website', sitename=scope.odi.sponsor.name) }}">
+                        <img src="{{ SITEURL }}/static/images/logo.png" />
+                    </a>
+                </div>
+                <a class="odi-vis-name" target="_parent" href="{{ scope.odi.sponsor.domain }}" title="{{ gettext('Go to the %(sitename)s website', sitename=scope.odi.sponsor.name) }}">{{ scope.odi.sponsor.name }}</a>
             </div>
-        </div>
-        <div class="odi-vis-meta-right">
-            <div class="odi-vis-legend odi-vis-show-legend-full" title="{{ gettext('How to read this visualisation') }}">
-                <ul>
-                    <li data-score="0">&nbsp;</li>
-                    <li data-score="50">&nbsp;</li>
-                    <li data-score="100">&nbsp;</li>
-                </ul>
+            <div class="odi-vis-meta-right">
+
+                <div class="odi-vis-nav">
+                    <a class="odi-vis-nav-zoom-in" href="#" title="Zoom in">+</a>
+                    <a class="odi-vis-nav-zoom-out" href="#" title="Zoom out">-</a>
+                    <a class="odi-vis-nav-zoom-min fa fa-share-alt" href="#" title="Zoom min"></a>
+                </div>
+
+                <div class="odi-vis-tools">
+                    <i class="icon icon-filter" title="Filter the vis data"></i>
+                    <select class="odi-filter-year"></select>
+                    <select class="odi-filter-dataset">
+                        <option value="all">{{ gettext('All Datasets') }}</option>
+                    </select>
+                </div>
+
+                <div class="odi-vis-legend odi-vis-show-legend-full" title="{{ gettext('How to read this visualisation') }}">
+                    <ul>
+                        <li data-score="0">&nbsp;</li>
+                        <li data-score="30">&nbsp;</li>
+                    </ul>
+                    <ul>
+                        <li data-score="60">&nbsp;</li>
+                        <li data-score="100">&nbsp;</li>
+                    </ul>
+                </div>
             </div>
-            <div class="odi-vis-help odi-vis-show-info" title="{{ gettext('See the credits and license information') }}">
-                <span class="odi-vis-action"><i class="fa fa-info-circle"></i></span>
-            </div>
-            <div class="odi-vis-share-embed odi-vis-show-info" title="{{ gettext('Share or Embed this visualisation') }}">
-                <span class="odi-vis-action">{{ gettext('Share / Embed') }}</span>
-            </div>
-        </div>
-        <div class="odi-vis-legend-full">
-            <div class="odi-vis-info-title">{{ gettext('How to read the map') }}<span class="odi-vis-legend-full-close"><i class="fa fa-close"></i></span></div>
-            <div class="odi-vis-info-text">
+            <div class="odi-vis-legend-full">
+                <div class="odi-vis-info-title">{{ gettext('How to read the map') }}<span class="odi-vis-legend-full-close"><i class="fa fa-close"></i></span></div>
+                <div class="odi-vis-info-text">
                 <span>
-                    {{ gettext('Place colouring represents the open data score for the currently selected dataset(s), from 0 to 100.') }}
+                    {{ gettext('Place colouring represents the open data score for the currently selected dataset(s), from <i data-score="0">0</i> to <i data-score="100">100</i>.') }}
                 </span>
-                <ul>
-                    <li data-score="0">&nbsp;</li>
-                    <li data-score="10">&nbsp;</li>
-                    <li data-score="20">&nbsp;</li>
-                    <li data-score="30">&nbsp;</li>
-                    <li data-score="40">&nbsp;</li>
-                    <li data-score="50">&nbsp;</li>
-                    <li data-score="60">&nbsp;</li>
-                    <li data-score="70">&nbsp;</li>
-                    <li data-score="80">&nbsp;</li>
-                    <li data-score="90">&nbsp;</li>
-                    <li data-score="100">&nbsp;</li>
-                </ul>
+                </div>
             </div>
         </div>
     </div>

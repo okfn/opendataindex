@@ -117,6 +117,23 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
         }
     });
 
+    $('body').on('click', '.odi-vis-nav-zoom-in', function () {
+        map.zoomIn();
+        return false;
+    });
+
+    $('body').on('click', '.odi-vis-nav-zoom-out', function () {
+        map.zoomOut();
+        return false;
+    });
+
+    $('body').on('click', '.odi-vis-nav-zoom-min', function () {
+        map.setZoom(1);
+        return false;
+    });
+
+    $(".leaflet-control-container").css("visibility", "hidden");
+
     pubsub.subscribe(data.topics.meta, metaHandler);
     pubsub.subscribe(data.topics.summary, summaryHandler);
     pubsub.subscribe(data.topics.places, placesHandler);
@@ -245,6 +262,9 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
     function setPanels(topic, data) {
         if (!data.panel.tools) {
             $toolsPanel.hide();
+            $('.leaflet-container').css('background-color', '#8bbee1');
+        } else {
+            $titleBox.hide();
         }
         if (!data.panel.help) {
             $helpPanel.hide();
@@ -516,7 +536,7 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
             $this.css('background-color', colorScale(score).hex());
         });
 
-        _.each($fullLegend.find('li'), function(value) {
+        _.each($fullLegendBox.find('.odi-vis-info-text i'), function(value) {
             $this = $(value);
             score = parseInt($this.data('score'), 10);
             $this.css('background-color', colorScale(score).hex());

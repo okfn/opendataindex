@@ -9,6 +9,7 @@
 @lato-font-path: '../vendor/lato/font';
 @color-action: rgb(68, 80, 255);
 @color-dark: #2d2d2d;
+@color-okf-black: #181818;
 @color-light: #f5f5f5;
 // RESPONSE
 @max320: ~'(max-width: 320px)';
@@ -90,9 +91,9 @@ html, body, input, select, textarea {
     position: relative;
     padding-top: 12px;
     padding-right: 12px;
-    padding-bottom: 0;
+    padding-bottom: 12px;
     padding-left: 12px;
-    background-color: @color-dark;
+    background-color: @color-okf-black;
     color: @color-light;
 
     // shared vis styles for common elements and classes
@@ -116,7 +117,8 @@ html, body, input, select, textarea {
     // the view panel; where the vis is rendered
     .odi-vis-view {
         width: 100%;
-        height: 94%;
+        height: 92%;
+
         min-width: 376px;
         min-height: 300px;
 
@@ -135,10 +137,11 @@ html, body, input, select, textarea {
     // the meta panel; contains contextual tools and information for the vis
     .odi-vis-meta {
         width: 100%;
-        height: 6%;
+        height: 32px;
         min-width: 376px;
         min-height: 16px;
-        padding-top: 6px;
+        //padding-top: 12px;
+        margin-top: 6px;
         font-size: 16px;
 
         @media @max568 {
@@ -155,7 +158,7 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-meta-right {
-            .layout-object(@width: 37%; @float: right);
+            .layout-object(@width: auto; @float: right);
             height: 100%;
             text-align: right;
 
@@ -165,7 +168,7 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-meta-left {
-            .layout-object(@width: 63%);
+            .layout-object(@width: auto);
             height: 100%;
             text-align: left;
 
@@ -176,40 +179,43 @@ html, body, input, select, textarea {
 
         .odi-vis-icon {
             .layout-object(@width: 20px);
-            font-size: 12px;
+            font-size: 8px;
             text-transform: uppercase;
+            margin-right: 5px;
 
             img {
-                width: 16px;
-                height: 16px;
+                width: 22px;
+                height: 22px;
             }
 
             @media @max568 {
-                font-size: 12px;
-                width: 20px;
+                font-size: 8px;
 
                 img {
-                    width: 16px;
-                    height: 16px;
+                    width: 22px;
+                    height: 22px;
                 }
             }
         }
 
         .odi-vis-name {
-            .layout-object(@width: 30%);
-            font-size: 12px;
+            .layout-object(@width: auto);
+            font-size: 8px;
+            line-height: 22px;
             text-transform: uppercase;
+            font-weight: bold;
 
             @media @max568 {
-                font-size: 12px;
-                width: 116px
+                font-size: 8px;
+                width: 116px;
+                line-height: 22px;
+                font-weight: bold;
             }
         }
 
         .odi-vis-tools {
-            .layout-object(@width: 67%);
+            .layout-object(@width: auto, @float: right);
             font-size: 16px;
-            margin-top: -3px;
 
             select, option {
                 color: @color-dark
@@ -235,18 +241,35 @@ html, body, input, select, textarea {
             .layout-object(@width: 28px; @float: right);
             font-size: 16px;
             padding: 0 0 0 12px;
-            margin-top: -2px;
+            margin-top: -3px;
             text-align: center;
         }
 
+        .odi-vis-nav {
+            .layout-object(@width: 82px; @float: right);
+
+            a {
+                margin-left: 5px;
+                display: block;
+                float: left;
+                width: 22px;
+                height: 22px;
+                line-height: 22px;
+                background-color: @color-light;
+                color: @color-okf-black;
+                text-align: center;
+                font-weight: bold;
+                font-size: 17px;
+            }
+        }
+
         .odi-vis-legend {
-            .layout-object(@width: 60px; @float: right);
+            .layout-object(@width: 30px; @float: right);
             font-size: 16px;
             padding-left: 12px;
             cursor: pointer;
-
             ul {
-                .layout-object(@width: 48px);
+                .layout-object(@width: 24px);
                 float: right;
                 height: 100%;
                 display: block;
@@ -256,7 +279,7 @@ html, body, input, select, textarea {
             }
 
             li {
-                .layout-object(@width: 16px; @height: 16px);
+                .layout-object(@width: 11px; @height: 11px);
             }
 
             @media @max568 {
@@ -271,29 +294,22 @@ html, body, input, select, textarea {
         }
 
         .odi-vis-legend-full {
-            .odi-display-panel(@width: 50%; @height: 80px; @min-height: 80px);
+            .odi-display-panel(@width: 350px; @height: 80px; @min-height: 80px);
             position: absolute;
             top: -106px;
-            left: 0;
+            right: -10px;
 
             @media @max568 {
                 width: 83.5%;
             }
 
-            ul {
-                display: inline-block;
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-
-                li {
-                    display: inline-block;
-                    width: 16px;
-                    height: 16px;
-                }
+            i {
+                line-height: 20px;
+                padding: 2px 4px 2px 4px;
+                border-radius: 4px;
+                font-style: normal;
             }
         }
-
     }
 
     .odi-vis-info {
@@ -359,13 +375,12 @@ html, body, input, select, textarea {
         color: @color-light;
         }
     }
-
     // override leaflet
     .leaflet-container {
         font-family: 'Lato,' 'Helvetica Neue', Arial, Helvetica, sans-serif;
         font-size: 16px;
         line-height: 24px;
-        background-color: #8bbee1 !important; // @color-dark;
+        background-color: @color-okf-black; // @color-dark;
         outline: 0;
     }
 
