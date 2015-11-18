@@ -100,11 +100,11 @@
         </div>
         <div class="col-md-6">
             {% if scope.entry.details %}
-            <h4>{{ gettext('Details') }}</h4>
+            <h4><strong>{{ gettext('Details') }}</strong></h4>
             {{ scope.entry.details|markdown }}
             {% endif %}
             {% if scope.entry.reviewcomments %}
-            <h4>Reviewer comments</h4>
+            <h4><strong>Reviewer comments</strong></h4>
             {{ scope.entry.reviewcomments|markdown }}
             {% endif %}
         </div>
