@@ -1,0 +1,22 @@
+<div class="stat" id="alt_general_stat">
+    <a href="{{ SITEURL }}/place/" class="burst silent-link">
+        <strong>{{ scope.open_percent[scope.value_lookup] }}%</strong>
+    </a>
+    <span class="uppercase">{{ gettext('of Key datasets in the Index are open') }}</span>
+    {% if scope.entry_count[scope.value_lookup_previous] %}
+    <small>
+        {{ scope.open_count[scope.value_lookup] }}
+        {{ gettext('out of') }}
+        {{ scope.entry_count[scope.value_lookup] }},
+        {% if scope.entry_count[scope.value_lookup_previous]|int > scope.entry_count[scope.value_lookup]|int %}
+          {{ scope.lower }}
+        {% elif scope.entry_count[scope.value_lookup_previous]|int < scope.entry_count[scope.value_lookup]|int %}
+          {{ scope.higher }}
+        {% else %}
+          {{ scope.no_change }}
+        {% endif %}
+        from {{ scope.open_count[scope.value_lookup_previous] }} of {{ scope.entry_count[scope.value_lookup_previous] }} in {{ scope.odi.previous_year }}
+        <br /><i>{{ gettext('Note: we added some new datasets this year. Find out more') }} <a href="{{ SITEURL }}/place/">{{ gettext('here') }}</a>.</i>
+    </small>
+    {% endif %}
+</div>

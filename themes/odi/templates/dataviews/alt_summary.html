@@ -1,17 +1,16 @@
-<div id="summary-stats" class="row">
-  <div class="stat col-md-4 col-md-offset-1">
+<div id="places_in_index" class="stat">
     <a href="{{ SITEURL }}/place/" class="burst silent-link">
-      <strong>{{ scope.place_count[scope.value_lookup] }}</strong>
+        <strong>{{ scope.place_count[scope.value_lookup] }}</strong>
     </a>
     <span class="uppercase">{{ gettext('Places in the Index') }}</span>
     {% if scope.place_count[scope.value_lookup_previous] %}
     <small>
         {% if scope.place_count[scope.value_lookup_previous]|int >
-           scope.place_count[scope.value_lookup]|int
+        scope.place_count[scope.value_lookup]|int
         %}
         {{ scope.lower }}
         {% elif scope.place_count[scope.value_lookup_previous]|int <
-           scope.place_count[scope.value_lookup]|int
+        scope.place_count[scope.value_lookup]|int
         %}
         {{ scope.higher }}
         {% else %}
@@ -20,29 +19,9 @@
         from {{ scope.place_count[scope.value_lookup_previous] }} in {{ scope.odi.previous_year }}
     </small>
     {% endif %}
-  </div>
-  <div class="stat col-md-5">
-    <a href="{{ SITEURL }}/place/" class="burst silent-link">
-        <strong>{{ scope.open_count[scope.value_lookup] }}</strong>
-        <i>{{ gettext('of') }}</i>
-        <strong>{{ scope.entry_count[scope.value_lookup] }}</strong>
-    </a>
-    <span class="uppercase">{{ gettext('Key datasets in the Index are open') }}</span>
-    {% if scope.entry_count[scope.value_lookup_previous] %}
-    <small>
-        {% if scope.entry_count[scope.value_lookup_previous]|int >
-           scope.entry_count[scope.value_lookup]|int
-        %}
-        {{ scope.lower }}
-        {% elif scope.entry_count[scope.value_lookup_previous]|int <
-           scope.entry_count[scope.value_lookup]|int
-        %}
-        {{ scope.higher }}
-        {% else %}
-        {{ scope.no_change }}
-        {% endif %}
-        from {{ scope.open_count[scope.value_lookup_previous] }} of {{ scope.entry_count[scope.value_lookup_previous] }} in {{ scope.odi.previous_year }}
-    </small>
-    {% endif %}
-  </div>
+</div>
+<div class="explain">
+  <span>
+    {{ gettext('Here you can see the open data sccores for the currently selected dataset(s), from <i style="background-color: #f00;">0</i> to <i style="background-color: rgb(122, 184, 0);">100</i>.') }}
+  </span>
 </div>

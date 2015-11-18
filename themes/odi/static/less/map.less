@@ -42,6 +42,7 @@
     min-height: @min-height;
 }
 
+
 .odi-display-panel(@width: 50%; @height: 400px; @min-height: 400px) {
     .layout-object(@width: @width; @height: @height; @min-height: @min-height);
     padding: 16px;
@@ -86,8 +87,8 @@ html, body, input, select, textarea {
 // NOTE: Making extensive use of nested CSS pattern in LESS
 // to provide namespacing of styles for embed scenarios
 .odi-vis.odi-vis-choropleth {
-    .layout-object(@width: 100%; @height: 100%; @min-height: 360px;
-                   @min-width: 400px);
+    .layout-object(@width: 100%; @height: 100%; @min-height: 200px;
+                   @min-width: 300px);
     position: relative;
     padding-top: 12px;
     padding-right: 12px;
@@ -117,10 +118,10 @@ html, body, input, select, textarea {
     // the view panel; where the vis is rendered
     .odi-vis-view {
         width: 100%;
-        height: 92%;
+        height: 90%;
 
         min-width: 376px;
-        min-height: 300px;
+        min-height: 200px;
 
         .odi-vis-display {
             .layout-object();
@@ -380,7 +381,7 @@ html, body, input, select, textarea {
         font-family: 'Lato,' 'Helvetica Neue', Arial, Helvetica, sans-serif;
         font-size: 16px;
         line-height: 24px;
-        background-color: @color-okf-black; // @color-dark;
+        background-color: #8bbee1;//@color-okf-black; // @color-dark;
         outline: 0;
     }
 

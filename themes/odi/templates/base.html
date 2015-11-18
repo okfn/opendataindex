@@ -30,6 +30,14 @@
 </head>
 <body class="{% block body_classes %}{% endblock body_classes %}">
 
+<div class="fixed-ok-panel">
+    <div id="ok-panel" class="closed">
+        <iframe src="http://assets.okfn.org/themes/okfn/okf-panel.html" scrolling="no"></iframe>
+    </div>
+
+    <a class="ok-ribbon"><img src="http://okfnlabs.org/ok-panel/assets/images/ok-ribbon.png" alt="Open Knowledge"></a>
+</div>
+
 {% block header %}
 <header id="header">
     <nav class="navbar navbar-default" role="navigation">
@@ -45,18 +53,13 @@
                     </button>
                     <div class="logo">
                         <a href="{{ SITEURL }}/">
-                            <img src="{{ SITEURL }}/static/images/logo.png">
+                            <img src="{{ SITEURL }}/static/images/logo2.png">
                             <span>{{ gettext('Global') }}<br/>{{ SITENAME }}</span>
                         </a>
                     </div>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <div class="logo2 nav navbar-nav navbar-right hidden-xs hidden-sm">
-                        <a class="ok-ribbon" href="https://okfn.org/">
-                            <img src="{{ SITEURL }}/static/images/okfn.png" alt="Open Knowledge">
-                        </a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav" style="margin-right: 132px;">
                         <li>
                             <a href="{{ SITEURL }}/place/" title="{{ gettext('About the Open Data Index project') }}">
                                 {{ gettext('Places') }}

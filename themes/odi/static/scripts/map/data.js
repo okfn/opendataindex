@@ -1,5 +1,4 @@
 define(['jquery', 'pubsub'], function($, pubsub) {
-
     var topics = {
             meta: 'data.meta',
             summary: 'data.summary',
