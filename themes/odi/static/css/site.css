@@ -8810,6 +8810,12 @@ h3 a:hover {
   cursor: pointer;
   color: #262626;
 }
+#places_overview_table tr td {
+  padding: 8px 4px 8px 4px !important;
+}
+#places_overview_table tr td a {
+  font-size: 12px;
+}
 #places_overview_table thead tr th {
   height: 100px;
 }
