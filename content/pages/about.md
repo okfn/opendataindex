@@ -3,14 +3,23 @@ template: page
 title:  Open Data Index: Tracking the state of government open data
 slug: about
 
-For more information on the Open Data Index, you may contact the team at: <a href="mailto:index@okfn.org">index@okfn.org</a>
+#Open Data Index 2015 :  Civil Society Audit of the state of Open Data
 
-Each year, governments are making more data available in an open format. The Global Open Data Index tracks whether this data is actually released in a way that is accessible to citizens, media and civil society and is unique in crowd-sourcing its survey of open data releases around the world. Each year the open data community and Open Knowledge produces an annual ranking of countries, peer reviewed by our network of local open data experts.
+The Global Open Data Index is an annual effort to measure the state of open government data around the world. The crowdsourced survey is designed to assess the openness of specific government datasets according to the [Open Definition](http://opendefinition.org/). Through this initiative we want to provide a civil society audit of how governments actually publish data - with input and review from citizens and organisations around the world. 
+The unique benefits of the Open Data Index include: - 
+- Results from a citizen’s perspective and not simply reliant on government claims of openness. 
+- A simple group of datasets that offer powerful insights into key government functions and performance, and that can be compared consistently across countries. 
+- Pioneering methods, with topical experts reviewing global submissions for  each dataset to ensure reliability.
+- An education and engagement tool for citizens to learn about open data, the state of government data in their own country, and how they can best make use of it.
+- Allows us to establish a baseline and track changes and trends in the open data world over time as the field evolves. 
 
-Crowd-sourcing this data provides a tool for communities around the world to learn more about the open data available locally and by country, and ensures that the results reflect the experience of civil society in finding open information, rather than government claims. it also ensures that those who actually collect the information that builds the Index are the very people who use the data and are in a strong position to advocate for more and higher quality open data.
+Open data measurement is still new and experimental field. The Global Open Data Index, as well makes changes each year in order to improve the quality of the final benchmarking. This year, after multiple public consultations, we made three major changes to the Global Open Data Index  - 
+- We  revised the set of datasets that we are evaluating and improved the datasets definitions  to allow better consistency of the index. 
+- We worked with regional index coordinators to reach more people and solicit more entries to the index.
+- We changed the review process from peer review to thematic review to allow better accuracy and reliability of the results.
 
-The Global Open Data Index measures and benchmarks the openness of data around the world, and then presents this information in a way that is easy to understand and use. This increases its usefulness as an advocacy tool and broadens its impact.
+(read more about these changes in our [methodology section](../methodology)). 
+We believe that with these changes we can create a better dialogue between government and civil society around open data.
 
-In 2014 we are expanding to more countries (from 70 in 2013) with an emphasis on countries of the Global South.
-
-See the [blog post](http://blog.okfn.org/2014/09/29/join-the-global-open-data-index-2014-sprint/) launching the 2014 Index. For more information, please see the [FAQ](faq/) and the [methodology](methodology/) section.  Join the conversation with our [Open Data Index discussion forum](https://discuss.okfn.org/c/open-data-index).
+This year, we have 122 countries in the sample (up from 97 countries in 2014). You can find the full geographical data in the [places](../places) page, or see our [insights](../insights) from the index results.
+For more information on the Open Data Index, you may contact the team at: [index@okfn.org](index@okfn.org) or post a query on the [Open Data Index forum](https://discuss.okfn.org/c/open-data-index)
