@@ -5,6 +5,12 @@ define(['jquery', 'bootstrap', 'sexyTables'], function($, bootstrap, sexy) {
             $("#tell-us").modal();
         });
 
+        $('body').on('click', 'a.ok-ribbon', function(e) {
+            $(this).toggleClass("closed open");
+            $('#ok-panel').toggleClass("closed open");
+            return false;
+        });
+
         $(document).ready(function() {
             sexyTables();
         })

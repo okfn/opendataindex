@@ -6,57 +6,36 @@
   'embed_title': '%s ; %s'|format('All datasets', page.year),
 }) %}
 
-<section id="home-visualisation">
-  {% include 'dataviews/embed_map.html' %}
-</section>
-
-<div id="home-stats">
+<div id="home-about">
   <div class="container">
     <h1>{{ gettext('Tracking the state of government open data.') }}</h1>
-    {% include 'dataviews/alt_summary.html' %}
+    <div class="text-center">{{ page.content }}
+      <a class="btn btn-primary-black btn-lg" href="{{ SITEURL }}/place/" title="{{ gettext('Compare countries.') }}">
+        {{ gettext('Compare countries') }}
+      </a>
+
+      <a class="btn btn-primary-black btn-lg" href="{{ SITEURL }}/insights/" title="{{ gettext('See insights.') }}">
+        {{ gettext('See insights') }}
+      </a>
+    </div>
   </div>
 </div>
 
-<div class="home-about">
-  <div class="container">
-    <h2>{{ gettext('About the Open Data Index') }}</h2>
-    {{ page.content }}
+<section id="home-visualisation">
+  <div class="row map_visualisation">
+    <div class="col-md-4 summary-stats">
+      {% include 'dataviews/alt_summary.html' %}
+    </div>
+    <div class="col-md-8 map">{% include 'dataviews/embed_map.html' %}</div>
   </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 home-box">
-      <h3>{{ gettext('Place overview') }}</h3>
-      <p>{{ gettext('The whole Index displayed in an easy-to-read table.') }}</p>
-      <p>
-        <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/place/" title="{{ gettext('The whole Index displayed in an easy-to-read table.') }}">
-          <i class="fa fa-table fa-fw"></i>
-          {{ gettext('View now') }}
-        </a>
-      </p>
+  <div class="row chart_visualisation">
+    <div class="col-md-4 chart text-center">
+      <img src="/static/images/pie-10.png">
     </div>
-    <div class="col-md-4 home-box">
-      <h3>{{ gettext('Downloads & API') }}</h3>
-      <p>{{ gettext('Download the raw data directly or as CSV/JSON via API.') }}</p>
-      <p>
-        <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/download/" title="{{ gettext('Download the raw Index data directly or use it via a CSV/JSON API.') }}">
-          <i class="fa fa-download fa-fw"></i>
-          {{ gettext('Download data') }}
-        </a>
-      </p>
-    </div>
-    <div class="col-md-4 home-box">
-      <h3>{{ gettext('Methodology') }}</h3>
-      <p>{{ gettext('Read about the methodology behind the Index here.') }}</p>
-      <p>
-        <a class="btn btn-primary btn-lg" href="{{ SITEURL }}/methodology/" title="{{ gettext('Read about the methodology behind the Index here.') }}">
-          <i class="fa fa-book fa-fw"></i>
-          {{ gettext('Read more') }}
-        </a>
-      </p>
+    <div class="col-md-8 summary-stats">
+      {% include 'dataviews/alt_general_stat.html' %}
     </div>
   </div>
-</div>
+</section>
 
 {% endblock main %}
