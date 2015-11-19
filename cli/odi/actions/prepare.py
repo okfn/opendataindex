@@ -104,6 +104,7 @@ class Entries(object):
         'timestamp',
         'submitters',
         'reviewers',
+        'reviewComments',
         'details',
     ]
 
