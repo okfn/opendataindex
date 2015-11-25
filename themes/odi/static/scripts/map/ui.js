@@ -378,13 +378,17 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
             match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (match) {
                 score = parseInt(match[scoreLookup(uiState.filter.year)], 10);
-                fillColor = colorScale(score).hex();
+                if (score) {
+                    fillColor = colorScale(score).hex();
+                }
             }
         } else if (uiState.filter.dataset === 'improvement') {
             match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (match) {
                 score = parseInt(match.improvement_scaled, 10);
-                fillColor = colorScale(score).hex();
+                if (score) {
+                    fillColor = colorScale(score).hex();
+                }
             }
         } else {
             // calculate for this dataset/year/place from entries data
@@ -395,7 +399,9 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
             });
             if (match) {
                 score = parseInt(match.score, 10);
-                fillColor = colorScale(score).hex();
+                if (score) {
+                    fillColor = colorScale(score).hex();
+                }
             }
         }
         rv = _.clone(placeStyleBase);
@@ -425,7 +431,10 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
         if (feature && feature.properties && feature.properties.iso_a2) {
             place = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (place) {
-                layer.bindLabel(getPlaceToolTip(place)).addTo(map);
+                var tooltip = getPlaceToolTip(place);
+                if (tooltip) {
+                    layer.bindLabel(tooltip).addTo(map);
+                }
             }
         }
 
@@ -611,7 +620,9 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
                 context.score = score;
                 context.rank = rank;
         }
-        return placeToolTipTmpl(context);
+        if (score && score != -100) {
+            return placeToolTipTmpl(context);
+        }
     }
 
     function setPlaceBox(properties) {
@@ -688,8 +699,10 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
             context.score = score;
             context.rank = rank;
             context.previous_score = previousScore;
-            $placeBox.html(placeBoxTmpl(context));
-            $placeBox.show();
+            if (score) {
+                $placeBox.html(placeBoxTmpl(context));
+                $placeBox.show();
+            }
         }
     }
 
