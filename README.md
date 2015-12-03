@@ -39,10 +39,10 @@ and to be sure it's a fresh version of CLI.
 ```
 from config_default import *
 ODI['database'] = {
-    'entries': 'http://global.dev.census.org:5000/api/entries/{year}.cascade.json',
-    'places': 'http://global.dev.census.org:5000/api/places/score/{year}.cascade.json',
-    'datasets': 'http://global.dev.census.org:5000/api/datasets/score/{year}.cascade.json',
-    'questions': 'http://global.dev.census.org:5000/api/questions.json',
+    'entries': 'http://global.census.okfn.org/api/entries/{year}.cascade.json',
+    'places': 'http://global.census.okfn.org/api/places/score/{year}.cascade.json',
+    'datasets': 'http://global.census.okfn.org/api/datasets/score/{year}.cascade.json',
+    'questions': 'http://global.census.okfn.org/api/api/questions.json',
 }
 ```
 
