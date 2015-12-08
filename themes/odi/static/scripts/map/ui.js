@@ -109,12 +109,12 @@ define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 
         uiState = setUIState(topics.init, getUIStateArgs());
 
     map.on('zoomend', function(e){
-        if (e.target._zoom == mapZoomBase) {
-            map.setView(mapLatLongBase, mapZoomBase);
-            map.dragging.disable();
-        } else {
+        // if (e.target._zoom == mapZoomBase) {
+        //     map.setView(mapLatLongBase, mapZoomBase);
+        //     map.dragging.disable();
+        // } else {
             map.dragging.enable();
-        }
+        // }
     });
 
     $('body').on('click', '.odi-vis-nav-zoom-in', function () {
