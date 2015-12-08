@@ -29,11 +29,11 @@
             </h1>
             <h3>
                 <a href="{{ SITEURL }}/place/{{ scope.place.slug }}/" title="{{ gettext('See more data on %(name)s in the %(site)s', name=scope.place.name, site=SITENAME) }}">{{ scope.place.name|truncate(20) }}</a>
-                {% if scope.entry.isopen %}
+                {% if scope.entry.isopen == 'Yes' %}
                 <div class="open-badge"><img src="http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png" /></div>
                 {% endif %}
             </h3>
-            <div class="col-md-12 place-rank statistics">
+            <!--div class="col-md-12 place-rank statistics">
                     <span class="">{{ scope.place.name }} {{ gettext('is ranked') }} #{{ scope.entry.rank }} {{ gettext('for this dataset') }}</span>
             </div>
             <div class="row relative">
@@ -43,7 +43,7 @@
                     {{ scope.place.name }}'s {{ gettext('Index ranking for') }} {{ scope.dataset.title|lower }} {% if scope.entry_previous.rank|int > scope.entry.rank|int %}{{ gettext('is') }} {{ scope.higher|lower }}{% elif scope.entry_previous.rank|int < scope.entry.rank|int %}{{ gettext('is') }} {{ scope.lower|lower }}{% else %}{{ gettext('has') }} {{ scope.no_change|lower }}{% endif %} {{ gettext('from') }} #{{ scope.entry_previous.rank }} {{ gettext('in') }} {{ scope.odi.previous_year }}
                 </div>
                 {% endif %}
-            </div>
+            </div-->
             {% if page.content %}
             <div class="row content">{{ page.content }}</div>
             {% endif %}
