@@ -22,7 +22,7 @@ Rwanda’s move up the Global Open Data index rankings from [74th to 44th](http:
 [see full insight on our blog](Link to blogpost)
 
 ### South East Asia
-International Civil Society Organizations (CSOs) and movements such as Open Knowledge International (OKFI) and World Wide Web Foundation provides enabling environment for civil society movements at large around the world to take up the opportunity to gain benefits from open data while giving impact to their respective local communities on the ground. Clear standard for open data is that the data published is expected to be in a machine readable format with support to open licensing. Countries like Viet Nam, Myanmar, Indonesia, Cambodia, Thailand, Philippines, Lao PDR, Singapore, East Timor and Malaysia are examples of countries in Southeast Asia region that are just beginning to join the open data movement. How do the countries in Southeast Asia doing relative to other countries for open data and with each other?
+International Civil Society Organizations (CSOs) and movements such as Open Knowledge International and World Wide Web Foundation provides enabling environment for civil society movements at large around the world to take up the opportunity to gain benefits from open data while giving impact to their respective local communities on the ground. Clear standard for open data is that the data published is expected to be in a machine readable format with support to open licensing. Countries like Viet Nam, Myanmar, Indonesia, Cambodia, Thailand, Philippines, Lao PDR, Singapore, East Timor and Malaysia are examples of countries in Southeast Asia region that are just beginning to join the open data movement. How do the countries in Southeast Asia doing relative to other countries for open data and with each other?
 
 [see full insight on our blog](Link to blogpost)
 
@@ -36,7 +36,7 @@ This year’s seventh position in the Global Open Data Index tells only part of 
 ## Thematic Insights
 
 ### Tenders and Awards 
-For the first time ever, the Open Data Index is assessing open data on tenders and awards in this year’s index. This is crucial information. Government deals with companies amount to $9.5 trillion globally. That’s about [15% of global GDP](http://www.cgdev.org/sites/default/files/publishing-government-contracts-report.pdf). Schools, hospitals, roads, street lights, paper clips: all of these are managed through public procurement. 
+For the first time ever, the Open Data Index is assessing open data on public tenders and awards in this year’s index. This is crucial information. Government deals with companies amount to $9.5 trillion globally. That’s about [15% of global GDP](http://www.cgdev.org/sites/default/files/publishing-government-contracts-report.pdf). Schools, hospitals, roads, street lights, paper clips: all of these are managed through public procurement. 
 
 Public procurement is the [number one risk of corruption and fraud](http://www.oecd.org/gov/ethics/public-procurement.htm) in government. Too often, when government and business meet, public interest is not the highest priority. Scandals from failed contracting processes abound: ‘tofu’ schools, constructed to substandard specifications in an earthquake zone, that [fell down](http://news.bbc.co.uk/1/hi/world/asia-pacific/7400524.stm) on their students; provision of fake medicine and medical equipment that kills patients; phantom contracts siphoning off billions of dollars dedicated to national security; or kick-back schemes in contracts that steal direly needed monies from school children. 
 
