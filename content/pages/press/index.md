@@ -29,3 +29,12 @@ Some key findings of the Global Open Data Index 2015  are:
 See [full press release](https://docs.google.com/document/d/179W9FYB7ZbU3nNB-kopVuNYtU2x4Ie-zQGlJfDfOKM8/edit#)
 
 For more information, please contact: <a href="mailto:index@okfn.org">press@okfn.org</a>
+
+## Infographics
+
+![infographic I](src=“/static/images/press/2015/odi-600.png”)
+
+[Download infographic in 400](src=“/static/images/press/2015/odi-400.png”)
+[Download infographic in 600](src=“/static/images/press/2015/odi-600.png”)
+[Download infographic in 800](src=“/static/images/press/2015/odi-800.png”)
+[Download infographic in 1000](src=“/static/images/press/2015/odi-1000.png”)
