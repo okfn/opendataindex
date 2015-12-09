@@ -32,9 +32,9 @@ For more information, please contact: <a href="mailto:index@okfn.org">press@okfn
 
 ### Infographics
 
-![infographic I](src=/static/images/press/2015/odi-600.png)
+![infographic I](/static/images/press/2015/odi-600.png)
 
-[Download infographic in 400](src=“/static/images/press/2015/odi-400.png”)
-[Download infographic in 600](src=“/static/images/press/2015/odi-600.png”)
-[Download infographic in 800](src=“/static/images/press/2015/odi-800.png”)
-[Download infographic in 1000](src=“/static/images/press/2015/odi-1000.png”)
+[Download infographic in 400](/static/images/press/2015/odi-400.png”)
+[Download infographic in 600](/static/images/press/2015/odi-600.png”)
+[Download infographic in 800](/static/images/press/2015/odi-800.png”)
+[Download infographic in 1000](/static/images/press/2015/odi-1000.png”)
