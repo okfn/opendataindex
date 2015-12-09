@@ -41,4 +41,4 @@ Public procurement is the [number one risk of corruption and fraud](http://www.o
 
 To make sure this money is spent fairly and honestly, it is essential that data is disclosed on how much, when and with whom governments spend money on.
 
-See all of this year's insights in the [blog post](http://blog.okfn.org/2015/12/09/government-contracts-still-a-long-way-from-open)
+[See all of this year's insights in the blog post](http://blog.okfn.org/2015/12/09/government-contracts-still-a-long-way-from-open)
