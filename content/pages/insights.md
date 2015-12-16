@@ -31,7 +31,7 @@ This year’s seventh position in the Global Open Data Index tells only part of 
 ### Kosovo 
 
 Post-war Kosovo was lucky to establish an administration without the burden of legacy systems. yet from the age of policy decision making to the current status, the lack of capacity and ability to adapt is beginning to be an impetus to the country's progress. 
-[See full insight](http://blog.okfn.org/2015/12/09/global-open-data-index-kosovo-insight)
+[See full insight](http://blog.okfn.org/2015/12/14/global-open-data-index-kosovo-insight/)
 
 ### South East Asia
 
@@ -46,7 +46,7 @@ Taiwan staggeringly claims the world’s highest penetration of Facebook users t
 
 From the government perspective, another major contributing factor has been the establishment of the formalised mechanism on public consultation, in forms of dedicated committees in all ministries. A total of 30+ were established in first half of 2015, and seat rotation on a 1~2 year nominal terms is enacted, with majority of members from the government plus selected few from civil society, academia and private sectors. This has served very well to raise awareness of Open Knowledge and the #GODI15 inside the government, and serious actions were taken to study the #GODI15 in detail as early as 2013. This proves to be somewhat controversial in the final outcome, but we are seeing how the Index has formally affected the perception and assessment of its own mandates and initiatives in Taiwan. The discourse around #GODI15 is public in meeting minutes that are available through taking a look at http://data.gov.tw.
 
-[See full insight](http://blog.okfn.org/2015/12/09/global-open-data-index-2015-taiwan-index)
+[See full insight](http://blog.okfn.org/2015/12/16/global-open-data-index-2015-taiwan-index/)
 
 ### Regional visualisation 
 
