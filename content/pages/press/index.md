@@ -4,7 +4,7 @@ title: Press
 slug: press
 
 ## Press releases - 2015 Global Open Data Index shows decline in overall percentage of open datasets
-
+###Spanish press release - Para ver la nota de prensa en Español, mira [aquí](https://docs.google.com/document/d/17xhcqZ7fmk48Yb_osuuSZ_gyJXS8HVpzfsynUEVLus4/edit)
 ### 9th December 2015
 
 ## OPEN KNOWLEDGE INTERNATIONAL PUBLISHES GLOBAL OPEN DATA INDEX 2015, TRACKING THE STATE OF OPEN DATA WORLDWIDE
