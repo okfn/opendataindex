@@ -43,3 +43,13 @@ For more information, please contact: <a href="mailto:index@okfn.org">press@okfn
 
 [Download infographic in 1000](/static/images/press/2015/odi-1000.png)
 
+
+![infographic II](/static/images/press/2015/map-infog-800.png)
+
+[Download infographic in 600](/static/images/press/2015/map-infog-600.png)
+
+[Download infographic in 800](/static/images/press/2015/map-infog-800.png)
+
+[Download infographic in 1100](/static/images/press/2015/map-infog-1100.png)
+
+
