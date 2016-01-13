@@ -61,4 +61,13 @@ Public procurement is the [number one risk of corruption and fraud](http://www.o
 
 To make sure this money is spent fairly and honestly, it is essential that data is disclosed on how much, when and with whom governments spend money on.
 
-[See all of this year's insights in the blog post](http://blog.okfn.org/2015/12/09/government-contracts-still-a-long-way-from-open)
+[See full insight](http://blog.okfn.org/2015/12/09/government-contracts-still-a-long-way-from-open)
+
+### Elections Results
+How “open” are election results data around the world? Answering that question just became much easier. For the first time, the Global Open Data Index 2015 assessed election results data based on whether the results are made available at the polling station level. In previous years, the Index looked at whether election results were available at a higher (constituency/district) level, but not at the polling station level. 
+
+As a result, the 2015 Global Open Data Index provides the most useful global assessment to date on which countries are and are not making election results available in an open way. It also highlights specific open data principles that most countries are meeting, as well as principles that most countries are not meeting. This helps inform the reform agenda for open election data advocates in the months and years ahead.
+
+Before we take a look at the findings and possible ways forward, let’s first consider why the Global Open Data Index’s shift from constituency/district level results to polling station results is important. This shift in criteria has shaken up the rankings this year, which has caused some discussion about why polling station-level results matter. Read on to find out!
+
+[See full insight](http://blog.okfn.org/2015/12/24/unlocking-election-results-data-signs-of-progress-but-challenges-still-remain/)
