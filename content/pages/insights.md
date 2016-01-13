@@ -4,7 +4,7 @@ title: Insights
 slug: insights
 year: 2015
 
-The Index is more than just a benchmark. It allows us to explore and and examine what are the strengths and the weaknesses in publishing data. It also allows us to see what we don’t measure and how we need to tackle these issues for a better state of open data in the future. The Insights are written by our community. To submit and insight, please email us (index@okfn.org)[Index@okfn.org]
+The Index is more than just a benchmark. It allows us to explore and and examine what are the strengths and the weaknesses in publishing data. It also allows us to see what we don’t measure and how we need to tackle these issues for a better state of open data in the future. The Insights are written by our community. To submit and insight, please email us [index@okfn.org](Index@okfn.org)
 
 The following page contains insights on the index from a local or a thematic perspective. You can find full versions of these insights on our Open Knowledge [blog](blog.okfn.org).
 
@@ -27,6 +27,26 @@ Uruguay has made the news lately mostly due to our unconventional former preside
 Our country is not -and probably never was- in a rush. And Open Data doesn’t escape that contradictory logic that reigns everything over here; that tension between innovation and resistance to change.
 This year’s seventh position in the Global Open Data Index tells only part of that story. Open Data initiatives had a relatively early start from the government side, but amazingly demand actually came after that. Government policy and initiatives such as it’s Open Data Portal have been praised and recognized, but we’re still working on a firm legal framework that supports the whole thing long term. In civil society, we’ve been lucky enough to launch a couple of surprisingly successful projects, but struggle with only a handful of organizations actively involved in Open Data and Open Government. We need to “open“ the open data space (pun absolutely intended).
 [see full insight](http://blog.okfn.org/2015/12/09/global-open-data-index-2015-uruguay-insight)
+
+### Kosovo 
+
+Post-war Kosovo was lucky to establish an administration without the burden of legacy systems. yet from the age of policy decision making to the current status, the lack of capacity and ability to adapt is beginning to be an impetus to the country's progress. 
+[See full insight](http://blog.okfn.org/2015/12/14/global-open-data-index-kosovo-insight/)
+
+### South East Asia
+
+There are few countries in Southeast Asia region - Vietnam, Myanmar, Cambodia, Thailand, Lao PDR, Singapore, East Timor and Malaysia - that are falling behind in the global open data movement, while others - Indonesia and Philippines - are advancing as members of Open Government Partnership. So, how are these countries in Southeast Asia doing relatively to the rest of the world and with each other?
+
+How open is Southeast Asia? 
+[See full insight](http://blog.okfn.org/2015/12/09/the-state-of-open-data-in-southeast-asia)
+
+### Taiwan
+
+Taiwan staggeringly claims the world’s highest penetration of Facebook users to overall population. This has also contributed to a fast, and to some degrees even vicious, cycle of feedback loops on public discourse of any datasets released from dozens of data portals. This has greatly enhanced visibility of the agenda carried on by the #GODI15 on the island.
+
+From the government perspective, another major contributing factor has been the establishment of the formalised mechanism on public consultation, in forms of dedicated committees in all ministries. A total of 30+ were established in first half of 2015, and seat rotation on a 1~2 year nominal terms is enacted, with majority of members from the government plus selected few from civil society, academia and private sectors. This has served very well to raise awareness of Open Knowledge and the #GODI15 inside the government, and serious actions were taken to study the #GODI15 in detail as early as 2013. This proves to be somewhat controversial in the final outcome, but we are seeing how the Index has formally affected the perception and assessment of its own mandates and initiatives in Taiwan. The discourse around #GODI15 is public in meeting minutes that are available through taking a look at http://data.gov.tw.
+
+[See full insight](http://blog.okfn.org/2015/12/16/global-open-data-index-2015-taiwan-index/)
 
 ### Regional visualisation 
 

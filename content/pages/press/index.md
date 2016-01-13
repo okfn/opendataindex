@@ -4,7 +4,7 @@ title: Press
 slug: press
 
 ## Press releases - 2015 Global Open Data Index shows decline in overall percentage of open datasets
-
+###Spanish press release - Para ver la nota de prensa en Español, mira [aquí](https://docs.google.com/document/d/17xhcqZ7fmk48Yb_osuuSZ_gyJXS8HVpzfsynUEVLus4/edit)
 ### 9th December 2015
 
 ## OPEN KNOWLEDGE INTERNATIONAL PUBLISHES GLOBAL OPEN DATA INDEX 2015, TRACKING THE STATE OF OPEN DATA WORLDWIDE
@@ -31,6 +31,9 @@ See [full press release](https://docs.google.com/document/d/179W9FYB7ZbU3nNB-kop
 For more information, please contact: <a href="mailto:index@okfn.org">press@okfn.org</a>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> okfn/master
 ### Infographics
 
 ![infographic I](/static/images/press/2015/odi-600.png)
@@ -42,6 +45,7 @@ For more information, please contact: <a href="mailto:index@okfn.org">press@okfn
 [Download infographic in 800](/static/images/press/2015/odi-800.png)
 
 [Download infographic in 1000](/static/images/press/2015/odi-1000.png)
+<<<<<<< HEAD
 =======
 ## Infographics
 
@@ -52,3 +56,5 @@ For more information, please contact: <a href="mailto:index@okfn.org">press@okfn
 [Download infographic in 800](src=“/static/images/press/2015/odi-800.png”)
 [Download infographic in 1000](src=“/static/images/press/2015/odi-1000.png”)
 >>>>>>> origin/master
+=======
+>>>>>>> okfn/master

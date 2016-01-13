@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head lang="en" dir="ltr">
@@ -9,7 +10,7 @@
 
 <!-- Favicon -->
 <link rel="icon" href="/img/favicon.ico" type=”image/x-icon” />
-<link rel="shortcut icon" href="http://tarekamr.appspot.com/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
 
 
@@ -111,7 +112,7 @@ var w = 800,
 
 w = parseInt($(svg_container[0]).width(),10);
 
-var min_score = 0, max_score = 1150;
+var min_score = 0, max_score = 100;
 
 var svg = svg_container.append('svg')
             .style("background", "#FFF")
@@ -480,7 +481,7 @@ var draw = function(results){
       });
 
   var global_lable = g_bars.selectAll('global-lable')
-     .data(['GODI 2015 Score '])
+     .data(['GODI 2015 Score (100%)'])
      .enter()
      .append('text')
      .attr('class', 'global-lable')
@@ -612,9 +613,10 @@ var draw = function(results){
 
 */
 
-d3.json("http://global.census.okfn.org/api/places/score/2015.json", function(error, json) {
+d3.json("http://index.okfn.org/api/places.json", function(error, json) {
   if (error) return console.warn(error);
-  var results = json.results;
+  //var results = json.results;
+  var results = json
   results = init(results);
   draw(results);
 });
@@ -632,4 +634,4 @@ d3.json("http://global.census.okfn.org/api/places/score/2015.json", function(err
     ga('send', 'pageview');
   </script>
 
-<html>
+<html> 
