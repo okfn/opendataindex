@@ -19,6 +19,7 @@ We would like to acknowledge the people who worked on the Global Open Data Index
 - **Thematic reviewers** -  Tryggvi Bjorgvinsson, Zach Christensen, Stephen gates, Kamil Gregor ,Codrina Maria Ilie,  Georg Neumann, Yaron Michl, Rebecca Sentance, Gil Zertzer.
 - **Advisors** - Jonathan Gray, Rufus Pollock and the community of the Global Open Data Index on the discuss forum. 
 
+
 ## The research question
 Like any other benchmarking tool, the Global Open Data Index tries to answer a question. In our case, the question is as follows:
 > “What is the state open data around the world?”
@@ -316,6 +317,30 @@ We did save all of the data, and we will analyse it in order to define this data
 ##Places
 In a few cases, we have received submissions for 2013 and 2014 from places that are not officially recognised as independent countries; we have included these if they are complete and accurate submissions. Therefore, the Global Open Data Index 2015 ranks ‘Places’ and not ‘Countries’.
 Generally we seek to survey jurisdictions with sufficient autonomy to be responsible for data management and publication. Usually these are countries, however there are cases where country jurisdiction is disputed  and we generally seek to be flexible and inclusive where we can.
+
+###Errata 
+Please note that in the following countries as mistake was done in the Elections results dataset, and their score does not mean their qualitative note:
+- Sudan
+- Ethiopia
+- Guinea
+- Togo
+- Botswana
+- Panama
+- Azerbaijan
+- Cameroon
+- Bolivia
+- Costa Rica
+- Burkina Faso
+- Greece
+- Thailand
+- Kyrgyzstan
+
+The following countries mark as correct, but have the following faults: 
+
+- Mali (Data only exist and digital)
+- Antigua and Barbuda (Data is not from official source)
+- Argentina (No open license)
+
 
 ##Scoring
 Each dataset in each place is evaluated using nine questions that examine the openness of the datasets based to the open definition.
