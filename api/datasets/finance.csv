@@ -1,3 +1,30 @@
-id,title,category,description,icon,score,rank,score_2013,rank_2013
-budget,Government Budget,Finance,"National government budget at a high level (e.g. spending by sector, department etc). This category is about *budgets* which are government *plans* for expenditure (not actual expenditure in the past).",None,62,2,61,2
-spending,Government Spending,Finance,Records of actual (past) national government spending at a detailed transactional level; at the level of month to month government expenditure on specific items (usually this means individual records of spending amounts under $1m or even under $100k). (Note: Just a database of contracts awarded or similar is *not* considered sufficient. This data category refers to detailed ongoing data on *actual* expenditure),None,17,10,22,8
+id,title,category,description,icon,rank,score,rank_2014,score_2014,rank_2013,score_2013
+budget,Government Budget,Finance,"<p>National government budget at a high level. This category is looking at budgets, or the planned government expenditure for the upcoming year, and not the actual expenditure. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Planned budget divided by government department and sub-department</li>
+<li>Updated once a year.</li>
+<li>The budget should include descriptions regarding the different budget sections.</li>
+</ul>",None,2,55,2,62,3,61
+procurement,Procurement tenders,Finance,"<p>All tenders and awards of the national/federal government aggregated by office. Monitoring tenders can help new groups to participate in tenders and increase government compliance. Data submitted in this category must be aggregated by office, updated at least monthly &amp; satisfy the following minimum criteria:</p>
+<p>Tenders:</p>
+<ul>
+<li>tenders name</li>
+<li>tender description</li>
+<li>tender status</li>
+</ul>
+<p>Awards:</p>
+<ul>
+<li>Award title</li>
+<li>Award description</li>
+<li>value of the award</li>
+<li>suppliers name</li>
+</ul>",None,4,43,11,0,11,0
+spending,Government Spending,Finance,"<p>Records of actual (past) national government spending at a detailed transactional level; A database of contracts awarded or similar will <em>not</em> considered sufficient. This data category refers to detailed ongoing data on <em>actual</em> expenditure. Data submitted in this category should meet the following minimum criteria:</p>
+<ul>
+<li>Individual record of transactions.</li>
+<li>Date of the transactions</li>
+<li>Government office which had the transaction</li>
+<li>Name of vendor</li>
+<li>amount of the transaction</li>
+<li>Update on a monthly basis</li>
+</ul>",None,13,10,10,17,10,22

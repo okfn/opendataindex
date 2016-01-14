@@ -1,2 +1,7 @@
-id,title,category,description,icon,score,rank,score_2013,rank_2013
-timetables,Transport Timetables,Transport,"Timetables of major government operated (or commissioned) *national-level* public transport services (specifically bus and train). The focus here is on national level services (not those which operate *only* at a municipal or city level and which are not controlled or regulated by the national government). A 'yes' in any question will refer to both types of transport. However, if there is no national level service operated or regulated by the government for a given type of transport (for instance busses), then this type is ignored in this data category.",None,36,8,39,7
+id,title,category,description,icon,rank,score,rank_2014,score_2014,rank_2013,score_2013
+timetables,Transport Timetables,Transport,"<p>Timetables of major government operated (or commissioned) <em>national-level</em> public transport services (specifically bus and train). The focus here is on national level services (not those which operate <em>only</em> at a municipal or city level and which are not controlled or regulated by the national government). A &#39;yes&#39; in any question will refer to both types of transport. However, if there is no national level service operated or regulated by the government for a given type of transport (for instance busses), then this type is ignored in this data category. Data submitted in this category should meet the following minimum criteria:</p>
+<ul>
+<li>Time of operating</li>
+<li>Time of leaving first station and arriving to the last station</li>
+<li>Updated at least once a year</li>
+</ul>",None,14,0,8,36,9,38

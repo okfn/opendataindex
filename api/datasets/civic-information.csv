@@ -1,4 +1,35 @@
-id,title,category,description,icon,score,rank,score_2013,rank_2013
-elections,Election Results,Civic Information,Results by constituency / district for all major national electoral contests,None,57,3,61,2
-companies,Company Register,Civic Information,"List of registered (limited liability) companies including name, unique identifier and additional information such as address, registered activities. The submissions in this data category does not need to include detailed financial data such as balance sheet etc.",None,38,7,40,6
-statistics,National Statistics,Civic Information,"Key national statistics such as demographic and economic indicators (GDP, unemployment, population, etc). Aggregate data (e.g. GDP for whole country at a quarterly level, or population at an annual level) is also considered acceptable in this data category. In general, answers of 'yes' in this category refers to entries with a reasonable amount of both economic and demographic information available.",None,63,1,62,1
+id,title,category,description,icon,rank,score,rank_2014,score_2014,rank_2013,score_2013
+statistics,National Statistics,Civic Information,"<p>Key national statistics such as demographic and economic indicators (GDP, unemployment, population, etc). To satisfy this category,  the following minimum criteria must be met:</p>
+<ul>
+<li>GDP for the whole country updated at least quarterly</li>
+<li>Unemployment statistics updated at least monthly</li>
+<li>Population updated at least once a year</li>
+</ul>",None,1,56,1,63,1,62
+elections,Election Results,Civic Information,"<p>This data category requires results by constituency / district for all major national electoral contests. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Result for all major electoral contests</li>
+<li>Number of registered votes</li>
+<li>Number of invalid votes</li>
+<li>Number of spoiled ballots</li>
+<li>All data should be reported at the level of the polling station</li>
+</ul>",None,5,41,3,57,2,61
+companies,Company Register,Civic Information,"<p>List of registered (limited liability) companies. The submissions in this data category does not need to include detailed financial data such as balance sheet etc. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Name of company</li>
+<li>Unique identifier of the company</li>
+<li>Company address</li>
+<li>Updated at least once a month</li>
+</ul>",None,9,26,7,38,7,40
+land,Land Ownership,Civic Information,"<p>Cadaster showing land ownership data on a map and include all metadata on the land. Cadaster data submmitted in this category must include the following charateristics: </p>
+<ul>
+<li>Land boarders</li>
+<li>Land owners name</li>
+<li>Land size</li>
+<li>national level</li>
+<li>updated yearly</li>
+</ul>",None,11,18,11,0,11,0
+health,Health performance,Civic Information,"<p>Geo location of public hospitals and health facilities with opening hours and infectious diseases rate, updated at least once a year. Data submitted in this category must include the following:</p>
+<ul>
+<li>Location of public hospitals and clinics.</li>
+<li>Data on infectious diseases rates in a country. </li>
+</ul>",None,14,0,None,None,None,None

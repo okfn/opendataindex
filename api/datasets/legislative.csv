@@ -1,2 +1,8 @@
-id,title,category,description,icon,score,rank,score_2013,rank_2013
-legislation,Legislation,Legislative,"This data category requires all national laws and statutes available to be available online, although it is not a requirement that information on legislative behaviour e.g. voting records is available.",None,50,4,54,3
+id,title,category,description,icon,rank,score,rank_2014,score_2014,rank_2013,score_2013
+legislation,Legislation,Legislative,"<p>This data category requires all national laws and statutes available to be available online, although it is not a requirement that information on legislative behaviour e.g. voting records is available. To satisfy this category, the following minimum criteria must be met:</p>
+<ul>
+<li>Content of the law / status</li>
+<li>If applicable, all relevant amendments to the law</li>
+<li>Date of last amendments</li>
+<li>Data should be updated at least on quarterly  </li>
+</ul>",None,3,49,4,50,4,54

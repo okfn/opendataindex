@@ -1,9 +1,11 @@
-define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
+define(['leaflet', 'proj4', 'proj4leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
         'lodash', 'chroma', 'marked', 'data'],
-       function(leaflet, leaflet_zoommin, leaflet_label, $, pubsub, _, chroma,
+       function(leaflet, proj4, proj4leaflet, leaflet_zoommin, leaflet_label, $, pubsub, _, chroma,
                 marked, data) {
 
-    var $container = $('.odi-vis.odi-vis-choropleth'),
+           proj4.defs("EPSG:3410", "+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +a=6371228 +b=6371228 +units=m +no_defs");
+
+           var $container = $('.odi-vis.odi-vis-choropleth'),
         $tools = $('.odi-vis-tools'),
         $miniLegend = $('.odi-vis-legend ul'),
         $fullLegend = $('.odi-vis-legend-full ul'),
@@ -25,18 +27,26 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
         },
         trueStrings = ['true', 'yes'],
         falseStrings = ['false', 'no'],
-        colorLight = '#f5f5f5',
         colorDark = '#2d2d2d',
         colorSteps = ['#ff0000', '#edcf3b', '#7ab800'],
         colorScale = chroma.scale(colorSteps).domain([0, 100]),
-        mapLatLongBase = [20.0, 5.0],
-        mapZoomBase = 2.1,
+        mapLatLongBase = [30, 5],
+        mapZoomBase = 1,
+        res = [90000, 30000, 20000, 10000, 5000, 2500, 1250, 600, 300, 100, 80, 40],
+        RD2 = new L.Proj.CRS.TMS(
+                   'EPSG:3410',
+                   "+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +a=6371228 +b=6371228 +units=m +no_defs", [-28, 225, 595, 903],
+                   {
+                       resolutions: res
+                    }
+        ),
         mapInitObj = {
             zoomControl: false,
             zoomAnimation: false,
             attributionControl: false,
-            minZoom: 2,
-            maxZoom: 4
+            minZoom: 1,
+            maxZoom: 9,
+            crs: RD2
         },
         map = leaflet.map('map', mapInitObj),
         geoLayer = setGeoLayer(),
@@ -97,6 +107,32 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
             asQueryString: undefined
         },
         uiState = setUIState(topics.init, getUIStateArgs());
+
+    map.on('zoomend', function(e){
+        // if (e.target._zoom == mapZoomBase) {
+        //     map.setView(mapLatLongBase, mapZoomBase);
+        //     map.dragging.disable();
+        // } else {
+            map.dragging.enable();
+        // }
+    });
+
+    $('body').on('click', '.odi-vis-nav-zoom-in', function () {
+        map.zoomIn();
+        return false;
+    });
+
+    $('body').on('click', '.odi-vis-nav-zoom-out', function () {
+        map.zoomOut();
+        return false;
+    });
+
+    $('body').on('click', '.odi-vis-nav-zoom-min', function () {
+        map.setZoom(1);
+        return false;
+    });
+
+    $(".leaflet-control-container").css("visibility", "hidden");
 
     pubsub.subscribe(data.topics.meta, metaHandler);
     pubsub.subscribe(data.topics.summary, summaryHandler);
@@ -226,6 +262,9 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
     function setPanels(topic, data) {
         if (!data.panel.tools) {
             $toolsPanel.hide();
+            $('.leaflet-container').css('background-color', '#8bbee1');
+        } else {
+            $titleBox.hide();
         }
         if (!data.panel.help) {
             $helpPanel.hide();
@@ -329,7 +368,7 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
     }
 
     function setPlaceColors(feature) {
-        var fillColor = colorLight,
+        var fillColor = colorScale(NaN).hex(), //this is grey color
         score = 0,
         match;
 
@@ -338,14 +377,18 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
             // get calculated total scores from the place data
             match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (match) {
-                score = parseInt(match.score, 10);
-                fillColor = colorScale(score).hex();
+                score = parseInt(match[scoreLookup(uiState.filter.year)], 10);
+                if (score) {
+                    fillColor = colorScale(score).hex();
+                }
             }
         } else if (uiState.filter.dataset === 'improvement') {
             match = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (match) {
                 score = parseInt(match.improvement_scaled, 10);
-                fillColor = colorScale(score).hex();
+                if (score) {
+                    fillColor = colorScale(score).hex();
+                }
             }
         } else {
             // calculate for this dataset/year/place from entries data
@@ -356,7 +399,9 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
             });
             if (match) {
                 score = parseInt(match.score, 10);
-                fillColor = colorScale(score).hex();
+                if (score) {
+                    fillColor = colorScale(score).hex();
+                }
             }
         }
         rv = _.clone(placeStyleBase);
@@ -366,7 +411,6 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
 
     function placeHoverHandler(event) {
         var layer = event.target;
-
         layer.setStyle(placeStyleFocus);
         if (!leaflet.Browser.ie && !leaflet.Browser.opera) {
             layer.bringToFront();
@@ -384,11 +428,13 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
 
     function onEachPlace(feature, layer) {
         var place;
-
         if (feature && feature.properties && feature.properties.iso_a2) {
             place = _.find(dataStore.places, {'id': feature.properties.iso_a2.toLowerCase()});
             if (place) {
-                layer.bindLabel(getPlaceToolTip(place)).addTo(map);
+                var tooltip = getPlaceToolTip(place);
+                if (tooltip) {
+                    layer.bindLabel(tooltip).addTo(map);
+                }
             }
         }
 
@@ -499,7 +545,7 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
             $this.css('background-color', colorScale(score).hex());
         });
 
-        _.each($fullLegend.find('li'), function(value) {
+        _.each($fullLegendBox.find('.odi-vis-info-text i'), function(value) {
             $this = $(value);
             score = parseInt($this.data('score'), 10);
             $this.css('background-color', colorScale(score).hex());
@@ -543,16 +589,15 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
                 typeof(uiState.filter.dataset) === 'undefined') {
                 // get calculated total scores from the place data
                 if (place) {
-                    score = parseInt(place[scoreLookup(uiState.filter.year)], 10);
-                    rank = parseInt(place[rankLookup(uiState.filter.year)], 10);
-                    if (uiState.filter.year ===
-                        dataStore.meta.currentYear) {
+                    score = place[scoreLookup(uiState.filter.year)];
+                    rank = place[rankLookup(uiState.filter.year)];
+                    if (uiState.filter.year === dataStore.meta.currentYear) {
                         previousScore = parseInt(place[scorePrevious(uiState.filter.year)], 10);
                     }
                 }
             } else if (uiState.filter.dataset === 'improvement') {
                 if (place) {
-                    score = parseInt(place.improvement, 10);
+                    score = place.improvement;
                 }
             } else {
                 // calculate for this dataset/year/place from entries data
@@ -562,17 +607,22 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
                     'dataset': uiState.filter.dataset
                 });
                 if (match) {
-                    score = parseInt(match.score, 10);
-                    rank = parseInt(match.rank, 10);
+                    score = match.score;
+                    rank = match.rank;
                 }
             }
+
+            score = (score)? parseInt(score, 10) : 0;
+            rank = (rank)? parseInt(rank, 10) : 0;
 
                 context.title = makeTitle();
                 context.place = place.name;
                 context.score = score;
                 context.rank = rank;
         }
-        return placeToolTipTmpl(context);
+        if (score && score != -100) {
+            return placeToolTipTmpl(context);
+        }
     }
 
     function setPlaceBox(properties) {
@@ -604,17 +654,16 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
                 // get calculated total scores from the place data
                 place = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
                 if (place) {
-                    score = parseInt(place[scoreLookup(uiState.filter.year)], 10);
-                    rank = parseInt(place[rankLookup(uiState.filter.year)], 10);
-                    if (uiState.filter.year ===
-                        dataStore.meta.currentYear) {
-                        previousScore = parseInt(place[scorePrevious(uiState.filter.year)], 10);
+                    score = place[scoreLookup(uiState.filter.year)];
+                    rank = place[rankLookup(uiState.filter.year)];
+                    if (uiState.filter.year === dataStore.meta.currentYear) {
+                        previousScore = place[scorePrevious(uiState.filter.year)];
                     }
                 }
             } else if (uiState.filter.dataset === 'improvement') {
             place = _.find(dataStore.places, {'id': properties.iso_a2.toLowerCase()});
                 if (place) {
-                    score = parseInt(place.improvement, 10);
+                    score = place.improvement;
                 }
             } else {
                 // calculate for this dataset/year/place from entries data
@@ -630,13 +679,18 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
                 });
                 if (match) {
                     place = _.find(dataStore.places, {'id': match.place});
-                    score = parseInt(match.score, 10);
-                    rank = parseInt(match.rank, 10);
+                    score = match.score;
+                    rank = match.rank;
                     if (previousMatch) {
-                        previousScore = parseInt(previousMatch.score, 10);
+                        previousScore = previousMatch.score;
                     }
                 }
             }
+
+            score = (score)? parseInt(score, 10) : 0;
+            previousScore = (previousScore)? parseInt(previousScore, 10) : 0;
+            rank = (rank)? parseInt(rank, 10) : 0;
+
 
             context.year = uiState.filter.year;
             context.title = makeTitle();
@@ -645,8 +699,10 @@ define(['leaflet', 'leaflet_zoommin', 'leaflet_label', 'jquery', 'pubsub',
             context.score = score;
             context.rank = rank;
             context.previous_score = previousScore;
-            $placeBox.html(placeBoxTmpl(context));
-            $placeBox.show();
+            if (score) {
+                $placeBox.html(placeBoxTmpl(context));
+                $placeBox.show();
+            }
         }
     }
 

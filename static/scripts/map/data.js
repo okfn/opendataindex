@@ -1,5 +1,4 @@
 define(['jquery', 'pubsub'], function($, pubsub) {
-
     var topics = {
             meta: 'data.meta',
             summary: 'data.summary',
@@ -48,16 +47,18 @@ define(['jquery', 'pubsub'], function($, pubsub) {
      */
     function getPlaceData(topic, entry_data) {
 
+        var prev_score_lookup = 'score_'+previousYear;
+
         function setPlaceImprovement(place) {
             var previous,
                 current;
 
-            if (place.score === null && place.score_2013 === null) {
+            if (place.score === null && place[prev_score_lookup] === null) {
               return null;
-            } else if (place.score_2013 === null && place.score) {
+            } else if (place[prev_score_lookup] === null && place.score) {
               return '100';
             } else {
-              previous = parseInt(place.score_2013, 10);
+              previous = parseInt(place[prev_score_lookup], 10);
               current = parseInt(place.score, 10);
               return ((current - previous)/previous)*100;
             }
@@ -67,12 +68,12 @@ define(['jquery', 'pubsub'], function($, pubsub) {
             var previous,
                 current;
 
-            if (place.score === null && place.score_2013 === null) {
+            if (place.score === null && place[prev_score_lookup] === null) {
               return null;
-            } else if (place.score_2013 === null && place.score) {
+            } else if (place[prev_score_lookup] === null && place.score) {
               return '100';
             } else {
-              previous = parseInt(place.score_2013, 10);
+              previous = parseInt(place[prev_score_lookup], 10);
               current = parseInt(place.score, 10);
               return ((((current - previous)/previous)*100) + 100)/2;
             }

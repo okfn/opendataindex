@@ -3,7 +3,9 @@ require.config({
     shim : {
         bootstrap: {deps:['jquery']},
         tablesorter: {deps: ['jquery']},
-        stickykit: {deps: ['jquery']}
+        stickykit: {deps: ['jquery']},
+        kinetic: {deps: ['jquery']},
+        sexyTables: {deps: ['kinetic']}
     },
     paths: {
         app: 'scripts/site/main',
@@ -16,7 +18,9 @@ require.config({
         lodash: 'vendor/lodash.compat.min',
         table: 'scripts/site/table',
         place: 'scripts/site/place',
-        ui: 'scripts/site/ui'
+        ui: 'scripts/site/ui',
+        kinetic: 'vendor/jquery.kinetic.min',
+        sexyTables: 'vendor/sexytables-1.0.min'
     }
 });
 

@@ -1,2 +1,26 @@
-id,title,category,description,icon,score,rank,score_2013,rank_2013
-emissions,Pollutant Emissions,Environment,"Aggregate data about the emission of air pollutants especially those potentially harmful to human health (although it is not a requirement to include information on green house gas emissions). Aggregate means national-level or more detailed and on an annual basis or better. Standard examples of relevant pollutants would be: carbon monoxides, nitrogen oxides, particulate matter etc.",None,41,6,44,5
+id,title,category,description,icon,rank,score,rank_2014,score_2014,rank_2013,score_2013
+weather,Weather forecast,Environment,"<p>5 days forecast of temperature, precipitation and wind as well as recorded data for temperature, wind and precipitation for the past year. In order to satisfy the minimum requirements for this category, data submitted should meet the following criteria:</p>
+<ul>
+<li>5 days forecast of temperature updated daily</li>
+<li>5 days forecast of wind updated daily</li>
+<li>5 days forecast of precipitation updated daily</li>
+<li>Historical temperature data for the past year</li>
+</ul>",None,7,32,11,0,11,0
+emissions,Pollutant Emissions,Environment,"<p>Aggregate data about the emission of air pollutants especially those potentially harmful to human health (although it is not a requirement to include information on greenhouse gas emissions). Aggregate means national-level or available for at least three major cities. In order to satisfy the minimum requirements for this category, data must be available for the following pollutants and meet the following minimum criteria:</p>
+<ul>
+<li>Particulate matter (PM) Levels</li>
+<li>Sulphur oxides (SOx)</li>
+<li>Nitrogen oxides (NOx)</li>
+<li>Volatile organic compounds (VOCs)</li>
+<li>Carbon monoxide (CO)</li>
+<li>Updated on at least once a week.</li>
+<li>Measured either at a national level by regions or at leasts in 3 big cities.</li>
+</ul>",None,8,30,6,41,6,44
+water,Water Quality,Environment,"<p>Data, measured at the water source, on the quality of water is essential for both the delivery of services and the prevention of diseases. In order to satisfy the minimum requirements for this category, data should be available on level of the following chemicals by water source and be updated at least weekly:</p>
+<ul>
+<li>fecal coliform</li>
+<li>arsenic</li>
+<li>fluoride levels</li>
+<li>nitrates</li>
+<li>TDS (Total dissolved solids)</li>
+</ul>",None,11,18,11,0,11,0

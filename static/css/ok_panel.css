@@ -1,0 +1,154 @@
+.ok-ribbon {
+    height: 60px;
+    overflow: hidden;
+    background-color: #181818;
+    padding-left: 10px;
+    display: block;
+    cursor: pointer
+}
+
+.ok-ribbon img {
+    width: 106px;
+    margin-top: -38px
+}
+
+@media only screen and (min-width: 576px) {
+    .ok-ribbon {
+        position: relative;
+        top: -6px;
+        right: 10px;
+        width: 161px;
+        height: 64px;
+        text-align: center;
+        z-index: 99;
+        padding: 4px 0 0 0;
+        background-color: transparent
+    }
+
+    .ok-ribbon img {
+        margin-top: -40px
+    }
+
+    .ok-ribbon:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        width: 141px;
+        background-color: #181818;
+        height: 67px;
+        border-radius: 0 0 11px 11px;
+        -webkit-transform: translateZ(-1000px) perspective(100px) rotateX(-18deg);
+        -moz-transform: perspective(100px) rotateX(-18deg);
+        transform: perspective(100px) rotateX(-18deg);
+        -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        z-index: -1
+    }
+
+    .ok-ribbon:after {
+        content: "";
+        border-style: solid;
+        border-width: 2px 2px 0 0;
+        bottom: 9px;
+        height: 6px;
+        left: 50%;
+        margin-left: -3px;
+        position: absolute;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        vertical-align: top;
+        width: 6px;
+        color: #fff;
+        display: none
+    }
+
+    .ok-ribbon.closed:after {
+        display: inline-block;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        transform: rotate(135deg);
+        bottom: 10px
+    }
+
+    .ok-ribbon.black:before {
+        background-color: #181818
+    }
+
+    .ok-ribbon.white img {
+        margin-top: 10px
+    }
+
+    .ok-ribbon.white:before {
+        background-color: #fff
+    }
+
+    .ok-ribbon.white:after {
+        color: #1d1d1b
+    }
+
+    .ok-ribbon.open {
+        top: -4px
+    }
+
+    .ok-ribbon.open:after {
+        display: inline-block
+    }
+
+    .ok-ribbon:hover {
+        top: -4px
+    }
+
+    .fixed-ok-panel, .absolute-ok-panel {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10000
+    }
+
+    .fixed-ok-panel .ok-ribbon, .absolute-ok-panel .ok-ribbon {
+        top: auto;
+        margin-top: -4px;
+        position: absolute
+    }
+
+    .fixed-ok-panel .ok-ribbon:hover, .absolute-ok-panel .ok-ribbon:hover {
+        margin-top: -2px
+    }
+
+    .fixed-ok-panel .ok-ribbon.open, .absolute-ok-panel .ok-ribbon.open {
+        margin-top: -4px
+    }
+
+    .absolute-ok-panel {
+        position: absolute
+    }
+}
+
+#ok-panel {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height .35s ease;
+    -moz-transition: max-height .35s ease;
+    -ms-transition: max-height .35s ease;
+    -o-transition: max-height .35s ease;
+    transition: max-height .35s ease;
+    border-bottom: solid 4px #181818;
+    margin-top: -4px;
+    background-color: #FFF
+}
+
+#ok-panel.open {
+    max-height: 127px
+}
+
+#ok-panel > iframe {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border: 0
+}
+
+/*# sourceMappingURL=frontend.css.map */
