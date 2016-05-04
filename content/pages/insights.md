@@ -6,7 +6,7 @@ year: 2015
 
 The Index is more than just a benchmark. It allows us to explore and and examine what are the strengths and the weaknesses in publishing data. It also allows us to see what we don’t measure and how we need to tackle these issues for a better state of open data in the future. The Insights are written by our community. To submit and insight, please email us [index@okfn.org](Index@okfn.org)
 
-The following page contains insights on the index from a local or a thematic perspective. You can find full versions of these insights on our Open Knowledge [blog](blog.okfn.org).
+The following page contains insights on the index from a local or a thematic perspective. You can find full versions of these insights on our Open Knowledge International [blog](blog.okfn.org).
 
 ## Geographical Insights
 
