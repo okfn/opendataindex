@@ -1,3 +1,7 @@
+# Deprecated!
+
+This codebase represents the static Index website generator for the Global Open Data Index before 2016. The current Survey and Index codebase are now unified at: https://github.com/okfn/opendatasurvey.
+
 # Open Data Index
 
 (c) 2013-2015 Open Knowledge Foundation (trading as Open Knowledge). Licensed under the [AGPL](http://www.gnu.org/licenses/agpl-3.0.html)
